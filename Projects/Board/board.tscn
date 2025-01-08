@@ -1,0 +1,282 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpyrcsgpodbx7"]
+
+[ext_resource type="Texture2D" uid="uid://ds8kqvhltuqbl" path="res://Assets/images.png" id="1_evvd5"]
+[ext_resource type="Script" path="res://Projects/Board/board.gd" id="1_i1ya0"]
+
+[node name="Board" type="Node2D"]
+script = ExtResource("1_i1ya0")
+
+[node name="Xiangqi" type="Sprite2D" parent="."]
+texture = ExtResource("1_evvd5")
+
+[node name="Markers" type="Node2D" parent="."]
+
+[node name="Marker1" type="Marker2D" parent="Markers"]
+position = Vector2(-91, 101)
+
+[node name="Marker2" type="Marker2D" parent="Markers"]
+position = Vector2(-68, 101)
+
+[node name="Marker3" type="Marker2D" parent="Markers"]
+position = Vector2(-45, 101)
+
+[node name="Marker4" type="Marker2D" parent="Markers"]
+position = Vector2(-23, 101)
+
+[node name="Marker5" type="Marker2D" parent="Markers"]
+position = Vector2(0, 102)
+
+[node name="Marker6" type="Marker2D" parent="Markers"]
+position = Vector2(22, 102)
+
+[node name="Marker7" type="Marker2D" parent="Markers"]
+position = Vector2(45, 101)
+
+[node name="Marker8" type="Marker2D" parent="Markers"]
+position = Vector2(67, 101)
+
+[node name="Marker9" type="Marker2D" parent="Markers"]
+position = Vector2(90, 101)
+
+[node name="Marker10" type="Marker2D" parent="Markers"]
+position = Vector2(-90, 78)
+
+[node name="Marker11" type="Marker2D" parent="Markers"]
+position = Vector2(-67, 78)
+
+[node name="Marker12" type="Marker2D" parent="Markers"]
+position = Vector2(-44, 78)
+
+[node name="Marker13" type="Marker2D" parent="Markers"]
+position = Vector2(-22, 78)
+
+[node name="Marker14" type="Marker2D" parent="Markers"]
+position = Vector2(1, 79)
+
+[node name="Marker15" type="Marker2D" parent="Markers"]
+position = Vector2(23, 79)
+
+[node name="Marker16" type="Marker2D" parent="Markers"]
+position = Vector2(46, 78)
+
+[node name="Marker17" type="Marker2D" parent="Markers"]
+position = Vector2(68, 78)
+
+[node name="Marker18" type="Marker2D" parent="Markers"]
+position = Vector2(91, 78)
+
+[node name="Marker19" type="Marker2D" parent="Markers"]
+position = Vector2(-91, 56)
+
+[node name="Marker20" type="Marker2D" parent="Markers"]
+position = Vector2(-68, 56)
+
+[node name="Marker21" type="Marker2D" parent="Markers"]
+position = Vector2(-45, 56)
+
+[node name="Marker22" type="Marker2D" parent="Markers"]
+position = Vector2(-23, 56)
+
+[node name="Marker23" type="Marker2D" parent="Markers"]
+position = Vector2(0, 57)
+
+[node name="Marker24" type="Marker2D" parent="Markers"]
+position = Vector2(22, 57)
+
+[node name="Marker25" type="Marker2D" parent="Markers"]
+position = Vector2(45, 56)
+
+[node name="Marker26" type="Marker2D" parent="Markers"]
+position = Vector2(67, 56)
+
+[node name="Marker27" type="Marker2D" parent="Markers"]
+position = Vector2(90, 56)
+
+[node name="Marker28" type="Marker2D" parent="Markers"]
+position = Vector2(-90, 34)
+
+[node name="Marker29" type="Marker2D" parent="Markers"]
+position = Vector2(-67, 34)
+
+[node name="Marker30" type="Marker2D" parent="Markers"]
+position = Vector2(-44, 34)
+
+[node name="Marker31" type="Marker2D" parent="Markers"]
+position = Vector2(-22, 34)
+
+[node name="Marker32" type="Marker2D" parent="Markers"]
+position = Vector2(1, 35)
+
+[node name="Marker33" type="Marker2D" parent="Markers"]
+position = Vector2(23, 35)
+
+[node name="Marker34" type="Marker2D" parent="Markers"]
+position = Vector2(46, 34)
+
+[node name="Marker35" type="Marker2D" parent="Markers"]
+position = Vector2(68, 34)
+
+[node name="Marker36" type="Marker2D" parent="Markers"]
+position = Vector2(91, 34)
+
+[node name="Marker37" type="Marker2D" parent="Markers"]
+position = Vector2(-91, 11)
+
+[node name="Marker38" type="Marker2D" parent="Markers"]
+position = Vector2(-68, 11)
+
+[node name="Marker39" type="Marker2D" parent="Markers"]
+position = Vector2(-45, 11)
+
+[node name="Marker40" type="Marker2D" parent="Markers"]
+position = Vector2(-23, 11)
+
+[node name="Marker41" type="Marker2D" parent="Markers"]
+position = Vector2(0, 12)
+
+[node name="Marker42" type="Marker2D" parent="Markers"]
+position = Vector2(22, 12)
+
+[node name="Marker43" type="Marker2D" parent="Markers"]
+position = Vector2(45, 11)
+
+[node name="Marker44" type="Marker2D" parent="Markers"]
+position = Vector2(67, 11)
+
+[node name="Marker45" type="Marker2D" parent="Markers"]
+position = Vector2(90, 11)
+
+[node name="Marker46" type="Marker2D" parent="Markers"]
+position = Vector2(-91, -13)
+
+[node name="Marker47" type="Marker2D" parent="Markers"]
+position = Vector2(-68, -13)
+
+[node name="Marker48" type="Marker2D" parent="Markers"]
+position = Vector2(-45, -13)
+
+[node name="Marker49" type="Marker2D" parent="Markers"]
+position = Vector2(-23, -13)
+
+[node name="Marker50" type="Marker2D" parent="Markers"]
+position = Vector2(0, -12)
+
+[node name="Marker51" type="Marker2D" parent="Markers"]
+position = Vector2(22, -12)
+
+[node name="Marker52" type="Marker2D" parent="Markers"]
+position = Vector2(45, -13)
+
+[node name="Marker53" type="Marker2D" parent="Markers"]
+position = Vector2(67, -13)
+
+[node name="Marker54" type="Marker2D" parent="Markers"]
+position = Vector2(90, -13)
+
+[node name="Marker55" type="Marker2D" parent="Markers"]
+position = Vector2(-90, -36)
+
+[node name="Marker56" type="Marker2D" parent="Markers"]
+position = Vector2(-67, -36)
+
+[node name="Marker57" type="Marker2D" parent="Markers"]
+position = Vector2(-44, -36)
+
+[node name="Marker58" type="Marker2D" parent="Markers"]
+position = Vector2(-22, -36)
+
+[node name="Marker59" type="Marker2D" parent="Markers"]
+position = Vector2(1, -35)
+
+[node name="Marker60" type="Marker2D" parent="Markers"]
+position = Vector2(23, -35)
+
+[node name="Marker61" type="Marker2D" parent="Markers"]
+position = Vector2(46, -36)
+
+[node name="Marker62" type="Marker2D" parent="Markers"]
+position = Vector2(68, -36)
+
+[node name="Marker63" type="Marker2D" parent="Markers"]
+position = Vector2(91, -36)
+
+[node name="Marker64" type="Marker2D" parent="Markers"]
+position = Vector2(-91, -58)
+
+[node name="Marker65" type="Marker2D" parent="Markers"]
+position = Vector2(-68, -58)
+
+[node name="Marker66" type="Marker2D" parent="Markers"]
+position = Vector2(-45, -58)
+
+[node name="Marker67" type="Marker2D" parent="Markers"]
+position = Vector2(-23, -58)
+
+[node name="Marker68" type="Marker2D" parent="Markers"]
+position = Vector2(0, -57)
+
+[node name="Marker69" type="Marker2D" parent="Markers"]
+position = Vector2(22, -57)
+
+[node name="Marker70" type="Marker2D" parent="Markers"]
+position = Vector2(45, -58)
+
+[node name="Marker71" type="Marker2D" parent="Markers"]
+position = Vector2(67, -58)
+
+[node name="Marker72" type="Marker2D" parent="Markers"]
+position = Vector2(90, -58)
+
+[node name="Marker73" type="Marker2D" parent="Markers"]
+position = Vector2(-90, -80)
+
+[node name="Marker74" type="Marker2D" parent="Markers"]
+position = Vector2(-67, -80)
+
+[node name="Marker75" type="Marker2D" parent="Markers"]
+position = Vector2(-44, -80)
+
+[node name="Marker76" type="Marker2D" parent="Markers"]
+position = Vector2(-22, -80)
+
+[node name="Marker77" type="Marker2D" parent="Markers"]
+position = Vector2(1, -79)
+
+[node name="Marker78" type="Marker2D" parent="Markers"]
+position = Vector2(23, -79)
+
+[node name="Marker79" type="Marker2D" parent="Markers"]
+position = Vector2(46, -80)
+
+[node name="Marker80" type="Marker2D" parent="Markers"]
+position = Vector2(68, -80)
+
+[node name="Marker81" type="Marker2D" parent="Markers"]
+position = Vector2(91, -80)
+
+[node name="Marker82" type="Marker2D" parent="Markers"]
+position = Vector2(-91, -103)
+
+[node name="Marker83" type="Marker2D" parent="Markers"]
+position = Vector2(-68, -103)
+
+[node name="Marker84" type="Marker2D" parent="Markers"]
+position = Vector2(-45, -103)
+
+[node name="Marker85" type="Marker2D" parent="Markers"]
+position = Vector2(-23, -103)
+
+[node name="Marker86" type="Marker2D" parent="Markers"]
+position = Vector2(0, -102)
+
+[node name="Marker87" type="Marker2D" parent="Markers"]
+position = Vector2(22, -102)
+
+[node name="Marker88" type="Marker2D" parent="Markers"]
+position = Vector2(45, -103)
+
+[node name="Marker89" type="Marker2D" parent="Markers"]
+position = Vector2(67, -103)
+
+[node name="Marker90" type="Marker2D" parent="Markers"]
+position = Vector2(90, -103)
