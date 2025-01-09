@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdh4jiiak0myi"]
+
+[ext_resource type="PackedScene" uid="uid://dpyrcsgpodbx7" path="res://Projects/Board/board.tscn" id="1_p5qvv"]
+[ext_resource type="PackedScene" uid="uid://ci58kdlspkg5f" path="res://Projects/Figure/General/general.tscn" id="2_on4nd"]
+
+[node name="Tutorial" type="Node2D"]
+
+[node name="Board" parent="." instance=ExtResource("1_p5qvv")]
+unique_name_in_owner = true
+
+[node name="General" parent="." instance=ExtResource("2_on4nd")]

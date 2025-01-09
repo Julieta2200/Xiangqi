@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ci58kdlspkg5f"]
+
+[ext_resource type="Texture2D" uid="uid://ck2mqlktkm16u" path="res://Assets/general.png" id="1_q565f"]
+[ext_resource type="Script" path="res://Projects/Figure/General/general.gd" id="1_tq0kb"]
+
+[node name="General" type="Node2D"]
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_tq0kb")
+
+[node name="General" type="Sprite2D" parent="."]
+texture = ExtResource("1_q565f")

@@ -4,7 +4,8 @@
 [ext_resource type="Script" path="res://Projects/Board/board.gd" id="1_i1ya0"]
 
 [node name="Board" type="Node2D"]
-position = Vector2(103, 119)
+position = Vector2(535, 452)
+scale = Vector2(3, 3)
 script = ExtResource("1_i1ya0")
 
 [node name="Xiangqi" type="Sprite2D" parent="."]
