@@ -1,11 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdh4jiiak0myi"]
+[gd_scene load_steps=4 format=3 uid="uid://cdh4jiiak0myi"]
 
+[ext_resource type="Script" path="res://Projects/tutorial.gd" id="1_gjhma"]
 [ext_resource type="PackedScene" uid="uid://dpyrcsgpodbx7" path="res://Projects/Board/board.tscn" id="1_p5qvv"]
 [ext_resource type="PackedScene" uid="uid://ci58kdlspkg5f" path="res://Projects/Figure/General/general.tscn" id="2_on4nd"]
 
 [node name="Tutorial" type="Node2D"]
+script = ExtResource("1_gjhma")
 
 [node name="Board" parent="." instance=ExtResource("1_p5qvv")]
 unique_name_in_owner = true
 
 [node name="General" parent="." instance=ExtResource("2_on4nd")]
+
+[node name="General2" parent="." instance=ExtResource("2_on4nd")]
+team = 2
