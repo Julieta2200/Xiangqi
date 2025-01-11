@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://ci58kdlspkg5f"]
+
+[ext_resource type="Texture2D" uid="uid://ck2mqlktkm16u" path="res://Assets/general.png" id="1_q565f"]
+[ext_resource type="Script" path="res://Projects/Figure/General/general.gd" id="1_tq0kb"]
+[ext_resource type="Texture2D" uid="uid://bh7qd5bwgot0t" path="res://Assets/download-removebg-preview (6).png" id="3_sgc8h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m7pdm"]
+radius = 110.0
+
+[node name="General" type="Node2D"]
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_tq0kb")
+team = 1
+
+[node name="General" type="Sprite2D" parent="."]
+texture = ExtResource("1_q565f")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_m7pdm")
+
+[node name="highlight" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("3_sgc8h")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
