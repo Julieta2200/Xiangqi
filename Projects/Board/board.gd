@@ -2,10 +2,12 @@ class_name Board extends Node
 
 var markers : Array
 var state : Array
+var select_figure : Figure
+var player : int
+
 const board_rows = 10
 const board_cols = 9
-var select_figure
-var player
+
 enum figures_type {General, Soldier}
 enum team {Red = 1, Black = 2}
 
