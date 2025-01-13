@@ -1,14 +1,14 @@
 extends Figure
 
-@onready var red_sprite = load("res://Assets/general.png")
-@onready var black_sprite = load("res://Assets/general_black.png")
+@onready var red_sprite = load("")
+@onready var black_sprite = load("")
 
 const directions: Array[Vector2] = [
-	Vector2(0, 1),
-	Vector2(0, -1),
-	Vector2(-1, 0),
-	Vector2(1, 0) 
-]
+		Vector2(-1, -1),
+		Vector2(1, -1),
+		Vector2(-1, 1),
+		Vector2(1, 1)
+	]
 
 func _ready():
 	if team == Board.team.Red:
