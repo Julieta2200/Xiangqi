@@ -63,9 +63,9 @@ func generals_facing(state: Dictionary) -> bool:
 	
 	var tmp_y = generals[team.Red].y + 1
 	
-	while tmp_y < board_rows and state[Vector2(generals[team.Red].x, tmp_y)] != null\
-	and state[Vector2(generals[team.Red].x, tmp_y)].type != Figure.Types.General:
+	while tmp_y < board_rows:
 		if state[Vector2(generals[team.Red].x, tmp_y)] != null:
-			return false
+			return state[Vector2(generals[team.Red].x, tmp_y)].type == Figure.Types.General
+		tmp_y += 1
 	
 	return true
