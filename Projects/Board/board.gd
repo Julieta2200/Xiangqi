@@ -27,7 +27,7 @@ func move(marker):
 		for col in range(board_cols):
 			markers[row][col].unhighlight()
 			if markers[row][col] == marker:
-				selected_figure.board_position = Vector2(col,row)
+				selected_figure.board_position = Vector2(row,col)
 	
 	if turn == team.Red:
 		turn = team.Black
@@ -57,15 +57,15 @@ func generals_facing(state: Dictionary) -> bool:
 	for pos in state:
 		if state[pos] != null and state[pos].type == Figure.Types.General:
 			generals[state[pos].team] = pos
-	
-	if generals[team.Red].x != generals[team.Black].x:
+
+	if generals[team.Red].y != generals[team.Black].y:
 		return false
-	
-	var tmp_y = generals[team.Red].y + 1
-	
-	while tmp_y < board_rows:
-		if state[Vector2(generals[team.Red].x, tmp_y)] != null:
-			return state[Vector2(generals[team.Red].x, tmp_y)].type == Figure.Types.General
-		tmp_y += 1
+
+	var tmp_x = generals[team.Red].x + 1
+
+	while tmp_x < board_rows:
+		if state[Vector2(tmp_x ,generals[team.Red].y)] != null:
+			return state[Vector2(tmp_x ,generals[team.Red].y)].type == Figure.Types.General
+		tmp_x += 1
 	
 	return true

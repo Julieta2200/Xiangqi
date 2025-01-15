@@ -1,20 +1,20 @@
 extends Figure
 
-@onready var red_sprite = load("res://Assets/general.png")
-@onready var black_sprite = load("res://Assets/general_black.png")
+@onready var red_sprite = load("res://Assets/advisor_red.png")
+@onready var black_sprite = load("res://Assets/advisor.png")
 
 const directions: Array[Vector2] = [
-		Vector2(0, 1),
-		Vector2(0, -1),
-		Vector2(-1, 0),
-		Vector2(1, 0)
+		Vector2(-1, -1),
+		Vector2(1, -1),
+		Vector2(-1, 1),
+		Vector2(1, 1)
 	]
 
 func _ready():
 	if team == Board.team.Red:
-		$General.texture = red_sprite
+		$Advisor.texture = red_sprite
 	else:
-		$General.texture = black_sprite
+		$Advisor.texture = black_sprite
 	boundaries = {
 		Board.team.Red: {
 			"x": Vector2(0,2),
@@ -25,8 +25,6 @@ func _ready():
 			"y": Vector2(3,5)
 		},
 	}
-
-
 func calculate_moves() -> void:
 	valid_moves = []
 	
