@@ -43,3 +43,6 @@ func _on_area_2d_mouse_exited():
 func delete_highlight():
 	for move in valid_moves:
 		%Board.markers[move.x][move.y].unhighlight()
+
+func delete_figure():
+	queue_free()
