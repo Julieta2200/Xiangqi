@@ -30,7 +30,6 @@ func calculate_moves() -> void:
 	
 	for dir in directions:
 		var new_pos = board_position + dir
-		if in_boundaries(new_pos):
-			if %Board.state[new_pos] == null:
-				if %Board.valid_state(board_position, new_pos):
-					valid_moves.append(new_pos)
+		if in_boundaries(new_pos) && %Board.state[new_pos] == null:
+			if %Board.valid_state(board_position, new_pos):
+				valid_moves.append(new_pos)
