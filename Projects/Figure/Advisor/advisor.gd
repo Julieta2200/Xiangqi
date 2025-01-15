@@ -17,12 +17,12 @@ func _ready():
 		$Advisor.texture = black_sprite
 	boundaries = {
 		Board.team.Red: {
-			"x": Vector2(0,2),
-			"y": Vector2(3,5)
+			"y": Vector2(0,2),
+			"x": Vector2(3,5)
 		},
 		Board.team.Black: {
-			"x": Vector2(7,9),
-			"y": Vector2(3,5)
+			"y": Vector2(7,9),
+			"x": Vector2(3,5)
 		},
 	}
 func calculate_moves() -> void:
