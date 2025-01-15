@@ -10,6 +10,7 @@ radius = 110.0
 [node name="General" type="Node2D"]
 scale = Vector2(0.3, 0.3)
 script = ExtResource("1_tq0kb")
+team = 1
 
 [node name="General" type="Sprite2D" parent="."]
 texture = ExtResource("1_q565f")

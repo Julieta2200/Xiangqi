@@ -7,7 +7,8 @@
 radius = 120.0
 
 [node name="Marker" type="Node2D"]
-scale = Vector2(0.05, 0.05)
+visibility_layer = 17
+scale = Vector2(0.15, 0.15)
 script = ExtResource("1_y3i0m")
 
 [node name="highlight" type="Sprite2D" parent="."]
