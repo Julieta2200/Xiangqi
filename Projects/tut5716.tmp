@@ -12,13 +12,8 @@ script = ExtResource("1_gjhma")
 unique_name_in_owner = true
 
 [node name="General" parent="." instance=ExtResource("2_on4nd")]
-team = 1
 
 [node name="General2" parent="." instance=ExtResource("2_on4nd")]
 team = 2
 
 [node name="Advisor" parent="." instance=ExtResource("4_i6iqw")]
-team = 1
-
-[node name="Advisor2" parent="." instance=ExtResource("4_i6iqw")]
-team = 2
