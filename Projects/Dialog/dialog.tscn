@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bkqlg03rv0gyo"]
 
 [ext_resource type="Script" path="res://Projects/Dialog/dialog.gd" id="1_0lrns"]
-[ext_resource type="Texture2D" uid="uid://bgxg11jl7xfdn" path="res://Assets/dialog panel/panel.png" id="1_vksa7"]
+[ext_resource type="Texture2D" uid="uid://bgxg11jl7xfdn" path="res://Assets/tmp/dialog panel/panel.png" id="1_vksa7"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b4jn4"]
 texture = ExtResource("1_vksa7")

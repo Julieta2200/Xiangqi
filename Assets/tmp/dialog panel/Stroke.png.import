@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ds8kqvhltuqbl"
-path="res://.godot/imported/images.png-e89c797cddb22ebdaae1d048c18396a9.ctex"
+uid="uid://b0mpekfsvk71x"
+path="res://.godot/imported/Stroke.png-e45fce636755751244e4807f61f004b4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/images.png"
-dest_files=["res://.godot/imported/images.png-e89c797cddb22ebdaae1d048c18396a9.ctex"]
+source_file="res://Assets/tmp/dialog panel/Stroke.png"
+dest_files=["res://.godot/imported/Stroke.png-e45fce636755751244e4807f61f004b4.ctex"]
 
 [params]
 

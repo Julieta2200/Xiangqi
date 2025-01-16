@@ -1,7 +1,7 @@
 extends Figure
 
-@onready var red_sprite = load("res://Assets/soldier_red.png")
-@onready var black_sprite = load("res://Assets/soldier_black.png")
+@onready var red_sprite = load("res://Assets/tmp/soldier_red.png")
+@onready var black_sprite = load("res://Assets/tmp/soldier_black.png")
 
 func _ready():
 	if team == Board.team.Red:

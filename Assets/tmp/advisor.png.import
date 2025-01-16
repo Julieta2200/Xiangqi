@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2brododo4n7x"
-path="res://.godot/imported/advisor_red.png-457af32a2c9b94e3d144ac0895b83f8a.ctex"
+uid="uid://oeb64f0de7oq"
+path="res://.godot/imported/advisor.png-262e5828913a496808ccc503cb56e4a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/advisor_red.png"
-dest_files=["res://.godot/imported/advisor_red.png-457af32a2c9b94e3d144ac0895b83f8a.ctex"]
+source_file="res://Assets/tmp/advisor.png"
+dest_files=["res://.godot/imported/advisor.png-262e5828913a496808ccc503cb56e4a2.ctex"]
 
 [params]
 

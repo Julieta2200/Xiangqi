@@ -12,7 +12,6 @@ script = ExtResource("1_gjhma")
 
 [node name="Board" parent="." instance=ExtResource("1_p5qvv")]
 unique_name_in_owner = true
-position = Vector2(534, 361)
 
 [node name="General" parent="." instance=ExtResource("2_on4nd")]
 

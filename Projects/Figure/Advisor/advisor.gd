@@ -1,7 +1,7 @@
 extends Figure
 
-@onready var red_sprite = load("res://Assets/advisor_red.png")
-@onready var black_sprite = load("res://Assets/advisor.png")
+@onready var red_sprite = load("res://Assets/tmp/advisor_red.png")
+@onready var black_sprite = load("res://Assets/tmp/advisor.png")
 
 const directions: Array[Vector2] = [
 		Vector2(-1, -1),

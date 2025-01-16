@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0mpekfsvk71x"
-path="res://.godot/imported/Stroke.png-3512e59a78e8affd211fbddcd59ee1f6.ctex"
+uid="uid://d067h7qleds1f"
+path="res://.godot/imported/circle.png-a7872d38133024562204793c8ba698f4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/dialog panel/Stroke.png"
-dest_files=["res://.godot/imported/Stroke.png-3512e59a78e8affd211fbddcd59ee1f6.ctex"]
+source_file="res://Assets/tmp/circle.png"
+dest_files=["res://.godot/imported/circle.png-a7872d38133024562204793c8ba698f4.ctex"]
 
 [params]
 

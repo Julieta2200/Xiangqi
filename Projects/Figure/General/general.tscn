@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://ci58kdlspkg5f"]
 
-[ext_resource type="Texture2D" uid="uid://ck2mqlktkm16u" path="res://Assets/general.png" id="1_q565f"]
 [ext_resource type="Script" path="res://Projects/Figure/General/general.gd" id="1_tq0kb"]
-[ext_resource type="Texture2D" uid="uid://bh7qd5bwgot0t" path="res://Assets/download-removebg-preview (6).png" id="3_sgc8h"]
+[ext_resource type="Texture2D" uid="uid://ck2mqlktkm16u" path="res://Assets/tmp/general.png" id="2_fldvl"]
+[ext_resource type="Texture2D" uid="uid://bh7qd5bwgot0t" path="res://Assets/tmp/download-removebg-preview (6).png" id="3_ub0ik"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m7pdm"]
 radius = 110.0
@@ -13,7 +13,7 @@ script = ExtResource("1_tq0kb")
 team = 1
 
 [node name="General" type="Sprite2D" parent="."]
-texture = ExtResource("1_q565f")
+texture = ExtResource("2_fldvl")
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -23,7 +23,7 @@ shape = SubResource("CircleShape2D_m7pdm")
 [node name="highlight" type="Sprite2D" parent="."]
 visible = false
 scale = Vector2(1.6, 1.6)
-texture = ExtResource("3_sgc8h")
+texture = ExtResource("3_ub0ik")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_mouse_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]

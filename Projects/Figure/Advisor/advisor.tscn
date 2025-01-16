@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dyup75neubts"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Advisor/advisor.gd" id="1_fdb5m"]
-[ext_resource type="Texture2D" uid="uid://d2brododo4n7x" path="res://Assets/advisor_red.png" id="2_uvdp8"]
-[ext_resource type="Texture2D" uid="uid://bh7qd5bwgot0t" path="res://Assets/download-removebg-preview (6).png" id="3_82sa8"]
+[ext_resource type="Texture2D" uid="uid://d2brododo4n7x" path="res://Assets/tmp/advisor_red.png" id="2_uvdp8"]
+[ext_resource type="Texture2D" uid="uid://bh7qd5bwgot0t" path="res://Assets/tmp/download-removebg-preview (6).png" id="3_82sa8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m7pdm"]
 radius = 110.0

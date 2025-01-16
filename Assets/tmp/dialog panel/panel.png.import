@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxwsfmx6rf03l"
-path="res://.godot/imported/soldier_red.png-7d944fe3477e525000f45a0297b9757e.ctex"
+uid="uid://bgxg11jl7xfdn"
+path="res://.godot/imported/panel.png-6618bea973343e2fa64ebd8262925a4b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/soldier_red.png"
-dest_files=["res://.godot/imported/soldier_red.png-7d944fe3477e525000f45a0297b9757e.ctex"]
+source_file="res://Assets/tmp/dialog panel/panel.png"
+dest_files=["res://.godot/imported/panel.png-6618bea973343e2fa64ebd8262925a4b.ctex"]
 
 [params]
 

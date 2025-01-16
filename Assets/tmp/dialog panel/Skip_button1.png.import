@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cecucdwvh5tjf"
-path="res://.godot/imported/soldier_black.png-08f31b799ab822a79da598cc03fb0c90.ctex"
+uid="uid://bru0wsx8qvmhw"
+path="res://.godot/imported/Skip_button1.png-05bf587541b1f6b8b11fbae7af5c0a5e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/soldier_black.png"
-dest_files=["res://.godot/imported/soldier_black.png-08f31b799ab822a79da598cc03fb0c90.ctex"]
+source_file="res://Assets/tmp/dialog panel/Skip_button1.png"
+dest_files=["res://.godot/imported/Skip_button1.png-05bf587541b1f6b8b11fbae7af5c0a5e.ctex"]
 
 [params]
 
