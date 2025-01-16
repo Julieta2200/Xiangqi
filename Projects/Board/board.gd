@@ -10,7 +10,6 @@ var selected_figure: Figure
 var turn: team
 
 func _ready():
-	%Dialog.appear("click on any red figure and make a move")
 	turn = team.Red
 	for i in range(board_rows):
 		markers.append(get_node("Markers/" + str(i+1)).get_children())
@@ -38,7 +37,6 @@ func move(marker):
 		turn = team.Red
 	
 	calculate_moves()
-	%Dialog.disappear()
 
 func calculate_moves():
 	for pos in state:
