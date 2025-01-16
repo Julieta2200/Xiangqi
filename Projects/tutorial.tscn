@@ -1,16 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://cdh4jiiak0myi"]
+[gd_scene load_steps=7 format=3 uid="uid://cdh4jiiak0myi"]
 
 [ext_resource type="Script" path="res://Projects/tutorial.gd" id="1_gjhma"]
 [ext_resource type="PackedScene" uid="uid://dpyrcsgpodbx7" path="res://Projects/Board/board.tscn" id="1_p5qvv"]
 [ext_resource type="PackedScene" uid="uid://ci58kdlspkg5f" path="res://Projects/Figure/General/general.tscn" id="2_on4nd"]
 [ext_resource type="PackedScene" uid="uid://dyup75neubts" path="res://Projects/Figure/Advisor/advisor.tscn" id="4_i6iqw"]
 [ext_resource type="PackedScene" uid="uid://gu84kdi4y675" path="res://Projects/Figure/Soldier/soldier.tscn" id="5_j1vxl"]
+[ext_resource type="PackedScene" uid="uid://bkqlg03rv0gyo" path="res://Projects/Dialog/dialog.tscn" id="6_3010k"]
 
 [node name="Tutorial" type="Node2D"]
 script = ExtResource("1_gjhma")
 
 [node name="Board" parent="." instance=ExtResource("1_p5qvv")]
 unique_name_in_owner = true
+position = Vector2(534, 361)
 
 [node name="General" parent="." instance=ExtResource("2_on4nd")]
 
@@ -30,3 +32,9 @@ type = 2
 [node name="Soldier2" parent="." instance=ExtResource("5_j1vxl")]
 team = 2
 type = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Dialog" parent="CanvasLayer" instance=ExtResource("6_3010k")]
+unique_name_in_owner = true
+mouse_filter = 1
