@@ -13,22 +13,28 @@ script = ExtResource("1_gjhma")
 [node name="Board" parent="." instance=ExtResource("1_p5qvv")]
 unique_name_in_owner = true
 
-[node name="General" parent="." instance=ExtResource("2_on4nd")]
+[node name="GeneralRed" parent="." instance=ExtResource("2_on4nd")]
 
-[node name="General2" parent="." instance=ExtResource("2_on4nd")]
+[node name="GeneralBlack" parent="." instance=ExtResource("2_on4nd")]
 team = 2
 
-[node name="Advisor" parent="." instance=ExtResource("4_i6iqw")]
+[node name="AdvisorRed1" parent="." instance=ExtResource("4_i6iqw")]
 team = 1
 
-[node name="Advisor2" parent="." instance=ExtResource("4_i6iqw")]
+[node name="AdvisorRed2" parent="." instance=ExtResource("4_i6iqw")]
+team = 1
+
+[node name="AdvisorBlack1" parent="." instance=ExtResource("4_i6iqw")]
 team = 2
 
-[node name="Soldier" parent="." instance=ExtResource("5_j1vxl")]
+[node name="AdvisorBlack2" parent="." instance=ExtResource("4_i6iqw")]
+team = 2
+
+[node name="SoldierRed1" parent="." instance=ExtResource("5_j1vxl")]
 team = 1
 type = 2
 
-[node name="Soldier2" parent="." instance=ExtResource("5_j1vxl")]
+[node name="SoldierBlack1" parent="." instance=ExtResource("5_j1vxl")]
 team = 2
 type = 2
 

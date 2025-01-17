@@ -1,6 +1,6 @@
 class_name Figure extends Node2D
 
-@export var team : int
+@export var team : Board.team
 @export var type : Types
 
 enum Types {General, Advisor, Soldier}
@@ -38,7 +38,8 @@ func _on_mouse_event(viewport, event, shape_idx):
 		highlight_moves()
 	
 func _on_area_2d_mouse_entered():
-	$highlight.visible = true
+	if team == %Board.turn:
+		$highlight.visible = true
 
 func _on_area_2d_mouse_exited():
 	$highlight.visible = false
