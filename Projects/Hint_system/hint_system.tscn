@@ -1,0 +1,130 @@
+[gd_scene load_steps=12 format=3 uid="uid://cnou84ayvfl5"]
+
+[ext_resource type="Texture2D" uid="uid://bgxg11jl7xfdn" path="res://Assets/tmp/dialog panel/panel.png" id="1_371t7"]
+[ext_resource type="Script" path="res://Projects/Hint_system/hint_system.gd" id="1_y1fqc"]
+[ext_resource type="FontFile" uid="uid://d1cg0l42tlo2l" path="res://Assets/tmp/hint_system_ui/8-bit-fortress (1).ttf" id="3_jvq78"]
+[ext_resource type="Texture2D" uid="uid://e7ljablptty6" path="res://Assets/tmp/hint_system_ui/general_move.png" id="3_ppdm4"]
+[ext_resource type="Texture2D" uid="uid://cm0618al0n8cj" path="res://Assets/tmp/hint_system_ui/Button(Normal).png" id="4_8pu6b"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1x66v"]
+texture = ExtResource("4_8pu6b")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q4mvm"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t7qvc"]
+
+[sub_resource type="Animation" id="Animation_y2x41"]
+resource_name = "write_text"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_pwe5f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f2lq4"]
+_data = {
+"RESET": SubResource("Animation_pwe5f"),
+"write_text": SubResource("Animation_y2x41")
+}
+
+[node name="Hint_system" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y1fqc")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="TextureRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -280.0
+offset_right = 400.0
+offset_bottom = 280.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_371t7")
+
+[node name="Hint_texture" type="TextureRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -345.0
+offset_top = -192.0
+offset_right = -78.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_ppdm4")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Background"]
+layout_mode = 0
+offset_left = 517.0
+offset_top = 283.0
+offset_right = 867.0
+offset_bottom = 533.0
+theme_override_fonts/normal_font = ExtResource("3_jvq78")
+theme_override_font_sizes/normal_font_size = 21
+text = "Xiangqi has often been described as a highly tactical game. The only way to play Xiangqi well is to have a sound understanding of the tactics that can be employed to realize a strategy."
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Ok_button" type="Button" parent="Background"]
+layout_mode = 0
+offset_left = 650.0
+offset_top = 602.0
+offset_right = 882.0
+offset_bottom = 670.0
+theme_override_fonts/font = ExtResource("3_jvq78")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxTexture_1x66v")
+theme_override_styles/hover = SubResource("StyleBoxTexture_q4mvm")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_t7qvc")
+text = "OK"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Background"]
+libraries = {
+"": SubResource("AnimationLibrary_f2lq4")
+}
+
+[connection signal="pressed" from="Background/Ok_button" to="." method="_on_ok_button_pressed"]

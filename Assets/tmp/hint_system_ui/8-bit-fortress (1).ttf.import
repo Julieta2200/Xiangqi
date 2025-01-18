@@ -1,0 +1,33 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://d1cg0l42tlo2l"
+path="res://.godot/imported/8-bit-fortress (1).ttf-7ca1ccd2a4fe9b145ff76fd7253809d8.fontdata"
+
+[deps]
+
+source_file="res://Assets/tmp/hint_system_ui/8-bit-fortress (1).ttf"
+dest_files=["res://.godot/imported/8-bit-fortress (1).ttf-7ca1ccd2a4fe9b145ff76fd7253809d8.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=1
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[]
+language_support={}
+script_support={}
+opentype_features={}
