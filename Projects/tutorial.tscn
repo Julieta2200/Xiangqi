@@ -1,43 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://cdh4jiiak0myi"]
+[gd_scene load_steps=6 format=3 uid="uid://cdh4jiiak0myi"]
 
 [ext_resource type="Script" path="res://Projects/tutorial.gd" id="1_gjhma"]
 [ext_resource type="PackedScene" uid="uid://dpyrcsgpodbx7" path="res://Projects/Board/board.tscn" id="1_p5qvv"]
-[ext_resource type="PackedScene" uid="uid://ci58kdlspkg5f" path="res://Projects/Figure/General/general.tscn" id="2_on4nd"]
-[ext_resource type="PackedScene" uid="uid://dyup75neubts" path="res://Projects/Figure/Advisor/advisor.tscn" id="4_i6iqw"]
-[ext_resource type="PackedScene" uid="uid://gu84kdi4y675" path="res://Projects/Figure/Soldier/soldier.tscn" id="5_j1vxl"]
 [ext_resource type="PackedScene" uid="uid://bkqlg03rv0gyo" path="res://Projects/Dialog/dialog.tscn" id="6_3010k"]
 [ext_resource type="PackedScene" uid="uid://cnou84ayvfl5" path="res://Projects/Hint_system/hint_system.tscn" id="7_0vtce"]
+[ext_resource type="Script" path="res://Projects/tutorial_engine.gd" id="8_y6neb"]
 
 [node name="Tutorial" type="Node2D"]
 script = ExtResource("1_gjhma")
 
 [node name="Board" parent="." instance=ExtResource("1_p5qvv")]
 unique_name_in_owner = true
-
-[node name="GeneralRed" parent="." instance=ExtResource("2_on4nd")]
-
-[node name="GeneralBlack" parent="." instance=ExtResource("2_on4nd")]
-team = 2
-
-[node name="AdvisorRed1" parent="." instance=ExtResource("4_i6iqw")]
-team = 1
-
-[node name="AdvisorRed2" parent="." instance=ExtResource("4_i6iqw")]
-team = 1
-
-[node name="AdvisorBlack1" parent="." instance=ExtResource("4_i6iqw")]
-team = 2
-
-[node name="AdvisorBlack2" parent="." instance=ExtResource("4_i6iqw")]
-team = 2
-
-[node name="SoldierRed1" parent="." instance=ExtResource("5_j1vxl")]
-team = 1
-type = 2
-
-[node name="SoldierBlack1" parent="." instance=ExtResource("5_j1vxl")]
-team = 2
-type = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -48,3 +21,6 @@ mouse_filter = 1
 [node name="Hint_system" parent="CanvasLayer" instance=ExtResource("7_0vtce")]
 unique_name_in_owner = true
 visible = false
+
+[node name="tutorial_engine" type="Node2D" parent="."]
+script = ExtResource("8_y6neb")
