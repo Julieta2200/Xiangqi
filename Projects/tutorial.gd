@@ -54,7 +54,6 @@ func _ready():
 	}
 	
 	%Board.create_state(state)
-	%Board.calculate_moves()
 	soldier_movement_hint()
 
 
@@ -79,4 +78,19 @@ func computer_move():
 			%Board.state[Vector2(5,0)].active = true
 			generals_facing_hint()
 		3:
-			%Dialog.appear("Move advisor from the danger")
+			%Dialog.appear("Your soldier is under attack, but you can attack first.")
+		4:
+			if %Board.state[Vector2(6,5)] == null:
+				%Dialog.appear("You lost your soldier, try again.")
+				await get_tree().create_timer(1).timeout
+				%Board.load_move(3) 
+				return
+			
+			%Dialog.appear("Your advisor is under attack, move him away from danger.")
+		5:
+			var advisors: Array[Figure] = %Board.get_figures(Board.team.Red, Figure.Types.Advisor)
+			if advisors.size() < 2:
+				%Dialog.appear("You lost your advisor, try again.")
+				await get_tree().create_timer(1).timeout
+				%Board.load_move(4)
+			%Dialog.appear("General is under attack, but he can protect himself.")

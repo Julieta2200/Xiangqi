@@ -6,6 +6,7 @@ enum team {Red = 1, Black = 2}
 
 var markers : Dictionary
 var state : Dictionary
+var save_states: Dictionary
 var selected_figure: Figure
 var turn: team:
 	set(t):
@@ -41,6 +42,11 @@ func initialize_board():
 			state[Vector2(col,row)] = null
 
 func create_state(new_state: Dictionary) -> void:
+	for key in state:
+		if state[key] != null:
+			state[key].delete()
+			state[key] = null
+	
 	for key in new_state:
 		var figure = figure_scenes[new_state[key].type].instantiate()
 		figure.board = self
@@ -49,6 +55,24 @@ func create_state(new_state: Dictionary) -> void:
 		figure.active = !new_state[key].has("inactive")
 		
 		add_child(figure)
+	calculate_moves()
+
+func generate_save_state() -> void:
+	var generated_state: Dictionary
+	for pos in state:
+		if state[pos] != null:
+			generated_state[pos] = {
+				"type": state[pos].type,
+				"team": state[pos].team
+			}
+			if !state[pos].active:
+				generated_state[pos].inactive = true
+	save_states[move_number] = generated_state
+
+func load_move(move: int) -> void:
+	move_number = move
+	turn = team.Red
+	create_state(save_states[move])
 
 func move(marker):
 	unhighlight_markers()
@@ -67,6 +91,7 @@ func computer_move(pos: Vector2, new_pos: Vector2):
 		state[new_pos].delete()
 	state[pos].board_position = new_pos
 	turn = team.Red
+	generate_save_state()
 
 func calculate_moves():
 	for pos in state:
@@ -128,5 +153,12 @@ func pawn_check(state: Dictionary, generals: Dictionary) -> bool:
 	return false
 
 
-
+func get_figures(t: team, type: Figure.Types) -> Array[Figure]:
+	var figures: Array[Figure] = []
+	for pos in state:
+		if state[pos] != null:
+			if state[pos].type == t and state[pos].team == t:
+				figures.append(state[pos])
+	
+	return figures
 

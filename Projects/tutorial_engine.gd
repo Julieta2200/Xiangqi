@@ -10,8 +10,23 @@ func make_move() -> void:
 		3:
 			%Board.computer_move(Vector2(3,9), Vector2(4,8))
 		4:
+			if %Board.state[Vector2(6,4)] != null:
+				%Board.computer_move(Vector2(6,5), Vector2(6,4))
+				return
+			
 			if %Board.state[Vector2(3,0)] == null:
 				%Board.computer_move(Vector2(3,2), Vector2(3,1))
 			else:
 				%Board.computer_move(Vector2(5,2), Vector2(5,1))
-				
+		5:
+			if %Board.state[Vector2(4,1)] != null:
+				if %Board.state[Vector2(3,1)] != null:
+					%Board.computer_move(Vector2(3,1), Vector2(4,1))
+				else:
+					%Board.computer_move(Vector2(5,1), Vector2(4,1))
+				return
+			if %Board.state[Vector2(3,1)] != null:
+				%Board.computer_move(Vector2(3,1), Vector2(3,0))
+			else:
+				%Board.computer_move(Vector2(5,1), Vector2(5,0))
+			

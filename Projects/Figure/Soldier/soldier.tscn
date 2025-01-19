@@ -10,6 +10,7 @@ radius = 110.0
 [node name="Soldier" type="Node2D"]
 scale = Vector2(0.3, 0.3)
 script = ExtResource("1_3u3jq")
+type = 2
 
 [node name="Soldier" type="Sprite2D" parent="."]
 texture = ExtResource("1_pvnaq")

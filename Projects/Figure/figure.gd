@@ -35,7 +35,7 @@ func highlight_moves() -> void:
 		board.markers[move].highlight()
 
 func _on_mouse_event(viewport, event, shape_idx):
-	if Input.is_action_pressed("click") and board.turn == team and active:
+	if Input.is_action_pressed("click") and board.turn == team and team == Board.team.Red and active:
 		if board.selected_figure != null:
 			board.selected_figure.delete_highlight()
 		board.selected_figure = self
