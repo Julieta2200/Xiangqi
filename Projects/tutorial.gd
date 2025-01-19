@@ -1,7 +1,5 @@
 extends Node2D
 
-@onready var general_movement_hint_texture = load("res://Assets/tmp/hint_system_ui/generalmove.png")
-
 func _ready():
 	var state: Dictionary = {
 		Vector2(4, 1): {

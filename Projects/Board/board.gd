@@ -162,3 +162,11 @@ func get_figures(t: team, type: Figure.Types) -> Array[Figure]:
 	
 	return figures
 
+func get_figures_by_team(t: team) -> Array[Figure]:
+	var figures: Array[Figure] = []
+	for pos in state:
+		if state[pos] != null:
+			if state[pos].team == t:
+				figures.append(state[pos])
+	
+	return figures
