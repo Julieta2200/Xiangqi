@@ -72,11 +72,11 @@ func computer_move():
 	await get_tree().create_timer(1).timeout 
 	match %Board.move_number:
 		1:
-			$GeneralRed.active = true
+			%Board.state[Vector2(4,1)].active = true
 			check_hint()
 		2:
-			$AdvisorRed1.active = true
-			$AdvisorRed2.active = true
+			%Board.state[Vector2(3,0)].active = true
+			%Board.state[Vector2(5,0)].active = true
 			generals_facing_hint()
 		3:
 			%Dialog.appear("Move advisor from the danger")
