@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hnn3iyrvge2r"
-path="res://.godot/imported/generalmove.png-3d363af16b5689c0971dd00885cdd00a.ctex"
+uid="uid://cb4wji41m18vr"
+path="res://.godot/imported/ganeral_facing.png-5b823e976ca04da8dc305cf99e35663b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/tmp/hint_system_ui/generalmove.png"
-dest_files=["res://.godot/imported/generalmove.png-3d363af16b5689c0971dd00885cdd00a.ctex"]
+source_file="res://Assets/tmp/hint_system_ui/ganeral_facing.png"
+dest_files=["res://.godot/imported/ganeral_facing.png-5b823e976ca04da8dc305cf99e35663b.ctex"]
 
 [params]
 
