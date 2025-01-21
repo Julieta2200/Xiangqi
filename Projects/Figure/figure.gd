@@ -2,6 +2,7 @@ class_name Figure extends Node2D
 
 @export var team : Board.team
 @export var type : Types
+@export var value: float
 
 enum Types {General, Advisor, Soldier}
 
@@ -21,14 +22,18 @@ var active: bool =  true
 
 
 func calculate_moves() -> void:
-	pass
+	valid_moves = get_moves(board.state, board_position)
 	
+func get_moves(state: Dictionary, current_position: Vector2) -> Array[Vector2]:
+	return []
+
 func in_boundaries(pos: Vector2) -> bool:
 	return pos.x >= boundaries[team].x.x and pos.x <= boundaries[team].x.y \
 		and pos.y >= boundaries[team].y.x and pos.y <= boundaries[team].y.y
 
-func move_or_capture(pos: Vector2) -> bool:
-	return board.state[pos] == null || board.state[pos].team != team 
+func move_or_capture(pos: Vector2, state: Dictionary) -> bool:
+	return state[pos] == null || state[pos].team != team 
+
 
 func highlight_moves() -> void:
 	for move in valid_moves:

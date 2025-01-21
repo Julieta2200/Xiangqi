@@ -44,6 +44,7 @@ func _ready():
 	
 	%Board.create_state(state)
 	figure_count = %Board.get_figures_by_team(Board.team.Red).size()
+	
 
 func computer_move():
 	await $engine.make_move()

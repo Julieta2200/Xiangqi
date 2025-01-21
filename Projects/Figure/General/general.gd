@@ -27,11 +27,13 @@ func _ready():
 	}
 
 
-func calculate_moves() -> void:
-	valid_moves = []
+func get_moves(state: Dictionary, current_position: Vector2) -> Array[Vector2]:
+	var moves: Array[Vector2] = []
 	
 	for dir in directions:
-		var new_pos = board_position + dir
-		if in_boundaries(new_pos) and move_or_capture(new_pos):
-			if board.valid_state(board_position, new_pos):
-				valid_moves.append(new_pos)
+		var new_pos = current_position + dir
+		if in_boundaries(new_pos) and move_or_capture(new_pos,state):
+			if board.valid_future_state(board_position, new_pos, state):
+				moves.append(new_pos)
+	
+	return moves

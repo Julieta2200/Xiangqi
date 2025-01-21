@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://4pdr55kamk24"]
+[gd_scene load_steps=7 format=3 uid="uid://4pdr55kamk24"]
 
 [ext_resource type="Script" path="res://Projects/puzzles/puzzle1.gd" id="1_rq8uq"]
 [ext_resource type="PackedScene" uid="uid://dpyrcsgpodbx7" path="res://Projects/Board/board.tscn" id="2_v3buy"]
 [ext_resource type="PackedScene" uid="uid://bkqlg03rv0gyo" path="res://Projects/Dialog/dialog.tscn" id="3_qfftj"]
 [ext_resource type="PackedScene" uid="uid://cnou84ayvfl5" path="res://Projects/Hint_system/hint_system.tscn" id="4_oewca"]
 [ext_resource type="Script" path="res://Projects/Engines/capture_first_engine.gd" id="5_so7i5"]
+[ext_resource type="Script" path="res://Projects/evaluation.gd" id="6_j3qhf"]
 
 [node name="Puzzle1" type="Node2D"]
 script = ExtResource("1_rq8uq")
@@ -24,3 +25,7 @@ visible = false
 
 [node name="engine" type="Node2D" parent="."]
 script = ExtResource("5_so7i5")
+
+[node name="Evaluation" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("6_j3qhf")

@@ -10,7 +10,9 @@ radius = 110.0
 [node name="Advisor" type="Node2D"]
 scale = Vector2(0.3, 0.3)
 script = ExtResource("1_fdb5m")
+team = null
 type = 1
+value = 2.0
 
 [node name="Advisor" type="Sprite2D" parent="."]
 scale = Vector2(1.8, 1.8)
