@@ -13,6 +13,7 @@ script = ExtResource("1_y3i0m")
 
 [node name="highlight" type="Sprite2D" parent="."]
 visible = false
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_5l7c3")
 
 [node name="Area2D" type="Area2D" parent="."]

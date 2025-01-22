@@ -21,7 +21,8 @@ var move_number: int = 0
 var figure_scenes: Dictionary = {
 	Figure.Types.General: preload("res://Projects/Figure/General/general.tscn"),
 	Figure.Types.Advisor: preload("res://Projects/Figure/Advisor/advisor.tscn"),
-	Figure.Types.Soldier: preload("res://Projects/Figure/Soldier/soldier.tscn")
+	Figure.Types.Soldier: preload("res://Projects/Figure/Soldier/soldier.tscn"),
+	Figure.Types.Elephant: preload("res://Projects/Figure/Elephant/elephant.tscn")
 }
 
 func _ready():

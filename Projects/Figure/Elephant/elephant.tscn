@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1afd6nt6mpal"]
+
+[ext_resource type="Script" path="res://Projects/Figure/Elephant/elephant.gd" id="1_64lwk"]
+[ext_resource type="Texture2D" uid="uid://d2brododo4n7x" path="res://Assets/tmp/advisor_red.png" id="2_ta0wg"]
+[ext_resource type="Texture2D" uid="uid://bh7qd5bwgot0t" path="res://Assets/tmp/download-removebg-preview (6).png" id="3_jw54x"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m7pdm"]
+radius = 110.0
+
+[node name="Elephant" type="Node2D"]
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_64lwk")
+type = 3
+value = 2.0
+
+[node name="Elephant" type="Sprite2D" parent="."]
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("2_ta0wg")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_m7pdm")
+
+[node name="highlight" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("3_jw54x")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_mouse_event" flags=18]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered" flags=18]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited" flags=18]

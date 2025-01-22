@@ -39,7 +39,7 @@ func _ready():
 		Vector2(3,9): {
 			"type": Figure.Types.Advisor,
 			"team": Board.team.Black
-		},
+		}
 	}
 	
 	%Board.create_state(state)
