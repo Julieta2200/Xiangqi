@@ -17,6 +17,7 @@ func make_move() -> void:
 				})
 	
 	if movable_figures.size() == 0:
+		get_tree().change_scene_to_file("res://Projects/Ui/Restart_game_ui.tscn")
 		print("lost")
 		return
 	

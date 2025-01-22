@@ -1,6 +1,6 @@
 extends Figure
 
-@onready var red_sprite = load("res://Assets/tmp/general.png")
+@onready var red_sprite = load("res://Assets/Characters/Ashes/Mini_Ashes/Mini_Ashes_Front.png")
 @onready var black_sprite = load("res://Assets/tmp/general_black.png")
 
 const directions: Array[Vector2] = [
@@ -13,6 +13,7 @@ const directions: Array[Vector2] = [
 func _ready():
 	if team == Board.team.Red:
 		$General.texture = red_sprite
+		$General.scale = Vector2(6.5,6.5)
 	else:
 		$General.texture = black_sprite
 	boundaries = {
