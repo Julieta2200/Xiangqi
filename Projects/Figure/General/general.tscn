@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://ci58kdlspkg5f"]
 
 [ext_resource type="Script" path="res://Projects/Figure/General/general.gd" id="1_tq0kb"]
-[ext_resource type="Texture2D" uid="uid://ck2mqlktkm16u" path="res://Assets/tmp/general.png" id="2_fldvl"]
+[ext_resource type="Texture2D" uid="uid://vvs4xqdwsrb3" path="res://Assets/Characters/Ashes/Mini_Ashes/Mini_Ashes_Front.png" id="2_hc2va"]
 [ext_resource type="Texture2D" uid="uid://bh7qd5bwgot0t" path="res://Assets/tmp/download-removebg-preview (6).png" id="3_ub0ik"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m7pdm"]
@@ -13,7 +13,8 @@ script = ExtResource("1_tq0kb")
 team = 1
 
 [node name="General" type="Sprite2D" parent="."]
-texture = ExtResource("2_fldvl")
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("2_hc2va")
 
 [node name="Area2D" type="Area2D" parent="."]
 

@@ -92,3 +92,5 @@ func computer_move():
 				await get_tree().create_timer(1).timeout
 				%Board.load_move(4)
 			%Dialog.appear("General is under attack, but he can protect himself.")
+		6:
+			get_tree().change_scene_to_file("res://Projects/puzzles/puzzle1.tscn")

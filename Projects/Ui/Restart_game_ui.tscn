@@ -1,0 +1,83 @@
+[gd_scene load_steps=6 format=3 uid="uid://d1xd1ht46vast"]
+
+[ext_resource type="Script" path="res://Projects/Ui/Restart_game_ui.gd" id="1_j6qk8"]
+[ext_resource type="Texture2D" uid="uid://bgxg11jl7xfdn" path="res://Assets/tmp/dialog panel/panel.png" id="2_ls1vf"]
+[ext_resource type="Texture2D" uid="uid://cm0618al0n8cj" path="res://Assets/tmp/hint_system_ui/Button(Normal).png" id="3_r01lp"]
+[ext_resource type="FontFile" uid="uid://d1cg0l42tlo2l" path="res://Assets/tmp/hint_system_ui/8-bit-fortress (1).ttf" id="4_gvms1"]
+[ext_resource type="Texture2D" uid="uid://bck6js35udna5" path="res://Assets/tmp/hint_system_ui/Button(hover).png" id="4_oy415"]
+
+[node name="Restart_game_ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j6qk8")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="TextureRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -280.0
+offset_right = 400.0
+offset_bottom = 280.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ls1vf")
+
+[node name="Restart_button" type="TextureButton" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = 33.0
+offset_right = -52.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4, 4)
+texture_normal = ExtResource("3_r01lp")
+texture_pressed = ExtResource("3_r01lp")
+texture_hover = ExtResource("4_oy415")
+
+[node name="Restart_label" type="Label" parent="Background/Restart_button"]
+offset_left = 8.5
+offset_top = 4.0
+offset_right = 50.5
+offset_bottom = 15.0
+theme_override_colors/font_color = Color(0.969137, 0.969137, 0.969137, 1)
+theme_override_fonts/font = ExtResource("4_gvms1")
+theme_override_font_sizes/font_size = 7
+text = "RESTART"
+
+[node name="Label" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 328.0
+offset_right = 893.0
+offset_bottom = 402.0
+theme_override_colors/font_color = Color(0.969137, 0.969137, 0.969137, 1)
+theme_override_fonts/font = ExtResource("4_gvms1")
+theme_override_font_sizes/font_size = 29
+text = "Great job
+You won, thank you for the game."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Background/Restart_button" to="." method="_on_play_button_pressed"]
