@@ -4,7 +4,7 @@ class_name Figure extends Node2D
 @export var type : Types
 @export var value: float
 
-enum Types {General, Advisor, Soldier, Elephant}
+enum Types {General, Advisor, Soldier, Elephant, Chariot}
 
 var boundaries: Dictionary
 var valid_moves: Array[Vector2] = []
