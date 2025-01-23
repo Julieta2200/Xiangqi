@@ -4,7 +4,7 @@ class_name Figure extends Node2D
 @export var type : Types
 @export var value: float
 
-@onready var highlight = $highlight
+@onready var highlight = $Eye
 
 enum Types {General, Advisor, Soldier, Elephant, Chariot}
 

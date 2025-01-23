@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Projects/Figure/Advisor/advisor.gd" id="1_fdb5m"]
 [ext_resource type="Texture2D" uid="uid://d2brododo4n7x" path="res://Assets/tmp/advisor_red.png" id="2_uvdp8"]
 [ext_resource type="Texture2D" uid="uid://bh7qd5bwgot0t" path="res://Assets/tmp/highlight.png" id="3_qu58g"]
-[ext_resource type="Texture2D" uid="uid://c5y4xagqr4wcu" path="res://Assets/tmp/green_circle.png" id="4_r00be"]
+[ext_resource type="Texture2D" uid="uid://dhtgu1fm8i1go" path="res://Assets/Characters/Advisor/eye.png" id="3_rvrcq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m7pdm"]
 radius = 110.0
@@ -11,7 +11,6 @@ radius = 110.0
 [node name="Advisor" type="Node2D"]
 scale = Vector2(0.3, 0.3)
 script = ExtResource("1_fdb5m")
-team = null
 type = 1
 value = 2.0
 
@@ -22,6 +21,7 @@ texture = ExtResource("2_uvdp8")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
 shape = SubResource("CircleShape2D_m7pdm")
 
 [node name="mouse_entered_highlight" type="Sprite2D" parent="."]
@@ -29,11 +29,11 @@ visible = false
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("3_qu58g")
 
-[node name="highlight" type="Sprite2D" parent="."]
+[node name="Eye" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(0, 3)
-scale = Vector2(0.9, 0.9)
-texture = ExtResource("4_r00be")
+position = Vector2(0, -170)
+scale = Vector2(6.5, 6.5)
+texture = ExtResource("3_rvrcq")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_mouse_event" flags=18]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered" flags=18]

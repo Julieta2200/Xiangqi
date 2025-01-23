@@ -1,6 +1,6 @@
 extends Figure
 
-@onready var red_sprite = load("res://Assets/tmp/advisor_red.png")
+@onready var red_sprite = load("res://Assets/Characters/Advisor/Raven.png")
 @onready var black_sprite = load("res://Assets/tmp/advisor.png")
 
 const directions: Array[Vector2] = [
@@ -13,6 +13,10 @@ const directions: Array[Vector2] = [
 func _ready():
 	if team == Board.team.Red:
 		$Advisor.texture = red_sprite
+		$Advisor.scale = Vector2(6.5,6.5)
+		$mouse_entered_highlight.scale = Vector2(1.8,1.8)
+		$Eye.position = Vector2(-50,-190)
+		$mouse_entered_highlight.position = Vector2(-50,-6.6)
 	else:
 		$Advisor.texture = black_sprite
 	boundaries = {

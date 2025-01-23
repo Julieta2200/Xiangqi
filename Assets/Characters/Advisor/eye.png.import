@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ck2fwyxdfcvbx"
-path="res://.godot/imported/Mini_Ashes_Back.png-44fb6e94e4d5a1be2e8f58788931f4c2.ctex"
+uid="uid://dhtgu1fm8i1go"
+path="res://.godot/imported/eye.png-c7bbc3fc1f2ee287239f2dc9da048a28.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/Ashes/Mini_Ashes/Mini_Ashes_Back.png"
-dest_files=["res://.godot/imported/Mini_Ashes_Back.png-44fb6e94e4d5a1be2e8f58788931f4c2.ctex"]
+source_file="res://Assets/Characters/Advisor/eye.png"
+dest_files=["res://.godot/imported/eye.png-c7bbc3fc1f2ee287239f2dc9da048a28.ctex"]
 
 [params]
 

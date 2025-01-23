@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vvs4xqdwsrb3"
-path="res://.godot/imported/Mini_Ashes_Front.png-17859ef89bd3e54e7239cd94ee458f59.ctex"
+uid="uid://cwxsmnm40h6nk"
+path="res://.godot/imported/Raven.png-39bab4e8fd41431958661fcd7deba160.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/Ashes/Mini_Ashes/Mini_Ashes_Front.png"
-dest_files=["res://.godot/imported/Mini_Ashes_Front.png-17859ef89bd3e54e7239cd94ee458f59.ctex"]
+source_file="res://Assets/Characters/Advisor/Raven.png"
+dest_files=["res://.godot/imported/Raven.png-39bab4e8fd41431958661fcd7deba160.ctex"]
 
 [params]
 
