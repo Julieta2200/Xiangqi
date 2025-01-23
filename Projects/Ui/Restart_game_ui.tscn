@@ -57,6 +57,7 @@ texture_pressed = ExtResource("3_r01lp")
 texture_hover = ExtResource("4_oy415")
 
 [node name="Restart_label" type="Label" parent="Background/Restart_button"]
+layout_mode = 0
 offset_left = 8.5
 offset_top = 4.0
 offset_right = 50.5
