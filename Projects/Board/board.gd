@@ -81,6 +81,7 @@ func move(marker):
 	if state[marker.board_position] != null:
 		state[marker.board_position].delete()
 	selected_figure.board_position = marker.board_position
+	selected_figure.highlight.visible = false
 	
 	turn = team.Black
 

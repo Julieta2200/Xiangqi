@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dmwnirlmmbvk8"]
+[gd_scene load_steps=6 format=3 uid="uid://dmwnirlmmbvk8"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Chariot/chariot.gd" id="1_tha5r"]
 [ext_resource type="Texture2D" uid="uid://bvntmi43ujymc" path="res://Assets/tmp/chariot_black.png" id="2_lr7s8"]
-[ext_resource type="Texture2D" uid="uid://bh7qd5bwgot0t" path="res://Assets/tmp/download-removebg-preview (6).png" id="3_g755u"]
+[ext_resource type="Texture2D" uid="uid://bh7qd5bwgot0t" path="res://Assets/tmp/highlight.png" id="3_aq2hv"]
+[ext_resource type="Texture2D" uid="uid://c5y4xagqr4wcu" path="res://Assets/tmp/green_circle.png" id="4_htbvd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m7pdm"]
 radius = 110.0
@@ -22,10 +23,16 @@ texture = ExtResource("2_lr7s8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_m7pdm")
 
-[node name="highlight" type="Sprite2D" parent="."]
+[node name="mouse_entered_highlight" type="Sprite2D" parent="."]
 visible = false
 scale = Vector2(1.6, 1.6)
-texture = ExtResource("3_g755u")
+texture = ExtResource("3_aq2hv")
+
+[node name="highlight" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, 3)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("4_htbvd")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_mouse_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
