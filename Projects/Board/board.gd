@@ -23,7 +23,8 @@ var figure_scenes: Dictionary = {
 	Figure.Types.Advisor: preload("res://Projects/Figure/Advisor/advisor.tscn"),
 	Figure.Types.Soldier: preload("res://Projects/Figure/Soldier/soldier.tscn"),
 	Figure.Types.Elephant: preload("res://Projects/Figure/Elephant/elephant.tscn"),
-	Figure.Types.Chariot: preload("res://Projects/Figure/Chariot/chariot.tscn")
+	Figure.Types.Chariot: preload("res://Projects/Figure/Chariot/chariot.tscn"),
+	Figure.Types.Horse: preload("res://Projects/Figure/Horse/horse.tscn")
 }
 
 func _ready():
@@ -115,6 +116,10 @@ func valid_future_state(pos: Vector2, new_pos: Vector2, future_state: Dictionary
 		
 	if chariot_check(tmp_state, generals):
 		return false
+	
+	if horse_check(tmp_state, generals):
+		return false
+	
 	return true
 
 func get_generals(state: Dictionary) -> Dictionary:
@@ -186,6 +191,30 @@ func chariot_check(state: Dictionary, generals: Dictionary) -> bool:
 	
 	return false
 
+func horse_check(state: Dictionary, generals: Dictionary) -> bool:
+	var directions = [
+		{ "move": Vector2(-2, -1), "blocker": Vector2(-1, -1) },
+		{ "move": Vector2(-2, 1), "blocker": Vector2(-1, 1) },
+		{ "move": Vector2(2, -1), "blocker": Vector2(1, -1) },
+		{ "move": Vector2(2, 1), "blocker": Vector2(1, 1) },
+		{ "move": Vector2(-1, -2), "blocker": Vector2(-1, -1) },
+		{ "move": Vector2(1, -2), "blocker": Vector2(1, -1) },
+		{ "move": Vector2(-1, 2), "blocker": Vector2(-1, 1) },
+		{ "move": Vector2(1, 2), "blocker": Vector2(1, 1) }
+	]
+
+	for direction in directions:
+		var move_pos = generals[turn] + direction.move
+		var blocker_pos = generals[turn] + direction.blocker
+
+		if state.get(move_pos) != null and state[move_pos].type == Figure.Types.Horse \
+		 and state[move_pos].team != turn:
+			if state.has(blocker_pos) and state[blocker_pos] != null:
+				return false
+			else:
+				return true
+
+	return false
 
 func get_figures(t: team, type: Figure.Types) -> Array[Figure]:
 	var figures: Array[Figure] = []
