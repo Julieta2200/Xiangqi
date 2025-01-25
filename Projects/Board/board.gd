@@ -24,7 +24,8 @@ var figure_scenes: Dictionary = {
 	Figure.Types.Soldier: preload("res://Projects/Figure/Soldier/soldier.tscn"),
 	Figure.Types.Elephant: preload("res://Projects/Figure/Elephant/elephant.tscn"),
 	Figure.Types.Chariot: preload("res://Projects/Figure/Chariot/chariot.tscn"),
-	Figure.Types.Horse: preload("res://Projects/Figure/Horse/horse.tscn")
+	Figure.Types.Horse: preload("res://Projects/Figure/Horse/horse.tscn"),
+	Figure.Types.Cannon: preload("res://Projects/Figure/Cannon/cannon.tscn"),
 }
 
 func _ready():
@@ -119,6 +120,9 @@ func valid_future_state(pos: Vector2, new_pos: Vector2, future_state: Dictionary
 	
 	if horse_check(tmp_state, generals):
 		return false
+		
+	if cannon_check(tmp_state, generals):
+		return false
 	
 	return true
 
@@ -187,6 +191,38 @@ func chariot_check(state: Dictionary, generals: Dictionary) -> bool:
 				if state[check_pos].type == Figure.Types.Chariot and state[check_pos].team != turn:
 					return true 
 				break
+			check_pos += dir
+	
+	return false
+
+func cannon_check(state: Dictionary, generals: Dictionary) -> bool:
+	var directions = [
+		Vector2.LEFT,
+		Vector2.RIGHT
+	]
+	
+	match turn:
+		team.Red:
+			directions.append(Vector2(0, 1))
+		team.Black:
+			directions.append(Vector2(0, -1))
+
+	var boundaries = {
+			"y": Vector2(0,9),
+			"x": Vector2(0,8)
+		}
+
+	for dir in directions:
+		var have_anchor: bool
+		var check_pos = generals[turn] + dir
+		while check_pos.x >= boundaries["x"].x and check_pos.x <= boundaries["x"].y \
+		and check_pos.y >= boundaries["y"].x and check_pos.y <= boundaries["y"].y:
+			if state[check_pos] != null:
+				if !have_anchor:
+					have_anchor = true
+				else:
+					if state[check_pos].type == Figure.Types.Cannon and state[check_pos].team != turn:
+						return true
 			check_pos += dir
 	
 	return false

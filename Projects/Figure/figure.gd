@@ -6,7 +6,7 @@ class_name Figure extends Node2D
 
 @onready var highlight = $Eye
 
-enum Types {General, Advisor, Soldier, Elephant, Chariot, Horse}
+enum Types {General, Advisor, Soldier, Elephant, Chariot, Horse, Cannon}
 
 var boundaries: Dictionary
 var valid_moves: Array[Vector2] = []
