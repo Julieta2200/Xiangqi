@@ -10,7 +10,7 @@ func make_move() -> void:
 		if figure.valid_moves.size() > 0:
 			movable_figures.append(figure)
 		for move in figure.valid_moves:
-			if %Board.state[move] != null:
+			if %Board.state.has(move):
 				captures.append({
 					"pos": figure.board_position,
 					"new_pos": move

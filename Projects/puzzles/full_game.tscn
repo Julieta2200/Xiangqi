@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://dwiv3faeirmnl"]
+
+[ext_resource type="Script" path="res://Projects/puzzles/full_game.gd" id="1_vtml6"]
+[ext_resource type="PackedScene" uid="uid://dpyrcsgpodbx7" path="res://Projects/Board/board.tscn" id="2_f0l41"]
+[ext_resource type="PackedScene" uid="uid://bkqlg03rv0gyo" path="res://Projects/Dialog/dialog.tscn" id="3_hjban"]
+[ext_resource type="PackedScene" uid="uid://cnou84ayvfl5" path="res://Projects/Hint_system/hint_system.tscn" id="4_npqpr"]
+[ext_resource type="Script" path="res://Projects/Engines/evaluation_engine.gd" id="5_j70sx"]
+[ext_resource type="Script" path="res://Projects/evaluation.gd" id="6_v7aam"]
+
+[node name="FullGame" type="Node2D"]
+script = ExtResource("1_vtml6")
+
+[node name="Board" parent="." instance=ExtResource("2_f0l41")]
+unique_name_in_owner = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Dialog" parent="CanvasLayer" instance=ExtResource("3_hjban")]
+unique_name_in_owner = true
+mouse_filter = 1
+
+[node name="Hint_system" parent="CanvasLayer" instance=ExtResource("4_npqpr")]
+unique_name_in_owner = true
+visible = false
+
+[node name="engine" type="Node2D" parent="."]
+script = ExtResource("5_j70sx")
+
+[node name="Evaluation" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("6_v7aam")

@@ -13,9 +13,9 @@ var valid_moves: Array[Vector2] = []
 
 @onready var board: Board
 
-var board_position : Vector2:
+var board_position : Vector2 = Vector2(-1,-1):
 	set(p):
-		board.state[board_position] = null
+		board.state.erase(board_position)
 		board_position = p
 		self.global_position = board.markers[board_position].global_position
 		board.state[board_position] = self
@@ -33,7 +33,7 @@ func in_boundaries(pos: Vector2) -> bool:
 		and pos.y >= boundaries[team].y.x and pos.y <= boundaries[team].y.y
 
 func move_or_capture(pos: Vector2, state: Dictionary) -> bool:
-	return state[pos] == null || state[pos].team != team 
+	return !state.has(pos) || state[pos].team != team 
 
 
 func highlight_moves() -> void:

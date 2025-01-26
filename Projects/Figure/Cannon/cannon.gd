@@ -34,14 +34,14 @@ func get_moves(state: Dictionary, current_position: Vector2) -> Array[Vector2]:
 		var new_pos = current_position + dir
 		var have_anchor: bool = false
 		while in_boundaries(new_pos):
-			if state[new_pos] == null and !have_anchor:
-				if board.valid_future_state(board_position, new_pos, state):
+			if !state.has(new_pos) and !have_anchor:
+				if board.valid_future_state(current_position, new_pos, state):
 					moves.append(new_pos)
 			elif !have_anchor:
 				have_anchor = true
-			elif state[new_pos] != null:
+			elif state.has(new_pos):
 				if state[new_pos].team != team:
-					if board.valid_future_state(board_position, new_pos, state):
+					if board.valid_future_state(current_position, new_pos, state):
 						moves.append(new_pos)
 				break
 			new_pos += dir
