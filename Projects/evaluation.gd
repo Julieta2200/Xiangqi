@@ -3,15 +3,16 @@ class_name Evaluation extends Node2D
 var state_hashes: Dictionary = {}
 var states: Array[Dictionary] = []
 var results: Array[Dictionary]
+var evaluations: Array[Dictionary]
+var mutex: Mutex = Mutex.new()
 
-var task_id: int
 
-func _process(delta):
-	if task_id > 0:
-		print(WorkerThreadPool.is_group_task_completed(task_id))
+var t: int
 
 func evaluate_multithread(state: Dictionary, base_eval: float, turn: Board.team, depth: int):
+	t = Time.get_unix_time_from_system()
 	states = []
+	evaluations = []
 	for pos in state:
 		if state[pos].team == turn:
 			var moves: Array[Vector2] = state[pos].get_moves(state, pos)
@@ -27,22 +28,40 @@ func evaluate_multithread(state: Dictionary, base_eval: float, turn: Board.team,
 				tmp_state.erase(pos)
 				states.append({"state": tmp_state, "turn": next_turn(turn), "base_eval": new_base_eval, "depth": depth - 1})
 	
-	task_id = WorkerThreadPool.add_group_task(evaluate_worker_job, states.size())
+	var task_id = WorkerThreadPool.add_group_task(evaluate_chunk, states.size())
+	
+	WorkerThreadPool.wait_for_group_task_completion(task_id)
+	print(Time.get_unix_time_from_system() - t)
+
+func evaluate_chunk(index: int):
+	var result = evaluate(states[index].state, states[index].base_eval, states[index].turn, states[index].depth)
+	evaluations.append(result)
 
 
-func evaluate_worker_job(index: int):
-	var res: Dictionary = evaluate(states[index].state, states[index].base_eval, states[index].turn, states[index].depth)
-#	results.append(res)
-#	print(res)
 
-func evaluate(state: Dictionary, base_eval: float, turn: Board.team, depth: int, upper: bool = false) -> Dictionary:
+func split_array(arr: Array, num_parts: int) -> Array:
+	var result = []
+	var part_size = int(arr.size() / num_parts)
+	var remainder = arr.size() % num_parts
+	
+	var start_idx = 0
+	for i in range(num_parts):
+		var end_idx = start_idx + part_size + (1 if i < remainder else 0)
+		result.append(arr.slice(start_idx, end_idx))
+		start_idx = end_idx
+	
+	return result
+
+func evaluate(state: Dictionary, base_eval: float, turn: Board.team, depth: int, upper: bool = false):
 	var best_move: Dictionary = {
 		"evaluation": -100
 	}
 	var evaluation: float
 	for pos in state:
 		if state[pos].team == turn:
+			mutex.lock()
 			var moves: Array[Vector2] = state[pos].get_moves(state, pos)
+			mutex.unlock()
 			for m in moves:
 				var tmp_state: Dictionary = state.duplicate()
 				var new_base_eval: float = base_eval
@@ -70,7 +89,7 @@ func evaluate(state: Dictionary, base_eval: float, turn: Board.team, depth: int,
 						},
 						"evaluation":  evaluate(tmp_state, new_base_eval, next_turn(turn), depth - 1).evaluation
 					}
-				
+
 				if best_move.evaluation == -100:
 					best_move = bm
 				if turn == Board.team.Red:
@@ -79,14 +98,13 @@ func evaluate(state: Dictionary, base_eval: float, turn: Board.team, depth: int,
 				else:
 					if best_move.evaluation > bm.evaluation:
 						best_move = bm
-	
+
 	if best_move.evaluation == -100:
 		if turn == Board.team.Red:
 			best_move.evaluation = -1000
 		else:
 			best_move.evaluation = 1000
 	
-	print(best_move)
 	return best_move
 
 func evaluate_single_state (state: Dictionary) -> float:
