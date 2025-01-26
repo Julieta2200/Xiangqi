@@ -28,7 +28,7 @@ func evaluate_multithread(state: Dictionary, base_eval: float, turn: Board.team,
 				tmp_state.erase(pos)
 				states.append({"state": tmp_state, "turn": next_turn(turn), "base_eval": new_base_eval, "depth": depth - 1})
 	
-	var task_id = WorkerThreadPool.add_group_task(evaluate_chunk, states.size())
+	var task_id = WorkerThreadPool.add_group_task(evaluate_chunk, states.size(), -1, true)
 	
 	WorkerThreadPool.wait_for_group_task_completion(task_id)
 	print(Time.get_unix_time_from_system() - t)
