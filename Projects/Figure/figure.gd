@@ -13,6 +13,8 @@ var valid_moves: Array[Vector2] = []
 
 @onready var board: Board
 
+var _move_hashes: Dictionary
+
 var board_position : Vector2 = Vector2(-1,-1):
 	set(p):
 		board.state.erase(board_position)
@@ -25,7 +27,7 @@ var active: bool =  true
 func calculate_moves() -> void:
 	valid_moves = get_moves(board.state, board_position)
 	
-func get_moves(state: Dictionary, current_position: Vector2) -> Array[Vector2]:
+func get_moves(state: Dictionary, current_position: Vector2, state_hash: String = "") -> Array[Vector2]:
 	return []
 
 func in_boundaries(pos: Vector2) -> bool:
@@ -59,6 +61,13 @@ func _on_area_2d_mouse_exited():
 func delete_highlight():
 	for move in valid_moves:
 		board.markers[move].unhighlight()
+
+func calculate_value(state: Dictionary):
+	var v: float = value
+	
+	if team == Board.team.Black:
+		v = -v
+	return v
 
 func delete():
 	queue_free()

@@ -1,15 +1,23 @@
 class_name Evaluation extends Node2D
 
 var state_hashes: Dictionary = {}
+var evaluation_hashes: Dictionary = {}
 var results: Array[Dictionary]
 var mutex: Mutex = Mutex.new()
 var thinking_thread: Thread = Thread.new()
 
+var _t: float
 
-func evaluate_multithread(state: Dictionary, base_eval: float, turn: Board.team, depth: int):
-	thinking_thread.start(evaluate.bind(state, base_eval, turn, depth, true))
+# Performance: 2.66915988922119
+# Performance: 3.33373785018921
+# Performance: 3.24588418006897
+# Performance: 2.75684595108032
 
-func evaluate(state: Dictionary, base_eval: float, turn: Board.team, depth: int, upper: bool = false):
+func evaluate_multithread(state: Dictionary, turn: Board.team, depth: int):
+	_t = Time.get_unix_time_from_system()
+	thinking_thread.start(evaluate.bind(state, turn, depth, true))
+
+func evaluate(state: Dictionary, turn: Board.team, depth: int, upper: bool = false):
 	var state_hash: String = generate_state_hash(state, turn)
 	if state_hashes.has(state_hash):
 		return state_hashes[state_hash]
@@ -21,16 +29,10 @@ func evaluate(state: Dictionary, base_eval: float, turn: Board.team, depth: int,
 	for pos in state:
 		if state[pos].team == turn:
 			mutex.lock()
-			var moves: Array[Vector2] = state[pos].get_moves(state, pos)
+			var moves: Array[Vector2] = state[pos].get_moves(state, pos, state_hash)
 			mutex.unlock()
 			for m in moves:
 				var tmp_state: Dictionary = state.duplicate()
-				var new_base_eval: float = base_eval
-				if tmp_state.has(m):
-					if tmp_state[m].team == Board.team.Red:
-						new_base_eval -= tmp_state[m].value
-					else:
-						new_base_eval += tmp_state[m].value
 				tmp_state[m] = tmp_state[pos]
 				tmp_state.erase(pos)
 				var bm: Dictionary
@@ -40,7 +42,7 @@ func evaluate(state: Dictionary, base_eval: float, turn: Board.team, depth: int,
 							"pos": pos,
 							"new_pos": m
 						},
-						"evaluation": new_base_eval
+						"evaluation": evaluate_single_state(tmp_state, state_hash)
 					}
 				else:
 					bm = {
@@ -48,7 +50,7 @@ func evaluate(state: Dictionary, base_eval: float, turn: Board.team, depth: int,
 							"pos": pos,
 							"new_pos": m
 						},
-						"evaluation":  evaluate(tmp_state, new_base_eval, next_turn(turn), depth - 1).evaluation
+						"evaluation":  evaluate(tmp_state, next_turn(turn), depth - 1).evaluation
 					}
 
 				if best_move.evaluation == -100:
@@ -76,14 +78,18 @@ func evaluate(state: Dictionary, base_eval: float, turn: Board.team, depth: int,
 func move_ready():
 	var move: Dictionary = thinking_thread.wait_to_finish()
 	%Board.computer_move(move.move.pos, move.move.new_pos)
+	print("Performance: " + str(Time.get_unix_time_from_system() - _t))
 
-func evaluate_single_state (state: Dictionary) -> float:
+func evaluate_single_state (state: Dictionary, state_hash: String) -> float:
+	if evaluation_hashes.has(state_hash):
+		return evaluation_hashes[state_hash]
+	
 	var evaluation: float
 	for pos in state:
-		if state[pos].team == Board.team.Red:
-			evaluation += state[pos].value
-		else:
-			evaluation -= state[pos].value
+		evaluation += state[pos].calculate_value(state)
+	
+	evaluation_hashes[state_hash] = evaluation
+	
 	return evaluation
 
 
