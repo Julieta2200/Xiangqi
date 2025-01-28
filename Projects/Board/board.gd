@@ -4,6 +4,7 @@ const board_rows = 10
 const board_cols = 9
 enum team {Red = 1, Black = 2}
 
+var for_tutorial : bool
 var markers : Dictionary
 var state : Dictionary
 var save_states: Dictionary
@@ -39,9 +40,9 @@ func initialize_markers():
 			markers[Vector2(j,i)] = $Markers.get_child(i).get_child(j)
 			markers[Vector2(j,i)].board_position = Vector2(j,i)
 
-func create_state(new_state: Dictionary) -> void:
+func create_state(new_state: Dictionary, tutorial: bool = false) -> void:
 	state = {}
-	
+	for_tutorial = tutorial
 	for key in new_state:
 		var figure = figure_scenes[new_state[key].type].instantiate()
 		figure.board = self
@@ -70,6 +71,8 @@ func load_move(move: int) -> void:
 
 func move(marker):
 	unhighlight_markers()
+	
+#	markers[selected_figure.board_position].highlight_2.visible = true
 	if state.has(marker.board_position):
 		state[marker.board_position].delete()
 	selected_figure.board_position = marker.board_position

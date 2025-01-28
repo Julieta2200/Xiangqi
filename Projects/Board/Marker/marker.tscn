@@ -16,9 +16,16 @@ visible = false
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_5l7c3")
 
+[node name="trajectory_highlight" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(0.894118, 0.262745, 0.584314, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_5l7c3")
+
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
 shape = SubResource("CircleShape2D_k3il3")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
