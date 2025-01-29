@@ -43,7 +43,9 @@ func get_moves(state: Dictionary, current_position: Vector2, state_hash: String 
 	for dir in directions:
 		var new_pos = current_position + dir
 		if in_boundaries(new_pos) && move_or_capture(new_pos, state):
-			if board.valid_future_state(current_position, new_pos, state):
+			if board.for_tutorial:
+				moves.append(new_pos)
+			elif board.valid_future_state(current_position, new_pos, state):
 				moves.append(new_pos)
 	
 	_move_hashes[state_hash] = moves

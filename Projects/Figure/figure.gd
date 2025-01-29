@@ -3,6 +3,7 @@ class_name Figure extends Node2D
 @export var team : Board.team
 @export var type : Types
 @export var value: float
+@onready var arrows = $Arrows
 
 @onready var highlight = $Eye
 
@@ -17,6 +18,8 @@ var _move_hashes: Dictionary
 
 var board_position : Vector2 = Vector2(-1,-1):
 	set(p):
+		if board.markers.has(board_position):
+			board.markers[board_position].trajectory_highlight()
 		board.state.erase(board_position)
 		board_position = p
 		self.global_position = board.markers[board_position].global_position
@@ -50,6 +53,9 @@ func _on_mouse_event(viewport, event, shape_idx):
 		board.selected_figure = self
 		highlight.visible = true
 		highlight_moves()
+		if board.for_tutorial:
+			for i in arrows.get_children():
+				i.visible = false
 	
 func _on_area_2d_mouse_entered():
 	if team == board.turn:
