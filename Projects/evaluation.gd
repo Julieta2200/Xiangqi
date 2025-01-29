@@ -28,9 +28,7 @@ func evaluate(state: Dictionary, turn: Board.team, depth: int, upper: bool = fal
 	var evaluation: float
 	for pos in state:
 		if state[pos].team == turn:
-			mutex.lock()
 			var moves: Array[Vector2] = state[pos].get_moves(state, pos, state_hash)
-			mutex.unlock()
 			for m in moves:
 				var tmp_state: Dictionary = state.duplicate()
 				tmp_state[m] = tmp_state[pos]
