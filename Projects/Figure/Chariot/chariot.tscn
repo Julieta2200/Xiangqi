@@ -34,6 +34,8 @@ position = Vector2(0, -170)
 scale = Vector2(6.5, 6.5)
 texture = ExtResource("4_5dmth")
 
+[node name="Arrows" type="Node2D" parent="."]
+
 [connection signal="input_event" from="Area2D" to="." method="_on_mouse_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
