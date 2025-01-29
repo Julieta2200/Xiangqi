@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://ci58kdlspkg5f"]
+[gd_scene load_steps=7 format=3 uid="uid://ci58kdlspkg5f"]
 
 [ext_resource type="Script" path="res://Projects/Figure/General/general.gd" id="1_tq0kb"]
 [ext_resource type="Texture2D" uid="uid://fskambwwl3ab" path="res://Assets/Characters/Ashes/Mini_Ashes/Ashes_mini_front.png" id="2_lyryg"]
 [ext_resource type="Texture2D" uid="uid://bh7qd5bwgot0t" path="res://Assets/tmp/highlight.png" id="3_ydm7b"]
 [ext_resource type="Texture2D" uid="uid://dhtgu1fm8i1go" path="res://Assets/Characters/Advisor/eye.png" id="4_k08t0"]
+[ext_resource type="Texture2D" uid="uid://oai7bgd11d1e" path="res://Assets/tmp/arrow.png" id="5_pav2g"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m7pdm"]
 radius = 110.0
@@ -34,6 +35,24 @@ scale = Vector2(6.5, 6.5)
 texture = ExtResource("4_k08t0")
 
 [node name="Arrows" type="Node2D" parent="."]
+
+[node name="arrow" type="Sprite2D" parent="Arrows"]
+visible = false
+position = Vector2(0, -220)
+rotation = 1.5708
+texture = ExtResource("5_pav2g")
+flip_h = true
+
+[node name="arrow2" type="Sprite2D" parent="Arrows"]
+visible = false
+position = Vector2(220, 0)
+texture = ExtResource("5_pav2g")
+
+[node name="arrow3" type="Sprite2D" parent="Arrows"]
+visible = false
+position = Vector2(-220, 0)
+texture = ExtResource("5_pav2g")
+flip_h = true
 
 [connection signal="input_event" from="Area2D" to="." method="_on_mouse_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]

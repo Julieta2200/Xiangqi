@@ -7,3 +7,11 @@ func make_move() -> void:
 			%Board.turn = Board.team.Red
 		2:
 			%Board.turn = Board.team.Red
+		3:
+			%Board.turn = Board.team.Red
+		4:
+			%Board.turn = Board.team.Red
+		5:
+			%Board.turn = Board.team.Red
+		6:
+			%Board.turn = Board.team.Red

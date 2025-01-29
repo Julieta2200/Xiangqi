@@ -40,9 +40,8 @@ func initialize_markers():
 			markers[Vector2(j,i)] = $Markers.get_child(i).get_child(j)
 			markers[Vector2(j,i)].board_position = Vector2(j,i)
 
-func create_state(new_state: Dictionary, tutorial: bool = false) -> void:
+func create_state(new_state: Dictionary) -> void:
 	state = {}
-	for_tutorial = tutorial
 	for key in new_state:
 		var figure = figure_scenes[new_state[key].type].instantiate()
 		figure.board = self
