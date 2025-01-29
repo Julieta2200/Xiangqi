@@ -7,10 +7,10 @@ var adviser
 
 func _ready():
 	%Board.for_tutorial = true
-	soldier_create()
+	create_soldier()
 	soldier_movement_dialog()
 	
-func soldier_create():
+func create_soldier():
 	state = {
 		Vector2(5, 3): {
 			"type": Figure.Types.Soldier,
@@ -21,7 +21,7 @@ func soldier_create():
 	%Board.create_state(state)
 	soldier = %Board.state[Vector2(5, 3)]
 
-func general_create():
+func create_general():
 	%Board.unhighlight_markers()
 	for i in %Board.state:
 		%Board.state[i].delete()
@@ -37,7 +37,7 @@ func general_create():
 	for i in general.arrows.get_children():
 		i.visible = true
 
-func creat_adviser():
+func create_adviser():
 	%Board.unhighlight_markers()
 	for i in %Board.state:
 		%Board.state[i].delete()
@@ -97,7 +97,7 @@ func computer_move():
 				i.visible = true
 			%Dialog.appear("After crossing the river, soldier can move 1 position forward or sideways each step.Move in any of the directions.")
 		3:
-			general_create()
+			create_general()
 			%Board.generate_save_state()
 			%Board.markers[Vector2(5, 0)].highlighted_spot.visible = true
 			%Dialog.appear("General can't leave palace.And moves vertically and horizontally to one position․Move to the right")
@@ -108,7 +108,7 @@ func computer_move():
 				%Board.load_move(3) 
 				return
 			else:
-				creat_adviser()
+				create_adviser()
 				%Board.generate_save_state()
 				%Board.markers[Vector2(5, 0)].highlighted_spot.visible = false
 				%Board.markers[Vector2(4, 1)].highlighted_spot.visible = true
