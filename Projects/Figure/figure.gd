@@ -27,8 +27,8 @@ var board_position : Vector2 = Vector2(-1,-1):
 
 var active: bool =  true
 
-func calculate_moves() -> void:
-	valid_moves = get_moves(board.state, board_position)
+func calculate_moves(state_hash: String) -> void:
+	valid_moves = get_moves(board.state, board_position, state_hash)
 	
 func get_moves(state: Dictionary, current_position: Vector2, state_hash: String = "") -> Array[Vector2]:
 	return []
@@ -68,12 +68,15 @@ func delete_highlight():
 	for move in valid_moves:
 		board.markers[move].unhighlight()
 
-func calculate_value(state: Dictionary):
+func calculate_value(state: Dictionary, state_hash: String = ""):
 	var v: float = value
-	
+	v *= mobility_factor(state_hash)
 	if team == Board.team.Black:
 		v = -v
 	return v
+
+func mobility_factor(state_hash: String) -> float:
+	return 1
 
 func delete():
 	queue_free()

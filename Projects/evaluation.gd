@@ -1,7 +1,6 @@
 class_name Evaluation extends Node2D
 
 var state_hashes: Dictionary = {}
-var evaluation_hashes: Dictionary = {}
 var results: Array[Dictionary]
 var mutex: Mutex = Mutex.new()
 var thinking_thread: Thread = Thread.new()
@@ -12,13 +11,16 @@ var _t: float
 # Performance: 3.33373785018921
 # Performance: 3.24588418006897
 # Performance: 2.75684595108032
+# Performance: 16.8449511528015
+# Performance: 16.2276890277863
 
 func evaluate_multithread(state: Dictionary, turn: Board.team, depth: int):
 	_t = Time.get_unix_time_from_system()
 	thinking_thread.start(evaluate.bind(state, turn, depth, true))
+#	evaluate(state, turn, depth, true)
 
 func evaluate(state: Dictionary, turn: Board.team, depth: int, upper: bool = false):
-	var state_hash: String = generate_state_hash(state, turn)
+	var state_hash: String = Evaluation.generate_state_hash(state, turn)
 	if state_hashes.has(state_hash):
 		return state_hashes[state_hash]
 	
@@ -33,6 +35,7 @@ func evaluate(state: Dictionary, turn: Board.team, depth: int, upper: bool = fal
 				var tmp_state: Dictionary = state.duplicate()
 				tmp_state[m] = tmp_state[pos]
 				tmp_state.erase(pos)
+				var tmp_state_hash: String = Evaluation.generate_state_hash(tmp_state, next_turn(turn))
 				var bm: Dictionary
 				if depth == 0:
 					bm = {
@@ -40,7 +43,7 @@ func evaluate(state: Dictionary, turn: Board.team, depth: int, upper: bool = fal
 							"pos": pos,
 							"new_pos": m
 						},
-						"evaluation": evaluate_single_state(tmp_state, state_hash)
+						"evaluation": evaluate_single_state(tmp_state, tmp_state_hash)
 					}
 				else:
 					bm = {
@@ -76,17 +79,16 @@ func evaluate(state: Dictionary, turn: Board.team, depth: int, upper: bool = fal
 func move_ready():
 	var move: Dictionary = thinking_thread.wait_to_finish()
 	%Board.computer_move(move.move.pos, move.move.new_pos)
+	print(%Board._counter)
+	print(move)
 	print("Performance: " + str(Time.get_unix_time_from_system() - _t))
 
 func evaluate_single_state (state: Dictionary, state_hash: String) -> float:
-	if evaluation_hashes.has(state_hash):
-		return evaluation_hashes[state_hash]
-	
 	var evaluation: float
 	for pos in state:
-		evaluation += state[pos].calculate_value(state)
-	
-	evaluation_hashes[state_hash] = evaluation
+		if state[pos].type == Figure.Types.Chariot:
+			state[pos].get_moves(state, pos, state_hash)
+		evaluation += state[pos].calculate_value(state, state_hash)
 	
 	return evaluation
 
@@ -96,9 +98,13 @@ func next_turn(turn: Board.team) -> Board.team:
 		return Board.team.Black
 	return Board.team.Red
 
-func generate_state_hash(state: Dictionary, turn: Board.team) -> String:
+static func generate_state_hash(state: Dictionary, turn: Board.team) -> String:
 	var state_hash: String = str(turn)
+	var state_arr: Array[int] = []
 	for pos in state:
-		state_hash += str(state[pos].type) + str(pos.x) + str(pos.y)
+		state_arr.append(100*(state[pos].type+1) + int(pos.x)*10 + int(pos.y))
+	state_arr.sort()
+	for n in state_arr:
+		state_hash += str(n)
 	return state_hash
 

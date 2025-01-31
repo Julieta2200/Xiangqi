@@ -29,6 +29,8 @@ var figure_scenes: Dictionary = {
 	Figure.Types.Cannon: preload("res://Projects/Figure/Cannon/cannon.tscn"),
 }
 
+var _counter: int 
+
 func _ready():
 	turn = team.Red
 	initialize_markers()
@@ -92,9 +94,10 @@ func computer_move(pos: Vector2, new_pos: Vector2):
 	generate_save_state()
 
 func calculate_moves():
+	var state_hash: String = Evaluation.generate_state_hash(state, turn)
 	for pos in state:
 		if state[pos].team == turn:
-			state[pos].calculate_moves()
+			state[pos].calculate_moves(state_hash)
 
 func valid_future_state(pos: Vector2, new_pos: Vector2, future_state: Dictionary) -> bool:
 	var tmp_state: Dictionary = future_state.duplicate()
@@ -107,10 +110,10 @@ func valid_future_state(pos: Vector2, new_pos: Vector2, future_state: Dictionary
 		
 	if generals_facing(tmp_state, generals):
 		return false
-	
+
 	if pawn_check(tmp_state, generals):
 		return false
-		
+	
 	if chariot_check(tmp_state, generals):
 		return false
 	
@@ -120,6 +123,7 @@ func valid_future_state(pos: Vector2, new_pos: Vector2, future_state: Dictionary
 	if cannon_check(tmp_state, generals):
 		return false
 	
+
 	return true
 
 func get_generals(state: Dictionary) -> Dictionary:
