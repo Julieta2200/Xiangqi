@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dyup75neubts"]
+[gd_scene load_steps=7 format=3 uid="uid://dyup75neubts"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Advisor/advisor.gd" id="1_fdb5m"]
 [ext_resource type="Texture2D" uid="uid://d2brododo4n7x" path="res://Assets/tmp/advisor_red.png" id="2_uvdp8"]
 [ext_resource type="Texture2D" uid="uid://bh7qd5bwgot0t" path="res://Assets/tmp/highlight.png" id="3_qu58g"]
 [ext_resource type="Texture2D" uid="uid://dhtgu1fm8i1go" path="res://Assets/Characters/Advisor/eye.png" id="3_rvrcq"]
+[ext_resource type="Texture2D" uid="uid://oai7bgd11d1e" path="res://Assets/tmp/arrow.png" id="5_legfe"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m7pdm"]
 radius = 110.0
@@ -36,6 +37,33 @@ scale = Vector2(6.5, 6.5)
 texture = ExtResource("3_rvrcq")
 
 [node name="Arrows" type="Node2D" parent="."]
+
+[node name="arrow" type="Sprite2D" parent="Arrows"]
+visible = false
+position = Vector2(-170, -156.667)
+rotation = 0.785398
+texture = ExtResource("5_legfe")
+flip_h = true
+
+[node name="arrow2" type="Sprite2D" parent="Arrows"]
+visible = false
+position = Vector2(156.667, -160)
+rotation = 2.35619
+texture = ExtResource("5_legfe")
+flip_h = true
+
+[node name="arrow3" type="Sprite2D" parent="Arrows"]
+visible = false
+position = Vector2(170, 133.333)
+rotation = 0.785398
+scale = Vector2(1, 1)
+texture = ExtResource("5_legfe")
+
+[node name="arrow4" type="Sprite2D" parent="Arrows"]
+visible = false
+position = Vector2(-176.667, 150)
+rotation = 2.35619
+texture = ExtResource("5_legfe")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_mouse_event" flags=18]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered" flags=18]
