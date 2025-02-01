@@ -49,9 +49,3 @@ func get_moves(state: Dictionary, current_position: Vector2, state_hash: String 
 	_move_hashes[state_hash] = moves
 	return moves
 
-
-func mobility_factor(state_hash: String) -> float:
-	var max_possible_moves: int = 17
-	var factor: float = _move_hashes[state_hash].size() / max_possible_moves
-
-	return factor

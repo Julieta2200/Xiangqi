@@ -28,14 +28,18 @@ func evaluate(state: Dictionary, turn: Board.team, depth: int, upper: bool = fal
 		"evaluation": -100
 	}
 	var evaluation: float
-	for pos in state:
+	var keys: Array = state.keys()
+	for pos in keys:
 		if state[pos].team == turn:
 			var moves: Array[Vector2] = state[pos].get_moves(state, pos, state_hash)
 			for m in moves:
-				var tmp_state: Dictionary = state.duplicate()
-				tmp_state[m] = tmp_state[pos]
-				tmp_state.erase(pos)
-				var tmp_state_hash: String = Evaluation.generate_state_hash(tmp_state, next_turn(turn))
+				var tmp_obj: Figure
+				if state.has(m):
+					tmp_obj = state[m]
+				state[m] = state[pos]
+				state.erase(pos)
+				
+				var tmp_state_hash: String = Evaluation.generate_state_hash(state, next_turn(turn))
 				var bm: Dictionary
 				if depth == 0:
 					bm = {
@@ -43,7 +47,7 @@ func evaluate(state: Dictionary, turn: Board.team, depth: int, upper: bool = fal
 							"pos": pos,
 							"new_pos": m
 						},
-						"evaluation": evaluate_single_state(tmp_state, tmp_state_hash)
+						"evaluation": evaluate_single_state(state, tmp_state_hash)
 					}
 				else:
 					bm = {
@@ -51,9 +55,14 @@ func evaluate(state: Dictionary, turn: Board.team, depth: int, upper: bool = fal
 							"pos": pos,
 							"new_pos": m
 						},
-						"evaluation":  evaluate(tmp_state, next_turn(turn), depth - 1).evaluation
+						"evaluation":  evaluate(state, next_turn(turn), depth - 1).evaluation
 					}
-
+				
+				state[pos] = state[m]
+				if tmp_obj != null:
+					state[m] = tmp_obj
+				else:
+					state.erase(m)
 				if best_move.evaluation == -100:
 					best_move = bm
 				if turn == Board.team.Red:
@@ -79,15 +88,12 @@ func evaluate(state: Dictionary, turn: Board.team, depth: int, upper: bool = fal
 func move_ready():
 	var move: Dictionary = thinking_thread.wait_to_finish()
 	%Board.computer_move(move.move.pos, move.move.new_pos)
-	print(%Board._counter)
-	print(move)
 	print("Performance: " + str(Time.get_unix_time_from_system() - _t))
 
 func evaluate_single_state (state: Dictionary, state_hash: String) -> float:
 	var evaluation: float
-	for pos in state:
-		if state[pos].type == Figure.Types.Chariot:
-			state[pos].get_moves(state, pos, state_hash)
+	var keys: Array = state.keys()
+	for pos in keys:
 		evaluation += state[pos].calculate_value(state, state_hash)
 	
 	return evaluation

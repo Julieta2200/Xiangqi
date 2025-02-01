@@ -95,36 +95,44 @@ func computer_move(pos: Vector2, new_pos: Vector2):
 
 func calculate_moves():
 	var state_hash: String = Evaluation.generate_state_hash(state, turn)
-	for pos in state:
+	var keys: Array = state.keys()
+	for pos in keys:
 		if state[pos].team == turn:
 			state[pos].calculate_moves(state_hash)
 
 func valid_future_state(pos: Vector2, new_pos: Vector2, future_state: Dictionary) -> bool:
-	var tmp_state: Dictionary = future_state.duplicate()
-	tmp_state[new_pos] = tmp_state[pos]
-	tmp_state.erase(pos)
+	var tmp_obj: Figure
+	if state.has(new_pos):
+		tmp_obj = state[new_pos]
+	state[new_pos] = state[pos]
+	state.erase(pos)
+	var result: bool = true
 	
-	var generals = get_generals(tmp_state)
+	var generals = get_generals(state)
 	if generals.size() < 2:
-		return false
+		result = false
 		
-	if generals_facing(tmp_state, generals):
-		return false
+	if result and generals_facing(state, generals):
+		result = false
 
-	if pawn_check(tmp_state, generals):
-		return false
+	if result and pawn_check(state, generals):
+		result = false
 	
-	if chariot_check(tmp_state, generals):
-		return false
+	if result and chariot_check(state, generals):
+		result = false
 	
-	if horse_check(tmp_state, generals):
-		return false
+	if result and horse_check(state, generals):
+		result = false
 		
-	if cannon_check(tmp_state, generals):
-		return false
+	if result and cannon_check(state, generals):
+		result = false
 	
-
-	return true
+	state[pos] = state[new_pos]
+	if tmp_obj != null:
+		state[new_pos] = tmp_obj
+	else:
+		state.erase(new_pos)
+	return result
 
 func get_generals(state: Dictionary) -> Dictionary:
 	var generals: Dictionary
