@@ -14,8 +14,6 @@ var valid_moves: Array[Vector2] = []
 
 @onready var board: Board
 
-var _move_hashes: Dictionary
-
 var board_position : Vector2 = Vector2(-1,-1):
 	set(p):
 		if board.markers.has(board_position):
@@ -27,10 +25,10 @@ var board_position : Vector2 = Vector2(-1,-1):
 
 var active: bool =  true
 
-func calculate_moves(state_hash: String) -> void:
-	valid_moves = get_moves(board.state, board_position, state_hash)
+func calculate_moves() -> void:
+	valid_moves = get_moves(board.state, board_position)
 	
-func get_moves(state: Dictionary, current_position: Vector2, state_hash: String = "") -> Array[Vector2]:
+func get_moves(state: Dictionary, current_position: Vector2) -> Array[Vector2]:
 	return []
 
 func in_boundaries(pos: Vector2) -> bool:
@@ -68,14 +66,15 @@ func delete_highlight():
 	for move in valid_moves:
 		board.markers[move].unhighlight()
 
-func calculate_value(state: Dictionary, state_hash: String = ""):
+func calculate_value(state: Dictionary, current_position: Vector2):
 	var v: float = value
-	v *= mobility_factor(state_hash)
+	v += 0.3*v*mobility_factor(state, current_position)
 	if team == Board.team.Black:
 		v = -v
+	
 	return v
 
-func mobility_factor(state_hash: String) -> float:
+func mobility_factor(state: Dictionary, current_position: Vector2) -> float:
 	return 1
 
 func delete():

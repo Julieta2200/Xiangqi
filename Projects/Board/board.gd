@@ -94,11 +94,10 @@ func computer_move(pos: Vector2, new_pos: Vector2):
 	generate_save_state()
 
 func calculate_moves():
-	var state_hash: String = Evaluation.generate_state_hash(state, turn)
 	var keys: Array = state.keys()
 	for pos in keys:
 		if state[pos].team == turn:
-			state[pos].calculate_moves(state_hash)
+			state[pos].calculate_moves()
 
 func valid_future_state(pos: Vector2, new_pos: Vector2, future_state: Dictionary) -> bool:
 	var tmp_obj: Figure
