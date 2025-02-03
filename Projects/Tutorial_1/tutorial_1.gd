@@ -30,11 +30,11 @@ func create_general():
 		}
 	}
 	%Board.create_state(state)
-	var general =  %Board.state[Vector2(4, 0)]
+	general =  %Board.state[Vector2(4, 0)]
 	for i in general.arrows.get_children():
 		i.visible = true
 
-func create_adviser():
+func create_adviser_for_general():
 	delete_figure()
 	state = {
 		Vector2(5,0): {
@@ -49,6 +49,19 @@ func create_adviser():
 	}
 	%Board.create_state(state)
 	general =  %Board.state[Vector2(5, 0)]
+
+func create_adviser():
+	delete_figure()
+	state = {
+		Vector2(4,1): {
+			"type": Figure.Types.Advisor,
+			"team": Board.team.Red,
+		}
+	}
+	%Board.create_state(state)
+	adviser =  %Board.state[Vector2(4, 1)]
+	for i in adviser.arrows.get_children():
+		i.visible = true
 
 func delete_figure():
 	%Board.unhighlight_markers()
@@ -102,7 +115,7 @@ func computer_move():
 				%Board.load_move(3)
 				return
 			else:
-				create_adviser()
+				create_adviser_for_general()
 				%Board.generate_save_state()
 				%Board.markers[Vector2(5, 0)].highlighted_spot.visible = false
 				%Board.markers[Vector2(4, 1)].highlighted_spot.visible = true
@@ -133,6 +146,15 @@ func computer_move():
 				return
 			else:
 				%Board.markers[Vector2(3, 2)].highlighted_spot.visible = false
+				create_adviser()
+				%Board.generate_save_state()
+				%Dialog.appear("Move the advisor to the highlighted spot.")
+				%Board.markers[Vector2(5, 0)].highlighted_spot.visible = true
+		13:
+			if !%Board.state.has(Vector2(5,0)):
 				delete_figure()
-		
-			
+				%Dialog.appear("Move the advisor to the highlighted spot.")
+				%Board.load_move(12)
+				return
+			else:
+				pass
