@@ -1,9 +1,9 @@
 extends Node2D
 
 var state : Dictionary
-var soldier
-var general
-var adviser 
+var soldier: Figure 
+var general: Figure
+var adviser: Figure
 
 func _ready():
 	%Board.for_tutorial = true
@@ -19,6 +19,7 @@ func create_soldier():
 	}
 	
 	%Board.create_state(state)
+	%Board.generate_save_state()
 	soldier = %Board.state[Vector2(5, 3)]
 
 func create_general():
@@ -30,6 +31,7 @@ func create_general():
 		}
 	}
 	%Board.create_state(state)
+	%Board.generate_save_state()
 	general =  %Board.state[Vector2(4, 0)]
 	for i in general.arrows.get_children():
 		i.visible = true
@@ -48,6 +50,7 @@ func create_adviser_for_general():
 		}
 	}
 	%Board.create_state(state)
+	%Board.generate_save_state()
 	general =  %Board.state[Vector2(5, 0)]
 
 func create_adviser():
@@ -59,15 +62,11 @@ func create_adviser():
 		}
 	}
 	%Board.create_state(state)
+	%Board.generate_save_state()
 	adviser =  %Board.state[Vector2(4, 1)]
 	for i in adviser.arrows.get_children():
 		i.visible = true
 
-func delete_figure():
-	%Board.unhighlight_markers()
-	for i in %Board.state.keys():
-		%Board.state[i].delete()
-		%Board.state.erase(i)
 
 func create_black_general():
 	delete_figure()
@@ -87,11 +86,19 @@ func create_black_general():
 		}
 	}
 	%Board.create_state(state)
+	%Board.generate_save_state()
 
 
 func soldier_movement_dialog():
 	%Dialog.appear("Before crossing the river, soldier can only move 1 position forward each step")
 	soldier.arrows.get_child(0).visible = true
+
+func delete_figure():
+	%Board.unhighlight_markers()
+	for i in %Board.state.keys():
+		%Board.state[i].delete()
+		%Board.state.erase(i)
+
 
 func computer_move():
 	await $tutorial_engine.make_move()
@@ -105,7 +112,6 @@ func computer_move():
 			%Dialog.appear("After crossing the river, soldier can move 1 position forward or sideways each step.Move in any of the directions.")
 		3:
 			create_general()
-			%Board.generate_save_state()
 			%Board.markers[Vector2(5, 0)].highlighted_spot.visible = true
 			%Dialog.appear("General can't leave palace.And moves vertically and horizontally to one position․Move to the right")
 		4:
@@ -116,7 +122,6 @@ func computer_move():
 				return
 			else:
 				create_adviser_for_general()
-				%Board.generate_save_state()
 				%Board.markers[Vector2(5, 0)].highlighted_spot.visible = false
 				%Board.markers[Vector2(4, 1)].highlighted_spot.visible = true
 				%Dialog.appear("Move the red general to the highlighted spot in 2 moves")
@@ -127,9 +132,8 @@ func computer_move():
 				%Board.load_move(4) 
 				return
 			else:
-				%Board.markers[Vector2(4, 1)].highlighted_spot.visible = false
 				create_black_general()
-				%Board.generate_save_state()
+				%Board.markers[Vector2(4, 1)].highlighted_spot.visible = false
 				%Board.markers[Vector2(3, 2)].highlighted_spot.visible = true
 				%Dialog.appear("Due to the /Flying General Rule/, two generals can't be placed on the same file without any pieces in between.How can the red general move to the highlighted spot?")
 		7:
@@ -145,15 +149,14 @@ func computer_move():
 				%Board.load_move(6)
 				return
 			else:
-				%Board.markers[Vector2(3, 2)].highlighted_spot.visible = false
 				create_adviser()
-				%Board.generate_save_state()
-				%Dialog.appear("Move the advisor to the highlighted spot.")
+				%Board.markers[Vector2(3, 2)].highlighted_spot.visible = false
 				%Board.markers[Vector2(5, 0)].highlighted_spot.visible = true
+				%Dialog.appear("Move the advisor to the highlighted spot.")
 		13:
 			if !%Board.state.has(Vector2(5,0)):
-				delete_figure()
 				%Dialog.appear("Move the advisor to the highlighted spot.")
+				delete_figure()
 				%Board.load_move(12)
 				return
 			else:
