@@ -19,7 +19,6 @@ func create_soldier():
 	}
 	
 	%Board.create_state(state)
-	%Board.generate_save_state()
 	soldier = %Board.state[Vector2(5, 3)]
 
 func create_general():
@@ -135,7 +134,7 @@ func computer_move():
 				create_black_general()
 				%Board.markers[Vector2(4, 1)].highlighted_spot.visible = false
 				%Board.markers[Vector2(3, 2)].highlighted_spot.visible = true
-				%Dialog.appear("Due to the /Flying General Rule/, two generals can't be placed on the same file without any pieces in between.How can the red general move to the highlighted spot?")
+				%Dialog.appear("How can the red general move to the highlighted spot?")
 		7:
 			if %Board.state.has(Vector2(4,2)):
 				%Dialog.appear("Due to the /Flying General Rule/, two generals can't be placed on the same file without any pieces in between.")
@@ -145,7 +144,7 @@ func computer_move():
 		12:
 			if !%Board.state.has(Vector2(3,2)):
 				delete_figure()
-				%Dialog.appear("Move the red general to the highlighted spot in 5 moves")
+				%Dialog.appear("Move the red general to the highlighted spot in 6 moves")
 				%Board.load_move(6)
 				return
 			else:
@@ -160,4 +159,4 @@ func computer_move():
 				%Board.load_move(12)
 				return
 			else:
-				pass
+				delete_figure()
