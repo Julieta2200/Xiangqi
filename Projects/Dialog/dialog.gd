@@ -9,7 +9,3 @@ func appear(text: String):
 func disappear():
 	visible = false
 
-
-
-
-

@@ -19,6 +19,10 @@ var turn: team:
 
 var move_number: int = 0
 
+var dummy_figure_scenes: Dictionary = {
+	Figure.Types.Soldier: preload("res://Projects/Figure/Soldier/Dummy_soldier/dummy_soldier.tscn")
+}
+
 var figure_scenes: Dictionary = {
 	Figure.Types.General: preload("res://Projects/Figure/General/general.tscn"),
 	Figure.Types.Advisor: preload("res://Projects/Figure/Advisor/advisor.tscn"),
@@ -43,7 +47,11 @@ func initialize_markers():
 func create_state(new_state: Dictionary) -> void:
 	state = {}
 	for key in new_state:
-		var figure = figure_scenes[new_state[key].type].instantiate()
+		var figure : Figure
+		if new_state[key].type == Figure.Types.Soldier and new_state[key].team == Board.team.Black:
+			figure = dummy_figure_scenes[new_state[key].type].instantiate()
+		else:
+			figure = figure_scenes[new_state[key].type].instantiate()
 		figure.board = self
 		figure.team = new_state[key].team
 		figure.board_position = key
@@ -70,12 +78,10 @@ func load_move(move: int) -> void:
 
 func move(marker):
 	unhighlight_markers()
-	
-#	markers[selected_figure.board_position].highlight_2.visible = true
 	if state.has(marker.board_position):
 		state[marker.board_position].delete()
 	selected_figure.board_position = marker.board_position
-	selected_figure.highlight.visible = false
+#	selected_figure.highlight.visible = false
 	
 	turn = team.Black
 

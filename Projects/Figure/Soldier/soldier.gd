@@ -1,6 +1,6 @@
-extends Figure
+class_name Soldier extends Figure
 
-@onready var red_sprite = load("res://Assets/tmp/soldier_red.png")
+@onready var red_sprite = load("res://Assets/Characters/Pawn/Fire pawn.png")
 @onready var black_sprite = load("res://Assets/tmp/soldier_black.png")
 
 func _ready():
@@ -17,7 +17,7 @@ func _ready():
 		Board.team.Black: {
 			"y": Vector2(0, 9),
 			"x": Vector2(0, 8)
-		},
+		}
 	}	
 
 
@@ -43,9 +43,7 @@ func get_moves(state: Dictionary, current_position: Vector2, state_hash: String 
 	for dir in directions:
 		var new_pos = current_position + dir
 		if in_boundaries(new_pos) && move_or_capture(new_pos, state):
-			if board.for_tutorial:
-				moves.append(new_pos)
-			elif board.valid_future_state(current_position, new_pos, state):
+			if board.for_tutorial or board.valid_future_state(current_position, new_pos, state):
 				moves.append(new_pos)
 	
 	_move_hashes[state_hash] = moves

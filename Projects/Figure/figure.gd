@@ -5,7 +5,7 @@ class_name Figure extends Node2D
 @export var value: float
 @onready var arrows = $Arrows
 
-@onready var highlight = $Eye
+#@onready var highlight = $Eye
 
 enum Types {General, Advisor, Soldier, Elephant, Chariot, Horse, Cannon}
 
@@ -44,14 +44,16 @@ func move_or_capture(pos: Vector2, state: Dictionary) -> bool:
 func highlight_moves() -> void:
 	for move in valid_moves:
 		board.markers[move].highlight()
+		if board.state.has(move):
+			board.markers[move].selected_highlight.visible = true
 
 func _on_mouse_event(viewport, event, shape_idx):
 	if Input.is_action_pressed("click") and board.turn == team and team == Board.team.Red and active:
 		if board.selected_figure != null:
 			board.selected_figure.delete_highlight()
-			board.selected_figure.highlight.visible = false
+#			board.selected_figure.highlight.visible = false
 		board.selected_figure = self
-		highlight.visible = true
+#		highlight.visible = true
 		highlight_moves()
 		if board.for_tutorial:
 			for i in arrows.get_children():
