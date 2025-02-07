@@ -1,31 +1,44 @@
-[gd_scene load_steps=4 format=3 uid="uid://dlkpgwakp3ub7"]
+[gd_scene load_steps=5 format=3 uid="uid://dlkpgwakp3ub7"]
 
 [ext_resource type="Script" path="res://Projects/Board/Marker/marker.gd" id="1_y3i0m"]
 [ext_resource type="Texture2D" uid="uid://d067h7qleds1f" path="res://Assets/tmp/circle.png" id="2_5l7c3"]
+[ext_resource type="Texture2D" uid="uid://cq76atsqs78gm" path="res://Assets/tmp/highlighted_spot.png" id="3_hmf34"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_k3il3"]
-radius = 120.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vg2kh"]
+radius = 13.0
+height = 34.0
 
 [node name="Marker" type="Node2D"]
 visibility_layer = 17
-scale = Vector2(0.08, 0.08)
 script = ExtResource("1_y3i0m")
+
+[node name="selected_highlight" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(1, 0.756863, 1, 0.490196)
+position = Vector2(-1, -21)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_5l7c3")
 
 [node name="highlight" type="Sprite2D" parent="."]
 visible = false
-scale = Vector2(1.5, 1.5)
+scale = Vector2(0.06, 0.06)
 texture = ExtResource("2_5l7c3")
+
+[node name="highlighted_spot" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_hmf34")
 
 [node name="trajectory_highlight" type="Sprite2D" parent="."]
 visible = false
 self_modulate = Color(0.894118, 0.262745, 0.584314, 1)
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.06, 0.06)
 texture = ExtResource("2_5l7c3")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
-shape = SubResource("CircleShape2D_k3il3")
+position = Vector2(0, -7)
+shape = SubResource("CapsuleShape2D_vg2kh")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

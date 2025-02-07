@@ -2,11 +2,10 @@
 
 [ext_resource type="Script" path="res://Projects/Dialog/dialog.gd" id="1_0lrns"]
 [ext_resource type="Texture2D" uid="uid://bgxg11jl7xfdn" path="res://Assets/tmp/dialog panel/panel.png" id="1_vksa7"]
+[ext_resource type="FontFile" uid="uid://d1cg0l42tlo2l" path="res://Assets/tmp/hint_system_ui/8-bit-fortress (1).ttf" id="3_njij8"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b4jn4"]
 texture = ExtResource("1_vksa7")
-
-[sub_resource type="FontVariation" id="FontVariation_bh2wv"]
 
 [sub_resource type="Animation" id="Animation_3tquq"]
 length = 0.001
@@ -59,7 +58,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 746.0
+offset_top = 440.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_b4jn4")
@@ -71,18 +70,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -348.0
-offset_top = -60.0
-offset_right = 352.0
-offset_bottom = 60.0
+offset_left = -200.0
+offset_top = -22.5
+offset_right = 200.0
+offset_bottom = 22.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/normal_font = SubResource("FontVariation_bh2wv")
-theme_override_font_sizes/normal_font_size = 30
+theme_override_fonts/normal_font = ExtResource("3_njij8")
+theme_override_font_sizes/normal_font_size = 14
 bbcode_enabled = true
 fit_content = true
-visible_characters = 0
-visible_ratio = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

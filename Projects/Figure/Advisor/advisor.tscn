@@ -1,41 +1,72 @@
-[gd_scene load_steps=6 format=3 uid="uid://dyup75neubts"]
+[gd_scene load_steps=7 format=3 uid="uid://dyup75neubts"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Advisor/advisor.gd" id="1_fdb5m"]
-[ext_resource type="Texture2D" uid="uid://d2brododo4n7x" path="res://Assets/tmp/advisor_red.png" id="2_uvdp8"]
+[ext_resource type="Texture2D" uid="uid://cwxsmnm40h6nk" path="res://Assets/Characters/Advisor/Raven.png" id="2_6wthq"]
 [ext_resource type="Texture2D" uid="uid://bh7qd5bwgot0t" path="res://Assets/tmp/highlight.png" id="3_qu58g"]
 [ext_resource type="Texture2D" uid="uid://dhtgu1fm8i1go" path="res://Assets/Characters/Advisor/eye.png" id="3_rvrcq"]
+[ext_resource type="Texture2D" uid="uid://oai7bgd11d1e" path="res://Assets/tmp/arrow.png" id="5_legfe"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_m7pdm"]
-radius = 110.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tgjc2"]
+radius = 17.0
+height = 46.0
 
 [node name="Advisor" type="Node2D"]
-scale = Vector2(0.3, 0.3)
 script = ExtResource("1_fdb5m")
 type = 1
 value = 2.0
 
+[node name="Arrows" type="Node2D" parent="."]
+
+[node name="arrow" type="Sprite2D" parent="Arrows"]
+visible = false
+position = Vector2(-25, -25)
+rotation = 0.785398
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_legfe")
+flip_h = true
+
+[node name="arrow2" type="Sprite2D" parent="Arrows"]
+visible = false
+position = Vector2(25, -25)
+rotation = 2.35619
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_legfe")
+flip_h = true
+
+[node name="arrow3" type="Sprite2D" parent="Arrows"]
+visible = false
+position = Vector2(25, 25)
+rotation = 0.785398
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_legfe")
+
+[node name="arrow4" type="Sprite2D" parent="Arrows"]
+visible = false
+position = Vector2(-25, 25)
+rotation = 2.35619
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_legfe")
+
 [node name="Advisor" type="Sprite2D" parent="."]
-scale = Vector2(1.8, 1.8)
-texture = ExtResource("2_uvdp8")
+position = Vector2(0, -17.5)
+texture = ExtResource("2_6wthq")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
-shape = SubResource("CircleShape2D_m7pdm")
+position = Vector2(0, -16)
+shape = SubResource("CapsuleShape2D_tgjc2")
 
 [node name="mouse_entered_highlight" type="Sprite2D" parent="."]
 visible = false
-scale = Vector2(1.6, 1.6)
+position = Vector2(0, -16)
+scale = Vector2(0.32, 0.32)
 texture = ExtResource("3_qu58g")
 
 [node name="Eye" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(0, -170)
-scale = Vector2(6.5, 6.5)
+position = Vector2(0, -32)
 texture = ExtResource("3_rvrcq")
-
-[node name="Arrows" type="Node2D" parent="."]
 
 [connection signal="input_event" from="Area2D" to="." method="_on_mouse_event" flags=18]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered" flags=18]
