@@ -205,7 +205,7 @@ func computer_move():
 			create_dummy_figure_for_soldier()
 			%Dialog.appear("Capture the black soldier in 3 moves.")
 		6:
-			if !%Board.state.has(Vector2(3,5)) and %Board.state[Vector2(3,5)]:
+			if !%Board.state[Vector2(3,5)].team == 1:
 				%Dialog.appear("Capture the black soldier in 3 moves.")
 				delete_figure()
 				%Board.load_move(3)
@@ -257,7 +257,7 @@ func computer_move():
 				%Dialog.appear("Capture the black soldier in 3 moves.")
 				%Board.markers[Vector2(3, 2)].highlighted_spot.visible = false
 		18:
-			if !(%Board.state.has(Vector2(4,2)) and %Board.state[Vector2(4,2)].type == Figure.Types.General):
+			if !%Board.state[Vector2(4,2)].team == 1:
 				delete_figure()
 				%Dialog.appear("Capture the black soldier in 3 moves.")
 				%Board.load_move(15)
@@ -266,13 +266,13 @@ func computer_move():
 				create_figures_for_general()
 				%Dialog.appear("How to capture the black soldier with the help of the red soldier in 2 moves?.")
 		19:
-			if %Board.state.has(Vector2(4,1)) and %Board.state[Vector2(4,1)].type == Figure.Types.General:
+			if %Board.state[Vector2(4,1)].team == 1 && %Board.state[Vector2(4,1)].type == Figure.Types.General:
 				delete_figure()
 				%Dialog.appear("Two generals can't be placed on the same file without any pieces in between.")
 				%Board.load_move(18)
 				return
 		20:
-			if !(%Board.state.has(Vector2(4,1)) && %Board.state[Vector2(4,1)].type == Figure.Types.General):
+			if !%Board.state[Vector2(4,1)].team == 1:
 				delete_figure()
 				%Dialog.appear("How to capture the black soldier with the help of the red soldier in 2 moves?.")
 				%Board.load_move(18)
@@ -294,7 +294,7 @@ func computer_move():
 				%Board.markers[Vector2(5, 0)].highlighted_spot.visible = false
 				%Dialog.appear("Capture the black soldier in 2 moves.")
 		23:
-			if !(%Board.state.has(Vector2(3,2)) && %Board.state[Vector2(3,2)].type == Figure.Types.Advisor):
+			if !%Board.state[Vector2(3,2)].team == 1:
 				%Dialog.appear("Capture the black soldier in 2 moves.")
 				delete_figure()
 				%Board.load_move(21)
@@ -304,7 +304,7 @@ func computer_move():
 				create_sildiers_for_advisor()
 				%Dialog.appear("Advisor can't leave the palace.Which soldier can it capture in 2 moves?.")
 		25:
-			if !(%Board.state.has(Vector2(3,0)) && %Board.state[Vector2(3,0)].type == Figure.Types.Advisor):
+			if !%Board.state[Vector2(3,0)].team == 1:
 				%Dialog.appear("Which soldier can it capture in 2 moves?.")
 				delete_figure()
 				%Board.load_move(23)
@@ -313,5 +313,6 @@ func computer_move():
 				await get_tree().create_timer(1).timeout
 				delete_figure()
 				%Dialog.disappear()
+				get_tree().change_scene_to_file("res://Projects/puzzles/puzzle1.tscn")
 				
 			

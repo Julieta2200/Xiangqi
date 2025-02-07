@@ -14,6 +14,7 @@ func _ready():
 	if team == Board.team.Red:
 		$Advisor.texture = red_sprite
 	else:
+		$Advisor.scale = Vector2(0.25,0.25)
 		$Advisor.texture = black_sprite
 	boundaries = {
 		Board.team.Red: {
