@@ -21,5 +21,3 @@ func unhighlight():
 func trajectory_highlight():
 	$trajectory_highlight.visible = true
 
-func trajectory_unhighlight():
-	$trajectory_highlight.visible = false

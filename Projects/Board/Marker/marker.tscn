@@ -31,13 +31,14 @@ texture = ExtResource("3_hmf34")
 
 [node name="trajectory_highlight" type="Sprite2D" parent="."]
 visible = false
-self_modulate = Color(0.894118, 0.262745, 0.584314, 1)
+self_modulate = Color(0.894118, 0.576471, 0.301961, 1)
 scale = Vector2(0.06, 0.06)
 texture = ExtResource("2_5l7c3")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
 position = Vector2(0, -7)
 shape = SubResource("CapsuleShape2D_vg2kh")
 
