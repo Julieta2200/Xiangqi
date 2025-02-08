@@ -16,6 +16,7 @@ var valid_moves: Array[Vector2] = []
 
 var board_position : Vector2 = Vector2(-1,-1):
 	set(p):
+		board.unhighlight_markers()
 		if board.markers.has(board_position):
 			board.markers[board_position].trajectory_highlight()
 		board.state.erase(board_position)

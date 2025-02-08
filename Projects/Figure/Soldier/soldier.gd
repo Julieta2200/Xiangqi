@@ -7,6 +7,7 @@ func _ready():
 	if team == Board.team.Red:
 		$Soldier.texture = red_sprite
 	else:
+		$Soldier.scale = Vector2(0.25,0.25)
 		$Soldier.texture = black_sprite
 		
 	boundaries = {
