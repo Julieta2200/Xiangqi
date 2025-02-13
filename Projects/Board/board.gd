@@ -35,6 +35,11 @@ var figure_scenes: Dictionary = {
 
 var _counter: int 
 
+var red_moves: Array 
+var black_moves: Array  
+var restricted_figures: Dictionary = { team.Red: [], team.Black: [] }
+
+
 func _ready():
 	turn = team.Red
 	initialize_markers()
@@ -78,7 +83,60 @@ func load_move(move: int) -> void:
 	turn = team.Red
 	create_state(save_states[move])
 
+func is_repetition_violation(figure: Figure, move_history: Array) -> bool:
+	if move_history.size() >= 6 and detect_repetition_pattern(move_history, 6, figure, 1):
+		return true
+	if move_history.size() >= 12 and detect_repetition_pattern(move_history, 12, figure, 2):
+		return true
+	if move_history.size() >= 18 and detect_repetition_pattern(move_history, 18, figure, 3):
+		return true
+	
+	clean_old_moves()
+	return false
+
+func detect_repetition_pattern(move_history: Array, limit: int, figure: Figure, unique_count: int) -> bool:
+	var chasing_figures = []
+	var unique_figures = {}
+	
+	for i in range(move_history.size() - limit, move_history.size()):
+		var current_figure = move_history[i]
+		if current_figure not in unique_figures:
+			unique_figures[current_figure] = true
+			chasing_figures.append(current_figure)
+		
+		if chasing_figures.size() > unique_count:
+			return false
+	
+	if chasing_figures.size() == unique_count:
+		add_to_restricted(figure.team, chasing_figures)
+		return true
+	
+	return false
+
+func add_to_restricted(team, figures: Array) -> void:
+	for f in figures:
+		restricted_figures[team].append(f)
+
+func update_move_history(figure : Figure):
+	if figure.team == team.Red:
+		red_moves.append(figure)
+	else:
+		black_moves.append(figure)
+
+func clean_old_moves():
+	if red_moves.size() > 18:
+		red_moves.pop_front()
+	elif black_moves.size() > 18:
+		black_moves.pop_front()
+		
 func move(marker):
+	update_move_history(selected_figure)
+	if is_repetition_violation(selected_figure,red_moves):
+		set_restricted_figures_active(selected_figure.team, false)
+	else:
+		set_restricted_figures_active(selected_figure.team, true)
+		clear_restricted_figures(selected_figure.team)
+		
 	unhighlight_markers()
 	if state.has(marker.board_position):
 		state[marker.board_position].delete()
@@ -87,17 +145,31 @@ func move(marker):
 	
 	turn = team.Black
 
-func unhighlight_markers():
-	for key in markers:
-		markers[key].unhighlight()
+func set_restricted_figures_active(team, state: bool) -> void:
+	for figure in restricted_figures[team]:
+		figure.active = state
+
+func clear_restricted_figures(team) -> void:
+	restricted_figures[team] = []
+
 
 func computer_move(pos: Vector2, new_pos: Vector2):
+	update_move_history(state[pos])
+	if is_repetition_violation(state[pos],black_moves):
+		set_restricted_figures_active(state[pos].team, false)
+	else:
+		set_restricted_figures_active(state[pos].team, true)
+		clear_restricted_figures(state[pos].team)
 	if state.has(new_pos):
 		state[new_pos].delete()
 	state[pos].board_position = new_pos
 	turn = team.Red
 	generate_save_state()
 
+func unhighlight_markers():
+	for key in markers:
+		markers[key].unhighlight()
+		
 func calculate_moves():
 	var keys: Array = state.keys()
 	for pos in keys:
