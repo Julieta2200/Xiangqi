@@ -82,7 +82,6 @@ func delete():
 
 
 func move(marker):
-	board.unhighlight_markers()
 	board.markers[board_position].trajectory_highlight()
 	
 	board_position = marker.board_position
