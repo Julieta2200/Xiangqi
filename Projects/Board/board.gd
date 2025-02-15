@@ -85,8 +85,7 @@ func move(marker):
 	unhighlight_markers()
 	if state.has(marker.board_position):
 		state[marker.board_position].delete()
-	selected_figure.move(marker.global_position)
-	selected_figure.board_position = marker.board_position
+	selected_figure.move(marker)
 	
 #	selected_figure.highlight.visible = false
 	turn = team.Black
@@ -98,8 +97,7 @@ func unhighlight_markers():
 func computer_move(pos: Vector2, new_pos: Vector2):
 	if state.has(new_pos):
 		state[new_pos].delete()
-	state[pos].move(markers[new_pos].global_position)
-	state[pos].board_position = new_pos
+	state[pos].move(markers[new_pos])
 	turn = team.Red
 	generate_save_state()
 

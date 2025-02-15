@@ -1,4 +1,4 @@
-class_name Figure extends CharacterBody2D
+class_name Figure extends Node2D
 
 @export var team : Board.team
 @export var type : Types
@@ -81,11 +81,11 @@ func delete():
 	queue_free()
 
 
-func move(target_position: Vector2):
+func move(marker):
 	board.unhighlight_markers()
-	if board.markers.has(board_position):
-		board.markers[board_position].trajectory_highlight()
+	board.markers[board_position].trajectory_highlight()
 	
+	board_position = marker.board_position
 	var tween = create_tween()
 
-	tween.tween_property(self, "position", target_position, 0.5) 
+	tween.tween_property(self, "position", marker.global_position, 0.5) 
