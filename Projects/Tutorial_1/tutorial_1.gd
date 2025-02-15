@@ -9,6 +9,7 @@ func _ready():
 	%Board.for_tutorial = true
 	create_soldier()
 	soldier_movement_dialog()
+	print(DisplayServer.screen_get_size())
 	
 func create_soldier():
 	state = {
