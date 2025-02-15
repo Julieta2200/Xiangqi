@@ -16,14 +16,11 @@ var valid_moves: Array[Vector2] = []
 
 var board_position : Vector2 = Vector2(-1,-1):
 	set(p):
-		board.unhighlight_markers()
-		if board.markers.has(board_position):
-			board.markers[board_position].trajectory_highlight()
 		board.state.erase(board_position)
 		board_position = p
-		self.global_position = board.markers[board_position].global_position
 		board.state[board_position] = self
 
+	
 var active: bool =  true
 
 func calculate_moves() -> void:
@@ -82,3 +79,12 @@ func mobility_factor(state: Dictionary, current_position: Vector2) -> float:
 
 func delete():
 	queue_free()
+
+
+func move(marker):
+	board.markers[board_position].trajectory_highlight()
+	
+	board_position = marker.board_position
+	var tween = create_tween()
+
+	tween.tween_property(self, "position", marker.global_position, 0.5) 
