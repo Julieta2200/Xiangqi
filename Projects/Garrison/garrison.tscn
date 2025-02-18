@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://pxqrvonok1lr"]
+
+[ext_resource type="Script" path="res://Projects/Garrison/garrison.gd" id="1_6xqpg"]
+[ext_resource type="PackedScene" uid="uid://dbvg1wddl1i3g" path="res://Projects/Garrison/figure_card.tscn" id="2_f5xw8"]
+
+[node name="Garrison" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6xqpg")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -91.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="FigureCard" parent="Panel" instance=ExtResource("2_f5xw8")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 0.0
+offset_left = 23.0
+offset_top = -79.0
+offset_right = 23.0
+offset_bottom = -79.0
+grow_horizontal = 1
+grow_vertical = 0
+
+[connection signal="selected" from="Panel/FigureCard" to="." method="_on_figure_card_selected"]

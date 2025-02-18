@@ -1,0 +1,313 @@
+[gd_scene load_steps=5 format=3 uid="uid://bsfrfdhfupbq7"]
+
+[ext_resource type="Script" path="res://Projects/Board/board_editor.gd" id="1_1ap8g"]
+[ext_resource type="Texture2D" uid="uid://d2bgvmmg0dnog" path="res://Assets/Characters/background.png" id="2_gy3le"]
+[ext_resource type="PackedScene" uid="uid://dlkpgwakp3ub7" path="res://Projects/Board/Marker/marker.tscn" id="3_qclrb"]
+[ext_resource type="PackedScene" uid="uid://pxqrvonok1lr" path="res://Projects/Garrison/garrison.tscn" id="4_kroq6"]
+
+[node name="BoardEditor" type="Node2D"]
+process_thread_group = 2
+process_thread_group_order = 0
+process_thread_messages = 0
+script = ExtResource("1_1ap8g")
+
+[node name="Xiangqi" type="Sprite2D" parent="."]
+position = Vector2(279, 339)
+texture = ExtResource("2_gy3le")
+
+[node name="Markers" type="Node2D" parent="."]
+position = Vector2(3, -3)
+
+[node name="1" type="Node2D" parent="Markers"]
+
+[node name="Marker1" parent="Markers/1" instance=ExtResource("3_qclrb")]
+position = Vector2(74, 540)
+
+[node name="Marker2" parent="Markers/1" instance=ExtResource("3_qclrb")]
+position = Vector2(124, 540)
+
+[node name="Marker3" parent="Markers/1" instance=ExtResource("3_qclrb")]
+position = Vector2(174, 540)
+
+[node name="Marker4" parent="Markers/1" instance=ExtResource("3_qclrb")]
+position = Vector2(224, 540)
+
+[node name="Marker5" parent="Markers/1" instance=ExtResource("3_qclrb")]
+position = Vector2(274, 540)
+
+[node name="Marker6" parent="Markers/1" instance=ExtResource("3_qclrb")]
+position = Vector2(324, 540)
+
+[node name="Marker7" parent="Markers/1" instance=ExtResource("3_qclrb")]
+position = Vector2(374, 540)
+
+[node name="Marker8" parent="Markers/1" instance=ExtResource("3_qclrb")]
+position = Vector2(424, 540)
+
+[node name="Marker9" parent="Markers/1" instance=ExtResource("3_qclrb")]
+position = Vector2(474, 540)
+
+[node name="2" type="Node2D" parent="Markers"]
+
+[node name="Marker1" parent="Markers/2" instance=ExtResource("3_qclrb")]
+position = Vector2(74, 490)
+
+[node name="Marker2" parent="Markers/2" instance=ExtResource("3_qclrb")]
+position = Vector2(124, 490)
+
+[node name="Marker3" parent="Markers/2" instance=ExtResource("3_qclrb")]
+position = Vector2(174, 490)
+
+[node name="Marker4" parent="Markers/2" instance=ExtResource("3_qclrb")]
+position = Vector2(224, 490)
+
+[node name="Marker5" parent="Markers/2" instance=ExtResource("3_qclrb")]
+position = Vector2(274, 490)
+
+[node name="Marker6" parent="Markers/2" instance=ExtResource("3_qclrb")]
+position = Vector2(324, 490)
+
+[node name="Marker7" parent="Markers/2" instance=ExtResource("3_qclrb")]
+position = Vector2(374, 490)
+
+[node name="Marker8" parent="Markers/2" instance=ExtResource("3_qclrb")]
+position = Vector2(424, 490)
+
+[node name="Marker9" parent="Markers/2" instance=ExtResource("3_qclrb")]
+position = Vector2(474, 490)
+
+[node name="3" type="Node2D" parent="Markers"]
+
+[node name="Marker1" parent="Markers/3" instance=ExtResource("3_qclrb")]
+position = Vector2(74, 440)
+
+[node name="Marker2" parent="Markers/3" instance=ExtResource("3_qclrb")]
+position = Vector2(124, 440)
+
+[node name="Marker3" parent="Markers/3" instance=ExtResource("3_qclrb")]
+position = Vector2(174, 440)
+
+[node name="Marker4" parent="Markers/3" instance=ExtResource("3_qclrb")]
+position = Vector2(224, 440)
+
+[node name="Marker5" parent="Markers/3" instance=ExtResource("3_qclrb")]
+position = Vector2(274, 440)
+
+[node name="Marker6" parent="Markers/3" instance=ExtResource("3_qclrb")]
+position = Vector2(324, 440)
+
+[node name="Marker7" parent="Markers/3" instance=ExtResource("3_qclrb")]
+position = Vector2(374, 440)
+
+[node name="Marker8" parent="Markers/3" instance=ExtResource("3_qclrb")]
+position = Vector2(424, 440)
+
+[node name="Marker9" parent="Markers/3" instance=ExtResource("3_qclrb")]
+position = Vector2(474, 440)
+
+[node name="4" type="Node2D" parent="Markers"]
+
+[node name="Marker1" parent="Markers/4" instance=ExtResource("3_qclrb")]
+position = Vector2(74, 390)
+
+[node name="Marker2" parent="Markers/4" instance=ExtResource("3_qclrb")]
+position = Vector2(124, 390)
+
+[node name="Marker3" parent="Markers/4" instance=ExtResource("3_qclrb")]
+position = Vector2(174, 390)
+
+[node name="Marker4" parent="Markers/4" instance=ExtResource("3_qclrb")]
+position = Vector2(224, 390)
+
+[node name="Marker5" parent="Markers/4" instance=ExtResource("3_qclrb")]
+position = Vector2(274, 390)
+
+[node name="Marker6" parent="Markers/4" instance=ExtResource("3_qclrb")]
+position = Vector2(324, 390)
+
+[node name="Marker7" parent="Markers/4" instance=ExtResource("3_qclrb")]
+position = Vector2(374, 390)
+
+[node name="Marker8" parent="Markers/4" instance=ExtResource("3_qclrb")]
+position = Vector2(424, 390)
+
+[node name="Marker9" parent="Markers/4" instance=ExtResource("3_qclrb")]
+position = Vector2(474, 390)
+
+[node name="5" type="Node2D" parent="Markers"]
+
+[node name="Marker1" parent="Markers/5" instance=ExtResource("3_qclrb")]
+position = Vector2(74, 340)
+
+[node name="Marker2" parent="Markers/5" instance=ExtResource("3_qclrb")]
+position = Vector2(124, 340)
+
+[node name="Marker3" parent="Markers/5" instance=ExtResource("3_qclrb")]
+position = Vector2(174, 340)
+
+[node name="Marker4" parent="Markers/5" instance=ExtResource("3_qclrb")]
+position = Vector2(224, 340)
+
+[node name="Marker5" parent="Markers/5" instance=ExtResource("3_qclrb")]
+position = Vector2(274, 340)
+
+[node name="Marker6" parent="Markers/5" instance=ExtResource("3_qclrb")]
+position = Vector2(324, 340)
+
+[node name="Marker7" parent="Markers/5" instance=ExtResource("3_qclrb")]
+position = Vector2(374, 340)
+
+[node name="Marker8" parent="Markers/5" instance=ExtResource("3_qclrb")]
+position = Vector2(424, 340)
+
+[node name="Marker9" parent="Markers/5" instance=ExtResource("3_qclrb")]
+position = Vector2(474, 340)
+
+[node name="6" type="Node2D" parent="Markers"]
+
+[node name="Marker1" parent="Markers/6" instance=ExtResource("3_qclrb")]
+position = Vector2(74, 264)
+
+[node name="Marker2" parent="Markers/6" instance=ExtResource("3_qclrb")]
+position = Vector2(124, 264)
+
+[node name="Marker3" parent="Markers/6" instance=ExtResource("3_qclrb")]
+position = Vector2(174, 264)
+
+[node name="Marker4" parent="Markers/6" instance=ExtResource("3_qclrb")]
+position = Vector2(224, 264)
+
+[node name="Marker5" parent="Markers/6" instance=ExtResource("3_qclrb")]
+position = Vector2(274, 264)
+
+[node name="Marker6" parent="Markers/6" instance=ExtResource("3_qclrb")]
+position = Vector2(324, 264)
+
+[node name="Marker7" parent="Markers/6" instance=ExtResource("3_qclrb")]
+position = Vector2(374, 264)
+
+[node name="Marker8" parent="Markers/6" instance=ExtResource("3_qclrb")]
+position = Vector2(424, 264)
+
+[node name="Marker9" parent="Markers/6" instance=ExtResource("3_qclrb")]
+position = Vector2(474, 264)
+
+[node name="7" type="Node2D" parent="Markers"]
+
+[node name="Marker1" parent="Markers/7" instance=ExtResource("3_qclrb")]
+position = Vector2(74, 214)
+
+[node name="Marker2" parent="Markers/7" instance=ExtResource("3_qclrb")]
+position = Vector2(124, 214)
+
+[node name="Marker3" parent="Markers/7" instance=ExtResource("3_qclrb")]
+position = Vector2(174, 214)
+
+[node name="Marker4" parent="Markers/7" instance=ExtResource("3_qclrb")]
+position = Vector2(224, 214)
+
+[node name="Marker5" parent="Markers/7" instance=ExtResource("3_qclrb")]
+position = Vector2(274, 214)
+
+[node name="Marker6" parent="Markers/7" instance=ExtResource("3_qclrb")]
+position = Vector2(324, 214)
+
+[node name="Marker7" parent="Markers/7" instance=ExtResource("3_qclrb")]
+position = Vector2(374, 214)
+
+[node name="Marker8" parent="Markers/7" instance=ExtResource("3_qclrb")]
+position = Vector2(424, 214)
+
+[node name="Marker9" parent="Markers/7" instance=ExtResource("3_qclrb")]
+position = Vector2(474, 214)
+
+[node name="8" type="Node2D" parent="Markers"]
+
+[node name="Marker1" parent="Markers/8" instance=ExtResource("3_qclrb")]
+position = Vector2(74, 164)
+
+[node name="Marker2" parent="Markers/8" instance=ExtResource("3_qclrb")]
+position = Vector2(124, 164)
+
+[node name="Marker3" parent="Markers/8" instance=ExtResource("3_qclrb")]
+position = Vector2(174, 164)
+
+[node name="Marker4" parent="Markers/8" instance=ExtResource("3_qclrb")]
+position = Vector2(224, 164)
+
+[node name="Marker5" parent="Markers/8" instance=ExtResource("3_qclrb")]
+position = Vector2(274, 164)
+
+[node name="Marker6" parent="Markers/8" instance=ExtResource("3_qclrb")]
+position = Vector2(324, 164)
+
+[node name="Marker7" parent="Markers/8" instance=ExtResource("3_qclrb")]
+position = Vector2(374, 164)
+
+[node name="Marker8" parent="Markers/8" instance=ExtResource("3_qclrb")]
+position = Vector2(424, 164)
+
+[node name="Marker9" parent="Markers/8" instance=ExtResource("3_qclrb")]
+position = Vector2(474, 164)
+
+[node name="9" type="Node2D" parent="Markers"]
+
+[node name="Marker1" parent="Markers/9" instance=ExtResource("3_qclrb")]
+position = Vector2(74, 114)
+
+[node name="Marker2" parent="Markers/9" instance=ExtResource("3_qclrb")]
+position = Vector2(124, 114)
+
+[node name="Marker3" parent="Markers/9" instance=ExtResource("3_qclrb")]
+position = Vector2(174, 114)
+
+[node name="Marker4" parent="Markers/9" instance=ExtResource("3_qclrb")]
+position = Vector2(224, 114)
+
+[node name="Marker5" parent="Markers/9" instance=ExtResource("3_qclrb")]
+position = Vector2(274, 114)
+
+[node name="Marker6" parent="Markers/9" instance=ExtResource("3_qclrb")]
+position = Vector2(324, 114)
+
+[node name="Marker7" parent="Markers/9" instance=ExtResource("3_qclrb")]
+position = Vector2(374, 114)
+
+[node name="Marker8" parent="Markers/9" instance=ExtResource("3_qclrb")]
+position = Vector2(424, 114)
+
+[node name="Marker9" parent="Markers/9" instance=ExtResource("3_qclrb")]
+position = Vector2(474, 114)
+
+[node name="10" type="Node2D" parent="Markers"]
+
+[node name="Marker1" parent="Markers/10" instance=ExtResource("3_qclrb")]
+position = Vector2(74, 64)
+
+[node name="Marker2" parent="Markers/10" instance=ExtResource("3_qclrb")]
+position = Vector2(124, 64)
+
+[node name="Marker3" parent="Markers/10" instance=ExtResource("3_qclrb")]
+position = Vector2(174, 64)
+
+[node name="Marker4" parent="Markers/10" instance=ExtResource("3_qclrb")]
+position = Vector2(224, 64)
+
+[node name="Marker5" parent="Markers/10" instance=ExtResource("3_qclrb")]
+position = Vector2(274, 64)
+
+[node name="Marker6" parent="Markers/10" instance=ExtResource("3_qclrb")]
+position = Vector2(324, 64)
+
+[node name="Marker7" parent="Markers/10" instance=ExtResource("3_qclrb")]
+position = Vector2(374, 64)
+
+[node name="Marker8" parent="Markers/10" instance=ExtResource("3_qclrb")]
+position = Vector2(424, 64)
+
+[node name="Marker9" parent="Markers/10" instance=ExtResource("3_qclrb")]
+position = Vector2(474, 64)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Garrison" parent="CanvasLayer" instance=ExtResource("4_kroq6")]

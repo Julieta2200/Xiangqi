@@ -1,0 +1,82 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbvg1wddl1i3g"]
+
+[ext_resource type="Script" path="res://Projects/Garrison/figure_card.gd" id="1_qr4yr"]
+[ext_resource type="Texture2D" uid="uid://fskambwwl3ab" path="res://Assets/Characters/Ashes/Mini_Ashes/Ashes_mini_front.png" id="2_u85ag"]
+[ext_resource type="FontFile" uid="uid://d1cg0l42tlo2l" path="res://Assets/tmp/hint_system_ui/8-bit-fortress (1).ttf" id="3_knxgi"]
+
+[node name="FigureCard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -512.0
+offset_bottom = -614.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qr4yr")
+
+[node name="card" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 45.0
+offset_bottom = 63.0
+
+[node name="image" type="TextureRect" parent="card"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 41.0
+grow_horizontal = 2
+texture = ExtResource("2_u85ag")
+
+[node name="name" type="TextEdit" parent="card"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -19.0
+offset_right = -1.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("3_knxgi")
+theme_override_font_sizes/font_size = 7
+text = "hello"
+editable = false
+context_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+scroll_fit_content_height = true
+
+[node name="qty" type="TextEdit" parent="card"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 28.0
+offset_top = -19.0
+offset_right = 3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("3_knxgi")
+theme_override_font_sizes/font_size = 7
+text = "x2"
+editable = false
+context_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+scroll_fit_content_height = true
+
+[connection signal="gui_input" from="card" to="." method="_on_card_gui_input"]
