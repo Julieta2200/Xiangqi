@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bsfrfdhfupbq7"]
+[gd_scene load_steps=5 format=3 uid="uid://bwigplvfipfkd"]
 
 [ext_resource type="Script" path="res://Projects/Board/board_editor.gd" id="1_1ap8g"]
 [ext_resource type="Texture2D" uid="uid://d2bgvmmg0dnog" path="res://Assets/Characters/background.png" id="2_gy3le"]
@@ -6,9 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://pxqrvonok1lr" path="res://Projects/Garrison/garrison.tscn" id="4_kroq6"]
 
 [node name="BoardEditor" type="Node2D"]
-process_thread_group = 2
-process_thread_group_order = 0
-process_thread_messages = 0
 script = ExtResource("1_1ap8g")
 
 [node name="Xiangqi" type="Sprite2D" parent="."]
@@ -311,3 +308,4 @@ position = Vector2(474, 64)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Garrison" parent="CanvasLayer" instance=ExtResource("4_kroq6")]
+unique_name_in_owner = true
