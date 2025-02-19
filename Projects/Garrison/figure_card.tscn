@@ -17,66 +17,54 @@ script = ExtResource("1_qr4yr")
 
 [node name="card" type="Panel" parent="."]
 layout_mode = 0
-offset_right = 45.0
-offset_bottom = 63.0
+offset_right = 50.0
+offset_bottom = 70.0
 
 [node name="image" type="TextureRect" parent="card"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 41.0
+offset_top = 5.0
+offset_bottom = 46.0
 grow_horizontal = 2
 texture = ExtResource("2_u85ag")
 
-[node name="name" type="TextEdit" parent="card"]
+[node name="name" type="Label" parent="card"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -19.0
-offset_right = -1.0
-offset_bottom = -3.0
+offset_left = 3.0
+offset_top = -20.0
+offset_right = -20.0
+offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/line_spacing = 0
 theme_override_fonts/font = ExtResource("3_knxgi")
 theme_override_font_sizes/font_size = 7
 text = "hello"
-editable = false
-context_menu_enabled = false
-shortcut_keys_enabled = false
-selecting_enabled = false
-deselect_on_focus_loss_enabled = false
-drag_and_drop_selection_enabled = false
-virtual_keyboard_enabled = false
-middle_mouse_paste_enabled = false
-scroll_fit_content_height = true
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="qty" type="TextEdit" parent="card"]
+[node name="qty" type="Label" parent="card"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 28.0
-offset_top = -19.0
-offset_right = 3.0
-offset_bottom = -3.0
+offset_left = 31.0
+offset_top = -20.0
+offset_right = -2.0
+offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_constants/line_spacing = 0
+theme_override_constants/line_spacing = 1
 theme_override_fonts/font = ExtResource("3_knxgi")
 theme_override_font_sizes/font_size = 7
 text = "x2"
-editable = false
-context_menu_enabled = false
-shortcut_keys_enabled = false
-selecting_enabled = false
-deselect_on_focus_loss_enabled = false
-drag_and_drop_selection_enabled = false
-virtual_keyboard_enabled = false
-middle_mouse_paste_enabled = false
-scroll_fit_content_height = true
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="gui_input" from="card" to="." method="_on_card_gui_input"]

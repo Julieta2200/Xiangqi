@@ -1,7 +1,12 @@
 class_name FigureCard extends Control
 
 @onready var sprites: Dictionary = {
-	Figure.Types.Advisor: load("res://Assets/Characters/Advisor/Raven.png")
+	Figure.Types.Advisor: load("res://Assets/Characters/Advisor/Raven.png"),
+	Figure.Types.Soldier: load("res://Assets/Characters/Pawn/Fire pawn.png"),
+	Figure.Types.Elephant: load("res://Assets/tmp/elephant_red.png"),
+	Figure.Types.Chariot: load("res://Assets/tmp/chariot_red.png"),
+	Figure.Types.Horse: load("res://Assets/tmp/horse_red.png"),
+	Figure.Types.Cannon: load("res://Assets/tmp/cannon_red.png")
 }
 
 signal selected(FigureCard)
