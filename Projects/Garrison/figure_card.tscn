@@ -26,9 +26,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -17.0
-offset_top = 5.0
+offset_top = 4.0
 offset_right = 17.0
-offset_bottom = 44.0
+offset_bottom = 43.0
 grow_horizontal = 2
 texture = ExtResource("2_u85ag")
 
