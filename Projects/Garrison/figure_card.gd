@@ -7,7 +7,7 @@ class_name FigureCard extends Control
 	Figure.Types.Horse: load("res://Assets/tmp/horse_red.png"),
 	Figure.Types.Cannon: load("res://Assets/tmp/cannon_red.png")
 }
-var figures_names = {
+var figure_names = {
 	Figure.Types.Soldier: "Soldier",
 	Figure.Types.Elephant: "Elephant",
 	Figure.Types.Chariot: "Chariot",
@@ -27,14 +27,13 @@ var type: Figure.Types :
 		else:
 			$card/image.scale = Vector2(1,1)
 		$card/image.texture = sprites[type]
-		$card/name.text = figures_names[type]
+		$card/name.text = figure_names[type]
 
 var qty: int :
 	set(q):
 		qty = q
 		$card/qty.text = "x"+str(qty)
 
-var hovered: bool
 
 func _process(delta):
 	pass

@@ -4,7 +4,9 @@ var state : Dictionary
 const board_rows = 10
 const board_cols = 9
 var markers : Dictionary
-var figures: Dictionary = {Figure.Types.Soldier: 3,Figure.Types.Elephant:1,Figure.Types.Chariot:2,Figure.Types.Horse: 0,Figure.Types.Cannon:2}
+var garrison: Dictionary = {Figure.Types.Soldier: 3,Figure.Types.Elephant:1,Figure.Types.Chariot:2,Figure.Types.Horse: 0,Figure.Types.Cannon:2}
+
+var figures: Dictionary
 
 var figure_scenes: Dictionary = {
 	Figure.Types.Soldier: preload("res://Projects/Figure/Soldier/soldier.tscn"),
@@ -15,12 +17,14 @@ var figure_scenes: Dictionary = {
 }
 
 func _ready():
-	for i in figures.keys():
-		for j in figures[i]:
+	for i in garrison.keys():
+		figures[i] = []
+		for j in garrison[i]:
 			var figure = figure_scenes[i].instantiate()
 			figure.team = Board.team.Red
 			$Figures.add_child(figure)
-	%Garrison.fill_the_cards(figures)
+			figures[i].append(figure)
+	%Garrison.fill_the_cards(garrison)
 	initialize_markers()
 
 func _on_marker_editor_selected_marker(marker : MarkerEditor):
@@ -32,10 +36,11 @@ func _on_marker_editor_selected_marker(marker : MarkerEditor):
 			"type": %Garrison.selected_figure.type,
 			"team": Board.team.Red
 		}
-		for i in $Figures.get_children():
-			if i.type == %Garrison.selected_figure.type and i.global_position < Vector2.ZERO:
-				i.global_position = markers[marker.board_position].global_position
-				break
+		
+		var figure = figures[%Garrison.selected_figure.type].pop_front()
+		if figure != null:
+			figure.global_position = markers[marker.board_position].global_position
+		
 		%Garrison.removing_selected_figure()
 	
 
