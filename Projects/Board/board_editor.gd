@@ -4,7 +4,9 @@ var state : Dictionary
 const board_rows = 10
 const board_cols = 9
 var markers : Dictionary
-var garrison: Dictionary = {Figure.Types.Soldier: 3,Figure.Types.Elephant:1,Figure.Types.Chariot:2,Figure.Types.Horse: 0,Figure.Types.Cannon:2}
+@export var garrison: Dictionary = {Figure.Types.Soldier: 0,Figure.Types.Elephant:0,Figure.Types.Chariot:0,Figure.Types.Horse: 0,Figure.Types.Cannon:0}
+
+signal start(state: Dictionary)
 
 var figures: Dictionary
 
@@ -49,3 +51,12 @@ func initialize_markers():
 		for j in range(board_cols):
 			markers[Vector2(j,i)] = $Markers.get_child(i).get_child(j)
 			markers[Vector2(j,i)].board_position = Vector2(j,i)
+
+
+func _on_garrison_save() -> void:
+	emit_signal("start", state)
+
+
+func _on_visibility_changed() -> void:
+	if !visible:
+		$CanvasLayer.hide()

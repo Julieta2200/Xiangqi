@@ -99,3 +99,4 @@ vertical_alignment = 1
 [connection signal="selected" from="Panel/FigureCards/FigureCard3" to="." method="_on_figure_card_selected"]
 [connection signal="selected" from="Panel/FigureCards/FigureCard4" to="." method="_on_figure_card_selected"]
 [connection signal="selected" from="Panel/FigureCards/FigureCard5" to="." method="_on_figure_card_selected"]
+[connection signal="pressed" from="Panel/SaveTextureButton" to="." method="_on_save"]
