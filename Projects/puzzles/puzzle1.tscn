@@ -29,3 +29,6 @@ script = ExtResource("5_so7i5")
 [node name="Evaluation" type="Node2D" parent="."]
 unique_name_in_owner = true
 script = ExtResource("6_j3qhf")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(277, 337)
