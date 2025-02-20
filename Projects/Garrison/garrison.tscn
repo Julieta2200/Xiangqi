@@ -26,7 +26,7 @@ offset_top = -91.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+[node name="FigureCards" type="HBoxContainer" parent="Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -39,26 +39,26 @@ offset_right = 211.5
 offset_bottom = 35.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 44
+theme_override_constants/separation = 33
 
-[node name="FigureCard" parent="Panel/HBoxContainer" instance=ExtResource("2_f5xw8")]
-custom_minimum_size = Vector2(50, 70)
+[node name="FigureCard" parent="Panel/FigureCards" instance=ExtResource("2_f5xw8")]
+custom_minimum_size = Vector2(60, 70)
 layout_mode = 2
 
-[node name="FigureCard2" parent="Panel/HBoxContainer" instance=ExtResource("2_f5xw8")]
-custom_minimum_size = Vector2(50, 70)
+[node name="FigureCard2" parent="Panel/FigureCards" instance=ExtResource("2_f5xw8")]
+custom_minimum_size = Vector2(60, 70)
 layout_mode = 2
 
-[node name="FigureCard3" parent="Panel/HBoxContainer" instance=ExtResource("2_f5xw8")]
-custom_minimum_size = Vector2(50, 70)
+[node name="FigureCard3" parent="Panel/FigureCards" instance=ExtResource("2_f5xw8")]
+custom_minimum_size = Vector2(60, 70)
 layout_mode = 2
 
-[node name="FigureCard4" parent="Panel/HBoxContainer" instance=ExtResource("2_f5xw8")]
-custom_minimum_size = Vector2(50, 70)
+[node name="FigureCard4" parent="Panel/FigureCards" instance=ExtResource("2_f5xw8")]
+custom_minimum_size = Vector2(60, 70)
 layout_mode = 2
 
-[node name="FigureCard5" parent="Panel/HBoxContainer" instance=ExtResource("2_f5xw8")]
-custom_minimum_size = Vector2(50, 70)
+[node name="FigureCard5" parent="Panel/FigureCards" instance=ExtResource("2_f5xw8")]
+custom_minimum_size = Vector2(60, 70)
 layout_mode = 2
 
 [node name="SaveTextureButton" type="TextureButton" parent="Panel"]
@@ -94,8 +94,8 @@ text = "Save"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="selected" from="Panel/HBoxContainer/FigureCard" to="." method="_on_figure_card_selected"]
-[connection signal="selected" from="Panel/HBoxContainer/FigureCard2" to="." method="_on_figure_card_selected"]
-[connection signal="selected" from="Panel/HBoxContainer/FigureCard3" to="." method="_on_figure_card_selected"]
-[connection signal="selected" from="Panel/HBoxContainer/FigureCard4" to="." method="_on_figure_card_selected"]
-[connection signal="selected" from="Panel/HBoxContainer/FigureCard5" to="." method="_on_figure_card_selected"]
+[connection signal="selected" from="Panel/FigureCards/FigureCard" to="." method="_on_figure_card_selected"]
+[connection signal="selected" from="Panel/FigureCards/FigureCard2" to="." method="_on_figure_card_selected"]
+[connection signal="selected" from="Panel/FigureCards/FigureCard3" to="." method="_on_figure_card_selected"]
+[connection signal="selected" from="Panel/FigureCards/FigureCard4" to="." method="_on_figure_card_selected"]
+[connection signal="selected" from="Panel/FigureCards/FigureCard5" to="." method="_on_figure_card_selected"]

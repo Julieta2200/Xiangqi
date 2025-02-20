@@ -44,23 +44,26 @@ func highlight_moves() -> void:
 			board.markers[move].selected_highlight.visible = true
 
 func _on_mouse_event(viewport, event, shape_idx):
-	if Input.is_action_pressed("click") and board.turn == team and team == Board.team.Red and active:
-		if board.selected_figure != null:
-			board.selected_figure.delete_highlight()
-#			board.selected_figure.highlight.visible = false
-		board.selected_figure = self
-#		highlight.visible = true
-		highlight_moves()
-		if board.for_tutorial:
-			for i in arrows.get_children():
-				i.visible = false
+	if board != null:
+		if Input.is_action_pressed("click") and board.turn == team and team == Board.team.Red and active:
+			if board.selected_figure != null:
+				board.selected_figure.delete_highlight()
+	#			board.selected_figure.highlight.visible = false
+			board.selected_figure = self
+	#		highlight.visible = true
+			highlight_moves()
+			if board.for_tutorial:
+				for i in arrows.get_children():
+					i.visible = false
 	
 func _on_area_2d_mouse_entered():
-	if team == board.turn:
-		$mouse_entered_highlight.visible = true
+	if board != null:
+		if team == board.turn:
+			$mouse_entered_highlight.visible = true
 
 func _on_area_2d_mouse_exited():
-	$mouse_entered_highlight.visible = false
+	if board != null:
+		$mouse_entered_highlight.visible = false
 
 func delete_highlight():
 	for move in valid_moves:
