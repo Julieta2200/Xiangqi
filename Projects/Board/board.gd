@@ -283,5 +283,3 @@ func get_figures_by_team(t: team) -> Array[Figure]:
 			figures.append(state[pos])
 	
 	return figures
-
-
