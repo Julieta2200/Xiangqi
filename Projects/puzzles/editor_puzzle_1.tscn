@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://3yu3lyhh5bj3"]
+[gd_scene load_steps=5 format=3 uid="uid://3yu3lyhh5bj3"]
 
 [ext_resource type="PackedScene" uid="uid://bm84lj6brofsk" path="res://Projects/Board/board_editor.tscn" id="1_e0cwk"]
 [ext_resource type="Script" path="res://Projects/puzzles/editor_puzzle_1.gd" id="1_f7k0r"]
+[ext_resource type="PackedScene" uid="uid://dpyrcsgpodbx7" path="res://Projects/Board/board.tscn" id="3_7x8xu"]
+[ext_resource type="Script" path="res://Projects/Engines/tutorial_first/tutorial_first_engine.gd" id="4_yykyy"]
 
 [node name="EditorPuzzle1" type="Node2D"]
 script = ExtResource("1_f7k0r")
@@ -14,5 +16,17 @@ garrison = {
 5: 0,
 6: 0
 }
+
+[node name="gameplay" type="Node2D" parent="."]
+visible = false
+
+[node name="Board" parent="gameplay" instance=ExtResource("3_7x8xu")]
+unique_name_in_owner = true
+
+[node name="tutorial_engine" type="Node2D" parent="gameplay"]
+script = ExtResource("4_yykyy")
+
+[node name="Camera2D" type="Camera2D" parent="gameplay"]
+position = Vector2(277, 337)
 
 [connection signal="start" from="BoardEditor" to="." method="_on_board_editor_start"]

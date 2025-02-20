@@ -12,5 +12,6 @@ func _process(delta: float) -> void:
 
 
 func _on_board_editor_start(state: Dictionary) -> void:
+	%Board.create_state(state)
 	$BoardEditor.hide()
-	print(state)
+	$gameplay.show()
