@@ -33,17 +33,16 @@ func create_figures():
 			figures[i].append(figure)
 
 func _on_marker_editor_selected_marker(marker : MarkerEditor):
-	if %Garrison.selected_figure != null:
-		var first_figure = figures[%Garrison.selected_figure.type].front()
-		if state.has(marker.board_position) or !in_boundaries(marker.board_position):
+	if %Garrison.selected_figure != null and in_boundaries(marker.board_position):
+		if state.has(marker.board_position):
 			return
 		
+		var figure = figures[%Garrison.selected_figure.type].pop_front()
 		state[marker.board_position] = {
-			"type": %Garrison.selected_figure.type,
+			"type": figure.type,
 			"team": Board.team.Red
 		}
 
-		var figure = figures[%Garrison.selected_figure.type].pop_front()
 		figure.global_position = markers[marker.board_position].global_position
 		%Garrison.removing_selected_figure()
 
