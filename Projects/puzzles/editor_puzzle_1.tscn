@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://3yu3lyhh5bj3"]
+[gd_scene load_steps=5 format=3 uid="uid://bddh2856dyjgl"]
 
 [ext_resource type="PackedScene" uid="uid://bm84lj6brofsk" path="res://Projects/Board/board_editor.tscn" id="1_e0cwk"]
 [ext_resource type="Script" path="res://Projects/puzzles/editor_puzzle_1.gd" id="1_f7k0r"]
@@ -29,4 +29,5 @@ script = ExtResource("4_yykyy")
 [node name="Camera2D" type="Camera2D" parent="gameplay"]
 position = Vector2(277, 337)
 
+[connection signal="create_static_figures" from="." to="BoardEditor" method="_create_static_figures"]
 [connection signal="start" from="BoardEditor" to="." method="_on_board_editor_start"]

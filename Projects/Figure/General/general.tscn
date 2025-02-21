@@ -1,14 +1,14 @@
 [gd_scene load_steps=7 format=3 uid="uid://ci58kdlspkg5f"]
 
 [ext_resource type="Script" path="res://Projects/Figure/General/general.gd" id="1_tq0kb"]
-[ext_resource type="Texture2D" uid="uid://fsl2gukn8dxi" path="res://Assets/Characters/Ashes/Mini_Ashes/Ashes_mini_back.png" id="2_it31t"]
+[ext_resource type="Texture2D" uid="uid://b5lona02rsqii" path="res://Assets/Characters/Ashes/Ashes_back.png" id="3_ng4g8"]
 [ext_resource type="Texture2D" uid="uid://bh7qd5bwgot0t" path="res://Assets/tmp/highlight.png" id="3_ydm7b"]
 [ext_resource type="Texture2D" uid="uid://dhtgu1fm8i1go" path="res://Assets/Characters/Advisor/eye.png" id="4_k08t0"]
 [ext_resource type="Texture2D" uid="uid://oai7bgd11d1e" path="res://Assets/tmp/arrow.png" id="5_pav2g"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w2yev"]
-radius = 16.0
-height = 45.0
+radius = 24.0
+height = 96.0
 
 [node name="General" type="Node2D"]
 script = ExtResource("1_tq0kb")
@@ -38,13 +38,13 @@ texture = ExtResource("5_pav2g")
 flip_h = true
 
 [node name="General" type="Sprite2D" parent="."]
-position = Vector2(0, -17.5)
-texture = ExtResource("2_it31t")
+position = Vector2(0, -49)
+texture = ExtResource("3_ng4g8")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -16)
+position = Vector2(0, -48)
 shape = SubResource("CapsuleShape2D_w2yev")
 
 [node name="mouse_entered_highlight" type="Sprite2D" parent="."]

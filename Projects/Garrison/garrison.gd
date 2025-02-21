@@ -6,6 +6,8 @@ var selected_figure: FigureCard
 signal save
 
 func _on_figure_card_selected(card: FigureCard):
+	if selected_figure != null and selected_figure != card:
+		selected_figure.highlight.visible = false
 	selected_figure = card
 
 func fill_the_cards(figures):
@@ -15,8 +17,9 @@ func fill_the_cards(figures):
 
 func removing_selected_figure():
 	selected_figure.qty -= 1
-	selected_figure.highlight.visible = false
-	selected_figure = null
+	if selected_figure.qty == 0:
+		selected_figure.highlight.visible = false
+		selected_figure = null
 
 
 func _on_save() -> void:

@@ -1,6 +1,6 @@
 class_name General extends Figure
 
-@onready var red_sprite = load("res://Assets/Characters/Ashes/Mini_Ashes/Ashes_mini_back.png")
+@onready var red_sprite = load("res://Assets/Characters/Ashes/Ashes_back.png")
 @onready var black_sprite = load("res://Assets/tmp/general_black.png")
 
 const directions: Array[Vector2] = [

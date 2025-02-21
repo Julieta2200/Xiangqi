@@ -37,6 +37,6 @@ texture = ExtResource("4_nsme8")
 
 [node name="Arrows" type="Node2D" parent="."]
 
-[connection signal="input_event" from="Area2D" to="." method="_on_mouse_event" flags=18]
-[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered" flags=18]
-[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited" flags=18]
+[connection signal="input_event" from="Area2D" to="." method="_on_mouse_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
