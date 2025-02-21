@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dpyrcsgpodbx7"]
 
 [ext_resource type="Script" path="res://Projects/Board/board.gd" id="1_i1ya0"]
-[ext_resource type="Texture2D" uid="uid://d2bgvmmg0dnog" path="res://Assets/Characters/background.png" id="2_f8rfy"]
+[ext_resource type="Texture2D" uid="uid://dnr57c7q1yhjb" path="res://Assets/boards/board (1).png" id="2_47uw6"]
 [ext_resource type="PackedScene" uid="uid://dlkpgwakp3ub7" path="res://Projects/Board/Marker/marker.tscn" id="3_g0cu3"]
 
 [node name="Board" type="Node2D"]
@@ -11,8 +11,9 @@ process_thread_messages = 0
 script = ExtResource("1_i1ya0")
 
 [node name="Xiangqi" type="Sprite2D" parent="."]
-position = Vector2(279, 339)
-texture = ExtResource("2_f8rfy")
+position = Vector2(919, 961)
+scale = Vector2(2, 2)
+texture = ExtResource("2_47uw6")
 
 [node name="Markers" type="Node2D" parent="."]
 position = Vector2(3, -3)

@@ -17,8 +17,9 @@ config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=557
-window/size/viewport_height=677
+window/size/viewport_width=2200
+window/size/viewport_height=2200
+window/size/mode=3
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_height"
 
@@ -33,3 +34,4 @@ click={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+environment/defaults/default_clear_color=Color(0.203922, 0.596078, 0.858824, 1)

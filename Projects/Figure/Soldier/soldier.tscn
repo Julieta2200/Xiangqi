@@ -1,14 +1,14 @@
 [gd_scene load_steps=7 format=3 uid="uid://gu84kdi4y675"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Soldier/soldier.gd" id="1_3u3jq"]
-[ext_resource type="Texture2D" uid="uid://c5w31l4uy6fxk" path="res://Assets/Characters/Pawn/Fire pawn.png" id="2_52ksk"]
+[ext_resource type="Texture2D" uid="uid://b5lona02rsqii" path="res://Assets/Characters/Ashes/Ashes_back.png" id="3_3misu"]
 [ext_resource type="Texture2D" uid="uid://bh7qd5bwgot0t" path="res://Assets/tmp/highlight.png" id="3_pusma"]
 [ext_resource type="Texture2D" uid="uid://dhtgu1fm8i1go" path="res://Assets/Characters/Advisor/eye.png" id="4_sxk2m"]
 [ext_resource type="Texture2D" uid="uid://oai7bgd11d1e" path="res://Assets/tmp/arrow.png" id="5_5h2fp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b0rn7"]
-radius = 16.0
-height = 45.0
+radius = 41.0
+height = 178.0
 
 [node name="Soldier" type="Node2D"]
 script = ExtResource("1_3u3jq")
@@ -39,13 +39,15 @@ texture = ExtResource("5_5h2fp")
 flip_h = true
 
 [node name="Soldier" type="Sprite2D" parent="."]
-position = Vector2(0, -21.5)
-texture = ExtResource("2_52ksk")
+modulate = Color(0.0361009, 0.0361009, 0.0361009, 1)
+position = Vector2(0, -98)
+scale = Vector2(2, 2)
+texture = ExtResource("3_3misu")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -16)
+position = Vector2(-2, -89)
 shape = SubResource("CapsuleShape2D_b0rn7")
 
 [node name="mouse_entered_highlight" type="Sprite2D" parent="."]
@@ -59,6 +61,6 @@ visible = false
 position = Vector2(0, -25)
 texture = ExtResource("4_sxk2m")
 
-[connection signal="input_event" from="Area2D" to="." method="_on_mouse_event" flags=18]
-[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered" flags=18]
-[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited" flags=18]
+[connection signal="input_event" from="Area2D" to="." method="_on_mouse_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

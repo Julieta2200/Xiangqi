@@ -55,12 +55,13 @@ script = ExtResource("1_0lrns")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 12
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 557.0
+offset_top = -237.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxTexture_b4jn4")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Panel"]

@@ -1,15 +1,7 @@
 class_name Soldier extends Figure
 
-@onready var red_sprite = load("res://Assets/Characters/Pawn/Fire pawn.png")
-@onready var black_sprite = load("res://Assets/tmp/soldier_black.png")
 
 func _ready():
-	if team == Board.team.Red:
-		$Soldier.texture = red_sprite
-	else:
-		$Soldier.scale = Vector2(0.19,0.19)
-		$Soldier.texture = black_sprite
-		
 	boundaries = {
 		Board.team.Red: {
 			"y": Vector2(0, 9),
