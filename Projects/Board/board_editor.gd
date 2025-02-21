@@ -48,14 +48,9 @@ func _on_marker_editor_selected_marker(marker : MarkerEditor):
 		%Garrison.removing_selected_figure()
 
 func in_boundaries(pos):
-	var boundaries = {
-			"y": Vector2(0,4),
-			"x": Vector2(0,8)
-		}
 	if %Garrison.selected_figure.type == Figure.Types.Elephant:
-		if pos.y <= boundaries.y.y and pos.x >= boundaries.x.x:
-			return true
-	return false
+		return pos.y <= 4
+	return true
 	
 func initialize_markers():
 	for i in range(board_rows):
