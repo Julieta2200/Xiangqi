@@ -44,9 +44,8 @@ func _on_marker_editor_selected_marker(marker : MarkerEditor):
 		}
 
 		var figure = figures[%Garrison.selected_figure.type].pop_front()
-		if figure != null:
-			figure.global_position = markers[marker.board_position].global_position
-			%Garrison.removing_selected_figure()
+		figure.global_position = markers[marker.board_position].global_position
+		%Garrison.removing_selected_figure()
 
 func initialize_markers():
 	for i in range(board_rows):
