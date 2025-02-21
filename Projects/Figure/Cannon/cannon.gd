@@ -47,5 +47,3 @@ func get_moves(state: Dictionary, current_position: Vector2) -> Array[Vector2]:
 			new_pos += dir
 	
 	return moves
-
-

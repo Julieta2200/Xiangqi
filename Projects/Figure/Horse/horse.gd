@@ -44,4 +44,3 @@ func get_moves(state: Dictionary, current_position: Vector2) -> Array[Vector2]:
 	
 func free_path(current_position: Vector2, dir: Vector2, state: Dictionary) -> bool:
 	return !state.has(current_position + dir)
-

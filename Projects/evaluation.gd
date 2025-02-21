@@ -95,5 +95,3 @@ func next_turn(turn: Board.team) -> Board.team:
 	if turn == Board.team.Red:
 		return Board.team.Black
 	return Board.team.Red
-
-
