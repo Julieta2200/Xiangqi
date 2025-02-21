@@ -46,7 +46,7 @@ func _on_marker_editor_selected_marker(marker : MarkerEditor):
 		figure.global_position = markers[marker.board_position].global_position
 		%Garrison.removing_selected_figure()
 
-func in_boundaries(pos):
+func in_boundaries(pos : Vector2) -> bool:
 	if %Garrison.selected_figure.type == Figure.Types.Elephant:
 		return pos.y <= 4
 	return true
