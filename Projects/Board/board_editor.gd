@@ -35,7 +35,7 @@ func create_figures():
 func _on_marker_editor_selected_marker(marker : MarkerEditor):
 	if %Garrison.selected_figure != null:
 		var first_figure = figures[%Garrison.selected_figure.type].front()
-		if state.has(marker.board_position) or !(first_figure != null and first_figure.in_boundaries(marker.board_position)):
+		if state.has(marker.board_position) or !in_boundaries(marker.board_position):
 			return
 		
 		state[marker.board_position] = {
@@ -47,6 +47,16 @@ func _on_marker_editor_selected_marker(marker : MarkerEditor):
 		figure.global_position = markers[marker.board_position].global_position
 		%Garrison.removing_selected_figure()
 
+func in_boundaries(pos):
+	var boundaries = {
+			"y": Vector2(0,4),
+			"x": Vector2(0,8)
+		}
+	if %Garrison.selected_figure.type == Figure.Types.Elephant:
+		if pos.y <= boundaries.y.y and pos.x >= boundaries.x.x:
+			return true
+	return false
+	
 func initialize_markers():
 	for i in range(board_rows):
 		for j in range(board_cols):
