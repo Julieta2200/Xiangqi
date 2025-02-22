@@ -22,4 +22,4 @@ mouse_filter = 1
 script = ExtResource("5_828nd")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(926, 961)
+position = Vector2(926, 1036)

@@ -11,299 +11,299 @@ process_thread_messages = 0
 script = ExtResource("1_i1ya0")
 
 [node name="Xiangqi" type="Sprite2D" parent="."]
-position = Vector2(919, 961)
+position = Vector2(918, 1043)
 scale = Vector2(2, 2)
 texture = ExtResource("2_47uw6")
 
 [node name="Markers" type="Node2D" parent="."]
-position = Vector2(3, -3)
+position = Vector2(0, 84)
 
 [node name="1" type="Node2D" parent="Markers"]
 
 [node name="Marker1" parent="Markers/1" instance=ExtResource("3_g0cu3")]
-position = Vector2(5, 1899)
+position = Vector2(2, 1900)
 
 [node name="Marker2" parent="Markers/1" instance=ExtResource("3_g0cu3")]
-position = Vector2(230, 1899)
+position = Vector2(232, 1900)
 
 [node name="Marker3" parent="Markers/1" instance=ExtResource("3_g0cu3")]
-position = Vector2(460, 1899)
+position = Vector2(462, 1900)
 
 [node name="Marker4" parent="Markers/1" instance=ExtResource("3_g0cu3")]
-position = Vector2(701, 1899)
+position = Vector2(705, 1890)
 
 [node name="Marker5" parent="Markers/1" instance=ExtResource("3_g0cu3")]
-position = Vector2(925, 1899)
+position = Vector2(927, 1890)
 
 [node name="Marker6" parent="Markers/1" instance=ExtResource("3_g0cu3")]
-position = Vector2(1149, 1899)
+position = Vector2(1149, 1890)
 
 [node name="Marker7" parent="Markers/1" instance=ExtResource("3_g0cu3")]
-position = Vector2(1378, 1899)
+position = Vector2(1380, 1900)
 
 [node name="Marker8" parent="Markers/1" instance=ExtResource("3_g0cu3")]
-position = Vector2(1608, 1899)
+position = Vector2(1610, 1900)
 
 [node name="Marker9" parent="Markers/1" instance=ExtResource("3_g0cu3")]
-position = Vector2(1829, 1899)
+position = Vector2(1840, 1900)
 
 [node name="2" type="Node2D" parent="Markers"]
 
 [node name="Marker1" parent="Markers/2" instance=ExtResource("3_g0cu3")]
-position = Vector2(5, 1691)
+position = Vector2(2, 1686)
 
 [node name="Marker2" parent="Markers/2" instance=ExtResource("3_g0cu3")]
-position = Vector2(230, 1691)
+position = Vector2(232, 1686)
 
 [node name="Marker3" parent="Markers/2" instance=ExtResource("3_g0cu3")]
-position = Vector2(460, 1691)
+position = Vector2(462, 1686)
 
 [node name="Marker4" parent="Markers/2" instance=ExtResource("3_g0cu3")]
-position = Vector2(701, 1691)
+position = Vector2(705, 1685)
 
 [node name="Marker5" parent="Markers/2" instance=ExtResource("3_g0cu3")]
-position = Vector2(925, 1691)
+position = Vector2(927, 1685)
 
 [node name="Marker6" parent="Markers/2" instance=ExtResource("3_g0cu3")]
-position = Vector2(1149, 1691)
+position = Vector2(1149, 1685)
 
 [node name="Marker7" parent="Markers/2" instance=ExtResource("3_g0cu3")]
-position = Vector2(1378, 1691)
+position = Vector2(1380, 1686)
 
 [node name="Marker8" parent="Markers/2" instance=ExtResource("3_g0cu3")]
-position = Vector2(1608, 1691)
+position = Vector2(1610, 1686)
 
 [node name="Marker9" parent="Markers/2" instance=ExtResource("3_g0cu3")]
-position = Vector2(1829, 1691)
+position = Vector2(1840, 1686)
 
 [node name="3" type="Node2D" parent="Markers"]
 
 [node name="Marker1" parent="Markers/3" instance=ExtResource("3_g0cu3")]
-position = Vector2(5, 1485)
+position = Vector2(2, 1472)
 
 [node name="Marker2" parent="Markers/3" instance=ExtResource("3_g0cu3")]
-position = Vector2(230, 1485)
+position = Vector2(232, 1472)
 
 [node name="Marker3" parent="Markers/3" instance=ExtResource("3_g0cu3")]
-position = Vector2(460, 1485)
+position = Vector2(462, 1472)
 
 [node name="Marker4" parent="Markers/3" instance=ExtResource("3_g0cu3")]
-position = Vector2(701, 1485)
+position = Vector2(705, 1480)
 
 [node name="Marker5" parent="Markers/3" instance=ExtResource("3_g0cu3")]
-position = Vector2(925, 1485)
+position = Vector2(927, 1480)
 
 [node name="Marker6" parent="Markers/3" instance=ExtResource("3_g0cu3")]
-position = Vector2(1149, 1485)
+position = Vector2(1149, 1480)
 
 [node name="Marker7" parent="Markers/3" instance=ExtResource("3_g0cu3")]
-position = Vector2(1378, 1485)
+position = Vector2(1380, 1472)
 
 [node name="Marker8" parent="Markers/3" instance=ExtResource("3_g0cu3")]
-position = Vector2(1608, 1485)
+position = Vector2(1610, 1472)
 
 [node name="Marker9" parent="Markers/3" instance=ExtResource("3_g0cu3")]
-position = Vector2(1829, 1485)
+position = Vector2(1840, 1472)
 
 [node name="4" type="Node2D" parent="Markers"]
 
 [node name="Marker1" parent="Markers/4" instance=ExtResource("3_g0cu3")]
-position = Vector2(5, 1265)
+position = Vector2(2, 1258)
 
 [node name="Marker2" parent="Markers/4" instance=ExtResource("3_g0cu3")]
-position = Vector2(230, 1265)
+position = Vector2(232, 1258)
 
 [node name="Marker3" parent="Markers/4" instance=ExtResource("3_g0cu3")]
-position = Vector2(460, 1265)
+position = Vector2(462, 1258)
 
 [node name="Marker4" parent="Markers/4" instance=ExtResource("3_g0cu3")]
-position = Vector2(690, 1265)
+position = Vector2(692, 1258)
 
 [node name="Marker5" parent="Markers/4" instance=ExtResource("3_g0cu3")]
-position = Vector2(920, 1265)
+position = Vector2(922, 1258)
 
 [node name="Marker6" parent="Markers/4" instance=ExtResource("3_g0cu3")]
-position = Vector2(1148, 1265)
+position = Vector2(1150, 1258)
 
 [node name="Marker7" parent="Markers/4" instance=ExtResource("3_g0cu3")]
-position = Vector2(1378, 1265)
+position = Vector2(1380, 1258)
 
 [node name="Marker8" parent="Markers/4" instance=ExtResource("3_g0cu3")]
-position = Vector2(1608, 1265)
+position = Vector2(1610, 1258)
 
 [node name="Marker9" parent="Markers/4" instance=ExtResource("3_g0cu3")]
-position = Vector2(1829, 1265)
+position = Vector2(1840, 1258)
 
 [node name="5" type="Node2D" parent="Markers"]
 
 [node name="Marker1" parent="Markers/5" instance=ExtResource("3_g0cu3")]
-position = Vector2(5, 1051)
+position = Vector2(2, 1044)
 
 [node name="Marker2" parent="Markers/5" instance=ExtResource("3_g0cu3")]
-position = Vector2(230, 1051)
+position = Vector2(232, 1044)
 
 [node name="Marker3" parent="Markers/5" instance=ExtResource("3_g0cu3")]
-position = Vector2(460, 1051)
+position = Vector2(462, 1044)
 
 [node name="Marker4" parent="Markers/5" instance=ExtResource("3_g0cu3")]
-position = Vector2(690, 1051)
+position = Vector2(692, 1044)
 
 [node name="Marker5" parent="Markers/5" instance=ExtResource("3_g0cu3")]
-position = Vector2(920, 1051)
+position = Vector2(922, 1044)
 
 [node name="Marker6" parent="Markers/5" instance=ExtResource("3_g0cu3")]
-position = Vector2(1148, 1051)
+position = Vector2(1150, 1044)
 
 [node name="Marker7" parent="Markers/5" instance=ExtResource("3_g0cu3")]
-position = Vector2(1378, 1051)
+position = Vector2(1380, 1044)
 
 [node name="Marker8" parent="Markers/5" instance=ExtResource("3_g0cu3")]
-position = Vector2(1608, 1051)
+position = Vector2(1610, 1044)
 
 [node name="Marker9" parent="Markers/5" instance=ExtResource("3_g0cu3")]
-position = Vector2(1829, 1051)
+position = Vector2(1840, 1044)
 
 [node name="6" type="Node2D" parent="Markers"]
 
 [node name="Marker1" parent="Markers/6" instance=ExtResource("3_g0cu3")]
-position = Vector2(5, 859)
+position = Vector2(2, 858)
 
 [node name="Marker2" parent="Markers/6" instance=ExtResource("3_g0cu3")]
-position = Vector2(230, 859)
+position = Vector2(232, 858)
 
 [node name="Marker3" parent="Markers/6" instance=ExtResource("3_g0cu3")]
-position = Vector2(460, 859)
+position = Vector2(462, 858)
 
 [node name="Marker4" parent="Markers/6" instance=ExtResource("3_g0cu3")]
-position = Vector2(690, 859)
+position = Vector2(692, 858)
 
 [node name="Marker5" parent="Markers/6" instance=ExtResource("3_g0cu3")]
-position = Vector2(920, 859)
+position = Vector2(922, 858)
 
 [node name="Marker6" parent="Markers/6" instance=ExtResource("3_g0cu3")]
-position = Vector2(1148, 859)
+position = Vector2(1150, 858)
 
 [node name="Marker7" parent="Markers/6" instance=ExtResource("3_g0cu3")]
-position = Vector2(1378, 859)
+position = Vector2(1380, 858)
 
 [node name="Marker8" parent="Markers/6" instance=ExtResource("3_g0cu3")]
-position = Vector2(1608, 859)
+position = Vector2(1610, 858)
 
 [node name="Marker9" parent="Markers/6" instance=ExtResource("3_g0cu3")]
-position = Vector2(1829, 859)
+position = Vector2(1840, 858)
 
 [node name="7" type="Node2D" parent="Markers"]
 
 [node name="Marker1" parent="Markers/7" instance=ExtResource("3_g0cu3")]
-position = Vector2(5, 651)
+position = Vector2(2, 644)
 
 [node name="Marker2" parent="Markers/7" instance=ExtResource("3_g0cu3")]
-position = Vector2(230, 651)
+position = Vector2(232, 644)
 
 [node name="Marker3" parent="Markers/7" instance=ExtResource("3_g0cu3")]
-position = Vector2(460, 651)
+position = Vector2(462, 644)
 
 [node name="Marker4" parent="Markers/7" instance=ExtResource("3_g0cu3")]
-position = Vector2(690, 651)
+position = Vector2(692, 644)
 
 [node name="Marker5" parent="Markers/7" instance=ExtResource("3_g0cu3")]
-position = Vector2(920, 651)
+position = Vector2(922, 644)
 
 [node name="Marker6" parent="Markers/7" instance=ExtResource("3_g0cu3")]
-position = Vector2(1148, 651)
+position = Vector2(1150, 644)
 
 [node name="Marker7" parent="Markers/7" instance=ExtResource("3_g0cu3")]
-position = Vector2(1378, 651)
+position = Vector2(1380, 644)
 
 [node name="Marker8" parent="Markers/7" instance=ExtResource("3_g0cu3")]
-position = Vector2(1608, 651)
+position = Vector2(1610, 644)
 
 [node name="Marker9" parent="Markers/7" instance=ExtResource("3_g0cu3")]
-position = Vector2(1829, 651)
+position = Vector2(1840, 644)
 
 [node name="8" type="Node2D" parent="Markers"]
 
 [node name="Marker1" parent="Markers/8" instance=ExtResource("3_g0cu3")]
-position = Vector2(5, 435)
+position = Vector2(2, 430)
 
 [node name="Marker2" parent="Markers/8" instance=ExtResource("3_g0cu3")]
-position = Vector2(230, 435)
+position = Vector2(232, 430)
 
 [node name="Marker3" parent="Markers/8" instance=ExtResource("3_g0cu3")]
-position = Vector2(460, 435)
+position = Vector2(462, 430)
 
 [node name="Marker4" parent="Markers/8" instance=ExtResource("3_g0cu3")]
-position = Vector2(701, 435)
+position = Vector2(705, 433)
 
 [node name="Marker5" parent="Markers/8" instance=ExtResource("3_g0cu3")]
-position = Vector2(925, 435)
+position = Vector2(927, 433)
 
 [node name="Marker6" parent="Markers/8" instance=ExtResource("3_g0cu3")]
-position = Vector2(1149, 435)
+position = Vector2(1149, 433)
 
 [node name="Marker7" parent="Markers/8" instance=ExtResource("3_g0cu3")]
-position = Vector2(1378, 435)
+position = Vector2(1380, 430)
 
 [node name="Marker8" parent="Markers/8" instance=ExtResource("3_g0cu3")]
-position = Vector2(1608, 435)
+position = Vector2(1610, 430)
 
 [node name="Marker9" parent="Markers/8" instance=ExtResource("3_g0cu3")]
-position = Vector2(1829, 435)
+position = Vector2(1840, 430)
 
 [node name="9" type="Node2D" parent="Markers"]
 
 [node name="Marker1" parent="Markers/9" instance=ExtResource("3_g0cu3")]
-position = Vector2(5, 219)
+position = Vector2(2, 216)
 
 [node name="Marker2" parent="Markers/9" instance=ExtResource("3_g0cu3")]
-position = Vector2(230, 219)
+position = Vector2(232, 216)
 
 [node name="Marker3" parent="Markers/9" instance=ExtResource("3_g0cu3")]
-position = Vector2(460, 219)
+position = Vector2(462, 216)
 
 [node name="Marker4" parent="Markers/9" instance=ExtResource("3_g0cu3")]
-position = Vector2(701, 235)
+position = Vector2(705, 228)
 
 [node name="Marker5" parent="Markers/9" instance=ExtResource("3_g0cu3")]
-position = Vector2(925, 235)
+position = Vector2(927, 228)
 
 [node name="Marker6" parent="Markers/9" instance=ExtResource("3_g0cu3")]
-position = Vector2(1149, 235)
+position = Vector2(1149, 228)
 
 [node name="Marker7" parent="Markers/9" instance=ExtResource("3_g0cu3")]
-position = Vector2(1378, 219)
+position = Vector2(1380, 216)
 
 [node name="Marker8" parent="Markers/9" instance=ExtResource("3_g0cu3")]
-position = Vector2(1608, 219)
+position = Vector2(1610, 216)
 
 [node name="Marker9" parent="Markers/9" instance=ExtResource("3_g0cu3")]
-position = Vector2(1829, 219)
+position = Vector2(1840, 216)
 
 [node name="10" type="Node2D" parent="Markers"]
 
 [node name="Marker1" parent="Markers/10" instance=ExtResource("3_g0cu3")]
-position = Vector2(5, 11)
+position = Vector2(2, 2)
 
 [node name="Marker2" parent="Markers/10" instance=ExtResource("3_g0cu3")]
-position = Vector2(230, 11)
+position = Vector2(232, 2)
 
 [node name="Marker3" parent="Markers/10" instance=ExtResource("3_g0cu3")]
-position = Vector2(460, 11)
+position = Vector2(462, 2)
 
 [node name="Marker4" parent="Markers/10" instance=ExtResource("3_g0cu3")]
-position = Vector2(701, 27)
+position = Vector2(705, 23)
 
 [node name="Marker5" parent="Markers/10" instance=ExtResource("3_g0cu3")]
-position = Vector2(925, 27)
+position = Vector2(927, 23)
 
 [node name="Marker6" parent="Markers/10" instance=ExtResource("3_g0cu3")]
-position = Vector2(1149, 27)
+position = Vector2(1149, 23)
 
 [node name="Marker7" parent="Markers/10" instance=ExtResource("3_g0cu3")]
-position = Vector2(1378, 11)
+position = Vector2(1380, 2)
 
 [node name="Marker8" parent="Markers/10" instance=ExtResource("3_g0cu3")]
-position = Vector2(1608, 11)
+position = Vector2(1610, 2)
 
 [node name="Marker9" parent="Markers/10" instance=ExtResource("3_g0cu3")]
-position = Vector2(1829, 11)
+position = Vector2(1840, 2)

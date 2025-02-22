@@ -11,7 +11,7 @@ func _ready():
 			"y": Vector2(0, 9),
 			"x": Vector2(0, 8)
 		}
-	}	
+	}
 
 
 func get_moves(state: Dictionary, current_position: Vector2) -> Array[Vector2]:

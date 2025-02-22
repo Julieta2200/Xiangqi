@@ -9,13 +9,13 @@ signal start(state: Dictionary)
 var figures: Dictionary
 
 var figure_scenes: Dictionary = {
-	Figure.Types.General: preload("res://Projects/Figure/General/general.tscn"),
-	Figure.Types.Advisor: preload("res://Projects/Figure/Advisor/advisor.tscn"),
-	Figure.Types.Soldier: preload("res://Projects/Figure/Soldier/soldier.tscn"),
-	Figure.Types.Elephant: preload("res://Projects/Figure/Elephant/elephant.tscn"),
-	Figure.Types.Chariot: preload("res://Projects/Figure/Chariot/chariot.tscn"),
-	Figure.Types.Horse: preload("res://Projects/Figure/Horse/horse.tscn"),
-	Figure.Types.Cannon: preload("res://Projects/Figure/Cannon/cannon.tscn"),
+	Figure.Types.General: preload("res://Projects/Figure/Magma/General/general.tscn"),
+	Figure.Types.Advisor: preload("res://Projects/Figure/Magma/Advisor/advisor.tscn"),
+	Figure.Types.Soldier: preload("res://Projects/Figure/Magma/Soldier/soldier.tscn"),
+	Figure.Types.Elephant: preload("res://Projects/Figure/Magma/Elephant/elephant.tscn"),
+	Figure.Types.Chariot: preload("res://Projects/Figure/Magma/Chariot/chariot.tscn"),
+	Figure.Types.Horse: preload("res://Projects/Figure/Magma/Horse/horse.tscn"),
+	Figure.Types.Cannon: preload("res://Projects/Figure/Magma/Cannon/cannon.tscn"),
 }
 
 func _ready():

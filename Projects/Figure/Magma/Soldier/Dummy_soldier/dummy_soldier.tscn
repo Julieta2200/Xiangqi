@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bb43rp1wqetcv"]
 
-[ext_resource type="Script" path="res://Projects/Figure/Soldier/Dummy_soldier/dummy_soldier.gd" id="1_rdnmm"]
+[ext_resource type="Script" path="res://Projects/Figure/Magma/Soldier/Dummy_soldier/dummy_soldier.gd" id="1_rdnmm"]
 [ext_resource type="Texture2D" uid="uid://bfr24i6on345y" path="res://Assets/Characters/Pawn/Dummy pawn.png" id="2_0387y"]
 [ext_resource type="Texture2D" uid="uid://bh7qd5bwgot0t" path="res://Assets/tmp/highlight.png" id="3_ipqe1"]
 

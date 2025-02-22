@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://b1afd6nt6mpal"]
 
-[ext_resource type="Script" path="res://Projects/Figure/Elephant/elephant.gd" id="1_64lwk"]
+[ext_resource type="Script" path="res://Projects/Figure/Magma/Elephant/elephant.gd" id="1_64lwk"]
 [ext_resource type="Texture2D" uid="uid://d2brododo4n7x" path="res://Assets/tmp/advisor_red.png" id="2_ta0wg"]
 [ext_resource type="Texture2D" uid="uid://bh7qd5bwgot0t" path="res://Assets/tmp/highlight.png" id="3_88qha"]
 [ext_resource type="Texture2D" uid="uid://dhtgu1fm8i1go" path="res://Assets/Characters/Advisor/eye.png" id="3_vy38n"]
