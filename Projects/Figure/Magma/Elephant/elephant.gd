@@ -1,8 +1,5 @@
 extends Figure
 
-@onready var black_sprite = load("res://Assets/tmp/elephant_black.png")
-@onready var red_sprite = load("res://Assets/tmp/elephant_red.png")
-
 const directions: Array[Vector2] = [
 		Vector2(-2, -2),
 		Vector2(2, -2),
@@ -11,10 +8,6 @@ const directions: Array[Vector2] = [
 	]
 
 func _ready():
-	if team == Board.team.Red:
-		$Elephant.texture = red_sprite
-	else:
-		$Elephant.texture = black_sprite
 	boundaries = {
 		Board.team.Red: {
 			"y": Vector2(0,4),

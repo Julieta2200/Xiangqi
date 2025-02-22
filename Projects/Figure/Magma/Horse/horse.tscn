@@ -1,39 +1,39 @@
-[gd_scene load_steps=6 format=3 uid="uid://dmwnirlmmbvk8"]
+[gd_scene load_steps=6 format=3 uid="uid://is4nplxtuubw"]
 
-[ext_resource type="Script" path="res://Projects/Figure/Chariot/chariot.gd" id="1_tha5r"]
-[ext_resource type="Texture2D" uid="uid://bvntmi43ujymc" path="res://Assets/tmp/chariot_black.png" id="2_lr7s8"]
-[ext_resource type="Texture2D" uid="uid://bh7qd5bwgot0t" path="res://Assets/tmp/highlight.png" id="3_aq2hv"]
-[ext_resource type="Texture2D" uid="uid://dhtgu1fm8i1go" path="res://Assets/Characters/Advisor/eye.png" id="4_5dmth"]
+[ext_resource type="Script" path="res://Projects/Figure/Magma/Horse/horse.gd" id="1_jk3li"]
+[ext_resource type="Texture2D" uid="uid://dqnrgl6736m3s" path="res://Assets/tmp/horse_black.png" id="2_g6t7m"]
+[ext_resource type="Texture2D" uid="uid://bh7qd5bwgot0t" path="res://Assets/tmp/highlight.png" id="3_uiipk"]
+[ext_resource type="Texture2D" uid="uid://dhtgu1fm8i1go" path="res://Assets/Characters/Advisor/eye.png" id="4_nsme8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m7pdm"]
-radius = 86.9227
+radius = 76.7391
 
-[node name="Chariot" type="Node2D"]
+[node name="Horse" type="Node2D"]
 scale = Vector2(0.3, 0.3)
-script = ExtResource("1_tha5r")
-type = 4
-value = 9.5
+script = ExtResource("1_jk3li")
+type = 5
+value = 4.0
 
-[node name="Chariot" type="Sprite2D" parent="."]
+[node name="Horse" type="Sprite2D" parent="."]
 position = Vector2(0, -60)
-texture = ExtResource("2_lr7s8")
+texture = ExtResource("2_g6t7m")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -36.6667)
+position = Vector2(-3.33333, -50)
 shape = SubResource("CircleShape2D_m7pdm")
 
 [node name="mouse_entered_highlight" type="Sprite2D" parent="."]
 visible = false
 scale = Vector2(1.6, 1.6)
-texture = ExtResource("3_aq2hv")
+texture = ExtResource("3_uiipk")
 
 [node name="Eye" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(0, -170)
 scale = Vector2(6.5, 6.5)
-texture = ExtResource("4_5dmth")
+texture = ExtResource("4_nsme8")
 
 [node name="Arrows" type="Node2D" parent="."]
 

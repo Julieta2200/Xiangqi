@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bm84lj6brofsk"]
 
 [ext_resource type="Script" path="res://Projects/Board/board_editor.gd" id="1_1ap8g"]
-[ext_resource type="Texture2D" uid="uid://d2bgvmmg0dnog" path="res://Assets/Characters/background.png" id="2_gy3le"]
+[ext_resource type="Texture2D" uid="uid://dnr57c7q1yhjb" path="res://Assets/boards/board (1).png" id="2_2g5re"]
 [ext_resource type="PackedScene" uid="uid://bjnm2kvowv46g" path="res://Projects/Board/Marker/marker_editor.tscn" id="3_b3nvr"]
 [ext_resource type="PackedScene" uid="uid://pxqrvonok1lr" path="res://Projects/Garrison/garrison.tscn" id="4_kroq6"]
 
@@ -9,301 +9,302 @@
 script = ExtResource("1_1ap8g")
 
 [node name="Xiangqi" type="Sprite2D" parent="."]
-position = Vector2(279, 339)
-texture = ExtResource("2_gy3le")
+position = Vector2(918, 1043)
+scale = Vector2(2, 2)
+texture = ExtResource("2_2g5re")
 
 [node name="Markers" type="Node2D" parent="."]
-position = Vector2(3, -3)
+position = Vector2(0, 84)
 
 [node name="1" type="Node2D" parent="Markers"]
 
 [node name="MarkerEditor" parent="Markers/1" instance=ExtResource("3_b3nvr")]
-position = Vector2(74, 540)
+position = Vector2(2, 1900)
 
 [node name="MarkerEditor2" parent="Markers/1" instance=ExtResource("3_b3nvr")]
-position = Vector2(124, 540)
+position = Vector2(232, 1900)
 
 [node name="MarkerEditor3" parent="Markers/1" instance=ExtResource("3_b3nvr")]
-position = Vector2(174, 540)
+position = Vector2(462, 1900)
 
 [node name="MarkerEditor4" parent="Markers/1" instance=ExtResource("3_b3nvr")]
-position = Vector2(224, 540)
+position = Vector2(705, 1890)
 
 [node name="MarkerEditor5" parent="Markers/1" instance=ExtResource("3_b3nvr")]
-position = Vector2(274, 540)
+position = Vector2(927, 1890)
 
 [node name="MarkerEditor6" parent="Markers/1" instance=ExtResource("3_b3nvr")]
-position = Vector2(324, 540)
+position = Vector2(1149, 1890)
 
 [node name="MarkerEditor7" parent="Markers/1" instance=ExtResource("3_b3nvr")]
-position = Vector2(374, 540)
+position = Vector2(1380, 1900)
 
 [node name="MarkerEditor8" parent="Markers/1" instance=ExtResource("3_b3nvr")]
-position = Vector2(424, 540)
+position = Vector2(1610, 1900)
 
 [node name="MarkerEditor9" parent="Markers/1" instance=ExtResource("3_b3nvr")]
-position = Vector2(474, 540)
+position = Vector2(1840, 1900)
 
 [node name="2" type="Node2D" parent="Markers"]
 
 [node name="MarkerEditor" parent="Markers/2" instance=ExtResource("3_b3nvr")]
-position = Vector2(74, 490)
+position = Vector2(2, 1686)
 
 [node name="MarkerEditor2" parent="Markers/2" instance=ExtResource("3_b3nvr")]
-position = Vector2(124, 490)
+position = Vector2(232, 1686)
 
 [node name="MarkerEditor3" parent="Markers/2" instance=ExtResource("3_b3nvr")]
-position = Vector2(174, 490)
+position = Vector2(462, 1686)
 
 [node name="MarkerEditor4" parent="Markers/2" instance=ExtResource("3_b3nvr")]
-position = Vector2(224, 490)
+position = Vector2(705, 1685)
 
 [node name="MarkerEditor5" parent="Markers/2" instance=ExtResource("3_b3nvr")]
-position = Vector2(274, 490)
+position = Vector2(927, 1685)
 
 [node name="MarkerEditor6" parent="Markers/2" instance=ExtResource("3_b3nvr")]
-position = Vector2(324, 490)
+position = Vector2(1149, 1685)
 
 [node name="MarkerEditor7" parent="Markers/2" instance=ExtResource("3_b3nvr")]
-position = Vector2(374, 490)
+position = Vector2(1380, 1686)
 
 [node name="MarkerEditor8" parent="Markers/2" instance=ExtResource("3_b3nvr")]
-position = Vector2(424, 490)
+position = Vector2(1610, 1686)
 
 [node name="MarkerEditor9" parent="Markers/2" instance=ExtResource("3_b3nvr")]
-position = Vector2(474, 490)
+position = Vector2(1840, 1686)
 
 [node name="3" type="Node2D" parent="Markers"]
 
 [node name="MarkerEditor" parent="Markers/3" instance=ExtResource("3_b3nvr")]
-position = Vector2(74, 440)
+position = Vector2(2, 1472)
 
 [node name="MarkerEditor2" parent="Markers/3" instance=ExtResource("3_b3nvr")]
-position = Vector2(124, 440)
+position = Vector2(232, 1472)
 
 [node name="MarkerEditor3" parent="Markers/3" instance=ExtResource("3_b3nvr")]
-position = Vector2(174, 440)
+position = Vector2(462, 1472)
 
 [node name="MarkerEditor4" parent="Markers/3" instance=ExtResource("3_b3nvr")]
-position = Vector2(224, 440)
+position = Vector2(705, 1480)
 
 [node name="MarkerEditor5" parent="Markers/3" instance=ExtResource("3_b3nvr")]
-position = Vector2(274, 440)
+position = Vector2(927, 1480)
 
 [node name="MarkerEditor6" parent="Markers/3" instance=ExtResource("3_b3nvr")]
-position = Vector2(324, 440)
+position = Vector2(1149, 1480)
 
 [node name="MarkerEditor7" parent="Markers/3" instance=ExtResource("3_b3nvr")]
-position = Vector2(374, 440)
+position = Vector2(1380, 1472)
 
 [node name="MarkerEditor8" parent="Markers/3" instance=ExtResource("3_b3nvr")]
-position = Vector2(424, 440)
+position = Vector2(1610, 1472)
 
 [node name="MarkerEditor9" parent="Markers/3" instance=ExtResource("3_b3nvr")]
-position = Vector2(474, 440)
+position = Vector2(1840, 1472)
 
 [node name="4" type="Node2D" parent="Markers"]
 
 [node name="MarkerEditor" parent="Markers/4" instance=ExtResource("3_b3nvr")]
-position = Vector2(74, 390)
+position = Vector2(2, 1258)
 
 [node name="MarkerEditor2" parent="Markers/4" instance=ExtResource("3_b3nvr")]
-position = Vector2(124, 390)
+position = Vector2(232, 1258)
 
 [node name="MarkerEditor3" parent="Markers/4" instance=ExtResource("3_b3nvr")]
-position = Vector2(174, 390)
+position = Vector2(462, 1258)
 
 [node name="MarkerEditor4" parent="Markers/4" instance=ExtResource("3_b3nvr")]
-position = Vector2(224, 390)
+position = Vector2(692, 1258)
 
 [node name="MarkerEditor5" parent="Markers/4" instance=ExtResource("3_b3nvr")]
-position = Vector2(274, 390)
+position = Vector2(922, 1258)
 
 [node name="MarkerEditor6" parent="Markers/4" instance=ExtResource("3_b3nvr")]
-position = Vector2(324, 390)
+position = Vector2(1150, 1258)
 
 [node name="MarkerEditor7" parent="Markers/4" instance=ExtResource("3_b3nvr")]
-position = Vector2(374, 390)
+position = Vector2(1380, 1258)
 
 [node name="MarkerEditor8" parent="Markers/4" instance=ExtResource("3_b3nvr")]
-position = Vector2(424, 390)
+position = Vector2(1610, 1258)
 
 [node name="MarkerEditor9" parent="Markers/4" instance=ExtResource("3_b3nvr")]
-position = Vector2(474, 390)
+position = Vector2(1840, 1258)
 
 [node name="5" type="Node2D" parent="Markers"]
 
 [node name="MarkerEditor" parent="Markers/5" instance=ExtResource("3_b3nvr")]
-position = Vector2(74, 340)
+position = Vector2(2, 1044)
 
 [node name="MarkerEditor2" parent="Markers/5" instance=ExtResource("3_b3nvr")]
-position = Vector2(124, 340)
+position = Vector2(232, 1044)
 
 [node name="MarkerEditor3" parent="Markers/5" instance=ExtResource("3_b3nvr")]
-position = Vector2(174, 340)
+position = Vector2(462, 1044)
 
 [node name="MarkerEditor4" parent="Markers/5" instance=ExtResource("3_b3nvr")]
-position = Vector2(224, 340)
+position = Vector2(692, 1044)
 
 [node name="MarkerEditor5" parent="Markers/5" instance=ExtResource("3_b3nvr")]
-position = Vector2(274, 340)
+position = Vector2(922, 1044)
 
 [node name="MarkerEditor6" parent="Markers/5" instance=ExtResource("3_b3nvr")]
-position = Vector2(324, 340)
+position = Vector2(1150, 1044)
 
 [node name="MarkerEditor7" parent="Markers/5" instance=ExtResource("3_b3nvr")]
-position = Vector2(374, 340)
+position = Vector2(1380, 1044)
 
 [node name="MarkerEditor8" parent="Markers/5" instance=ExtResource("3_b3nvr")]
-position = Vector2(424, 340)
+position = Vector2(1610, 1044)
 
 [node name="MarkerEditor9" parent="Markers/5" instance=ExtResource("3_b3nvr")]
-position = Vector2(474, 340)
+position = Vector2(1840, 1044)
 
 [node name="6" type="Node2D" parent="Markers"]
 
 [node name="MarkerEditor" parent="Markers/6" instance=ExtResource("3_b3nvr")]
-position = Vector2(74, 264)
+position = Vector2(2, 858)
 
 [node name="MarkerEditor2" parent="Markers/6" instance=ExtResource("3_b3nvr")]
-position = Vector2(124, 264)
+position = Vector2(232, 858)
 
 [node name="MarkerEditor3" parent="Markers/6" instance=ExtResource("3_b3nvr")]
-position = Vector2(174, 264)
+position = Vector2(462, 858)
 
 [node name="MarkerEditor4" parent="Markers/6" instance=ExtResource("3_b3nvr")]
-position = Vector2(224, 264)
+position = Vector2(692, 858)
 
 [node name="MarkerEditor5" parent="Markers/6" instance=ExtResource("3_b3nvr")]
-position = Vector2(274, 264)
+position = Vector2(920, 858)
 
 [node name="MarkerEditor6" parent="Markers/6" instance=ExtResource("3_b3nvr")]
-position = Vector2(324, 264)
+position = Vector2(1150, 858)
 
 [node name="MarkerEditor7" parent="Markers/6" instance=ExtResource("3_b3nvr")]
-position = Vector2(374, 264)
+position = Vector2(1380, 858)
 
 [node name="MarkerEditor8" parent="Markers/6" instance=ExtResource("3_b3nvr")]
-position = Vector2(424, 264)
+position = Vector2(1610, 858)
 
 [node name="MarkerEditor9" parent="Markers/6" instance=ExtResource("3_b3nvr")]
-position = Vector2(474, 264)
+position = Vector2(1840, 858)
 
 [node name="7" type="Node2D" parent="Markers"]
 
 [node name="MarkerEditor" parent="Markers/7" instance=ExtResource("3_b3nvr")]
-position = Vector2(74, 214)
+position = Vector2(2, 644)
 
 [node name="MarkerEditor2" parent="Markers/7" instance=ExtResource("3_b3nvr")]
-position = Vector2(124, 214)
+position = Vector2(232, 644)
 
 [node name="MarkerEditor3" parent="Markers/7" instance=ExtResource("3_b3nvr")]
-position = Vector2(174, 214)
+position = Vector2(462, 644)
 
 [node name="MarkerEditor4" parent="Markers/7" instance=ExtResource("3_b3nvr")]
-position = Vector2(224, 214)
+position = Vector2(692, 644)
 
 [node name="MarkerEditor5" parent="Markers/7" instance=ExtResource("3_b3nvr")]
-position = Vector2(274, 214)
+position = Vector2(920, 644)
 
 [node name="MarkerEditor6" parent="Markers/7" instance=ExtResource("3_b3nvr")]
-position = Vector2(324, 214)
+position = Vector2(1150, 644)
 
 [node name="MarkerEditor7" parent="Markers/7" instance=ExtResource("3_b3nvr")]
-position = Vector2(374, 214)
+position = Vector2(1380, 644)
 
 [node name="MarkerEditor8" parent="Markers/7" instance=ExtResource("3_b3nvr")]
-position = Vector2(424, 214)
+position = Vector2(1610, 644)
 
 [node name="MarkerEditor9" parent="Markers/7" instance=ExtResource("3_b3nvr")]
-position = Vector2(474, 214)
+position = Vector2(1840, 644)
 
 [node name="8" type="Node2D" parent="Markers"]
 
 [node name="MarkerEditor" parent="Markers/8" instance=ExtResource("3_b3nvr")]
-position = Vector2(74, 164)
+position = Vector2(2, 430)
 
 [node name="MarkerEditor2" parent="Markers/8" instance=ExtResource("3_b3nvr")]
-position = Vector2(124, 164)
+position = Vector2(232, 430)
 
 [node name="MarkerEditor3" parent="Markers/8" instance=ExtResource("3_b3nvr")]
-position = Vector2(174, 164)
+position = Vector2(462, 430)
 
 [node name="MarkerEditor4" parent="Markers/8" instance=ExtResource("3_b3nvr")]
-position = Vector2(224, 164)
+position = Vector2(705, 433)
 
 [node name="MarkerEditor5" parent="Markers/8" instance=ExtResource("3_b3nvr")]
-position = Vector2(274, 164)
+position = Vector2(927, 433)
 
 [node name="MarkerEditor6" parent="Markers/8" instance=ExtResource("3_b3nvr")]
-position = Vector2(324, 164)
+position = Vector2(1149, 433)
 
 [node name="MarkerEditor7" parent="Markers/8" instance=ExtResource("3_b3nvr")]
-position = Vector2(374, 164)
+position = Vector2(1380, 430)
 
 [node name="MarkerEditor8" parent="Markers/8" instance=ExtResource("3_b3nvr")]
-position = Vector2(424, 164)
+position = Vector2(1610, 430)
 
 [node name="MarkerEditor9" parent="Markers/8" instance=ExtResource("3_b3nvr")]
-position = Vector2(474, 164)
+position = Vector2(1840, 430)
 
 [node name="9" type="Node2D" parent="Markers"]
 
 [node name="MarkerEditor" parent="Markers/9" instance=ExtResource("3_b3nvr")]
-position = Vector2(74, 114)
+position = Vector2(2, 216)
 
 [node name="MarkerEditor2" parent="Markers/9" instance=ExtResource("3_b3nvr")]
-position = Vector2(124, 114)
+position = Vector2(232, 216)
 
 [node name="MarkerEditor3" parent="Markers/9" instance=ExtResource("3_b3nvr")]
-position = Vector2(174, 114)
+position = Vector2(462, 216)
 
 [node name="MarkerEditor4" parent="Markers/9" instance=ExtResource("3_b3nvr")]
-position = Vector2(224, 114)
+position = Vector2(705, 228)
 
 [node name="MarkerEditor5" parent="Markers/9" instance=ExtResource("3_b3nvr")]
-position = Vector2(274, 114)
+position = Vector2(927, 228)
 
 [node name="MarkerEditor6" parent="Markers/9" instance=ExtResource("3_b3nvr")]
-position = Vector2(324, 114)
+position = Vector2(1149, 228)
 
 [node name="MarkerEditor7" parent="Markers/9" instance=ExtResource("3_b3nvr")]
-position = Vector2(374, 114)
+position = Vector2(1380, 216)
 
 [node name="MarkerEditor8" parent="Markers/9" instance=ExtResource("3_b3nvr")]
-position = Vector2(424, 114)
+position = Vector2(1610, 216)
 
 [node name="MarkerEditor9" parent="Markers/9" instance=ExtResource("3_b3nvr")]
-position = Vector2(474, 114)
+position = Vector2(1840, 216)
 
 [node name="10" type="Node2D" parent="Markers"]
 
 [node name="MarkerEditor" parent="Markers/10" instance=ExtResource("3_b3nvr")]
-position = Vector2(74, 64)
+position = Vector2(2, 2)
 
 [node name="MarkerEditor2" parent="Markers/10" instance=ExtResource("3_b3nvr")]
-position = Vector2(124, 64)
+position = Vector2(232, 2)
 
 [node name="MarkerEditor3" parent="Markers/10" instance=ExtResource("3_b3nvr")]
-position = Vector2(174, 64)
+position = Vector2(462, 2)
 
 [node name="MarkerEditor4" parent="Markers/10" instance=ExtResource("3_b3nvr")]
-position = Vector2(224, 64)
+position = Vector2(705, 23)
 
 [node name="MarkerEditor5" parent="Markers/10" instance=ExtResource("3_b3nvr")]
-position = Vector2(274, 64)
+position = Vector2(927, 23)
 
 [node name="MarkerEditor6" parent="Markers/10" instance=ExtResource("3_b3nvr")]
-position = Vector2(324, 64)
+position = Vector2(1149, 23)
 
 [node name="MarkerEditor7" parent="Markers/10" instance=ExtResource("3_b3nvr")]
-position = Vector2(374, 64)
+position = Vector2(1380, 2)
 
 [node name="MarkerEditor8" parent="Markers/10" instance=ExtResource("3_b3nvr")]
-position = Vector2(424, 64)
+position = Vector2(1610, 2)
 
 [node name="MarkerEditor9" parent="Markers/10" instance=ExtResource("3_b3nvr")]
-position = Vector2(474, 64)
+position = Vector2(1840, 2)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -312,10 +313,10 @@ unique_name_in_owner = true
 mouse_filter = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(277, 337)
+position = Vector2(920, 1032)
 
 [node name="Figures" type="Node2D" parent="."]
-position = Vector2(0, -100)
+position = Vector2(0, -500)
 
 [node name="Static_figures" type="Node2D" parent="."]
 
