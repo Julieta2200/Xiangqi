@@ -1,39 +1,39 @@
-[gd_scene load_steps=6 format=3 uid="uid://dmwnirlmmbvk8"]
+[gd_scene load_steps=6 format=3 uid="uid://bq8d28ytoaa1a"]
 
-[ext_resource type="Script" path="res://Projects/Figure/Scripts/chariot.gd" id="1_tha5r"]
-[ext_resource type="Texture2D" uid="uid://bvntmi43ujymc" path="res://Assets/tmp/chariot_black.png" id="2_lr7s8"]
-[ext_resource type="Texture2D" uid="uid://bh7qd5bwgot0t" path="res://Assets/tmp/highlight.png" id="3_aq2hv"]
-[ext_resource type="Texture2D" uid="uid://dhtgu1fm8i1go" path="res://Assets/Characters/Advisor/eye.png" id="4_5dmth"]
+[ext_resource type="Script" path="res://Projects/Figure/Scripts/cannon.gd" id="1_h5ukn"]
+[ext_resource type="Texture2D" uid="uid://bvntmi43ujymc" path="res://Assets/tmp/chariot_black.png" id="2_qod14"]
+[ext_resource type="Texture2D" uid="uid://bh7qd5bwgot0t" path="res://Assets/tmp/highlight.png" id="3_7qjch"]
+[ext_resource type="Texture2D" uid="uid://dhtgu1fm8i1go" path="res://Assets/Characters/Advisor/eye.png" id="4_0ijea"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m7pdm"]
-radius = 86.9227
+radius = 80.0694
 
-[node name="Chariot" type="Node2D"]
+[node name="Cannon" type="Node2D"]
 scale = Vector2(0.3, 0.3)
-script = ExtResource("1_tha5r")
-type = 4
-value = 9.5
+script = ExtResource("1_h5ukn")
+type = 6
+value = 4.5
 
-[node name="Chariot" type="Sprite2D" parent="."]
+[node name="Cannon" type="Sprite2D" parent="."]
 position = Vector2(0, -60)
-texture = ExtResource("2_lr7s8")
+texture = ExtResource("2_qod14")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -36.6667)
+position = Vector2(0, -50)
 shape = SubResource("CircleShape2D_m7pdm")
 
 [node name="mouse_entered_highlight" type="Sprite2D" parent="."]
 visible = false
 scale = Vector2(1.6, 1.6)
-texture = ExtResource("3_aq2hv")
+texture = ExtResource("3_7qjch")
 
 [node name="Eye" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(0, -170)
 scale = Vector2(6.5, 6.5)
-texture = ExtResource("4_5dmth")
+texture = ExtResource("4_0ijea")
 
 [node name="Arrows" type="Node2D" parent="."]
 

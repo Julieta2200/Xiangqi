@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://crnnyoywa8ktc"]
 
-[ext_resource type="Script" path="res://Projects/Figure/Magma/Cannon/cannon.gd" id="1_c030a"]
+[ext_resource type="Script" path="res://Projects/Figure/Scripts/cannon.gd" id="1_c030a"]
 [ext_resource type="Texture2D" uid="uid://bvntmi43ujymc" path="res://Assets/tmp/chariot_black.png" id="2_njt2g"]
 [ext_resource type="Texture2D" uid="uid://bh7qd5bwgot0t" path="res://Assets/tmp/highlight.png" id="3_typxo"]
 [ext_resource type="Texture2D" uid="uid://dhtgu1fm8i1go" path="res://Assets/Characters/Advisor/eye.png" id="4_g6awb"]

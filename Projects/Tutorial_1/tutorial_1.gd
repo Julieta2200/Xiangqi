@@ -15,7 +15,8 @@ func create_soldier():
 	state = {
 		Vector2(5, 3): {
 			"type": Figure.Types.Soldier,
-			"team": Board.team.Red
+			"team": Board.team.Red,
+			"group": "Magma"
 		}
 	}
 	%Board.create_state(state)
@@ -31,11 +32,13 @@ func create_dummy_figure_for_soldier():
 	state = {
 		Vector2(3, 5): {
 			"type": Figure.Types.Soldier,
-			"team": Board.team.Black
+			"team": Board.team.Black,
+			"group": "Cloud"
 		},
 		Vector2(4, 3): {
 			"type": Figure.Types.Soldier,
-			"team": Board.team.Red
+			"team": Board.team.Red,
+			"group": "Magma"
 		}
 	}
 	
@@ -47,7 +50,8 @@ func create_general():
 	state = {
 		Vector2(4,0): {
 			"type": Figure.Types.General,
-			"team": Board.team.Red
+			"team": Board.team.Red,
+			"group": "Magma"
 		}
 	}
 	%Board.create_state(state)
@@ -61,11 +65,13 @@ func create_advisor_for_general():
 	state = {
 		Vector2(5,0): {
 			"type": Figure.Types.General,
-			"team": Board.team.Red
+			"team": Board.team.Red,
+			"group": "Magma"
 		},
 		Vector2(4,0): {
 			"type": Figure.Types.Advisor,
 			"team": Board.team.Red,
+			"group": "Magma",
 			"inactive": true
 		}
 	}
@@ -78,16 +84,19 @@ func create_black_general():
 	state = {
 		Vector2(5,2): {
 			"type": Figure.Types.General,
-			"team": Board.team.Red
+			"team": Board.team.Red,
+			"group": "Magma"
 		},
 		Vector2(4,1): {
 			"type": Figure.Types.Advisor,
 			"team": Board.team.Red,
+			"group": "Magma",
 			"inactive": true
 		},
 		Vector2(4,9): {
 			"type": Figure.Types.General,
-			"team": Board.team.Black
+			"team": Board.team.Black,
+			"group": "Cloud"
 		}
 	}
 	%Board.create_state(state)
@@ -98,11 +107,13 @@ func create_dummy_figure_for_general():
 	state = {
 		Vector2(4, 2): {
 			"type": Figure.Types.Soldier,
-			"team": Board.team.Black
+			"team": Board.team.Black,
+			"group": "Cloud"
 		},
 		Vector2(3, 0): {
 			"type": Figure.Types.General,
-			"team": Board.team.Red
+			"team": Board.team.Red,
+			"group": "Magma"
 		}
 	}
 	
@@ -114,19 +125,23 @@ func create_figures_for_general():
 	state = {
 		Vector2(5,1): {
 			"type": Figure.Types.General,
-			"team": Board.team.Red
+			"team": Board.team.Red,
+			"group": "Magma"
 		},
 		Vector2(3,5): {
 			"type": Figure.Types.Soldier,
 			"team": Board.team.Red,
+			"group": "Magma"
 		},
 		Vector2(4,9): {
 			"type": Figure.Types.General,
-			"team": Board.team.Black
+			"team": Board.team.Black,
+			"group": "Cloud"
 		},
 		Vector2(4,1): {
 			"type": Figure.Types.Soldier,
 			"team": Board.team.Black,
+			"group": "Cloud"
 		}
 	}
 	%Board.create_state(state)
@@ -138,6 +153,7 @@ func create_adviser():
 		Vector2(4,1): {
 			"type": Figure.Types.Advisor,
 			"team": Board.team.Red,
+			"group": "Magma"
 		}
 	}
 	%Board.create_state(state)
@@ -151,11 +167,13 @@ func create_soldier_for_advisor():
 	state = {
 		Vector2(3, 2): {
 			"type": Figure.Types.Soldier,
-			"team": Board.team.Black
+			"team": Board.team.Black,
+			"group": "Cloud"
 		},
 		Vector2(5,2): {
 			"type": Figure.Types.Advisor,
 			"team": Board.team.Red,
+			"group": "Magma"
 		}
 	}
 	
@@ -168,15 +186,18 @@ func create_sildiers_for_advisor():
 	state = {
 		Vector2(3, 0): {
 			"type": Figure.Types.Soldier,
-			"team": Board.team.Black
+			"team": Board.team.Black,
+			"group": "Cloud"
 		},
 		Vector2(1, 2): {
 			"type": Figure.Types.Soldier,
-			"team": Board.team.Black
+			"team": Board.team.Black,
+			"group": "Cloud"
 		},
 		Vector2(3,2): {
 			"type": Figure.Types.Advisor,
 			"team": Board.team.Red,
+			"group": "Magma"
 		}
 	}
 	%Board.create_state(state)

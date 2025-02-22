@@ -51,6 +51,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_0lrns")
 
 [node name="Panel" type="Panel" parent="."]
@@ -61,6 +62,7 @@ anchor_right = 1.0
 offset_top = -6.0
 offset_bottom = 259.0
 grow_horizontal = 2
+mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxTexture_b4jn4")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
@@ -74,6 +76,7 @@ offset_right = -168.0
 offset_bottom = -26.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme_override_fonts/normal_font = ExtResource("3_njij8")
 theme_override_font_sizes/normal_font_size = 35
 bbcode_enabled = true

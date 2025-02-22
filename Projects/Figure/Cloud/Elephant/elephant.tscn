@@ -1,22 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1afd6nt6mpal"]
+[gd_scene load_steps=6 format=3 uid="uid://lwdtfhqg6xny"]
 
-[ext_resource type="Script" path="res://Projects/Figure/Scripts/elephant.gd" id="1_64lwk"]
-[ext_resource type="Texture2D" uid="uid://d2brododo4n7x" path="res://Assets/tmp/advisor_red.png" id="2_ta0wg"]
-[ext_resource type="Texture2D" uid="uid://bh7qd5bwgot0t" path="res://Assets/tmp/highlight.png" id="3_88qha"]
-[ext_resource type="Texture2D" uid="uid://dhtgu1fm8i1go" path="res://Assets/Characters/Advisor/eye.png" id="3_vy38n"]
+[ext_resource type="Script" path="res://Projects/Figure/Scripts/elephant.gd" id="1_pnffm"]
+[ext_resource type="Texture2D" uid="uid://d2brododo4n7x" path="res://Assets/tmp/advisor_red.png" id="2_sm0qa"]
+[ext_resource type="Texture2D" uid="uid://bh7qd5bwgot0t" path="res://Assets/tmp/highlight.png" id="3_o6u03"]
+[ext_resource type="Texture2D" uid="uid://dhtgu1fm8i1go" path="res://Assets/Characters/Advisor/eye.png" id="4_5u7wx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m7pdm"]
 radius = 71.2585
 
 [node name="Elephant" type="Node2D"]
 scale = Vector2(0.3, 0.3)
-script = ExtResource("1_64lwk")
+script = ExtResource("1_pnffm")
 type = 3
 value = 2.0
 
 [node name="Elephant" type="Sprite2D" parent="."]
 position = Vector2(0, -60)
-texture = ExtResource("2_ta0wg")
+texture = ExtResource("2_sm0qa")
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -27,13 +27,13 @@ shape = SubResource("CircleShape2D_m7pdm")
 [node name="mouse_entered_highlight" type="Sprite2D" parent="."]
 visible = false
 scale = Vector2(1.6, 1.6)
-texture = ExtResource("3_88qha")
+texture = ExtResource("3_o6u03")
 
 [node name="Eye" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(0, -170)
 scale = Vector2(6.5, 6.5)
-texture = ExtResource("3_vy38n")
+texture = ExtResource("4_5u7wx")
 
 [node name="Arrows" type="Node2D" parent="."]
 

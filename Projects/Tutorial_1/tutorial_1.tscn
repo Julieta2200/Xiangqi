@@ -16,10 +16,9 @@ unique_name_in_owner = true
 [node name="Dialog" parent="CanvasLayer" instance=ExtResource("3_x21b5")]
 unique_name_in_owner = true
 visible = false
-mouse_filter = 1
 
 [node name="tutorial_engine" type="Node2D" parent="."]
 script = ExtResource("5_828nd")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(926, 1036)
+position = Vector2(926, 992)

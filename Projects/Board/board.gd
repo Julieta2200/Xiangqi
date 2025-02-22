@@ -19,18 +19,20 @@ var turn: team:
 
 var move_number: int = 0
 
-var dummy_figure_scenes: Dictionary = {
-	Figure.Types.Soldier: preload("res://Projects/Figure/Magma/Soldier/Dummy_soldier/dummy_soldier.tscn")
+var groups: Dictionary = {
+	team.Red: "",
+	team.Black: ""
 }
 
+
 var figure_scenes: Dictionary = {
-	Figure.Types.General: preload("res://Projects/Figure/Magma/General/general.tscn"),
-	Figure.Types.Advisor: preload("res://Projects/Figure/Magma/Advisor/advisor.tscn"),
-	Figure.Types.Soldier: preload("res://Projects/Figure/Magma/Soldier/soldier.tscn"),
-	Figure.Types.Elephant: preload("res://Projects/Figure/Magma/Elephant/elephant.tscn"),
-	Figure.Types.Chariot: preload("res://Projects/Figure/Magma/Chariot/chariot.tscn"),
-	Figure.Types.Horse: preload("res://Projects/Figure/Magma/Horse/horse.tscn"),
-	Figure.Types.Cannon: preload("res://Projects/Figure/Magma/Cannon/cannon.tscn"),
+	Figure.Types.General: "res://Projects/Figure/{GROUP}/General/general.tscn",
+	Figure.Types.Advisor: "res://Projects/Figure/{GROUP}/Advisor/advisor.tscn",
+	Figure.Types.Soldier: "res://Projects/Figure/{GROUP}/Soldier/soldier.tscn",
+	Figure.Types.Elephant: "res://Projects/Figure/{GROUP}/Elephant/elephant.tscn",
+	Figure.Types.Chariot: "res://Projects/Figure/{GROUP}/Chariot/chariot.tscn",
+	Figure.Types.Horse: "res://Projects/Figure/{GROUP}/Horse/horse.tscn",
+	Figure.Types.Cannon: "res://Projects/Figure/{GROUP}/Cannon/cannon.tscn",
 }
 
 var _counter: int 
@@ -50,10 +52,10 @@ func create_state(new_state: Dictionary) -> void:
 	state = {}
 	for key in new_state:
 		var figure : Figure
-		if new_state[key].type == Figure.Types.Soldier and new_state[key].team == Board.team.Black:
-			figure = dummy_figure_scenes[new_state[key].type].instantiate()
-		else:
-			figure = figure_scenes[new_state[key].type].instantiate()
+		var figure_scene : String = figure_scenes[new_state[key].type]
+		groups[new_state[key].team] = new_state[key].group
+		figure_scene = figure_scene.replace("{GROUP}", new_state[key].group)
+		figure = load(figure_scene).instantiate()
 		figure.board = self
 		figure.team = new_state[key].team
 		figure.board_position = key
@@ -70,8 +72,10 @@ func generate_save_state() -> void:
 	for pos in state:
 		generated_state[pos] = {
 			"type": state[pos].type,
-			"team": state[pos].team
+			"team": state[pos].team,
+			"group": groups[state[pos].team]
 		}
+		
 		if !state[pos].active:
 			generated_state[pos].inactive = true
 	save_states[move_number] = generated_state

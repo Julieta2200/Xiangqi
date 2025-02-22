@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://is4nplxtuubw"]
 
-[ext_resource type="Script" path="res://Projects/Figure/Magma/Horse/horse.gd" id="1_jk3li"]
+[ext_resource type="Script" path="res://Projects/Figure/Scripts/horse.gd" id="1_jk3li"]
 [ext_resource type="Texture2D" uid="uid://dqnrgl6736m3s" path="res://Assets/tmp/horse_black.png" id="2_g6t7m"]
 [ext_resource type="Texture2D" uid="uid://bh7qd5bwgot0t" path="res://Assets/tmp/highlight.png" id="3_uiipk"]
 [ext_resource type="Texture2D" uid="uid://dhtgu1fm8i1go" path="res://Assets/Characters/Advisor/eye.png" id="4_nsme8"]
