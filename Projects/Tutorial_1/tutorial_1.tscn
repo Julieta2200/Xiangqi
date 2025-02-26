@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cu6q2d1er80kx"]
+[gd_scene load_steps=6 format=3 uid="uid://cu6q2d1er80kx"]
 
 [ext_resource type="Script" path="res://Projects/Tutorial_1/tutorial_1.gd" id="1_k16b7"]
 [ext_resource type="PackedScene" uid="uid://dpyrcsgpodbx7" path="res://Projects/Board/board.tscn" id="2_vgfid"]
 [ext_resource type="PackedScene" uid="uid://bkqlg03rv0gyo" path="res://Projects/Dialog/dialog.tscn" id="3_x21b5"]
+[ext_resource type="PackedScene" uid="uid://br5fqscax7ejf" path="res://Projects/Camera/camera.tscn" id="5_8myo5"]
 [ext_resource type="Script" path="res://Projects/Engines/tutorial_first/tutorial_first_engine.gd" id="5_828nd"]
 
 [node name="Tutorial_1" type="Node2D"]
@@ -20,5 +21,5 @@ visible = false
 [node name="tutorial_engine" type="Node2D" parent="."]
 script = ExtResource("5_828nd")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(926, 992)
+[node name="Camera" parent="." instance=ExtResource("5_8myo5")]
+position = Vector2(920, 1032)
