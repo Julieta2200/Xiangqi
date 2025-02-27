@@ -7,7 +7,7 @@ class_name FigureCard extends Control
 	Figure.Types.Horse: load("res://Assets/tmp/horse_red.png"),
 	Figure.Types.Cannon: load("res://Assets/tmp/cannon_red.png")
 }
-var figure_names = {
+const figure_names = {
 	Figure.Types.Soldier: "Soldier",
 	Figure.Types.Elephant: "Elephant",
 	Figure.Types.Chariot: "Chariot",
@@ -15,8 +15,18 @@ var figure_names = {
 	Figure.Types.Cannon: "Cannon"
 }
 
+const figure_energies = {
+	Figure.Types.Soldier: 15,
+	Figure.Types.Elephant: 30,
+	Figure.Types.Chariot: 50,
+	Figure.Types.Horse: 25,
+	Figure.Types.Cannon: 40
+}
+
 signal selected(FigureCard)
 @onready var highlight = $selected_highlight
+var active: bool
+var energy: float
 
 var type: Figure.Types : 
 	set(t):
@@ -28,6 +38,7 @@ var type: Figure.Types :
 			$card/image.scale = Vector2(1,1)
 		$card/image.texture = sprites[type]
 		$card/name.text = figure_names[type]
+		energy = figure_energies[type]
 
 var qty: int :
 	set(q):
@@ -42,3 +53,13 @@ func _on_card_gui_input(event: InputEvent):
 	if event.is_pressed() and qty > 0:
 		highlight.visible = true
 		emit_signal("selected", self)
+
+
+func deactivate() -> void:
+	active = false
+	set_modulate(Color8(73,73,73))
+
+func activate() -> void:
+	active = true
+	set_modulate(Color8(255,255,255))
+	
