@@ -5,7 +5,7 @@ extends Camera2D
 var zoom_min: float = 0.65
 var zoom_max: float = 2.275
 var move_right_max:float = 1800
-var move_left_max: float = 50
+var move_left_max: float = 380
 var move_up_max: float = 447
 var move_down_max: float = 1600
 

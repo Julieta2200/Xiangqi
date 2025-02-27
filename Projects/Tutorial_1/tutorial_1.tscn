@@ -22,4 +22,4 @@ visible = false
 script = ExtResource("5_828nd")
 
 [node name="Camera" parent="." instance=ExtResource("5_8myo5")]
-position = Vector2(920, 1032)
+position = Vector2(1085, 1141)
