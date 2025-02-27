@@ -3,8 +3,6 @@ extends Control
 var selected_figure: FigureCard
 @onready var figure_cards: Array = $Panel/FigureCards.get_children()
 
-signal save
-
 func _on_figure_card_selected(card: FigureCard):
 	if selected_figure != null and selected_figure != card:
 		selected_figure.highlight.visible = false
@@ -20,7 +18,3 @@ func removing_selected_figure():
 	if selected_figure.qty == 0:
 		selected_figure.highlight.visible = false
 		selected_figure = null
-
-
-func _on_save() -> void:
-	emit_signal("save")

@@ -1,11 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://pxqrvonok1lr"]
+[gd_scene load_steps=3 format=3 uid="uid://pxqrvonok1lr"]
 
 [ext_resource type="Script" path="res://Projects/Garrison/garrison.gd" id="1_6xqpg"]
 [ext_resource type="PackedScene" uid="uid://dbvg1wddl1i3g" path="res://Projects/Garrison/figure_card.tscn" id="2_f5xw8"]
-[ext_resource type="Texture2D" uid="uid://cm0618al0n8cj" path="res://Assets/tmp/hint_system_ui/Button(Normal).png" id="3_qyck1"]
-[ext_resource type="Texture2D" uid="uid://w3vyoostk5u6" path="res://Assets/tmp/hint_system_ui/Button(Click).png" id="4_ev8o3"]
-[ext_resource type="Texture2D" uid="uid://bck6js35udna5" path="res://Assets/tmp/hint_system_ui/Button(hover).png" id="4_tp7ly"]
-[ext_resource type="FontFile" uid="uid://d1cg0l42tlo2l" path="res://Assets/tmp/hint_system_ui/8-bit-fortress (1).ttf" id="5_bima0"]
 
 [node name="Garrison" type="Control"]
 layout_mode = 3
@@ -18,28 +14,28 @@ script = ExtResource("1_6xqpg")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
+anchors_preset = 11
+anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -251.0
-grow_horizontal = 2
-grow_vertical = 0
+offset_left = -282.0
+grow_horizontal = 0
+grow_vertical = 2
 
-[node name="FigureCards" type="HBoxContainer" parent="Panel"]
+[node name="FigureCards" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -243.5
-offset_top = -35.0
-offset_right = 211.5
-offset_bottom = 35.0
+offset_left = -63.5
+offset_top = -475.0
+offset_right = 63.5
+offset_bottom = 475.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 33
+theme_override_constants/separation = 150
 
 [node name="FigureCard" parent="Panel/FigureCards" instance=ExtResource("2_f5xw8")]
 custom_minimum_size = Vector2(60, 70)
@@ -61,42 +57,8 @@ layout_mode = 2
 custom_minimum_size = Vector2(60, 70)
 layout_mode = 2
 
-[node name="SaveTextureButton" type="TextureButton" parent="Panel"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 201.5
-offset_top = -51.0
-offset_right = 259.5
-offset_bottom = -34.0
-grow_horizontal = 2
-grow_vertical = 0
-texture_normal = ExtResource("3_qyck1")
-texture_pressed = ExtResource("4_ev8o3")
-texture_hover = ExtResource("4_tp7ly")
-
-[node name="Save" type="Label" parent="Panel/SaveTextureButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -17.0
-offset_bottom = -5.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.4, 1.4)
-theme_override_fonts/font = ExtResource("5_bima0")
-theme_override_font_sizes/font_size = 7
-text = "Save"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [connection signal="selected" from="Panel/FigureCards/FigureCard" to="." method="_on_figure_card_selected"]
 [connection signal="selected" from="Panel/FigureCards/FigureCard2" to="." method="_on_figure_card_selected"]
 [connection signal="selected" from="Panel/FigureCards/FigureCard3" to="." method="_on_figure_card_selected"]
 [connection signal="selected" from="Panel/FigureCards/FigureCard4" to="." method="_on_figure_card_selected"]
 [connection signal="selected" from="Panel/FigureCards/FigureCard5" to="." method="_on_figure_card_selected"]
-[connection signal="pressed" from="Panel/SaveTextureButton" to="." method="_on_save"]
