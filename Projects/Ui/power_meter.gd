@@ -12,8 +12,8 @@ signal energy_changed(energy: float)
 	set(d):
 		distance = d
 		for i in $distance_bars.get_children():
-			i.value = min(distance,i.max_value)
-			distance -= i.value
+			i.value = min(d,i.max_value)
+			d -= i.value
 
 func _ready() -> void:
 	energy = energy
