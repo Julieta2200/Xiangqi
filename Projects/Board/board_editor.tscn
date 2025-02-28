@@ -411,4 +411,3 @@ position = Vector2(0, -500)
 [connection signal="selected_marker" from="Markers/10/MarkerEditor7" to="." method="_on_marker_editor_selected_marker"]
 [connection signal="selected_marker" from="Markers/10/MarkerEditor8" to="." method="_on_marker_editor_selected_marker"]
 [connection signal="selected_marker" from="Markers/10/MarkerEditor9" to="." method="_on_marker_editor_selected_marker"]
-[connection signal="save" from="CanvasLayer/Garrison" to="." method="_on_garrison_save"]
