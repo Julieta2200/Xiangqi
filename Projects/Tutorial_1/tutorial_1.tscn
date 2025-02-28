@@ -34,6 +34,7 @@ figures = {
 [node name="PowerMeter" parent="CanvasLayer" instance=ExtResource("5_042ta")]
 unique_name_in_owner = true
 energy = 20.0
+distance = 85
 
 [node name="tutorial_engine" type="Node2D" parent="."]
 script = ExtResource("5_828nd")

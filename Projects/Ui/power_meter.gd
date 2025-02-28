@@ -8,13 +8,16 @@ signal energy_changed(energy: float)
 		$energy.value = energy
 		emit_signal("energy_changed", energy)
 
-@export var distance: int
+@export var distance: int :
+	set(d):
+		distance = d
+		for i in $distance_bars.get_children():
+			i.value = min(distance,i.max_value)
+			distance -= i.value
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	energy = energy
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
