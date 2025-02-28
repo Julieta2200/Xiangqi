@@ -3,6 +3,7 @@ extends Control
 var selected_figure: FigureCard
 @onready var figure_cards: Array = $Panel/FigureCards.get_children()
 
+
 @export var figures: Dictionary = {
 	Figure.Types.Soldier: 0,
 	Figure.Types.Chariot: 0,
@@ -20,6 +21,7 @@ func _on_figure_card_selected(card: FigureCard):
 	if selected_figure != null and selected_figure != card:
 		selected_figure.highlight.visible = false
 	selected_figure = card
+	%GameplayManager.free_markers_highlight()
 	
 
 func removing_selected_figure():
