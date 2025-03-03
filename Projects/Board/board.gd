@@ -42,7 +42,7 @@ func _ready():
 	initialize_markers()
 	
 func selected_editor_marker(marker):
-	%GameplayManager.place_figures(marker)
+	%GameplayManager.install_figures(marker)
 
 
 func initialize_markers():

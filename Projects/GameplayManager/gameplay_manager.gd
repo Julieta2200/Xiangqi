@@ -35,7 +35,7 @@ func create_editor_figures():
 			$Editor_figures.add_child(figure)
 			figures[i].append(figure)
 
-func place_figures(marker):
+func install_figures(marker):
 	if %Garrison.selected_figure != null:
 		if %Board.state.has(marker.board_position):
 			return
