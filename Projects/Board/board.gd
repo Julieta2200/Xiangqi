@@ -41,9 +41,6 @@ func _ready():
 	turn = team.Red
 	initialize_markers()
 	
-func selected_editor_marker(marker):
-	%GameplayManager.install_figures(marker)
-
 
 func initialize_markers():
 	for i in range(board_rows):
@@ -87,13 +84,6 @@ func load_move(move: int) -> void:
 	move_number = move
 	turn = team.Red
 	create_state(save_states[move])
-
-func move(marker):
-	unhighlight_markers()
-	if state.has(marker.board_position):
-		state[marker.board_position].delete()
-	selected_figure.move(marker)
-	turn = team.Black
 
 func unhighlight_markers():
 	for key in markers:
@@ -290,3 +280,15 @@ func get_figures_by_team(t: team) -> Array[Figure]:
 			figures.append(state[pos])
 	
 	return figures
+
+
+func _on_marker_figure_move(marker: Variant) -> void:
+	unhighlight_markers()
+	if state.has(marker.board_position):
+		state[marker.board_position].delete()
+	selected_figure.move(marker)
+	turn = team.Black
+
+
+func _on_marker_figure_set(marker: Variant) -> void:
+	%GameplayManager.install_figures(marker)

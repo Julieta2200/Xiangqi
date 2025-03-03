@@ -5,12 +5,15 @@ var board_position: Vector2
 @onready var selected_highlight = $selected_highlight
 @onready var free_marker_highlight: Sprite2D = $free_marker_highlight
 
+signal figure_move(marker)
+signal figure_set(marker)
+
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	if Input.is_action_pressed("click"):
 		if $highlight.visible:
-			$"../../..".move(self)
-		if free_marker_highlight.visible:
-			$"../../..".selected_editor_marker(self)
+			emit_signal("figure_move",self)
+		elif free_marker_highlight.visible:
+			emit_signal("figure_set",self)
 			
 
 func highlight():
