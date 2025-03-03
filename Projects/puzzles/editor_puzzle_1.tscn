@@ -28,6 +28,3 @@ script = ExtResource("4_yykyy")
 
 [node name="Camera2D" type="Camera2D" parent="gameplay"]
 position = Vector2(920, 1040)
-
-[connection signal="create_static_figures" from="." to="BoardEditor" method="_create_static_figures"]
-[connection signal="start" from="BoardEditor" to="." method="_on_board_editor_start"]
