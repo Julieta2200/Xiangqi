@@ -5,19 +5,31 @@ var soldier: Figure
 var general: Figure
 var advisor: Figure
 
+# 1. Scroll / Camera move
+# 2. Enemy soldier appears
+# 3. Add Soldier / Distance meter/ Energy meter
+# 4. Use soldier to capture enemy Soldier
+# 5. Create new soldier
+
 func _ready():
 	%Board.for_tutorial = true
+	
 	state = {
 		Vector2(4, 0): {
 			"type": Figure.Types.General,
 			"team": Board.team.Red,
 			"group": "Magma"
 		},
-		Vector2(6, 6): {
-			"type": Figure.Types.Soldier,
-			"team": Board.team.Black,
-			"group": "Cloud"
-		}
+		Vector2(3, 0): {
+			"type": Figure.Types.Advisor,
+			"team": Board.team.Red,
+			"group": "Magma"
+		},
+		Vector2(5, 0): {
+			"type": Figure.Types.Advisor,
+			"team": Board.team.Red,
+			"group": "Magma"
+		},
 	}
 	
 	%Board.create_state(state)

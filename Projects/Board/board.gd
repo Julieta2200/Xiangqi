@@ -19,7 +19,7 @@ var turn: team:
 
 var move_number: int = 0
 
-var groups: Dictionary = {
+@export var groups: Dictionary = {
 	team.Red: "",
 	team.Black: ""
 }
@@ -50,12 +50,12 @@ func initialize_markers():
 			markers[Vector2(j,i)] = $Markers.get_child(i).get_child(j)
 			markers[Vector2(j,i)].board_position = Vector2(j,i)
 
+
 func create_state(new_state: Dictionary) -> void:
 	state = {}
 	for key in new_state:
 		var figure : Figure
 		var figure_scene : String = figure_scenes[new_state[key].type]
-		groups[new_state[key].team] = new_state[key].group
 		figure_scene = figure_scene.replace("{GROUP}", new_state[key].group)
 		figure = load(figure_scene).instantiate()
 		figure.board = self
