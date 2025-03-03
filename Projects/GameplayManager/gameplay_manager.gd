@@ -44,7 +44,6 @@ func install_figures(marker):
 		figure.global_position = %Board.markers[marker.board_position].global_position
 		figure.board_position = marker.board_position
 		%Board.state[marker.board_position] = figure
-		%Board.calculate_moves()
 
 		free_markers_highlight()
 		%Garrison.removing_selected_figure()
