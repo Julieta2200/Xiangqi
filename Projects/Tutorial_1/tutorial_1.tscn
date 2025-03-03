@@ -45,6 +45,6 @@ position = Vector2(1085, 1141)
 [node name="GameplayManager" parent="." instance=ExtResource("8_eh20g")]
 unique_name_in_owner = true
 
-[node name="Editor_figures" type="Node2D" parent="GameplayManager"]
+[node name="Garrison_figures" type="Node2D" parent="GameplayManager"]
 
 [connection signal="energy_changed" from="CanvasLayer/PowerMeter" to="GameplayManager" method="_on_power_meter_energy_changed"]

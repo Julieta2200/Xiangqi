@@ -3,7 +3,7 @@ extends Node2D
 var figures : Dictionary
 
 func _ready() -> void:
-	create_editor_figures()
+	create_garrison_figures()
 
 func _on_power_meter_energy_changed(energy: float) -> void:
 	%Garrison.energy_changed(energy)
@@ -16,13 +16,10 @@ func free_markers_highlight():
 		if i.y >= 7 and i.x >= 3 and i.x <= 5:
 			continue
 			
-		if !%Board.state.has(i) and  i.y <=  distance_rows and in_boundaries(i):
-			marker.visible = true
-		elif marker.visible:
-			marker.visible = false
-			
+		marker.visible = !%Board.state.has(i) and i.y <=  distance_rows and in_boundaries(i)
 
-func create_editor_figures():
+		
+func create_garrison_figures():
 	for i in %Garrison.figures.keys():
 		figures[i] = []
 		for j in %Garrison.figures[i]:
@@ -32,10 +29,10 @@ func create_editor_figures():
 			figure.team = Board.team.Red
 			figure.board = %Board
 			figure.global_position = Vector2(0, -1000)
-			$Editor_figures.add_child(figure)
+			$Garrison_figures.add_child(figure)
 			figures[i].append(figure)
 
-func install_figures(marker):
+func set_figure(marker):
 	if %Garrison.selected_figure != null:
 		if %Board.state.has(marker.board_position):
 			return

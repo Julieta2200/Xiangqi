@@ -291,4 +291,4 @@ func _on_marker_figure_move(marker: Variant) -> void:
 
 
 func _on_marker_figure_set(marker: Variant) -> void:
-	%GameplayManager.install_figures(marker)
+	%GameplayManager.set_figure(marker)
