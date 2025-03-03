@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bkqlg03rv0gyo"]
+[gd_scene load_steps=7 format=3 uid="uid://bkqlg03rv0gyo"]
 
 [ext_resource type="Script" path="res://Projects/Dialog/dialog.gd" id="1_0lrns"]
 [ext_resource type="Texture2D" uid="uid://bgxg11jl7xfdn" path="res://Assets/tmp/dialog panel/panel.png" id="1_vksa7"]
-[ext_resource type="FontFile" uid="uid://d1cg0l42tlo2l" path="res://Assets/tmp/hint_system_ui/8-bit-fortress (1).ttf" id="3_njij8"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b4jn4"]
 texture = ExtResource("1_vksa7")
@@ -77,7 +76,6 @@ offset_bottom = -26.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-theme_override_fonts/normal_font = ExtResource("3_njij8")
 theme_override_font_sizes/normal_font_size = 35
 bbcode_enabled = true
 text = "Helloo Testing text"
