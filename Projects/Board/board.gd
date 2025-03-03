@@ -37,6 +37,8 @@ var figure_scenes: Dictionary = {
 
 var _counter: int 
 
+signal set_figure(marker: BoardMarker)
+
 func _ready():
 	turn = team.Red
 	initialize_markers()
@@ -291,4 +293,30 @@ func _on_marker_figure_move(marker: Variant) -> void:
 
 
 func _on_marker_figure_set(marker: Variant) -> void:
-	%GameplayManager.set_figure(marker)
+	emit_signal("set_figure", marker)
+
+func highlight_placeholder_markers(selected_card: FigureCard, distance: int) -> void:
+	for i in markers:
+		var highlight = markers[i].free_marker_highlight
+		if i.y >= 7 and i.x >= 3 and i.x <= 5:
+			continue
+			
+		highlight.visible = !state.has(i) and i.y <=  distance and in_boundaries(i, selected_card)
+
+func in_boundaries(pos : Vector2, card: FigureCard) -> bool:
+	if card.type == Figure.Types.Elephant:
+		return pos.y <= 4
+	return true
+
+func set_selected_figure(selected_card: FigureCard, marker: BoardMarker) -> void:
+	var figure_scene : String = figure_scenes[selected_card.type]
+	figure_scene = figure_scene.replace("{GROUP}", groups[turn])
+	var figure = load(figure_scene).instantiate()
+	figure.team = turn
+	figure.board = self
+	add_child(figure)
+	figure.global_position = marker.global_position
+	figure.board_position = marker.board_position
+	state[marker.board_position] = figure
+	calculate_moves()
+	unhighlight_markers()

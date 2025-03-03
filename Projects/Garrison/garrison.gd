@@ -12,6 +12,8 @@ var selected_figure: FigureCard
 	Figure.Types.Horse: 0,
 }
 
+signal card_selected(selected_card: FigureCard)
+
 func _ready() -> void:
 	for j in figures.keys().size():
 		figure_cards[j].type = figures.keys()[j]
@@ -21,16 +23,13 @@ func _on_figure_card_selected(card: FigureCard):
 	if selected_figure != null and selected_figure != card:
 		selected_figure.highlight.visible = false
 	selected_figure = card
-	%GameplayManager.free_markers_highlight()
+	emit_signal("card_selected", selected_figure)
 	
 
-func removing_selected_figure():
+func remove_figure():
 	selected_figure.qty -= 1
-	%PowerMeter.energy -= selected_figure.energy
-	if selected_figure.qty == 0:
-		%Board.unhighlight_markers()
-		selected_figure.highlight.visible = false
-		selected_figure = null
+	selected_figure.highlight.visible = false
+	selected_figure = null
 
 func energy_changed(energy: float) -> void:
 	for f in figure_cards:

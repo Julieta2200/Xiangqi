@@ -33,8 +33,8 @@ figures = {
 
 [node name="PowerMeter" parent="CanvasLayer" instance=ExtResource("5_042ta")]
 unique_name_in_owner = true
-energy = 100.0
-distance = 100
+energy = 20.0
+distance = 40
 
 [node name="tutorial_engine" type="Node2D" parent="."]
 script = ExtResource("5_828nd")
@@ -47,4 +47,6 @@ unique_name_in_owner = true
 
 [node name="Garrison_figures" type="Node2D" parent="GameplayManager"]
 
+[connection signal="set_figure" from="Board" to="GameplayManager" method="_on_board_set_figure"]
+[connection signal="card_selected" from="CanvasLayer/Garrison" to="GameplayManager" method="_on_garrison_card_selected"]
 [connection signal="energy_changed" from="CanvasLayer/PowerMeter" to="GameplayManager" method="_on_power_meter_energy_changed"]

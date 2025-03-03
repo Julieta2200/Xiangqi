@@ -7,24 +7,20 @@ var advisor: Figure
 
 func _ready():
 	%Board.for_tutorial = true
-	create_soldier()
-	soldier_movement_dialog()
-	
-func create_soldier():
 	state = {
-		Vector2(5, 3): {
-			"type": Figure.Types.Soldier,
+		Vector2(4, 0): {
+			"type": Figure.Types.General,
 			"team": Board.team.Red,
 			"group": "Magma"
+		},
+		Vector2(6, 6): {
+			"type": Figure.Types.Soldier,
+			"team": Board.team.Black,
+			"group": "Cloud"
 		}
 	}
+	
 	%Board.create_state(state)
-	soldier = %Board.state[Vector2(5, 3)]
-	
-func soldier_movement_dialog():
-	%Dialog.appear("Before crossing the river, soldier can only move 1 position forward each step.")
-	soldier.arrows.get_child(0).visible = true
-	
 	
 func create_dummy_figure_for_soldier():
 	delete_figure()

@@ -1,4 +1,4 @@
-extends Node2D
+class_name BoardMarker extends Node2D
 
 var board_position: Vector2
 @onready var highlighted_spot = $highlighted_spot
