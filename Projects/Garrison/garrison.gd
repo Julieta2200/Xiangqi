@@ -26,7 +26,9 @@ func _on_figure_card_selected(card: FigureCard):
 
 func removing_selected_figure():
 	selected_figure.qty -= 1
+	%PowerMeter.energy -= selected_figure.energy
 	if selected_figure.qty == 0:
+		%Board.unhighlight_markers()
 		selected_figure.highlight.visible = false
 		selected_figure = null
 

@@ -41,6 +41,9 @@ func _ready():
 	turn = team.Red
 	initialize_markers()
 	
+func selected_editor_marker(marker):
+	%GameplayManager.place_figures(marker)
+
 
 func initialize_markers():
 	for i in range(board_rows):

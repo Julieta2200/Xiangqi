@@ -24,16 +24,16 @@ visible = false
 [node name="Garrison" parent="CanvasLayer" instance=ExtResource("4_3f8cv")]
 unique_name_in_owner = true
 figures = {
-2: 3,
-3: 0,
-4: 0,
-5: 0,
-6: 0
+2: 4,
+3: 1,
+4: 2,
+5: 2,
+6: 2
 }
 
 [node name="PowerMeter" parent="CanvasLayer" instance=ExtResource("5_042ta")]
 unique_name_in_owner = true
-energy = 20.0
+energy = 100.0
 distance = 100
 
 [node name="tutorial_engine" type="Node2D" parent="."]
@@ -44,5 +44,7 @@ position = Vector2(1085, 1141)
 
 [node name="GameplayManager" parent="." instance=ExtResource("8_eh20g")]
 unique_name_in_owner = true
+
+[node name="Editor_figures" type="Node2D" parent="GameplayManager"]
 
 [connection signal="energy_changed" from="CanvasLayer/PowerMeter" to="GameplayManager" method="_on_power_meter_energy_changed"]
