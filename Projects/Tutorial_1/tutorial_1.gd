@@ -14,9 +14,8 @@ var advisor: Figure
 
 func _ready():
 	%Board.for_tutorial = true
-	%Dialog.appear("You can scroll to zoom in and out to have a better view of surroundings")
-	$Camera._zoom.check = true
-	
+	camera_zoom()
+
 	state = {
 		Vector2(4, 0): {
 			"type": Figure.Types.General,
@@ -36,6 +35,13 @@ func _ready():
 	}
 	
 	%Board.create_state(state)
+	
+func camera_zoom():
+	%Dialog.appear("You can scroll to zoom in and out to have a better view of surroundings")
+
+func camera_movement():
+	%Dialog.appear("Use WASD to look around.")
+	
 	
 func create_dummy_figure_for_soldier():
 	delete_figure()
@@ -350,4 +356,4 @@ func computer_move():
 			
 
 func _on_camera_zoom() -> void:
-	%Dialog.appear("Use WASD to look around.")
+	camera_movement()
