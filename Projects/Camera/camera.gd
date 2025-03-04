@@ -14,6 +14,22 @@ var zoom_target: Vector2
 func _ready():
 	zoom_target = zoom
 
+signal _camera_zoom
+signal _camera_move
+
+var _zoom = {
+				"list" : [],
+				"size" : 2,
+				"check" : true
+				}
+
+func store_input_action(action_name,action):
+	if action.check:
+		if !action.list.has(action_name):
+			action.list.append(action_name)
+		if action.list.size() == action.size:
+			emit_signal("_camera_zoom")
+			action.check = false
 
 func _process(delta):
 	camera_zoom(delta)
@@ -21,13 +37,15 @@ func _process(delta):
 	
 func camera_zoom(delta):
 	if Input.is_action_just_pressed("zoom_in"):
+		store_input_action("zoom_in",_zoom)
 		zoom_target = zoom + Vector2(0.15,0.15)
 		zoom_target = zoom_target.min(Vector2(zoom_max,zoom_max))
 		
 	if Input.is_action_just_pressed("zoom_out"):
+		store_input_action("zoom_out",_zoom)
 		zoom_target = zoom - Vector2(0.15,0.15)
 		zoom_target = zoom_target.max(Vector2(zoom_min,zoom_min))
-	
+
 	zoom = zoom.move_toward(zoom_target, zoom_speed * delta)
 	
 	

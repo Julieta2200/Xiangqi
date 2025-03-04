@@ -11,8 +11,11 @@ var advisor: Figure
 # 4. Use soldier to capture enemy Soldier
 # 5. Create new soldier
 
+
 func _ready():
 	%Board.for_tutorial = true
+	%Dialog.appear("You can scroll to zoom in and out to have a better view of surroundings")
+	$Camera._zoom.check = true
 	
 	state = {
 		Vector2(4, 0): {
@@ -345,3 +348,6 @@ func computer_move():
 				get_tree().change_scene_to_file("res://Projects/puzzles/puzzle1.tscn")
 				
 			
+
+func _on_camera_zoom() -> void:
+	%Dialog.appear("Use WASD to look around.")
