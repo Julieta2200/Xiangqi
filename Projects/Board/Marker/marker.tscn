@@ -38,6 +38,7 @@ texture = ExtResource("2_5l7c3")
 
 [node name="free_marker_highlight" type="Sprite2D" parent="."]
 visible = false
+self_modulate = Color(0, 1, 0, 1)
 scale = Vector2(2, 2)
 texture = ExtResource("4_enjmd")
 

@@ -76,7 +76,7 @@ offset_bottom = -26.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-theme_override_font_sizes/normal_font_size = 35
+theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
 text = "Helloo Testing text"
 fit_content = true
@@ -87,3 +87,8 @@ visible_ratio = 0.0
 libraries = {
 "": SubResource("AnimationLibrary_l5g2r")
 }
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

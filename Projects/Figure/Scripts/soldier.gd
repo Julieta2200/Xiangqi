@@ -1,5 +1,6 @@
 class_name Soldier extends Figure
 
+@onready var highlight: Sprite2D = $highlight
 
 func _ready():
 	boundaries = {

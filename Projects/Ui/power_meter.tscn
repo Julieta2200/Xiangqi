@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2isxa0mvvipm"]
+[gd_scene load_steps=7 format=3 uid="uid://b2isxa0mvvipm"]
 
 [ext_resource type="Script" path="res://Projects/Ui/power_meter.gd" id="1_qudxp"]
 [ext_resource type="Texture2D" uid="uid://cs34dbt4b28so" path="res://Assets/tmp/bar.png" id="2_hfjwd"]
 [ext_resource type="Texture2D" uid="uid://blyv6pvnjxlo3" path="res://Assets/tmp/fill.png" id="3_1786x"]
+[ext_resource type="Texture2D" uid="uid://bu1h8vgqtcbqn" path="res://Assets/tmp/energy_highlight.png" id="4_j0wpe"]
 [ext_resource type="Texture2D" uid="uid://cd6lq0m7tnbfn" path="res://Assets/tmp/distance_bar.png" id="4_tq2w7"]
 [ext_resource type="Texture2D" uid="uid://4h0e378kyckl" path="res://Assets/tmp/distance_fill.png" id="5_wxv66"]
 
@@ -22,13 +23,29 @@ texture_under = ExtResource("2_hfjwd")
 texture_progress = ExtResource("3_1786x")
 texture_progress_offset = Vector2(5, 1)
 
+[node name="highlight" type="TextureRect" parent="energy"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.5
+offset_top = -15.0
+offset_right = 112.5
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_j0wpe")
+
 [node name="distance_bars" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(25, 10)
 layout_mode = 0
 offset_left = 100.0
-offset_top = 350.0
-offset_right = 125.0
-offset_bottom = 360.0
+offset_top = 400.0
+offset_right = 440.0
+offset_bottom = 410.0
 scale = Vector2(3, 3)
 theme_override_constants/separation = 10
 
@@ -101,3 +118,13 @@ max_value = 10.0
 texture_under = ExtResource("4_tq2w7")
 texture_progress = ExtResource("5_wxv66")
 texture_progress_offset = Vector2(2.5, 1)
+
+[node name="distance_highlight" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 64.0
+offset_top = 367.0
+offset_right = 364.0
+offset_bottom = 392.0
+scale = Vector2(4, 4)
+texture = ExtResource("4_j0wpe")

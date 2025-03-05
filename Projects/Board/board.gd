@@ -38,6 +38,9 @@ var figure_scenes: Dictionary = {
 var _counter: int 
 
 signal set_figure(marker: BoardMarker)
+signal in_marker_click
+
+var check_marker_click: bool
 
 func _ready():
 	turn = team.Red
@@ -294,15 +297,25 @@ func _on_marker_figure_move(marker: Variant) -> void:
 
 func _on_marker_figure_set(marker: Variant) -> void:
 	emit_signal("set_figure", marker)
+	if check_marker_click:
+		emit_signal("in_marker_click")
+		check_marker_click = false
 
 func highlight_placeholder_markers(selected_card: FigureCard, distance: int) -> void:
+	var boundaries = {
+		"red_palace_rows": 2,
+		"black_palace_rows": 7,
+		"palace_cols": Vector2(3,5)
+	}
 	for i in markers:
 		var highlight = markers[i].free_marker_highlight
-		if i.y >= 7 and i.x >= 3 and i.x <= 5:
+		if (i.y >= boundaries.black_palace_rows or i.y <= boundaries.red_palace_rows ) \
+		and  i.x >= boundaries.palace_cols.x and i.x <= boundaries.palace_cols.y:
 			continue
 			
 		highlight.visible = !state.has(i) and i.y <=  distance and in_boundaries(i, selected_card)
 
+	
 func in_boundaries(pos : Vector2, card: FigureCard) -> bool:
 	if card.type == Figure.Types.Elephant:
 		return pos.y <= 4
@@ -320,3 +333,17 @@ func set_selected_figure(selected_card: FigureCard, marker: BoardMarker) -> void
 	state[marker.board_position] = figure
 	calculate_moves()
 	unhighlight_markers()
+
+func create_figures(new_figures: Dictionary):
+	for i in new_figures:
+		var figure : Figure
+		var figure_scene : String = figure_scenes[new_figures[i].type]
+		figure_scene = figure_scene.replace("{GROUP}", new_figures[i].group)
+		figure = load(figure_scene).instantiate()
+		figure.team = new_figures[i].team
+		figure.board = self
+		figure.board_position = i
+		figure.global_position = markers[i].global_position
+		figure.active = !new_figures[i].has("inactive")
+		state[i] = figure
+		add_child(figure)
