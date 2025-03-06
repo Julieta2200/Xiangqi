@@ -71,6 +71,9 @@ func explain_pawn_card():
 	
 
 func _on_garrison_click_soldier_card(selected_card: FigureCard) -> void:
+	summon_soldier()
+
+func summon_soldier():
 	%Garrison.get_soldier_card().highlight.visible = false
 	%Dialog.appear("The distance meter shows how far in the arena you can summon your soldiers.")
 	%PowerMeter.distance_highlight_visible(true)
@@ -78,15 +81,19 @@ func _on_garrison_click_soldier_card(selected_card: FigureCard) -> void:
 	%Dialog.appear("The more soldiers you have the longer the distance.")
 	await get_tree().create_timer(3).timeout
 	%Dialog.appear("You can’t summon a soldier inside the palace.")
+	await get_tree().create_timer(3).timeout
 	%PowerMeter.distance_highlight_visible(false)
-	summon_soldier()
-
-func summon_soldier():
 	%Dialog.appear("Click on one of the markers to summon your soldier there.")
-	%Board.check_marker_click = true
 
 
-func _on_board_in_marker_click() -> void:
+func computer_move():
+	await $tutorial_engine.make_move()
+
+
+func _on_board_set_figure(marker: BoardMarker) -> void:
+	move_and_capture_enemy()
+
+func move_and_capture_enemy() -> void:
 	%Dialog.appear("Now it’s our turn to move.")
 	await get_tree().create_timer(3).timeout
 	%Dialog.appear("Click on a pawn to see all possible moves.")
@@ -94,6 +101,3 @@ func _on_board_in_marker_click() -> void:
 	%Dialog.appear("Pawns can move only forward, by one step, once they cross the river, they can also move one step horizontally.")
 	await get_tree().create_timer(3).timeout
 	%Dialog.appear("Capture the enemy pawn.")
-
-func computer_move():
-	await $tutorial_engine.make_move()

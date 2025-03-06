@@ -59,9 +59,6 @@ var figure_scenes: Dictionary = {
 var _counter: int 
 
 signal _set_figure(marker: BoardMarker)
-signal in_marker_click
-
-var check_marker_click: bool
 
 func _ready():
 	turn = team.Red
@@ -318,9 +315,6 @@ func _on_marker_figure_move(marker: Variant) -> void:
 
 func _on_marker_figure_set(marker: Variant) -> void:
 	emit_signal("_set_figure", marker)
-	if check_marker_click:
-		emit_signal("in_marker_click")
-		check_marker_click = false
 
 func highlight_placeholder_markers(selected_card: FigureCard, distance: int) -> void:
 	for i in markers:
