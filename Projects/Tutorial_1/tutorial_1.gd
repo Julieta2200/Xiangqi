@@ -1,9 +1,7 @@
 extends Node2D
 
 var state : Dictionary
-var soldier: Figure 
-var general: Figure
-var advisor: Figure
+var enemy_soldier : Figure
 
 # 1. Scroll / Camera move
 # 2. Enemy soldier appears
@@ -11,9 +9,11 @@ var advisor: Figure
 # 4. Use soldier to capture enemy Soldier
 # 5. Create new soldier
 
+
 func _ready():
 	%Board.for_tutorial = true
-	
+	camera_zoom()
+
 	state = {
 		Vector2(4, 0): {
 			"type": Figure.Types.General,
@@ -34,314 +34,70 @@ func _ready():
 	
 	%Board.create_state(state)
 	
-func create_dummy_figure_for_soldier():
-	delete_figure()
-	state = {
-		Vector2(3, 5): {
-			"type": Figure.Types.Soldier,
-			"team": Board.team.Black,
-			"group": "Cloud"
-		},
-		Vector2(4, 3): {
-			"type": Figure.Types.Soldier,
-			"team": Board.team.Red,
-			"group": "Magma"
-		}
-	}
+func _on_camera_zoom() -> void:
+	camera_movement()
 	
-	%Board.create_state(state)
-	%Board.generate_save_state()
-	
-func create_general():
-	delete_figure()
-	state = {
-		Vector2(4,0): {
-			"type": Figure.Types.General,
-			"team": Board.team.Red,
-			"group": "Magma"
-		}
-	}
-	%Board.create_state(state)
-	%Board.generate_save_state()
-	general =  %Board.state[Vector2(4, 0)]
-	for i in general.arrows.get_children():
-		i.visible = true
-		
-func create_advisor_for_general():
-	delete_figure()
-	state = {
-		Vector2(5,0): {
-			"type": Figure.Types.General,
-			"team": Board.team.Red,
-			"group": "Magma"
-		},
-		Vector2(4,0): {
-			"type": Figure.Types.Advisor,
-			"team": Board.team.Red,
-			"group": "Magma",
-			"inactive": true
-		}
-	}
-	%Board.create_state(state)
-	%Board.generate_save_state()
-	general =  %Board.state[Vector2(5, 0)]
+func camera_zoom():
+	%Dialog.appear("You can scroll to zoom in and out to have a better view of surroundings")
 
-func create_black_general():
-	delete_figure()
-	state = {
-		Vector2(5,2): {
-			"type": Figure.Types.General,
-			"team": Board.team.Red,
-			"group": "Magma"
-		},
-		Vector2(4,1): {
-			"type": Figure.Types.Advisor,
-			"team": Board.team.Red,
-			"group": "Magma",
-			"inactive": true
-		},
-		Vector2(4,9): {
-			"type": Figure.Types.General,
-			"team": Board.team.Black,
-			"group": "Cloud"
-		}
-	}
-	%Board.create_state(state)
-	%Board.generate_save_state()
-
-func create_dummy_figure_for_general():
-	delete_figure()
-	state = {
-		Vector2(4, 2): {
-			"type": Figure.Types.Soldier,
-			"team": Board.team.Black,
-			"group": "Cloud"
-		},
-		Vector2(3, 0): {
-			"type": Figure.Types.General,
-			"team": Board.team.Red,
-			"group": "Magma"
-		}
-	}
+func camera_movement():
+	%Dialog.appear("Use WASD to look around.")
+	await get_tree().create_timer(3).timeout
+	explain_energy()
 	
-	%Board.create_state(state)
-	%Board.generate_save_state()
-	
-func create_figures_for_general():
-	delete_figure()
-	state = {
-		Vector2(5,1): {
-			"type": Figure.Types.General,
-			"team": Board.team.Red,
-			"group": "Magma"
-		},
-		Vector2(3,5): {
-			"type": Figure.Types.Soldier,
-			"team": Board.team.Red,
-			"group": "Magma"
-		},
-		Vector2(4,9): {
-			"type": Figure.Types.General,
-			"team": Board.team.Black,
-			"group": "Cloud"
-		},
-		Vector2(4,1): {
-			"type": Figure.Types.Soldier,
-			"team": Board.team.Black,
-			"group": "Cloud"
-		}
-	}
-	%Board.create_state(state)
-	%Board.generate_save_state()
-	
-func create_adviser():
-	delete_figure()
-	state = {
-		Vector2(4,1): {
-			"type": Figure.Types.Advisor,
-			"team": Board.team.Red,
-			"group": "Magma"
-		}
-	}
-	%Board.create_state(state)
-	%Board.generate_save_state()
-	advisor =  %Board.state[Vector2(4, 1)]
-	for i in advisor.arrows.get_children():
-		i.visible = true
+func explain_energy():
+	%Dialog.appear("Look! An enemy soldier is approaching.")
+	var enemy_soldier = create_enemy_soldier()
+	enemy_soldier.highlight.visible = true
+	await get_tree().create_timer(3).timeout
+	%Dialog.appear("We have a few soldiers with us, but you need to summon them.")
+	await get_tree().create_timer(3).timeout
+	enemy_soldier.highlight.visible = false
+	%PowerMeter.energy_highlight_visible(true)
+	%Dialog.appear("To summon a soldier you need to have enough energy.")
+	await get_tree().create_timer(3).timeout
+	%Dialog.appear("To get more energy you need to capture enemy soldiers.")
+	%PowerMeter.energy_highlight_visible(false)
+	explain_pawn_card()
 
-func create_soldier_for_advisor():
-	delete_figure()
-	state = {
-		Vector2(3, 2): {
-			"type": Figure.Types.Soldier,
-			"team": Board.team.Black,
-			"group": "Cloud"
-		},
-		Vector2(5,2): {
-			"type": Figure.Types.Advisor,
-			"team": Board.team.Red,
-			"group": "Magma"
-		}
-	}
-	
-	%Board.create_state(state)
-	%Board.generate_save_state()
+func create_enemy_soldier() -> Figure:
+	%Board.set_figure(Figure.Types.Soldier, Vector2(6,6), "Cloud", Board.team.Black)
+	return %Board.state[Vector2(6, 6)]
 
-
-func create_sildiers_for_advisor():
-	delete_figure()
-	state = {
-		Vector2(3, 0): {
-			"type": Figure.Types.Soldier,
-			"team": Board.team.Black,
-			"group": "Cloud"
-		},
-		Vector2(1, 2): {
-			"type": Figure.Types.Soldier,
-			"team": Board.team.Black,
-			"group": "Cloud"
-		},
-		Vector2(3,2): {
-			"type": Figure.Types.Advisor,
-			"team": Board.team.Red,
-			"group": "Magma"
-		}
-	}
-	%Board.create_state(state)
-	%Board.generate_save_state()
+func explain_pawn_card():
+	%Dialog.appear("Click on the pawn card to summon it.")
+	%Garrison.check_selected_figure = true
+	%Garrison.get_soldier_card().highlight.visible = true
 	
 
+func _on_garrison_click_soldier_card(selected_card: FigureCard) -> void:
+	summon_soldier()
 
-func delete_figure():
-	%Board.unhighlight_markers()
-	for i in %Board.state.keys():
-		%Board.state[i].delete()
-		%Board.state.erase(i)
+func summon_soldier():
+	%Garrison.get_soldier_card().highlight.visible = false
+	%Dialog.appear("The distance meter shows how far in the arena you can summon your soldiers.")
+	%PowerMeter.distance_highlight_visible(true)
+	await get_tree().create_timer(3).timeout
+	%Dialog.appear("The more soldiers you have the longer the distance.")
+	await get_tree().create_timer(3).timeout
+	%Dialog.appear("You can’t summon a soldier inside the palace.")
+	await get_tree().create_timer(3).timeout
+	%PowerMeter.distance_highlight_visible(false)
+	%Dialog.appear("Click on one of the markers to summon your soldier there.")
 
 
 func computer_move():
 	await $tutorial_engine.make_move()
-	match %Board.move_number:
-		1:
-			soldier.arrows.get_child(0).visible = true
-			%Dialog.appear("Cross the river")
-		2:
-			for i in soldier.arrows.get_children():
-				i.visible = true
-			%Dialog.appear("After crossing the river, soldier can move 1 position forward or sideways each step.Move in any of the directions.")
-		3:
-			await get_tree().create_timer(1).timeout
-			create_dummy_figure_for_soldier()
-			%Dialog.appear("Capture the black soldier in 3 moves.")
-		6:
-			if !%Board.state[Vector2(3,5)].team == 1:
-				%Dialog.appear("Capture the black soldier in 3 moves.")
-				delete_figure()
-				%Board.load_move(3)
-				return
-			else:
-				await get_tree().create_timer(1).timeout
-				create_general()
-				%Board.markers[Vector2(5, 0)].highlighted_spot.visible = true
-				%Dialog.appear("General can't leave palace.And moves vertically and horizontally to one position․Move to the right.")
-		7:
-			if !%Board.state.has(Vector2(5,0)):
-				%Dialog.appear("Move to the right.")
-				delete_figure()
-				%Board.load_move(6)
-				return
-			else:
-				await get_tree().create_timer(1).timeout
-				create_advisor_for_general()
-				%Board.markers[Vector2(5, 0)].highlighted_spot.visible = false
-				%Board.markers[Vector2(4, 1)].highlighted_spot.visible = true
-				%Dialog.appear("Move the red general to the highlighted spot in 2 moves.")
-		9:
-			if !%Board.state.has(Vector2(4,1)):
-				%Dialog.appear("Move the red general to the highlighted spot in 2 moves.")
-				delete_figure()
-				%Board.load_move(7) 
-				return
-			else:
-				await get_tree().create_timer(1).timeout
-				create_black_general()
-				%Board.markers[Vector2(4, 1)].highlighted_spot.visible = false
-				%Board.markers[Vector2(3, 2)].highlighted_spot.visible = true
-				%Dialog.appear("How can the red general move to the highlighted spot?")
-		10:
-			if %Board.state.has(Vector2(4,2)):
-				%Dialog.appear("Due to the Flying General Rule, two generals can't be placed on the same file without any pieces in between.")
-				delete_figure()
-				%Board.load_move(9)
-				return
-		15:
-			if !%Board.state.has(Vector2(3,2)):
-				delete_figure()
-				%Dialog.appear("Move the red general to the highlighted spot in 6 moves.")
-				%Board.load_move(9)
-				return
-			else:
-				await get_tree().create_timer(1).timeout
-				create_dummy_figure_for_general()
-				%Dialog.appear("Capture the black soldier in 3 moves.")
-				%Board.markers[Vector2(3, 2)].highlighted_spot.visible = false
-		18:
-			if !%Board.state[Vector2(4,2)].team == 1:
-				delete_figure()
-				%Dialog.appear("Capture the black soldier in 3 moves.")
-				%Board.load_move(15)
-				return
-			else:
-				create_figures_for_general()
-				%Dialog.appear("How to capture the black soldier with the help of the red soldier in 2 moves?.")
-		19:
-			if %Board.state[Vector2(4,1)].team == 1 && %Board.state[Vector2(4,1)].type == Figure.Types.General:
-				delete_figure()
-				%Dialog.appear("Two generals can't be placed on the same file without any pieces in between.")
-				%Board.load_move(18)
-				return
-		20:
-			if !%Board.state[Vector2(4,1)].team == 1:
-				delete_figure()
-				%Dialog.appear("How to capture the black soldier with the help of the red soldier in 2 moves?.")
-				%Board.load_move(18)
-				return
-			else:
-				await get_tree().create_timer(1).timeout
-				create_adviser()
-				%Board.markers[Vector2(5, 0)].highlighted_spot.visible = true
-				%Dialog.appear("Move the advisor to the highlighted spot.")
-		21:
-			if !%Board.state.has(Vector2(5,0)):
-				%Dialog.appear("Move the advisor to the highlighted spot.")
-				delete_figure()
-				%Board.load_move(20)
-				return
-			else:
-				await get_tree().create_timer(1).timeout
-				create_soldier_for_advisor()
-				%Board.markers[Vector2(5, 0)].highlighted_spot.visible = false
-				%Dialog.appear("Capture the black soldier in 2 moves.")
-		23:
-			if !%Board.state[Vector2(3,2)].team == 1:
-				%Dialog.appear("Capture the black soldier in 2 moves.")
-				delete_figure()
-				%Board.load_move(21)
-				return
-			else:
-				await get_tree().create_timer(1).timeout
-				create_sildiers_for_advisor()
-				%Dialog.appear("Advisor can't leave the palace.Which soldier can it capture in 2 moves?.")
-		25:
-			if !%Board.state[Vector2(3,0)].team == 1:
-				%Dialog.appear("Which soldier can it capture in 2 moves?.")
-				delete_figure()
-				%Board.load_move(23)
-				return
-			else:
-				await get_tree().create_timer(1).timeout
-				delete_figure()
-				%Dialog.disappear()
-				get_tree().change_scene_to_file("res://Projects/puzzles/puzzle1.tscn")
-				
-			
+
+
+func _on_board_set_figure(marker: BoardMarker) -> void:
+	move_and_capture_enemy()
+
+func move_and_capture_enemy() -> void:
+	%Dialog.appear("Now it’s our turn to move.")
+	await get_tree().create_timer(3).timeout
+	%Dialog.appear("Click on a pawn to see all possible moves.")
+	await get_tree().create_timer(3).timeout
+	%Dialog.appear("Pawns can move only forward, by one step, once they cross the river, they can also move one step horizontally.")
+	await get_tree().create_timer(3).timeout
+	%Dialog.appear("Capture the enemy pawn.")

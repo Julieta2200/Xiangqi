@@ -1,5 +1,8 @@
 class_name FigureCard extends Control
 
+
+@onready var highlight: TextureRect = $highlight
+
 @onready var sprites: Dictionary = {
 	Figure.Types.Soldier: load("res://Assets/Characters/Pawn/Fire pawn.png"),
 	Figure.Types.Elephant: load("res://Assets/tmp/elephant_red.png"),
@@ -23,8 +26,8 @@ const figure_energies = {
 	Figure.Types.Cannon: 40
 }
 
+@onready var selected_highlight = $selected_highlight
 signal selected(FigureCard)
-@onready var highlight = $selected_highlight
 var active: bool
 var energy: float
 
@@ -51,7 +54,7 @@ func _process(delta):
 
 func _on_card_gui_input(event: InputEvent):
 	if event.is_pressed() and qty > 0:
-		highlight.visible = true
+		selected_highlight.visible = true
 		emit_signal("selected", self)
 
 

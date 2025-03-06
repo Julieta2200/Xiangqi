@@ -4,6 +4,27 @@ const board_rows = 10
 const board_cols = 9
 enum team {Red = 1, Black = 2}
 
+const palace_positions: Dictionary = {
+	Vector2(3,0): true,
+	Vector2(4,0): true,
+	Vector2(5,0): true,
+	Vector2(3,1): true,
+	Vector2(4,1): true,
+	Vector2(5,1): true,
+	Vector2(3,2): true,
+	Vector2(4,2): true,
+	Vector2(5,2): true,
+	Vector2(3,7): true,
+	Vector2(4,7): true,
+	Vector2(5,7): true,
+	Vector2(3,8): true,
+	Vector2(4,8): true,
+	Vector2(5,8): true,
+	Vector2(3,9): true,
+	Vector2(4,9): true,
+	Vector2(5,9): true
+}
+
 var for_tutorial : bool
 var markers : Dictionary
 var state : Dictionary
@@ -37,7 +58,7 @@ var figure_scenes: Dictionary = {
 
 var _counter: int 
 
-signal set_figure(marker: BoardMarker)
+signal _set_figure(marker: BoardMarker)
 
 func _ready():
 	turn = team.Red
@@ -293,26 +314,26 @@ func _on_marker_figure_move(marker: Variant) -> void:
 
 
 func _on_marker_figure_set(marker: Variant) -> void:
-	emit_signal("set_figure", marker)
+	emit_signal("_set_figure", marker)
 
 func highlight_placeholder_markers(selected_card: FigureCard, distance: int) -> void:
 	for i in markers:
 		var highlight = markers[i].free_marker_highlight
-		if i.y >= 7 and i.x >= 3 and i.x <= 5:
-			continue
-			
-		highlight.visible = !state.has(i) and i.y <=  distance and in_boundaries(i, selected_card)
+		highlight.visible = !palace_positions.has(i) and !state.has(i) and \
+		 i.y <=  distance and in_boundaries(i, selected_card)
 
+	
 func in_boundaries(pos : Vector2, card: FigureCard) -> bool:
 	if card.type == Figure.Types.Elephant:
 		return pos.y <= 4
 	return true
 
-func set_selected_figure(selected_card: FigureCard, marker: BoardMarker) -> void:
-	var figure_scene : String = figure_scenes[selected_card.type]
-	figure_scene = figure_scene.replace("{GROUP}", groups[turn])
+func set_figure(type: Figure.Types, board_position: Vector2, group: String = "Magma", t: team = team.Red) -> void:
+	var figure_scene : String = figure_scenes[type]
+	var marker = markers[board_position]
+	figure_scene = figure_scene.replace("{GROUP}", group)
 	var figure = load(figure_scene).instantiate()
-	figure.team = turn
+	figure.team = t
 	figure.board = self
 	add_child(figure)
 	figure.global_position = marker.global_position

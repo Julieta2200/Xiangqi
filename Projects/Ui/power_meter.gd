@@ -18,6 +18,8 @@ signal energy_changed(energy: float)
 func _ready() -> void:
 	energy = energy
 
+func energy_highlight_visible(state):
+	$energy/highlight.visible = state
 
-func _process(delta: float) -> void:
-	pass
+func distance_highlight_visible(state):
+	$distance_highlight.visible = state

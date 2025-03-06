@@ -1,9 +1,11 @@
 extends Control
 
-var selected_figure: FigureCard
 @onready var figure_cards: Array = $Panel/FigureCards.get_children()
 
+var selected_figure: FigureCard
+var check_selected_figure : bool 
 
+ 
 @export var figures: Dictionary = {
 	Figure.Types.Soldier: 0,
 	Figure.Types.Chariot: 0,
@@ -13,22 +15,31 @@ var selected_figure: FigureCard
 }
 
 signal card_selected(selected_card: FigureCard)
+signal click_soldier_card(selected_card: FigureCard)
 
 func _ready() -> void:
 	for j in figures.keys().size():
 		figure_cards[j].type = figures.keys()[j]
 		figure_cards[j].qty = figures.values()[j]
 
+func get_soldier_card() -> FigureCard:
+	return figure_cards[0]
+
+
 func _on_figure_card_selected(card: FigureCard):
 	if selected_figure != null and selected_figure != card:
-		selected_figure.highlight.visible = false
+		selected_figure.selected_highlight.visible = false
 	selected_figure = card
+	if selected_figure.type == Figure.Types.Soldier and check_selected_figure:
+		emit_signal("click_soldier_card", selected_figure)
+		check_selected_figure = false
+	
 	emit_signal("card_selected", selected_figure)
 	
 
 func remove_figure():
 	selected_figure.qty -= 1
-	selected_figure.highlight.visible = false
+	selected_figure.selected_highlight.visible = false
 	selected_figure = null
 
 func energy_changed(energy: float) -> void:

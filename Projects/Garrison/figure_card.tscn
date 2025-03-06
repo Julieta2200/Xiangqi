@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbvg1wddl1i3g"]
+[gd_scene load_steps=6 format=3 uid="uid://dbvg1wddl1i3g"]
 
 [ext_resource type="Script" path="res://Projects/Garrison/figure_card.gd" id="1_qr4yr"]
 [ext_resource type="Texture2D" uid="uid://fskambwwl3ab" path="res://Assets/Characters/Ashes/Mini_Ashes/Ashes_mini_front.png" id="2_u85ag"]
 [ext_resource type="FontFile" uid="uid://d1cg0l42tlo2l" path="res://Assets/tmp/hint_system_ui/8-bit-fortress (1).ttf" id="3_knxgi"]
 [ext_resource type="Texture2D" uid="uid://qh3mcy5phiww" path="res://Assets/tmp/image-removebg-preview (24).png" id="4_6r0t2"]
+[ext_resource type="Texture2D" uid="uid://s15tnxxomo5q" path="res://Assets/tmp/card_highlight.png" id="5_dauq3"]
 
 [node name="FigureCard" type="Control"]
 layout_mode = 3
@@ -81,5 +82,22 @@ offset_right = 515.0
 offset_bottom = 487.0
 scale = Vector2(0.22, 0.22)
 texture = ExtResource("4_6r0t2")
+
+[node name="highlight" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.0
+offset_top = -80.0
+offset_right = 101.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_dauq3")
 
 [connection signal="gui_input" from="card" to="." method="_on_card_gui_input"]

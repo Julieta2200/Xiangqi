@@ -5,6 +5,5 @@ func appear(text: String):
 	$Panel/RichTextLabel.text = text
 	$AnimationPlayer.play("dialog")
 
-
 func disappear():
 	visible = false
