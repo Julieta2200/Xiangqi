@@ -23,12 +23,8 @@ func _ready() -> void:
 		figure_cards[j].qty = figures.values()[j]
 
 func get_soldier_card() -> FigureCard:
-	var soldier_card : FigureCard
-	for i in figure_cards:
-		if i.type == Figure.Types.Soldier:
-			soldier_card = i
-	return soldier_card
-			
+	return figure_cards[0]
+
 
 func _on_figure_card_selected(card: FigureCard):
 	if selected_figure != null and selected_figure != card:
