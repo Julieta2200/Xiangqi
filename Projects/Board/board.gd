@@ -58,7 +58,7 @@ var figure_scenes: Dictionary = {
 
 var _counter: int 
 
-signal set_figure(marker: BoardMarker)
+signal _set_figure(marker: BoardMarker)
 signal in_marker_click
 
 var check_marker_click: bool
@@ -317,7 +317,7 @@ func _on_marker_figure_move(marker: Variant) -> void:
 
 
 func _on_marker_figure_set(marker: Variant) -> void:
-	emit_signal("set_figure", marker)
+	emit_signal("_set_figure", marker)
 	if check_marker_click:
 		emit_signal("in_marker_click")
 		check_marker_click = false
@@ -334,11 +334,12 @@ func in_boundaries(pos : Vector2, card: FigureCard) -> bool:
 		return pos.y <= 4
 	return true
 
-func set_selected_figure(selected_card: FigureCard, marker: BoardMarker) -> void:
-	var figure_scene : String = figure_scenes[selected_card.type]
-	figure_scene = figure_scene.replace("{GROUP}", groups[turn])
+func set_figure(type: Figure.Types, board_position: Vector2, group: String = "Magma", t: team = team.Red) -> void:
+	var figure_scene : String = figure_scenes[type]
+	var marker = markers[board_position]
+	figure_scene = figure_scene.replace("{GROUP}", group)
 	var figure = load(figure_scene).instantiate()
-	figure.team = turn
+	figure.team = t
 	figure.board = self
 	add_child(figure)
 	figure.global_position = marker.global_position
@@ -346,17 +347,3 @@ func set_selected_figure(selected_card: FigureCard, marker: BoardMarker) -> void
 	state[marker.board_position] = figure
 	calculate_moves()
 	unhighlight_markers()
-
-func create_figures(new_figures: Dictionary):
-	for i in new_figures:
-		var figure : Figure
-		var figure_scene : String = figure_scenes[new_figures[i].type]
-		figure_scene = figure_scene.replace("{GROUP}", new_figures[i].group)
-		figure = load(figure_scene).instantiate()
-		figure.team = new_figures[i].team
-		figure.board = self
-		figure.board_position = i
-		figure.global_position = markers[i].global_position
-		figure.active = !new_figures[i].has("inactive")
-		state[i] = figure
-		add_child(figure)

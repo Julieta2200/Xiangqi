@@ -61,13 +61,7 @@ func explain_energy():
 	explain_pawn_card()
 
 func create_enemy_soldier() -> Figure:
-	state = { Vector2(6, 6) : {
-			"type": Figure.Types.Soldier,
-			"team": Board.team.Black,
-			"group": "Cloud"
-		}
-	}
-	%Board.create_figures(state)
+	%Board.set_figure(Figure.Types.Soldier, Vector2(6,6), "Cloud", Board.team.Black)
 	return %Board.state[Vector2(6, 6)]
 
 func explain_pawn_card():
