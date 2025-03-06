@@ -4,6 +4,27 @@ const board_rows = 10
 const board_cols = 9
 enum team {Red = 1, Black = 2}
 
+const palace_positions: Dictionary = {
+	Vector2(3,0): true,
+	Vector2(4,0): true,
+	Vector2(5,0): true,
+	Vector2(3,1): true,
+	Vector2(4,1): true,
+	Vector2(5,1): true,
+	Vector2(3,2): true,
+	Vector2(4,2): true,
+	Vector2(5,2): true,
+	Vector2(3,7): true,
+	Vector2(4,7): true,
+	Vector2(5,7): true,
+	Vector2(3,8): true,
+	Vector2(4,8): true,
+	Vector2(5,8): true,
+	Vector2(3,9): true,
+	Vector2(4,9): true,
+	Vector2(5,9): true
+}
+
 var for_tutorial : bool
 var markers : Dictionary
 var state : Dictionary
@@ -302,18 +323,10 @@ func _on_marker_figure_set(marker: Variant) -> void:
 		check_marker_click = false
 
 func highlight_placeholder_markers(selected_card: FigureCard, distance: int) -> void:
-	var boundaries = {
-		"red_palace_rows": 2,
-		"black_palace_rows": 7,
-		"palace_cols": Vector2(3,5)
-	}
 	for i in markers:
 		var highlight = markers[i].free_marker_highlight
-		if (i.y >= boundaries.black_palace_rows or i.y <= boundaries.red_palace_rows ) \
-		and  i.x >= boundaries.palace_cols.x and i.x <= boundaries.palace_cols.y:
-			continue
-			
-		highlight.visible = !state.has(i) and i.y <=  distance and in_boundaries(i, selected_card)
+		highlight.visible = !palace_positions.has(i) and !state.has(i) and \
+		 i.y <=  distance and in_boundaries(i, selected_card)
 
 	
 func in_boundaries(pos : Vector2, card: FigureCard) -> bool:
