@@ -30,8 +30,7 @@ func get_moves(state: Dictionary, current_position: Vector2) -> Array[Vector2]:
 		var new_pos = current_position + dir.move
 		var blocker_pos = dir.blocker
 		if in_boundaries(new_pos) and free_path(current_position, blocker_pos, state) and move_or_capture(new_pos, state):       
-			if board.valid_future_state(current_position, new_pos, state):
-				moves.append(new_pos)
+			moves.append(new_pos)
 	
 	return moves
 	

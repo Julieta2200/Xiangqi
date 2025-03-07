@@ -52,9 +52,6 @@ func _on_mouse_event(viewport, event, shape_idx):
 			board.selected_figure = self
 	#		highlight.visible = true
 			highlight_moves()
-			if board.for_tutorial:
-				for i in arrows.get_children():
-					i.visible = false
 	
 func _on_area_2d_mouse_entered():
 	if board != null:

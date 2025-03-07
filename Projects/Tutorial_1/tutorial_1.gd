@@ -1,7 +1,6 @@
 extends Node2D
 
 func _ready():
-	%Board.for_tutorial = true
 	camera_zoom()
 	var state = {
 		Vector2(4, 0): {

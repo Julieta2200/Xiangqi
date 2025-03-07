@@ -27,12 +27,10 @@ func get_moves(state: Dictionary, current_position: Vector2) -> Array[Vector2]:
 		var new_pos = current_position + dir
 		while in_boundaries(new_pos):
 			if !state.has(new_pos):
-				if board.valid_future_state(current_position, new_pos, state):
-					moves.append(new_pos)
+				moves.append(new_pos)
 			else:
 				if state[new_pos].team != team:
-					if board.valid_future_state(current_position, new_pos, state):
-						moves.append(new_pos)
+					moves.append(new_pos)
 				break
 			new_pos += dir
 	
