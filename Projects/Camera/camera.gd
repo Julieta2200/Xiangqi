@@ -18,10 +18,14 @@ var locked: bool = false
 
 func _ready() -> void:
 	viewport_size = get_viewport().size
-	move_right_max = limit_right - viewport_size.x / 2
-	move_left_max = limit_left + viewport_size.x / 2
-	move_down_max = limit_bottom - viewport_size.y / 2
-	move_up_max = limit_top + viewport_size.y / 2
+	calculate_limits(zoom)
+
+
+func calculate_limits(z: Vector2) -> void:
+	move_right_max = limit_right - viewport_size.x / (2*z.x)
+	move_left_max = limit_left + viewport_size.x / (2*z.x)
+	move_down_max = limit_bottom - viewport_size.y / (2*z.x)
+	move_up_max = limit_top + viewport_size.y / (2*z.x)
 
 func _process(delta):
 	if locked:
@@ -40,6 +44,7 @@ func camera_zoom(delta):
 		zoom_target = zoom_target.max(Vector2(zoom_min,zoom_min))
 	
 	zoom = zoom.move_toward(zoom_target, zoom_speed * delta)
+	calculate_limits(zoom_target)
 	
 	
 func camera_move(delta):

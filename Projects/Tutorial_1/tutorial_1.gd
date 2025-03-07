@@ -35,6 +35,7 @@ func camera_movement():
 	$MovementTimer.start()
 
 func _on_movement_timer_timeout() -> void:
+	return
 	look_out()
 
 func look_out():
