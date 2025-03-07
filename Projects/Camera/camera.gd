@@ -5,10 +5,6 @@ extends Camera2D
 var zoom_min: float = 0.65
 var zoom_max: float = 2.275
 var viewport_size : Vector2
-#var move_right_max:float = 1800
-#var move_left_max: float = 380
-#var move_up_max: float = 447
-#var move_down_max: float = 1600
 var move_right_max:float
 var move_left_max: float 
 var move_up_max: float
@@ -35,11 +31,11 @@ func _process(delta):
 	
 func camera_zoom(delta):
 	var zoom_target: Vector2 = zoom
-	if Input.is_action_just_pressed("zoom_in"):
+	if Input.is_action_just_released("zoom_in"):
 		zoom_target = zoom + Vector2(0.15,0.15)
 		zoom_target = zoom_target.min(Vector2(zoom_max,zoom_max))
 		
-	if Input.is_action_just_pressed("zoom_out"):
+	if Input.is_action_just_released("zoom_out"):
 		zoom_target = zoom - Vector2(0.15,0.15)
 		zoom_target = zoom_target.max(Vector2(zoom_min,zoom_min))
 	
