@@ -15,7 +15,6 @@ var check_selected_figure : bool
 }
 
 signal card_selected(selected_card: FigureCard)
-signal click_soldier_card(selected_card: FigureCard)
 
 func _ready() -> void:
 	for j in figures.keys().size():
@@ -30,9 +29,6 @@ func _on_figure_card_selected(card: FigureCard):
 	if selected_figure != null and selected_figure != card:
 		selected_figure.selected_highlight.visible = false
 	selected_figure = card
-	if selected_figure.type == Figure.Types.Soldier and check_selected_figure:
-		emit_signal("click_soldier_card", selected_figure)
-		check_selected_figure = false
 	
 	emit_signal("card_selected", selected_figure)
 	

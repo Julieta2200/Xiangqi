@@ -180,8 +180,8 @@ one_shot = true
 
 [connection signal="_set_figure" from="Board" to="." method="_on_board_set_figure"]
 [connection signal="_set_figure" from="Board" to="GameplayManager" method="_on_board_set_figure"]
+[connection signal="card_selected" from="CanvasLayer/Garrison" to="." method="_on_garrison_card_selected"]
 [connection signal="card_selected" from="CanvasLayer/Garrison" to="GameplayManager" method="_on_garrison_card_selected"]
-[connection signal="click_soldier_card" from="CanvasLayer/Garrison" to="." method="_on_garrison_click_soldier_card"]
 [connection signal="energy_changed" from="CanvasLayer/PowerMeter" to="GameplayManager" method="_on_power_meter_energy_changed"]
 [connection signal="timeout" from="ZoomTimer" to="." method="_on_zoom_timer_timeout"]
 [connection signal="timeout" from="MovementTimer" to="." method="_on_movement_timer_timeout"]

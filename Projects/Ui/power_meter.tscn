@@ -1,11 +1,84 @@
-[gd_scene load_steps=7 format=3 uid="uid://b2isxa0mvvipm"]
+[gd_scene load_steps=12 format=3 uid="uid://b2isxa0mvvipm"]
 
 [ext_resource type="Script" path="res://Projects/Ui/power_meter.gd" id="1_qudxp"]
 [ext_resource type="Texture2D" uid="uid://cs34dbt4b28so" path="res://Assets/tmp/bar.png" id="2_hfjwd"]
 [ext_resource type="Texture2D" uid="uid://blyv6pvnjxlo3" path="res://Assets/tmp/fill.png" id="3_1786x"]
-[ext_resource type="Texture2D" uid="uid://bu1h8vgqtcbqn" path="res://Assets/tmp/energy_highlight.png" id="4_j0wpe"]
 [ext_resource type="Texture2D" uid="uid://cd6lq0m7tnbfn" path="res://Assets/tmp/distance_bar.png" id="4_tq2w7"]
 [ext_resource type="Texture2D" uid="uid://4h0e378kyckl" path="res://Assets/tmp/distance_fill.png" id="5_wxv66"]
+
+[sub_resource type="Animation" id="Animation_qwayi"]
+resource_name = "highlight"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.46667, 1.9, 2.46667, 2.93333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(3, 3), Vector2(5, 5), Vector2(3, 3), Vector2(5, 5), Vector2(3, 3), Vector2(5, 5), Vector2(3, 3)]
+}
+
+[sub_resource type="Animation" id="Animation_qub6x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3, 3)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qn854"]
+_data = {
+"RESET": SubResource("Animation_qub6x"),
+"highlight": SubResource("Animation_qwayi")
+}
+
+[sub_resource type="Animation" id="Animation_jjnl1"]
+resource_name = "highlight"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.533333, 1, 1.5, 2, 2.46667, 2.96667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(3, 3), Vector2(5, 5), Vector2(3, 3), Vector2(5, 5), Vector2(3, 3), Vector2(5, 5), Vector2(3, 3)]
+}
+
+[sub_resource type="Animation" id="Animation_q0xy7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3, 3)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hvhv3"]
+_data = {
+"RESET": SubResource("Animation_q0xy7"),
+"highlight": SubResource("Animation_jjnl1")
+}
 
 [node name="PowerMeter" type="Control"]
 layout_mode = 3
@@ -13,6 +86,7 @@ anchors_preset = 0
 script = ExtResource("1_qudxp")
 
 [node name="energy" type="TextureProgressBar" parent="."]
+visible = false
 layout_mode = 1
 offset_left = 100.0
 offset_top = 300.0
@@ -23,23 +97,13 @@ texture_under = ExtResource("2_hfjwd")
 texture_progress = ExtResource("3_1786x")
 texture_progress_offset = Vector2(5, 1)
 
-[node name="highlight" type="TextureRect" parent="energy"]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -112.5
-offset_top = -15.0
-offset_right = 112.5
-offset_bottom = 15.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_j0wpe")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="energy"]
+libraries = {
+"": SubResource("AnimationLibrary_qn854")
+}
 
 [node name="distance_bars" type="HBoxContainer" parent="."]
+visible = false
 custom_minimum_size = Vector2(25, 10)
 layout_mode = 0
 offset_left = 100.0
@@ -119,12 +183,7 @@ texture_under = ExtResource("4_tq2w7")
 texture_progress = ExtResource("5_wxv66")
 texture_progress_offset = Vector2(2.5, 1)
 
-[node name="distance_highlight" type="TextureRect" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 64.0
-offset_top = 367.0
-offset_right = 364.0
-offset_bottom = 392.0
-scale = Vector2(4, 4)
-texture = ExtResource("4_j0wpe")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="distance_bars"]
+libraries = {
+"": SubResource("AnimationLibrary_hvhv3")
+}

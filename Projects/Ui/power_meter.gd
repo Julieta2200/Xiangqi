@@ -12,14 +12,18 @@ signal energy_changed(energy: float)
 	set(d):
 		distance = d
 		for i in $distance_bars.get_children():
+			if i == $distance_bars/AnimationPlayer:
+				continue
 			i.value = min(d,i.max_value)
 			d -= i.value
 
 func _ready() -> void:
 	energy = energy
 
-func energy_highlight_visible(state):
-	$energy/highlight.visible = state
+func show_energy_bar():
+	$energy.show()
+	$energy/AnimationPlayer.play("highlight")
 
-func distance_highlight_visible(state):
-	$distance_highlight.visible = state
+func show_distance_bar():
+	$distance_bars.show()
+	$distance_bars/AnimationPlayer.play("highlight")

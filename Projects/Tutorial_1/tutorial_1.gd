@@ -51,44 +51,34 @@ func _on_garrison_spawn_timer_timeout() -> void:
 	spawn_garrison()
 
 func spawn_garrison():
-	pass
-
-func explain_garrison():
 	%Dialog.appear("We have a few soldiers with us, but you need to summon them.")
+	%Garrison.show()
 	await get_tree().create_timer(3).timeout
-	#enemy_soldier.highlight.visible = false
-	%PowerMeter.energy_highlight_visible(true)
+	%PowerMeter.show_energy_bar()
 	%Dialog.appear("To summon a soldier you need to have enough energy.")
 	await get_tree().create_timer(3).timeout
 	%Dialog.appear("To get more energy you need to capture enemy soldiers.")
-	%PowerMeter.energy_highlight_visible(false)
 	explain_pawn_card()
 
 
 func explain_pawn_card():
 	%Dialog.appear("Click on the pawn card to summon it.")
-	%Garrison.check_selected_figure = true
-	%Garrison.get_soldier_card().highlight.visible = true
-	
+	%Garrison.get_soldier_card().highlight()
+	await get_tree().create_timer(3).timeout
+	%Garrison.get_soldier_card().unhighlight()
 
-func _on_garrison_click_soldier_card(selected_card: FigureCard) -> void:
+func _on_garrison_card_selected(selected_card: FigureCard) -> void:
 	summon_soldier()
 
 func summon_soldier():
-	%Garrison.get_soldier_card().highlight.visible = false
 	%Dialog.appear("The distance meter shows how far in the arena you can summon your soldiers.")
-	%PowerMeter.distance_highlight_visible(true)
+	%PowerMeter.show_distance_bar()
 	await get_tree().create_timer(3).timeout
 	%Dialog.appear("The more soldiers you have the longer the distance.")
 	await get_tree().create_timer(3).timeout
 	%Dialog.appear("You can’t summon a soldier inside the palace.")
 	await get_tree().create_timer(3).timeout
-	%PowerMeter.distance_highlight_visible(false)
 	%Dialog.appear("Click on one of the markers to summon your soldier there.")
-
-
-func computer_move():
-	await $tutorial_engine.make_move()
 
 
 func _on_board_set_figure(marker: BoardMarker) -> void:
@@ -102,3 +92,7 @@ func move_and_capture_enemy() -> void:
 	%Dialog.appear("Pawns can move only forward, by one step, once they cross the river, they can also move one step horizontally.")
 	await get_tree().create_timer(3).timeout
 	%Dialog.appear("Capture the enemy pawn.")
+
+
+func computer_move():
+	await $tutorial_engine.make_move()

@@ -1,10 +1,7 @@
 class_name FigureCard extends Control
 
-
-@onready var highlight: TextureRect = $highlight
-
 @onready var sprites: Dictionary = {
-	Figure.Types.Soldier: load("res://Assets/Characters/Pawn/Fire pawn.png"),
+	Figure.Types.Soldier: load("res://Assets/Characters/Pawn/Pawn_front.png"),
 	Figure.Types.Elephant: load("res://Assets/tmp/elephant_red.png"),
 	Figure.Types.Chariot: load("res://Assets/tmp/chariot_red.png"),
 	Figure.Types.Horse: load("res://Assets/tmp/horse_red.png"),
@@ -37,9 +34,8 @@ var type: Figure.Types :
 		if type != Figure.Types.Soldier:
 			$card/image.scale = Vector2(0.3,0.3)
 			$card/image.position = Vector2(55,5)
-		else:
-			$card/image.scale = Vector2(1,1)
-		$card/image.texture = sprites[type]
+		
+		$card/image.texture_progress = sprites[type]
 		$card/name.text = figure_names[type]
 		energy = figure_energies[type]
 
@@ -66,3 +62,8 @@ func activate() -> void:
 	active = true
 	set_modulate(Color8(255,255,255))
 	
+func highlight() -> void:
+	$AnimationPlayer.play("highlight")
+
+func unhighlight() -> void:
+	$AnimationPlayer.play("RESET")
