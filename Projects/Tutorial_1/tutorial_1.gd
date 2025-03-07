@@ -35,16 +35,28 @@ func camera_movement():
 	$MovementTimer.start()
 
 func _on_movement_timer_timeout() -> void:
-	explain_energy()
+	look_out()
 
-func explain_energy():
+func look_out():
 	%Dialog.appear("Look! An enemy soldier is approaching.")
-	var enemy_soldier = create_enemy_soldier()
-	enemy_soldier.highlight.visible = true
-	await get_tree().create_timer(3).timeout
+	$Camera/AnimationPlayer.play("enemy_spawn")
+
+func soldier_spawn():
+	%Board.set_figure(Figure.Types.Soldier, Vector2(4,6), "Cloud", Board.team.Black)
+	%Dialog.appear("Don’t go any further!!!")
+	$GarrisonSpawnTimer.start()
+
+func _on_garrison_spawn_timer_timeout() -> void:
+	$Camera/AnimationPlayer.play("RESET")
+	spawn_garrison()
+
+func spawn_garrison():
+	pass
+
+func explain_garrison():
 	%Dialog.appear("We have a few soldiers with us, but you need to summon them.")
 	await get_tree().create_timer(3).timeout
-	enemy_soldier.highlight.visible = false
+	#enemy_soldier.highlight.visible = false
 	%PowerMeter.energy_highlight_visible(true)
 	%Dialog.appear("To summon a soldier you need to have enough energy.")
 	await get_tree().create_timer(3).timeout
@@ -52,9 +64,6 @@ func explain_energy():
 	%PowerMeter.energy_highlight_visible(false)
 	explain_pawn_card()
 
-func create_enemy_soldier() -> Figure:
-	%Board.set_figure(Figure.Types.Soldier, Vector2(6,6), "Cloud", Board.team.Black)
-	return %Board.state[Vector2(6, 6)]
 
 func explain_pawn_card():
 	%Dialog.appear("Click on the pawn card to summon it.")

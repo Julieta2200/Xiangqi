@@ -9,16 +9,11 @@ var move_left_max: float = 380
 var move_up_max: float = 447
 var move_down_max: float = 1600
 
-
-func store_input_action(action_name,action):
-	if action.check:
-		if !action.list.has(action_name):
-			action.list.append(action_name)
-		if action.list.size() == action.size:
-			emit_signal("_camera_zoom")
-			action.check = false
+var locked: bool = false
 
 func _process(delta):
+	if locked:
+		return
 	camera_zoom(delta)
 	camera_move(delta)
 	
@@ -52,3 +47,9 @@ func camera_move(delta):
 	if Input.is_action_pressed("move_down"):
 		move_direction.y  += 1
 		position.y = min(move_down_max,position.y + move_direction.y * delta * move_speed)
+
+func lock() -> void:
+	locked = true
+	
+func unlock() -> void:
+	locked = false
