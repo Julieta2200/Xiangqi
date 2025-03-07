@@ -6,6 +6,21 @@
 [ext_resource type="Texture2D" uid="uid://cd6lq0m7tnbfn" path="res://Assets/tmp/distance_bar.png" id="4_tq2w7"]
 [ext_resource type="Texture2D" uid="uid://4h0e378kyckl" path="res://Assets/tmp/distance_fill.png" id="5_wxv66"]
 
+[sub_resource type="Animation" id="Animation_qub6x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3, 3)]
+}
+
 [sub_resource type="Animation" id="Animation_qwayi"]
 resource_name = "highlight"
 length = 3.0
@@ -22,7 +37,13 @@ tracks/0/keys = {
 "values": [Vector2(3, 3), Vector2(5, 5), Vector2(3, 3), Vector2(5, 5), Vector2(3, 3), Vector2(5, 5), Vector2(3, 3)]
 }
 
-[sub_resource type="Animation" id="Animation_qub6x"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qn854"]
+_data = {
+"RESET": SubResource("Animation_qub6x"),
+"highlight": SubResource("Animation_qwayi")
+}
+
+[sub_resource type="Animation" id="Animation_q0xy7"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -35,12 +56,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(3, 3)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_qn854"]
-_data = {
-"RESET": SubResource("Animation_qub6x"),
-"highlight": SubResource("Animation_qwayi")
 }
 
 [sub_resource type="Animation" id="Animation_jjnl1"]
@@ -57,21 +72,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(3, 3), Vector2(5, 5), Vector2(3, 3), Vector2(5, 5), Vector2(3, 3), Vector2(5, 5), Vector2(3, 3)]
-}
-
-[sub_resource type="Animation" id="Animation_q0xy7"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(3, 3)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hvhv3"]
