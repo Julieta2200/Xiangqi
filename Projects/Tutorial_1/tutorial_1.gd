@@ -1,20 +1,9 @@
 extends Node2D
 
-var state : Dictionary
-var enemy_soldier : Figure
-
-# 1. Scroll / Camera move
-# 2. Enemy soldier appears
-# 3. Add Soldier / Distance meter/ Energy meter
-# 4. Use soldier to capture enemy Soldier
-# 5. Create new soldier
-
-
 func _ready():
 	%Board.for_tutorial = true
 	camera_zoom()
-
-	state = {
+	var state = {
 		Vector2(4, 0): {
 			"type": Figure.Types.General,
 			"team": Board.team.Red,
@@ -33,18 +22,21 @@ func _ready():
 	}
 	
 	%Board.create_state(state)
-	
-func _on_camera_zoom() -> void:
-	camera_movement()
-	
+
 func camera_zoom():
 	%Dialog.appear("You can scroll to zoom in and out to have a better view of surroundings")
+	$ZoomTimer.start()
+
+func _on_zoom_timer_timeout() -> void:
+	camera_movement()
 
 func camera_movement():
-	%Dialog.appear("Use WASD to look around.")
-	await get_tree().create_timer(3).timeout
+	%Dialog.appear("Use W, A, S, D to look around.")
+	$MovementTimer.start()
+
+func _on_movement_timer_timeout() -> void:
 	explain_energy()
-	
+
 func explain_energy():
 	%Dialog.appear("Look! An enemy soldier is approaching.")
 	var enemy_soldier = create_enemy_soldier()

@@ -9,19 +9,6 @@ var move_left_max: float = 380
 var move_up_max: float = 447
 var move_down_max: float = 1600
 
-var zoom_target: Vector2
-
-func _ready():
-	zoom_target = zoom
-
-signal _camera_zoom
-signal _camera_move
-
-var _zoom = {
-				"list" : [],
-				"size" : 2,
-				"check" : true
-				}
 
 func store_input_action(action_name,action):
 	if action.check:
@@ -36,13 +23,12 @@ func _process(delta):
 	camera_move(delta)
 	
 func camera_zoom(delta):
+	var zoom_target: Vector2 = zoom
 	if Input.is_action_just_pressed("zoom_in"):
-		store_input_action("zoom_in",_zoom)
 		zoom_target = zoom + Vector2(0.15,0.15)
 		zoom_target = zoom_target.min(Vector2(zoom_max,zoom_max))
 		
 	if Input.is_action_just_pressed("zoom_out"):
-		store_input_action("zoom_out",_zoom)
 		zoom_target = zoom - Vector2(0.15,0.15)
 		zoom_target = zoom_target.max(Vector2(zoom_min,zoom_min))
 
