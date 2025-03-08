@@ -47,7 +47,7 @@ func look_out():
 	$Camera/AnimationPlayer.play("enemy_spawn")
 
 func soldier_spawn():
-	%Board.set_figure(Figure.Types.Soldier, Vector2(4,6), "Cloud", Board.team.Black)
+	%Board.set_figure(Figure.Types.Soldier, Vector2(4,7), "Cloud", Board.team.Black)
 	%Dialog.appear("Don’t go any further!!!")
 	$GarrisonSpawnTimer.start()
 
@@ -80,9 +80,7 @@ func summon_soldier():
 	%Dialog.appear("The distance meter shows how far in the arena you can summon your soldiers.")
 	%PowerMeter.show_distance_bar()
 	await get_tree().create_timer(3).timeout
-	%Dialog.appear("The more soldiers you have the longer the distance.")
-	await get_tree().create_timer(3).timeout
-	%Dialog.appear("You can’t summon a soldier inside the palace.")
+	%Dialog.appear("The more soldiers you have the longer the distance. You can’t summon a soldier inside the palace.")
 	await get_tree().create_timer(3).timeout
 	%Dialog.appear("Click on one of the markers to summon your soldier there.")
 
@@ -124,7 +122,7 @@ func check_status():
 func reset():
 	%Dialog.appear("Please, try again.")
 	var new_state: Dictionary = initial_state.duplicate()
-	new_state[Vector2(4,6)] = {
+	new_state[Vector2(4,7)] = {
 		"type": Figure.Types.Soldier,
 		"team": Board.team.Black,
 		"group": "Cloud"

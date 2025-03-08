@@ -8,7 +8,7 @@ class_name FigureCard extends Control
 	Figure.Types.Cannon: load("res://Assets/tmp/cannon_red.png")
 }
 const figure_names = {
-	Figure.Types.Soldier: "Soldier",
+	Figure.Types.Soldier: "Pawn",
 	Figure.Types.Elephant: "Elephant",
 	Figure.Types.Chariot: "Chariot",
 	Figure.Types.Horse: "Horse",
