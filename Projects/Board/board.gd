@@ -3,7 +3,6 @@ class_name Board extends Node
 const board_rows = 10
 const board_cols = 9
 enum team {Red = 1, Black = 2}
-signal _reset
 
 const palace_positions: Dictionary = {
 	Vector2(3,0): true,
@@ -30,13 +29,16 @@ var markers : Dictionary
 var state : Dictionary
 var save_states: Dictionary
 var selected_figure: Figure
+
+signal move_computer
+
 var turn: team:
 	set(t):
 		turn = t
 		calculate_moves()
 		if turn == Board.team.Black:
 			move_number += 1
-			$"..".computer_move()
+			emit_signal("move_computer")
 
 var move_number: int = 0
 
@@ -73,20 +75,15 @@ func initialize_markers():
 
 
 func create_state(new_state: Dictionary) -> void:
+	delete_figures()
+	unhighlight_markers()
+	move_number = 0
+	turn = team.Red
 	state = {}
 	for key in new_state:
-		var figure : Figure
-		var figure_scene : String = figure_scenes[new_state[key].type]
-		figure_scene = figure_scene.replace("{GROUP}", new_state[key].group)
-		figure = load(figure_scene).instantiate()
-		figure.board = self
-		figure.team = new_state[key].team
-		figure.board_position = key
-		
-		figure.global_position = markers[key].global_position
-		
-		figure.active = !new_state[key].has("inactive")
-		add_child(figure)
+		set_figure(new_state[key].type, key,
+		 new_state[key].group, new_state[key].team,
+		 new_state[key].has("inactive"))
 	
 	calculate_moves()
 
@@ -117,7 +114,6 @@ func computer_move(pos: Vector2, new_pos: Vector2):
 	if state.has(new_pos):
 		state[new_pos].delete()
 	state[pos].move(markers[new_pos])
-	turn = team.Red
 	generate_save_state()
 
 func calculate_moves():
@@ -155,7 +151,6 @@ func _on_marker_figure_move(marker: Variant) -> void:
 	if state.has(marker.board_position):
 		state[marker.board_position].delete()
 	selected_figure.move(marker)
-	turn = team.Black
 
 
 func _on_marker_figure_set(marker: Variant) -> void:
@@ -173,25 +168,32 @@ func in_boundaries(pos : Vector2, card: FigureCard) -> bool:
 		return pos.y <= 4
 	return true
 
-func set_figure(type: Figure.Types, board_position: Vector2, group: String = "Magma", t: team = team.Red) -> void:
+func set_figure(type: Figure.Types, board_position: Vector2, group: String = "Magma", t: team = team.Red, inactive: bool = false) -> void:
 	var figure_scene : String = figure_scenes[type]
 	var marker = markers[board_position]
 	figure_scene = figure_scene.replace("{GROUP}", group)
-	var figure = load(figure_scene).instantiate()
+	var figure: Figure = load(figure_scene).instantiate()
 	figure.team = t
 	figure.board = self
 	add_child(figure)
 	figure.global_position = marker.global_position
 	figure.board_position = marker.board_position
+	figure.active = !inactive
+	figure.move_done.connect(_on_figure_move_done)
 	state[marker.board_position] = figure
 	calculate_moves()
 	unhighlight_markers()
+
+func _on_figure_move_done():
+	if turn == team.Black:
+		turn = team.Red
+	else:
+		turn = team.Black
 
 func reset(move: int) -> void:
 	delete_figures()
 	unhighlight_markers()
 	load_move(move)
-	emit_signal("_reset")
 
 func delete_figures():
 	for i in state.keys():

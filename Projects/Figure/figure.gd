@@ -23,6 +23,8 @@ var board_position : Vector2 = Vector2(-1,-1):
 	
 var active: bool =  true
 
+signal move_done
+
 func calculate_moves() -> void:
 	valid_moves = get_moves(board.state, board_position)
 	
@@ -89,7 +91,11 @@ func move(marker):
 	var tween = create_tween()
 	tween.tween_property(self, "position", marker.global_position, 2)
 	
-	tween.finished.connect($AnimatedSprite2D.play.bind("idle"))
+	tween.finished.connect(finished_move)
+
+func finished_move():
+	$AnimatedSprite2D.play("idle")
+	emit_signal("move_done")
 
 func animation(pos)-> void:
 	if team == Board.team.Red:
