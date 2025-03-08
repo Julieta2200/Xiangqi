@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5lona02rsqii"
-path="res://.godot/imported/Ashes_back.png-10bec5975ae0d1591d14aedf91ed60b5.ctex"
+uid="uid://cv31hl7rny8pw"
+path="res://.godot/imported/Run2.png-885f2e4b9a2841c869629a97954e7362.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/Ashes/Ashes_back.png"
-dest_files=["res://.godot/imported/Ashes_back.png-10bec5975ae0d1591d14aedf91ed60b5.ctex"]
+source_file="res://Assets/Characters/Cloud/Pawn/animation/Run2.png"
+dest_files=["res://.godot/imported/Run2.png-885f2e4b9a2841c869629a97954e7362.ctex"]
 
 [params]
 

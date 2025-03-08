@@ -135,7 +135,7 @@ func get_generals(state: Dictionary) -> Dictionary:
 func get_figures(t: team, type: Figure.Types) -> Array[Figure]:
 	var figures: Array[Figure] = []
 	for pos in state:
-		if state[pos].type == t and state[pos].team == t:
+		if state[pos].type == type and state[pos].team == t:
 			figures.append(state[pos])
 	
 	return figures

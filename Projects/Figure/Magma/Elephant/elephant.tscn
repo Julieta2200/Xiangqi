@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Projects/Figure/Scripts/elephant.gd" id="1_64lwk"]
 [ext_resource type="Texture2D" uid="uid://d2brododo4n7x" path="res://Assets/tmp/advisor_red.png" id="2_ta0wg"]
 [ext_resource type="Texture2D" uid="uid://bh7qd5bwgot0t" path="res://Assets/tmp/highlight.png" id="3_88qha"]
-[ext_resource type="Texture2D" uid="uid://dhtgu1fm8i1go" path="res://Assets/Characters/Advisor/eye.png" id="3_vy38n"]
+[ext_resource type="Texture2D" uid="uid://dhtgu1fm8i1go" path="res://Assets/tmp/eye.png" id="3_vy38n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m7pdm"]
 radius = 71.2585

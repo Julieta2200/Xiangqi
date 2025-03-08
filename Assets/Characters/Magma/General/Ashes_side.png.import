@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhtgu1fm8i1go"
-path="res://.godot/imported/eye.png-c7bbc3fc1f2ee287239f2dc9da048a28.ctex"
+uid="uid://cq0vsg4p3yw0m"
+path="res://.godot/imported/Ashes_side.png-2b4664746d405af096167b434f046729.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/Advisor/eye.png"
-dest_files=["res://.godot/imported/eye.png-c7bbc3fc1f2ee287239f2dc9da048a28.ctex"]
+source_file="res://Assets/Characters/Magma/General/Ashes_side.png"
+dest_files=["res://.godot/imported/Ashes_side.png-2b4664746d405af096167b434f046729.ctex"]
 
 [params]
 

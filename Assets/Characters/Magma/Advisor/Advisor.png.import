@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crijqi2iagwfg"
-path="res://.godot/imported/Angel_Pawn.png-46bf9569687dd32305df7741cf579431.ctex"
+uid="uid://bci7q7squ1x6s"
+path="res://.godot/imported/Advisor.png-57a244d62dcc785e971399d1b7110c4e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/Pawn/Sky kingdom/Angel_Pawn.png"
-dest_files=["res://.godot/imported/Angel_Pawn.png-46bf9569687dd32305df7741cf579431.ctex"]
+source_file="res://Assets/Characters/Magma/Advisor/Advisor.png"
+dest_files=["res://.godot/imported/Advisor.png-57a244d62dcc785e971399d1b7110c4e.ctex"]
 
 [params]
 

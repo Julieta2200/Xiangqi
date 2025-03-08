@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfr24i6on345y"
-path="res://.godot/imported/Dummy pawn.png-15f4fde8e42874c7f5eee7601369ca23.ctex"
+uid="uid://jxowyyxncue3"
+path="res://.godot/imported/Run4.png-4a6240f3afaa0d97d5584555507fd3bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/Pawn/Dummy pawn.png"
-dest_files=["res://.godot/imported/Dummy pawn.png-15f4fde8e42874c7f5eee7601369ca23.ctex"]
+source_file="res://Assets/Characters/Cloud/Pawn/animation/Run4.png"
+dest_files=["res://.godot/imported/Run4.png-4a6240f3afaa0d97d5584555507fd3bd.ctex"]
 
 [params]
 

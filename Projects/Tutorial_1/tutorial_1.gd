@@ -6,16 +6,19 @@ func _ready():
 		Vector2(4, 0): {
 			"type": Figure.Types.General,
 			"team": Board.team.Red,
+			"inactive" : false,
 			"group": "Magma"
 		},
 		Vector2(3, 0): {
 			"type": Figure.Types.Advisor,
 			"team": Board.team.Red,
+			"inactive" : false,
 			"group": "Magma"
 		},
 		Vector2(5, 0): {
 			"type": Figure.Types.Advisor,
 			"team": Board.team.Red,
+			"inactive" : false,
 			"group": "Magma"
 		},
 	}
@@ -58,6 +61,7 @@ func spawn_garrison():
 	await get_tree().create_timer(3).timeout
 	%Dialog.appear("To get more energy you need to capture enemy soldiers.")
 	explain_pawn_card()
+	
 
 
 func explain_pawn_card():
@@ -95,3 +99,8 @@ func move_and_capture_enemy() -> void:
 
 func computer_move():
 	await $tutorial_engine.make_move()
+	match %Board.move_number:
+		1:
+			%Board.state[Vector2(3,0)].active = true
+			%Board.state[Vector2(4,0)].active = true
+			%Board.state[Vector2(5,0)].active = true

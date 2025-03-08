@@ -1,21 +1,70 @@
-[gd_scene load_steps=5 format=3 uid="uid://cegecfb7pey2p"]
+[gd_scene load_steps=12 format=3 uid="uid://cegecfb7pey2p"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Scripts/soldier.gd" id="1_m0gdh"]
-[ext_resource type="Texture2D" uid="uid://crijqi2iagwfg" path="res://Assets/Characters/Pawn/Sky kingdom/Angel_Pawn.png" id="2_xr6g5"]
+[ext_resource type="Texture2D" uid="uid://crijqi2iagwfg" path="res://Assets/Characters/Cloud/Pawn/Angel_Pawn.png" id="2_xr6g5"]
+[ext_resource type="Texture2D" uid="uid://byxtegagp0qw6" path="res://Assets/Characters/Cloud/Pawn/animation/Run1.png" id="3_2fc62"]
 [ext_resource type="Texture2D" uid="uid://bh7qd5bwgot0t" path="res://Assets/tmp/highlight.png" id="3_p8hgb"]
+[ext_resource type="Texture2D" uid="uid://cv31hl7rny8pw" path="res://Assets/Characters/Cloud/Pawn/animation/Run2.png" id="4_llxso"]
+[ext_resource type="Texture2D" uid="uid://cl6it3n7lin32" path="res://Assets/Characters/Cloud/Pawn/animation/Run3.png" id="5_tdrd7"]
+[ext_resource type="Texture2D" uid="uid://jxowyyxncue3" path="res://Assets/Characters/Cloud/Pawn/animation/Run4.png" id="6_2xfse"]
+[ext_resource type="Texture2D" uid="uid://drnj5xba60jnt" path="res://Assets/Characters/Cloud/Pawn/animation/Run5.png" id="7_6l1oe"]
+[ext_resource type="Texture2D" uid="uid://cwlcwnfxefmd0" path="res://Assets/Characters/Cloud/Pawn/animation/Run6.png" id="8_n4mgi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_loiyf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xr6g5")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_2fc62")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_llxso")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tdrd7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2xfse")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_6l1oe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_n4mgi")
+}],
+"loop": true,
+"name": &"walk_front",
+"speed": 10.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c14xl"]
 radius = 45.0
 height = 202.0
 
-[node name="Dummy_soldier" type="Node2D"]
+[node name="Soldier" type="Node2D"]
 script = ExtResource("1_m0gdh")
 type = 2
 
-[node name="Dummy_soldier" type="Sprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-5, -96)
 scale = Vector2(2, 2)
-texture = ExtResource("2_xr6g5")
+sprite_frames = SubResource("SpriteFrames_loiyf")
+animation = &"walk_front"
+autoplay = "idle"
+frame = 5
+frame_progress = 1.0
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -27,8 +76,6 @@ shape = SubResource("CapsuleShape2D_c14xl")
 visible = false
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_p8hgb")
-
-[node name="Arrows" type="Node2D" parent="."]
 
 [connection signal="input_event" from="Area2D" to="." method="_on_mouse_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
