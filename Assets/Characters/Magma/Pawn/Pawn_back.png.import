@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwxsmnm40h6nk"
-path="res://.godot/imported/Raven.png-39bab4e8fd41431958661fcd7deba160.ctex"
+uid="uid://d0461duj8pso"
+path="res://.godot/imported/Pawn_back.png-fd526fe469ef50e9ddd79cc297a05cfc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/Advisor/Raven.png"
-dest_files=["res://.godot/imported/Raven.png-39bab4e8fd41431958661fcd7deba160.ctex"]
+source_file="res://Assets/Characters/Magma/Pawn/Pawn_back.png"
+dest_files=["res://.godot/imported/Pawn_back.png-fd526fe469ef50e9ddd79cc297a05cfc.ctex"]
 
 [params]
 

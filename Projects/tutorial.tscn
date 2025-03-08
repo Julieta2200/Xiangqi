@@ -17,7 +17,6 @@ unique_name_in_owner = true
 [node name="Dialog" parent="CanvasLayer" instance=ExtResource("6_3010k")]
 unique_name_in_owner = true
 visible = false
-mouse_filter = 1
 
 [node name="Hint_system" parent="CanvasLayer" instance=ExtResource("7_0vtce")]
 unique_name_in_owner = true

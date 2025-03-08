@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu1h8vgqtcbqn"
-path="res://.godot/imported/energy_highlight.png-0ac0aa90a806043dc514b9310f088be9.ctex"
+uid="uid://dhtgu1fm8i1go"
+path="res://.godot/imported/eye.png-69a47800569b81bbad04bc2ab58b2cf5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/tmp/energy_highlight.png"
-dest_files=["res://.godot/imported/energy_highlight.png-0ac0aa90a806043dc514b9310f088be9.ctex"]
+source_file="res://Assets/tmp/eye.png"
+dest_files=["res://.godot/imported/eye.png-69a47800569b81bbad04bc2ab58b2cf5.ctex"]
 
 [params]
 

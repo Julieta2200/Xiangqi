@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://fskambwwl3ab"
-path="res://.godot/imported/Ashes_mini_front.png-911ecfc8abf6adac9be7f9e0636a3bbe.ctex"
+path="res://.godot/imported/Ashes_mini_front.png-38ab3ed9d2b4c4d25ab6bd827a10b729.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/Ashes/Mini_Ashes/Ashes_mini_front.png"
-dest_files=["res://.godot/imported/Ashes_mini_front.png-911ecfc8abf6adac9be7f9e0636a3bbe.ctex"]
+source_file="res://Assets/tmp/Ashes_mini_front.png"
+dest_files=["res://.godot/imported/Ashes_mini_front.png-38ab3ed9d2b4c4d25ab6bd827a10b729.ctex"]
 
 [params]
 

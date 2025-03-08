@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://s15tnxxomo5q"
-path="res://.godot/imported/card_highlight.png-a072f4d66a7160fd51ba2035524de5c3.ctex"
+uid="uid://dssntqxhb3p7w"
+path="res://.godot/imported/Ashes_front.png-fbcbf613baa20bbfc05bd0c170d7fa1a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/tmp/card_highlight.png"
-dest_files=["res://.godot/imported/card_highlight.png-a072f4d66a7160fd51ba2035524de5c3.ctex"]
+source_file="res://Assets/Characters/Magma/General/Ashes_front.png"
+dest_files=["res://.godot/imported/Ashes_front.png-fbcbf613baa20bbfc05bd0c170d7fa1a.ctex"]
 
 [params]
 

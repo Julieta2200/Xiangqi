@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dbvg1wddl1i3g"]
 
 [ext_resource type="Script" path="res://Projects/Garrison/figure_card.gd" id="1_qr4yr"]
-[ext_resource type="Texture2D" uid="uid://b5y5veoqw6otr" path="res://Assets/Characters/Pawn/Pawn_front.png" id="2_h5u7g"]
+[ext_resource type="Texture2D" uid="uid://b5y5veoqw6otr" path="res://Assets/Characters/Magma/Pawn/Pawn_front.png" id="2_h5u7g"]
 [ext_resource type="Texture2D" uid="uid://qh3mcy5phiww" path="res://Assets/tmp/image-removebg-preview (24).png" id="4_6r0t2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2m48m"]

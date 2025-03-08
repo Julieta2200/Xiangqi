@@ -3,7 +3,7 @@ class_name Figure extends Node2D
 @export var team : Board.team
 @export var type : Types
 @export var value: float
-@onready var arrows = $Arrows
+var position_delta : float = 0.5
 
 #@onready var highlight = $Eye
 
@@ -83,8 +83,22 @@ func delete():
 
 func move(marker):
 	board.markers[board_position].trajectory_highlight()
-	
 	board_position = marker.board_position
-	var tween = create_tween()
+	animation(marker.global_position)
 
-	tween.tween_property(self, "position", marker.global_position, 0.5) 
+	var tween = create_tween()
+	tween.tween_property(self, "position", marker.global_position, 2)
+	
+	tween.finished.connect($AnimatedSprite2D.play.bind("idle"))
+
+func animation(pos)-> void:
+	if team == Board.team.Red:
+		if (pos - global_position).y > 0:
+			$AnimatedSprite2D.play("walk_back")
+		else:
+			$AnimatedSprite2D.play("walk_front")
+	else:
+		if (pos - global_position).y < 0:
+			$AnimatedSprite2D.play("walk_back")
+		else:
+			$AnimatedSprite2D.play("walk_front")

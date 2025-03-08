@@ -183,6 +183,7 @@ one_shot = true
 wait_time = 3.0
 one_shot = true
 
+[connection signal="_reset" from="Board" to="GameplayManager" method="_on_board_reset"]
 [connection signal="_set_figure" from="Board" to="." method="_on_board_set_figure"]
 [connection signal="_set_figure" from="Board" to="GameplayManager" method="_on_board_set_figure"]
 [connection signal="card_selected" from="CanvasLayer/Garrison" to="." method="_on_garrison_card_selected"]

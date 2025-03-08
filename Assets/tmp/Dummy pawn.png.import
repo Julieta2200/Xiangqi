@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq0vsg4p3yw0m"
-path="res://.godot/imported/Ashes_side.png-972fdc8ddcc246284d2722a5ac202987.ctex"
+uid="uid://bfr24i6on345y"
+path="res://.godot/imported/Dummy pawn.png-dfb7356c952425c87619ffc7f0868d43.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/Ashes/Ashes_side.png"
-dest_files=["res://.godot/imported/Ashes_side.png-972fdc8ddcc246284d2722a5ac202987.ctex"]
+source_file="res://Assets/tmp/Dummy pawn.png"
+dest_files=["res://.godot/imported/Dummy pawn.png-dfb7356c952425c87619ffc7f0868d43.ctex"]
 
 [params]
 

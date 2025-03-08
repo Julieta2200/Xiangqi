@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0461duj8pso"
-path="res://.godot/imported/Pawn_back.png-8ed5987b2a9a8bf8ba7e31143829c099.ctex"
+uid="uid://d2bgvmmg0dnog"
+path="res://.godot/imported/background.png-41e4a9b34598657fd1e0b2571d1f3cbc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/Pawn/Pawn_back.png"
-dest_files=["res://.godot/imported/Pawn_back.png-8ed5987b2a9a8bf8ba7e31143829c099.ctex"]
+source_file="res://Assets/tmp/background.png"
+dest_files=["res://.godot/imported/background.png-41e4a9b34598657fd1e0b2571d1f3cbc.ctex"]
 
 [params]
 

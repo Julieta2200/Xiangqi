@@ -1,47 +1,38 @@
 [gd_scene load_steps=7 format=3 uid="uid://d30dsn1mrwg55"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Scripts/general.gd" id="1_1dijv"]
-[ext_resource type="Texture2D" uid="uid://oai7bgd11d1e" path="res://Assets/tmp/arrow.png" id="2_yvgbe"]
-[ext_resource type="Texture2D" uid="uid://dssntqxhb3p7w" path="res://Assets/Characters/Ashes/Ashes_front.png" id="3_yl2ch"]
+[ext_resource type="Texture2D" uid="uid://dssntqxhb3p7w" path="res://Assets/Characters/Magma/General/Ashes_front.png" id="3_yl2ch"]
 [ext_resource type="Texture2D" uid="uid://bh7qd5bwgot0t" path="res://Assets/tmp/highlight.png" id="4_35yhq"]
-[ext_resource type="Texture2D" uid="uid://dhtgu1fm8i1go" path="res://Assets/Characters/Advisor/eye.png" id="5_thmjp"]
+[ext_resource type="Texture2D" uid="uid://dhtgu1fm8i1go" path="res://Assets/tmp/eye.png" id="5_thmjp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w2yev"]
 radius = 40.0
 height = 184.0
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_3eu8p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_yl2ch")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_back",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_front",
+"speed": 5.0
+}]
+
 [node name="General" type="Node2D"]
 script = ExtResource("1_1dijv")
 team = 1
-
-[node name="Arrows" type="Node2D" parent="."]
-
-[node name="arrow" type="Sprite2D" parent="Arrows"]
-visible = false
-position = Vector2(0, -42)
-rotation = 1.5708
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_yvgbe")
-flip_h = true
-
-[node name="arrow2" type="Sprite2D" parent="Arrows"]
-visible = false
-position = Vector2(20, 0)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_yvgbe")
-
-[node name="arrow3" type="Sprite2D" parent="Arrows"]
-visible = false
-position = Vector2(-20, 0)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_yvgbe")
-flip_h = true
-
-[node name="General" type="Sprite2D" parent="."]
-modulate = Color(1, 0.13, 0.13, 1)
-position = Vector2(0, -97)
-scale = Vector2(2, 2)
-texture = ExtResource("3_yl2ch")
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -59,6 +50,14 @@ texture = ExtResource("4_35yhq")
 visible = false
 position = Vector2(0, -28)
 texture = ExtResource("5_thmjp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 0.13, 0.13, 1)
+position = Vector2(0, -96)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_3eu8p")
+animation = &"idle"
+autoplay = "idle"
 
 [connection signal="input_event" from="Area2D" to="." method="_on_mouse_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]

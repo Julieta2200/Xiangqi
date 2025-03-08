@@ -1,47 +1,39 @@
 [gd_scene load_steps=7 format=3 uid="uid://gu84kdi4y675"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Scripts/soldier.gd" id="1_3u3jq"]
-[ext_resource type="Texture2D" uid="uid://d0461duj8pso" path="res://Assets/Characters/Pawn/Pawn_back.png" id="3_axt2k"]
+[ext_resource type="Texture2D" uid="uid://d0461duj8pso" path="res://Assets/Characters/Magma/Pawn/Pawn_back.png" id="3_axt2k"]
 [ext_resource type="Texture2D" uid="uid://bh7qd5bwgot0t" path="res://Assets/tmp/highlight.png" id="3_pusma"]
-[ext_resource type="Texture2D" uid="uid://dhtgu1fm8i1go" path="res://Assets/Characters/Advisor/eye.png" id="4_sxk2m"]
-[ext_resource type="Texture2D" uid="uid://oai7bgd11d1e" path="res://Assets/tmp/arrow.png" id="5_5h2fp"]
+[ext_resource type="Texture2D" uid="uid://dhtgu1fm8i1go" path="res://Assets/tmp/eye.png" id="4_sxk2m"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b0rn7"]
 radius = 41.0
 height = 178.0
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_4grr3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_axt2k")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_back",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_front",
+"speed": 5.0
+}]
+
 [node name="Soldier" type="Node2D"]
 script = ExtResource("1_3u3jq")
 type = 2
 value = 1.0
-
-[node name="Arrows" type="Node2D" parent="."]
-
-[node name="arrow" type="Sprite2D" parent="Arrows"]
-visible = false
-position = Vector2(0, -42)
-rotation = 1.5708
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("5_5h2fp")
-flip_h = true
-
-[node name="arrow2" type="Sprite2D" parent="Arrows"]
-visible = false
-position = Vector2(20, 0)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("5_5h2fp")
-
-[node name="arrow3" type="Sprite2D" parent="Arrows"]
-visible = false
-position = Vector2(-20, 0)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("5_5h2fp")
-flip_h = true
-
-[node name="Soldier" type="Sprite2D" parent="."]
-position = Vector2(0, -98)
-scale = Vector2(2, 2)
-texture = ExtResource("3_axt2k")
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -59,6 +51,13 @@ texture = ExtResource("3_pusma")
 visible = false
 position = Vector2(0, -25)
 texture = ExtResource("4_sxk2m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-5, -96)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_4grr3")
+animation = &"walk_front"
+autoplay = "idle"
 
 [connection signal="input_event" from="Area2D" to="." method="_on_mouse_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]

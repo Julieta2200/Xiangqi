@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bci7q7squ1x6s"
-path="res://.godot/imported/Advisor.png-6b6e4e48479cf6ee675700958ffa53ef.ctex"
+uid="uid://crijqi2iagwfg"
+path="res://.godot/imported/Angel_Pawn.png-a506902d117727b876333a93c45f724f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/Advisor/Advisor.png"
-dest_files=["res://.godot/imported/Advisor.png-6b6e4e48479cf6ee675700958ffa53ef.ctex"]
+source_file="res://Assets/Characters/Cloud/Pawn/Angel_Pawn.png"
+dest_files=["res://.godot/imported/Angel_Pawn.png-a506902d117727b876333a93c45f724f.ctex"]
 
 [params]
 
