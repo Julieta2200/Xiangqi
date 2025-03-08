@@ -12,3 +12,7 @@ func _on_board_set_figure(marker: BoardMarker) -> void:
 	%Board.set_figure(%Garrison.selected_figure.type, marker.board_position)
 	%PowerMeter.energy -= %Garrison.selected_figure.energy
 	%Garrison.remove_figure()
+
+
+func _on_board_reset() -> void:
+	%PowerMeter.energy += %Garrison.get_soldier_energy()

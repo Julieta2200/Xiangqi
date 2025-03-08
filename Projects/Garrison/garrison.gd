@@ -24,6 +24,8 @@ func _ready() -> void:
 func get_soldier_card() -> FigureCard:
 	return figure_cards[0]
 
+func get_soldier_energy() -> int:
+	return get_soldier_card().figure_energies[Figure.Types.Soldier]
 
 func _on_figure_card_selected(card: FigureCard):
 	if selected_figure != null and selected_figure != card:

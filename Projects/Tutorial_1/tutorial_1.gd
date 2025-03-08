@@ -1,5 +1,7 @@
 extends Node2D
 
+var check : bool = true
+
 func _ready():
 	camera_zoom()
 	var state = {
@@ -51,6 +53,7 @@ func soldier_spawn():
 func _on_garrison_spawn_timer_timeout() -> void:
 	$Camera/AnimationPlayer.play("RESET")
 	spawn_garrison()
+	%Board.generate_save_state()
 
 func spawn_garrison():
 	%Dialog.appear("We have a few soldiers with us, but you need to summon them.")
@@ -63,7 +66,6 @@ func spawn_garrison():
 	explain_pawn_card()
 	
 
-
 func explain_pawn_card():
 	%Dialog.appear("Click on the pawn card to summon it.")
 	%Garrison.get_soldier_card().highlight()
@@ -71,7 +73,9 @@ func explain_pawn_card():
 	%Garrison.get_soldier_card().unhighlight()
 
 func _on_garrison_card_selected(selected_card: FigureCard) -> void:
-	summon_soldier()
+	if check:
+		summon_soldier()
+		check = false
 
 func summon_soldier():
 	%Dialog.appear("The distance meter shows how far in the arena you can summon your soldiers.")
@@ -82,10 +86,13 @@ func summon_soldier():
 	%Dialog.appear("You can’t summon a soldier inside the palace.")
 	await get_tree().create_timer(3).timeout
 	%Dialog.appear("Click on one of the markers to summon your soldier there.")
+	check = true
 
 
 func _on_board_set_figure(marker: BoardMarker) -> void:
-	move_and_capture_enemy()
+	if check:
+		move_and_capture_enemy()
+		check = false
 
 func move_and_capture_enemy() -> void:
 	%Dialog.appear("Now it’s our turn to move.")
@@ -99,8 +106,17 @@ func move_and_capture_enemy() -> void:
 
 func computer_move():
 	await $tutorial_engine.make_move()
+	check_loss()
 	match %Board.move_number:
 		1:
 			%Board.state[Vector2(3,0)].active = true
 			%Board.state[Vector2(4,0)].active = true
 			%Board.state[Vector2(5,0)].active = true
+
+func check_loss():
+	var soldier = %Board.get_figures(Board.team.Red, Figure.Types.Soldier)
+	var enemy_soldier = %Board.get_figures(Board.team.Black, Figure.Types.Soldier)
+	if soldier[0].board_position.y > enemy_soldier[0].board_position.y:
+		%Dialog.appear("You lost!")
+		await get_tree().create_timer(3).timeout
+		%Board.reset(0)

@@ -3,6 +3,7 @@ class_name Board extends Node
 const board_rows = 10
 const board_cols = 9
 enum team {Red = 1, Black = 2}
+signal _reset
 
 const palace_positions: Dictionary = {
 	Vector2(3,0): true,
@@ -185,3 +186,14 @@ func set_figure(type: Figure.Types, board_position: Vector2, group: String = "Ma
 	state[marker.board_position] = figure
 	calculate_moves()
 	unhighlight_markers()
+
+func reset(move: int) -> void:
+	delete_figures()
+	unhighlight_markers()
+	load_move(move)
+	emit_signal("_reset")
+
+func delete_figures():
+	for i in state.keys():
+		state[i].delete()
+		state.erase(i)
