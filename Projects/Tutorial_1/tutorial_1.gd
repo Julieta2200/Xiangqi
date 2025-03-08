@@ -29,7 +29,7 @@ func _ready():
 	%Board.create_state(initial_state)
 
 func camera_zoom():
-	%Dialog.appear("You can scroll to zoom in and out to have a better view of surroundings")
+	%Dialog.appear("You can scroll to zoom in and out to have a better view of surroundings (If mouse scroll doesn't work please use Q,E keys, sorry we're still developing :) )")
 	$ZoomTimer.start()
 
 func _on_zoom_timer_timeout() -> void:
@@ -102,9 +102,19 @@ func move_and_capture_enemy() -> void:
 	first_time = false
 
 
-func check_loss():
+func check_status():
 	var soldier = %Board.get_figures(Board.team.Red, Figure.Types.Soldier)
 	var enemy_soldier = %Board.get_figures(Board.team.Black, Figure.Types.Soldier)
+	if soldier.size() == 0:
+		%Dialog.appear("You let the enemy pawn to destroy our guard…")
+		await get_tree().create_timer(3).timeout
+		reset()
+		return
+		
+	if enemy_soldier.size() == 0:
+		%Dialog.appear("You won, that's it for today :) ")
+		return
+	
 	if soldier[0].board_position.y > enemy_soldier[0].board_position.y:
 		%Dialog.appear("You let the enemy pawn to pass our guard…")
 		await get_tree().create_timer(3).timeout
@@ -126,4 +136,4 @@ func reset():
 
 func _on_board_move_computer() -> void:
 	$tutorial_engine.make_move()
-	check_loss()
+	check_status()

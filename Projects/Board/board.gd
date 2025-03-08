@@ -109,12 +109,15 @@ func unhighlight_markers():
 	for key in markers:
 		markers[key].unhighlight()
 
-func computer_move(pos: Vector2, new_pos: Vector2):
+func computer_move(pos: Vector2, new_pos: Vector2) -> bool:
 	unhighlight_markers()
+	if !state.has(pos) or state[pos].team != turn:
+		return false
 	if state.has(new_pos):
 		state[new_pos].delete()
 	state[pos].move(markers[new_pos])
 	generate_save_state()
+	return true
 
 func calculate_moves():
 	var keys: Array = state.keys()

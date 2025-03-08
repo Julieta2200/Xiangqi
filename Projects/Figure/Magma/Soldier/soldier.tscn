@@ -34,6 +34,7 @@ animations = [{
 script = ExtResource("1_3u3jq")
 type = 2
 value = 1.0
+speed = 1.5
 
 [node name="Area2D" type="Area2D" parent="."]
 

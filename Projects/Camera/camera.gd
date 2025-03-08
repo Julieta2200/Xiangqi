@@ -31,11 +31,11 @@ func _process(delta):
 	
 func camera_zoom(delta):
 	var zoom_target: Vector2 = zoom
-	if Input.is_action_just_released("zoom_in"):
+	if Input.is_action_just_released("zoom_in") or Input.is_action_pressed("zoom_in"):
 		zoom_target = zoom + Vector2(0.15,0.15)
 		zoom_target = zoom_target.min(Vector2(zoom_max,zoom_max))
 		
-	if Input.is_action_just_released("zoom_out"):
+	if Input.is_action_just_released("zoom_out") or Input.is_action_pressed("zoom_out"):
 		zoom_target = zoom - Vector2(0.15,0.15)
 		zoom_target = zoom_target.max(Vector2(zoom_min,zoom_min))
 	

@@ -56,6 +56,7 @@ height = 202.0
 [node name="Soldier" type="Node2D"]
 script = ExtResource("1_m0gdh")
 type = 2
+speed = 1.5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-5, -96)

@@ -172,7 +172,7 @@ unique_name_in_owner = true
 [node name="Garrison_figures" type="Node2D" parent="GameplayManager"]
 
 [node name="ZoomTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 8.0
 one_shot = true
 
 [node name="MovementTimer" type="Timer" parent="."]

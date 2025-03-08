@@ -3,6 +3,7 @@ class_name Figure extends Node2D
 @export var team : Board.team
 @export var type : Types
 @export var value: float
+@export var speed: float
 var position_delta : float = 0.5
 
 #@onready var highlight = $Eye
@@ -13,6 +14,7 @@ var boundaries: Dictionary
 var valid_moves: Array[Vector2] = []
 
 @onready var board: Board
+
 
 var board_position : Vector2 = Vector2(-1,-1):
 	set(p):
@@ -85,11 +87,11 @@ func delete():
 
 func move(marker):
 	board.markers[board_position].trajectory_highlight()
+	animation(board_position, marker.board_position)
 	board_position = marker.board_position
-	animation(marker.global_position)
 
 	var tween = create_tween()
-	tween.tween_property(self, "position", marker.global_position, 2)
+	tween.tween_property(self, "position", marker.global_position, 1.0/speed)
 	
 	tween.finished.connect(finished_move)
 
@@ -97,14 +99,8 @@ func finished_move():
 	$AnimatedSprite2D.play("idle")
 	emit_signal("move_done")
 
-func animation(pos)-> void:
-	if team == Board.team.Red:
-		if (pos - global_position).y > 0:
-			$AnimatedSprite2D.play("walk_back")
-		else:
-			$AnimatedSprite2D.play("walk_front")
+func animation(old_pos: Vector2, new_pos: Vector2)-> void:
+	if (old_pos - new_pos).y < 0:
+		$AnimatedSprite2D.play("walk_back")
 	else:
-		if (pos - global_position).y < 0:
-			$AnimatedSprite2D.play("walk_back")
-		else:
-			$AnimatedSprite2D.play("walk_front")
+		$AnimatedSprite2D.play("walk_front")
