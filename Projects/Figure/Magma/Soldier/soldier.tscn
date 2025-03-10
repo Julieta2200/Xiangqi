@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://dhtgu1fm8i1go" path="res://Assets/tmp/eye.png" id="4_sxk2m"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b0rn7"]
-radius = 41.0
-height = 178.0
+radius = 52.0
+height = 222.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4grr3"]
 animations = [{
@@ -39,7 +39,7 @@ speed = 1.5
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-2, -89)
+position = Vector2(0, -92)
 shape = SubResource("CapsuleShape2D_b0rn7")
 
 [node name="mouse_entered_highlight" type="Sprite2D" parent="."]
@@ -57,7 +57,7 @@ texture = ExtResource("4_sxk2m")
 position = Vector2(-5, -96)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_4grr3")
-animation = &"walk_front"
+animation = &"idle"
 autoplay = "idle"
 
 [connection signal="input_event" from="Area2D" to="." method="_on_mouse_event"]
