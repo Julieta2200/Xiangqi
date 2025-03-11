@@ -29,6 +29,7 @@ var markers : Dictionary
 var state : Dictionary
 var save_states: Dictionary
 var selected_figure: Figure
+var figure_clicker : bool = true
 
 signal move_computer
 
@@ -154,6 +155,7 @@ func _on_marker_figure_move(marker: Variant) -> void:
 	if state.has(marker.board_position):
 		state[marker.board_position].delete()
 	selected_figure.move(marker)
+	figure_clicker = false
 
 
 func _on_marker_figure_set(marker: Variant) -> void:
@@ -186,12 +188,23 @@ func set_figure(type: Figure.Types, board_position: Vector2, group: String = "Ma
 	state[marker.board_position] = figure
 	calculate_moves()
 	unhighlight_markers()
+	figure.figure_selected.connect(_on_figure_selected)
 
 func _on_figure_move_done():
 	if turn == team.Black:
 		turn = team.Red
+		figure_clicker = true
 	else:
 		turn = team.Black
+
+func _on_figure_selected(figure):
+	if !(turn == figure.team and figure.team == Board.team.Red and figure_clicker):
+		return
+	if selected_figure != null:
+		selected_figure.delete_highlight()
+	selected_figure = figure
+	selected_figure.highlight_moves()
+	
 
 func reset(move: int) -> void:
 	delete_figures()

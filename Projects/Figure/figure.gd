@@ -6,7 +6,6 @@ class_name Figure extends Node2D
 @export var speed: float
 var position_delta : float = 0.5
 
-#@onready var highlight = $Eye
 
 enum Types {General, Advisor, Soldier, Elephant, Chariot, Horse, Cannon}
 
@@ -25,6 +24,7 @@ var board_position : Vector2 = Vector2(-1,-1):
 	
 var active: bool =  true
 
+signal figure_selected(figure: Figure)
 signal move_done
 
 func calculate_moves() -> void:
@@ -44,18 +44,11 @@ func move_or_capture(pos: Vector2, state: Dictionary) -> bool:
 func highlight_moves() -> void:
 	for move in valid_moves:
 		board.markers[move].highlight()
-		if board.state.has(move):
-			board.markers[move].selected_highlight.visible = true
+
 
 func _on_mouse_event(viewport, event, shape_idx):
-	if board != null:
-		if Input.is_action_pressed("click") and board.turn == team and team == Board.team.Red and active:
-			if board.selected_figure != null:
-				board.selected_figure.delete_highlight()
-	#			board.selected_figure.highlight.visible = false
-			board.selected_figure = self
-	#		highlight.visible = true
-			highlight_moves()
+	if Input.is_action_pressed("click") and active:
+		emit_signal("figure_selected", self)
 	
 func _on_area_2d_mouse_entered():
 	if board != null:
