@@ -28,7 +28,7 @@ var camera_movment_dialogs: Array[Dictionary] = [
 
 var soldier_spawn_dialogs: Array[Dictionary] = [
 	{"name": "Advisor", "text": "Look! An enemy soldier is approaching."},
-	{"name": "Advisor","text": "Don’t go any further!!!"},
+	{"name": "Pawn","text": "Don’t go any further!!!"},
 ]
 
 var explain_energy_dialogs: Array[Dictionary] = [
@@ -67,9 +67,8 @@ func _ready():
 	camera_movment()
 	%Board.create_state(initial_state)
 
-func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("skip"):
-		dialog_index += 1
+func _on_dialog_end(dialog) -> void:
+	dialog_index += 1
 
 func next_dialog(dialogs,next_func):
 	if dialog_index == dialogs.size():
@@ -81,7 +80,6 @@ func next_dialog(dialogs,next_func):
 	
 func camera_movment():
 	next_dialog(camera_movment_dialogs,enemy_soldier_spawn)
-
 
 func enemy_soldier_spawn():
 	next_dialog(soldier_spawn_dialogs,explain_energy)
@@ -132,23 +130,23 @@ func check_status():
 	var soldier = %Board.get_figures(Board.team.Red, Figure.Types.Soldier)
 	var enemy_soldier = %Board.get_figures(Board.team.Black, Figure.Types.Soldier)
 	if soldier.size() == 0:
-		%Dialog.appear("You let the enemy pawn to destroy our guard…")
+		%Dialog.talk("You let the enemy pawn to destroy our guard…","")
 		await get_tree().create_timer(3).timeout
 		reset()
 		return
 		
 	if enemy_soldier.size() == 0:
-		%Dialog.appear("You won, that's it for today :) ")
+		%Dialog.talk("You won, that's it for today :) ","")
 		return
 	
 	if soldier[0].board_position.y > enemy_soldier[0].board_position.y:
-		%Dialog.appear("You let the enemy pawn to pass our guard…")
+		%Dialog.talk("You let the enemy pawn to pass our guard…","")
 		await get_tree().create_timer(3).timeout
 		reset()
 
 
 func reset():
-	%Dialog.appear("Please, try again.")
+	%Dialog.talk("Please, try again.","")
 	var new_state: Dictionary = initial_state.duplicate()
 	new_state[Vector2(4,7)] = {
 		"type": Figure.Types.Soldier,

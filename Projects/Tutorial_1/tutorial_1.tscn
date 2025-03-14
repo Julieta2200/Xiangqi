@@ -186,6 +186,7 @@ one_shot = true
 [connection signal="_set_figure" from="Board" to="." method="_on_board_set_figure"]
 [connection signal="_set_figure" from="Board" to="GameplayManager" method="_on_board_set_figure"]
 [connection signal="move_computer" from="Board" to="." method="_on_board_move_computer"]
+[connection signal="end" from="CanvasLayer/Dialog" to="." method="_on_dialog_end"]
 [connection signal="card_selected" from="CanvasLayer/Garrison" to="." method="_on_garrison_card_selected"]
 [connection signal="card_selected" from="CanvasLayer/Garrison" to="GameplayManager" method="_on_garrison_card_selected"]
 [connection signal="energy_changed" from="CanvasLayer/PowerMeter" to="GameplayManager" method="_on_power_meter_energy_changed"]
