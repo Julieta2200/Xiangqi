@@ -72,7 +72,7 @@ func _process(_delta: float) -> void:
 		dialog_index += 1
 
 func next_dialog(dialogs,next_func):
-	if dialog_index == dialogs.size() -1 :
+	if dialog_index == dialogs.size():
 		current_function = next_func
 		dialog_index = 0
 		return
