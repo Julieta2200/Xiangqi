@@ -27,54 +27,53 @@ var camera_movment_dialogs: Array[Dictionary] = [
 ]
 
 var soldier_spawn_dialogs: Array[Dictionary] = [
-	{"name": "Luos", "text": "Look! An enemy soldier is approaching."},
+	{"name": "Advisor", "text": "Look! An enemy soldier is approaching."},
 	{"name": "Advisor","text": "Don’t go any further!!!"},
 ]
 
 var explain_energy_dialogs: Array[Dictionary] = [
 	{"name": "Advisor","text": "We have a few soldiers with us, but you need to summon them."},
-	{"name": "Lilith", "text": "To summon a soldier you need to have enough energy."},
-	{"name": "Lilith", "text": "To get more energy you need to capture enemy soldiers."},
+	{"name": "Advisor", "text": "To summon a soldier you need to have enough energy."},
+	{"name": "Advisor", "text": "To get more energy you need to capture enemy soldiers."},
 ]
 var explain_pawn_card_dialogs: Array[Dictionary] = [
-	{"name": "Luos", "text": "Click on the pawn card to summon it."},
+	{"name": "Advisor", "text": "Click on the pawn card to summon it."},
 ]
 
 var explain_distance_dialogs: Array[Dictionary] = [
-	{"name": "Lilith", "text": "The distance meter shows how far in the arena you can summon your soldiers."},
-	{"name": "Lilith", "text":  "The more soldiers you have the longer the distance."},
-	{"name": "Lilith", "text": "You can’t summon a soldier inside the palace."},
-	{"name": "Lilith", "text": "Click on one of the markers to summon your soldier there."},
+	{"name": "Advisor", "text": "The distance meter shows how far in the arena you can summon your soldiers."},
+	{"name": "Advisor", "text":  "The more soldiers you have the longer the distance."},
+	{"name": "Advisor", "text": "You can’t summon a soldier inside the palace."},
+	{"name": "Advisor", "text": "Click on one of the markers to summon your soldier there."},
 ]
 
 var move_and_capture_enemy_dialogs: Array[Dictionary] = [
-	{"name": "Luos", "text": "Now it’s our turn to move."},
-	{"name": "Lilith", "text": "Click on a pawn to see all possible moves."},
-	{"name": "Lilith", "text":  "Pawns can move only forward, by one step, once they cross the river, they can also move one step horizontally."},
-	{"name": "Lilith", "text": "Capture the enemy pawn."},
+	{"name": "Advisor", "text": "Now it’s our turn to move."},
+	{"name": "Advisor", "text": "Click on a pawn to see all possible moves."},
+	{"name": "Advisor", "text":  "Pawns can move only forward, by one step, once they cross the river, they can also move one step horizontally."},
+	{"name": "Advisor", "text": "Capture the enemy pawn."},
 ]
 var dialog_index : int = 0 :
 	set(i):
 		dialog_index = i
-		next_func.call()
+		if current_function != null:
+			current_function.call()
 		
 var first_time: bool = true
-var next_func
+var current_function
 
 func _ready():
-	next_func = camera_movment
+	current_function = camera_movment
 	camera_movment()
-	
-	
 	%Board.create_state(initial_state)
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("skip"):
 		dialog_index += 1
 
-func next_dialog(dialogs,next):
-	if dialog_index == dialogs.size():
-		next_func = next
+func next_dialog(dialogs,next_func):
+	if dialog_index == dialogs.size() -1 :
+		current_function = next_func
 		dialog_index = 0
 		return
 	
@@ -124,8 +123,8 @@ func _on_board_set_figure(marker: BoardMarker) -> void:
 		dialog_index += 1
 
 func move_and_capture_enemy() -> void:
-	next_dialog(move_and_capture_enemy_dialogs,func(): pass )
-	if dialog_index == 1:
+	next_dialog(move_and_capture_enemy_dialogs,null)
+	if dialog_index == 0:
 		first_time = false
 
 
