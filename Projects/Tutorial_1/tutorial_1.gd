@@ -29,15 +29,11 @@ func _ready():
 	%Board.create_state(initial_state)
 
 func camera_zoom():
-	%Dialog.appear("You can scroll to zoom in and out to have a better view of surroundings (If mouse scroll doesn't work please use Q,E keys, sorry we're still developing :) )")
-	$ZoomTimer.start()
-
-func _on_zoom_timer_timeout() -> void:
-	camera_movement()
+	%Dialog.appear("You can scroll to zoom in and out to have a better view of surroundings (If mouse scroll doesn't work please use Q,E keys, sorry we're still developing :) )",
+	camera_movement)
 
 func camera_movement():
 	%Dialog.appear("Use W, A, S, D to look around.")
-	$MovementTimer.start()
 
 func _on_movement_timer_timeout() -> void:
 	look_out()
@@ -135,3 +131,7 @@ func reset():
 func _on_board_move_computer() -> void:
 	$tutorial_engine.make_move()
 	check_status()
+
+
+func _on_dialog_finished(to_call: Callable) -> void:
+	to_call.call()
