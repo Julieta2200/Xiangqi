@@ -33,10 +33,7 @@ func camera_zoom():
 	camera_movement)
 
 func camera_movement():
-	%Dialog.appear("Use W, A, S, D to look around.")
-
-func _on_movement_timer_timeout() -> void:
-	look_out()
+	%Dialog.appear("Use W, A, S, D to look around.",look_out)
 
 func look_out():
 	%Dialog.appear("Look! An enemy soldier is approaching.")
@@ -44,12 +41,9 @@ func look_out():
 
 func soldier_spawn():
 	%Board.set_figure(Figure.Types.Soldier, Vector2(4,7), "Cloud", Board.team.Black)
-	%Dialog.appear("Don’t go any further!!!")
-	$GarrisonSpawnTimer.start()
-
-func _on_garrison_spawn_timer_timeout() -> void:
+	%Dialog.appear("Don’t go any further!!!",spawn_garrison)
+	await get_tree().create_timer(3).timeout
 	$Camera/AnimationPlayer.play("RESET")
-	spawn_garrison()
 
 func spawn_garrison():
 	%Dialog.appear("We have a few soldiers with us, but you need to summon them.")
@@ -58,9 +52,7 @@ func spawn_garrison():
 	%Dialog.appear("To summon a soldier you need to have enough energy.")
 	await get_tree().create_timer(3).timeout
 	%Dialog.appear("To get more energy you need to capture enemy soldiers.")
-	explain_pawn_card()
 	
-
 func explain_pawn_card():
 	%Garrison.show()
 	%Dialog.appear("Click on the pawn card to summon it.")
