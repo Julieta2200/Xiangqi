@@ -29,10 +29,19 @@ func _ready():
 	%Board.create_state(initial_state)
 
 func camera_zoom():
-	%Dialog.appear("You can scroll to zoom in and out to have a better view of surroundings (If mouse scroll doesn't work please use Q,E keys, sorry we're still developing :) )",
+	var text1: TextBlock = TextBlock.new("You can scroll to zoom in and out to have a better view of surroundings (If mouse scroll doesn't work please use Q,E keys, sorry we're still developing :) )",
+	 "Name", "Sprite")
+	var text2: TextBlock = TextBlock.new("inchvor ban",
+	 "Name", "Sprite")
+	var texts: Array[TextBlock]
+	texts.append(text1)
+	texts.append(text2)
+	%Dialog.appear(texts,
 	camera_movement)
 
 func camera_movement():
+	print("test")
+	return
 	%Dialog.appear("Use W, A, S, D to look around.",look_out)
 
 func look_out():
