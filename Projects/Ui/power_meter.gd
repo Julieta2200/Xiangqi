@@ -1,6 +1,7 @@
 extends Control
 
 signal energy_changed(energy: float)
+var distance_bar :int = 10
 
 @export var energy: float :
 	set(e):
@@ -11,11 +12,10 @@ signal energy_changed(energy: float)
 @export var distance: int :
 	set(d):
 		distance = d
-		for i in $distance_bars.get_children():
-			if i == $distance_bars/AnimationPlayer:
-				continue
-			i.value = min(d,i.max_value)
-			d -= i.value
+		for i in $distances/distance_bars.get_children():
+			if d >= distance_bar:
+				d -= min(distance,distance_bar)
+				i.visible = true
 
 func _ready() -> void:
 	energy = energy
@@ -25,5 +25,5 @@ func show_energy_bar():
 	$energy/AnimationPlayer.play("highlight")
 
 func show_distance_bar():
-	$distance_bars.show()
-	$distance_bars/AnimationPlayer.play("highlight")
+	$distances.show()
+	$distances/AnimationPlayer.play("highlight")

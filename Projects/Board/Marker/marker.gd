@@ -1,8 +1,6 @@
 class_name BoardMarker extends Node2D
 
 var board_position: Vector2
-@onready var highlighted_spot = $highlighted_spot
-@onready var selected_highlight = $selected_highlight
 @onready var free_marker_highlight: Sprite2D = $free_marker_highlight
 
 signal figure_move(marker)
@@ -22,8 +20,11 @@ func highlight():
 func unhighlight():
 	$highlight.visible = false
 	$trajectory_highlight.visible = false
-	selected_highlight.visible = false
+	$selected_highlight.visible = false
 	free_marker_highlight.visible = false
 
 func trajectory_highlight():
 	$trajectory_highlight.visible = true
+
+func selected_highlight():
+	$selected_highlight.visible = true

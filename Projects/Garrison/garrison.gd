@@ -1,6 +1,6 @@
 extends Control
 
-@onready var figure_cards: Array = $Panel/FigureCards.get_children()
+@onready var figure_cards: Array = $FigureCards.get_children()
 
 var selected_figure: FigureCard
 var check_selected_figure : bool 

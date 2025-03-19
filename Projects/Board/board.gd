@@ -203,6 +203,7 @@ func _on_figure_selected(figure):
 			selected_figure.delete_highlight()
 		selected_figure = figure
 		selected_figure.highlight_moves()
+		markers[selected_figure.board_position].selected_highlight()
 	
 
 func reset(move: int) -> void:
