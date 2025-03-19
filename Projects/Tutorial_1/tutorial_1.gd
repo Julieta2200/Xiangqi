@@ -80,6 +80,7 @@ func summon_soldier():
 			TextBlock.new("The more soldiers you have the longer the distance. You can’t summon a soldier inside the palace.","Name", "Sprite"),
 			TextBlock.new("Click on one of the markers to summon your soldier there.","Name", "Sprite")]
 	%Dialog.appear(texts)
+	%PowerMeter.show_distance_bar()
 
 func _on_board_set_figure(marker: BoardMarker) -> void:
 	if first_time:
