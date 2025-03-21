@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://m7feffsuvksg"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Scripts/advisor.gd" id="1_uw3sb"]
-[ext_resource type="Texture2D" uid="uid://bci7q7squ1x6s" path="res://Assets/Characters/Magma/Advisor/Advisor.png" id="3_xw3dj"]
+[ext_resource type="Texture2D" uid="uid://c3o3016kelswk" path="res://Assets/Characters/Magma/Advisor/Advisor_front.png" id="4_e8cds"]
 [ext_resource type="Texture2D" uid="uid://bh7qd5bwgot0t" path="res://Assets/tmp/highlight.png" id="4_fwu4s"]
 [ext_resource type="Texture2D" uid="uid://dhtgu1fm8i1go" path="res://Assets/tmp/eye.png" id="5_2bjua"]
 
@@ -13,7 +13,7 @@ height = 218.0
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_xw3dj")
+"texture": ExtResource("4_e8cds")
 }],
 "loop": false,
 "name": &"idle",

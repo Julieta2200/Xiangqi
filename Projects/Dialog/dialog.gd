@@ -2,6 +2,11 @@ class_name Dialog extends Control
 
 signal finished(to_call: Callable)
 
+var figures: Dictionary = {
+	"Advisor": load("res://Assets/Characters/Magma/Advisor/Advisor_front.png"),
+	"Pawn" : load("res://Assets/Characters/Cloud/Pawn/Pawn_front.png")
+}
+
 var _to_call: Callable
 var _text_blocks: Array[TextBlock]
 
@@ -10,7 +15,9 @@ func appear(text_blocks: Array[TextBlock], to_call: Callable = func():):
 	_to_call = to_call
 	var text_block: TextBlock = text_blocks.pop_front()
 	_text_blocks = text_blocks
-	$Panel/RichTextLabel.text = text_block.text
+	$Panel/Text.text = text_block.text
+	$Panel/Name.text = text_block.name
+	$Panel/image.texture_progress = figures[text_block.name]
 	$AnimationPlayer.play("dialog")
 
 func disappear():

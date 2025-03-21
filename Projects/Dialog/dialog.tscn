@@ -1,17 +1,93 @@
-[gd_scene load_steps=7 format=3 uid="uid://bkqlg03rv0gyo"]
+[gd_scene load_steps=10 format=3 uid="uid://bkqlg03rv0gyo"]
 
 [ext_resource type="Script" path="res://Projects/Dialog/dialog.gd" id="1_0lrns"]
-[ext_resource type="Texture2D" uid="uid://bgxg11jl7xfdn" path="res://Assets/tmp/dialog panel/panel.png" id="1_vksa7"]
+[ext_resource type="Texture2D" uid="uid://bqlt4mnnhjq6q" path="res://Assets/UI/Dialog panel/Dialog_panel.png" id="2_c1oj6"]
+[ext_resource type="Texture2D" uid="uid://dssntqxhb3p7w" path="res://Assets/Characters/Magma/General/Ashes_front.png" id="3_pbiqe"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b4jn4"]
-texture = ExtResource("1_vksa7")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mxf6b"]
+texture = ExtResource("2_c1oj6")
+
+[sub_resource type="FontFile" id="FontFile_ml23t"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/60/0/ascent = 0.0
+cache/0/60/0/descent = 0.0
+cache/0/60/0/underline_position = 0.0
+cache/0/60/0/underline_thickness = 0.0
+cache/0/60/0/scale = 1.0
+cache/0/59/0/ascent = 0.0
+cache/0/59/0/descent = 0.0
+cache/0/59/0/underline_position = 0.0
+cache/0/59/0/underline_thickness = 0.0
+cache/0/59/0/scale = 1.0
+cache/0/58/0/ascent = 0.0
+cache/0/58/0/descent = 0.0
+cache/0/58/0/underline_position = 0.0
+cache/0/58/0/underline_thickness = 0.0
+cache/0/58/0/scale = 1.0
+cache/0/57/0/ascent = 0.0
+cache/0/57/0/descent = 0.0
+cache/0/57/0/underline_position = 0.0
+cache/0/57/0/underline_thickness = 0.0
+cache/0/57/0/scale = 1.0
+cache/0/56/0/ascent = 0.0
+cache/0/56/0/descent = 0.0
+cache/0/56/0/underline_position = 0.0
+cache/0/56/0/underline_thickness = 0.0
+cache/0/56/0/scale = 1.0
+cache/0/55/0/ascent = 0.0
+cache/0/55/0/descent = 0.0
+cache/0/55/0/underline_position = 0.0
+cache/0/55/0/underline_thickness = 0.0
+cache/0/55/0/scale = 1.0
+cache/0/54/0/ascent = 0.0
+cache/0/54/0/descent = 0.0
+cache/0/54/0/underline_position = 0.0
+cache/0/54/0/underline_thickness = 0.0
+cache/0/54/0/scale = 1.0
+cache/0/53/0/ascent = 0.0
+cache/0/53/0/descent = 0.0
+cache/0/53/0/underline_position = 0.0
+cache/0/53/0/underline_thickness = 0.0
+cache/0/53/0/scale = 1.0
+cache/0/52/0/ascent = 0.0
+cache/0/52/0/descent = 0.0
+cache/0/52/0/underline_position = 0.0
+cache/0/52/0/underline_thickness = 0.0
+cache/0/52/0/scale = 1.0
+cache/0/51/0/ascent = 0.0
+cache/0/51/0/descent = 0.0
+cache/0/51/0/underline_position = 0.0
+cache/0/51/0/underline_thickness = 0.0
+cache/0/51/0/scale = 1.0
+
+[sub_resource type="FontFile" id="FontFile_q0bfd"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/64/0/ascent = 0.0
+cache/0/64/0/descent = 0.0
+cache/0/64/0/underline_position = 0.0
+cache/0/64/0/underline_thickness = 0.0
+cache/0/64/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
 [sub_resource type="Animation" id="Animation_3tquq"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Panel/RichTextLabel:visible_ratio")
+tracks/0/path = NodePath("Panel/Text:visible_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -27,7 +103,7 @@ length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Panel/RichTextLabel:visible_ratio")
+tracks/0/path = NodePath("Panel/Text:visible_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -54,34 +130,63 @@ mouse_filter = 1
 script = ExtResource("1_0lrns")
 
 [node name="Panel" type="Panel" parent="."]
-self_modulate = Color(1, 1, 1, 0.439216)
 layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = -6.0
-offset_bottom = 259.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1232.0
+offset_top = -500.0
+offset_right = 1232.0
+offset_bottom = -54.0
 grow_horizontal = 2
+grow_vertical = 0
 mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxTexture_b4jn4")
+theme_override_styles/panel = SubResource("StyleBoxTexture_mxf6b")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+[node name="Text" type="RichTextLabel" parent="Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 157.0
-offset_top = 45.0
-offset_right = -168.0
-offset_bottom = -26.0
+offset_left = 636.0
+offset_top = 158.0
+offset_right = -128.0
+offset_bottom = -88.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-theme_override_font_sizes/normal_font_size = 50
+theme_override_fonts/normal_font = SubResource("FontFile_ml23t")
+theme_override_font_sizes/normal_font_size = 51
 bbcode_enabled = true
-text = "Helloo Testing text"
 fit_content = true
 visible_characters = 0
 visible_ratio = 0.0
+
+[node name="Name" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 594.0
+offset_top = 1.0
+offset_right = 826.0
+offset_bottom = 89.0
+theme_override_colors/font_color = Color(1, 0.841142, 0.455887, 1)
+theme_override_fonts/font = SubResource("FontFile_q0bfd")
+theme_override_font_sizes/font_size = 64
+text = "Advisor"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="image" type="TextureProgressBar" parent="Panel"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = -182.0
+offset_right = 96.0
+offset_bottom = -84.0
+scale = Vector2(10, 10)
+value = 60.0
+fill_mode = 2
+texture_progress = ExtResource("3_pbiqe")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://dlkpgwakp3ub7"]
 
 [ext_resource type="Script" path="res://Projects/Board/Marker/marker.gd" id="1_y3i0m"]
-[ext_resource type="Texture2D" uid="uid://d067h7qleds1f" path="res://Assets/tmp/circle.png" id="2_5l7c3"]
-[ext_resource type="Texture2D" uid="uid://cq76atsqs78gm" path="res://Assets/tmp/highlighted_spot.png" id="3_hmf34"]
+[ext_resource type="Texture2D" uid="uid://bufqung6psup2" path="res://Assets/UI/Markers/StepGlow (Red)/StepGlow(1).png" id="2_s7g8i"]
+[ext_resource type="Texture2D" uid="uid://cl3say367nghe" path="res://Assets/UI/Markers/StepIcon/icon.png" id="3_cfkba"]
 [ext_resource type="Texture2D" uid="uid://dne6fr3ivtxdy" path="res://Assets/tmp/highlight_marker.png" id="4_enjmd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vg2kh"]
@@ -15,25 +15,22 @@ script = ExtResource("1_y3i0m")
 
 [node name="selected_highlight" type="Sprite2D" parent="."]
 visible = false
-self_modulate = Color(1, 0.756863, 1, 0.490196)
-position = Vector2(-1, -21)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_5l7c3")
+position = Vector2(-1, -58)
+scale = Vector2(2, 2)
+texture = ExtResource("2_s7g8i")
 
 [node name="highlight" type="Sprite2D" parent="."]
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("2_5l7c3")
-
-[node name="highlighted_spot" type="Sprite2D" parent="."]
 visible = false
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("3_hmf34")
+position = Vector2(-0.5, -1)
+scale = Vector2(2, 2)
+texture = ExtResource("3_cfkba")
 
 [node name="trajectory_highlight" type="Sprite2D" parent="."]
 visible = false
-self_modulate = Color(0.894118, 0.576471, 0.301961, 1)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("2_5l7c3")
+self_modulate = Color(0.168627, 0.466667, 1, 1)
+position = Vector2(-0.5, -1)
+scale = Vector2(2, 2)
+texture = ExtResource("3_cfkba")
 
 [node name="free_marker_highlight" type="Sprite2D" parent="."]
 visible = false

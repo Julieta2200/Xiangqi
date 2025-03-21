@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://Projects/Garrison/figure_card.gd" id="1_qr4yr"]
 [ext_resource type="Texture2D" uid="uid://b5y5veoqw6otr" path="res://Assets/Characters/Magma/Pawn/Pawn_front.png" id="2_h5u7g"]
-[ext_resource type="Texture2D" uid="uid://qh3mcy5phiww" path="res://Assets/tmp/image-removebg-preview (24).png" id="4_6r0t2"]
+[ext_resource type="Texture2D" uid="uid://dhmnumbrjq03h" path="res://Assets/UI/Garrison/Garrison.png" id="2_wablk"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2m48m"]
-bg_color = Color(0.600897, 0.121046, 0.234823, 0.423529)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5aqk6"]
+texture = ExtResource("2_wablk")
 
 [sub_resource type="Animation" id="Animation_tka51"]
 length = 0.001
@@ -20,6 +20,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(0.600897, 0.121046, 0.234823, 0.423529)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("card:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_sy51c"]
@@ -46,32 +58,28 @@ _data = {
 
 [node name="FigureCard" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -2080.0
-offset_bottom = -2060.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+pivot_offset = Vector2(151.24, 168.099)
 script = ExtResource("1_qr4yr")
 
 [node name="card" type="Panel" parent="."]
-layout_mode = 0
-offset_right = 107.0
-offset_bottom = 132.0
-scale = Vector2(2, 2)
-theme_override_styles/panel = SubResource("StyleBoxFlat_2m48m")
+layout_mode = 1
+offset_right = 298.0
+offset_bottom = 324.0
+pivot_offset = Vector2(153, 164)
+theme_override_styles/panel = SubResource("StyleBoxTexture_5aqk6")
 
 [node name="image" type="TextureProgressBar" parent="card"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -48.0
-offset_top = 14.5
-offset_bottom = 111.5
+offset_left = -121.0
+offset_top = 49.0
+offset_right = -72.0
+offset_bottom = 148.0
 grow_horizontal = 2
-scale = Vector2(2, 2)
+scale = Vector2(5, 5)
 value = 40.0
 fill_mode = 2
 texture_progress = ExtResource("2_h5u7g")
@@ -82,45 +90,17 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 3.0
-offset_top = -15.0
-offset_right = -20.0
-offset_bottom = -3.0
+offset_left = 15.0
+offset_top = -61.0
+offset_right = -8.0
+offset_bottom = -19.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/line_spacing = 0
-theme_override_font_sizes/font_size = 18
-text = "Soldier"
+theme_override_font_sizes/font_size = 30
+text = "Pawn"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="qty" type="Label" parent="card"]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 57.0
-offset_top = -29.0
-offset_right = 9.0
-offset_bottom = -3.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_constants/line_spacing = 1
-theme_override_font_sizes/font_size = 18
-text = "x2"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="selected_highlight" type="TextureRect" parent="."]
-visible = false
-layout_mode = 0
-offset_left = -6.0
-offset_top = 2.0
-offset_right = 508.0
-offset_bottom = 488.0
-scale = Vector2(0.44, 0.44)
-texture = ExtResource("4_6r0t2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -128,3 +108,5 @@ libraries = {
 }
 
 [connection signal="gui_input" from="card" to="." method="_on_card_gui_input"]
+[connection signal="mouse_entered" from="card" to="." method="_on_card_mouse_entered"]
+[connection signal="mouse_exited" from="card" to="." method="_on_card_mouse_exited"]

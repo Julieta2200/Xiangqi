@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Projects/Figure/Scripts/advisor.gd" id="1_fdb5m"]
 [ext_resource type="Texture2D" uid="uid://bh7qd5bwgot0t" path="res://Assets/tmp/highlight.png" id="3_qu58g"]
 [ext_resource type="Texture2D" uid="uid://dhtgu1fm8i1go" path="res://Assets/tmp/eye.png" id="3_rvrcq"]
-[ext_resource type="Texture2D" uid="uid://bci7q7squ1x6s" path="res://Assets/Characters/Magma/Advisor/Advisor.png" id="3_tawro"]
+[ext_resource type="Texture2D" uid="uid://cdlxou3n2xg2n" path="res://Assets/Characters/Magma/Advisor/Advisor_back.png" id="5_ir7fm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tgjc2"]
 radius = 64.0
@@ -13,13 +13,16 @@ height = 224.0
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_tawro")
+"texture": ExtResource("5_ir7fm")
 }],
 "loop": false,
 "name": &"idle",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ir7fm")
+}],
 "loop": true,
 "name": &"walk_back",
 "speed": 5.0
