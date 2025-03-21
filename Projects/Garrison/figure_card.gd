@@ -39,13 +39,8 @@ var type: Figure.Types :
 		$card/name.text = figure_names[type]
 		energy = figure_energies[type]
 
-var qty: int :
-	set(q):
-		qty = q
-		$card/qty.text = "x"+str(qty)
-
 func _on_card_gui_input(event: InputEvent):
-	if event.is_pressed() and qty > 0 and active:
+	if event.is_pressed() and active:
 		emit_signal("selected", self)
 		_selected = true
 		select()

@@ -6,13 +6,13 @@ var selected_figure: FigureCard
 var check_selected_figure : bool 
 
  
-@export var figures: Dictionary = {
-	Figure.Types.Soldier: 0,
-	Figure.Types.Chariot: 0,
-	Figure.Types.Cannon: 0,
-	Figure.Types.Elephant: 0,
-	Figure.Types.Horse: 0,
-}
+@export var figures: Array = [
+	Figure.Types.Soldier,
+	Figure.Types.Chariot,
+	Figure.Types.Cannon,
+	Figure.Types.Elephant,
+	Figure.Types.Horse,
+]
 
 signal card_selected(selected_card: FigureCard)
 
@@ -20,9 +20,8 @@ func _ready() -> void:
 	set_figure_cards()
 
 func set_figure_cards() -> void:
-	for j in figures.keys().size():
-		figure_cards[j].type = figures.keys()[j]
-		figure_cards[j].qty = figures.values()[j]
+	for j in figures.size():
+		figure_cards[j].type = figures[j]
 
 func get_soldier_card() -> FigureCard:
 	return figure_cards[0]
@@ -42,7 +41,6 @@ func select_card(card: FigureCard):
 	emit_signal("card_selected", selected_figure)
 
 func remove_figure():
-	selected_figure.qty -= 1
 	selected_figure.remove()
 	selected_figure = null
 
