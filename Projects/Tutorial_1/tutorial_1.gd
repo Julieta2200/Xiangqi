@@ -126,8 +126,7 @@ func reset():
 	}
 	%Board.create_state(new_state)
 	%PowerMeter.energy += FigureCard.figure_energies[Figure.Types.Soldier]
-	%Garrison.set_figure_cards()
-
+	
 
 func _on_board_move_computer() -> void:
 	$tutorial_engine.make_move()

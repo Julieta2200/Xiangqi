@@ -23,21 +23,21 @@ const figure_energies = {
 	Figure.Types.Cannon: 40
 }
 
+@export var type: Figure.Types 
+
 signal selected(FigureCard)
 var active: bool
 var _selected :bool
 var energy: float
 
-var type: Figure.Types : 
-	set(t):
-		type = t
-		if type != Figure.Types.Soldier:
-			$card/image.scale = Vector2(0.3,0.3)
-			$card/image.position = Vector2(55,5)
+func _ready() -> void:
+	if type != Figure.Types.Soldier:
+		$card/image.scale = Vector2(0.3,0.3)
+		$card/image.position = Vector2(55,5)
 		
-		$card/image.texture_progress = sprites[type]
-		$card/name.text = figure_names[type]
-		energy = figure_energies[type]
+	$card/image.texture_progress = sprites[type]
+	$card/name.text = figure_names[type]
+	energy = figure_energies[type]
 
 func _on_card_gui_input(event: InputEvent):
 	if event.is_pressed() and active:

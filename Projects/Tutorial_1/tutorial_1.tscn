@@ -136,7 +136,6 @@ visible = false
 
 [node name="Garrison" parent="CanvasLayer" instance=ExtResource("4_3f8cv")]
 unique_name_in_owner = true
-visible = false
 
 [node name="PowerMeter" parent="CanvasLayer" instance=ExtResource("5_042ta")]
 unique_name_in_owner = true
