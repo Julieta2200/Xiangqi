@@ -136,7 +136,6 @@ visible = false
 
 [node name="Garrison" parent="CanvasLayer" instance=ExtResource("4_3f8cv")]
 unique_name_in_owner = true
-visible = false
 figures = {
 2: 3,
 3: 0,

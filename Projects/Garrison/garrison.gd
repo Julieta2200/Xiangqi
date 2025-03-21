@@ -37,13 +37,13 @@ func _on_figure_card_selected(card: FigureCard):
 
 func select_card(card: FigureCard):
 	if selected_figure != null and selected_figure != card:
-		selected_figure.selected_highlight.visible = false
+		selected_figure.remove()
 	selected_figure = card
 	emit_signal("card_selected", selected_figure)
 
 func remove_figure():
 	selected_figure.qty -= 1
-	selected_figure.selected_highlight.visible = false
+	selected_figure.remove()
 	selected_figure = null
 
 func energy_changed(energy: float) -> void:
