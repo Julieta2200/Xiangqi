@@ -41,6 +41,7 @@ func camera_movement():
 func look_out():
 	var texts: Array[TextBlock] 
 	texts = [TextBlock.new("Look! An enemy soldier is approaching.","Advisor", "Sprite")]
+	%Dialog.appear(texts)
 	$Camera/AnimationPlayer.play("enemy_spawn")
 
 func soldier_spawn():

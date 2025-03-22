@@ -1,9 +1,40 @@
-[gd_scene load_steps=6 format=3 uid="uid://dlkpgwakp3ub7"]
+[gd_scene load_steps=11 format=3 uid="uid://dlkpgwakp3ub7"]
 
 [ext_resource type="Script" path="res://Projects/Board/Marker/marker.gd" id="1_y3i0m"]
+[ext_resource type="Texture2D" uid="uid://dia2v0yg34v87" path="res://Assets/UI/Markers/Step Icon/icon.png" id="2_r8c08"]
 [ext_resource type="Texture2D" uid="uid://bufqung6psup2" path="res://Assets/UI/Markers/StepGlow (Red)/StepGlow(1).png" id="2_s7g8i"]
-[ext_resource type="Texture2D" uid="uid://cl3say367nghe" path="res://Assets/UI/Markers/StepIcon/icon.png" id="3_cfkba"]
+[ext_resource type="Texture2D" uid="uid://ut2w4mpj4tg7" path="res://Assets/UI/Markers/StepGlow (Yellow)/StepGlow(1).png" id="3_tltih"]
 [ext_resource type="Texture2D" uid="uid://dne6fr3ivtxdy" path="res://Assets/tmp/highlight_marker.png" id="4_enjmd"]
+[ext_resource type="Texture2D" uid="uid://nthq6mgcs2f0" path="res://Assets/UI/Markers/StepGlow (Yellow)/StepGlow(2).png" id="5_bnpjt"]
+[ext_resource type="Texture2D" uid="uid://c6khya78ox7ud" path="res://Assets/UI/Markers/StepGlow (Red)/StepGlow(2).png" id="7_ulkbh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o72yf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_tltih")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bnpjt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ad43u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_s7g8i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ulkbh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vg2kh"]
 radius = 46.0
@@ -15,22 +46,9 @@ script = ExtResource("1_y3i0m")
 
 [node name="selected_highlight" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(-1, -58)
+position = Vector2(-1, -3)
 scale = Vector2(2, 2)
-texture = ExtResource("2_s7g8i")
-
-[node name="highlight" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(-0.5, -1)
-scale = Vector2(2, 2)
-texture = ExtResource("3_cfkba")
-
-[node name="trajectory_highlight" type="Sprite2D" parent="."]
-visible = false
-self_modulate = Color(0.168627, 0.466667, 1, 1)
-position = Vector2(-0.5, -1)
-scale = Vector2(2, 2)
-texture = ExtResource("3_cfkba")
+texture = ExtResource("2_r8c08")
 
 [node name="free_marker_highlight" type="Sprite2D" parent="."]
 visible = false
@@ -38,10 +56,39 @@ self_modulate = Color(0, 1, 0, 1)
 scale = Vector2(2, 2)
 texture = ExtResource("4_enjmd")
 
+[node name="highlight" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = 1
+position = Vector2(-1, -31)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_o72yf")
+autoplay = "default"
+
+[node name="marker" type="Sprite2D" parent="highlight"]
+z_index = -1
+position = Vector2(0, 13)
+texture = ExtResource("2_r8c08")
+
+[node name="capture_highlight" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = 1
+position = Vector2(-1, -31)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_ad43u")
+autoplay = "default"
+frame = 1
+frame_progress = 0.640369
+
+[node name="marker" type="Sprite2D" parent="capture_highlight"]
+z_index = -1
+position = Vector2(0, 13)
+texture = ExtResource("2_r8c08")
+
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
+top_level = true
+z_index = 1
 shape = SubResource("CapsuleShape2D_vg2kh")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

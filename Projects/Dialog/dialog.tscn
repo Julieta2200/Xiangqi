@@ -81,6 +81,21 @@ cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
 cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/35/0/ascent = 0.0
+cache/0/35/0/descent = 0.0
+cache/0/35/0/underline_position = 0.0
+cache/0/35/0/underline_thickness = 0.0
+cache/0/35/0/scale = 1.0
 
 [sub_resource type="Animation" id="Animation_3tquq"]
 length = 0.001
@@ -166,14 +181,34 @@ visible_ratio = 0.0
 
 [node name="Name" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 594.0
-offset_top = 1.0
-offset_right = 826.0
-offset_bottom = 89.0
+offset_left = 588.0
+offset_top = 12.0
+offset_right = 820.0
+offset_bottom = 100.0
 theme_override_colors/font_color = Color(1, 0.841142, 0.455887, 1)
 theme_override_fonts/font = SubResource("FontFile_q0bfd")
 theme_override_font_sizes/font_size = 64
 text = "Advisor"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SkipText" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -454.0
+offset_top = -138.0
+offset_right = -77.0
+offset_bottom = -50.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.835998, 0.854949, 0.956049, 1)
+theme_override_fonts/font = SubResource("FontFile_q0bfd")
+theme_override_font_sizes/font_size = 35
+text = "SPACEBAR to Continue"
 horizontal_alignment = 1
 vertical_alignment = 1
 

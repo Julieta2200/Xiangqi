@@ -43,7 +43,7 @@ func move_or_capture(pos: Vector2, state: Dictionary) -> bool:
 
 func highlight_moves() -> void:
 	for move in valid_moves:
-		board.markers[move].highlight()
+		board.markers[move].highlight(board.state.has(move))
 
 
 func _on_mouse_event(viewport, event, shape_idx):
@@ -79,7 +79,6 @@ func delete():
 
 
 func move(marker):
-	board.markers[board_position].trajectory_highlight()
 	animation(board_position, marker.board_position)
 	board_position = marker.board_position
 
