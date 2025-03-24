@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bkqlg03rv0gyo"]
+[gd_scene load_steps=8 format=3 uid="uid://bkqlg03rv0gyo"]
 
 [ext_resource type="Script" path="res://Projects/Dialog/dialog.gd" id="1_0lrns"]
 [ext_resource type="Texture2D" uid="uid://bqlt4mnnhjq6q" path="res://Assets/UI/Dialog panel/Dialog_panel.png" id="2_c1oj6"]
@@ -6,96 +6,6 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mxf6b"]
 texture = ExtResource("2_c1oj6")
-
-[sub_resource type="FontFile" id="FontFile_ml23t"]
-subpixel_positioning = 0
-msdf_pixel_range = 14
-msdf_size = 128
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/60/0/ascent = 0.0
-cache/0/60/0/descent = 0.0
-cache/0/60/0/underline_position = 0.0
-cache/0/60/0/underline_thickness = 0.0
-cache/0/60/0/scale = 1.0
-cache/0/59/0/ascent = 0.0
-cache/0/59/0/descent = 0.0
-cache/0/59/0/underline_position = 0.0
-cache/0/59/0/underline_thickness = 0.0
-cache/0/59/0/scale = 1.0
-cache/0/58/0/ascent = 0.0
-cache/0/58/0/descent = 0.0
-cache/0/58/0/underline_position = 0.0
-cache/0/58/0/underline_thickness = 0.0
-cache/0/58/0/scale = 1.0
-cache/0/57/0/ascent = 0.0
-cache/0/57/0/descent = 0.0
-cache/0/57/0/underline_position = 0.0
-cache/0/57/0/underline_thickness = 0.0
-cache/0/57/0/scale = 1.0
-cache/0/56/0/ascent = 0.0
-cache/0/56/0/descent = 0.0
-cache/0/56/0/underline_position = 0.0
-cache/0/56/0/underline_thickness = 0.0
-cache/0/56/0/scale = 1.0
-cache/0/55/0/ascent = 0.0
-cache/0/55/0/descent = 0.0
-cache/0/55/0/underline_position = 0.0
-cache/0/55/0/underline_thickness = 0.0
-cache/0/55/0/scale = 1.0
-cache/0/54/0/ascent = 0.0
-cache/0/54/0/descent = 0.0
-cache/0/54/0/underline_position = 0.0
-cache/0/54/0/underline_thickness = 0.0
-cache/0/54/0/scale = 1.0
-cache/0/53/0/ascent = 0.0
-cache/0/53/0/descent = 0.0
-cache/0/53/0/underline_position = 0.0
-cache/0/53/0/underline_thickness = 0.0
-cache/0/53/0/scale = 1.0
-cache/0/52/0/ascent = 0.0
-cache/0/52/0/descent = 0.0
-cache/0/52/0/underline_position = 0.0
-cache/0/52/0/underline_thickness = 0.0
-cache/0/52/0/scale = 1.0
-cache/0/51/0/ascent = 0.0
-cache/0/51/0/descent = 0.0
-cache/0/51/0/underline_position = 0.0
-cache/0/51/0/underline_thickness = 0.0
-cache/0/51/0/scale = 1.0
-
-[sub_resource type="FontFile" id="FontFile_q0bfd"]
-subpixel_positioning = 0
-msdf_pixel_range = 14
-msdf_size = 128
-cache/0/64/0/ascent = 0.0
-cache/0/64/0/descent = 0.0
-cache/0/64/0/underline_position = 0.0
-cache/0/64/0/underline_thickness = 0.0
-cache/0/64/0/scale = 1.0
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/20/0/ascent = 0.0
-cache/0/20/0/descent = 0.0
-cache/0/20/0/underline_position = 0.0
-cache/0/20/0/underline_thickness = 0.0
-cache/0/20/0/scale = 1.0
-cache/0/30/0/ascent = 0.0
-cache/0/30/0/descent = 0.0
-cache/0/30/0/underline_position = 0.0
-cache/0/30/0/underline_thickness = 0.0
-cache/0/30/0/scale = 1.0
-cache/0/35/0/ascent = 0.0
-cache/0/35/0/descent = 0.0
-cache/0/35/0/underline_position = 0.0
-cache/0/35/0/underline_thickness = 0.0
-cache/0/35/0/scale = 1.0
 
 [sub_resource type="Animation" id="Animation_3tquq"]
 length = 0.001
@@ -172,7 +82,6 @@ offset_bottom = -88.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-theme_override_fonts/normal_font = SubResource("FontFile_ml23t")
 theme_override_font_sizes/normal_font_size = 51
 bbcode_enabled = true
 fit_content = true
@@ -186,7 +95,6 @@ offset_top = 12.0
 offset_right = 820.0
 offset_bottom = 100.0
 theme_override_colors/font_color = Color(1, 0.841142, 0.455887, 1)
-theme_override_fonts/font = SubResource("FontFile_q0bfd")
 theme_override_font_sizes/font_size = 64
 text = "Advisor"
 horizontal_alignment = 1
@@ -206,7 +114,6 @@ offset_bottom = -50.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(0.835998, 0.854949, 0.956049, 1)
-theme_override_fonts/font = SubResource("FontFile_q0bfd")
 theme_override_font_sizes/font_size = 35
 text = "SPACEBAR to Continue"
 horizontal_alignment = 1
