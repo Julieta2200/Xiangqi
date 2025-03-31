@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlbcc700vd0s5"
-path="res://.godot/imported/Scale.png-f3d0ec59d500aca8ac6223feeb527637.ctex"
+uid="uid://bb6yarprybdp0"
+path="res://.godot/imported/Scale.png-ef92fa6db63a5af76e4c04056e798dca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Energy meter/Scale.png"
-dest_files=["res://.godot/imported/Scale.png-f3d0ec59d500aca8ac6223feeb527637.ctex"]
+source_file="res://Assets/UI/Energy meter/Big size/Scale.png"
+dest_files=["res://.godot/imported/Scale.png-ef92fa6db63a5af76e4c04056e798dca.ctex"]
 
 [params]
 

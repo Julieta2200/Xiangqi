@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhmnumbrjq03h"
-path="res://.godot/imported/Garrison.png-ef4b285389fcfa12149934c39f7c68ac.ctex"
+uid="uid://doujrdgk07gyx"
+path="res://.godot/imported/Dialog panel.png-071c8b4b49203b88704ef8d893ec464d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Garrison/Garrison.png"
-dest_files=["res://.godot/imported/Garrison.png-ef4b285389fcfa12149934c39f7c68ac.ctex"]
+source_file="res://Assets/UI/Dialog panel/Dialog panel.png"
+dest_files=["res://.godot/imported/Dialog panel.png-071c8b4b49203b88704ef8d893ec464d.ctex"]
 
 [params]
 

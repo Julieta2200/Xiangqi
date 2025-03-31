@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://Projects/Garrison/figure_card.gd" id="1_qr4yr"]
 [ext_resource type="Texture2D" uid="uid://b5y5veoqw6otr" path="res://Assets/Characters/Magma/Pawn/Pawn_front.png" id="2_h5u7g"]
-[ext_resource type="Texture2D" uid="uid://dhmnumbrjq03h" path="res://Assets/UI/Garrison/Garrison.png" id="2_wablk"]
+[ext_resource type="Texture2D" uid="uid://dletkiixibera" path="res://Assets/UI/Garrison/Big size/Garrison.png" id="2_p5kgd"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5aqk6"]
-texture = ExtResource("2_wablk")
+texture = ExtResource("2_p5kgd")
 
 [sub_resource type="Animation" id="Animation_tka51"]
 length = 0.001
@@ -64,8 +64,8 @@ script = ExtResource("1_qr4yr")
 
 [node name="card" type="Panel" parent="."]
 layout_mode = 1
-offset_right = 298.0
-offset_bottom = 324.0
+offset_right = 293.0
+offset_bottom = 323.0
 pivot_offset = Vector2(153, 164)
 theme_override_styles/panel = SubResource("StyleBoxTexture_5aqk6")
 

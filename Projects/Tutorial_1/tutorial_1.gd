@@ -4,7 +4,7 @@ var initial_state = {
 		Vector2(4, 0): {
 			"type": Figure.Types.General,
 			"team": Board.team.Red,
-			"inactive" : true,
+			#"inactive" : true,
 			"group": "Magma"
 		},
 		Vector2(3, 0): {
