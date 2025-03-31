@@ -8,27 +8,6 @@
 radius = 52.0
 height = 222.0
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_4grr3"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_axt2k")
-}],
-"loop": false,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"walk_back",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"walk_front",
-"speed": 5.0
-}]
-
 [sub_resource type="Animation" id="Animation_ga1vd"]
 length = 0.001
 tracks/0/type = "value"
@@ -97,6 +76,27 @@ _data = {
 "unhighlight": SubResource("Animation_b7a8d")
 }
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_4grr3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_axt2k")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_back",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk_front",
+"speed": 5.0
+}]
+
 [node name="Soldier" type="Node2D"]
 script = ExtResource("1_3u3jq")
 type = 2
@@ -109,13 +109,6 @@ speed = 1.5
 position = Vector2(0, -92)
 shape = SubResource("CapsuleShape2D_b0rn7")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-5, -96)
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_4grr3")
-animation = &"idle"
-autoplay = "idle"
-
 [node name="hover" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("3_3nhkv")
@@ -125,6 +118,13 @@ root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_ftarj")
 }
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-5, -96)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_4grr3")
+animation = &"idle"
+autoplay = "idle"
 
 [connection signal="input_event" from="Area2D" to="." method="_on_mouse_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]

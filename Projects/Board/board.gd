@@ -30,6 +30,7 @@ var state : Dictionary
 var save_states: Dictionary
 var selected_figure: Figure
 var can_move : bool = true
+#var can_select : bool = true
 
 signal move_computer
 
@@ -152,6 +153,7 @@ func get_figures_by_team(t: team) -> Array[Figure]:
 
 func _on_marker_figure_move(marker: Variant) -> void:
 	unhighlight_markers()
+	selected_figure.hover_unhighlight()
 	if state.has(marker.board_position):
 		state[marker.board_position].delete()
 	selected_figure.move(marker)
@@ -201,11 +203,11 @@ func _on_figure_selected(figure):
 	if figure.team == Board.team.Red and can_move:
 		if selected_figure != null:
 			selected_figure.delete_highlight()
+			markers[selected_figure.board_position].unhighlight()
 		selected_figure = figure
 		selected_figure.highlight_moves()
 		markers[selected_figure.board_position].selected_highlight()
 	
-
 func reset(move: int) -> void:
 	delete_figures()
 	unhighlight_markers()

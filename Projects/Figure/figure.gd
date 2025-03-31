@@ -6,12 +6,11 @@ class_name Figure extends Node2D
 @export var speed: float
 var position_delta : float = 0.5
 
-
 enum Types {General, Advisor, Soldier, Elephant, Chariot, Horse, Cannon}
 
 var boundaries: Dictionary
 var valid_moves: Array[Vector2] = []
-
+var mouse_can_hover: bool = true
 @onready var board: Board
 
 
@@ -49,18 +48,25 @@ func highlight_moves() -> void:
 func _on_mouse_event(viewport, event, shape_idx):
 	if Input.is_action_pressed("click") and active:
 		emit_signal("figure_selected", self)
+		$hover.show()
+		mouse_can_hover = false
+		
 	
 func _on_area_2d_mouse_entered():
-	if board != null:
-		if team == board.turn:
-			$hover.show()
-			$hover/AnimationPlayer.play("highlight")
+	if team == board.turn and active and mouse_can_hover:
+		$hover.show()
+		$hover/AnimationPlayer.play("highlight")
 
 func _on_area_2d_mouse_exited():
-	if board != null:
+	if team == board.turn and active and mouse_can_hover:
 		$hover/AnimationPlayer.play("unhighlight")
 
+func hover_unhighlight():
+	$hover.hide()
+
 func delete_highlight():
+	hover_unhighlight()
+	mouse_can_hover = true
 	for move in valid_moves:
 		board.markers[move].unhighlight()
 
@@ -89,6 +95,7 @@ func move(marker):
 	tween.finished.connect(finished_move)
 
 func finished_move():
+	mouse_can_hover = true
 	$AnimatedSprite2D.play("idle")
 	emit_signal("move_done")
 
