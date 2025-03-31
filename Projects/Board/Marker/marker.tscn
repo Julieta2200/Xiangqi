@@ -56,33 +56,29 @@ self_modulate = Color(0, 1, 0, 1)
 scale = Vector2(2, 2)
 texture = ExtResource("4_enjmd")
 
-[node name="highlight" type="AnimatedSprite2D" parent="."]
+[node name="marker" type="Sprite2D" parent="."]
 visible = false
-z_index = 1
-position = Vector2(-1, -31)
+position = Vector2(-1, -5)
 scale = Vector2(2, 2)
+texture = ExtResource("2_r8c08")
+
+[node name="highlight" type="AnimatedSprite2D" parent="marker"]
+visible = false
+position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_o72yf")
 autoplay = "default"
 
-[node name="marker" type="Sprite2D" parent="highlight"]
-z_index = -1
-position = Vector2(0, 13)
+[node name="capture_marker" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-1, -5)
+scale = Vector2(2, 2)
 texture = ExtResource("2_r8c08")
 
-[node name="capture_highlight" type="AnimatedSprite2D" parent="."]
+[node name="highlight" type="AnimatedSprite2D" parent="capture_marker"]
 visible = false
-z_index = 1
-position = Vector2(-1, -31)
-scale = Vector2(2, 2)
+position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_ad43u")
 autoplay = "default"
-frame = 1
-frame_progress = 0.640369
-
-[node name="marker" type="Sprite2D" parent="capture_highlight"]
-z_index = -1
-position = Vector2(0, 13)
-texture = ExtResource("2_r8c08")
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -93,3 +89,5 @@ z_index = 1
 shape = SubResource("CapsuleShape2D_vg2kh")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

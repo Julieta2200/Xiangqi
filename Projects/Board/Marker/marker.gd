@@ -8,7 +8,7 @@ signal figure_set(marker)
 
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	if Input.is_action_pressed("click"):
-		if $highlight.visible or $capture_highlight.visible:
+		if $marker.visible or $capture_marker.visible:
 			emit_signal("figure_move",self)
 		elif free_marker_highlight.visible:
 			emit_signal("figure_set",self)
@@ -16,15 +16,21 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 
 func highlight(busy: bool = false):
 	if !busy:
-		$highlight.show()
+		$marker.show()
 	else:
-		$capture_highlight.show()
+		$capture_marker.show()
 
 func unhighlight():
-	$highlight.hide()
-	$capture_highlight.hide()
-	#$selected_highlight.hide()
+	$marker.hide()
+	$capture_marker.hide()
 	free_marker_highlight.hide()
 
-#func selected_highlight():
-	#$selected_highlight.show()
+
+func _on_area_2d_mouse_entered() -> void:
+	$marker/highlight.visible = $marker.visible
+	$capture_marker/highlight.visible = $capture_marker.visible
+
+
+func _on_area_2d_mouse_exited() -> void:
+	$marker/highlight.hide()
+	$capture_marker/highlight.hide()
