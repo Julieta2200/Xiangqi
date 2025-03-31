@@ -44,14 +44,12 @@ func highlight_moves() -> void:
 	for move in valid_moves:
 		board.markers[move].highlight(board.state.has(move))
 
-
 func _on_mouse_event(viewport, event, shape_idx):
 	if Input.is_action_pressed("click") and active:
 		emit_signal("figure_selected", self)
 		$hover.show()
 		mouse_can_hover = false
 		
-	
 func _on_area_2d_mouse_entered():
 	if team == board.turn and active and mouse_can_hover:
 		$hover.show()

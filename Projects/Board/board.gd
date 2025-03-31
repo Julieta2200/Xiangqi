@@ -30,7 +30,6 @@ var state : Dictionary
 var save_states: Dictionary
 var selected_figure: Figure
 var can_move : bool = true
-#var can_select : bool = true
 
 signal move_computer
 
@@ -206,7 +205,6 @@ func _on_figure_selected(figure):
 			markers[selected_figure.board_position].unhighlight()
 		selected_figure = figure
 		selected_figure.highlight_moves()
-		markers[selected_figure.board_position].selected_highlight()
 	
 func reset(move: int) -> void:
 	delete_figures()

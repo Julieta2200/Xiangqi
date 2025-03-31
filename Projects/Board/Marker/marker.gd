@@ -23,8 +23,8 @@ func highlight(busy: bool = false):
 func unhighlight():
 	$highlight.hide()
 	$capture_highlight.hide()
-	$selected_highlight.hide()
+	#$selected_highlight.hide()
 	free_marker_highlight.hide()
 
-func selected_highlight():
-	$selected_highlight.show()
+#func selected_highlight():
+	#$selected_highlight.show()
