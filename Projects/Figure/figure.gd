@@ -1,5 +1,7 @@
 class_name Figure extends Node2D
 
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+
 @export var team : Board.team
 @export var type : Types
 @export var value: float
@@ -102,3 +104,6 @@ func animation(old_pos: Vector2, new_pos: Vector2)-> void:
 		$AnimatedSprite2D.play("walk_back")
 	else:
 		$AnimatedSprite2D.play("walk_front")
+
+func teleport():
+	animated_sprite.play("teleport")

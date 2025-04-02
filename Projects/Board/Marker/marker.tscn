@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dlkpgwakp3ub7"]
+[gd_scene load_steps=29 format=3 uid="uid://dlkpgwakp3ub7"]
 
 [ext_resource type="Script" path="res://Projects/Board/Marker/marker.gd" id="1_y3i0m"]
 [ext_resource type="Texture2D" uid="uid://dia2v0yg34v87" path="res://Assets/UI/Markers/Step Icon/icon.png" id="2_r8c08"]
@@ -20,6 +20,9 @@
 [ext_resource type="Texture2D" uid="uid://cmm0a5bsb27f6" path="res://Assets/UI/Position_Marker/Marker/Position_Marker10.png" id="17_43lv0"]
 [ext_resource type="Texture2D" uid="uid://s6sfmcpm3fdq" path="res://Assets/UI/Position_Marker/Marker/Position_Marker11.png" id="18_y1ngk"]
 [ext_resource type="Texture2D" uid="uid://coahho2or5ktb" path="res://Assets/UI/Position_Marker/Marker/Position_Marker_Hover.png" id="19_46dme"]
+[ext_resource type="Texture2D" uid="uid://4x0amsjgvw5f" path="res://Assets/UI/Position_Marker/Light/Light(1).png" id="21_b5ba3"]
+[ext_resource type="Texture2D" uid="uid://dr2g01s32oedo" path="res://Assets/UI/Position_Marker/Light/Light(2).png" id="22_81es4"]
+[ext_resource type="Texture2D" uid="uid://df4n8ael4hol7" path="res://Assets/UI/Position_Marker/Light/Light(3).png" id="23_k3nxk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o72yf"]
 animations = [{
@@ -97,6 +100,29 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_l6ttu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_b5ba3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_81es4")
+}, {
+"duration": 3.0,
+"texture": ExtResource("23_k3nxk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_81es4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_b5ba3")
+}],
+"loop": false,
+"name": &"light",
+"speed": 3.0
+}]
+
 [node name="Marker" type="Node2D"]
 visibility_layer = 17
 script = ExtResource("1_y3i0m")
@@ -140,6 +166,7 @@ z_index = 1
 shape = SubResource("CapsuleShape2D_vg2kh")
 
 [node name="position_marker" type="AnimatedSprite2D" parent="."]
+visible = false
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_06k7y")
 animation = &"highlight"
@@ -154,6 +181,13 @@ visible = false
 position = Vector2(0, -53)
 texture = ExtResource("9_uexsh")
 
+[node name="light" type="AnimatedSprite2D" parent="position_marker"]
+visible = false
+position = Vector2(0, -62)
+sprite_frames = SubResource("SpriteFrames_l6ttu")
+animation = &"light"
+
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="animation_finished" from="position_marker/light" to="." method="_on_light_animation_finished"]

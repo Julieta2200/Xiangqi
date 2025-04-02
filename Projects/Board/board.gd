@@ -74,7 +74,11 @@ func initialize_markers():
 		for j in range(board_cols):
 			markers[Vector2(j,i)] = $Markers.get_child(i).get_child(j)
 			markers[Vector2(j,i)].board_position = Vector2(j,i)
+			markers[Vector2(j,i)].highlight_end.connect(_on_marker_highlight_end)
 
+func _on_marker_highlight_end():
+	for key in markers:
+		markers[key].position_marker_unhighlight()
 
 func create_state(new_state: Dictionary) -> void:
 	delete_figures()
@@ -196,6 +200,8 @@ func set_figure(type: Figure.Types, board_position: Vector2, group: String = "Ma
 	state[marker.board_position] = figure
 	calculate_moves()
 	unhighlight_markers()
+	if figure.type == Figure.Types.Soldier and figure.team == team.Red:
+		figure.teleport()
 	figure.figure_selected.connect(_on_figure_selected)
 
 func _on_figure_move_done():

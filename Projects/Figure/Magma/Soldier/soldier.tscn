@@ -1,8 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://gu84kdi4y675"]
+[gd_scene load_steps=15 format=3 uid="uid://gu84kdi4y675"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Scripts/soldier.gd" id="1_3u3jq"]
 [ext_resource type="Texture2D" uid="uid://b1cl82c7g2uml" path="res://Assets/UI/Character_HoverEffect/Hover.png" id="3_3nhkv"]
 [ext_resource type="Texture2D" uid="uid://d0461duj8pso" path="res://Assets/Characters/Magma/Pawn/Pawn_back.png" id="3_axt2k"]
+[ext_resource type="Texture2D" uid="uid://cpwin5oo6bivh" path="res://Assets/Characters/Magma/Pawn/Teleport/Pawn_teleport1.png" id="4_y33mf"]
+[ext_resource type="Texture2D" uid="uid://br25tp1kj7ked" path="res://Assets/Characters/Magma/Pawn/Teleport/Pawn_teleport2.png" id="5_p4s2m"]
+[ext_resource type="Texture2D" uid="uid://62ts5u0tk7y7" path="res://Assets/Characters/Magma/Pawn/Teleport/Pawn_teleport3.png" id="6_bkhj6"]
+[ext_resource type="Texture2D" uid="uid://lvvl1d5086am" path="res://Assets/Characters/Magma/Pawn/Teleport/Pawn_teleport4.png" id="7_2y5x0"]
+[ext_resource type="Texture2D" uid="uid://dxffjdgyshjqy" path="res://Assets/Characters/Magma/Pawn/Teleport/Pawn_teleport5.png" id="8_0v8ku"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b0rn7"]
 radius = 52.0
@@ -86,6 +91,32 @@ animations = [{
 "name": &"idle",
 "speed": 5.0
 }, {
+"frames": [{
+"duration": 3.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_y33mf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_p4s2m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_bkhj6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2y5x0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0v8ku")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_axt2k")
+}],
+"loop": false,
+"name": &"teleport",
+"speed": 5.0
+}, {
 "frames": [],
 "loop": true,
 "name": &"walk_back",
@@ -123,8 +154,10 @@ libraries = {
 position = Vector2(-5, -96)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_4grr3")
-animation = &"idle"
+animation = &"teleport"
 autoplay = "idle"
+frame = 6
+frame_progress = 1.0
 
 [connection signal="input_event" from="Area2D" to="." method="_on_mouse_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
