@@ -31,6 +31,7 @@ var save_states: Dictionary
 var selected_figure: Figure
 var can_move : bool = true
 
+signal figure_move_done
 signal move_computer
 
 var turn: team:
@@ -197,6 +198,7 @@ func _on_figure_move_done():
 		can_move = true
 	else:
 		turn = team.Black
+		emit_signal("figure_move_done")
 
 func _on_figure_selected(figure):
 	if figure.team == Board.team.Red and can_move:

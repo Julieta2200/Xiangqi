@@ -27,3 +27,10 @@ func show_energy_bar():
 func show_distance_bar():
 	$distances.show()
 	$distances/AnimationPlayer.play("highlight")
+	
+func fill_energy():
+	energy += 5
+
+func fill_distance():
+	distance += 10
+	
