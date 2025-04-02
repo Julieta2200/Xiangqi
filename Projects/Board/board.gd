@@ -164,12 +164,18 @@ func _on_marker_figure_set(marker: Variant) -> void:
 	emit_signal("_set_figure", marker)
 
 func highlight_placeholder_markers(selected_card: FigureCard, distance: int) -> void:
+	var position_markers : Dictionary
 	for i in markers:
-		var highlight = markers[i].free_marker_highlight
+		var highlight = markers[i].position_marker
 		highlight.visible = !palace_positions.has(i) and !state.has(i) and \
 		 i.y <=  distance and in_boundaries(i, selected_card)
-
+		if highlight.visible:
+			position_markers[i] = markers[i]
 	
+	for i in position_markers:
+		position_markers[i].horizontal_line.visible = position_markers.has(Vector2(i.x+1,i.y))
+		position_markers[i].vertical_line.visible = position_markers.has(Vector2(i.x,i.y+1))
+
 func in_boundaries(pos : Vector2, card: FigureCard) -> bool:
 	if card.type == Figure.Types.Elephant:
 		return pos.y <= 4
