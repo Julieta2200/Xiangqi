@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=3 uid="uid://b2isxa0mvvipm"]
 
 [ext_resource type="Script" path="res://Projects/Ui/power_meter.gd" id="1_qudxp"]
-[ext_resource type="Texture2D" uid="uid://bm5kd6ain1i34" path="res://Assets/UI/Energy meter/Energy meter.png" id="2_pdbt4"]
-[ext_resource type="Texture2D" uid="uid://dlbcc700vd0s5" path="res://Assets/UI/Energy meter/Scale.png" id="3_g10c8"]
-[ext_resource type="Texture2D" uid="uid://bl2gcyewe2pj6" path="res://Assets/UI/Distance meter/Distance meter.png" id="4_bw3l7"]
-[ext_resource type="Texture2D" uid="uid://dl6omnbdco400" path="res://Assets/UI/Distance meter/Scale.png" id="5_g65cg"]
+[ext_resource type="Texture2D" uid="uid://d2ulo8xmvkwmb" path="res://Assets/UI/Energy meter/Big size/Energy meter.png" id="2_jhnqh"]
+[ext_resource type="Texture2D" uid="uid://bb6yarprybdp0" path="res://Assets/UI/Energy meter/Big size/Scale.png" id="3_stb25"]
+[ext_resource type="Texture2D" uid="uid://d4cdej73x1rbf" path="res://Assets/UI/Distance meter/Distance meter.png" id="4_c7r33"]
+[ext_resource type="Texture2D" uid="uid://c0frg25l8cccv" path="res://Assets/UI/Distance meter/Scale.png" id="5_lwou7"]
 
 [sub_resource type="Animation" id="Animation_qub6x"]
 length = 0.001
@@ -34,7 +34,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.466667, 0.966667, 1.46667, 1.93333, 2.36667, 2.93333),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(2, 2), Vector2(4, 4), Vector2(2, 2), Vector2(4, 4), Vector2(2, 2), Vector2(4, 4), Vector2(2, 2)]
+"values": [Vector2(1, 1), Vector2(2, 2), Vector2(1, 1), Vector2(2, 2), Vector2(1, 1), Vector2(2, 2), Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qn854"]
@@ -94,9 +94,9 @@ offset_right = 645.0
 offset_bottom = 150.0
 scale = Vector2(3, 3)
 value = 100.0
-texture_under = ExtResource("2_pdbt4")
-texture_progress = ExtResource("3_g10c8")
-texture_progress_offset = Vector2(72, 12)
+texture_under = ExtResource("2_jhnqh")
+texture_progress = ExtResource("3_stb25")
+texture_progress_offset = Vector2(145, 25)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="energy"]
 libraries = {
@@ -110,7 +110,7 @@ offset_left = 300.0
 offset_top = 300.0
 offset_right = 988.0
 offset_bottom = 400.0
-texture = ExtResource("4_bw3l7")
+texture = ExtResource("4_c7r33")
 
 [node name="distance_bars" type="HBoxContainer" parent="distances"]
 layout_mode = 1
@@ -131,61 +131,61 @@ theme_override_constants/separation = 12
 visible = false
 custom_minimum_size = Vector2(26, 58)
 layout_mode = 2
-texture = ExtResource("5_g65cg")
+texture = ExtResource("5_lwou7")
 
 [node name="distance2" type="TextureRect" parent="distances/distance_bars"]
 visible = false
 custom_minimum_size = Vector2(26, 58)
 layout_mode = 2
-texture = ExtResource("5_g65cg")
+texture = ExtResource("5_lwou7")
 
 [node name="distance3" type="TextureRect" parent="distances/distance_bars"]
 visible = false
 custom_minimum_size = Vector2(26, 58)
 layout_mode = 2
-texture = ExtResource("5_g65cg")
+texture = ExtResource("5_lwou7")
 
 [node name="distance4" type="TextureRect" parent="distances/distance_bars"]
 visible = false
 custom_minimum_size = Vector2(26, 0)
 layout_mode = 2
-texture = ExtResource("5_g65cg")
+texture = ExtResource("5_lwou7")
 
 [node name="distance5" type="TextureRect" parent="distances/distance_bars"]
 visible = false
 custom_minimum_size = Vector2(26, 0)
 layout_mode = 2
-texture = ExtResource("5_g65cg")
+texture = ExtResource("5_lwou7")
 
 [node name="distance6" type="TextureRect" parent="distances/distance_bars"]
 visible = false
 custom_minimum_size = Vector2(26, 0)
 layout_mode = 2
-texture = ExtResource("5_g65cg")
+texture = ExtResource("5_lwou7")
 
 [node name="distance7" type="TextureRect" parent="distances/distance_bars"]
 visible = false
 custom_minimum_size = Vector2(26, 0)
 layout_mode = 2
-texture = ExtResource("5_g65cg")
+texture = ExtResource("5_lwou7")
 
 [node name="distance8" type="TextureRect" parent="distances/distance_bars"]
 visible = false
 custom_minimum_size = Vector2(26, 0)
 layout_mode = 2
-texture = ExtResource("5_g65cg")
+texture = ExtResource("5_lwou7")
 
 [node name="distance9" type="TextureRect" parent="distances/distance_bars"]
 visible = false
 custom_minimum_size = Vector2(26, 0)
 layout_mode = 2
-texture = ExtResource("5_g65cg")
+texture = ExtResource("5_lwou7")
 
 [node name="distance10" type="TextureRect" parent="distances/distance_bars"]
 visible = false
 custom_minimum_size = Vector2(26, 0)
 layout_mode = 2
-texture = ExtResource("5_g65cg")
+texture = ExtResource("5_lwou7")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="distances"]
 root_node = NodePath("../distance_bars")
