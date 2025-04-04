@@ -77,6 +77,7 @@ func initialize_markers():
 			markers[Vector2(j,i)].highlight_end.connect(_on_marker_highlight_end)
 
 func _on_marker_highlight_end():
+	can_move = true
 	for key in markers:
 		markers[key].position_marker_unhighlight()
 
@@ -168,11 +169,12 @@ func _on_marker_figure_set(marker: Variant) -> void:
 	emit_signal("_set_figure", marker)
 
 func highlight_placeholder_markers(selected_card: FigureCard, distance: int) -> void:
+	can_move = false
 	var position_markers : Dictionary
 	for i in markers:
 		var highlight = markers[i].position_marker
 		highlight.visible = !palace_positions.has(i) and !state.has(i) and \
-		 i.y <=  distance and in_boundaries(i, selected_card)
+		 i.y <=  distance and in_boundaries(i, selected_card) 
 		if highlight.visible:
 			position_markers[i] = markers[i]
 	

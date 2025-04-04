@@ -53,12 +53,12 @@ func _on_mouse_event(viewport, event, shape_idx):
 		mouse_can_hover = false
 		
 func _on_area_2d_mouse_entered():
-	if team == board.turn and active and mouse_can_hover:
+	if team == board.turn and active and mouse_can_hover and board.can_move:
 		$hover.show()
 		$hover/AnimationPlayer.play("highlight")
 
 func _on_area_2d_mouse_exited():
-	if team == board.turn and active and mouse_can_hover:
+	if team == board.turn and active and mouse_can_hover and board.can_move:
 		$hover/AnimationPlayer.play("unhighlight")
 
 func hover_unhighlight():
