@@ -79,7 +79,8 @@ func initialize_markers():
 func _on_marker_highlight_end():
 	can_move = true
 	for key in markers:
-		markers[key].position_marker_unhighlight()
+		if markers[key].position_marker.visible:
+			markers[key].position_marker_unhighlight()
 
 func create_state(new_state: Dictionary) -> void:
 	delete_figures()
@@ -202,8 +203,9 @@ func set_figure(type: Figure.Types, board_position: Vector2, group: String = "Ma
 	state[marker.board_position] = figure
 	calculate_moves()
 	unhighlight_markers()
-	if figure.type == Figure.Types.Soldier and figure.team == team.Red:
+	if figure.type == Figure.Types.Soldier:
 		figure.teleport()
+		marker.position_marker_light(group)
 	figure.figure_selected.connect(_on_figure_selected)
 
 func _on_figure_move_done():

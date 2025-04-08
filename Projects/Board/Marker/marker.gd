@@ -18,8 +18,7 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 			emit_signal("figure_move",self)
 		elif position_marker.visible:
 			emit_signal("figure_set",self)
-			position_marker_light()
-			
+
 
 func highlight(busy: bool = false):
 	if !busy:
@@ -30,6 +29,7 @@ func highlight(busy: bool = false):
 func unhighlight():
 	$marker.hide()
 	$capture_marker.hide()
+	position_marker.stop()
 
 func _on_area_2d_mouse_entered() -> void:
 	$marker/highlight.visible = $marker.visible
@@ -44,22 +44,26 @@ func _on_area_2d_mouse_exited() -> void:
 
 func position_marker_unhighlight():
 	var tween = create_tween()
-	tween.tween_property($position_marker, "modulate:a", 0.0, 1) 
+	tween.tween_property(position_marker, "modulate:a", 0.0, 1) 
 	tween.finished.connect(_hide_position_marker)
 
 func _hide_position_marker():
 	for i in position_marker.get_children():
 		i.call_deferred("hide")
 	position_marker.call_deferred("hide")
+	position_marker.animation = "highlight"
 	position_marker.modulate = Color(1, 1, 1, 1)
 	can_click = true
 
-func position_marker_light():
+func position_marker_light(group):
+	if group != "Magma":
+		position_marker.show()
 	can_click = false
-	$position_marker.play("hover")
+	position_marker.play(group + "_hover")
 	$position_marker/light.show()
-	$position_marker/light.play("light")
+	$position_marker/light.play(group + "_light")
 	
 func _on_light_animation_finished() -> void:
 	emit_signal("highlight_end")
 	$position_marker/light.call_deferred("hide")
+	
