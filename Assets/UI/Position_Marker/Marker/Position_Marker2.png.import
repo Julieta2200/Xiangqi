@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlbcc700vd0s5"
-path="res://.godot/imported/Scale.png-f3d0ec59d500aca8ac6223feeb527637.ctex"
+uid="uid://c4jv0gg7rthvq"
+path="res://.godot/imported/Position_Marker2.png-257256a544381c26ec04391a495bedea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Energy meter/Scale.png"
-dest_files=["res://.godot/imported/Scale.png-f3d0ec59d500aca8ac6223feeb527637.ctex"]
+source_file="res://Assets/UI/Position_Marker/Marker/Position_Marker2.png"
+dest_files=["res://.godot/imported/Position_Marker2.png-257256a544381c26ec04391a495bedea.ctex"]
 
 [params]
 

@@ -1,14 +1,86 @@
-[gd_scene load_steps=12 format=3 uid="uid://cegecfb7pey2p"]
+[gd_scene load_steps=16 format=3 uid="uid://cegecfb7pey2p"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Scripts/soldier.gd" id="1_m0gdh"]
 [ext_resource type="Texture2D" uid="uid://crijqi2iagwfg" path="res://Assets/Characters/Cloud/Pawn/Pawn_front.png" id="2_xr6g5"]
 [ext_resource type="Texture2D" uid="uid://byxtegagp0qw6" path="res://Assets/Characters/Cloud/Pawn/animation/Run1.png" id="3_2fc62"]
-[ext_resource type="Texture2D" uid="uid://bh7qd5bwgot0t" path="res://Assets/tmp/highlight.png" id="3_p8hgb"]
 [ext_resource type="Texture2D" uid="uid://cv31hl7rny8pw" path="res://Assets/Characters/Cloud/Pawn/animation/Run2.png" id="4_llxso"]
 [ext_resource type="Texture2D" uid="uid://cl6it3n7lin32" path="res://Assets/Characters/Cloud/Pawn/animation/Run3.png" id="5_tdrd7"]
 [ext_resource type="Texture2D" uid="uid://jxowyyxncue3" path="res://Assets/Characters/Cloud/Pawn/animation/Run4.png" id="6_2xfse"]
 [ext_resource type="Texture2D" uid="uid://drnj5xba60jnt" path="res://Assets/Characters/Cloud/Pawn/animation/Run5.png" id="7_6l1oe"]
 [ext_resource type="Texture2D" uid="uid://cwlcwnfxefmd0" path="res://Assets/Characters/Cloud/Pawn/animation/Run6.png" id="8_n4mgi"]
+[ext_resource type="Texture2D" uid="uid://b1cl82c7g2uml" path="res://Assets/UI/Character_HoverEffect/Hover.png" id="9_yodn4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c14xl"]
+radius = 55.0
+height = 214.0
+
+[sub_resource type="Animation" id="Animation_ga1vd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hover:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7amq3"]
+resource_name = "highlight"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hover:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(2, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_b7a8d"]
+resource_name = "unhighlight"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hover:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(1, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.466667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"hover_unhighlight"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ftarj"]
+_data = {
+"RESET": SubResource("Animation_ga1vd"),
+"highlight": SubResource("Animation_7amq3"),
+"unhighlight": SubResource("Animation_b7a8d")
+}
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_loiyf"]
 animations = [{
@@ -49,21 +121,10 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c14xl"]
-radius = 55.0
-height = 214.0
-
 [node name="Soldier" type="Node2D"]
 script = ExtResource("1_m0gdh")
 type = 2
 speed = 1.5
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-5, -96)
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_loiyf")
-animation = &"idle"
-autoplay = "idle"
 
 [node name="Area2D" type="Area2D" parent="."]
 visible = false
@@ -72,10 +133,22 @@ visible = false
 position = Vector2(0, -88)
 shape = SubResource("CapsuleShape2D_c14xl")
 
-[node name="mouse_entered_highlight" type="Sprite2D" parent="."]
+[node name="hover" type="Sprite2D" parent="."]
 visible = false
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_p8hgb")
+texture = ExtResource("9_yodn4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="hover"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_ftarj")
+}
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-5, -96)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_loiyf")
+animation = &"idle"
+autoplay = "idle"
 
 [connection signal="input_event" from="Area2D" to="." method="_on_mouse_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]

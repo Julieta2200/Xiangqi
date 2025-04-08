@@ -31,6 +31,7 @@ var save_states: Dictionary
 var selected_figure: Figure
 var can_move : bool = true
 
+signal figure_move_done
 signal move_computer
 
 var turn: team:
@@ -73,7 +74,12 @@ func initialize_markers():
 		for j in range(board_cols):
 			markers[Vector2(j,i)] = $Markers.get_child(i).get_child(j)
 			markers[Vector2(j,i)].board_position = Vector2(j,i)
+			markers[Vector2(j,i)].highlight_end.connect(_on_marker_highlight_end)
 
+func _on_marker_highlight_end():
+	can_move = true
+	for key in markers:
+		markers[key].position_marker_unhighlight()
 
 func create_state(new_state: Dictionary) -> void:
 	delete_figures()
@@ -152,6 +158,7 @@ func get_figures_by_team(t: team) -> Array[Figure]:
 
 func _on_marker_figure_move(marker: Variant) -> void:
 	unhighlight_markers()
+	selected_figure.hover_unhighlight()
 	if state.has(marker.board_position):
 		state[marker.board_position].delete()
 	selected_figure.move(marker)
@@ -162,12 +169,19 @@ func _on_marker_figure_set(marker: Variant) -> void:
 	emit_signal("_set_figure", marker)
 
 func highlight_placeholder_markers(selected_card: FigureCard, distance: int) -> void:
+	can_move = false
+	var position_markers : Dictionary
 	for i in markers:
-		var highlight = markers[i].free_marker_highlight
+		var highlight = markers[i].position_marker
 		highlight.visible = !palace_positions.has(i) and !state.has(i) and \
-		 i.y <=  distance and in_boundaries(i, selected_card)
-
+		 i.y <=  distance and in_boundaries(i, selected_card) 
+		if highlight.visible:
+			position_markers[i] = markers[i]
 	
+	for i in position_markers:
+		position_markers[i].horizontal_line.visible = position_markers.has(Vector2(i.x+1,i.y))
+		position_markers[i].vertical_line.visible = position_markers.has(Vector2(i.x,i.y+1))
+
 func in_boundaries(pos : Vector2, card: FigureCard) -> bool:
 	if card.type == Figure.Types.Elephant:
 		return pos.y <= 4
@@ -188,6 +202,8 @@ func set_figure(type: Figure.Types, board_position: Vector2, group: String = "Ma
 	state[marker.board_position] = figure
 	calculate_moves()
 	unhighlight_markers()
+	if figure.type == Figure.Types.Soldier and figure.team == team.Red:
+		figure.teleport()
 	figure.figure_selected.connect(_on_figure_selected)
 
 func _on_figure_move_done():
@@ -196,16 +212,16 @@ func _on_figure_move_done():
 		can_move = true
 	else:
 		turn = team.Black
+		emit_signal("figure_move_done")
 
 func _on_figure_selected(figure):
 	if figure.team == Board.team.Red and can_move:
 		if selected_figure != null:
 			selected_figure.delete_highlight()
+			markers[selected_figure.board_position].unhighlight()
 		selected_figure = figure
 		selected_figure.highlight_moves()
-		markers[selected_figure.board_position].selected_highlight()
 	
-
 func reset(move: int) -> void:
 	delete_figures()
 	unhighlight_markers()

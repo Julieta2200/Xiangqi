@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqlt4mnnhjq6q"
-path="res://.godot/imported/Dialog_panel.png-d36114e78039d438e0e826946cfc0983.ctex"
+uid="uid://bgjsmwks2e8qw"
+path="res://.godot/imported/Position_Marker4.png-8263f2174135ed632fbe2706b2f618eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Dialog panel/Dialog_panel.png"
-dest_files=["res://.godot/imported/Dialog_panel.png-d36114e78039d438e0e826946cfc0983.ctex"]
+source_file="res://Assets/UI/Position_Marker/Marker/Position_Marker4.png"
+dest_files=["res://.godot/imported/Position_Marker4.png-8263f2174135ed632fbe2706b2f618eb.ctex"]
 
 [params]
 
