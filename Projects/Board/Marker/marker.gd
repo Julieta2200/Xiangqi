@@ -2,9 +2,9 @@ class_name BoardMarker extends Node2D
 
 var board_position: Vector2
 @onready var position_marker: AnimatedSprite2D = $position_marker
+@onready var walking_marker: Sprite2D = $walking_marker
 @onready var horizontal_line: Sprite2D = $position_marker/horizontal_line
 @onready var vertical_line: Sprite2D = $position_marker/vertical_line
-
 
 signal figure_move(marker)
 signal figure_set(marker)
@@ -14,7 +14,7 @@ var can_click: bool = true
 
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	if Input.is_action_pressed("click") and can_click:
-		if $marker.visible or $capture_marker.visible:
+		if walking_marker.visible:
 			emit_signal("figure_move",self)
 		elif position_marker.visible:
 			emit_signal("figure_set",self)
@@ -22,24 +22,22 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 
 func highlight(busy: bool = false):
 	if !busy:
-		$marker.show()
+		$walking_marker/highlight.play("highlight")
 	else:
-		$capture_marker.show()
-
+		$walking_marker/highlight.play("capture_highlight")
+	walking_marker.show()
+		
 func unhighlight():
-	$marker.hide()
-	$capture_marker.hide()
+	$walking_marker.hide()
 	position_marker.stop()
 
 func _on_area_2d_mouse_entered() -> void:
-	$marker/highlight.visible = $marker.visible
-	$capture_marker/highlight.visible = $capture_marker.visible
+	$walking_marker/highlight.visible = $walking_marker.visible
 	if can_click:
 		position_marker.play("highlight")
 
 func _on_area_2d_mouse_exited() -> void:
-	$marker/highlight.hide()
-	$capture_marker/highlight.hide()
+	$walking_marker/highlight.hide()
 	position_marker.stop()
 
 func position_marker_unhighlight():

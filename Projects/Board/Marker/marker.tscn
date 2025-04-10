@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dlkpgwakp3ub7"]
+[gd_scene load_steps=34 format=3 uid="uid://dlkpgwakp3ub7"]
 
 [ext_resource type="Script" path="res://Projects/Board/Marker/marker.gd" id="1_y3i0m"]
 [ext_resource type="Texture2D" uid="uid://dia2v0yg34v87" path="res://Assets/UI/Markers/Step Icon/icon.png" id="2_r8c08"]
@@ -34,33 +34,26 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_tltih")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_bnpjt")
-}],
-"loop": true,
-"name": &"default",
-"speed": 3.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ad43u"]
-animations = [{
-"frames": [{
-"duration": 1.0,
 "texture": ExtResource("2_s7g8i")
 }, {
 "duration": 1.0,
 "texture": ExtResource("7_ulkbh")
 }],
 "loop": true,
-"name": &"default",
+"name": &"capture_highlight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_tltih")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bnpjt")
+}],
+"loop": true,
+"name": &"highlight",
 "speed": 3.0
 }]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vg2kh"]
-radius = 46.0
-height = 92.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_06k7y"]
 animations = [{
@@ -204,47 +197,26 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vg2kh"]
+radius = 46.0
+height = 92.0
+
 [node name="Marker" type="Node2D"]
 visibility_layer = 17
 script = ExtResource("1_y3i0m")
 
-[node name="selected_highlight" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(-1, -3)
-scale = Vector2(2, 2)
-texture = ExtResource("2_r8c08")
-
-[node name="marker" type="Sprite2D" parent="."]
+[node name="walking_marker" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(-1, -5)
 scale = Vector2(2, 2)
 texture = ExtResource("2_r8c08")
 
-[node name="highlight" type="AnimatedSprite2D" parent="marker"]
+[node name="highlight" type="AnimatedSprite2D" parent="walking_marker"]
 visible = false
 position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_o72yf")
-autoplay = "default"
-
-[node name="capture_marker" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(-1, -5)
-scale = Vector2(2, 2)
-texture = ExtResource("2_r8c08")
-
-[node name="highlight" type="AnimatedSprite2D" parent="capture_marker"]
-visible = false
-position = Vector2(0, -13)
-sprite_frames = SubResource("SpriteFrames_ad43u")
-autoplay = "default"
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-visible = false
-top_level = true
-z_index = 1
-shape = SubResource("CapsuleShape2D_vg2kh")
+animation = &"capture_highlight"
+autoplay = "highlight"
 
 [node name="position_marker" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -268,7 +240,15 @@ position = Vector2(0, -62)
 sprite_frames = SubResource("SpriteFrames_l6ttu")
 animation = &"Magma_light"
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+top_level = true
+z_index = 1
+shape = SubResource("CapsuleShape2D_vg2kh")
+
+[connection signal="animation_finished" from="position_marker/light" to="." method="_on_light_animation_finished"]
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
-[connection signal="animation_finished" from="position_marker/light" to="." method="_on_light_animation_finished"]
