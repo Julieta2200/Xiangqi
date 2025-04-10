@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Projects/Figure/Scripts/general.gd" id="1_1dijv"]
 [ext_resource type="Texture2D" uid="uid://b1cl82c7g2uml" path="res://Assets/UI/Character_HoverEffect/Hover.png" id="3_dau8b"]
-[ext_resource type="Texture2D" uid="uid://dssntqxhb3p7w" path="res://Assets/Characters/Magma/General/Ashes_front.png" id="3_yl2ch"]
+[ext_resource type="Texture2D" uid="uid://d0clgg3j7ypr6" path="res://Assets/Characters/Cloud/General/General_front.png" id="3_wvb2q"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w2yev"]
 radius = 56.0
@@ -80,7 +80,7 @@ _data = {
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_yl2ch")
+"texture": ExtResource("3_wvb2q")
 }],
 "loop": false,
 "name": &"idle",
@@ -118,7 +118,6 @@ libraries = {
 }
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-modulate = Color(1, 0.13, 0.13, 1)
 position = Vector2(0, -96)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_3eu8p")

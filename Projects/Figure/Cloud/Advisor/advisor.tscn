@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://m7feffsuvksg"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Scripts/advisor.gd" id="1_uw3sb"]
+[ext_resource type="Texture2D" uid="uid://dqr3qtxdokohu" path="res://Assets/Characters/Cloud/Advisor/Advisor_Front.png" id="3_34e0g"]
 [ext_resource type="Texture2D" uid="uid://b1cl82c7g2uml" path="res://Assets/UI/Character_HoverEffect/Hover.png" id="3_xfnmb"]
-[ext_resource type="Texture2D" uid="uid://c3o3016kelswk" path="res://Assets/Characters/Magma/Advisor/Advisor_front.png" id="4_e8cds"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tgjc2"]
 radius = 64.0
@@ -80,7 +80,7 @@ _data = {
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_e8cds")
+"texture": ExtResource("3_34e0g")
 }],
 "loop": false,
 "name": &"idle",
@@ -123,6 +123,7 @@ position = Vector2(-5, -96)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_a83ps")
 animation = &"idle"
+autoplay = "idle"
 
 [connection signal="input_event" from="Area2D" to="." method="_on_mouse_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]

@@ -167,7 +167,7 @@ libraries = {
 position = Vector2(-2, -96)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_4grr3")
-animation = &"teleport"
+animation = &"idle"
 autoplay = "idle"
 
 [connection signal="input_event" from="Area2D" to="." method="_on_mouse_event"]
