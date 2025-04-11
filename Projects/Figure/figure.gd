@@ -101,10 +101,15 @@ func finished_move():
 	emit_signal("move_done")
 
 func animation(old_pos: Vector2, new_pos: Vector2)-> void:
-	if (old_pos - new_pos).y < 0:
+	var direction = new_pos - old_pos
+	if direction.y > 0:
 		$AnimatedSprite2D.play("walk_back")
-	else:
+	elif direction.y < 0:
 		$AnimatedSprite2D.play("walk_front")
+	elif direction.x > 0:
+		$AnimatedSprite2D.play("walk_right")
+	else:
+		$AnimatedSprite2D.play("walk_left")
 
 func teleport():
 	animated_sprite.play("teleport")
