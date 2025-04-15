@@ -172,7 +172,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_back",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -195,7 +195,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_front",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -215,7 +215,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_left",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -235,7 +235,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_right",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [node name="Soldier" type="Node2D"]
@@ -265,7 +265,7 @@ libraries = {
 position = Vector2(-2, -96)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_4grr3")
-animation = &"walk_front"
+animation = &"idle"
 autoplay = "idle"
 
 [connection signal="input_event" from="Area2D" to="." method="_on_mouse_event"]
