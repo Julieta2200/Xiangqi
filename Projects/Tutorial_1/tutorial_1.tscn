@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cu6q2d1er80kx"]
+[gd_scene load_steps=14 format=3 uid="uid://cu6q2d1er80kx"]
 
 [ext_resource type="Script" path="res://Projects/Tutorial_1/tutorial_1.gd" id="1_k16b7"]
 [ext_resource type="Texture2D" uid="uid://dtrlw2ivmev3l" path="res://Assets/backgrounds/cloud/background.png" id="2_5vt6c"]
@@ -103,14 +103,43 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
-"method": &"soldier_spawn"
+"method": &"enemy_spawn_animation"
 }]
+}
+
+[sub_resource type="Animation" id="Animation_helgw"]
+resource_name = "summon_advisor"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1085, 1141), Vector2(1080, 1864)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.275, 2.275)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qg78v"]
 _data = {
 "RESET": SubResource("Animation_gia07"),
-"enemy_spawn": SubResource("Animation_stft7")
+"enemy_spawn": SubResource("Animation_stft7"),
+"summon_advisor": SubResource("Animation_helgw")
 }
 
 [node name="Tutorial_1" type="Node2D"]

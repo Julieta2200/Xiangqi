@@ -22,6 +22,7 @@ var initial_state = {
 	}
 
 var first_time: bool = true
+var pawn_capture : bool = true
 
 func _ready():
 	camera_zoom()
@@ -44,13 +45,17 @@ func look_out():
 	%Dialog.appear(texts)
 	$Camera/AnimationPlayer.play("enemy_spawn")
 
-func soldier_spawn():
-	%Board.set_figure(Figure.Types.Soldier, Vector2(4,7), "Cloud", Board.team.Black)
-	var texts: Array[TextBlock] 
-	texts = [TextBlock.new("Don’t go any further!!!","Pawn", "Sprite")]
-	%Dialog.appear(texts,spawn_garrison)
+func enemy_spawn_animation():
+	soldier_spawn(Vector2(4,7), "Don’t go any further!!!", spawn_garrison)
+	$tutorial_engine.pos = Vector2(4,7)
 	await get_tree().create_timer(3).timeout
 	$Camera/AnimationPlayer.play("RESET")
+
+func soldier_spawn(pos: Vector2, text: String, function: Callable = func():):
+	%Board.set_figure(Figure.Types.Soldier, pos, "Cloud", Board.team.Black)
+	var texts: Array[TextBlock] 
+	texts = [TextBlock.new(text,"Pawn", "Sprite")]
+	%Dialog.appear(texts,function)
 
 func spawn_garrison():
 	var texts: Array[TextBlock] 
@@ -106,18 +111,35 @@ func check_status():
 		return
 		
 	if enemy_soldier.size() == 0:
-		var texts: Array[TextBlock] = [TextBlock.new("You won, that's it for today :) ","Advisor", "Sprite")]
+		var texts: Array[TextBlock] = [TextBlock.new( "You won, that's it for today :) ","Advisor", "Sprite")]
 		%Dialog.appear(texts)
+		if pawn_capture:
+			new_soldier_spawn()
+			pawn_capture = false
+		else:
+			advisor_move()
 		return
 	
 	if soldier[0].board_position.y > enemy_soldier[0].board_position.y:
-		var texts: Array[TextBlock] = [TextBlock.new("You let the enemy pawn to pass our guard…","Advisor", "Sprite")]
+		var texts: Array[TextBlock]
+		if !pawn_capture:
+			if enemy_soldier[0].board_position.y <= 1:
+				texts = [TextBlock.new("The pawn can no longer capture an enemy soldier.","Advisor", "Sprite")]
+				%Dialog.appear(texts,reset)
+				return
+			if soldier.size() == 1:
+				texts = [TextBlock.new("You let the enemy pawn to pass our guard…","Advisor", "Sprite"),
+						TextBlock.new("But you can put another soldier","Advisor", "Sprite")]
+				%Dialog.appear(texts)
+				return
+		texts = [TextBlock.new("You let the enemy pawn to pass our guard…","Advisor", "Sprite")]
 		%Dialog.appear(texts,reset)
 		return
 
 
 func reset():
 	var texts: Array[TextBlock] = [TextBlock.new("Please, try again.","Advisor", "Sprite")]
+	$tutorial_engine.pos = Vector2(4,7)
 	%Dialog.appear(texts)
 	var new_state: Dictionary = initial_state.duplicate()
 	new_state[Vector2(4,7)] = {
@@ -128,6 +150,26 @@ func reset():
 	%Board.create_state(new_state)
 	%PowerMeter.energy += FigureCard.figure_energies[Figure.Types.Soldier] 
 	%PowerMeter.reset()
+
+func new_soldier_spawn():
+	await get_tree().create_timer(2).timeout
+	soldier_spawn(Vector2(2,5), "But the enemy has placed another pawn, so take that pawn too.")
+	await get_tree().create_timer(3).timeout
+	%Board.turn = Board.team.Red
+	$tutorial_engine.pos = Vector2(2,5)
+	
+func advisor_move():
+	%Board.turn = Board.team.Red
+	%Board.can_move = true
+	$Camera/AnimationPlayer.play("summon_advisor")
+	var texts: Array[TextBlock] 
+	texts = [TextBlock.new("You can move the advisor.","Advisor", "Sprite"),
+			TextBlock.new("Click on a advisor to see all possible moves.","Advisor", "Sprite"),
+			TextBlock.new("Advisors move diagonally, within the palace.","Advisor", "Sprite")]
+	%Dialog.appear(texts)
+	var advisors = %Board.get_figures(Board.team.Red, Figure.Types.Advisor)
+	for i in advisors:
+		i.active = true
 	
 
 func _on_board_move_computer() -> void:
