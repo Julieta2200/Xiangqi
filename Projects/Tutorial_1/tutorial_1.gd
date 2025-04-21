@@ -23,6 +23,7 @@ var initial_state = {
 
 var first_time: bool = true
 var part: int = 1
+var part_start_point : int
 
 func _ready():
 	camera_zoom()
@@ -99,7 +100,6 @@ func move_and_capture_enemy() -> void:
 
 
 func part_2_capture_enemy() -> void:
-	%Board.move_number = 0
 	var texts: Array[TextBlock] 
 	texts = [TextBlock.new("The enemy has placed another pawn.","Advisor", "Sprite"),
 			TextBlock.new("Capture the enemy pawn too.","Advisor", "Sprite")]
@@ -127,6 +127,7 @@ func check_status():
 			if enemy_soldier.size() == 0:
 				var texts: Array[TextBlock] = [TextBlock.new("Great Job!","Advisor", "Sprite")]
 				%Dialog.appear(texts,part_2_soldier_spawn)
+				part_start_point = %Board.move_number
 				part += 1
 				return
 			
@@ -139,7 +140,7 @@ func check_status():
 			var enemy_soldier = %Board.get_figures(Board.team.Black, Figure.Types.Soldier)
 			if enemy_soldier.size() == 0:
 				var texts: Array[TextBlock] = [TextBlock.new("Great Job!","Advisor", "Sprite")]
-				%Dialog.appear(texts,)
+				%Dialog.appear(texts)
 				part += 1
 				return
 			match soldier.size():
@@ -162,18 +163,7 @@ func check_status():
 func reset_part_2():
 	var texts: Array[TextBlock] = [TextBlock.new("Please, try again.","Advisor", "Sprite")]
 	%Dialog.appear(texts)
-	var new_state: Dictionary = initial_state.duplicate()
-	new_state[Vector2(4,5)] = {
-			"type": Figure.Types.Soldier,
-			"team": Board.team.Red,
-			"group": "Magma"
-			}
-	new_state[Vector2(2,5)] = {
-			"type": Figure.Types.Soldier,
-			"team": Board.team.Black,
-			"group": "Cloud"
-			}
-	%Board.create_state(new_state)
+	%Board.load_move(part_start_point)
 	%PowerMeter.energy += 2 * FigureCard.figure_energies[Figure.Types.Soldier] 
 	%PowerMeter.reset()
 
@@ -185,7 +175,7 @@ func reset_part_1():
 		"type": Figure.Types.Soldier,
 		"team": Board.team.Black,
 		"group": "Cloud"
-	}
+	} 
 	%Board.create_state(new_state)
 	%PowerMeter.energy += FigureCard.figure_energies[Figure.Types.Soldier] 
 	%PowerMeter.reset()
