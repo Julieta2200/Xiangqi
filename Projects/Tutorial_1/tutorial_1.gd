@@ -98,6 +98,22 @@ func move_and_capture_enemy() -> void:
 	first_time = false
 
 
+func part_2_capture_enemy() -> void:
+	%Board.move_number = 0
+	var texts: Array[TextBlock] 
+	texts = [TextBlock.new("The enemy has placed another pawn.","Advisor", "Sprite"),
+			TextBlock.new("Capture the enemy pawn too.","Advisor", "Sprite")]
+	%Dialog.appear(texts)
+
+func part_2_soldier_spawn():
+	%Board.set_figure(Figure.Types.Soldier, Vector2(2,6), "Cloud", Board.team.Black, false, true)
+	var texts: Array[TextBlock] 
+	texts = [TextBlock.new("Don’t go!","Pawn", "Sprite")]
+	%Dialog.appear(texts,part_2_capture_enemy)
+	await get_tree().create_timer(3).timeout
+	%Board.computer_move(Vector2(2,6), Vector2(2,5))
+
+
 func check_status():
 	match part:
 		1:
@@ -110,7 +126,7 @@ func check_status():
 				
 			if enemy_soldier.size() == 0:
 				var texts: Array[TextBlock] = [TextBlock.new("Great Job!","Advisor", "Sprite")]
-				%Dialog.appear(texts)
+				%Dialog.appear(texts,part_2_soldier_spawn)
 				part += 1
 				return
 			
@@ -118,7 +134,48 @@ func check_status():
 				var texts: Array[TextBlock] = [TextBlock.new("You let the enemy pawn to pass our guard…","Advisor", "Sprite")]
 				%Dialog.appear(texts,reset_part_1)
 				return
-
+		2:
+			var soldier = %Board.get_figures(Board.team.Red, Figure.Types.Soldier)
+			var enemy_soldier = %Board.get_figures(Board.team.Black, Figure.Types.Soldier)
+			if enemy_soldier.size() == 0:
+				var texts: Array[TextBlock] = [TextBlock.new("Great Job!","Advisor", "Sprite")]
+				%Dialog.appear(texts,)
+				part += 1
+				return
+			match soldier.size():
+				1:
+					if soldier[0].board_position.y > enemy_soldier[0].board_position.y:
+						var texts: Array[TextBlock] = [TextBlock.new("You let the enemy pawn to destroy our guard, add another soldier","Advisor", "Sprite")]
+						%Dialog.appear(texts)
+						return
+				2:
+					if soldier[1].board_position.y > enemy_soldier[0].board_position.y:
+						var texts: Array[TextBlock] = [TextBlock.new("You let go of the enemy soldier","Advisor", "Sprite")]
+						%Dialog.appear(texts,reset_part_2)
+						return
+			if enemy_soldier[0].board_position.y <= 0:
+				var texts: Array[TextBlock] = [TextBlock.new("Your soldier can no longer capture an enemy.","Advisor", "Sprite")]
+				%Dialog.appear(texts,reset_part_2)
+				return
+		
+		
+func reset_part_2():
+	var texts: Array[TextBlock] = [TextBlock.new("Please, try again.","Advisor", "Sprite")]
+	%Dialog.appear(texts)
+	var new_state: Dictionary = initial_state.duplicate()
+	new_state[Vector2(4,5)] = {
+			"type": Figure.Types.Soldier,
+			"team": Board.team.Red,
+			"group": "Magma"
+			}
+	new_state[Vector2(2,5)] = {
+			"type": Figure.Types.Soldier,
+			"team": Board.team.Black,
+			"group": "Cloud"
+			}
+	%Board.create_state(new_state)
+	%PowerMeter.energy += 2 * FigureCard.figure_energies[Figure.Types.Soldier] 
+	%PowerMeter.reset()
 
 func reset_part_1():
 	var texts: Array[TextBlock] = [TextBlock.new("Please, try again.","Advisor", "Sprite")]
