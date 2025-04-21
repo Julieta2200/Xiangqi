@@ -47,8 +47,8 @@ func position_marker_unhighlight():
 
 func _hide_position_marker():
 	for i in position_marker.get_children():
-		i.call_deferred("hide")
-	position_marker.call_deferred("hide")
+		i.hide()
+	position_marker.hide()
 	position_marker.animation = "highlight"
 	position_marker.modulate = Color(1, 1, 1, 1)
 	can_click = true
