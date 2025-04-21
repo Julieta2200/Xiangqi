@@ -9,7 +9,8 @@ func _on_garrison_card_selected(selected_card: FigureCard) -> void:
 
 
 func _on_board_set_figure(marker: BoardMarker) -> void:
-	%Board.set_figure(%Garrison.selected_figure.type, marker.board_position)
+	%Board.set_figure(%Garrison.selected_figure.type,
+	 marker.board_position, "Magma", Board.team.Red, false,  true)
 	%PowerMeter.energy -= %Garrison.selected_figure.energy
 	%Garrison.remove_figure()
 	%PowerMeter.fill_distance()

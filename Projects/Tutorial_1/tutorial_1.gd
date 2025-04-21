@@ -4,24 +4,25 @@ var initial_state = {
 		Vector2(4, 0): {
 			"type": Figure.Types.General,
 			"team": Board.team.Red,
-			"inactive" : true,
+			"inactive" : false,
 			"group": "Magma"
 		},
 		Vector2(3, 0): {
 			"type": Figure.Types.Advisor,
 			"team": Board.team.Red,
-			"inactive" : true,
+			"inactive" : false,
 			"group": "Magma"
 		},
 		Vector2(5, 0): {
 			"type": Figure.Types.Advisor,
 			"team": Board.team.Red,
-			"inactive" : true,
+			"inactive" : false,
 			"group": "Magma"
 		},
 	}
 
 var first_time: bool = true
+var part: int = 1
 
 func _ready():
 	camera_zoom()
@@ -45,7 +46,7 @@ func look_out():
 	$Camera/AnimationPlayer.play("enemy_spawn")
 
 func soldier_spawn():
-	%Board.set_figure(Figure.Types.Soldier, Vector2(4,7), "Cloud", Board.team.Black)
+	%Board.set_figure(Figure.Types.Soldier, Vector2(4,7), "Cloud", Board.team.Black, false, true)
 	var texts: Array[TextBlock] 
 	texts = [TextBlock.new("Don’t go any further!!!","Pawn", "Sprite")]
 	%Dialog.appear(texts,spawn_garrison)
@@ -98,25 +99,28 @@ func move_and_capture_enemy() -> void:
 
 
 func check_status():
-	var soldier = %Board.get_figures(Board.team.Red, Figure.Types.Soldier)
-	var enemy_soldier = %Board.get_figures(Board.team.Black, Figure.Types.Soldier)
-	if soldier.size() == 0:
-		var texts: Array[TextBlock] = [TextBlock.new("You let the enemy pawn to destroy our guard…","Advisor", "Sprite")]
-		%Dialog.appear(texts,reset)
-		return
-		
-	if enemy_soldier.size() == 0:
-		var texts: Array[TextBlock] = [TextBlock.new("You won, that's it for today :) ","Advisor", "Sprite")]
-		%Dialog.appear(texts)
-		return
-	
-	if soldier[0].board_position.y > enemy_soldier[0].board_position.y:
-		var texts: Array[TextBlock] = [TextBlock.new("You let the enemy pawn to pass our guard…","Advisor", "Sprite")]
-		%Dialog.appear(texts,reset)
-		return
+	match part:
+		1:
+			var soldier = %Board.get_figures(Board.team.Red, Figure.Types.Soldier)
+			var enemy_soldier = %Board.get_figures(Board.team.Black, Figure.Types.Soldier)
+			if soldier.size() == 0:
+				var texts: Array[TextBlock] = [TextBlock.new("You let the enemy pawn to destroy our guard…","Advisor", "Sprite")]
+				%Dialog.appear(texts,reset_part_1)
+				return
+				
+			if enemy_soldier.size() == 0:
+				var texts: Array[TextBlock] = [TextBlock.new("Great Job!","Advisor", "Sprite")]
+				%Dialog.appear(texts)
+				part += 1
+				return
+			
+			if soldier[0].board_position.y > enemy_soldier[0].board_position.y:
+				var texts: Array[TextBlock] = [TextBlock.new("You let the enemy pawn to pass our guard…","Advisor", "Sprite")]
+				%Dialog.appear(texts,reset_part_1)
+				return
 
 
-func reset():
+func reset_part_1():
 	var texts: Array[TextBlock] = [TextBlock.new("Please, try again.","Advisor", "Sprite")]
 	%Dialog.appear(texts)
 	var new_state: Dictionary = initial_state.duplicate()

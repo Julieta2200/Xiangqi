@@ -188,9 +188,9 @@ func in_boundaries(pos : Vector2, card: FigureCard) -> bool:
 		return pos.y <= 4
 	return true
 
-func set_figure(type: Figure.Types, board_position: Vector2, group: String = "Magma", t: team = team.Red, inactive: bool = false) -> void:
+func set_figure(type: Figure.Types, board_position: Vector2, group: String = "Magma", t: team = team.Red, inactive: bool = false, teleport: bool = false) -> void:
 	var figure_scene : String = figure_scenes[type]
-	var marker = markers[board_position]
+	var marker: BoardMarker = markers[board_position]
 	figure_scene = figure_scene.replace("{GROUP}", group)
 	var figure: Figure = load(figure_scene).instantiate()
 	figure.team = t
@@ -203,7 +203,7 @@ func set_figure(type: Figure.Types, board_position: Vector2, group: String = "Ma
 	state[marker.board_position] = figure
 	calculate_moves()
 	unhighlight_markers()
-	if figure.type == Figure.Types.Soldier:
+	if teleport:
 		figure.teleport()
 		marker.position_marker_light(group)
 	figure.figure_selected.connect(_on_figure_selected)
