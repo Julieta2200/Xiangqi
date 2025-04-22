@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq0vsg4p3yw0m"
-path="res://.godot/imported/Ashes_side.png-2b4664746d405af096167b434f046729.ctex"
+uid="uid://6l2eqbqgsj0a"
+path="res://.godot/imported/Left8.png-0e6e4ba8cc94ed00a2500d0a8e20b98c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/Magma/General/Ashes_side.png"
-dest_files=["res://.godot/imported/Ashes_side.png-2b4664746d405af096167b434f046729.ctex"]
+source_file="res://Assets/Characters/Magma/General/Run/Left/With Shadow/Left8.png"
+dest_files=["res://.godot/imported/Left8.png-0e6e4ba8cc94ed00a2500d0a8e20b98c.ctex"]
 
 [params]
 

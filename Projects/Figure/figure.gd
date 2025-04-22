@@ -89,15 +89,15 @@ func delete():
 func move(marker):
 	animation(board_position, marker.board_position)
 	board_position = marker.board_position
-
-	var tween = create_tween()
-	tween.tween_property(self, "position", marker.global_position, 1.0/speed)
 	
+	await get_tree().create_timer(0.5).timeout
+	var tween = create_tween()
+	tween.tween_property(self, "position", marker.global_position, 1.0/speed) 
 	tween.finished.connect(finished_move)
-
+	
+	
 func finished_move():
 	mouse_can_hover = true
-	$AnimatedSprite2D.play("idle")
 	emit_signal("move_done")
 
 func animation(old_pos: Vector2, new_pos: Vector2)-> void:
@@ -113,3 +113,7 @@ func animation(old_pos: Vector2, new_pos: Vector2)-> void:
 
 func teleport():
 	animated_sprite.play("teleport")
+
+
+func _on_figure_animation_finished():
+	$AnimatedSprite2D.play("idle")
