@@ -89,14 +89,16 @@ func delete():
 func move(marker):
 	animation(board_position, marker.board_position)
 	board_position = marker.board_position
-	
-	await get_tree().create_timer(0.5).timeout
+	if type == Types.General:
+		await get_tree().create_timer(0.5).timeout
 	var tween = create_tween()
 	tween.tween_property(self, "position", marker.global_position, 1.0/speed) 
 	tween.finished.connect(finished_move)
 	
 	
 func finished_move():
+	if !(type == Types.General):
+		$AnimatedSprite2D.play("idle")
 	mouse_can_hover = true
 	emit_signal("move_done")
 
