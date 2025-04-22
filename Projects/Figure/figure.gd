@@ -114,6 +114,5 @@ func animation(old_pos: Vector2, new_pos: Vector2)-> void:
 func teleport():
 	animated_sprite.play("teleport")
 
-
 func _on_figure_animation_finished():
 	$AnimatedSprite2D.play("idle")

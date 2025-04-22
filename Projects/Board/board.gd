@@ -85,7 +85,6 @@ func _on_marker_highlight_end():
 func create_state(new_state: Dictionary) -> void:
 	delete_figures()
 	unhighlight_markers()
-	move_number = 0
 	turn = team.Red
 	state = {}
 	for key in new_state:
