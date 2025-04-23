@@ -89,12 +89,13 @@ func delete():
 func move(marker):
 	animation(board_position, marker.board_position)
 	board_position = marker.board_position
-	if type == Types.General:
-		await get_tree().create_timer(0.5).timeout
-	var tween = create_tween()
-	tween.tween_property(self, "position", marker.global_position, 1.0/speed) 
-	tween.finished.connect(finished_move)
 	
+	generate_run_tween(marker.global_position,)
+
+func generate_run_tween(target_pos):
+	var tween = create_tween()
+	tween.tween_property(self, "position", target_pos, 1.0/speed) 
+	tween.finished.connect(finished_move)
 	
 func finished_move():
 	mouse_can_hover = true

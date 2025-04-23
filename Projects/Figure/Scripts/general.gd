@@ -29,3 +29,7 @@ func get_moves(state: Dictionary, current_position: Vector2) -> Array[Vector2]:
 			moves.append(new_pos)
 	
 	return moves
+
+func generate_run_tween(target_pos):
+	await get_tree().create_timer(0.5).timeout
+	super.generate_run_tween(target_pos)
