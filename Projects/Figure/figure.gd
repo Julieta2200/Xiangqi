@@ -97,8 +97,6 @@ func move(marker):
 	
 	
 func finished_move():
-	if !(type == Types.General):
-		$AnimatedSprite2D.play("idle")
 	mouse_can_hover = true
 	emit_signal("move_done")
 
