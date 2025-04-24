@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://gu84kdi4y675"]
+[gd_scene load_steps=39 format=3 uid="uid://gu84kdi4y675"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Scripts/soldier.gd" id="1_3u3jq"]
 [ext_resource type="Texture2D" uid="uid://b1cl82c7g2uml" path="res://Assets/UI/Character_HoverEffect/Hover.png" id="3_3nhkv"]
@@ -21,11 +21,13 @@
 [ext_resource type="Texture2D" uid="uid://cbqm0w2ow2sfs" path="res://Assets/Characters/Magma/Pawn/Run_animation/Front/Run_front5.png" id="19_nr3i7"]
 [ext_resource type="Texture2D" uid="uid://crmq1wtccu2b4" path="res://Assets/Characters/Magma/Pawn/Run_animation/Front/Run_front6.png" id="20_ocmb3"]
 [ext_resource type="Texture2D" uid="uid://dx0mw2eg1qlsf" path="res://Assets/Characters/Magma/Pawn/Run_animation/Left Side/Run_LeftSide1.png" id="21_er5yl"]
+[ext_resource type="Texture2D" uid="uid://chsod1lfk1a6" path="res://Assets/Characters/Magma/Pawn/Run_animation/Left Side/left.png" id="21_i5cpp"]
 [ext_resource type="Texture2D" uid="uid://dklrgpjhj1e1v" path="res://Assets/Characters/Magma/Pawn/Run_animation/Left Side/Run_LeftSide2.png" id="22_xx50m"]
 [ext_resource type="Texture2D" uid="uid://2tbxigoawctp" path="res://Assets/Characters/Magma/Pawn/Run_animation/Left Side/Run_LeftSide3.png" id="23_26juy"]
 [ext_resource type="Texture2D" uid="uid://bym5q80nrnprd" path="res://Assets/Characters/Magma/Pawn/Run_animation/Left Side/Run_LeftSide4.png" id="24_a55hf"]
 [ext_resource type="Texture2D" uid="uid://bggf8lvtnuauw" path="res://Assets/Characters/Magma/Pawn/Run_animation/Left Side/Run_LeftSide5.png" id="25_4kqbl"]
 [ext_resource type="Texture2D" uid="uid://dmo55nceqxxe6" path="res://Assets/Characters/Magma/Pawn/Run_animation/Right Side/Run_RightSide1.png" id="26_7mtyt"]
+[ext_resource type="Texture2D" uid="uid://bq7alr74oo58k" path="res://Assets/Characters/Magma/Pawn/Run_animation/Right Side/right.png" id="27_4kr73"]
 [ext_resource type="Texture2D" uid="uid://buf2orrtc1tqb" path="res://Assets/Characters/Magma/Pawn/Run_animation/Right Side/Run_RightSide2.png" id="27_q710y"]
 [ext_resource type="Texture2D" uid="uid://cixpcf85n2ip2" path="res://Assets/Characters/Magma/Pawn/Run_animation/Right Side/Run_RightSide3.png" id="28_6jfdm"]
 [ext_resource type="Texture2D" uid="uid://bm3w784esot7u" path="res://Assets/Characters/Magma/Pawn/Run_animation/Right Side/Run_RightSide4.png" id="29_v05wt"]
@@ -170,11 +172,14 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("14_7g1y2")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk_back",
-"speed": 10.0
+"speed": 8.0
 }, {
 "frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_4kr73")
+}, {
 "duration": 1.0,
 "texture": ExtResource("15_gxx8u")
 }, {
@@ -192,12 +197,18 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("20_ocmb3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_4kr73")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk_front",
-"speed": 10.0
+"speed": 8.0
 }, {
 "frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_i5cpp")
+}, {
 "duration": 1.0,
 "texture": ExtResource("21_er5yl")
 }, {
@@ -212,12 +223,18 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("25_4kqbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_i5cpp")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk_left",
-"speed": 10.0
+"speed": 9.0
 }, {
 "frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_4kr73")
+}, {
 "duration": 1.0,
 "texture": ExtResource("26_7mtyt")
 }, {
@@ -231,11 +248,14 @@ animations = [{
 "texture": ExtResource("29_v05wt")
 }, {
 "duration": 1.0,
+"texture": ExtResource("27_4kr73")
+}, {
+"duration": 1.0,
 "texture": ExtResource("30_2dpfi")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk_right",
-"speed": 10.0
+"speed": 9.0
 }]
 
 [node name="Soldier" type="Node2D"]
@@ -265,9 +285,11 @@ libraries = {
 position = Vector2(-2, -96)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_4grr3")
-animation = &"idle"
+animation = &"walk_left"
 autoplay = "idle"
+frame = 6
 
 [connection signal="input_event" from="Area2D" to="." method="_on_mouse_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_figure_animation_finished"]

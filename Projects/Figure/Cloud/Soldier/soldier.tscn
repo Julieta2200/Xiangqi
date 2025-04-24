@@ -1,19 +1,31 @@
-[gd_scene load_steps=21 format=3 uid="uid://cegecfb7pey2p"]
+[gd_scene load_steps=33 format=3 uid="uid://cegecfb7pey2p"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Scripts/soldier.gd" id="1_m0gdh"]
 [ext_resource type="Texture2D" uid="uid://crijqi2iagwfg" path="res://Assets/Characters/Cloud/Pawn/Pawn_front.png" id="2_xr6g5"]
-[ext_resource type="Texture2D" uid="uid://cglowsrwaabda" path="res://Assets/Characters/Cloud/Pawn/Run_animation/Run1.png" id="4_e4jq8"]
 [ext_resource type="Texture2D" uid="uid://cmxk44u7ixutn" path="res://Assets/Characters/Cloud/Pawn/Teleport/Pawn_teleport1.png" id="4_nh610"]
 [ext_resource type="Texture2D" uid="uid://dlx7dklv6tn0e" path="res://Assets/Characters/Cloud/Pawn/Teleport/Pawn_teleport2.png" id="5_5mwha"]
-[ext_resource type="Texture2D" uid="uid://d0l0ugqhgyhe1" path="res://Assets/Characters/Cloud/Pawn/Run_animation/Run2.png" id="5_rhe5k"]
-[ext_resource type="Texture2D" uid="uid://c08n5f5vhnngn" path="res://Assets/Characters/Cloud/Pawn/Run_animation/Run3.png" id="6_ncfhn"]
 [ext_resource type="Texture2D" uid="uid://uhtjpk3nkt3n" path="res://Assets/Characters/Cloud/Pawn/Teleport/Pawn_teleport3.png" id="6_r3fdx"]
 [ext_resource type="Texture2D" uid="uid://bu3bphl0m2ca6" path="res://Assets/Characters/Cloud/Pawn/Teleport/Pawn_teleport4.png" id="7_3qseg"]
-[ext_resource type="Texture2D" uid="uid://b3y7ltglhqchl" path="res://Assets/Characters/Cloud/Pawn/Run_animation/Run4.png" id="7_x8345"]
-[ext_resource type="Texture2D" uid="uid://b3m881q4qsvs5" path="res://Assets/Characters/Cloud/Pawn/Run_animation/Run5.png" id="8_2tc1b"]
 [ext_resource type="Texture2D" uid="uid://bcs871o11lqu" path="res://Assets/Characters/Cloud/Pawn/Teleport/Pawn_teleport5.png" id="8_wavnn"]
-[ext_resource type="Texture2D" uid="uid://bp34gymf3yv44" path="res://Assets/Characters/Cloud/Pawn/Run_animation/Run6.png" id="9_os3ph"]
+[ext_resource type="Texture2D" uid="uid://dffqpi2ju1q4v" path="res://Assets/Characters/Cloud/Pawn/Run_animation/Front/Run1.png" id="9_8lira"]
 [ext_resource type="Texture2D" uid="uid://b1cl82c7g2uml" path="res://Assets/UI/Character_HoverEffect/Hover.png" id="9_yodn4"]
+[ext_resource type="Texture2D" uid="uid://j10kmpx5ca7w" path="res://Assets/Characters/Cloud/Pawn/Run_animation/Front/Run2.png" id="10_c5wkw"]
+[ext_resource type="Texture2D" uid="uid://c85er55gv7arc" path="res://Assets/Characters/Cloud/Pawn/Run_animation/Front/Run3.png" id="11_nnhu6"]
+[ext_resource type="Texture2D" uid="uid://cij5goit5uf8w" path="res://Assets/Characters/Cloud/Pawn/Run_animation/Front/Run4.png" id="12_kcsj1"]
+[ext_resource type="Texture2D" uid="uid://r8r0xrgjngf0" path="res://Assets/Characters/Cloud/Pawn/Run_animation/Front/Run5.png" id="13_pbraj"]
+[ext_resource type="Texture2D" uid="uid://c2x36ualg0mmu" path="res://Assets/Characters/Cloud/Pawn/Run_animation/Front/Run6.png" id="14_yqvmw"]
+[ext_resource type="Texture2D" uid="uid://cskvtdh5lmjtj" path="res://Assets/Characters/Cloud/Pawn/Run_animation/Left/Left1.png" id="15_jfm85"]
+[ext_resource type="Texture2D" uid="uid://cfludn0sbnprg" path="res://Assets/Characters/Cloud/Pawn/Run_animation/Left/Left2.png" id="16_vp2ry"]
+[ext_resource type="Texture2D" uid="uid://csna7et4aqls8" path="res://Assets/Characters/Cloud/Pawn/Run_animation/Left/Left3.png" id="17_xhboc"]
+[ext_resource type="Texture2D" uid="uid://bxr6ge2361nel" path="res://Assets/Characters/Cloud/Pawn/Run_animation/Left/Left4.png" id="18_fv0fe"]
+[ext_resource type="Texture2D" uid="uid://kao8h7kvrdi7" path="res://Assets/Characters/Cloud/Pawn/Run_animation/Left/Left5.png" id="19_svyre"]
+[ext_resource type="Texture2D" uid="uid://3v4adtxv7yut" path="res://Assets/Characters/Cloud/Pawn/Run_animation/Left/Left6.png" id="20_2efbn"]
+[ext_resource type="Texture2D" uid="uid://dkxe3twuqnvdg" path="res://Assets/Characters/Cloud/Pawn/Run_animation/Right/Right1.png" id="21_vk7dl"]
+[ext_resource type="Texture2D" uid="uid://dibwv0qullm0a" path="res://Assets/Characters/Cloud/Pawn/Run_animation/Right/Right2.png" id="22_oosxe"]
+[ext_resource type="Texture2D" uid="uid://c0grkhf7k5bkw" path="res://Assets/Characters/Cloud/Pawn/Run_animation/Right/Right3.png" id="23_0vwrw"]
+[ext_resource type="Texture2D" uid="uid://dpfg44j5ayu81" path="res://Assets/Characters/Cloud/Pawn/Run_animation/Right/Right4.png" id="24_iov4o"]
+[ext_resource type="Texture2D" uid="uid://bm0kl8vsqt7lb" path="res://Assets/Characters/Cloud/Pawn/Run_animation/Right/Right5.png" id="25_7y3oj"]
+[ext_resource type="Texture2D" uid="uid://c5n44qjujkurw" path="res://Assets/Characters/Cloud/Pawn/Run_animation/Right/Right6.png" id="26_p3ted"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c14xl"]
 radius = 55.0
@@ -135,33 +147,80 @@ animations = [{
 "name": &"teleport",
 "speed": 6.0
 }, {
-"frames": [],
-"loop": true,
-"name": &"walk_back",
-"speed": 5.0
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_8lira")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_c5wkw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_nnhu6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_kcsj1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_pbraj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_yqvmw")
+}],
+"loop": false,
+"name": &"walk_front",
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_e4jq8")
+"texture": ExtResource("15_jfm85")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_rhe5k")
+"texture": ExtResource("16_vp2ry")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_ncfhn")
+"texture": ExtResource("17_xhboc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_x8345")
+"texture": ExtResource("18_fv0fe")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_2tc1b")
+"texture": ExtResource("19_svyre")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_os3ph")
+"texture": ExtResource("20_2efbn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_jfm85")
 }],
-"loop": true,
-"name": &"walk_front",
-"speed": 10.0
+"loop": false,
+"name": &"walk_left",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_vk7dl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_oosxe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_0vwrw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_iov4o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_7y3oj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_p3ted")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_vk7dl")
+}],
+"loop": false,
+"name": &"walk_right",
+"speed": 8.0
 }]
 
 [node name="Soldier" type="Node2D"]
@@ -187,12 +246,13 @@ libraries = {
 }
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-8, -96)
+position = Vector2(-7, -98)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_loiyf")
-animation = &"idle"
+animation = &"walk_right"
 autoplay = "idle"
 
 [connection signal="input_event" from="Area2D" to="." method="_on_mouse_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_figure_animation_finished"]
