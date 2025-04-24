@@ -26,14 +26,28 @@ const palace_positions: Dictionary = {
 }
 
 var markers : Dictionary
+# state is keeping current state of the position,
+# key is the position and the value is the figure
+# which is on that position.
 var state : Dictionary
+
+# save_states is used to keep the history of the game
+# in order to get back to that position if needed.
 var save_states: Dictionary
+
+# selected_figure is the figure that was clicked and ready to be moved.
 var selected_figure: Figure
+
+# if false player cannot make moves or interact with figures
 var can_move : bool = true
 
+# figure_move_done emitted when move is complete
 signal figure_move_done
+
+# move_computer emitted when it's computers turn to move
 signal move_computer
 
+# turn, when setted is recalculating the moves, and emits move_computer
 var turn: team:
 	set(t):
 		turn = t
@@ -60,8 +74,7 @@ var figure_scenes: Dictionary = {
 	Figure.Types.Cannon: "res://Projects/Figure/{GROUP}/Cannon/cannon.tscn",
 }
 
-var _counter: int 
-
+# _set_figure is emmited when new figure is added to the board via garrison
 signal _set_figure(marker: BoardMarker)
 
 func _ready():
@@ -222,11 +235,6 @@ func _on_figure_selected(figure):
 			markers[selected_figure.board_position].unhighlight()
 		selected_figure = figure
 		selected_figure.highlight_moves()
-	
-func reset(move: int) -> void:
-	delete_figures()
-	unhighlight_markers()
-	load_move(move)
 
 func delete_figures():
 	for i in state.keys():
