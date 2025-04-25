@@ -1,7 +1,9 @@
 class_name Dialog extends Control
 
+# Emitted when the texts are finished, passing the callable to execute next
 signal finished(to_call: Callable)
 
+# Saves figures images with their respective names
 var figures: Dictionary = {
 	"Advisor": load("res://Assets/Characters/Magma/Advisor/Advisor_front.png"),
 	"Pawn" : load("res://Assets/Characters/Cloud/Pawn/Pawn_front.png")
@@ -24,6 +26,8 @@ func disappear():
 	visible = false
 	$AnimationPlayer.play("RESET")
 
+
+# Handles transition to the next text block or emits a signal if all blocks have been displayed
 func next():
 	disappear()
 	if _text_blocks.size() == 0:

@@ -5,6 +5,8 @@ extends Camera2D
 var zoom_min: float = 0.65
 var zoom_max: float = 2.275
 var viewport_size : Vector2
+
+# Variables for determining the limits of camera movement in 4 directions
 var move_right_max:float
 var move_left_max: float 
 var move_up_max: float
@@ -16,7 +18,7 @@ func _ready() -> void:
 	viewport_size = get_viewport().size
 	calculate_limits(zoom)
 
-
+# Calculates camera movement limits based on zoom level and viewport size
 func calculate_limits(z: Vector2) -> void:
 	move_right_max = limit_right - viewport_size.x / (2*z.x)
 	move_left_max = limit_left + viewport_size.x / (2*z.x)
