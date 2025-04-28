@@ -125,3 +125,7 @@ func teleport():
 # Activates the inactive animation after the moving animation ends
 func _on_figure_animation_finished():
 	$AnimatedSprite2D.play("idle")
+
+# play any animation for any figure, used for cutscenes
+func play_animation(animation: String) -> void:
+	animated_sprite.play(animation)
