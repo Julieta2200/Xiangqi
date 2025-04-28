@@ -1,5 +1,7 @@
 extends ComputerEngine
 
+var capture_figure: bool
+
 func make_move() -> void:
 	match %Board.move_number:
 		1:
@@ -23,4 +25,5 @@ func make_move() -> void:
 
 func next_position(pos):
 	var new_pos = pos - Vector2(0,1)
+	capture_figure = %Board.state.has(new_pos)
 	%Board.computer_move(pos, new_pos)

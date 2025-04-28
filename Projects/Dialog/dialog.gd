@@ -6,7 +6,8 @@ signal finished(to_call: Callable)
 # Saves figures images with their respective names
 var figures: Dictionary = {
 	"Advisor": load("res://Assets/Characters/Magma/Advisor/Advisor_front.png"),
-	"Pawn" : load("res://Assets/Characters/Cloud/Pawn/Pawn_front.png")
+	"Pawn" : load("res://Assets/Characters/Cloud/Pawn/Pawn_front.png"),
+	"Ashes" : load("res://Assets/Characters/Magma/General/Sides/Ashes_front.png")
 }
 
 var _to_call: Callable

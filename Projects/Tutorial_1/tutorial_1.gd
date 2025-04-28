@@ -98,18 +98,12 @@ func move_and_capture_enemy() -> void:
 	%Dialog.appear(texts)
 	first_time = false
 
-
-func part_2_capture_enemy() -> void:
-	var texts: Array[TextBlock] 
-	texts = [TextBlock.new("The enemy has placed another pawn.","Advisor", "Sprite"),
-			TextBlock.new("Capture the enemy pawn too.","Advisor", "Sprite")]
-	%Dialog.appear(texts)
-
 func part_2_soldier_spawn():
 	%Board.set_figure(Figure.Types.Soldier, Vector2(2,6), "Cloud", Board.team.Black, false, true)
 	var texts: Array[TextBlock] 
-	texts = [TextBlock.new("Don’t go!","Pawn", "Sprite")]
-	%Dialog.appear(texts,part_2_capture_enemy)
+	texts = [TextBlock.new("A new pawn spawned.","Advisor", "Sprite"),
+			TextBlock.new("Well someone is summoning them…","Ashes", "Sprite")]
+	%Dialog.appear(texts)
 	await get_tree().create_timer(3).timeout
 	%Board.computer_move(Vector2(2,6), Vector2(2,5))
 
@@ -145,20 +139,19 @@ func check_status():
 				return
 			match soldier.size():
 				1:
-					if soldier[0].board_position.y > enemy_soldier[0].board_position.y:
-						var texts: Array[TextBlock] = [TextBlock.new("You let the enemy pawn to destroy our guard, add another soldier","Advisor", "Sprite")]
+					if $tutorial_engine.capture_figure:
+						var texts: Array[TextBlock] = [TextBlock.new("You let your pawn be captured…","Advisor", "Sprite")]
+						%Dialog.appear(texts,reset_part_2)
+						return
+					elif soldier[0].board_position.y > enemy_soldier[0].board_position.y:
+						var texts: Array[TextBlock] = [TextBlock.new("You can’t catch her, Summon a new pawn.","Advisor", "Sprite")]
 						%Dialog.appear(texts)
 						return
 				2:
 					if soldier[1].board_position.y > enemy_soldier[0].board_position.y:
-						var texts: Array[TextBlock] = [TextBlock.new("You let go of the enemy soldier","Advisor", "Sprite")]
+						var texts: Array[TextBlock] = [TextBlock.new("You let the enemy pawn to pass our guard…","Advisor", "Sprite")]
 						%Dialog.appear(texts,reset_part_2)
 						return
-			if enemy_soldier[0].board_position.y <= 0:
-				var texts: Array[TextBlock] = [TextBlock.new("Your soldier can no longer capture an enemy.","Advisor", "Sprite")]
-				%Dialog.appear(texts,reset_part_2)
-				return
-		
 		
 func reset_part_2():
 	var texts: Array[TextBlock] = [TextBlock.new("Please, try again.","Advisor", "Sprite")]
