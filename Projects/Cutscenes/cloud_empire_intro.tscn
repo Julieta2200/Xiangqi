@@ -1,0 +1,124 @@
+[gd_scene load_steps=9 format=3 uid="uid://bwr3kw4d60hqx"]
+
+[ext_resource type="PackedScene" uid="uid://dpyrcsgpodbx7" path="res://Projects/Board/board.tscn" id="1_by04g"]
+[ext_resource type="Script" path="res://Projects/Cutscenes/cloud_empire_intro.gd" id="1_fhu2s"]
+[ext_resource type="Texture2D" uid="uid://dtrlw2ivmev3l" path="res://Assets/backgrounds/cloud/background.png" id="1_uyfqd"]
+[ext_resource type="PackedScene" uid="uid://br5fqscax7ejf" path="res://Projects/Camera/camera.tscn" id="3_56on6"]
+[ext_resource type="PackedScene" uid="uid://bkqlg03rv0gyo" path="res://Projects/Dialog/dialog.tscn" id="5_yelav"]
+
+[sub_resource type="Animation" id="Animation_mjw1p"]
+resource_name = "cloud_empire"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 9, 10),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(3, 3), Vector2(3, 3), Vector2(2, 2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 3, 3.25, 3.28, 3.5, 6.5, 6.76667, 6.8, 7, 9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-1831, 548), Vector2(-480, 818), Vector2(-480, 818), Vector2(-642, 2668), Vector2(-642, 2668), Vector2(2851, 2668), Vector2(2851, 2668), Vector2(1073, 405), Vector2(1073, 405), Vector2(1073, 1867)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 3, 3.25, 3.5, 6.5, 6.75, 7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_q0dr4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1085, 1141)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jmt44"]
+_data = {
+"RESET": SubResource("Animation_q0dr4"),
+"cloud_empire": SubResource("Animation_mjw1p")
+}
+
+[node name="CloudEmpireIntro" type="Node2D"]
+script = ExtResource("1_fhu2s")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(1120, 1288)
+scale = Vector2(2, 2)
+texture = ExtResource("1_uyfqd")
+
+[node name="Board" parent="." instance=ExtResource("1_by04g")]
+unique_name_in_owner = true
+
+[node name="Camera" parent="." instance=ExtResource("3_56on6")]
+position = Vector2(1085, 1141)
+limit_left = -2938
+limit_top = -820
+limit_right = 5060
+limit_bottom = 3170
+editor_draw_limits = true
+locked = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jmt44")
+}
+autoplay = "cloud_empire"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Dialog" parent="CanvasLayer" instance=ExtResource("5_yelav")]
+unique_name_in_owner = true
+visible = false

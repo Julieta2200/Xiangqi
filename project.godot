@@ -19,7 +19,6 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=2200
 window/size/viewport_height=2200
-window/size/mode=3
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_height"
 mouse_cursor/custom_image="res://Assets/UI/Mouse/Big size/Mouse.png"

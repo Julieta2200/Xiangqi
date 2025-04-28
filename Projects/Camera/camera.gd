@@ -10,7 +10,7 @@ var move_left_max: float
 var move_up_max: float
 var move_down_max: float
 
-var locked: bool = false
+@export var locked: bool = false
 
 func _ready() -> void:
 	viewport_size = get_viewport().size
