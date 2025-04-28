@@ -23,6 +23,10 @@ window/stretch/mode="viewport"
 window/stretch/aspect="keep_height"
 mouse_cursor/custom_image="res://Assets/UI/Mouse/Big size/Mouse.png"
 
+[editor]
+
+movie_writer/movie_file="/Users/grishakirakosyan/Documents/xiangqimovies/movie.avi"
+
 [input]
 
 click={
