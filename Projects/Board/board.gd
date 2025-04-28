@@ -63,7 +63,6 @@ var move_number: int = 0
 	team.Black: ""
 }
 
-
 var figure_scenes: Dictionary = {
 	Figure.Types.General: "res://Projects/Figure/{GROUP}/General/general.tscn",
 	Figure.Types.Advisor: "res://Projects/Figure/{GROUP}/Advisor/advisor.tscn",
@@ -107,6 +106,7 @@ func create_state(new_state: Dictionary) -> void:
 	
 	calculate_moves()
 
+# Generates and saves the current state of all figures for the current move
 func generate_save_state() -> void:
 	var generated_state: Dictionary
 	for pos in state:
@@ -120,6 +120,7 @@ func generate_save_state() -> void:
 			generated_state[pos].inactive = true
 	save_states[move_number] = generated_state
 
+# Loads the saved state of a specific move and sets the turn to Red team
 func load_move(move: int) -> void:
 	move_number = move
 	turn = team.Red
@@ -129,6 +130,8 @@ func unhighlight_markers():
 	for key in markers:
 		markers[key].unhighlight()
 
+# Executes a move for the computer(black figures), 
+# updating the figure's position and generating the new state
 func computer_move(pos: Vector2, new_pos: Vector2) -> bool:
 	unhighlight_markers()
 	if !state.has(pos) or state[pos].team != turn:
@@ -139,6 +142,7 @@ func computer_move(pos: Vector2, new_pos: Vector2) -> bool:
 	generate_save_state()
 	return true
 
+# Calculates possible moves for the current team based on the current state of the board
 func calculate_moves():
 	var keys: Array = state.keys()
 	for pos in keys:
@@ -168,7 +172,8 @@ func get_figures_by_team(t: team) -> Array[Figure]:
 	
 	return figures
 
-
+# Controls the figure's movement to the new marker, 
+# deletes the figure at the old position, and unhighlight the hover effect
 func _on_marker_figure_move(marker: Variant) -> void:
 	unhighlight_markers()
 	selected_figure.hover_unhighlight()
@@ -181,8 +186,12 @@ func _on_marker_figure_move(marker: Variant) -> void:
 func _on_marker_figure_set(marker: Variant) -> void:
 	emit_signal("_set_figure", marker)
 
+# Makes visible markers based on the distance, and figures movement rules
 func highlight_placeholder_markers(selected_card: FigureCard, distance: int) -> void:
 	can_move = false
+	
+	# We store all the markers that have become visible,
+	# the key is the position(Vector2) and the value is the marker
 	var position_markers : Dictionary
 	for i in markers:
 		var highlight = markers[i].position_marker
@@ -200,6 +209,8 @@ func in_boundaries(pos : Vector2, card: FigureCard) -> bool:
 		return pos.y <= 4
 	return true
 
+
+# Spawns and initializes a figure at the board, according to the given parameters
 func set_figure(type: Figure.Types, board_position: Vector2, group: String = "Magma", t: team = team.Red, inactive: bool = false, teleport: bool = false) -> void:
 	var figure_scene : String = figure_scenes[type]
 	var marker: BoardMarker = markers[board_position]
@@ -236,6 +247,7 @@ func _on_figure_selected(figure):
 		selected_figure = figure
 		selected_figure.highlight_moves()
 
+# Deletes all figures from the state
 func delete_figures():
 	for i in state.keys():
 		state[i].delete()
