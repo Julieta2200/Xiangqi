@@ -119,8 +119,7 @@ func check_status():
 				return
 				
 			if enemy_soldier.size() == 0:
-				var texts: Array[TextBlock] = [TextBlock.new("Great Job!","Advisor", "Sprite")]
-				%Dialog.appear(texts,part_2_soldier_spawn)
+				part_2_soldier_spawn()
 				part_start_point = %Board.move_number
 				part += 1
 				return
@@ -148,7 +147,7 @@ func check_status():
 						%Dialog.appear(texts)
 						return
 				2:
-					if soldier[1].board_position.y > enemy_soldier[0].board_position.y:
+					if soldier[1].board_position.y > enemy_soldier[0].board_position.y and soldier[0].board_position.y > enemy_soldier[0].board_position.y:
 						var texts: Array[TextBlock] = [TextBlock.new("You let the enemy pawn to pass our guard…","Advisor", "Sprite")]
 						%Dialog.appear(texts,reset_part_2)
 						return
