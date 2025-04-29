@@ -23,7 +23,10 @@ var initial_state = {
 
 var first_time: bool = true
 var part: int = 1
-var part_start_point : int
+var part_start_point : int:
+	set(p):
+		part_start_point = p
+		part += 1
 
 func _ready():
 	camera_zoom()
@@ -107,6 +110,37 @@ func part_2_soldier_spawn():
 	await get_tree().create_timer(3).timeout
 	%Board.computer_move(Vector2(2,6), Vector2(2,5))
 
+func advisor_make_active():
+	%Board.state[Vector2(3,0)].active = true
+	%Board.state[Vector2(5,0)].active = true
+
+func explain_advisor():
+	advisor_make_active()
+	var texts: Array[TextBlock] 
+	texts = [TextBlock.new("You can use Advisors.","Advisor", "Sprite"),
+			TextBlock.new("They move and capture one point diagonally and may not leave the palace.","Advisor", "Sprite")]
+	%Dialog.appear(texts)
+	
+func part_3_soldiers_spawn():
+	%Board.set_figure(Figure.Types.Soldier, Vector2(3,2), "Cloud", Board.team.Black, false, true)
+	%Board.set_figure(Figure.Types.Soldier, Vector2(4,2), "Cloud", Board.team.Black, false, true)
+	%Board.set_figure(Figure.Types.Soldier, Vector2(5,2), "Cloud", Board.team.Black, false, true)
+	var texts: Array[TextBlock] 
+	texts = [TextBlock.new("They are trying to surround us.","Advisor", "Sprite"),
+			TextBlock.new("Stay calm, they’re just brainless pawns.","Ashes", "Sprite"),
+			TextBlock.new("Attack my fearless Cloud Army.","Cloud General", "Sprite"),
+			TextBlock.new("Fearless Cloud… sure…","Ashes", "Sprite")]
+	%Dialog.appear(texts,explain_advisor)
+	await get_tree().create_timer(3).timeout
+	%Board.computer_move(Vector2(4,2), Vector2(4,1))
+
+
+func explain_general():
+	%Board.state[Vector2(4,0)].active = true
+	var texts: Array[TextBlock] 
+	texts = [TextBlock.new("You can use Genera.","Advisor", "Sprite"),
+			TextBlock.new("The general may move and capture one point orthogonally and may not leave the palace.","Advisor", "Sprite")]
+	%Dialog.appear(texts)
 
 func check_status():
 	match part:
@@ -121,7 +155,6 @@ func check_status():
 			if enemy_soldier.size() == 0:
 				part_2_soldier_spawn()
 				part_start_point = %Board.move_number
-				part += 1
 				return
 			
 			if soldier[0].board_position.y > enemy_soldier[0].board_position.y:
@@ -132,9 +165,9 @@ func check_status():
 			var soldier = %Board.get_figures(Board.team.Red, Figure.Types.Soldier)
 			var enemy_soldier = %Board.get_figures(Board.team.Black, Figure.Types.Soldier)
 			if enemy_soldier.size() == 0:
-				var texts: Array[TextBlock] = [TextBlock.new("Great Job!","Advisor", "Sprite")]
-				%Dialog.appear(texts)
-				part += 1
+				part_3_soldiers_spawn()
+				%Board.move_number = 9
+				part_start_point = %Board.move_number
 				return
 			match soldier.size():
 				1:
@@ -151,7 +184,43 @@ func check_status():
 						var texts: Array[TextBlock] = [TextBlock.new("You let the enemy pawn to pass our guard…","Advisor", "Sprite")]
 						%Dialog.appear(texts,reset_part_2)
 						return
-		
+		3:
+			var enemy_soldier = %Board.get_figures(Board.team.Black, Figure.Types.Soldier)
+			if enemy_soldier[0].board_position.y == 0 and enemy_soldier.size() == 1:
+				explain_general()
+				part_start_point = %Board.move_number
+				return
+			if $tutorial_engine.capture_figure:
+				var texts: Array[TextBlock] = [TextBlock.new("You let your figure be captured…","Advisor", "Sprite")]
+				%Dialog.appear(texts,reset_part_3)
+				return
+		4:
+			var enemy_soldier = %Board.get_figures(Board.team.Black, Figure.Types.Soldier)
+			if enemy_soldier.size() == 0:
+				var texts: Array[TextBlock] = [TextBlock.new("You won.","Advisor", "Sprite")]
+				%Dialog.appear(texts)
+				part_start_point = %Board.move_number
+				return
+			else:
+				var texts: Array[TextBlock] = [TextBlock.new("The enemy pawn slipped from your control.","Advisor", "Sprite")]
+				%Dialog.appear(texts,reset_part_4)
+				return
+				
+			
+func reset_part_4():
+	var texts: Array[TextBlock] = [TextBlock.new("Please, try again.","Advisor", "Sprite")]
+	%Dialog.appear(texts)
+	%Board.load_move(part_start_point) 
+	%PowerMeter.reset()
+	explain_general()
+	
+func reset_part_3():
+	var texts: Array[TextBlock] = [TextBlock.new("Please, try again.","Advisor", "Sprite")]
+	%Dialog.appear(texts)
+	%Board.load_move(part_start_point) 
+	%PowerMeter.reset()
+	advisor_make_active()
+
 func reset_part_2():
 	var texts: Array[TextBlock] = [TextBlock.new("Please, try again.","Advisor", "Sprite")]
 	%Dialog.appear(texts)
