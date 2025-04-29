@@ -17,6 +17,8 @@ var distance_bar :int = 10
 # Stores the energy value and updates the energy display while emitting a signal when it changes
 @export var energy: float :
 	set(e):
+		if e < 0:
+			e = 0
 		energy = e
 		$energy.value = energy
 		emit_signal("energy_changed", energy)
@@ -24,6 +26,8 @@ var distance_bar :int = 10
 # Stores the distance value and updates the visibility of distance bars based on the value
 @export var distance: int :
 	set(d):
+		if d < 0:
+			d = 0
 		distance = d
 		for i in $distances/distance_bars.get_children():
 			if d >= distance_bar:
