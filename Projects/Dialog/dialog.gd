@@ -11,8 +11,19 @@ var figures: Dictionary = {
 	"Cloud General" : load("res://Assets/Characters/Cloud/General/General_front.png")
 }
 
+
+@export var typing_speed = 0.03
+var tween : Tween
+
 var _to_call: Callable
 var _text_blocks: Array[TextBlock]
+
+func typing_animation(text):
+	$Panel/Text.visible_ratio = 0
+	if tween != null:
+		tween.stop()
+	tween = create_tween()
+	tween.tween_property($Panel/Text, "visible_ratio", 1, text.length() * typing_speed) 
 
 func appear(text_blocks: Array[TextBlock], to_call: Callable = func():):
 	visible = true
@@ -22,12 +33,10 @@ func appear(text_blocks: Array[TextBlock], to_call: Callable = func():):
 	$Panel/Text.text = text_block.text
 	$Panel/Name.text = text_block.name
 	$Panel/image.texture_progress = figures[text_block.name]
-	$AnimationPlayer.play("dialog")
+	typing_animation(text_block.text)
 
 func disappear():
 	visible = false
-	$AnimationPlayer.play("RESET")
-
 
 # Handles transition to the next text block or emits a signal if all blocks have been displayed
 func next():
