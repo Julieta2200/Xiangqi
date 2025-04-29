@@ -109,6 +109,8 @@ func part_2_soldier_spawn():
 	%Dialog.appear(texts)
 	await get_tree().create_timer(3).timeout
 	%Board.computer_move(Vector2(2,6), Vector2(2,5))
+	%PowerMeter.filled_energy = 0
+	%PowerMeter.filled_distance = 0
 
 func advisor_make_active():
 	%Board.state[Vector2(3,0)].active = true
@@ -133,6 +135,7 @@ func part_3_soldiers_spawn():
 	%Dialog.appear(texts,explain_advisor)
 	await get_tree().create_timer(3).timeout
 	%Board.computer_move(Vector2(4,2), Vector2(4,1))
+	%PowerMeter.filled_energy = 0
 
 
 func explain_general():
@@ -141,6 +144,7 @@ func explain_general():
 	texts = [TextBlock.new("You can use Genera.","Advisor", "Sprite"),
 			TextBlock.new("The general may move and capture one point orthogonally and may not leave the palace.","Advisor", "Sprite")]
 	%Dialog.appear(texts)
+	%PowerMeter.filled_energy = 0
 
 func check_status():
 	match part:
@@ -225,7 +229,7 @@ func reset_part_2():
 	var texts: Array[TextBlock] = [TextBlock.new("Please, try again.","Advisor", "Sprite")]
 	%Dialog.appear(texts)
 	%Board.load_move(part_start_point)
-	%PowerMeter.energy += 2 * FigureCard.figure_energies[Figure.Types.Soldier] 
+	%PowerMeter.energy += FigureCard.figure_energies[Figure.Types.Soldier] 
 	%PowerMeter.reset()
 
 func reset_part_1():
@@ -238,6 +242,7 @@ func reset_part_1():
 		"group": "Cloud"
 	} 
 	%Board.create_state(new_state)
+	%Board.move_number = 0
 	%PowerMeter.energy += FigureCard.figure_energies[Figure.Types.Soldier] 
 	%PowerMeter.reset()
 	
