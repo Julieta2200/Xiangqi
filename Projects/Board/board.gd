@@ -248,7 +248,7 @@ func _on_figure_selected(figure):
 			markers[selected_figure.board_position].unhighlight()
 		selected_figure = figure
 		selected_figure.highlight_moves()
-	if figure.team == Board.team.Black:
+	if figure.team == Board.team.Black and figure.type != Figure.Types.General and figure.type != Figure.Types.Advisor:
 		emit_signal("enemy_figure_selected",figure)
 
 # Deletes all figures from the state
