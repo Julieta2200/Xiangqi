@@ -146,6 +146,45 @@ func explain_general():
 	%Dialog.appear(texts)
 	%PowerMeter.filled_energy = 0
 
+
+func spawm_cloud_figures():
+	%Board.set_figure(Figure.Types.General, Vector2(4,9), "Cloud", Board.team.Black, false, true)
+	%Board.set_figure(Figure.Types.Advisor, Vector2(3,9), "Cloud", Board.team.Black, false, true)
+	%Board.set_figure(Figure.Types.Advisor, Vector2(5,9), "Cloud", Board.team.Black, false, true)
+	%Board.set_figure(Figure.Types.Soldier, Vector2(0,6), "Cloud", Board.team.Black, false, true)
+	%Board.set_figure(Figure.Types.Soldier, Vector2(1,6), "Cloud", Board.team.Black, false, true)
+	%Board.set_figure(Figure.Types.Soldier, Vector2(2,6), "Cloud", Board.team.Black, false, true)
+	%Board.set_figure(Figure.Types.Soldier, Vector2(3,6), "Cloud", Board.team.Black, false, true)
+	%Board.set_figure(Figure.Types.Soldier, Vector2(4,6), "Cloud", Board.team.Black, false, true)
+	%Board.set_figure(Figure.Types.Soldier, Vector2(5,6), "Cloud", Board.team.Black, false, true)
+	%Board.set_figure(Figure.Types.Soldier, Vector2(6,6), "Cloud", Board.team.Black, false, true)
+	%Board.set_figure(Figure.Types.Soldier, Vector2(7,6), "Cloud", Board.team.Black, false, true)
+	%Board.set_figure(Figure.Types.Soldier, Vector2(8,6), "Cloud", Board.team.Black, false, true)
+	%Board.set_figure(Figure.Types.Soldier, Vector2(0,7), "Cloud", Board.team.Black, false, true)
+	%Board.set_figure(Figure.Types.Soldier, Vector2(1,7), "Cloud", Board.team.Black, false, true)
+	%Board.set_figure(Figure.Types.Soldier, Vector2(2,7), "Cloud", Board.team.Black, false, true)
+	%Board.set_figure(Figure.Types.Soldier, Vector2(3,7), "Cloud", Board.team.Black, false, true)
+	%Board.set_figure(Figure.Types.Soldier, Vector2(4,7), "Cloud", Board.team.Black, false, true)
+	%Board.set_figure(Figure.Types.Soldier, Vector2(5,7), "Cloud", Board.team.Black, false, true)
+	%Board.set_figure(Figure.Types.Soldier, Vector2(6,7), "Cloud", Board.team.Black, false, true)
+	%Board.set_figure(Figure.Types.Soldier, Vector2(7,7), "Cloud", Board.team.Black, false, true)
+	%Board.set_figure(Figure.Types.Soldier, Vector2(8,7), "Cloud", Board.team.Black, false, true)
+	var texts: Array[TextBlock] 
+	texts = [TextBlock.new("Stop right there!","Cloud General", "Sprite"),
+			TextBlock.new("You’re surrounded and have nowhere to go!","Cloud General", "Sprite"),
+			TextBlock.new("Surrender and you’ll go back to the Limbo, otherwise… ","Cloud General", "Sprite"),
+			TextBlock.new("Did you forget who you’re talking to? ","Ashes", "Sprite"),
+			TextBlock.new("Surrounded? That’s pity","Ashes", "Sprite")]
+	%Dialog.appear(texts)
+	
+func part_5_dialogs():
+	var texts: Array[TextBlock] 
+	texts = [TextBlock.new("Phew, I think that’s it.","Advisor", "Sprite"),
+			TextBlock.new("Is it?","Advisor", "Sprite"),
+			TextBlock.new("Finally… ","Ashes", "Sprite")]
+	%Dialog.appear(texts,spawm_cloud_figures)
+
+
 func check_status():
 	match part:
 		1:
@@ -201,8 +240,7 @@ func check_status():
 		4:
 			var enemy_soldier = %Board.get_figures(Board.team.Black, Figure.Types.Soldier)
 			if enemy_soldier.size() == 0:
-				var texts: Array[TextBlock] = [TextBlock.new("You won.","Advisor", "Sprite")]
-				%Dialog.appear(texts)
+				part_5_dialogs()
 				part_start_point = %Board.move_number
 				return
 			else:

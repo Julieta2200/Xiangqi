@@ -88,6 +88,11 @@ animations = [{
 }, {
 "frames": [],
 "loop": true,
+"name": &"teleport",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
 "name": &"walk_back",
 "speed": 5.0
 }, {
@@ -121,7 +126,7 @@ libraries = {
 position = Vector2(0, -96)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_3eu8p")
-animation = &"idle"
+animation = &"teleport"
 autoplay = "idle"
 
 [connection signal="input_event" from="Area2D" to="." method="_on_mouse_event"]
