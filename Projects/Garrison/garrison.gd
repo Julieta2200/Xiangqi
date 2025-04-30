@@ -12,6 +12,8 @@ var active : bool:
 		active = a
 		if button_active and active:
 			$Eliminate_button.disabled = false
+		else:
+			$Eliminate_button.disabled = true
 			
 signal card_selected(selected_card: FigureCard)
 

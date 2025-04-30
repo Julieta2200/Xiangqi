@@ -177,12 +177,14 @@ func spawm_cloud_figures():
 			TextBlock.new("Surrounded? That’s pity","Ashes", "Sprite")]
 	%Dialog.appear(texts)
 	
+	
 func part_5_dialogs():
 	var texts: Array[TextBlock] 
 	texts = [TextBlock.new("Phew, I think that’s it.","Advisor", "Sprite"),
 			TextBlock.new("Is it?","Advisor", "Sprite"),
 			TextBlock.new("Finally… ","Ashes", "Sprite")]
 	%Dialog.appear(texts,spawm_cloud_figures)
+	%PowerMeter.energy = 100
 
 
 func check_status():
