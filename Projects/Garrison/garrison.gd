@@ -4,8 +4,15 @@ extends Control
 
 var selected_figure: FigureCard
 var check_selected_figure : bool 
-var eliminate_button_active : bool
+var is_eliminate_button_pressed : bool
+var button_active : bool
 
+var active : bool:
+	set(a):
+		active = a
+		if button_active and active:
+			$Eliminate_button.disabled = false
+			
 signal card_selected(selected_card: FigureCard)
 
 func get_soldier_card() -> FigureCard:
@@ -15,7 +22,8 @@ func get_soldier_energy() -> int:
 	return get_soldier_card().figure_energies[Figure.Types.Soldier]
 
 func _on_figure_card_selected(card: FigureCard):
-	select_card(card)
+	if active:
+		select_card(card)
 	
 
 func select_card(card: FigureCard):
@@ -30,14 +38,16 @@ func remove_figure():
 
 func energy_changed(energy: float) -> void:
 	if energy == 100:
-		$Eliminate_button.disabled = false
+		button_active = true
 	else:
+		button_active = false
 		$Eliminate_button.disabled = true
+		
 	for f in figure_cards:
 		if energy >= f.energy:
 			f.activate()
-		else:
+		else: 
 			f.deactivate()
 
 func _on_eliminate_button_pressed() -> void:
-	eliminate_button_active = true
+	is_eliminate_button_pressed = true

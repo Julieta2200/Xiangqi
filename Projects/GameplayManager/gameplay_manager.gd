@@ -18,9 +18,11 @@ func _on_board_set_figure(marker: BoardMarker) -> void:
 func _on_board_figure_move_done() -> void:
 	%PowerMeter.fill_energy()
 
-
 func _on_board_enemy_figure_selected(figure: Figure) -> void:
-	if %Garrison.eliminate_button_active:
-		%Board. enemy_figures_by_type_delete(figure)
-		%Garrison.eliminate_button_active = false
-		%PowerMeter.energy -= 100
+	if %Garrison.is_eliminate_button_pressed:
+		%Board.delete_enemy_figures_by_type(figure)
+		%Garrison.is_eliminate_button_pressed = false
+		%PowerMeter.energy = 0
+
+func _on_dialog_visibility_changed() -> void:
+	%Garrison.active = !%Dialog.visible 

@@ -11,6 +11,7 @@ var figures: Dictionary = {
 	"Cloud General" : load("res://Assets/Characters/Cloud/General/General_front.png")
 }
 
+signal state_changed(active : bool)
 
 @export var typing_speed = 0.03
 var tween : Tween
@@ -41,7 +42,7 @@ func disappear():
 # Handles transition to the next text block or emits a signal if all blocks have been displayed
 func next():
 	disappear()
-	if _text_blocks.size() == 0:
+	if _text_blocks.size() == 0: 
 		emit_signal("finished", _to_call)
 	else:
 		appear(_text_blocks, _to_call)

@@ -59,12 +59,12 @@ func _on_mouse_event(viewport, event, shape_idx):
 		emit_signal("figure_selected", self)
 		
 func _on_area_2d_mouse_entered():
-	if team == board.turn and active and mouse_can_hover and board.can_move:
+	if team == Board.team.Red and active and mouse_can_hover and board.can_move:
 		$hover.show()
 		$hover/AnimationPlayer.play("highlight")
 
 func _on_area_2d_mouse_exited():
-	if team == board.turn and active and mouse_can_hover and board.can_move:
+	if team == Board.team.Red and active and mouse_can_hover and board.can_move:
 		$hover/AnimationPlayer.play("unhighlight")
 
 # Hide hover effect when another figure is selected or starts moving

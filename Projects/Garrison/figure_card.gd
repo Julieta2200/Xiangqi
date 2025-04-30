@@ -29,6 +29,7 @@ signal selected(FigureCard)
 var active: bool
 var _selected :bool
 var energy: float
+@onready var garrison: Control = $"../.."
 
 func _ready() -> void:
 	if type != Figure.Types.Soldier:
@@ -40,7 +41,7 @@ func _ready() -> void:
 	energy = figure_energies[type]
 
 func _on_card_gui_input(event: InputEvent):
-	if event.is_pressed() and active:
+	if event.is_pressed() and active and garrison.active:
 		emit_signal("selected", self)
 		_selected = true
 		select()
@@ -67,9 +68,9 @@ func unhighlight() -> void:
 	$AnimationPlayer.play("RESET")
 
 func _on_card_mouse_entered() -> void:
-	if !_selected and active:
+	if !_selected and active and garrison.active:
 		select()
 
 func _on_card_mouse_exited() -> void:
-	if !_selected and active:
+	if !_selected and active and garrison.active:
 		remove()
