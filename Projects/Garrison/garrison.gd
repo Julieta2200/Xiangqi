@@ -4,6 +4,7 @@ extends Control
 
 var selected_figure: FigureCard
 var check_selected_figure : bool 
+var eliminate_button_active : bool
 
 signal card_selected(selected_card: FigureCard)
 
@@ -28,8 +29,15 @@ func remove_figure():
 	selected_figure = null
 
 func energy_changed(energy: float) -> void:
+	if energy == 100:
+		$Eliminate_button.disabled = false
+	else:
+		$Eliminate_button.disabled = true
 	for f in figure_cards:
 		if energy >= f.energy:
 			f.activate()
 		else:
 			f.deactivate()
+
+func _on_eliminate_button_pressed() -> void:
+	eliminate_button_active = true
