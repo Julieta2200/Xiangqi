@@ -11,8 +11,6 @@ var figures: Dictionary = {
 	"Cloud General" : load("res://Assets/Characters/Cloud/General/General_front.png")
 }
 
-signal state_changed(active : bool)
-
 @export var typing_speed = 0.03
 var tween : Tween
 
