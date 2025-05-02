@@ -1,7 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://pxqrvonok1lr"]
+[gd_scene load_steps=11 format=3 uid="uid://pxqrvonok1lr"]
 
 [ext_resource type="Script" path="res://Projects/Garrison/garrison.gd" id="1_6xqpg"]
 [ext_resource type="PackedScene" uid="uid://dbvg1wddl1i3g" path="res://Projects/Garrison/figure_card.tscn" id="2_f5xw8"]
+[ext_resource type="Texture2D" uid="uid://brqtbl1ypog63" path="res://Assets/tmp/Cancel_Button(Normal).png" id="3_05oaf"]
+[ext_resource type="Texture2D" uid="uid://e2t7kuickvay" path="res://Assets/tmp/Cancel_Button(hover).png" id="4_t5gjo"]
+[ext_resource type="Texture2D" uid="uid://cpgcd06y5ugik" path="res://Assets/tmp/Cancel_button(click).png" id="5_f2rxj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mxjcx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lyuow"]
+texture = ExtResource("3_05oaf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wdcui"]
+texture = ExtResource("4_t5gjo")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qulft"]
+texture = ExtResource("5_f2rxj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h7vsw"]
+texture = ExtResource("3_05oaf")
 
 [node name="Garrison" type="Control"]
 layout_mode = 3
@@ -61,7 +78,12 @@ offset_top = 882.0
 offset_right = -86.0
 offset_bottom = 1032.0
 theme_override_font_sizes/font_size = 58
-disabled = true
+theme_override_styles/focus = SubResource("StyleBoxTexture_mxjcx")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_lyuow")
+theme_override_styles/hover = SubResource("StyleBoxTexture_wdcui")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qulft")
+theme_override_styles/normal = SubResource("StyleBoxTexture_h7vsw")
+toggle_mode = true
 text = "ELIMINATE"
 
 [connection signal="selected" from="FigureCards/FigureCard" to="." method="_on_figure_card_selected"]

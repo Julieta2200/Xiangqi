@@ -59,6 +59,7 @@ var turn: team:
 			emit_signal("move_computer")
 
 var move_number: int = 0
+var active : bool = true
 
 @export var groups: Dictionary = {
 	team.Red: "",
@@ -186,7 +187,8 @@ func _on_marker_figure_move(marker: Variant) -> void:
 
 
 func _on_marker_figure_set(marker: Variant) -> void:
-	emit_signal("_set_figure", marker)
+	if active:
+		emit_signal("_set_figure", marker)
 
 # Makes visible markers based on the distance, and figures movement rules
 func highlight_placeholder_markers(selected_card: FigureCard, distance: int) -> void:
@@ -242,14 +244,15 @@ func _on_figure_move_done():
 		emit_signal("figure_move_done")
 
 func _on_figure_selected(figure):
-	if figure.team == Board.team.Red and can_move:
-		if selected_figure != null:
-			selected_figure.delete_highlight()
-			markers[selected_figure.board_position].unhighlight()
-		selected_figure = figure
-		selected_figure.highlight_moves()
-	elif figure.team == Board.team.Black and figure.type != Figure.Types.General and figure.type != Figure.Types.Advisor:
-		emit_signal("enemy_figure_selected",figure)
+	if active:
+		if figure.team == Board.team.Red and can_move:
+			if selected_figure != null:
+				selected_figure.delete_highlight()
+				markers[selected_figure.board_position].unhighlight()
+			selected_figure = figure
+			selected_figure.highlight_moves()
+		elif figure.team == Board.team.Black and figure.type != Figure.Types.General and figure.type != Figure.Types.Advisor:
+			emit_signal("enemy_figure_selected",figure)
 
 # Deletes all figures from the state
 func delete_figures():

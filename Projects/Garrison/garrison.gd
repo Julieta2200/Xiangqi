@@ -5,7 +5,14 @@ extends Control
 var selected_figure: FigureCard
 var check_selected_figure : bool 
 var is_eliminate_button_pressed : bool
-var button_active : bool
+var button_active : bool:
+	set(b):
+		button_active = b
+		if button_active:
+			$Eliminate_button.add_theme_color_override("font_disabled_color", Color.WHITE)
+		else:
+			$Eliminate_button.remove_theme_color_override("font_disabled_color")
+			$Eliminate_button.disabled = true
 
 var active : bool:
 	set(a):
@@ -14,6 +21,7 @@ var active : bool:
 			$Eliminate_button.disabled = false
 		else:
 			$Eliminate_button.disabled = true
+			
 			
 signal card_selected(selected_card: FigureCard)
 
@@ -43,7 +51,6 @@ func energy_changed(energy: float) -> void:
 		button_active = true
 	else:
 		button_active = false
-		$Eliminate_button.disabled = true
 		
 	for f in figure_cards:
 		if energy >= f.energy:

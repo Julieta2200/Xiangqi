@@ -26,3 +26,4 @@ func _on_board_enemy_figure_selected(figure: Figure) -> void:
 
 func _on_dialog_visibility_changed() -> void:
 	%Garrison.active = !%Dialog.visible 
+	%Board.active = !%Dialog.visible 

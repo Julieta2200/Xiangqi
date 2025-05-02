@@ -176,6 +176,7 @@ func spawm_cloud_figures():
 			TextBlock.new("Did you forget who you’re talking to? ","Ashes", "Sprite"),
 			TextBlock.new("Surrounded? That’s pity","Ashes", "Sprite")]
 	%Dialog.appear(texts)
+	%PowerMeter.energy = 100
 	
 	
 func part_5_dialogs():
@@ -184,7 +185,6 @@ func part_5_dialogs():
 			TextBlock.new("Is it?","Advisor", "Sprite"),
 			TextBlock.new("Finally… ","Ashes", "Sprite")]
 	%Dialog.appear(texts,spawm_cloud_figures)
-	%PowerMeter.energy = 100
 
 
 func check_status():
