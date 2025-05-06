@@ -185,7 +185,6 @@ func _on_marker_figure_move(marker: Variant) -> void:
 
 
 func _on_marker_figure_set(marker: Variant) -> void:
-	#if active:
 	emit_signal("_set_figure", marker)
 
 # Makes visible markers based on the distance, and figures movement rules
