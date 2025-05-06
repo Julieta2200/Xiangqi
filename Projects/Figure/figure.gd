@@ -51,20 +51,20 @@ func highlight_moves() -> void:
 		board.markers[move].highlight(board.state.has(move))
 
 func _on_mouse_event(viewport, event, shape_idx):
-	if Input.is_action_pressed("click"):
-		if active and mouse_can_hover and board.can_move and team == Board.team.Red and board.active:
+	if Input.is_action_pressed("click") and board.can_move:
+		if active and mouse_can_hover  and team == Board.team.Red:
 			$hover/AnimationPlayer.play("RESET")
 			$hover.show()
 			mouse_can_hover = false
 		emit_signal("figure_selected", self)
 		
 func _on_area_2d_mouse_entered():
-	if team == Board.team.Red and active and mouse_can_hover and board.can_move and board.active:
+	if team == Board.team.Red and active and mouse_can_hover and board.can_move:
 		$hover.show()
 		$hover/AnimationPlayer.play("highlight")
 
 func _on_area_2d_mouse_exited():
-	if team == Board.team.Red and active and mouse_can_hover and board.can_move and board.active:
+	if team == Board.team.Red and active and mouse_can_hover and board.can_move:
 		$hover/AnimationPlayer.play("unhighlight")
 
 # Hide hover effect when another figure is selected or starts moving
@@ -125,7 +125,7 @@ func teleport():
 
 # Activates the inactive animation after the moving animation ends
 func _on_figure_animation_finished():
-	$AnimatedSprite2D.play("idle")
+	animated_sprite.play("idle")
 
 # play any animation for any figure, used for cutscenes
 func play_animation(animation: String) -> void:

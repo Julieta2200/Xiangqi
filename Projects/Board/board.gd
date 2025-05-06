@@ -47,7 +47,7 @@ signal figure_move_done
 # move_computer emitted when it's computers turn to move
 signal move_computer
 
-signal enemy_figure_selected(figure: Figure)
+signal elimination_figure_selected(figure: Figure)
 
 # turn, when setted is recalculating the moves, and emits move_computer
 var turn: team:
@@ -59,7 +59,6 @@ var turn: team:
 			emit_signal("move_computer")
 
 var move_number: int = 0
-var active : bool = true
 
 @export var groups: Dictionary = {
 	team.Red: "",
@@ -92,7 +91,6 @@ func initialize_markers():
 			markers[Vector2(j,i)].highlight_end.connect(_on_marker_highlight_end)
 
 func _on_marker_highlight_end():
-	can_move = true
 	for key in markers:
 		if markers[key].position_marker.visible:
 			markers[key].position_marker_unhighlight()
@@ -187,13 +185,11 @@ func _on_marker_figure_move(marker: Variant) -> void:
 
 
 func _on_marker_figure_set(marker: Variant) -> void:
-	if active:
-		emit_signal("_set_figure", marker)
+	#if active:
+	emit_signal("_set_figure", marker)
 
 # Makes visible markers based on the distance, and figures movement rules
 func highlight_placeholder_markers(selected_card: FigureCard, distance: int) -> void:
-	can_move = false
-	
 	# We store all the markers that have become visible,
 	# the key is the position(Vector2) and the value is the marker
 	var position_markers : Dictionary
@@ -235,6 +231,7 @@ func set_figure(type: Figure.Types, board_position: Vector2, group: String = "Ma
 		marker.position_marker_light(group)
 	figure.figure_selected.connect(_on_figure_selected)
 
+
 func _on_figure_move_done():
 	if turn == team.Black:
 		turn = team.Red
@@ -244,15 +241,22 @@ func _on_figure_move_done():
 		emit_signal("figure_move_done")
 
 func _on_figure_selected(figure):
-	if active:
-		if figure.team == Board.team.Red and can_move:
-			if selected_figure != null:
-				selected_figure.delete_highlight()
-				markers[selected_figure.board_position].unhighlight()
-			selected_figure = figure
-			selected_figure.highlight_moves()
-		elif figure.team == Board.team.Black and figure.type != Figure.Types.General and figure.type != Figure.Types.Advisor:
-			emit_signal("enemy_figure_selected",figure)
+	match figure.team:
+		Board.team.Red:
+			highlight_figure_moves(figure)
+		Board.team.Black:
+			select_elimination_figure(figure)
+
+func select_elimination_figure(figure: Figure):
+	if figure.type != Figure.Types.General and figure.type != Figure.Types.Advisor:
+		emit_signal("elimination_figure_selected",figure)
+
+func highlight_figure_moves(figure: Figure):
+	if selected_figure != null:
+		selected_figure.delete_highlight()
+		markers[selected_figure.board_position].unhighlight()
+	selected_figure = figure
+	selected_figure.highlight_moves()
 
 # Deletes all figures from the state
 func delete_figures():
@@ -260,7 +264,7 @@ func delete_figures():
 		state[i].delete()
 		state.erase(i)
 
-func delete_enemy_figures_by_type(figure):
+func delete_figures_by_type(figure: Figure):
 	var figures = get_figures(figure.team,figure.type)
 	for i in figures:
 		state[i.board_position].delete()

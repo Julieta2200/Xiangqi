@@ -166,7 +166,7 @@ unique_name_in_owner = true
 
 [connection signal="_set_figure" from="Board" to="." method="_on_board_set_figure"]
 [connection signal="_set_figure" from="Board" to="GameplayManager" method="_on_board_set_figure"]
-[connection signal="enemy_figure_selected" from="Board" to="GameplayManager" method="_on_board_enemy_figure_selected"]
+[connection signal="elimination_figure_selected" from="Board" to="GameplayManager" method="_on_board_elimination_figure_selected"]
 [connection signal="figure_move_done" from="Board" to="GameplayManager" method="_on_board_figure_move_done"]
 [connection signal="move_computer" from="Board" to="." method="_on_board_move_computer"]
 [connection signal="finished" from="CanvasLayer/Dialog" to="." method="_on_dialog_finished"]
