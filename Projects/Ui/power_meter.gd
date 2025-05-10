@@ -19,6 +19,8 @@ var distance_bar :int = 10
 	set(e):
 		if e < 0:
 			e = 0
+		elif e > 100:
+			e = 100
 		energy = e
 		$energy.value = energy
 		emit_signal("energy_changed", energy)
@@ -28,6 +30,8 @@ var distance_bar :int = 10
 	set(d):
 		if d < 0:
 			d = 0
+		elif d > 100:
+			d = 100
 		distance = d
 		for i in $distances/distance_bars.get_children():
 			if d >= distance_bar:
