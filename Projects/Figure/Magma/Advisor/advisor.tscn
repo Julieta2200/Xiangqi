@@ -846,7 +846,7 @@ libraries = {
 position = Vector2(0, -96)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_ty5n6")
-animation = &"disappear_back"
+animation = &"idle"
 autoplay = "idle"
 
 [connection signal="input_event" from="Area2D" to="." method="_on_mouse_event"]

@@ -27,7 +27,7 @@ var initial_state = {
 func _ready() -> void:
 	board.create_state(initial_state)
 	var general: Figure = board.get_figures(Board.team.Red, Figure.Types.General)[0]
-	general.play_animation("idle_front")
+	general.play_animation("idle")
 
 func start_conversation() -> void:
 	var texts: Array[TextBlock] = [
