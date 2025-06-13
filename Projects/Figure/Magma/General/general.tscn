@@ -1,8 +1,7 @@
-[gd_scene load_steps=46 format=3 uid="uid://ci58kdlspkg5f"]
+[gd_scene load_steps=45 format=3 uid="uid://ci58kdlspkg5f"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Scripts/general.gd" id="1_tq0kb"]
 [ext_resource type="Texture2D" uid="uid://b1cl82c7g2uml" path="res://Assets/UI/Character_HoverEffect/Hover.png" id="3_7k2qc"]
-[ext_resource type="Texture2D" uid="uid://cf5bqffnhr1ky" path="res://Assets/Characters/Magma/General/Sides/Ashes_front.png" id="4_1wfvs"]
 [ext_resource type="Texture2D" uid="uid://odivkptqover" path="res://Assets/Characters/Magma/General/Run/Back/back1.png" id="4_noo0q"]
 [ext_resource type="Texture2D" uid="uid://dwmgc3rxq16c7" path="res://Assets/Characters/Magma/General/Run/Back/back2.png" id="5_rueip"]
 [ext_resource type="Texture2D" uid="uid://7w1msqnys6p4" path="res://Assets/Characters/Magma/General/Run/Back/back3.png" id="6_dpubp"]
@@ -120,14 +119,6 @@ animations = [{
 }],
 "loop": false,
 "name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_1wfvs")
-}],
-"loop": true,
-"name": &"idle_front",
 "speed": 5.0
 }, {
 "frames": [{
@@ -302,7 +293,7 @@ libraries = {
 position = Vector2(-1.5, -64)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_1ter1")
-animation = &"walk_front"
+animation = &"idle"
 autoplay = "idle"
 
 [connection signal="input_event" from="Area2D" to="." method="_on_mouse_event"]

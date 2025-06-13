@@ -442,7 +442,7 @@ libraries = {
 position = Vector2(-5, -96)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_a83ps")
-animation = &"disappear_back"
+animation = &"walk_front"
 autoplay = "idle"
 
 [connection signal="input_event" from="Area2D" to="." method="_on_mouse_event"]
