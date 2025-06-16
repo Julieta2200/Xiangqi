@@ -54,7 +54,7 @@ func highlight_moves() -> void:
 		board.markers[move].highlight(board.state.has(move))
 
 func _on_mouse_event(viewport, event, shape_idx):
-	if Input.is_action_pressed("click") and board.can_move:
+	if Input.is_action_pressed("click"):
 		if active:
 			$hover/AnimationPlayer.play("RESET")
 			$hover.show()
