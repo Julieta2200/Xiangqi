@@ -27,7 +27,10 @@ var board_position : Vector2 = Vector2(-1,-1):
 		board.state[board_position] = self
 
 	
-var active: bool =  true
+var active: bool =  true:
+	set(a):
+		active =  a and board.can_move and mouse_can_hover  and team == Board.team.Red
+		
 
 signal figure_selected(figure: Figure)
 signal move_done
@@ -52,19 +55,19 @@ func highlight_moves() -> void:
 
 func _on_mouse_event(viewport, event, shape_idx):
 	if Input.is_action_pressed("click") and board.can_move:
-		if active and mouse_can_hover  and team == Board.team.Red:
+		if active:
 			$hover/AnimationPlayer.play("RESET")
 			$hover.show()
 			mouse_can_hover = false
 		emit_signal("figure_selected", self)
 		
 func _on_area_2d_mouse_entered():
-	if team == Board.team.Red and active and mouse_can_hover and board.can_move:
+	if active:
 		$hover.show()
 		$hover/AnimationPlayer.play("highlight")
 
 func _on_area_2d_mouse_exited():
-	if team == Board.team.Red and active and mouse_can_hover and board.can_move:
+	if active:
 		$hover/AnimationPlayer.play("unhighlight")
 
 # Hide hover effect when another figure is selected or starts moving
