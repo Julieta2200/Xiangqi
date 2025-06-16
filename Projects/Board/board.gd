@@ -178,7 +178,8 @@ func _on_marker_figure_move(marker: Variant) -> void:
 	unhighlight_markers()
 	selected_figure.hover_unhighlight()
 	if state.has(marker.board_position):
-		state[marker.board_position].delete()
+		state[marker.board_position].disappear(selected_figure)
+	
 	selected_figure.move(marker)
 	can_move = false
 

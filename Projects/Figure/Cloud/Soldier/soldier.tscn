@@ -603,7 +603,7 @@ libraries = {
 position = Vector2(-4, -97)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_loiyf")
-animation = &"teleport"
+animation = &"disappear_back"
 autoplay = "idle"
 
 [connection signal="input_event" from="Area2D" to="." method="_on_mouse_event"]

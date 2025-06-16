@@ -1,4 +1,4 @@
-[gd_scene load_steps=182 format=3 uid="uid://dyup75neubts"]
+[gd_scene load_steps=189 format=3 uid="uid://dyup75neubts"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Scripts/advisor.gd" id="1_fdb5m"]
 [ext_resource type="Texture2D" uid="uid://b1cl82c7g2uml" path="res://Assets/UI/Character_HoverEffect/Hover.png" id="2_gcyy6"]
@@ -175,6 +175,10 @@
 [ext_resource type="Texture2D" uid="uid://bjs0mgx1un3c3" path="res://Assets/Characters/Magma/Advisor/Run/Front_Right_Side/Front_Right_Side7.png" id="173_s2jn5"]
 [ext_resource type="Texture2D" uid="uid://doexy5gjn5fx4" path="res://Assets/Characters/Magma/Advisor/Run/Front_Right_Side/Front_Right_Side8.png" id="174_u0fao"]
 [ext_resource type="Texture2D" uid="uid://doeboxndmsx7h" path="res://Assets/Characters/Magma/Advisor/Run/Front_Right_Side/Front_Right_Side9.png" id="175_ahq4x"]
+[ext_resource type="Texture2D" uid="uid://dha1jab6em0pe" path="res://Assets/Characters/Magma/Advisor/Run/Signs/Sign1.png" id="176_am4yp"]
+[ext_resource type="Texture2D" uid="uid://ds23ajhl2wttr" path="res://Assets/Characters/Magma/Advisor/Run/Signs/Sign2.png" id="177_o5neq"]
+[ext_resource type="Texture2D" uid="uid://drjbc1o6mw8ba" path="res://Assets/Characters/Magma/Advisor/Run/Signs/Sign3.png" id="178_b5uqk"]
+[ext_resource type="Texture2D" uid="uid://dpmuov72rh6bd" path="res://Assets/Characters/Magma/Advisor/Run/Signs/Sign4.png" id="179_iwo15"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tgjc2"]
 radius = 64.0
@@ -704,7 +708,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("143_4uo5x")
 }, {
-"duration": 1.0,
+"duration": 50.0,
 "texture": ExtResource("144_r3npb")
 }, {
 "duration": 1.0,
@@ -718,10 +722,40 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("148_c8g6b")
+}, {
+"duration": 30.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("148_c8g6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("147_68nbk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("146_s70xb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("145_1mrrh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("144_r3npb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("143_4uo5x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("142_4srdh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("141_higwi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("140_0bodj")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk_back_left",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -751,9 +785,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("157_xokue")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk_back_right",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -783,9 +817,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("166_nhxbj")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk_front_left",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -815,10 +849,397 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("175_ahq4x")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk_front_right",
-"speed": 5.0
+"speed": 15.0
 }]
+
+[sub_resource type="Animation" id="Animation_jmtk5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sign/Signs/Sign1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sign/Signs/Sign2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sign/Signs/Sign3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sign/Signs/Sign4:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sign/Signs/Sign5:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sign/Signs/Sign6:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sign/Signs/Sign7:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sign/Signs/Sign8:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Sign/Signs/Sign9:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Sign/Signs/Sign10:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Sign/Signs/Sign11:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Sign/Signs/Sign12:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Sign/Signs/Sign13:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Sign/Signs/Sign14:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Sign/Signs/Sign15:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_xup10"]
+resource_name = "left"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sign/Signs/Sign1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.433333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sign/Signs/Sign2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sign/Signs/Sign3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.566667, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sign/Signs/Sign4:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sign/Signs/Sign5:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.566667, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sign/Signs/Sign6:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sign/Signs/Sign7:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sign/Signs/Sign8:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Sign/Signs/Sign9:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1.1, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Sign/Signs/Sign10:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 1.2, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Sign/Signs/Sign11:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 1.3, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Sign/Signs/Sign12:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 1.4, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Sign/Signs/Sign13:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 1.5, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Sign/Signs/Sign14:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 1.6, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Sign/Signs/Sign15:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 1.7, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/15/type = "method"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath(".")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"set_pos"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7nuvp"]
+_data = {
+"RESET": SubResource("Animation_jmtk5"),
+"left": SubResource("Animation_xup10")
+}
 
 [node name="Advisor" type="Node2D"]
 script = ExtResource("1_fdb5m")
@@ -846,8 +1267,108 @@ libraries = {
 position = Vector2(0, -96)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_ty5n6")
-animation = &"idle"
+animation = &"walk_back_left"
 autoplay = "idle"
+
+[node name="Sign" type="Node2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sign"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_7nuvp")
+}
+
+[node name="Signs" type="Node2D" parent="Sign"]
+
+[node name="Sign1" type="Sprite2D" parent="Sign/Signs"]
+visible = false
+position = Vector2(3, -1)
+scale = Vector2(2, 2)
+texture = ExtResource("176_am4yp")
+
+[node name="Sign2" type="Sprite2D" parent="Sign/Signs"]
+visible = false
+position = Vector2(3, -1)
+scale = Vector2(2, 2)
+texture = ExtResource("177_o5neq")
+
+[node name="Sign3" type="Sprite2D" parent="Sign/Signs"]
+visible = false
+position = Vector2(3, -1)
+scale = Vector2(2, 2)
+texture = ExtResource("178_b5uqk")
+
+[node name="Sign4" type="Sprite2D" parent="Sign/Signs"]
+visible = false
+position = Vector2(-41, -45)
+scale = Vector2(2, 2)
+texture = ExtResource("179_iwo15")
+
+[node name="Sign5" type="Sprite2D" parent="Sign/Signs"]
+visible = false
+position = Vector2(-55, -59)
+scale = Vector2(2, 2)
+texture = ExtResource("179_iwo15")
+
+[node name="Sign6" type="Sprite2D" parent="Sign/Signs"]
+visible = false
+position = Vector2(-69, -73)
+scale = Vector2(2, 2)
+texture = ExtResource("179_iwo15")
+
+[node name="Sign7" type="Sprite2D" parent="Sign/Signs"]
+visible = false
+position = Vector2(-83, -87)
+scale = Vector2(2, 2)
+texture = ExtResource("179_iwo15")
+
+[node name="Sign8" type="Sprite2D" parent="Sign/Signs"]
+visible = false
+position = Vector2(-97, -101)
+scale = Vector2(2, 2)
+texture = ExtResource("179_iwo15")
+
+[node name="Sign9" type="Sprite2D" parent="Sign/Signs"]
+visible = false
+position = Vector2(-111, -115)
+scale = Vector2(2, 2)
+texture = ExtResource("179_iwo15")
+
+[node name="Sign10" type="Sprite2D" parent="Sign/Signs"]
+visible = false
+position = Vector2(-125, -129)
+scale = Vector2(2, 2)
+texture = ExtResource("179_iwo15")
+
+[node name="Sign11" type="Sprite2D" parent="Sign/Signs"]
+visible = false
+position = Vector2(-139, -143)
+scale = Vector2(2, 2)
+texture = ExtResource("179_iwo15")
+
+[node name="Sign12" type="Sprite2D" parent="Sign/Signs"]
+visible = false
+position = Vector2(-153, -157)
+scale = Vector2(2, 2)
+texture = ExtResource("179_iwo15")
+
+[node name="Sign13" type="Sprite2D" parent="Sign/Signs"]
+visible = false
+position = Vector2(-167, -171)
+scale = Vector2(2, 2)
+texture = ExtResource("179_iwo15")
+
+[node name="Sign14" type="Sprite2D" parent="Sign/Signs"]
+visible = false
+position = Vector2(-167, -171)
+scale = Vector2(2, 2)
+texture = ExtResource("179_iwo15")
+
+[node name="Sign15" type="Sprite2D" parent="Sign/Signs"]
+visible = false
+position = Vector2(-181, -185)
+scale = Vector2(2, 2)
+texture = ExtResource("179_iwo15")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_mouse_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
