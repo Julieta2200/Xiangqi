@@ -600,10 +600,10 @@ libraries = {
 }
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-4, -97)
+position = Vector2(-5, -97)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_loiyf")
-animation = &"disappear_back"
+animation = &"disappear_left"
 autoplay = "idle"
 
 [connection signal="input_event" from="Area2D" to="." method="_on_mouse_event"]

@@ -293,7 +293,7 @@ libraries = {
 position = Vector2(-1.5, -64)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_1ter1")
-animation = &"idle"
+animation = &"walk_right"
 autoplay = "idle"
 
 [connection signal="input_event" from="Area2D" to="." method="_on_mouse_event"]

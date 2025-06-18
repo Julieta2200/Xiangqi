@@ -1,6 +1,6 @@
 extends Figure
 
-var pos
+var target_position: Vector2
 const directions: Array[Vector2] = [
 		Vector2(-1, -1),
 		Vector2(1, -1),
@@ -41,10 +41,9 @@ func animation(old_pos: Vector2, new_pos: Vector2)-> void:
 		$AnimatedSprite2D.play("walk_front_left")
 	
 func  generate_run_tween(target_pos):
-	await get_tree().create_timer(1).timeout
 	$Sign/AnimationPlayer.play("left")
-	pos = target_pos
+	target_position = target_pos
 
 func set_pos():
-	global_position = pos
+	global_position = target_position
 	super.finished_move()

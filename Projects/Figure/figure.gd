@@ -6,8 +6,10 @@ class_name Figure extends Node2D
 @export var type : Types
 @export var speed: float
 @export var value: float
-var deleted : bool
 enum Types {General, Advisor, Soldier, Elephant, Chariot, Horse, Cannon}
+
+# Indicates whether the figure has already been eaten or not
+var deleted : bool
 
 # Stores the movement boundaries for a figure, with the team as the key and the positions as a list of Vector2
 var boundaries: Dictionary
@@ -43,11 +45,7 @@ func in_boundaries(pos: Vector2) -> bool:
 		and pos.y >= boundaries[team].y.x and pos.y <= boundaries[team].y.y
 
 func move_or_capture(pos: Vector2, state: Dictionary) -> bool:
-	#if state[pos].team != team :
-		#state[pos]
-		#return true
 	return !state.has(pos) || state[pos].team != team 
-
 
 func highlight_moves() -> void:
 	for move in valid_moves:
@@ -95,11 +93,10 @@ func mobility_factor(state: Dictionary, current_position: Vector2) -> float:
 func delete():
 	queue_free()
 
-func disappear(attacker: Figure) -> void:
+func disappear_animation(attacker: Figure) -> void:
 	play_directional_animation(board_position, attacker.board_position, "disappear")
 	deleted = true
 	
-
 func move(marker):
 	animation(board_position, marker.board_position)
 	board_position = marker.board_position
