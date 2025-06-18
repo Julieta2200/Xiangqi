@@ -880,9 +880,8 @@ libraries = {
 position = Vector2(8, -168)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_4grr3")
-animation = &"idle"
+animation = &"attack_back"
 autoplay = "idle"
-frame_progress = 0.0532141
 
 [connection signal="input_event" from="Area2D" to="." method="_on_mouse_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
