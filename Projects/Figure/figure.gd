@@ -6,8 +6,10 @@ class_name Figure extends Node2D
 @export var type : Types
 @export var speed: float
 @export var value: float
-
 enum Types {General, Advisor, Soldier, Elephant, Chariot, Horse, Cannon}
+
+# Indicates whether the figure has already been eaten or not
+var deleted : bool
 
 # Stores the movement boundaries for a figure, with the team as the key and the positions as a list of Vector2
 var boundaries: Dictionary
@@ -44,7 +46,6 @@ func in_boundaries(pos: Vector2) -> bool:
 
 func move_or_capture(pos: Vector2, state: Dictionary) -> bool:
 	return !state.has(pos) || state[pos].team != team 
-
 
 func highlight_moves() -> void:
 	for move in valid_moves:
@@ -92,11 +93,15 @@ func mobility_factor(state: Dictionary, current_position: Vector2) -> float:
 func delete():
 	queue_free()
 
+func disappear_animation(attacker: Figure) -> void:
+	play_directional_animation(board_position, attacker.board_position, "disappear")
+	deleted = true
+	
 func move(marker):
 	animation(board_position, marker.board_position)
 	board_position = marker.board_position
 	
-	generate_run_tween(marker.global_position,)
+	generate_run_tween(marker.global_position)
 
 #Created and used a tween to move the figure from one point to another.
 func generate_run_tween(target_pos):
@@ -108,24 +113,34 @@ func finished_move():
 	mouse_can_hover = true
 	emit_signal("move_done")
 
-func animation(old_pos: Vector2, new_pos: Vector2)-> void:
-	var direction = new_pos - old_pos
-	if direction.y > 0:
-		$AnimatedSprite2D.play("walk_back")
-	elif direction.y < 0:
-		$AnimatedSprite2D.play("walk_front")
-	elif direction.x > 0:
-		$AnimatedSprite2D.play("walk_right")
-	else:
-		$AnimatedSprite2D.play("walk_left")
+func animation(old_pos: Vector2, new_pos: Vector2) -> void:
+	play_directional_animation(old_pos, new_pos, "walk")
 
 func teleport():
 	animated_sprite.play("teleport")
 
 # Activates the inactive animation after the moving animation ends
 func _on_figure_animation_finished():
-	$AnimatedSprite2D.play("idle")
+	if !deleted:
+		$AnimatedSprite2D.play("idle")
+	else:
+		delete()
 
 # play any animation for any figure, used for cutscenes
 func play_animation(animation: String) -> void:
 	animated_sprite.play(animation)
+
+func play_directional_animation(from: Vector2, to: Vector2, anim: String) -> void:
+	var direction = to - from
+	var animation_name := ""
+
+	if direction.y > 0:
+		animation_name = anim + "_back"
+	elif direction.y < 0:
+		animation_name = anim + "_front"
+	elif direction.x > 0:
+		animation_name = anim + "_right"
+	else:
+		animation_name = anim + "_left"
+
+	play_animation(animation_name)

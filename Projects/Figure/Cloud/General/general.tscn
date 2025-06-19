@@ -412,7 +412,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 2.0
+"speed": 1.5
 }, {
 "frames": [],
 "loop": true,
@@ -491,7 +491,7 @@ libraries = {
 position = Vector2(0, -115)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_3eu8p")
-animation = &"idle"
+animation = &"attack_front"
 autoplay = "idle"
 
 [connection signal="input_event" from="Area2D" to="." method="_on_mouse_event"]

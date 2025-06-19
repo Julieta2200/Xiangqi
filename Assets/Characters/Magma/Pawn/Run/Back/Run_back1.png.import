@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dojnfbwbsi4xs"
-path="res://.godot/imported/Run_back1.png-336ed532d71c08c550cf03a84d434758.ctex"
+uid="uid://8xxqv1hi838f"
+path="res://.godot/imported/Run_Back1.png-23d7a3fd1467e19816dac168112f0c0a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/Magma/Pawn/Run/Back/Run_back1.png"
-dest_files=["res://.godot/imported/Run_back1.png-336ed532d71c08c550cf03a84d434758.ctex"]
+source_file="res://Assets/Characters/Magma/Pawn/Run/Back/Run_Back1.png"
+dest_files=["res://.godot/imported/Run_Back1.png-23d7a3fd1467e19816dac168112f0c0a.ctex"]
 
 [params]
 
