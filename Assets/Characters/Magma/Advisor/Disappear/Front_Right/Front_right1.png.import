@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bxdti3laam231"
-path="res://.godot/imported/Front_right1.png-1a607841a2fe9e94d8b5cb7005546f3c.ctex"
+path="res://.godot/imported/Front_Right1.png-f609cf39ba2691db50b5723ccd42643f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/Magma/Advisor/Disappear/Front_Right/Front_right1.png"
-dest_files=["res://.godot/imported/Front_right1.png-1a607841a2fe9e94d8b5cb7005546f3c.ctex"]
+source_file="res://Assets/Characters/Magma/Advisor/Disappear/Front_Right/Front_Right1.png"
+dest_files=["res://.godot/imported/Front_Right1.png-f609cf39ba2691db50b5723ccd42643f.ctex"]
 
 [params]
 
