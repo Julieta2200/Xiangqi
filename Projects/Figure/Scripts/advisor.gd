@@ -41,7 +41,7 @@ func animation(old_pos: Vector2, new_pos: Vector2)-> void:
 		$AnimatedSprite2D.play("walk_front_left")
 	
 func  generate_run_tween(target_pos):
-	$Sign/AnimationPlayer.play("left")
+	$Sign_animation/AnimationPlayer.play("left")
 	target_position = target_pos
 
 func set_pos():

@@ -7,7 +7,7 @@ signal finished(to_call: Callable)
 var figures: Dictionary = {
 	"Ashes": load("res://Assets/Characters/Magma/General/Sides/Ashes_front.png"),
 	"Advisor": load("res://Assets/Characters/Magma/Advisor/Advisor_front.png"),
-	"Pawn" : load("res://Assets/Characters/Cloud/Pawn/Idle/Front idle/Front1.png"),
+	"Pawn" : load("res://Assets/Characters/Cloud/Pawn/Angel_Pawn.png"),
 	"Cloud General" : load("res://Assets/Characters/Cloud/General/General_front.png")
 }
 
