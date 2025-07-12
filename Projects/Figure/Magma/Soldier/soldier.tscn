@@ -154,12 +154,12 @@
 [ext_resource type="Texture2D" uid="uid://cjivfn3sc7yq4" path="res://Assets/Characters/Magma/Pawn/Teleport/Teleport3.png" id="119_0bq4o"]
 [ext_resource type="Texture2D" uid="uid://bw8cvdgw70jta" path="res://Assets/Characters/Magma/Pawn/Teleport/Teleport4.png" id="120_scvgi"]
 [ext_resource type="Texture2D" uid="uid://bd1auyflbitpa" path="res://Assets/Characters/Magma/Pawn/Teleport/Teleport5.png" id="121_44yy6"]
-[ext_resource type="Texture2D" uid="uid://8xxqv1hi838f" path="res://Assets/Characters/Magma/Pawn/Run/Back/Run_Back1.png" id="122_62m5f"]
-[ext_resource type="Texture2D" uid="uid://b02y7xnh1pv8u" path="res://Assets/Characters/Magma/Pawn/Run/Back/Run_Back2.png" id="123_rkt86"]
-[ext_resource type="Texture2D" uid="uid://7oft8ju8gtgn" path="res://Assets/Characters/Magma/Pawn/Run/Back/Run_Back3.png" id="124_m7ten"]
-[ext_resource type="Texture2D" uid="uid://cmxbfx7tm77g2" path="res://Assets/Characters/Magma/Pawn/Run/Back/Run_Back4.png" id="125_wfgrj"]
-[ext_resource type="Texture2D" uid="uid://b8o6befwrsa4c" path="res://Assets/Characters/Magma/Pawn/Run/Back/Run_Back5.png" id="126_7ebpi"]
-[ext_resource type="Texture2D" uid="uid://d3i1qjy63lpyi" path="res://Assets/Characters/Magma/Pawn/Run/Back/Run_Back6.png" id="127_la1n2"]
+[ext_resource type="Texture2D" uid="uid://8xxqv1hi838f" path="res://Assets/Characters/Magma/Pawn/Run/Back/Run_back1.png" id="122_62m5f"]
+[ext_resource type="Texture2D" uid="uid://b02y7xnh1pv8u" path="res://Assets/Characters/Magma/Pawn/Run/Back/Run_back2.png" id="123_rkt86"]
+[ext_resource type="Texture2D" uid="uid://7oft8ju8gtgn" path="res://Assets/Characters/Magma/Pawn/Run/Back/Run_back3.png" id="124_m7ten"]
+[ext_resource type="Texture2D" uid="uid://cmxbfx7tm77g2" path="res://Assets/Characters/Magma/Pawn/Run/Back/Run_back4.png" id="125_wfgrj"]
+[ext_resource type="Texture2D" uid="uid://b8o6befwrsa4c" path="res://Assets/Characters/Magma/Pawn/Run/Back/Run_back5.png" id="126_7ebpi"]
+[ext_resource type="Texture2D" uid="uid://d3i1qjy63lpyi" path="res://Assets/Characters/Magma/Pawn/Run/Back/Run_back6.png" id="127_la1n2"]
 [ext_resource type="Texture2D" uid="uid://cnvbkrhpppcba" path="res://Assets/Characters/Magma/Pawn/Run/Back/Run_Back7.png" id="128_5cegk"]
 [ext_resource type="Texture2D" uid="uid://bvbhsb08eebyy" path="res://Assets/Characters/Magma/Pawn/Run/Left Side/Run_Left1.png" id="129_i8oy3"]
 [ext_resource type="Texture2D" uid="uid://c06twbdjftfei" path="res://Assets/Characters/Magma/Pawn/Run/Left Side/Run_Left2.png" id="130_eblnu"]
@@ -769,35 +769,9 @@ animations = [{
 "name": &"teleport",
 "speed": 6.0
 }, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("122_62m5f")
-}, {
-"duration": 1.0,
-"texture": ExtResource("123_rkt86")
-}, {
-"duration": 1.0,
-"texture": ExtResource("124_m7ten")
-}, {
-"duration": 1.0,
-"texture": ExtResource("125_wfgrj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("126_7ebpi")
-}, {
-"duration": 1.0,
-"texture": ExtResource("127_la1n2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("128_5cegk")
-}],
-"loop": false,
-"name": &"walk_back",
-"speed": 8.0
-}, {
 "frames": [],
 "loop": false,
-"name": &"walk_front",
+"name": &"walk_down",
 "speed": 8.0
 }, {
 "frames": [{
@@ -851,6 +825,32 @@ animations = [{
 "loop": false,
 "name": &"walk_right",
 "speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("122_62m5f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("123_rkt86")
+}, {
+"duration": 1.0,
+"texture": ExtResource("124_m7ten")
+}, {
+"duration": 1.0,
+"texture": ExtResource("125_wfgrj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("126_7ebpi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("127_la1n2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("128_5cegk")
+}],
+"loop": false,
+"name": &"walk_up",
+"speed": 8.0
 }]
 
 [node name="Soldier" type="Node2D"]
@@ -866,7 +866,6 @@ position = Vector2(0, -92)
 shape = SubResource("CapsuleShape2D_b0rn7")
 
 [node name="hover" type="Sprite2D" parent="."]
-visible = false
 scale = Vector2(2, 2)
 texture = ExtResource("3_3nhkv")
 
@@ -880,7 +879,7 @@ libraries = {
 position = Vector2(8, -168)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_4grr3")
-animation = &"attack_back"
+animation = &"walk_up"
 autoplay = "idle"
 
 [connection signal="input_event" from="Area2D" to="." method="_on_mouse_event"]

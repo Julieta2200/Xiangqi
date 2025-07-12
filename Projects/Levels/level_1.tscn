@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ba7bayl6q6g14"]
+
+[ext_resource type="PackedScene" uid="uid://dpyrcsgpodbx7" path="res://Projects/Board/board.tscn" id="1_maoee"]
+[ext_resource type="PackedScene" uid="uid://bxjowytodmlln" path="res://Projects/Figure/V2/Magma/Soldier/Soldier.tscn" id="2_5lfyn"]
+
+[node name="Level1" type="Node2D"]
+
+[node name="Board" parent="." instance=ExtResource("1_maoee")]
+
+[node name="Soldier" parent="." node_paths=PackedStringArray("board") instance=ExtResource("2_5lfyn")]
+board = NodePath("../Board")

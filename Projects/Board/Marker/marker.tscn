@@ -1,34 +1,11 @@
-[gd_scene load_steps=34 format=3 uid="uid://dlkpgwakp3ub7"]
+[gd_scene load_steps=9 format=3 uid="uid://dlkpgwakp3ub7"]
 
 [ext_resource type="Script" path="res://Projects/Board/Marker/marker.gd" id="1_y3i0m"]
 [ext_resource type="Texture2D" uid="uid://dia2v0yg34v87" path="res://Assets/UI/Markers/Step Icon/icon.png" id="2_r8c08"]
 [ext_resource type="Texture2D" uid="uid://bufqung6psup2" path="res://Assets/UI/Markers/StepGlow (Red)/StepGlow(1).png" id="2_s7g8i"]
 [ext_resource type="Texture2D" uid="uid://ut2w4mpj4tg7" path="res://Assets/UI/Markers/StepGlow (Yellow)/StepGlow(1).png" id="3_tltih"]
 [ext_resource type="Texture2D" uid="uid://nthq6mgcs2f0" path="res://Assets/UI/Markers/StepGlow (Yellow)/StepGlow(2).png" id="5_bnpjt"]
-[ext_resource type="Texture2D" uid="uid://bq4hpmarr5aji" path="res://Assets/UI/Position_Marker/Marker/White/Position_Marker_Hover.png" id="7_dx2w6"]
-[ext_resource type="Texture2D" uid="uid://732mny3nbody" path="res://Assets/UI/Position_Marker/Marker/Red/Position_Marker1.png" id="7_l61pc"]
 [ext_resource type="Texture2D" uid="uid://c6khya78ox7ud" path="res://Assets/UI/Markers/StepGlow (Red)/StepGlow(2).png" id="7_ulkbh"]
-[ext_resource type="Texture2D" uid="uid://ccwodwoe14r4p" path="res://Assets/UI/Position_Marker/Marker/Red/Position_Marker2.png" id="8_jmgrw"]
-[ext_resource type="Texture2D" uid="uid://bh4r14cfuti55" path="res://Assets/UI/Position_Marker/Marker/Red/Position_Marker3.png" id="9_hoj5o"]
-[ext_resource type="Texture2D" uid="uid://cdg0kb8256qav" path="res://Assets/UI/Position_Marker/Marker/Red/Position_Marker4.png" id="10_0iahm"]
-[ext_resource type="Texture2D" uid="uid://dxa1iqamvyfrc" path="res://Assets/UI/Position_Marker/Marker/Red/Position_Marker5.png" id="11_sjfhc"]
-[ext_resource type="Texture2D" uid="uid://cahbq2pysmo63" path="res://Assets/UI/Position_Marker/Marker/Red/Position_Marker6.png" id="12_pyvf6"]
-[ext_resource type="Texture2D" uid="uid://dw0r62alb3t4j" path="res://Assets/UI/Position_Marker/Marker/Red/Position_Marker7.png" id="13_qp4oa"]
-[ext_resource type="Texture2D" uid="uid://oi75v1bx50s7" path="res://Assets/UI/Position_Marker/Marker/Red/Position_Marker8.png" id="14_s3kua"]
-[ext_resource type="Texture2D" uid="uid://0xci0dtuw8v3" path="res://Assets/UI/Position_Marker/Marker/Red/Position_Marker9.png" id="15_00lxa"]
-[ext_resource type="Texture2D" uid="uid://dtwr87qvog2ie" path="res://Assets/UI/Position_Marker/Marker/Red/Position_Marker10.png" id="16_6mc1o"]
-[ext_resource type="Texture2D" uid="uid://drskf8y8ouqku" path="res://Assets/UI/Position_Marker/Marker/Red/Position_Marker11.png" id="17_x31o2"]
-[ext_resource type="Texture2D" uid="uid://m47qaoksbd8c" path="res://Assets/UI/Position_Marker/Marker/Red/Position_Marker_Hover.png" id="18_byc4m"]
-[ext_resource type="Texture2D" uid="uid://cgn58n78r1tr0" path="res://Assets/UI/Position_Marker/Lines/Red/Horizontal_Line.png" id="19_cweww"]
-[ext_resource type="Texture2D" uid="uid://b64h1ra1iuxxq" path="res://Assets/UI/Position_Marker/Lines/Red/Vertical_Line.png" id="20_drnsk"]
-[ext_resource type="Texture2D" uid="uid://dhoaysyphqi5n" path="res://Assets/UI/Position_Marker/Light/Red/Light(1).png" id="21_3wj1s"]
-[ext_resource type="Texture2D" uid="uid://bjslv1eb71d41" path="res://Assets/UI/Position_Marker/Light/White/Light(1).png" id="22_go5ka"]
-[ext_resource type="Texture2D" uid="uid://b2f2wx0vnklxm" path="res://Assets/UI/Position_Marker/Light/Red/Light(2).png" id="22_yr4yl"]
-[ext_resource type="Texture2D" uid="uid://cxatvuhricgyr" path="res://Assets/UI/Position_Marker/Light/White/Light(2).png" id="23_kf4w7"]
-[ext_resource type="Texture2D" uid="uid://bgb85470yc28d" path="res://Assets/UI/Position_Marker/Light/Red/Light(3).png" id="23_kucn8"]
-[ext_resource type="Texture2D" uid="uid://by7c46e0niyea" path="res://Assets/UI/Position_Marker/Light/White/Light(3).png" id="24_2g07v"]
-[ext_resource type="Texture2D" uid="uid://y7r71wir7q45" path="res://Assets/UI/Position_Marker/Light/Red/Light(4).png" id="24_sh07l"]
-[ext_resource type="Texture2D" uid="uid://b7b35ebsn0x5k" path="res://Assets/UI/Position_Marker/Light/White/Light(4).png" id="25_f74k0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o72yf"]
 animations = [{
@@ -55,148 +32,6 @@ animations = [{
 "speed": 3.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_06k7y"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_dx2w6")
-}],
-"loop": true,
-"name": &"Cloud_hover",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("18_byc4m")
-}],
-"loop": true,
-"name": &"Magma_hover",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_l61pc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_jmgrw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_hoj5o")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_0iahm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_sjfhc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_pyvf6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_qp4oa")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_s3kua")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_00lxa")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_6mc1o")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_x31o2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_6mc1o")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_00lxa")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_s3kua")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_qp4oa")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_pyvf6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_sjfhc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_0iahm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_hoj5o")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_jmgrw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_l61pc")
-}],
-"loop": true,
-"name": &"highlight",
-"speed": 10.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_l6ttu"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("22_go5ka")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_kf4w7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("24_2g07v")
-}, {
-"duration": 3.0,
-"texture": ExtResource("25_f74k0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("24_2g07v")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_kf4w7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("22_go5ka")
-}],
-"loop": false,
-"name": &"Cloud_light",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("21_3wj1s")
-}, {
-"duration": 1.0,
-"texture": ExtResource("22_yr4yl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_kucn8")
-}, {
-"duration": 3.0,
-"texture": ExtResource("24_sh07l")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_kucn8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("22_yr4yl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_3wj1s")
-}],
-"loop": false,
-"name": &"Magma_light",
-"speed": 5.0
-}]
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vg2kh"]
 radius = 46.0
 height = 92.0
@@ -218,28 +53,6 @@ sprite_frames = SubResource("SpriteFrames_o72yf")
 animation = &"capture_highlight"
 autoplay = "highlight"
 
-[node name="position_marker" type="AnimatedSprite2D" parent="."]
-visible = false
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_06k7y")
-animation = &"highlight"
-
-[node name="horizontal_line" type="Sprite2D" parent="position_marker"]
-visible = false
-position = Vector2(57, 0)
-texture = ExtResource("19_cweww")
-
-[node name="vertical_line" type="Sprite2D" parent="position_marker"]
-visible = false
-position = Vector2(0, -53)
-texture = ExtResource("20_drnsk")
-
-[node name="light" type="AnimatedSprite2D" parent="position_marker"]
-visible = false
-position = Vector2(0, -62)
-sprite_frames = SubResource("SpriteFrames_l6ttu")
-animation = &"Magma_light"
-
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -248,7 +61,6 @@ top_level = true
 z_index = 1
 shape = SubResource("CapsuleShape2D_vg2kh")
 
-[connection signal="animation_finished" from="position_marker/light" to="." method="_on_light_animation_finished"]
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

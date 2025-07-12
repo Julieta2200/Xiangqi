@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dpyrcsgpodbx7"]
 
-[ext_resource type="Script" path="res://Projects/Board/board.gd" id="1_i1ya0"]
+[ext_resource type="Script" path="res://Projects/Board/board_v2.gd" id="1_ehao4"]
 [ext_resource type="Texture2D" uid="uid://4g4uufr8n663" path="res://Assets/boards/board.png" id="2_x6ei7"]
 [ext_resource type="PackedScene" uid="uid://dlkpgwakp3ub7" path="res://Projects/Board/Marker/marker.tscn" id="3_g0cu3"]
 
@@ -8,7 +8,7 @@
 process_thread_group = 2
 process_thread_group_order = 0
 process_thread_messages = 0
-script = ExtResource("1_i1ya0")
+script = ExtResource("1_ehao4")
 
 [node name="Xiangqi" type="Sprite2D" parent="."]
 position = Vector2(1078, 1163)

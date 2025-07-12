@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=3 uid="uid://bxjowytodmlln"]
+
+[ext_resource type="Texture2D" uid="uid://f1jvrq55cicp" path="res://Assets/Characters/Magma/Pawn/Idle/Back idle/Back_idle1.png" id="1_4usx7"]
+[ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_ebhfi"]
+[ext_resource type="Texture2D" uid="uid://detlb0txib850" path="res://Assets/Characters/Magma/Pawn/Idle/Back idle/Back_idle2.png" id="2_i62mu"]
+[ext_resource type="Texture2D" uid="uid://di0utiqcdevt2" path="res://Assets/Characters/Magma/Pawn/Idle/Back idle/Back_idle3.png" id="3_ydc30"]
+[ext_resource type="PackedScene" uid="uid://dylnbquiybg16" path="res://Projects/Figure/Components/figure_ui_component.tscn" id="4_qchhg"]
+[ext_resource type="Script" path="res://Projects/Figure/Components/soldier_chess_component.gd" id="5_adoya"]
+[ext_resource type="Script" path="res://Projects/Figure/Components/move_component.gd" id="7_d3i77"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pi8o7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4usx7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_i62mu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ydc30")
+}],
+"loop": true,
+"name": &"idle_up",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qnuwo"]
+radius = 47.0
+height = 208.0
+
+[node name="Soldier" type="CharacterBody2D" node_paths=PackedStringArray("chess_component", "ui_component")]
+script = ExtResource("1_ebhfi")
+chess_component = NodePath("ChessComponent")
+ui_component = NodePath("FigureUIComponent")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, -168)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_pi8o7")
+animation = &"idle_up"
+autoplay = "idle_up"
+frame_progress = 0.556319
+
+[node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component") instance=ExtResource("4_qchhg")]
+chess_component = NodePath("../ChessComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FigureUIComponent"]
+position = Vector2(0, -98)
+shape = SubResource("CapsuleShape2D_qnuwo")
+
+[node name="ChessComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "move_component")]
+script = ExtResource("5_adoya")
+team = 1
+figure_component = NodePath("..")
+move_component = NodePath("../MoveComponent")
+
+[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component")]
+script = ExtResource("7_d3i77")
+speed = 300.0
+figure_component = NodePath("..")
