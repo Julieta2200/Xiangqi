@@ -34,8 +34,12 @@ var scenes: Dictionary = {
 	}
 }
 
+@export var ai: AI
 var markers : Dictionary
-var turn: Teams = Teams.Red
+var turn: Teams = Teams.Red :
+	set(t):
+		turn = t
+		activate_reds(turn == Teams.Red)
 
 var state: Dictionary
 # For which figure the markers are currently highlighted
@@ -78,8 +82,15 @@ func move_figure(marker: BoardMarker) -> void:
 	state.erase(_selected_figure.chess_component.position)
 	state[marker.board_position] = _selected_figure
 	_selected_figure.chess_component.change_position(marker.board_position)
+	turn = Teams.Black
 
 func clear_markers() -> void:
 	for pos in markers:
 		var m: BoardMarker = markers[pos]
 		m.unhighlight()
+
+func activate_reds(result: bool) -> void:
+	for pos in state:
+		var figure: FigureComponent = state[pos]
+		if figure.chess_component.team == Teams.Red:
+			figure.ui_component.active = result

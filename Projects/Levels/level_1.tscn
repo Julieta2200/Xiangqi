@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://ba7bayl6q6g14"]
+[gd_scene load_steps=3 format=3 uid="uid://ba7bayl6q6g14"]
 
 [ext_resource type="PackedScene" uid="uid://dpyrcsgpodbx7" path="res://Projects/Board/board.tscn" id="1_maoee"]
+[ext_resource type="PackedScene" uid="uid://d0l5epq1wemnr" path="res://Projects/AI/ai.tscn" id="2_ddksv"]
 
 [node name="Level1" type="Node2D"]
 
-[node name="Board" parent="." instance=ExtResource("1_maoee")]
+[node name="Board" parent="." node_paths=PackedStringArray("ai") instance=ExtResource("1_maoee")]
+ai = NodePath("../AI")
+
+[node name="AI" parent="." instance=ExtResource("2_ddksv")]
