@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://30cxk3vocnf5"]
+
+[ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_gfrox"]
+[ext_resource type="Texture2D" uid="uid://cdvhysgpncwws" path="res://Assets/Characters/Cloud/Pawn/Idle/Front idle/Front1.png" id="2_jg03d"]
+[ext_resource type="Texture2D" uid="uid://f1jvrq55cicp" path="res://Assets/Characters/Magma/Pawn/Idle/Back idle/Back_idle1.png" id="2_tcr8t"]
+[ext_resource type="Texture2D" uid="uid://detlb0txib850" path="res://Assets/Characters/Magma/Pawn/Idle/Back idle/Back_idle2.png" id="3_jtcyu"]
+[ext_resource type="Texture2D" uid="uid://4upnq23t384k" path="res://Assets/Characters/Cloud/Pawn/Idle/Front idle/Front2.png" id="3_o2u1k"]
+[ext_resource type="Texture2D" uid="uid://delw3ejtdfqhn" path="res://Assets/Characters/Cloud/Pawn/Idle/Front idle/Front3.png" id="4_sbbrh"]
+[ext_resource type="Script" path="res://Projects/Figure/Components/soldier_chess_component.gd" id="6_67shb"]
+[ext_resource type="Script" path="res://Projects/Figure/Components/move_component.gd" id="7_ap5dw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pi8o7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jg03d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_o2u1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sbbrh")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tcr8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jtcyu")
+}],
+"loop": true,
+"name": &"idle_up",
+"speed": 5.0
+}]
+
+[node name="Soldier" type="CharacterBody2D" node_paths=PackedStringArray("chess_component", "ui_component", "move_component")]
+script = ExtResource("1_gfrox")
+chess_component = NodePath("ChessComponent")
+ui_component = NodePath("")
+move_component = NodePath("MoveComponent")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, -119)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_pi8o7")
+animation = &"idle_down"
+autoplay = "idle_down"
+frame_progress = 0.211815
+
+[node name="ChessComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "move_component")]
+script = ExtResource("6_67shb")
+team = 2
+figure_component = NodePath("..")
+move_component = NodePath("../MoveComponent")
+
+[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component")]
+script = ExtResource("7_ap5dw")
+speed = 300.0
+figure_component = NodePath("..")

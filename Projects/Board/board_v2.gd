@@ -3,6 +3,7 @@ class_name BoardV2 extends Node2D
 const board_rows = 10
 const board_cols = 9
 enum Teams {Red = 1, Black = 2}
+enum Kingdoms {MAGMA = 1, CLOUD = 2}
 
 const palace_positions: Dictionary = {
 	Vector2(3,0): true,
@@ -24,6 +25,14 @@ const palace_positions: Dictionary = {
 	Vector2(4,9): true,
 	Vector2(5,9): true
 }
+var scenes: Dictionary = {
+	Kingdoms.MAGMA: {
+		FigureComponent.Types.SOLDIER: load("res://Projects/Figure/V2/Magma/Soldier/Soldier.tscn")
+	},
+	Kingdoms.CLOUD: {
+		FigureComponent.Types.SOLDIER: load("res://Projects/Figure/V2/Cloud/Soldier/Soldier.tscn")
+	}
+}
 
 var markers : Dictionary
 var turn: Teams = Teams.Red
@@ -34,6 +43,7 @@ var _selected_figure: FigureComponent
 
 func _ready() -> void:
 	initialize_markers()
+	initialize_position()
 	
 func initialize_markers():
 	for i in range(board_rows):
@@ -42,6 +52,16 @@ func initialize_markers():
 			markers[Vector2i(j,i)] = marker
 			markers[Vector2i(j,i)].board_position = Vector2i(j,i)
 			marker.figure_move.connect(move_figure)
+
+func initialize_position():
+	var magma_soldier: FigureComponent = scenes[Kingdoms.MAGMA][FigureComponent.Types.SOLDIER].instantiate()
+	magma_soldier.board = self
+	magma_soldier.chess_component.position = Vector2i(1,1)
+	add_child(magma_soldier)
+	var cloud_soldier: FigureComponent = scenes[Kingdoms.CLOUD][FigureComponent.Types.SOLDIER].instantiate()
+	cloud_soldier.board = self
+	cloud_soldier.chess_component.position = Vector2i(6,8)
+	add_child(cloud_soldier)
 
 func show_move_markers(positions: Array[Vector2i], figure: FigureComponent) -> void:
 	_selected_figure = figure
@@ -54,9 +74,12 @@ func set_figure(figure: FigureComponent, pos: Vector2i) -> void:
 	figure.global_position = markers[pos].global_position
 
 func move_figure(marker: BoardMarker) -> void:
+	clear_markers()
+	state.erase(_selected_figure.chess_component.position)
+	state[marker.board_position] = _selected_figure
+	_selected_figure.chess_component.change_position(marker.board_position)
+
+func clear_markers() -> void:
 	for pos in markers:
 		var m: BoardMarker = markers[pos]
 		m.unhighlight()
-	state.erase(_selected_figure.chess_component.position)
-	state[marker.board_position] = _selected_figure
-	_selected_figure.chess_component.position = marker.board_position
