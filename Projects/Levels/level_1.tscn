@@ -8,4 +8,5 @@
 [node name="Board" parent="." node_paths=PackedStringArray("ai") instance=ExtResource("1_maoee")]
 ai = NodePath("../AI")
 
-[node name="AI" parent="." instance=ExtResource("2_ddksv")]
+[node name="AI" parent="." node_paths=PackedStringArray("board") instance=ExtResource("2_ddksv")]
+board = NodePath("../Board")

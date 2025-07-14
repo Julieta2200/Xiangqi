@@ -23,7 +23,7 @@ func show_moves():
 	var available_moves: Array[Vector2i] = calculate_moves(figure_component.board.state, position)
 	figure_component.board.show_move_markers(available_moves, figure_component)
 
-func get_moves():
+func get_moves() -> Array[Vector2i]:
 	return calculate_moves(figure_component.board.state, position)
 
 func calculate_moves(state: Dictionary, current_position: Vector2i) -> Array[Vector2i]:

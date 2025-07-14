@@ -82,7 +82,16 @@ func move_figure(marker: BoardMarker) -> void:
 	state.erase(_selected_figure.chess_component.position)
 	state[marker.board_position] = _selected_figure
 	_selected_figure.chess_component.change_position(marker.board_position)
+	_selected_figure = null
 	turn = Teams.Black
+	ai.make_move()
+
+func move_figure_AI(move: Dictionary) -> void:
+	var figure: FigureComponent = state[move["start"]]
+	state.erase(move["start"])
+	state[move["end"]] = figure
+	figure.chess_component.change_position(move["end"])
+	turn = Teams.Red
 
 func clear_markers() -> void:
 	for pos in markers:
@@ -94,3 +103,11 @@ func activate_reds(result: bool) -> void:
 		var figure: FigureComponent = state[pos]
 		if figure.chess_component.team == Teams.Red:
 			figure.ui_component.active = result
+
+func get_figures(team: Teams) -> Array[FigureComponent]:
+	var figures: Array[FigureComponent] = []
+	for pos in state:
+		var figure: FigureComponent = state[pos]
+		if figure.chess_component.team == Teams.Black:
+			figures.append(figure)
+	return figures

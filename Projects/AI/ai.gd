@@ -1,11 +1,26 @@
 class_name AI extends Node
 
+@export var board: BoardV2
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	randomize()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func get_figures() -> Array[FigureComponent]:
+	return board.get_figures(BoardV2.Teams.Black)
+	
+func make_move() -> bool:
+	var figures: Array[FigureComponent] = get_figures()
+	var possible_moves: Array[Dictionary] = []
+	for figure in figures:
+		var moves: Array[Vector2i] = figure.chess_component.get_moves()
+		for move in moves:
+			possible_moves.append({
+				"start": figure.chess_component.position,
+				"end": move
+			})
+	if possible_moves.size() == 0:
+		return false
+	
+	var move: Dictionary = possible_moves[randi() % possible_moves.size()]
+	board.move_figure_AI(move)
+	return true
