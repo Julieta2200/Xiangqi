@@ -1,11 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://ba7bayl6q6g14"]
+[gd_scene load_steps=4 format=3 uid="uid://ba7bayl6q6g14"]
 
 [ext_resource type="PackedScene" uid="uid://dpyrcsgpodbx7" path="res://Projects/Board/board.tscn" id="1_maoee"]
+[ext_resource type="Script" path="res://Projects/Levels/level_1.gd" id="1_yncyb"]
 [ext_resource type="PackedScene" uid="uid://d0l5epq1wemnr" path="res://Projects/AI/ai.tscn" id="2_ddksv"]
 
 [node name="Level1" type="Node2D"]
+script = ExtResource("1_yncyb")
 
 [node name="Board" parent="." node_paths=PackedStringArray("ai") instance=ExtResource("1_maoee")]
+unique_name_in_owner = true
 ai = NodePath("../AI")
 
 [node name="AI" parent="." node_paths=PackedStringArray("board") instance=ExtResource("2_ddksv")]

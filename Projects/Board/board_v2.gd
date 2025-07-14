@@ -51,7 +51,6 @@ var _selected_figure: FigureComponent
 
 func _ready() -> void:
 	initialize_markers()
-	initialize_position()
 	
 func initialize_markers():
 	for i in range(board_rows):
@@ -61,39 +60,14 @@ func initialize_markers():
 			markers[Vector2i(j,i)].board_position = Vector2i(j,i)
 			marker.figure_move.connect(move_figure)
 
-func initialize_position():
-	var magma_soldier: FigureComponent = scenes[Kingdoms.MAGMA][FigureComponent.Types.SOLDIER].instantiate()
-	magma_soldier.board = self
-	magma_soldier.chess_component.position = Vector2i(1,1)
-	add_child(magma_soldier)
-	var magma_general: FigureComponent = scenes[Kingdoms.MAGMA][FigureComponent.Types.GENERAL].instantiate()
-	magma_general.board = self
-	magma_general.chess_component.position = Vector2i(5,0)
-	add_child(magma_general)
-	var magma_advisor: FigureComponent = scenes[Kingdoms.MAGMA][FigureComponent.Types.ADVISOR].instantiate()
-	magma_advisor.board = self
-	magma_advisor.chess_component.position = Vector2i(3,0)
-	add_child(magma_advisor)
-	var magma_advisor2: FigureComponent = scenes[Kingdoms.MAGMA][FigureComponent.Types.ADVISOR].instantiate()
-	magma_advisor2.board = self
-	magma_advisor2.chess_component.position = Vector2i(4,1)
-	add_child(magma_advisor2)
-	var cloud_soldier: FigureComponent = scenes[Kingdoms.CLOUD][FigureComponent.Types.SOLDIER].instantiate()
-	cloud_soldier.board = self
-	cloud_soldier.chess_component.position = Vector2i(6,8)
-	add_child(cloud_soldier)
-	var cloud_general: FigureComponent = scenes[Kingdoms.CLOUD][FigureComponent.Types.GENERAL].instantiate()
-	cloud_general.board = self
-	cloud_general.chess_component.position = Vector2i(4,9)
-	add_child(cloud_general)
-	var cloud_advisor: FigureComponent = scenes[Kingdoms.CLOUD][FigureComponent.Types.ADVISOR].instantiate()
-	cloud_advisor.board = self
-	cloud_advisor.chess_component.position = Vector2i(3,9)
-	add_child(cloud_advisor)
-	var cloud_advisor2: FigureComponent = scenes[Kingdoms.CLOUD][FigureComponent.Types.ADVISOR].instantiate()
-	cloud_advisor2.board = self
-	cloud_advisor2.chess_component.position = Vector2i(5,9)
-	add_child(cloud_advisor2)
+func initialize_position(init_state: Array[State]):
+	for s in init_state:
+		var figure: FigureComponent = scenes[s.team][s.type].instantiate()
+		figure.board = self
+		figure.chess_component.position = s.position
+		add_child(figure)
+	
+	
 
 func show_move_markers(positions: Array[Vector2i], figure: FigureComponent) -> void:
 	clear_markers()
