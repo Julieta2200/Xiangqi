@@ -34,7 +34,8 @@ func in_boundaries(pos: Vector2i) -> bool:
 		and pos.y >= boundaries[team].y.x and pos.y <= boundaries[team].y.y
 
 func move_or_capture(pos: Vector2i, state: Dictionary) -> bool:
-	return !state.has(pos) || state[pos].team != team 
+	print(type_string(typeof(pos)))
+	return !state.has(pos) || state[pos].chess_component.team != team 
 
 func change_position(p: Vector2i) -> void:
 	position = p

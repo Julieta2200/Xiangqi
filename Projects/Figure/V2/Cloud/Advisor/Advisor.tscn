@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://cdn3jcelemlvp"]
+
+[ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_261fv"]
+[ext_resource type="Texture2D" uid="uid://bppng3t15l7jf" path="res://Assets/Characters/Cloud/Advisor/Idle/Idle1.png" id="2_wtnwi"]
+[ext_resource type="Texture2D" uid="uid://dikdmp5hhd6sj" path="res://Assets/Characters/Cloud/Advisor/Idle/Idle2.png" id="3_2tso5"]
+[ext_resource type="Texture2D" uid="uid://ko1slreus2st" path="res://Assets/Characters/Cloud/Advisor/Idle/Idle3.png" id="4_483u7"]
+[ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/advisor_chess_component.gd" id="5_n73m4"]
+[ext_resource type="Script" path="res://Projects/Figure/Components/move_component.gd" id="6_shemc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pi8o7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wtnwi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2tso5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_483u7")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 5.0
+}]
+
+[node name="Advisor" type="CharacterBody2D" node_paths=PackedStringArray("chess_component", "ui_component")]
+script = ExtResource("1_261fv")
+chess_component = NodePath("ChessComponent")
+ui_component = NodePath("")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3, -132)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_pi8o7")
+animation = &"idle_down"
+autoplay = "idle_down"
+frame_progress = 0.408885
+
+[node name="ChessComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "move_component")]
+script = ExtResource("5_n73m4")
+team = 2
+figure_component = NodePath("..")
+move_component = NodePath("../MoveComponent")
+
+[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component")]
+script = ExtResource("6_shemc")
+speed = 300.0
+figure_component = NodePath("..")

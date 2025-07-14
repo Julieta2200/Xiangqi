@@ -3,11 +3,11 @@ extends ChessComponent
 func _ready() -> void:
 	super._ready()
 	boundaries = {
-		Board.team.Red: {
+		BoardV2.Teams.Red: {
 			"y": Vector2i(0, 9),
 			"x": Vector2i(0, 8)
 		},
-		Board.team.Black: {
+		BoardV2.Teams.Black: {
 			"y": Vector2i(0, 9),
 			"x": Vector2i(0, 8)
 		}

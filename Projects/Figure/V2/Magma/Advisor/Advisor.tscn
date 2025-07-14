@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://xnkcry6frvgx"]
+
+[ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_ts1i4"]
+[ext_resource type="Texture2D" uid="uid://qbni1dsw0wpi" path="res://Assets/Characters/Magma/Advisor/Idle/Idle1.png" id="2_haioo"]
+[ext_resource type="Texture2D" uid="uid://b60q7yfitdku4" path="res://Assets/Characters/Magma/Advisor/Idle/Idle2.png" id="3_b6f1j"]
+[ext_resource type="PackedScene" uid="uid://dylnbquiybg16" path="res://Projects/Figure/Components/figure_ui_component.tscn" id="4_eq2gi"]
+[ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/advisor_chess_component.gd" id="5_kum7g"]
+[ext_resource type="Script" path="res://Projects/Figure/Components/move_component.gd" id="6_lsy23"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pi8o7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_haioo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_b6f1j")
+}],
+"loop": true,
+"name": &"idle_up",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qnuwo"]
+radius = 47.0
+height = 208.0
+
+[node name="Advisor" type="CharacterBody2D" node_paths=PackedStringArray("chess_component", "ui_component")]
+script = ExtResource("1_ts1i4")
+chess_component = NodePath("ChessComponent")
+ui_component = NodePath("FigureUIComponent")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -106)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_pi8o7")
+animation = &"idle_up"
+autoplay = "idle_up"
+frame_progress = 0.546905
+
+[node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component") instance=ExtResource("4_eq2gi")]
+chess_component = NodePath("../ChessComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FigureUIComponent"]
+position = Vector2(0, -98)
+shape = SubResource("CapsuleShape2D_qnuwo")
+
+[node name="ChessComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "move_component")]
+script = ExtResource("5_kum7g")
+team = 1
+figure_component = NodePath("..")
+move_component = NodePath("../MoveComponent")
+
+[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component")]
+script = ExtResource("6_lsy23")
+speed = 300.0
+figure_component = NodePath("..")

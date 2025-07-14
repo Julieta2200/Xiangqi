@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://detlb0txib850" path="res://Assets/Characters/Magma/Pawn/Idle/Back idle/Back_idle2.png" id="3_jtcyu"]
 [ext_resource type="Texture2D" uid="uid://4upnq23t384k" path="res://Assets/Characters/Cloud/Pawn/Idle/Front idle/Front2.png" id="3_o2u1k"]
 [ext_resource type="Texture2D" uid="uid://delw3ejtdfqhn" path="res://Assets/Characters/Cloud/Pawn/Idle/Front idle/Front3.png" id="4_sbbrh"]
-[ext_resource type="Script" path="res://Projects/Figure/Components/soldier_chess_component.gd" id="6_67shb"]
+[ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/soldier_chess_component.gd" id="6_67shb"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/move_component.gd" id="7_ap5dw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pi8o7"]

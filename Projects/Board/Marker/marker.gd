@@ -2,7 +2,7 @@ class_name BoardMarker extends Node2D
 
 enum Highlights {NONE, MOVE, CAPTURE, SPAWN}
 
-var board_position: Vector2
+var board_position: Vector2i
 @onready var walking_marker: Sprite2D = $walking_marker
 
 signal figure_move(marker)
