@@ -1,29 +1,29 @@
 class_name FigureCard extends Control
 
 @onready var sprites: Dictionary = {
-	Figure.Types.Soldier: load("res://Assets/Characters/Magma/Pawn/Pawn_front.png"),
-	Figure.Types.Elephant: load("res://Assets/Characters/Magma/Pawn/Pawn_front.png"),
-	Figure.Types.Chariot: load("res://Assets/tmp/chariot_red.png"),
-	Figure.Types.Horse: load("res://Assets/tmp/horse_red.png"),
-	Figure.Types.Cannon: load("res://Assets/tmp/cannon_red.png")
+	FigureComponent.Types.SOLDIER: load("res://Assets/Characters/Magma/Pawn/Pawn_front.png"),
+	FigureComponent.Types.ELEPHANT: load("res://Assets/tmp/elephant_red.png"),
+	FigureComponent.Types.CHARIOT: load("res://Assets/tmp/chariot_red.png"),
+	FigureComponent.Types.HORSE: load("res://Assets/tmp/horse_red.png"),
+	FigureComponent.Types.CANNON: load("res://Assets/tmp/cannon_red.png")
 }
 const figure_names = {
-	Figure.Types.Soldier: "Pawn",
-	Figure.Types.Elephant: "Elephant",
-	Figure.Types.Chariot: "Chariot",
-	Figure.Types.Horse: "Horse",
-	Figure.Types.Cannon: "Cannon"
+	FigureComponent.Types.SOLDIER: "Pawn",
+	FigureComponent.Types.ELEPHANT: "Elephant",
+	FigureComponent.Types.CHARIOT: "Chariot",
+	FigureComponent.Types.HORSE: "Horse",
+	FigureComponent.Types.CANNON: "Cannon"
 }
 
 const figure_energies = {
-	Figure.Types.Soldier: 15,
-	Figure.Types.Elephant: 30,
-	Figure.Types.Chariot: 50,
-	Figure.Types.Horse: 25,
-	Figure.Types.Cannon: 40
+	FigureComponent.Types.SOLDIER: 15,
+	FigureComponent.Types.ELEPHANT: 30,
+	FigureComponent.Types.CHARIOT: 50,
+	FigureComponent.Types.HORSE: 25,
+	FigureComponent.Types.CANNON: 40
 }
 
-@export var type: Figure.Types 
+@export var type: FigureComponent.Types 
 
 signal selected(FigureCard)
 var active: bool
@@ -31,45 +31,14 @@ var _selected :bool
 var energy: float
 
 func _ready() -> void:
-	if type != Figure.Types.Soldier:
-		$card/image.scale = Vector2(0.3,0.3)
-		$card/image.position = Vector2(55,5)
+	if type != FigureComponent.Types.SOLDIER:
+		$card/image.scale = Vector2(1.3,1.3)
+		$card/image.value = 100
 		
 	$card/image.texture_progress = sprites[type]
 	$card/name.text = figure_names[type]
 	energy = figure_energies[type]
 
 func _on_card_gui_input(event: InputEvent):
-	if event.is_pressed() and active:
+	if event.is_pressed():
 		emit_signal("selected", self)
-		_selected = true
-		select()
-
-func remove():
-	_selected = false
-	scale = Vector2.ONE
-
-func select():
-	scale = Vector2(1.2,1.2)
-
-func deactivate() -> void:
-	active = false
-	set_modulate(Color8(73,73,73))
-
-func activate() -> void:
-	active = true
-	set_modulate(Color8(255,255,255))
-	
-func highlight() -> void:
-	$AnimationPlayer.play("highlight")
-
-func unhighlight() -> void:
-	$AnimationPlayer.play("RESET")
-
-func _on_card_mouse_entered() -> void:
-	if !_selected and active:
-		select()
-
-func _on_card_mouse_exited() -> void:
-	if !_selected and active:
-		remove()

@@ -4,9 +4,10 @@ enum Highlights {NONE, MOVE, CAPTURE, SPAWN}
 
 var board_position: Vector2i
 @onready var walking_marker: Sprite2D = $walking_marker
+@onready var spawn_marker: AnimatedSprite2D = $spawn_marker
 
 signal figure_move(marker)
-signal figure_set(marker)
+signal figure_spawn(marker)
 signal highlight_end
 
 var state: Highlights
@@ -19,7 +20,7 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 				Highlights.MOVE, Highlights.CAPTURE:
 					emit_signal("figure_move",self)
 				Highlights.SPAWN:
-					emit_signal("figure_set",self)
+					emit_signal("figure_spawn",self)
 
 
 func highlight(type: Highlights) -> void:
@@ -31,11 +32,14 @@ func highlight(type: Highlights) -> void:
 		Highlights.CAPTURE:
 			$walking_marker/highlight.play("capture_highlight")
 			walking_marker.show()
+		Highlights.SPAWN:
+			spawn_marker.show()
 		
 		
 func unhighlight():
 	state = Highlights.NONE
-	$walking_marker.hide()
+	walking_marker.hide()
+	spawn_marker.hide()
 
 func _on_area_2d_mouse_entered() -> void:
 	$walking_marker/highlight.visible = $walking_marker.visible

@@ -1,11 +1,67 @@
-[gd_scene load_steps=9 format=3 uid="uid://dlkpgwakp3ub7"]
+[gd_scene load_steps=22 format=3 uid="uid://dlkpgwakp3ub7"]
 
 [ext_resource type="Script" path="res://Projects/Board/Marker/marker.gd" id="1_y3i0m"]
+[ext_resource type="Texture2D" uid="uid://732mny3nbody" path="res://Assets/UI/Position_Marker/Marker/Red/Position_Marker1.png" id="2_hdwit"]
 [ext_resource type="Texture2D" uid="uid://dia2v0yg34v87" path="res://Assets/UI/Markers/Step Icon/icon.png" id="2_r8c08"]
 [ext_resource type="Texture2D" uid="uid://bufqung6psup2" path="res://Assets/UI/Markers/StepGlow (Red)/StepGlow(1).png" id="2_s7g8i"]
 [ext_resource type="Texture2D" uid="uid://ut2w4mpj4tg7" path="res://Assets/UI/Markers/StepGlow (Yellow)/StepGlow(1).png" id="3_tltih"]
+[ext_resource type="Texture2D" uid="uid://ccwodwoe14r4p" path="res://Assets/UI/Position_Marker/Marker/Red/Position_Marker2.png" id="3_w2owv"]
+[ext_resource type="Texture2D" uid="uid://bh4r14cfuti55" path="res://Assets/UI/Position_Marker/Marker/Red/Position_Marker3.png" id="4_j4wt3"]
 [ext_resource type="Texture2D" uid="uid://nthq6mgcs2f0" path="res://Assets/UI/Markers/StepGlow (Yellow)/StepGlow(2).png" id="5_bnpjt"]
+[ext_resource type="Texture2D" uid="uid://cdg0kb8256qav" path="res://Assets/UI/Position_Marker/Marker/Red/Position_Marker4.png" id="5_g5mea"]
+[ext_resource type="Texture2D" uid="uid://dxa1iqamvyfrc" path="res://Assets/UI/Position_Marker/Marker/Red/Position_Marker5.png" id="6_pmeqy"]
+[ext_resource type="Texture2D" uid="uid://cahbq2pysmo63" path="res://Assets/UI/Position_Marker/Marker/Red/Position_Marker6.png" id="7_b127m"]
 [ext_resource type="Texture2D" uid="uid://c6khya78ox7ud" path="res://Assets/UI/Markers/StepGlow (Red)/StepGlow(2).png" id="7_ulkbh"]
+[ext_resource type="Texture2D" uid="uid://dw0r62alb3t4j" path="res://Assets/UI/Position_Marker/Marker/Red/Position_Marker7.png" id="8_8c164"]
+[ext_resource type="Texture2D" uid="uid://oi75v1bx50s7" path="res://Assets/UI/Position_Marker/Marker/Red/Position_Marker8.png" id="9_c3llg"]
+[ext_resource type="Texture2D" uid="uid://0xci0dtuw8v3" path="res://Assets/UI/Position_Marker/Marker/Red/Position_Marker9.png" id="10_q5um7"]
+[ext_resource type="Texture2D" uid="uid://dtwr87qvog2ie" path="res://Assets/UI/Position_Marker/Marker/Red/Position_Marker10.png" id="11_usxe1"]
+[ext_resource type="Texture2D" uid="uid://drskf8y8ouqku" path="res://Assets/UI/Position_Marker/Marker/Red/Position_Marker11.png" id="12_hrvm4"]
+[ext_resource type="Texture2D" uid="uid://m47qaoksbd8c" path="res://Assets/UI/Position_Marker/Marker/Red/Position_Marker_Hover.png" id="13_i52l4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6aho4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hdwit")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_w2owv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_j4wt3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_g5mea")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_pmeqy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_b127m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8c164")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_c3llg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_q5um7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_usxe1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_hrvm4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_i52l4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o72yf"]
 animations = [{
@@ -39,6 +95,13 @@ height = 92.0
 [node name="Marker" type="Node2D"]
 visibility_layer = 17
 script = ExtResource("1_y3i0m")
+
+[node name="spawn_marker" type="AnimatedSprite2D" parent="."]
+visible = false
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_6aho4")
+autoplay = "default"
+frame_progress = 0.279335
 
 [node name="walking_marker" type="Sprite2D" parent="."]
 visible = false

@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bip87oin8clme"]
+
+[ext_resource type="Script" path="res://Projects/Ui/gameplay_ui.gd" id="1_clwfc"]
+[ext_resource type="PackedScene" uid="uid://b2isxa0mvvipm" path="res://Projects/Ui/power_meter.tscn" id="1_mqmx6"]
+[ext_resource type="PackedScene" uid="uid://pxqrvonok1lr" path="res://Projects/Garrison/garrison.tscn" id="2_usbfr"]
+
+[node name="GameplayUI" type="CanvasLayer"]
+script = ExtResource("1_clwfc")
+
+[node name="PowerMeter" parent="." instance=ExtResource("1_mqmx6")]
+
+[node name="Garrison" parent="." instance=ExtResource("2_usbfr")]
+
+[connection signal="card_selected" from="Garrison" to="." method="_on_garrison_card_selected"]
