@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://ckd2du3jaxixc"]
+
+[ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_dej4m"]
+[ext_resource type="Texture2D" uid="uid://ydcd8w1wmbyg" path="res://Assets/tmp/chariot_red.png" id="2_iy565"]
+[ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/chariot_chess_component.gd" id="4_6m8uf"]
+[ext_resource type="PackedScene" uid="uid://dylnbquiybg16" path="res://Projects/Figure/Components/figure_ui_component.tscn" id="4_70rel"]
+[ext_resource type="Script" path="res://Projects/Figure/Components/move_component.gd" id="6_0nrd7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ny2w2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_iy565")
+}],
+"loop": true,
+"name": &"idle_up",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qnuwo"]
+radius = 72.0
+height = 144.0
+
+[node name="Chariot" type="CharacterBody2D" node_paths=PackedStringArray("chess_component", "ui_component")]
+script = ExtResource("1_dej4m")
+chess_component = NodePath("ChessComponent")
+ui_component = NodePath("FigureUIComponent")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -64)
+sprite_frames = SubResource("SpriteFrames_ny2w2")
+animation = &"idle_up"
+autoplay = "idle_up"
+
+[node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component") instance=ExtResource("4_70rel")]
+chess_component = NodePath("../ChessComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FigureUIComponent"]
+position = Vector2(0, -64)
+shape = SubResource("CapsuleShape2D_qnuwo")
+
+[node name="ChessComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "move_component")]
+script = ExtResource("4_6m8uf")
+team = 1
+figure_component = NodePath("..")
+move_component = NodePath("../MoveComponent")
+
+[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component")]
+script = ExtResource("6_0nrd7")
+speed = 500.0
+figure_component = NodePath("..")
