@@ -12,13 +12,15 @@ func _ready() -> void:
 		State.new(BoardV2.Kingdoms.MAGMA, FigureComponent.Types.CHARIOT, Vector2i(2,2)),
 		State.new(BoardV2.Kingdoms.MAGMA, FigureComponent.Types.HORSE, Vector2i(3,3)),
 		State.new(BoardV2.Kingdoms.MAGMA, FigureComponent.Types.ELEPHANT, Vector2i(2,1)),
+		State.new(BoardV2.Kingdoms.MAGMA, FigureComponent.Types.CANNON, Vector2i(3,1)),
 		State.new(BoardV2.Kingdoms.CLOUD, FigureComponent.Types.GENERAL, Vector2i(4,9)),
 		State.new(BoardV2.Kingdoms.CLOUD, FigureComponent.Types.ADVISOR, Vector2i(3,9)),
 		State.new(BoardV2.Kingdoms.CLOUD, FigureComponent.Types.ADVISOR, Vector2i(5,9)),
 		State.new(BoardV2.Kingdoms.CLOUD, FigureComponent.Types.SOLDIER, Vector2i(6,8)),
 		State.new(BoardV2.Kingdoms.CLOUD, FigureComponent.Types.CHARIOT, Vector2i(3,5)),
 		State.new(BoardV2.Kingdoms.CLOUD, FigureComponent.Types.HORSE, Vector2i(6,6)),
-		State.new(BoardV2.Kingdoms.CLOUD, FigureComponent.Types.ELEPHANT, Vector2i(7,5))
+		State.new(BoardV2.Kingdoms.CLOUD, FigureComponent.Types.ELEPHANT, Vector2i(7,5)),
+		State.new(BoardV2.Kingdoms.CLOUD, FigureComponent.Types.CANNON, Vector2i(6,9)),
 	]
 	board.initialize_position(state)
 

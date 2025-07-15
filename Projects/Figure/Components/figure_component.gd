@@ -1,6 +1,6 @@
 class_name FigureComponent extends CharacterBody2D
 
-enum Types {SOLDIER, GENERAL, ADVISOR, CHARIOT, HORSE, ELEPHANT }
+enum Types {SOLDIER, GENERAL, ADVISOR, CHARIOT, HORSE, ELEPHANT, CANNON}
 
 @export var board: BoardV2
 @export var chess_component: ChessComponent
