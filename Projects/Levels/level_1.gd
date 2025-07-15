@@ -14,6 +14,7 @@ func _ready() -> void:
 		State.new(BoardV2.Kingdoms.CLOUD, FigureComponent.Types.ADVISOR, Vector2i(3,9)),
 		State.new(BoardV2.Kingdoms.CLOUD, FigureComponent.Types.ADVISOR, Vector2i(5,9)),
 		State.new(BoardV2.Kingdoms.CLOUD, FigureComponent.Types.SOLDIER, Vector2i(6,8)),
+		State.new(BoardV2.Kingdoms.CLOUD, FigureComponent.Types.CHARIOT, Vector2i(3,5)),
 	]
 	board.initialize_position(state)
 
