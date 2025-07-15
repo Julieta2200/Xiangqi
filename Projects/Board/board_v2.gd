@@ -91,6 +91,8 @@ func set_figure(figure: FigureComponent, pos: Vector2i) -> void:
 func move_figure(marker: BoardMarker) -> void:
 	clear_markers()
 	state.erase(_selected_figure.chess_component.position)
+	if state.has(marker.board_position):
+		capture(marker.board_position)
 	state[marker.board_position] = _selected_figure
 	_selected_figure.chess_component.change_position(marker.board_position)
 	_selected_figure = null
@@ -100,9 +102,14 @@ func move_figure(marker: BoardMarker) -> void:
 func move_figure_AI(move: Dictionary) -> void:
 	var figure: FigureComponent = state[move["start"]]
 	state.erase(move["start"])
+	if state.has(move["end"]):
+		capture(move["end"])
 	state[move["end"]] = figure
 	figure.chess_component.change_position(move["end"])
 	turn = Teams.Red
+
+func capture(pos: Vector2i) -> void:
+	state[pos].delete()
 
 func clear_markers() -> void:
 	for pos in markers:
