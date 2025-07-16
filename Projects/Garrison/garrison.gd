@@ -12,3 +12,6 @@ func _on_figure_card_selected(card: FigureCard):
 func select_card(card: FigureCard):
 	selected_figure = card
 	emit_signal("card_selected", selected_figure)
+
+func activate(result: bool) -> void:
+	visible = result

@@ -54,6 +54,7 @@ var turn: Teams = Teams.Red :
 	set(t):
 		turn = t
 		activate_reds(turn == Teams.Red)
+		activate_garrison(turn == Teams.Red)
 
 var state: Dictionary
 # For which figure the markers are currently highlighted
@@ -151,3 +152,6 @@ func spawn_highlight() -> void:
 func spawn_figure(marker: BoardMarker) -> void:
 	clear_markers()
 	instantiate_figure(Kingdoms.MAGMA, ui.garrison.selected_figure.type, marker.board_position)
+
+func activate_garrison(result: bool) -> void:
+	ui.garrison.activate(result)
