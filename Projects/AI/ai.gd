@@ -74,7 +74,6 @@ func get_all_legal_moves(team: BoardV2.Teams, state: Dictionary) -> Array[Dictio
 		
 	return legal_moves
 
-
 func select_best_move(depth: int) -> void:
 	var best_score = -INF
 	var best_move = null
