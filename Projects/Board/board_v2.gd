@@ -102,6 +102,7 @@ func move_figure(marker: BoardMarker) -> void:
 	_selected_figure.chess_component.change_position(marker.board_position)
 	_selected_figure = null
 	turn = Teams.Black
+	ui.power_meter.fill_energy()
 	# TODO: Create a proper solution :)
 	await get_tree().create_timer(1.0).timeout
 	ai.make_move()
@@ -118,6 +119,7 @@ func move_figure_AI(move: Dictionary) -> void:
 	turn = Teams.Red
 
 func capture(pos: Vector2i) -> void:
+	ui.power_meter.update_distance(get_figures(Teams.Red).size())
 	state[pos].delete()
 
 func clear_markers() -> void:
@@ -135,7 +137,7 @@ func get_figures(team: Teams) -> Array[FigureComponent]:
 	var figures: Array[FigureComponent] = []
 	for pos in state:
 		var figure: FigureComponent = state[pos]
-		if figure.chess_component.team == Teams.Black:
+		if figure.chess_component.team == team:
 			figures.append(figure)
 	return figures
 
@@ -152,6 +154,8 @@ func spawn_highlight() -> void:
 func spawn_figure(marker: BoardMarker) -> void:
 	clear_markers()
 	ui.power_meter.substruct_energy()
+	print(get_figures(Teams.Red))
+	ui.power_meter.update_distance(get_figures(Teams.Red).size())
 	instantiate_figure(Kingdoms.MAGMA, ui.garrison.selected_figure.type, marker.board_position)
 
 func activate_garrison(result: bool) -> void:

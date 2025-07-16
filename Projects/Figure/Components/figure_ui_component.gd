@@ -5,11 +5,11 @@ var active: bool = true
 @export var chess_component: ChessComponent
 
 func _on_mouse_entered() -> void:
-	print("entered")
+	pass
 
 
 func _on_mouse_exited() -> void:
-	print("exited")
+	pass
 
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
