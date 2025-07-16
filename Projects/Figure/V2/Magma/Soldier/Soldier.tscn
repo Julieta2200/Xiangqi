@@ -29,10 +29,11 @@ animations = [{
 radius = 47.0
 height = 208.0
 
-[node name="Soldier" type="CharacterBody2D" node_paths=PackedStringArray("chess_component", "ui_component")]
+[node name="Soldier" type="CharacterBody2D" node_paths=PackedStringArray("chess_component", "ui_component", "move_component")]
 script = ExtResource("1_ebhfi")
 chess_component = NodePath("ChessComponent")
 ui_component = NodePath("FigureUIComponent")
+move_component = NodePath("MoveComponent")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(8, -168)

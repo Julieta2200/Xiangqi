@@ -7,7 +7,9 @@
 [node name="GameplayUI" type="CanvasLayer"]
 script = ExtResource("1_clwfc")
 
-[node name="PowerMeter" parent="." instance=ExtResource("1_mqmx6")]
+[node name="PowerMeter" parent="." node_paths=PackedStringArray("garrison") instance=ExtResource("1_mqmx6")]
+garrison = NodePath("../Garrison")
+energy = 100.0
 
 [node name="Garrison" parent="." instance=ExtResource("2_usbfr")]
 

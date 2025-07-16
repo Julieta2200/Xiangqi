@@ -26,7 +26,7 @@ const figure_energies = {
 @export var type: FigureComponent.Types 
 
 signal selected(FigureCard)
-var active: bool
+var active: bool = true
 var _selected :bool
 var energy: float
 
@@ -40,5 +40,8 @@ func _ready() -> void:
 	energy = figure_energies[type]
 
 func _on_card_gui_input(event: InputEvent):
-	if event.is_pressed():
+	if event.is_pressed() and active:
 		emit_signal("selected", self)
+
+func activate(result: bool):
+	active = result

@@ -151,6 +151,7 @@ func spawn_highlight() -> void:
 
 func spawn_figure(marker: BoardMarker) -> void:
 	clear_markers()
+	ui.power_meter.substruct_energy()
 	instantiate_figure(Kingdoms.MAGMA, ui.garrison.selected_figure.type, marker.board_position)
 
 func activate_garrison(result: bool) -> void:

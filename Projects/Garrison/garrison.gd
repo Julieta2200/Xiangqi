@@ -15,3 +15,7 @@ func select_card(card: FigureCard):
 
 func activate(result: bool) -> void:
 	visible = result
+
+func update_cards(energy: int) -> void:
+	for card in figure_cards:
+		card.activate(card.energy < energy)

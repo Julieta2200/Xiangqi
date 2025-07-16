@@ -1,18 +1,11 @@
 class_name PowerMeter extends Control
 
-signal energy_changed(energy: float)
-
-# the amount of energy added during the game
-var filled_energy: int = 0
-
-# the amount of distance added during the game
-var filled_distance: int = 0
-
+@export var garrison: Garrison
 # the full extent of the playing distance
-var distance_bar :int = 10
+@export var distance_fill :int = 1
 
 # amount of energy added after each step
-@export var energy_bar: int = 5
+@export var energy_fill: int = 5
 
 # Stores the energy value and updates the energy display while emitting a signal when it changes
 @export var energy: float :
@@ -21,7 +14,6 @@ var distance_bar :int = 10
 			e = 0
 		energy = e
 		$energy.value = energy
-		emit_signal("energy_changed", energy)
 
 # Stores the distance value and updates the visibility of distance bars based on the value
 @export var distance: int :
@@ -30,32 +22,17 @@ var distance_bar :int = 10
 			d = 0
 		distance = d
 		for i in $distances/distance_bars.get_children():
-			if d >= distance_bar:
-				d -= min(distance,distance_bar)
+			if d >= distance_fill:
+				d -= min(distance,distance_fill)
 				i.visible = true
-
-func _ready() -> void:
-	energy = energy
-
-func show_energy_bar():
-	$energy.show()
-	$energy/AnimationPlayer.play("highlight")
-
-func show_distance_bar():
-	$distances.show()
-	$distances/AnimationPlayer.play("highlight")
 	
 func fill_energy():
-	filled_energy += energy_bar
-	energy += energy_bar
+	energy += energy_fill
+	garrison.update_cards(energy)
 
 func fill_distance():
-	filled_distance += distance_bar
-	distance += distance_bar
+	distance += distance_fill
 
-# Resets to the original form
-func reset():
-	energy -= filled_energy
-	distance -= filled_distance
-	filled_energy = 0
-	filled_distance = 0
+func substruct_energy():
+	energy -= garrison.selected_figure.energy
+	garrison.update_cards(energy)
