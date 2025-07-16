@@ -25,6 +25,8 @@ class_name PowerMeter extends Control
 			if d >= distance_fill:
 				d -= min(distance,distance_fill)
 				i.visible = true
+			else:
+				i.visible = false
 	
 func fill_energy():
 	energy += energy_fill
