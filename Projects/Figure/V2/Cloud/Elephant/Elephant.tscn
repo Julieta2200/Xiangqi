@@ -16,10 +16,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Elephant" type="CharacterBody2D" node_paths=PackedStringArray("chess_component", "ui_component")]
+[node name="Elephant" type="CharacterBody2D" node_paths=PackedStringArray("chess_component")]
 script = ExtResource("1_wg6n2")
 chess_component = NodePath("ChessComponent")
-ui_component = NodePath("")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(4, -69)
@@ -30,6 +29,7 @@ autoplay = "idle_dawn"
 
 [node name="ChessComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "move_component")]
 script = ExtResource("3_wdr3q")
+value = 20.0
 team = 2
 figure_component = NodePath("..")
 move_component = NodePath("../MoveComponent")

@@ -37,10 +37,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Soldier" type="CharacterBody2D" node_paths=PackedStringArray("chess_component", "ui_component", "move_component")]
+[node name="Soldier" type="CharacterBody2D" node_paths=PackedStringArray("chess_component", "move_component")]
 script = ExtResource("1_gfrox")
 chess_component = NodePath("ChessComponent")
-ui_component = NodePath("")
 move_component = NodePath("MoveComponent")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -53,6 +52,7 @@ frame_progress = 0.211815
 
 [node name="ChessComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "move_component")]
 script = ExtResource("6_67shb")
+value = 10.0
 team = 2
 figure_component = NodePath("..")
 move_component = NodePath("../MoveComponent")

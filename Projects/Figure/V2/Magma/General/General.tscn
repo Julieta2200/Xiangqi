@@ -43,6 +43,7 @@ shape = SubResource("CapsuleShape2D_qnuwo")
 
 [node name="ChessComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "move_component")]
 script = ExtResource("4_5iulq")
+value = 10000.0
 team = 1
 figure_component = NodePath("..")
 move_component = NodePath("../MoveComponent")

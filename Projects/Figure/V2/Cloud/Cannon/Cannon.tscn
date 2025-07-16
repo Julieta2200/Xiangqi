@@ -16,10 +16,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Cannon" type="CharacterBody2D" node_paths=PackedStringArray("chess_component", "ui_component")]
+[node name="Cannon" type="CharacterBody2D" node_paths=PackedStringArray("chess_component")]
 script = ExtResource("1_fo2f3")
 chess_component = NodePath("ChessComponent")
-ui_component = NodePath("")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -66)
@@ -29,6 +28,7 @@ autoplay = "idle_dawn"
 
 [node name="ChessComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "move_component")]
 script = ExtResource("3_edfoe")
+value = 45.0
 team = 2
 figure_component = NodePath("..")
 move_component = NodePath("../MoveComponent")
