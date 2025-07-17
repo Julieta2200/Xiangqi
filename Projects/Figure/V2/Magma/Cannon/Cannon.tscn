@@ -25,6 +25,7 @@ height = 144.0
 script = ExtResource("1_mjqwp")
 chess_component = NodePath("ChessComponent")
 ui_component = NodePath("FigureUIComponent")
+type = 6
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(3, -61)

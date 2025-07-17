@@ -119,8 +119,8 @@ func move_figure_AI(move: Dictionary) -> void:
 	turn = Teams.Red
 
 func capture(pos: Vector2i) -> void:
-	ui.power_meter.update_distance(get_figures(Teams.Red).size())
 	state[pos].delete()
+	ui.power_meter.update_distance(get_figures(Teams.Red).size())
 
 func clear_markers() -> void:
 	for pos in markers:
@@ -147,16 +147,28 @@ func spawn_highlight() -> void:
 		for j in range(ui.power_meter.distance + 1):
 			var pos: Vector2i = Vector2i(i,j)
 			var marker: BoardMarker = markers[pos]
-			if state.has(pos) || palace_positions.has(pos):
+			if (state.has(pos) &&
+			 state[pos].type != FigureComponent.Types.SOLDIER && 
+			 state[pos].chess_component.team == Teams.Red) || palace_positions.has(pos):
 				continue
 			marker.highlight(BoardMarker.Highlights.SPAWN)
 
 func spawn_figure(marker: BoardMarker) -> void:
 	clear_markers()
 	ui.power_meter.substruct_energy()
-	print(get_figures(Teams.Red))
+	if state.has(marker.board_position):
+		fusion(marker)
+	else:
+		instantiate_figure(Kingdoms.MAGMA, ui.garrison.selected_figure.type, marker.board_position)
 	ui.power_meter.update_distance(get_figures(Teams.Red).size())
-	instantiate_figure(Kingdoms.MAGMA, ui.garrison.selected_figure.type, marker.board_position)
 
 func activate_garrison(result: bool) -> void:
 	ui.garrison.activate(result)
+
+
+func fusion(marker: BoardMarker) -> void:
+	var chance: float = randf()
+	capture(marker.board_position)
+	if chance < 0.5:
+		instantiate_figure(Kingdoms.MAGMA, FigureComponent.Types.CHARIOT, marker.board_position)
+		

@@ -7,5 +7,7 @@ enum Types {SOLDIER, GENERAL, ADVISOR, CHARIOT, HORSE, ELEPHANT, CANNON}
 @export var ui_component: FigureUIComponent
 @export var move_component: MoveComponent
 
+@export var type: Types
+
 func delete() -> void:
 	queue_free()
