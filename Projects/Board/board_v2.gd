@@ -182,3 +182,5 @@ func fusion(marker: BoardMarker) -> void:
 		instantiate_figure(Kingdoms.MAGMA, FigureComponent.Types.CANNON, marker.board_position)
 	elif chance < fusion_chances[FigureComponent.Types.CHARIOT] + fusion_chances[FigureComponent.Types.CANNON] + fusion_chances[FigureComponent.Types.HORSE]:
 		instantiate_figure(Kingdoms.MAGMA, FigureComponent.Types.HORSE, marker.board_position)
+	else:
+		state.erase(marker.board_position)
