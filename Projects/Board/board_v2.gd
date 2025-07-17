@@ -49,6 +49,13 @@ var scenes: Dictionary = {
 @export var ai: AI
 @export var ui: GameplayUI
 
+const fusion_chances: Dictionary = {
+	FigureComponent.Types.SOLDIER: 0.25,
+	FigureComponent.Types.CHARIOT: 0.2,
+	FigureComponent.Types.CANNON: 0.25,
+	FigureComponent.Types.HORSE: 0.3,
+}
+
 var markers : Dictionary
 var turn: Teams = Teams.Red :
 	set(t):
@@ -169,6 +176,9 @@ func activate_garrison(result: bool) -> void:
 func fusion(marker: BoardMarker) -> void:
 	var chance: float = randf()
 	capture(marker.board_position)
-	if chance < 0.5:
+	if chance < fusion_chances[FigureComponent.Types.CHARIOT]:
 		instantiate_figure(Kingdoms.MAGMA, FigureComponent.Types.CHARIOT, marker.board_position)
-		
+	elif chance < fusion_chances[FigureComponent.Types.CHARIOT] + fusion_chances[FigureComponent.Types.CANNON]:
+		instantiate_figure(Kingdoms.MAGMA, FigureComponent.Types.CANNON, marker.board_position)
+	elif chance < fusion_chances[FigureComponent.Types.CHARIOT] + fusion_chances[FigureComponent.Types.CANNON] + fusion_chances[FigureComponent.Types.HORSE]:
+		instantiate_figure(Kingdoms.MAGMA, FigureComponent.Types.HORSE, marker.board_position)
