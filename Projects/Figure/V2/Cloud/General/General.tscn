@@ -28,9 +28,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="General" type="CharacterBody2D" node_paths=PackedStringArray("chess_component")]
+[node name="General" type="CharacterBody2D" node_paths=PackedStringArray("chess_component", "move_component")]
 script = ExtResource("1_neag0")
 chess_component = NodePath("ChessComponent")
+move_component = NodePath("MoveComponent")
+type = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -117)

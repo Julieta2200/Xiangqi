@@ -20,6 +20,7 @@ animations = [{
 script = ExtResource("1_t51og")
 chess_component = NodePath("ChessComponent")
 move_component = NodePath("MoveComponent")
+type = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -64)

@@ -35,7 +35,7 @@ func simulate_move(state: Dictionary, move: Dictionary) -> Dictionary:
 	return new_state
 
 func minimax(state: Dictionary, depth: int, maximizingPlayer: bool, alpha: int, beta: int) -> int:
-	if depth == 0:
+	if depth == 0 || game_over(state):
 		return evaluate_position(state, BoardV2.Teams.Black)
 	
 	if maximizingPlayer:
@@ -73,6 +73,16 @@ func get_all_legal_moves(team: BoardV2.Teams, state: Dictionary) -> Array[Dictio
 			})
 		
 	return legal_moves
+
+func game_over(state: Dictionary) -> bool:
+	return get_generals(state).size() != 2
+
+func get_generals(state: Dictionary) -> Array[FigureComponent]:
+	var generals: Array[FigureComponent] = []
+	for pos in state:
+		if state[pos].type == FigureComponent.Types.GENERAL:
+			generals.append(state[pos])
+	return generals
 
 func select_best_move(depth: int) -> void:
 	var best_score = -INF
