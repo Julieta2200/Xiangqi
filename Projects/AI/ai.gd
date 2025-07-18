@@ -2,8 +2,11 @@ class_name AI extends Node
 
 @export var board: BoardV2
 
+const infinite : int = 500000
+
 func _ready() -> void:
 	randomize()
+
 
 func get_figures() -> Array[FigureComponent]:
 	return board.get_figures(BoardV2.Teams.Black)
@@ -39,7 +42,7 @@ func minimax(state: Dictionary, depth: int, maximizingPlayer: bool, alpha: int, 
 		return evaluate_position(state, BoardV2.Teams.Black)
 	
 	if maximizingPlayer:
-		var maxEval = -INF
+		var maxEval = -infinite
 		for move in get_all_legal_moves(BoardV2.Teams.Black, state):
 			var new_board = simulate_move(state, move)
 			var eval = minimax(new_board, depth - 1, false, alpha, beta)
@@ -49,7 +52,7 @@ func minimax(state: Dictionary, depth: int, maximizingPlayer: bool, alpha: int, 
 				break
 		return maxEval
 	else:
-		var minEval = INF
+		var minEval = infinite
 		for move in get_all_legal_moves(BoardV2.Teams.Red, state):
 			var new_board = simulate_move(state, move)
 			var eval = minimax(new_board, depth - 1, true, alpha, beta)
@@ -85,12 +88,12 @@ func get_generals(state: Dictionary) -> Array[FigureComponent]:
 	return generals
 
 func select_best_move(depth: int) -> void:
-	var best_score = -INF
+	var best_score = -infinite
 	var best_move = null
 	var moves = get_all_legal_moves(BoardV2.Teams.Black, board.state)
 	for move in moves:
 		var new_board = simulate_move(board.state, move)
-		var score = minimax(new_board, depth - 1, false, -INF, INF)
+		var score = minimax(new_board, depth - 1, false, -infinite, infinite)
 		if score > best_score:
 			best_score = score
 			best_move = move
