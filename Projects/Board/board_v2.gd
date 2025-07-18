@@ -148,14 +148,14 @@ func get_figures(team: Teams) -> Array[FigureComponent]:
 			figures.append(figure)
 	return figures
 
-func spawn_highlight(spawn_figure_type : FigureComponent.Types) -> void:
+func spawn_highlight() -> void:
 	clear_markers()
 	for i in range(board_cols):
 		for j in range(ui.power_meter.distance + 1):
 			var pos: Vector2i = Vector2i(i,j)
 			var marker: BoardMarker = markers[pos]
 			if (state.has(pos) &&  
-			!(state[pos].type == FigureComponent.Types.SOLDIER && spawn_figure_type == FigureComponent.Types.SOLDIER) && 
+			state[pos].type != FigureComponent.Types.SOLDIER  && 
 			 state[pos].chess_component.team == Teams.Red) || palace_positions.has(pos):
 				continue
 			marker.highlight(BoardMarker.Highlights.SPAWN)
