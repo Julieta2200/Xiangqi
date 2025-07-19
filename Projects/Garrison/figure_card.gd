@@ -26,7 +26,14 @@ const figure_energies = {
 @export var type: FigureComponent.Types 
 
 signal selected(FigureCard)
-var active: bool = true
+var active: bool = true :
+	set(a):
+		active = a 
+		if active:
+			modulate = Color(1,1,1)
+		else:
+			modulate = Color(0.35, 0.35, 0.35)
+
 var _selected :bool
 var energy: float
 
@@ -41,7 +48,11 @@ func _ready() -> void:
 
 func _on_card_gui_input(event: InputEvent):
 	if event.is_pressed() and active:
+		scale *= 1.2
 		emit_signal("selected", self)
+
+func deselect() -> void:
+	scale = Vector2(1,1)
 
 func activate(result: bool):
 	active = result
