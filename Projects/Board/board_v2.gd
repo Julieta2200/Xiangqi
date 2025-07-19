@@ -87,6 +87,7 @@ func instantiate_figure(kingdom: Kingdoms, type: FigureComponent.Types, pos: Vec
 	var figure: FigureComponent = scenes[kingdom][type].instantiate()
 	figure.board = self
 	figure.chess_component.position = pos
+	figure.move_component.move_done.connect(figure_move_done)
 	add_child(figure)
 
 func show_move_markers(positions: Array[Vector2i], figure: FigureComponent) -> void:
@@ -107,12 +108,8 @@ func move_figure(marker: BoardMarker) -> void:
 		capture(marker.board_position)
 	state[marker.board_position] = _selected_figure
 	_selected_figure.chess_component.change_position(marker.board_position)
-	_selected_figure = null
 	turn = Teams.Black
 	ui.power_meter.fill_energy()
-	# TODO: Create a proper solution :)
-	await get_tree().create_timer(1.0).timeout
-	ai.make_move()
 
 func move_figure_AI(move: Dictionary) -> void:
 	var figure: FigureComponent = state[move["start"]]
@@ -121,9 +118,6 @@ func move_figure_AI(move: Dictionary) -> void:
 		capture(move["end"])
 	state[move["end"]] = figure
 	figure.chess_component.change_position(move["end"])
-	# TODO: Create a proper solution :)
-	await get_tree().create_timer(1.0).timeout
-	turn = Teams.Red
 
 func capture(pos: Vector2i) -> void:
 	state[pos].delete()
@@ -184,3 +178,10 @@ func fusion(marker: BoardMarker) -> void:
 		instantiate_figure(Kingdoms.MAGMA, FigureComponent.Types.HORSE, marker.board_position)
 	else:
 		state.erase(marker.board_position)
+
+func figure_move_done() -> void:
+	if _selected_figure != null:
+		_selected_figure = null
+		ai.make_move()
+	else:
+		turn = Teams.Red

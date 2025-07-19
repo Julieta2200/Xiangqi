@@ -21,10 +21,11 @@ animations = [{
 radius = 72.0
 height = 144.0
 
-[node name="Chariot" type="CharacterBody2D" node_paths=PackedStringArray("chess_component", "ui_component")]
+[node name="Chariot" type="CharacterBody2D" node_paths=PackedStringArray("chess_component", "ui_component", "move_component")]
 script = ExtResource("1_dej4m")
 chess_component = NodePath("ChessComponent")
 ui_component = NodePath("FigureUIComponent")
+move_component = NodePath("MoveComponent")
 type = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
