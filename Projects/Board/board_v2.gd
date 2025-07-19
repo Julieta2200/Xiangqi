@@ -180,8 +180,20 @@ func fusion(marker: BoardMarker) -> void:
 		state.erase(marker.board_position)
 
 func figure_move_done() -> void:
+	check_game_over()
 	if _selected_figure != null:
 		_selected_figure = null
 		ai.make_move()
 	else:
 		turn = Teams.Red
+
+func get_generals() -> Array[FigureComponent]:
+	var generals: Array[FigureComponent] = []
+	for pos in state:
+		if state[pos].type == FigureComponent.Types.GENERAL:
+			generals.append(state[pos])
+	return generals
+
+func check_game_over() -> void:
+	if get_generals().size() < 2:
+		get_tree().change_scene_to_file("res://Projects/Levels/PrototypeMenu/prototype_menu.tscn")
