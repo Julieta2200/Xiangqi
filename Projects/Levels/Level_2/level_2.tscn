@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://d3giqvti0ieng"]
+
+[ext_resource type="Script" path="res://Projects/Levels/Level_2/level_2.gd" id="1_0bx55"]
+[ext_resource type="Texture2D" uid="uid://dtrlw2ivmev3l" path="res://Assets/backgrounds/cloud/background.png" id="1_uaeyc"]
+[ext_resource type="PackedScene" uid="uid://dpyrcsgpodbx7" path="res://Projects/Board/board.tscn" id="2_bx584"]
+[ext_resource type="PackedScene" uid="uid://d0l5epq1wemnr" path="res://Projects/AI/ai.tscn" id="3_qk3h7"]
+[ext_resource type="PackedScene" uid="uid://br5fqscax7ejf" path="res://Projects/Camera/camera.tscn" id="4_5shs6"]
+[ext_resource type="PackedScene" uid="uid://bip87oin8clme" path="res://Projects/Ui/gameplay_ui.tscn" id="5_n5yye"]
+
+[node name="Level_2" type="Node2D"]
+script = ExtResource("1_0bx55")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(1960, 1496)
+scale = Vector2(2, 2)
+texture = ExtResource("1_uaeyc")
+
+[node name="Board" parent="." node_paths=PackedStringArray("ai", "ui") instance=ExtResource("2_bx584")]
+unique_name_in_owner = true
+position = Vector2(848, 212)
+ai = NodePath("../AI")
+ui = NodePath("../GameplayUI")
+
+[node name="AI" parent="." node_paths=PackedStringArray("board") instance=ExtResource("3_qk3h7")]
+board = NodePath("../Board")
+
+[node name="Camera" parent="." instance=ExtResource("4_5shs6")]
+position = Vector2(1924, 1272)
+
+[node name="GameplayUI" parent="." node_paths=PackedStringArray("board") instance=ExtResource("5_n5yye")]
+board = NodePath("../Board")
