@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dr12x21j78cqx" path="res://Assets/tmp/cannon_red.png" id="2_rrjlf"]
 [ext_resource type="PackedScene" uid="uid://dylnbquiybg16" path="res://Projects/Figure/Components/figure_ui_component.tscn" id="3_v23kq"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/cannon_chess_component.gd" id="4_w6i5p"]
-[ext_resource type="Script" path="res://Projects/Figure/Components/move_component.gd" id="5_b5pty"]
+[ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="5_b5pty"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eul7x"]
 animations = [{

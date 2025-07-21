@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_t51og"]
 [ext_resource type="Texture2D" uid="uid://bvntmi43ujymc" path="res://Assets/tmp/chariot_black.png" id="2_1sq2t"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/chariot_chess_component.gd" id="4_oqt5l"]
-[ext_resource type="Script" path="res://Projects/Figure/Components/move_component.gd" id="5_xmylr"]
+[ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="5_xmylr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hqh0k"]
 animations = [{

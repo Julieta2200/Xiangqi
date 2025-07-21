@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dwfxmwt37fkl0" path="res://Assets/Characters/Cloud/General/Idle/Idle3.png" id="4_spc4u"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/general_chess_component.gd" id="4_tenn6"]
 [ext_resource type="Texture2D" uid="uid://d2aali6u2vgnl" path="res://Assets/Characters/Cloud/General/Idle/Idle4.png" id="5_o3mcs"]
-[ext_resource type="Script" path="res://Projects/Figure/Components/move_component.gd" id="5_v7gxe"]
+[ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="5_v7gxe"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pi8o7"]
 animations = [{

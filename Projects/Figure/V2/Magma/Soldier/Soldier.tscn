@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bxjowytodmlln"]
+[gd_scene load_steps=29 format=3 uid="uid://bxjowytodmlln"]
 
 [ext_resource type="Texture2D" uid="uid://f1jvrq55cicp" path="res://Assets/Characters/Magma/Pawn/Idle/Back idle/Back_idle1.png" id="1_4usx7"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_ebhfi"]
@@ -6,7 +6,26 @@
 [ext_resource type="Texture2D" uid="uid://di0utiqcdevt2" path="res://Assets/Characters/Magma/Pawn/Idle/Back idle/Back_idle3.png" id="3_ydc30"]
 [ext_resource type="PackedScene" uid="uid://dylnbquiybg16" path="res://Projects/Figure/Components/figure_ui_component.tscn" id="4_qchhg"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/soldier_chess_component.gd" id="5_adoya"]
-[ext_resource type="Script" path="res://Projects/Figure/Components/move_component.gd" id="7_d3i77"]
+[ext_resource type="Texture2D" uid="uid://8xxqv1hi838f" path="res://Assets/Characters/Magma/Pawn/Run/Back/Run_back1.png" id="5_cae5q"]
+[ext_resource type="Texture2D" uid="uid://b02y7xnh1pv8u" path="res://Assets/Characters/Magma/Pawn/Run/Back/Run_back2.png" id="6_lkvv7"]
+[ext_resource type="Texture2D" uid="uid://7oft8ju8gtgn" path="res://Assets/Characters/Magma/Pawn/Run/Back/Run_back3.png" id="7_na5k7"]
+[ext_resource type="Texture2D" uid="uid://cmxbfx7tm77g2" path="res://Assets/Characters/Magma/Pawn/Run/Back/Run_back4.png" id="8_s0jhs"]
+[ext_resource type="Texture2D" uid="uid://b8o6befwrsa4c" path="res://Assets/Characters/Magma/Pawn/Run/Back/Run_back5.png" id="9_4mgeh"]
+[ext_resource type="Texture2D" uid="uid://d3i1qjy63lpyi" path="res://Assets/Characters/Magma/Pawn/Run/Back/Run_back6.png" id="10_m0rr2"]
+[ext_resource type="Texture2D" uid="uid://cnvbkrhpppcba" path="res://Assets/Characters/Magma/Pawn/Run/Back/Run_Back7.png" id="11_fgv1o"]
+[ext_resource type="Texture2D" uid="uid://bvbhsb08eebyy" path="res://Assets/Characters/Magma/Pawn/Run/Left Side/Run_Left1.png" id="12_paqqp"]
+[ext_resource type="Texture2D" uid="uid://c06twbdjftfei" path="res://Assets/Characters/Magma/Pawn/Run/Left Side/Run_Left2.png" id="13_ja5yw"]
+[ext_resource type="Texture2D" uid="uid://oqv4f7jtn8by" path="res://Assets/Characters/Magma/Pawn/Run/Left Side/Run_Left3.png" id="14_yxp67"]
+[ext_resource type="Texture2D" uid="uid://dk41ki0rj4bbg" path="res://Assets/Characters/Magma/Pawn/Run/Left Side/Run_Left4.png" id="15_j6rnk"]
+[ext_resource type="Texture2D" uid="uid://cyygb11ymkmme" path="res://Assets/Characters/Magma/Pawn/Run/Left Side/Run_Left5.png" id="16_qvriy"]
+[ext_resource type="Texture2D" uid="uid://bov1uysqwpdki" path="res://Assets/Characters/Magma/Pawn/Run/Left Side/Run_Left6.png" id="17_2y5vt"]
+[ext_resource type="Texture2D" uid="uid://ne11fvcqojcn" path="res://Assets/Characters/Magma/Pawn/Run/Right Side/Run_Right1.png" id="18_utlg0"]
+[ext_resource type="Texture2D" uid="uid://c02wy2f1210j6" path="res://Assets/Characters/Magma/Pawn/Run/Right Side/Run_Right2.png" id="19_xwg74"]
+[ext_resource type="Texture2D" uid="uid://n2wsn10y4rgl" path="res://Assets/Characters/Magma/Pawn/Run/Right Side/Run_Right3.png" id="20_ycety"]
+[ext_resource type="Texture2D" uid="uid://3sf1hr7hwl1e" path="res://Assets/Characters/Magma/Pawn/Run/Right Side/Run_Right4.png" id="21_qv4iy"]
+[ext_resource type="Texture2D" uid="uid://df3qtbxi2oxyd" path="res://Assets/Characters/Magma/Pawn/Run/Right Side/Run_Right5.png" id="22_qmxsi"]
+[ext_resource type="Texture2D" uid="uid://ceyuyj20fhf0o" path="res://Assets/Characters/Magma/Pawn/Run/Right Side/Run_Right6.png" id="23_7u65r"]
+[ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/Magma/soldier_move_component.gd" id="26_e3we4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pi8o7"]
 animations = [{
@@ -21,8 +40,89 @@ animations = [{
 "texture": ExtResource("3_ydc30")
 }],
 "loop": true,
-"name": &"idle_up",
+"name": &"idle",
 "speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_cae5q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_lkvv7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_na5k7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_s0jhs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4mgeh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_m0rr2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_fgv1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cae5q")
+}],
+"loop": false,
+"name": &"move_back",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_paqqp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ja5yw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_yxp67")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_j6rnk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_qvriy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_2y5vt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_paqqp")
+}],
+"loop": false,
+"name": &"move_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_utlg0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_xwg74")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ycety")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_qv4iy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_qmxsi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_7u65r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_utlg0")
+}],
+"loop": false,
+"name": &"move_right",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qnuwo"]
@@ -39,9 +139,8 @@ move_component = NodePath("MoveComponent")
 position = Vector2(8, -168)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_pi8o7")
-animation = &"idle_up"
-autoplay = "idle_up"
-frame_progress = 0.0803341
+animation = &"idle"
+autoplay = "idle"
 
 [node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component") instance=ExtResource("4_qchhg")]
 chess_component = NodePath("../ChessComponent")
@@ -58,6 +157,8 @@ figure_component = NodePath("..")
 move_component = NodePath("../MoveComponent")
 
 [node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component")]
-script = ExtResource("7_d3i77")
-speed = 300.0
+script = ExtResource("26_e3we4")
+speed = 200.0
 figure_component = NodePath("..")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="MoveComponent" method="_on_figure_animation_finished"]

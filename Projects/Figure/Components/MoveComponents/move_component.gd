@@ -1,0 +1,23 @@
+class_name MoveComponent extends Node
+
+@export var speed: float
+@export var figure_component: FigureComponent
+
+@onready var animated_sprite: AnimatedSprite2D = $"../AnimatedSprite2D"
+signal move_done()
+
+func move_to_position(marker: BoardMarker) -> void:
+	var target_position: Vector2 = marker.global_position
+	
+	move_animation(figure_component.global_position, target_position)
+	
+	var tween = create_tween()
+	tween.tween_property(figure_component, "global_position",
+	 target_position, figure_component.global_position.distance_to(target_position)/speed)
+	tween.finished.connect(func(): emit_signal("move_done"))
+	
+func move_animation(old_pos: Vector2, new_pos: Vector2) -> void:
+	pass
+
+func _on_figure_animation_finished() -> void:
+	animated_sprite.play("idle")

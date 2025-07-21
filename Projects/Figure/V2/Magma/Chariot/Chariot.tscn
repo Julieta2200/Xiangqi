@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ydcd8w1wmbyg" path="res://Assets/tmp/chariot_red.png" id="2_iy565"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/chariot_chess_component.gd" id="4_6m8uf"]
 [ext_resource type="PackedScene" uid="uid://dylnbquiybg16" path="res://Projects/Figure/Components/figure_ui_component.tscn" id="4_70rel"]
-[ext_resource type="Script" path="res://Projects/Figure/Components/move_component.gd" id="6_0nrd7"]
+[ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="6_0nrd7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ny2w2"]
 animations = [{
