@@ -14,7 +14,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_up",
-"speed": 5.0
+"speed": 1.5
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qnuwo"]
@@ -34,7 +34,7 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_pi8o7")
 animation = &"idle_up"
 autoplay = "idle_up"
-frame_progress = 0.556319
+frame_progress = 0.581328
 
 [node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component") instance=ExtResource("5_n8y44")]
 chess_component = NodePath("../ChessComponent")
