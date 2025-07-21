@@ -11,7 +11,7 @@ func move_to_position(marker: BoardMarker) -> void:
 	
 	move_animation(figure_component.global_position, target_position)
 	
-	generate_run_tween(target_position)
+	generate_move_tween(target_position)
 	
 func move_animation(old_pos: Vector2, new_pos: Vector2) -> void:
 	pass
@@ -19,7 +19,7 @@ func move_animation(old_pos: Vector2, new_pos: Vector2) -> void:
 func _on_figure_animation_finished() -> void:
 	animated_sprite.play("idle")
 
-func generate_run_tween(target_position):
+func generate_move_tween(target_position):
 	var tween = create_tween()
 	tween.tween_property(figure_component, "global_position",
 	 target_position, figure_component.global_position.distance_to(target_position)/speed)

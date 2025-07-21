@@ -15,4 +15,4 @@ func move_animation(old_pos: Vector2, new_pos: Vector2) -> void:
 
 func generate_move_tween(target_pos):
 	await get_tree().create_timer(0.5).timeout
-	super.generate_run_tween(target_pos)
+	super.generate_move_tween(target_pos)
