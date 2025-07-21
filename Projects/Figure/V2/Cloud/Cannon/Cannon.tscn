@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_fo2f3"]
 [ext_resource type="Texture2D" uid="uid://dwnei5gaalkw5" path="res://Assets/tmp/cannon_black.png" id="2_b148b"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/cannon_chess_component.gd" id="3_edfoe"]
-[ext_resource type="Script" path="res://Projects/Figure/Components/move_component.gd" id="4_bo0vn"]
+[ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="4_bo0vn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ns0u8"]
 animations = [{

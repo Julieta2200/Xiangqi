@@ -39,4 +39,4 @@ func move_or_capture(pos: Vector2i, state: Dictionary) -> bool:
 func change_position(p: Vector2i) -> void:
 	position = p
 	var marker: BoardMarker = figure_component.board.markers[p]
-	move_component.move_to_position(marker.global_position)
+	move_component.move_to_position(marker)

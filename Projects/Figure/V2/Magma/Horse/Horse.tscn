@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://irmtu4ps57i5" path="res://Assets/tmp/horse_red.png" id="2_buk4o"]
 [ext_resource type="PackedScene" uid="uid://dylnbquiybg16" path="res://Projects/Figure/Components/figure_ui_component.tscn" id="3_14xfn"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/horse_chess_component.gd" id="4_2k2ar"]
-[ext_resource type="Script" path="res://Projects/Figure/Components/move_component.gd" id="5_nvpil"]
+[ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="5_nvpil"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rkcc6"]
 animations = [{

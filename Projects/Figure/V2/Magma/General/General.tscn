@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://we1frji6qg47" path="res://Assets/Characters/Magma/General/Sides/Ashes_back.png" id="2_udffs"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/general_chess_component.gd" id="4_5iulq"]
 [ext_resource type="PackedScene" uid="uid://dylnbquiybg16" path="res://Projects/Figure/Components/figure_ui_component.tscn" id="5_n8y44"]
-[ext_resource type="Script" path="res://Projects/Figure/Components/move_component.gd" id="7_5cb7i"]
+[ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="7_5cb7i"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pi8o7"]
 animations = [{

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_joy3s"]
 [ext_resource type="Texture2D" uid="uid://djn6klw0i06x0" path="res://Assets/tmp/elephant_red.png" id="2_0sd3o"]
 [ext_resource type="PackedScene" uid="uid://dylnbquiybg16" path="res://Projects/Figure/Components/figure_ui_component.tscn" id="3_2lvq0"]
-[ext_resource type="Script" path="res://Projects/Figure/Components/move_component.gd" id="4_j63sy"]
+[ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="4_j63sy"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/elephant_chess_component.gd" id="4_sbf10"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5rg0u"]
