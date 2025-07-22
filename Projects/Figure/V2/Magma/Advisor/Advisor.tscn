@@ -1,14 +1,487 @@
-[gd_scene load_steps=9 format=3 uid="uid://xnkcry6frvgx"]
+[gd_scene load_steps=53 format=3 uid="uid://xnkcry6frvgx"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_ts1i4"]
+[ext_resource type="Texture2D" uid="uid://di3yukoh8siaj" path="res://Assets/Characters/Magma/Advisor/Run/Back_Left_Side/Back_Left_Side1.png" id="2_a3x3p"]
 [ext_resource type="Texture2D" uid="uid://qbni1dsw0wpi" path="res://Assets/Characters/Magma/Advisor/Idle/Idle1.png" id="2_haioo"]
 [ext_resource type="Texture2D" uid="uid://b60q7yfitdku4" path="res://Assets/Characters/Magma/Advisor/Idle/Idle2.png" id="3_b6f1j"]
+[ext_resource type="Texture2D" uid="uid://c6ty1oapjfucs" path="res://Assets/Characters/Magma/Advisor/Run/Back_Left_Side/Back_Left_Side2.png" id="3_i8rkn"]
 [ext_resource type="PackedScene" uid="uid://dylnbquiybg16" path="res://Projects/Figure/Components/figure_ui_component.tscn" id="4_eq2gi"]
+[ext_resource type="Texture2D" uid="uid://do00mxrwnqb0j" path="res://Assets/Characters/Magma/Advisor/Run/Back_Left_Side/Back_Left_Side3.png" id="4_fldcs"]
+[ext_resource type="Texture2D" uid="uid://w8p7w2bt4koo" path="res://Assets/Characters/Magma/Advisor/Run/Signs/Sign6.png" id="5_2n6cp"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/advisor_chess_component.gd" id="5_kum7g"]
-[ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="6_lsy23"]
+[ext_resource type="Texture2D" uid="uid://depsiww33ss3p" path="res://Assets/Characters/Magma/Advisor/Run/Back_Left_Side/Back_Left_Side4.png" id="5_y8ulc"]
+[ext_resource type="Texture2D" uid="uid://djgvd08sgpb5k" path="res://Assets/Characters/Magma/Advisor/Run/Back_Left_Side/Back_Left_Side5.png" id="6_81ftp"]
+[ext_resource type="Texture2D" uid="uid://dfihmnram3xwj" path="res://Assets/Characters/Magma/Advisor/Run/Front_Left_Side/Front_Left_Side1.png" id="6_v63mr"]
+[ext_resource type="Texture2D" uid="uid://ddrwimd5v2wrr" path="res://Assets/Characters/Magma/Advisor/Run/Back_Left_Side/Back_Left_Side6.png" id="7_bndgd"]
+[ext_resource type="Texture2D" uid="uid://dha1jab6em0pe" path="res://Assets/Characters/Magma/Advisor/Run/Signs/Sign1.png" id="7_rwf7o"]
+[ext_resource type="Texture2D" uid="uid://bg20yxbw1rljn" path="res://Assets/Characters/Magma/Advisor/Run/Front_Left_Side/Front_Left_Side2.png" id="7_w8h5m"]
+[ext_resource type="Texture2D" uid="uid://dbli3umf7ttbw" path="res://Assets/Characters/Magma/Advisor/Run/Front_Left_Side/Front_Left_Side3.png" id="8_2j38v"]
+[ext_resource type="Texture2D" uid="uid://ds23ajhl2wttr" path="res://Assets/Characters/Magma/Advisor/Run/Signs/Sign2.png" id="8_pmhrn"]
+[ext_resource type="Texture2D" uid="uid://j5fp2f6vm4tg" path="res://Assets/Characters/Magma/Advisor/Run/Back_Left_Side/Back_Left_Side7.png" id="8_wyclc"]
+[ext_resource type="Texture2D" uid="uid://dpmuov72rh6bd" path="res://Assets/Characters/Magma/Advisor/Run/Signs/Sign4.png" id="9_2th7d"]
+[ext_resource type="Texture2D" uid="uid://obmad8n647c1" path="res://Assets/Characters/Magma/Advisor/Run/Back_Left_Side/Back_Left_Side8.png" id="9_6vwdy"]
+[ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/Magma/advisor_move_component.gd" id="9_74u5g"]
+[ext_resource type="Texture2D" uid="uid://bqcy6pfvr0hf1" path="res://Assets/Characters/Magma/Advisor/Run/Front_Left_Side/Front_Left_Side4.png" id="9_tge5g"]
+[ext_resource type="Texture2D" uid="uid://duloun4p3356r" path="res://Assets/Characters/Magma/Advisor/Run/Front_Left_Side/Front_Left_Side5.png" id="10_f0nga"]
+[ext_resource type="Texture2D" uid="uid://b2lqg0kjrdq1u" path="res://Assets/Characters/Magma/Advisor/Run/Back_Left_Side/Back_Left_Side9.png" id="10_irt6c"]
+[ext_resource type="Texture2D" uid="uid://cb2dqbuucdcuf" path="res://Assets/Characters/Magma/Advisor/Run/Front_Left_Side/Front_Left_Side6.png" id="11_ktorp"]
+[ext_resource type="Texture2D" uid="uid://cyd1bf76gkmv0" path="res://Assets/Characters/Magma/Advisor/Run/Front_Left_Side/Front_Left_Side7.png" id="12_xt26k"]
+[ext_resource type="Texture2D" uid="uid://xgir6w30yq76" path="res://Assets/Characters/Magma/Advisor/Run/Front_Left_Side/Front_Left_Side8.png" id="13_5jfir"]
+[ext_resource type="Texture2D" uid="uid://dbc1mxc1ipaeq" path="res://Assets/Characters/Magma/Advisor/Run/Front_Left_Side/Front_Left_Side9.png" id="14_t8fl1"]
+[ext_resource type="Texture2D" uid="uid://bgy2uuke8efw0" path="res://Assets/Characters/Magma/Advisor/Run/Front_Right_Side/Front_Right_Side1.png" id="15_cab5u"]
+[ext_resource type="Texture2D" uid="uid://dcir3sfmei31v" path="res://Assets/Characters/Magma/Advisor/Run/Back_Right_Side/Back_Right_Side1.png" id="15_lpqh5"]
+[ext_resource type="Texture2D" uid="uid://oxg4api04laq" path="res://Assets/Characters/Magma/Advisor/Run/Back_Right_Side/Back_Right_Side2.png" id="16_7cyx4"]
+[ext_resource type="Texture2D" uid="uid://ckhg3qx15t3qm" path="res://Assets/Characters/Magma/Advisor/Run/Front_Right_Side/Front_Right_Side2.png" id="16_is4cc"]
+[ext_resource type="Texture2D" uid="uid://2ro4hytyi076" path="res://Assets/Characters/Magma/Advisor/Run/Front_Right_Side/Front_Right_Side3.png" id="17_i6vj7"]
+[ext_resource type="Texture2D" uid="uid://wkalcmsfnyj6" path="res://Assets/Characters/Magma/Advisor/Run/Back_Right_Side/Back_Right_Side3.png" id="17_q3j1l"]
+[ext_resource type="Texture2D" uid="uid://bcg8aipn3kyjr" path="res://Assets/Characters/Magma/Advisor/Run/Front_Right_Side/Front_Right_Side4.png" id="18_4cjnh"]
+[ext_resource type="Texture2D" uid="uid://gapxjun27ili" path="res://Assets/Characters/Magma/Advisor/Run/Back_Right_Side/Back_Right_Side4.png" id="18_63c8h"]
+[ext_resource type="Texture2D" uid="uid://bvcl42igrvo0s" path="res://Assets/Characters/Magma/Advisor/Run/Back_Right_Side/Back_Right_Side5.png" id="19_7jnj1"]
+[ext_resource type="Texture2D" uid="uid://cqjt7dr0ay5qb" path="res://Assets/Characters/Magma/Advisor/Run/Front_Right_Side/Front_Right_Side5.png" id="19_pm8th"]
+[ext_resource type="Texture2D" uid="uid://b54kbjp5g62ry" path="res://Assets/Characters/Magma/Advisor/Run/Back_Right_Side/Back_Right_Side6.png" id="20_klw5f"]
+[ext_resource type="Texture2D" uid="uid://d06bspuu6trjh" path="res://Assets/Characters/Magma/Advisor/Run/Front_Right_Side/Front_Right_Side6.png" id="20_lmulp"]
+[ext_resource type="Texture2D" uid="uid://b1q8rp76uegiy" path="res://Assets/Characters/Magma/Advisor/Run/Back_Right_Side/Back_Right_Side7.png" id="21_2uud3"]
+[ext_resource type="Texture2D" uid="uid://bjs0mgx1un3c3" path="res://Assets/Characters/Magma/Advisor/Run/Front_Right_Side/Front_Right_Side7.png" id="21_iqmqr"]
+[ext_resource type="Texture2D" uid="uid://dfk70nywcrf7t" path="res://Assets/Characters/Magma/Advisor/Run/Back_Right_Side/Back_Right_Side8.png" id="22_vrpdv"]
+[ext_resource type="Texture2D" uid="uid://doexy5gjn5fx4" path="res://Assets/Characters/Magma/Advisor/Run/Front_Right_Side/Front_Right_Side8.png" id="22_xqeoy"]
+[ext_resource type="Texture2D" uid="uid://cuvkb6ievy7a7" path="res://Assets/Characters/Magma/Advisor/Run/Back_Right_Side/Back_Right_Side9.png" id="23_34lgj"]
+[ext_resource type="Texture2D" uid="uid://doeboxndmsx7h" path="res://Assets/Characters/Magma/Advisor/Run/Front_Right_Side/Front_Right_Side9.png" id="23_amfd0"]
+
+[sub_resource type="Animation" id="Animation_eddeg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathSigns/1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PathSigns/2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PathSigns/3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PathSigns/4:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PathSigns/5:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PathSigns/6:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("PathSigns/7:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("PathSigns/8:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("PathSigns/9:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("PathSigns/10:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("PathSigns/11:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6wk4q"]
+resource_name = "appear"
+length = 2.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathSigns/1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PathSigns/2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PathSigns/3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.2, 0.4, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PathSigns/4:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.4, 0.6, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PathSigns/5:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.6, 0.8, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PathSigns/6:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.8, 1, 1.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("PathSigns/7:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1, 1.2, 1.6, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("PathSigns/8:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1.2, 1.4, 1.8, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("PathSigns/9:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(1.4, 1.6, 2, 2.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("PathSigns/10:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(1.6, 1.8, 2.2, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("PathSigns/11:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(1.8, 2, 2.4, 2.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/11/type = "method"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../MoveComponent")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(2.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"appear_animation"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kwdnc"]
+_data = {
+"RESET": SubResource("Animation_eddeg"),
+"appear": SubResource("Animation_6wk4q")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0dygn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_rwf7o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_pmhrn")
+}],
+"loop": false,
+"name": &"appear",
+"speed": 2.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pi8o7"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_v63mr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_w8h5m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_2j38v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_tge5g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_f0nga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ktorp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_xt26k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_5jfir")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_t8fl1")
+}],
+"loop": false,
+"name": &"disappear_down_left",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_cab5u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_is4cc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_i6vj7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_4cjnh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_pm8th")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_lmulp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_iqmqr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_xqeoy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_amfd0")
+}],
+"loop": false,
+"name": &"disappear_down_right",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_a3x3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_i8rkn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fldcs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_y8ulc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_81ftp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bndgd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_wyclc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_6vwdy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_irt6c")
+}],
+"loop": false,
+"name": &"disappear_up_left",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_lpqh5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_7cyx4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_q3j1l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_63c8h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_7jnj1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_klw5f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_2uud3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_vrpdv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_34lgj")
+}],
+"loop": false,
+"name": &"disappear_up_right",
+"speed": 8.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_haioo")
@@ -32,13 +505,101 @@ ui_component = NodePath("FigureUIComponent")
 move_component = NodePath("MoveComponent")
 type = 2
 
+[node name="BoardSigns" type="Node2D" parent="."]
+z_index = -1
+
+[node name="PathAnimation" type="AnimationPlayer" parent="BoardSigns"]
+libraries = {
+"": SubResource("AnimationLibrary_kwdnc")
+}
+
+[node name="EdgeSign" type="AnimatedSprite2D" parent="BoardSigns"]
+visible = false
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_0dygn")
+animation = &"appear"
+frame = 1
+frame_progress = 1.0
+
+[node name="PathSigns" type="Node2D" parent="BoardSigns"]
+
+[node name="1" type="Sprite2D" parent="BoardSigns/PathSigns"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-44, -44)
+scale = Vector2(2, 2)
+texture = ExtResource("9_2th7d")
+
+[node name="2" type="Sprite2D" parent="BoardSigns/PathSigns"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-58, -58)
+scale = Vector2(2, 2)
+texture = ExtResource("9_2th7d")
+
+[node name="3" type="Sprite2D" parent="BoardSigns/PathSigns"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-72, -72)
+scale = Vector2(2, 2)
+texture = ExtResource("9_2th7d")
+
+[node name="4" type="Sprite2D" parent="BoardSigns/PathSigns"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-86, -86)
+scale = Vector2(2, 2)
+texture = ExtResource("9_2th7d")
+
+[node name="5" type="Sprite2D" parent="BoardSigns/PathSigns"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-100, -100)
+scale = Vector2(2, 2)
+texture = ExtResource("9_2th7d")
+
+[node name="6" type="Sprite2D" parent="BoardSigns/PathSigns"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-114, -114)
+scale = Vector2(2, 2)
+texture = ExtResource("9_2th7d")
+
+[node name="7" type="Sprite2D" parent="BoardSigns/PathSigns"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-128, -128)
+scale = Vector2(2, 2)
+texture = ExtResource("9_2th7d")
+
+[node name="8" type="Sprite2D" parent="BoardSigns/PathSigns"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-142, -142)
+scale = Vector2(2, 2)
+texture = ExtResource("9_2th7d")
+
+[node name="9" type="Sprite2D" parent="BoardSigns/PathSigns"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-156, -156)
+scale = Vector2(2, 2)
+texture = ExtResource("9_2th7d")
+
+[node name="10" type="Sprite2D" parent="BoardSigns/PathSigns"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-170, -170)
+scale = Vector2(2, 2)
+texture = ExtResource("9_2th7d")
+
+[node name="11" type="Sprite2D" parent="BoardSigns/PathSigns"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-184, -184)
+scale = Vector2(2, 2)
+texture = ExtResource("9_2th7d")
+
+[node name="CenterSign" type="Sprite2D" parent="BoardSigns"]
+visible = false
+scale = Vector2(2, 2)
+texture = ExtResource("5_2n6cp")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -106)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_pi8o7")
-animation = &"idle_up"
+animation = &"disappear_down_left"
 autoplay = "idle_up"
-frame_progress = 0.620194
 
 [node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component") instance=ExtResource("4_eq2gi")]
 chess_component = NodePath("../ChessComponent")
@@ -54,7 +615,14 @@ team = 1
 figure_component = NodePath("..")
 move_component = NodePath("../MoveComponent")
 
-[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component")]
-script = ExtResource("6_lsy23")
-speed = 300.0
+[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("path_signs", "path_animation", "edge_sign", "center_sign", "main_sprite", "figure_component")]
+script = ExtResource("9_74u5g")
+path_signs = NodePath("../BoardSigns/PathSigns")
+path_animation = NodePath("../BoardSigns/PathAnimation")
+edge_sign = NodePath("../BoardSigns/EdgeSign")
+center_sign = NodePath("../BoardSigns/CenterSign")
+main_sprite = NodePath("../AnimatedSprite2D")
 figure_component = NodePath("..")
+
+[connection signal="animation_finished" from="BoardSigns/EdgeSign" to="MoveComponent" method="_on_edge_sign_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="MoveComponent" method="_on_main_sprite_animation_finished"]

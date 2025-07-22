@@ -11,6 +11,7 @@ process_thread_messages = 0
 script = ExtResource("1_ehao4")
 
 [node name="Xiangqi" type="Sprite2D" parent="."]
+z_index = -2
 position = Vector2(1078, 1163)
 scale = Vector2(2, 2)
 texture = ExtResource("2_x6ei7")
@@ -29,13 +30,13 @@ position = Vector2(388, 2080)
 position = Vector2(618, 2080)
 
 [node name="Marker4" parent="Markers/1" instance=ExtResource("3_g0cu3")]
-position = Vector2(848, 2080)
+position = Vector2(847, 2079)
 
 [node name="Marker5" parent="Markers/1" instance=ExtResource("3_g0cu3")]
 position = Vector2(1078, 2080)
 
 [node name="Marker6" parent="Markers/1" instance=ExtResource("3_g0cu3")]
-position = Vector2(1306, 2080)
+position = Vector2(1309, 2079)
 
 [node name="Marker7" parent="Markers/1" instance=ExtResource("3_g0cu3")]
 position = Vector2(1538, 2080)
@@ -61,7 +62,7 @@ position = Vector2(618, 1866)
 position = Vector2(846, 1866)
 
 [node name="Marker5" parent="Markers/2" instance=ExtResource("3_g0cu3")]
-position = Vector2(1077, 1866)
+position = Vector2(1078, 1865)
 
 [node name="Marker6" parent="Markers/2" instance=ExtResource("3_g0cu3")]
 position = Vector2(1308, 1866)

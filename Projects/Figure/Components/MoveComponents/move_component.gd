@@ -6,7 +6,7 @@ class_name MoveComponent extends Node
 @onready var animated_sprite: AnimatedSprite2D = $"../AnimatedSprite2D"
 signal move_done()
 
-func move_to_position(marker: BoardMarker) -> void:
+func move_to_position(marker: BoardMarker, initial_position: Vector2i = Vector2i.ZERO) -> void:
 	var target_position: Vector2 = marker.global_position
 	
 	move_animation(figure_component.global_position, target_position)
