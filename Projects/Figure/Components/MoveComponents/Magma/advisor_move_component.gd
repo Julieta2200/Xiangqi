@@ -21,7 +21,7 @@ func move_to_position(marker: BoardMarker, initial_position: Vector2i = Vector2i
 		animation += "up_"
 	else:
 		animation += "down_"
-	
+
 	if marker.board_position.x < initial_position.x:
 		animation += "left"
 	else:
@@ -56,6 +56,16 @@ func setup_signs(start: Vector2i, end: Vector2i) -> void:
 	var signs: Array[Node] = path_signs.get_children()
 	var rot_x: int = 1
 	var rot_y: int = 1
+	
+	if !edge:
+		var offset := 15.5
+		if start.x < end.x:
+			path_signs.position.x += offset
+		elif start.x > end.x:
+			path_signs.position.x -= offset
+	else:
+		path_signs.position.x = 0
+	
 	if signs[0].position.x > 0:
 		if start.x > end.x:
 			rot_x = -1
