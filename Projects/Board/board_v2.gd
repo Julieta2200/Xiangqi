@@ -88,6 +88,7 @@ func instantiate_figure(kingdom: Kingdoms, type: FigureComponent.Types, pos: Vec
 	figure.board = self
 	figure.chess_component.position = pos
 	figure.move_component.move_done.connect(figure_move_done)
+	figure.move_component.attack_done.connect(figure_attack_done)
 	add_child(figure)
 
 func show_move_markers(positions: Array[Vector2i], figure: FigureComponent) -> void:
@@ -105,9 +106,10 @@ func move_figure(marker: BoardMarker) -> void:
 	clear_markers()
 	state.erase(_selected_figure.chess_component.position)
 	if state.has(marker.board_position):
-		capture(marker.board_position)
-	state[marker.board_position] = _selected_figure
-	_selected_figure.chess_component.change_position(marker.board_position)
+		_selected_figure.move_component.attack(marker.board_position)
+	else:
+		state[marker.board_position] = _selected_figure
+		_selected_figure.chess_component.change_position(marker.board_position)
 	turn = Teams.Black
 	ui.power_meter.fill_energy()
 
@@ -115,13 +117,14 @@ func move_figure_AI(move: Dictionary) -> void:
 	var figure: FigureComponent = state[move["start"]]
 	state.erase(move["start"])
 	if state.has(move["end"]):
-		capture(move["end"])
-	state[move["end"]] = figure
-	figure.chess_component.change_position(move["end"])
+		figure.move_component.attack(move["end"])
+	else:
+		state[move["end"]] = figure
+		figure.chess_component.change_position(move["end"])
 
 func capture(pos: Vector2i) -> void:
 	state[pos].delete()
-	ui.power_meter.update_distance(get_figures(Teams.Red).size())
+	#ui.power_meter.update_distance(get_figures(Teams.Red).size())
 
 func clear_markers() -> void:
 	for pos in markers:
@@ -197,3 +200,8 @@ func get_generals() -> Array[FigureComponent]:
 func check_game_over() -> void:
 	if get_generals().size() < 2:
 		get_tree().change_scene_to_file("res://Projects/Levels/PrototypeMenu/prototype_menu.tscn")
+
+func figure_attack_done(figure,position):
+	capture(position)
+	state[position] = figure
+	figure.chess_component.change_position(position)
