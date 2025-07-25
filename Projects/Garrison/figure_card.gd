@@ -3,7 +3,7 @@ class_name FigureCard extends Control
 @onready var sprites: Dictionary = {
 	FigureComponent.Types.SOLDIER: load("res://Assets/Characters/Magma/Pawn/Pawn_front.png"),
 	FigureComponent.Types.ELEPHANT: load("res://Assets/tmp/elephant_red.png"),
-	FigureComponent.Types.CHARIOT: load("res://Assets/tmp/chariot_red.png"),
+	FigureComponent.Types.CHARIOT: load("res://Assets/Characters/Magma/Chariot/Rook_Front.png"),
 	FigureComponent.Types.HORSE: load("res://Assets/tmp/horse_red.png"),
 	FigureComponent.Types.CANNON: load("res://Assets/tmp/cannon_red.png")
 }
