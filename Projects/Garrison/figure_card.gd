@@ -41,6 +41,10 @@ func _ready() -> void:
 	if type != FigureComponent.Types.SOLDIER:
 		$card/image.scale = Vector2(1.3,1.3)
 		$card/image.value = 100
+	if type == FigureComponent.Types.CHARIOT:
+		$card/image.scale = Vector2(2.5,2.5)
+		$card/image.value = 60
+		$card/image.position = Vector2(-23,46)
 		
 	$card/image.texture_progress = sprites[type]
 	$card/name.text = figure_names[type]
