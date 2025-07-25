@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bafdghwhrt6i6"
-path="res://.godot/imported/Rook_Back.png-24cc4c2b00158c17782fcb3f53d9e22a.ctex"
+path="res://.godot/imported/Chariot_Back.png-50ade4da44095aae97677cf798602cd1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/Magma/Chariot/Rook_Back.png"
-dest_files=["res://.godot/imported/Rook_Back.png-24cc4c2b00158c17782fcb3f53d9e22a.ctex"]
+source_file="res://Assets/Characters/Magma/Chariot/Chariot_Back.png"
+dest_files=["res://.godot/imported/Chariot_Back.png-50ade4da44095aae97677cf798602cd1.ctex"]
 
 [params]
 

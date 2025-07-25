@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://ckd2du3jaxixc"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_dej4m"]
-[ext_resource type="Texture2D" uid="uid://bafdghwhrt6i6" path="res://Assets/Characters/Magma/Chariot/Rook_Back.png" id="2_oai4l"]
+[ext_resource type="Texture2D" uid="uid://bafdghwhrt6i6" path="res://Assets/Characters/Magma/Chariot/Chariot_Back.png" id="2_oai4l"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/chariot_chess_component.gd" id="4_6m8uf"]
 [ext_resource type="PackedScene" uid="uid://dylnbquiybg16" path="res://Projects/Figure/Components/figure_ui_component.tscn" id="4_70rel"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="6_0nrd7"]
