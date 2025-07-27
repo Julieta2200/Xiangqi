@@ -121,7 +121,8 @@ func move_figure_AI(move: Dictionary) -> void:
 
 func capture(pos: Vector2i) -> void:
 	state[pos].delete()
-	ui.power_meter.update_distance(get_figures(Teams.Red).size())
+	if get_generals().size() == 2:
+		ui.power_meter.update_distance(get_figures(Teams.Red).size())
 
 func clear_markers() -> void:
 	for pos in markers:
