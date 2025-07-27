@@ -14,8 +14,7 @@ func get_figures() -> Array[FigureComponent]:
 	return board.get_figures(BoardV2.Teams.Black)
 	
 func make_move() -> bool:
-	thinking_thread.start(select_best_move.bind(5))
-	thinking_thread.wait_to_finish()
+	thinking_thread.start(select_best_move.bind(3))
 	return true
 
 func evaluate_position(state: Dictionary, team: BoardV2.Teams) -> int:
@@ -41,12 +40,15 @@ func simulate_move(state: Dictionary, move: Dictionary) -> Dictionary:
 	return new_state
 
 func minimax(state: Dictionary, depth: int, maximizingPlayer: bool, alpha: int, beta: int) -> int:
+	var team: BoardV2.Teams = BoardV2.Teams.Black
+	if maximizingPlayer:
+		team = BoardV2.Teams.Red
 	if depth == 0 || game_over(state):
-		return evaluate_position(state, BoardV2.Teams.Black)
+		return evaluate_position(state, team)
 	
 	if maximizingPlayer:
 		var maxEval = -infinite
-		for move in get_all_legal_moves(BoardV2.Teams.Black, state):
+		for move in get_all_legal_moves(team, state):
 			var new_board = simulate_move(state, move)
 			var eval = minimax(new_board, depth - 1, false, alpha, beta)
 			maxEval = max(maxEval, eval)
@@ -56,7 +58,7 @@ func minimax(state: Dictionary, depth: int, maximizingPlayer: bool, alpha: int, 
 		return maxEval
 	else:
 		var minEval = infinite
-		for move in get_all_legal_moves(BoardV2.Teams.Red, state):
+		for move in get_all_legal_moves(team, state):
 			var new_board = simulate_move(state, move)
 			var eval = minimax(new_board, depth - 1, true, alpha, beta)
 			minEval = min(minEval, eval)
@@ -96,13 +98,15 @@ func select_best_move(depth: int) -> void:
 	var moves = get_all_legal_moves(BoardV2.Teams.Black, board.state)
 	for move in moves:
 		var new_board = simulate_move(board.state, move)
-		var score = minimax(new_board, depth - 1, false, -infinite, infinite)
+		var score = minimax(new_board, depth - 1, true, -infinite, infinite)
 		if score > best_score:
 			best_score = score
 			best_move = move
+	print(best_score)
 	if best_move:
 		call_deferred("make_move_main_thread", best_move)
 
 
 func make_move_main_thread(best_move):
+	thinking_thread.wait_to_finish()
 	board.move_figure_AI(best_move)
