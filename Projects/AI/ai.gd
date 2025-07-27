@@ -3,6 +3,8 @@ class_name AI extends Node
 @export var board: BoardV2
 
 const infinite : int = 500000
+var thinking_thread: Thread = Thread.new()
+
 
 func _ready() -> void:
 	randomize()
@@ -12,7 +14,8 @@ func get_figures() -> Array[FigureComponent]:
 	return board.get_figures(BoardV2.Teams.Black)
 	
 func make_move() -> bool:
-	select_best_move(3)
+	thinking_thread.start(select_best_move.bind(5))
+	thinking_thread.wait_to_finish()
 	return true
 
 func evaluate_position(state: Dictionary, team: BoardV2.Teams) -> int:
@@ -78,13 +81,13 @@ func get_all_legal_moves(team: BoardV2.Teams, state: Dictionary) -> Array[Dictio
 	return legal_moves
 
 func game_over(state: Dictionary) -> bool:
-	return get_generals(state).size() != 2
+	return get_generals(state) != 2
 
-func get_generals(state: Dictionary) -> Array[FigureComponent]:
-	var generals: Array[FigureComponent] = []
+func get_generals(state: Dictionary) -> int:
+	var generals: int = 0
 	for pos in state:
 		if state[pos].type == FigureComponent.Types.GENERAL:
-			generals.append(state[pos])
+			generals += 1
 	return generals
 
 func select_best_move(depth: int) -> void:
@@ -98,4 +101,8 @@ func select_best_move(depth: int) -> void:
 			best_score = score
 			best_move = move
 	if best_move:
-		board.move_figure_AI(best_move)
+		call_deferred("make_move_main_thread", best_move)
+
+
+func make_move_main_thread(best_move):
+	board.move_figure_AI(best_move)
