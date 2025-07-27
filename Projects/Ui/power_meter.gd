@@ -33,7 +33,7 @@ func fill_energy():
 	garrison.update_cards(energy)
 
 func update_distance(num: int):
-	print(num)
+	await get_tree().process_frame
 	distance = num/3
 
 func substruct_energy():
