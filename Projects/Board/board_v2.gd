@@ -67,6 +67,15 @@ var state: Dictionary
 # For which figure the markers are currently highlighted
 var _selected_figure: FigureComponent
 
+@export var ai_spawn_interval : int = 5
+
+var move_number: int = 0:
+	set(n):
+		move_number = n
+		if n == ai_spawn_interval:
+			spawn_AI_figure()
+			move_number = 0
+
 func _ready() -> void:
 	initialize_markers()
 	
@@ -124,7 +133,15 @@ func move_figure_AI(move: Dictionary) -> void:
 		capture(move["end"])
 	state[move["end"]] = figure
 	figure.chess_component.change_position(move["end"])
+	move_number += 1
 
+func spawn_AI_figure():
+	while true:
+		var pos = Vector2i(randi_range(0, 8), randi_range(2, 9))
+		if !palace_positions.has(pos) and !state.has(pos):
+			instantiate_figure(BoardV2.Kingdoms.CLOUD, FigureComponent.Types.CHARIOT, pos)
+			return
+		
 func capture(pos: Vector2i) -> void:
 	state[pos].delete()
 	if get_generals().size() == 2:
