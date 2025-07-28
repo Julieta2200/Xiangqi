@@ -111,7 +111,7 @@ func move_figure(marker: BoardMarker) -> void:
 	turn = Teams.Black
 	update_energy_by_figure_type(_selected_figure.type)
 	
-func update_energy_by_figure_type(figure_type : FigureComponent.Types):
+func update_energy_by_figure_type(figure_type : FigureComponent.Types) -> void:
 	if _selected_figure.type == FigureComponent.Types.GENERAL or _selected_figure.type == FigureComponent.Types.ADVISOR:
 		ui.power_meter.discharge_energy()
 	else:
