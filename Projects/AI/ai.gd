@@ -98,7 +98,7 @@ func select_best_move(depth: int) -> void:
 	var moves = get_all_legal_moves(BoardV2.Teams.Black, board.state)
 	for move in moves:
 		var new_board = simulate_move(board.state, move)
-		var score = minimax(new_board, depth - 1, true, -infinite, infinite)
+		var score = minimax(new_board, depth - 1, false, -infinite, infinite)
 		if score > best_score:
 			best_score = score
 			best_move = move
