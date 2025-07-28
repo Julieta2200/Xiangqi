@@ -56,6 +56,11 @@ const fusion_chances: Dictionary = {
 	FigureComponent.Types.HORSE: 0.3,
 }
 
+@export var spawn_AI_figure_chances: Dictionary = {
+	FigureComponent.Types.CHARIOT: 0.25,
+	FigureComponent.Types.CANNON: 0.3,
+	FigureComponent.Types.HORSE: 0.45,
+}
 var markers : Dictionary
 var turn: Teams = Teams.Red :
 	set(t):
@@ -66,6 +71,15 @@ var turn: Teams = Teams.Red :
 var state: Dictionary
 # For which figure the markers are currently highlighted
 var _selected_figure: FigureComponent
+
+@export var ai_spawn_interval : int = 5
+
+var move_number: int = 0:
+	set(n):
+		move_number = n
+		if n == ai_spawn_interval:
+			spawn_AI_figure()
+			move_number = 0
 
 func _ready() -> void:
 	initialize_markers()
@@ -124,7 +138,22 @@ func move_figure_AI(move: Dictionary) -> void:
 		capture(move["end"])
 	state[move["end"]] = figure
 	figure.chess_component.change_position(move["end"])
+	move_number += 1
 
+func spawn_AI_figure():
+	var pos : Vector2i
+	while true:
+		pos = Vector2i(randi_range(0, 8), randi_range(2, 9))
+		if !palace_positions.has(pos) and !state.has(pos):
+			break
+	var chance: float = randf()
+	if chance < spawn_AI_figure_chances[FigureComponent.Types.CHARIOT]:
+		instantiate_figure(Kingdoms.CLOUD, FigureComponent.Types.CHARIOT, pos)
+	elif chance < spawn_AI_figure_chances[FigureComponent.Types.CHARIOT] + spawn_AI_figure_chances[FigureComponent.Types.CANNON]:
+		instantiate_figure(Kingdoms.CLOUD, FigureComponent.Types.CANNON, pos)
+	else:
+		instantiate_figure(Kingdoms.CLOUD, FigureComponent.Types.HORSE, pos)
+		
 func capture(pos: Vector2i) -> void:
 	state[pos].delete()
 	if get_generals().size() == 2:
