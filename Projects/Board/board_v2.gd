@@ -109,7 +109,13 @@ func move_figure(marker: BoardMarker) -> void:
 	state[marker.board_position] = _selected_figure
 	_selected_figure.chess_component.change_position(marker.board_position)
 	turn = Teams.Black
-	ui.power_meter.fill_energy()
+	update_energy_by_figure_type(_selected_figure.type)
+	
+func update_energy_by_figure_type(figure_type : FigureComponent.Types) -> void:
+	if _selected_figure.type == FigureComponent.Types.GENERAL or _selected_figure.type == FigureComponent.Types.ADVISOR:
+		ui.power_meter.discharge_energy()
+	else:
+		ui.power_meter.fill_energy()
 
 func move_figure_AI(move: Dictionary) -> void:
 	var figure: FigureComponent = state[move["start"]]

@@ -38,3 +38,7 @@ func update_distance(num: int):
 func substruct_energy():
 	energy -= garrison.selected_figure.energy
 	garrison.update_cards(energy)
+
+func discharge_energy():
+	energy -= energy_fill
+	garrison.update_cards(energy)
