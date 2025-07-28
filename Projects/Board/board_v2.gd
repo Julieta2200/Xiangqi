@@ -72,7 +72,7 @@ var state: Dictionary
 # For which figure the markers are currently highlighted
 var _selected_figure: FigureComponent
 
-@export var ai_spawn_interval : int = 1
+@export var ai_spawn_interval : int = 5
 
 var move_number: int = 0:
 	set(n):
@@ -141,17 +141,18 @@ func move_figure_AI(move: Dictionary) -> void:
 	move_number += 1
 
 func spawn_AI_figure():
+	var pos : Vector2i
 	while true:
-		var pos = Vector2i(randi_range(0, 8), randi_range(2, 9))
+		pos = Vector2i(randi_range(0, 8), randi_range(2, 9))
 		if !palace_positions.has(pos) and !state.has(pos):
-			var chance: float = randf()
-			if chance < spawn_AI_figure_chances[FigureComponent.Types.CHARIOT]:
-				instantiate_figure(Kingdoms.CLOUD, FigureComponent.Types.CHARIOT, pos)
-			elif chance < spawn_AI_figure_chances[FigureComponent.Types.CHARIOT] + spawn_AI_figure_chances[FigureComponent.Types.CANNON]:
-				instantiate_figure(Kingdoms.CLOUD, FigureComponent.Types.CANNON, pos)
-			else:
-				instantiate_figure(Kingdoms.CLOUD, FigureComponent.Types.HORSE, pos)
-			return
+			break
+	var chance: float = randf()
+	if chance < spawn_AI_figure_chances[FigureComponent.Types.CHARIOT]:
+		instantiate_figure(Kingdoms.CLOUD, FigureComponent.Types.CHARIOT, pos)
+	elif chance < spawn_AI_figure_chances[FigureComponent.Types.CHARIOT] + spawn_AI_figure_chances[FigureComponent.Types.CANNON]:
+		instantiate_figure(Kingdoms.CLOUD, FigureComponent.Types.CANNON, pos)
+	else:
+		instantiate_figure(Kingdoms.CLOUD, FigureComponent.Types.HORSE, pos)
 		
 func capture(pos: Vector2i) -> void:
 	state[pos].delete()
