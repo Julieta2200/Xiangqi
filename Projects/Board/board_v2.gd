@@ -56,6 +56,11 @@ const fusion_chances: Dictionary = {
 	FigureComponent.Types.HORSE: 0.3,
 }
 
+@export var spawn_AI_figure_chances: Dictionary = {
+	FigureComponent.Types.CHARIOT: 0.25,
+	FigureComponent.Types.CANNON: 0.3,
+	FigureComponent.Types.HORSE: 0.45,
+}
 var markers : Dictionary
 var turn: Teams = Teams.Red :
 	set(t):
@@ -67,7 +72,7 @@ var state: Dictionary
 # For which figure the markers are currently highlighted
 var _selected_figure: FigureComponent
 
-@export var ai_spawn_interval : int = 5
+@export var ai_spawn_interval : int = 1
 
 var move_number: int = 0:
 	set(n):
@@ -139,7 +144,13 @@ func spawn_AI_figure():
 	while true:
 		var pos = Vector2i(randi_range(0, 8), randi_range(2, 9))
 		if !palace_positions.has(pos) and !state.has(pos):
-			instantiate_figure(BoardV2.Kingdoms.CLOUD, FigureComponent.Types.CHARIOT, pos)
+			var chance: float = randf()
+			if chance < spawn_AI_figure_chances[FigureComponent.Types.CHARIOT]:
+				instantiate_figure(Kingdoms.CLOUD, FigureComponent.Types.CHARIOT, pos)
+			elif chance < spawn_AI_figure_chances[FigureComponent.Types.CHARIOT] + spawn_AI_figure_chances[FigureComponent.Types.CANNON]:
+				instantiate_figure(Kingdoms.CLOUD, FigureComponent.Types.CANNON, pos)
+			else:
+				instantiate_figure(Kingdoms.CLOUD, FigureComponent.Types.HORSE, pos)
 			return
 		
 func capture(pos: Vector2i) -> void:
