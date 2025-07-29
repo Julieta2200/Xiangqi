@@ -1,6 +1,6 @@
 extends Level
 
-
+func _ready() -> void:
 	super._ready()
 	var state: Array[State] = [
 		State.new(BoardV2.Kingdoms.MAGMA, FigureComponent.Types.GENERAL, Vector2i(4,0)),
