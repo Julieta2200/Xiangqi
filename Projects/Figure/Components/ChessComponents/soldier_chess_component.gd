@@ -21,12 +21,10 @@ func calculate_moves(state: Dictionary, current_position: Vector2i) -> Array[Vec
 		BoardV2.Teams.Red:
 			directions.append(Vector2i(0, 1))
 			if current_position.y >= 5:
-				value = 2
 				directions += [Vector2i.LEFT, Vector2i.RIGHT]
 		BoardV2.Teams.Black:
 			directions.append(Vector2i(0, -1))
 			if current_position.y <= 4:
-				value = 2
 				directions += [Vector2i.LEFT, Vector2i.RIGHT]
 	
 	for dir in directions:

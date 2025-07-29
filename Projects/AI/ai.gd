@@ -25,10 +25,14 @@ func evaluate_position(state: Dictionary, team: BoardV2.Teams) -> int:
 		var figure: FigureComponent = state[pos]
 		if figure.chess_component.team == team:
 			score += figure.chess_component.value
+			score += get_aggression_bonus(pos, state)
+			score += get_mobility_bonus(pos, state)
 			if figure.type == FigureComponent.Types.GENERAL:
 				black_general = true
 		else:
 			score -= figure.chess_component.value
+			score -= get_aggression_bonus(pos, state)
+			score -= get_mobility_bonus(pos, state)
 			if figure.type == FigureComponent.Types.GENERAL:
 				red_general = true
 	if !red_general:
@@ -38,6 +42,39 @@ func evaluate_position(state: Dictionary, team: BoardV2.Teams) -> int:
 		return -infinite
 	
 	return score
+
+func get_aggression_bonus(pos: Vector2i, state: Dictionary) -> int:
+	var bonus: int = 0
+	
+	# Encourage advancing soldiers
+	if state[pos].type == FigureComponent.Types.SOLDIER:
+		match state[pos].chess_component.team:
+			BoardV2.Teams.Red:
+				if state[pos].chess_component.position.y >= 5:
+					bonus += 10
+			BoardV2.Teams.Black:
+				if state[pos].chess_component.position.y <= 4:
+					bonus += 10
+	
+	# Encourage pieces near enemy palace
+	if board.palace_positions.has(pos):
+		match state[pos].chess_component.team:
+			BoardV2.Teams.Red:
+				if state[pos].chess_component.position.y >= 7:
+					bonus += 10
+			BoardV2.Teams.Black:
+				if state[pos].chess_component.position.y <= 2:
+					bonus += 10
+	
+	var moves = get_figure_legal_moves(pos, state)
+	for move in moves:
+		if state.has(move["end"]):
+			bonus += 10
+	
+	return bonus
+
+func get_mobility_bonus(pos: Vector2i, state: Dictionary) -> int:
+	return get_figure_legal_moves(pos, state).size()*2
 
 func duplicate_state(state: Dictionary) -> Dictionary:
 	var d: Dictionary
@@ -93,6 +130,18 @@ func get_all_legal_moves(team: BoardV2.Teams, state: Dictionary) -> Array[Dictio
 			})
 		
 	return legal_moves
+
+func get_figure_legal_moves(pos: Vector2i, state: Dictionary) -> Array[Dictionary]:
+	var legal_moves: Array[Dictionary] = []
+	var figure: FigureComponent = state[pos]
+	var moves: Array[Vector2i] = figure.chess_component.calculate_moves(state, pos)
+	for move in moves:
+		legal_moves.append({
+			"start": pos,
+			"end": move
+		})
+	return legal_moves
+
 
 func game_over(state: Dictionary) -> bool:
 	return get_generals(state) != 2
