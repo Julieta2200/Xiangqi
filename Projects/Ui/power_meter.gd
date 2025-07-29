@@ -1,5 +1,7 @@
 class_name PowerMeter extends Control
 
+signal energy_depleted
+
 @export var garrison: Garrison
 # the full extent of the playing distance
 @export var distance_fill :int = 1
@@ -10,8 +12,9 @@ class_name PowerMeter extends Control
 # Stores the energy value and updates the energy display while emitting a signal when it changes
 @export var energy: float :
 	set(e):
-		if e < 0:
+		if e <= 0:
 			e = 0
+			emit_signal("energy_depleted")
 		energy = e
 		$energy.value = energy
 

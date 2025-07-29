@@ -1,9 +1,7 @@
-extends Node2D
+extends Level
 
-@onready var board: BoardV2 = %Board
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
+	super._ready()
 	var state: Array[State] = [
 		State.new(BoardV2.Kingdoms.MAGMA, FigureComponent.Types.GENERAL, Vector2i(4,0)),
 		State.new(BoardV2.Kingdoms.MAGMA, FigureComponent.Types.ADVISOR, Vector2i(3,0)),
@@ -19,8 +17,3 @@ func _ready() -> void:
 		State.new(BoardV2.Kingdoms.CLOUD, FigureComponent.Types.CHARIOT, Vector2i(0,9)),
 	]
 	board.initialize_position(state)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
