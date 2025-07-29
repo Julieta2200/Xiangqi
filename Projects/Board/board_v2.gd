@@ -143,7 +143,7 @@ func move_figure_AI(move: Dictionary) -> void:
 func spawn_AI_figure():
 	var pos : Vector2i
 	while true:
-		pos = Vector2i(randi_range(0, 8), randi_range(2, 9))
+		pos = Vector2i(randi_range(0, 8), randi_range(8, 9))
 		if !palace_positions.has(pos) and !state.has(pos):
 			break
 	var chance: float = randf()
