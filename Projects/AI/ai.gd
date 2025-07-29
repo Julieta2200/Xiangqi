@@ -36,10 +36,10 @@ func evaluate_position(state: Dictionary, team: BoardV2.Teams) -> int:
 			if figure.type == FigureComponent.Types.GENERAL:
 				red_general = true
 	if !red_general:
-		return infinite
+		return infinite-1
 	
 	if !black_general:
-		return -infinite
+		return -infinite+1
 	
 	return score
 
