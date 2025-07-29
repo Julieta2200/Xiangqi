@@ -18,13 +18,25 @@ func make_move() -> bool:
 	return true
 
 func evaluate_position(state: Dictionary, team: BoardV2.Teams) -> int:
+	var red_general: bool
+	var black_general: bool
 	var score: int = 0
 	for pos in state:
 		var figure: FigureComponent = state[pos]
 		if figure.chess_component.team == team:
 			score += figure.chess_component.value
+			if figure.type == FigureComponent.Types.GENERAL:
+				black_general = true
 		else:
 			score -= figure.chess_component.value
+			if figure.type == FigureComponent.Types.GENERAL:
+				red_general = true
+	if !red_general:
+		return infinite
+	
+	if !black_general:
+		return -infinite
+	
 	return score
 
 func duplicate_state(state: Dictionary) -> Dictionary:
@@ -41,10 +53,10 @@ func simulate_move(state: Dictionary, move: Dictionary) -> Dictionary:
 
 func minimax(state: Dictionary, depth: int, maximizingPlayer: bool, alpha: int, beta: int) -> int:
 	var team: BoardV2.Teams = BoardV2.Teams.Black
-	if maximizingPlayer:
+	if !maximizingPlayer:
 		team = BoardV2.Teams.Red
 	if depth == 0 || game_over(state):
-		return evaluate_position(state, team)
+		return evaluate_position(state, BoardV2.Teams.Black)
 	
 	if maximizingPlayer:
 		var maxEval = -infinite
