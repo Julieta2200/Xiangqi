@@ -2,7 +2,7 @@ class_name FigureCard extends Control
 
 @onready var sprites: Dictionary = {
 	FigureComponent.Types.SOLDIER: load("res://Assets/Characters/Magma/Pawn/Pawn_front.png"),
-	FigureComponent.Types.ELEPHANT: load("res://Assets/tmp/elephant_red.png"),
+	FigureComponent.Types.ELEPHANT: load("res://Assets/Characters/Magma/Elephant/Elephant_Front.png"),
 	FigureComponent.Types.CHARIOT: load("res://Assets/Characters/Magma/Chariot/Chariot_Front.png"),
 	FigureComponent.Types.HORSE: load("res://Assets/tmp/horse_red.png"),
 	FigureComponent.Types.CANNON: load("res://Assets/tmp/cannon_red.png")
@@ -45,6 +45,10 @@ func _ready() -> void:
 		$card/image.scale = Vector2(2.5,2.5)
 		$card/image.value = 60
 		$card/image.position = Vector2(-23,46)
+	if type == FigureComponent.Types.ELEPHANT:
+		$card/image.scale = Vector2(3,3)
+		$card/image.value = 50
+		$card/image.position = Vector2(-5,59)
 		
 	$card/image.texture_progress = sprites[type]
 	$card/name.text = figure_names[type]
