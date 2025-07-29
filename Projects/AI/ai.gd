@@ -44,7 +44,7 @@ func minimax(state: Dictionary, depth: int, maximizingPlayer: bool, alpha: int, 
 	if !maximizingPlayer:
 		team = BoardV2.Teams.Red
 	if depth == 0 || game_over(state):
-		return evaluate_position(state, BoardV2.Teams.Black)
+		return evaluate_position(state, team)
 	
 	if maximizingPlayer:
 		var maxEval = -infinite
