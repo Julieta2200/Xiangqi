@@ -41,7 +41,7 @@ func simulate_move(state: Dictionary, move: Dictionary) -> Dictionary:
 
 func minimax(state: Dictionary, depth: int, maximizingPlayer: bool, alpha: int, beta: int) -> int:
 	var team: BoardV2.Teams = BoardV2.Teams.Black
-	if !maximizingPlayer:
+	if maximizingPlayer:
 		team = BoardV2.Teams.Red
 	if depth == 0 || game_over(state):
 		return evaluate_position(state, team)

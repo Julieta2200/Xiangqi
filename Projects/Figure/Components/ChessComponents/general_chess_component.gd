@@ -38,7 +38,7 @@ func calculate_moves(state: Dictionary, current_position: Vector2i) -> Array[Vec
 		if in_boundaries(new_pos) and move_or_capture(new_pos,state):
 			moves.append(new_pos)
 	
-	#moves += flying(current_position, state)
+	moves += flying(current_position, state)
 	return moves
 
 func flying(start_pos: Vector2i, state:Dictionary)-> Array[Vector2i]:
