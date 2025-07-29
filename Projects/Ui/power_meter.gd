@@ -7,7 +7,7 @@ signal energy_depleted
 @export var distance_fill :int = 1
 
 # amount of energy added after each step
-@export var energy_fill: int = 5
+@export var energy_fill: int = 8
 
 # Stores the energy value and updates the energy display while emitting a signal when it changes
 @export var energy: float :

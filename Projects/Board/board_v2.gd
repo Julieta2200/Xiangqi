@@ -50,9 +50,9 @@ var scenes: Dictionary = {
 @export var ui: GameplayUI
 
 const fusion_chances: Dictionary = {
-	FigureComponent.Types.SOLDIER: 0.25,
+	FigureComponent.Types.SOLDIER: 0.4,
 	FigureComponent.Types.CHARIOT: 0.2,
-	FigureComponent.Types.CANNON: 0.25,
+	FigureComponent.Types.CANNON: 0.2,
 	FigureComponent.Types.HORSE: 0.3,
 }
 
@@ -72,7 +72,7 @@ var state: Dictionary
 # For which figure the markers are currently highlighted
 var _selected_figure: FigureComponent
 
-@export var ai_spawn_interval : int = 5
+@export var ai_spawn_interval : int = 7
 
 var move_number: int = 0:
 	set(n):
@@ -197,8 +197,9 @@ func spawn_figure(marker: BoardMarker) -> void:
 		fusion(marker)
 	else:
 		instantiate_figure(Kingdoms.MAGMA, ui.garrison.selected_figure.type, marker.board_position)
-	var figure = state[marker.board_position]
-	figure.ui_component.active = false
+	if state.has(marker.board_position):
+		var figure = state[marker.board_position]
+		figure.ui_component.active = false
 	ui.power_meter.update_distance(get_figures(Teams.Red).size())
 
 func activate_garrison(result: bool) -> void:
