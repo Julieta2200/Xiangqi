@@ -51,8 +51,8 @@ var scenes: Dictionary = {
 
 const fusion_chances: Dictionary = {
 	FigureComponent.Types.SOLDIER: 0.4,
-	FigureComponent.Types.CHARIOT: 0.2,
-	FigureComponent.Types.CANNON: 0.2,
+	FigureComponent.Types.CHARIOT: 0.15,
+	FigureComponent.Types.CANNON: 0.25,
 	FigureComponent.Types.HORSE: 0.3,
 }
 
