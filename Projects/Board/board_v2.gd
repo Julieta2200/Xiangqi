@@ -219,7 +219,8 @@ func fusion(marker: BoardMarker) -> void:
 		state.erase(marker.board_position)
 
 func figure_move_done() -> void:
-	check_game_over()
+	if check_game_over():
+		return
 	if _selected_figure != null:
 		_selected_figure = null
 		ai.make_move()
@@ -233,6 +234,9 @@ func get_generals() -> Array[FigureComponent]:
 			generals.append(state[pos])
 	return generals
 
-func check_game_over() -> void:
+func check_game_over() -> bool:
 	if get_generals().size() < 2:
 		get_tree().change_scene_to_file("res://Projects/Levels/PrototypeMenu/prototype_menu.tscn")
+		return true
+	return false
+		
