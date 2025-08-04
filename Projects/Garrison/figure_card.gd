@@ -55,7 +55,7 @@ func _ready() -> void:
 	energy = figure_energies[type]
 
 func _on_card_gui_input(event: InputEvent):
-	if event.is_pressed() and active:
+	if event.is_action_pressed("click") and active:
 		scale *= 1.2
 		emit_signal("selected", self)
 
