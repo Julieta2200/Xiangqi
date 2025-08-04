@@ -1,8 +1,21 @@
 extends Control
 
 @export var freeze_chance: float = 0.5
+@export var cooldown: int = 2
 
 signal freeze(chance: float)
+
+var freeze_active : bool 
+var freeze_number: int = 1:
+	set(f):
+		freeze_number = f
+		if f <= cooldown:
+			freeze_active = true
+		elif f < cooldown * 2:
+			freeze_active = false
+		else:
+			freeze_number = 0
+			
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,4 +34,5 @@ func _on_freeze_gui_input(event: InputEvent) -> void:
 	emit_signal("freeze", freeze_chance)
 	
 func activate(result: bool) -> void:
-	visible = result
+	if freeze_active:
+		visible = result

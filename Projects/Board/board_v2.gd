@@ -84,6 +84,7 @@ var move_number: int = 0:
 		if n == ai_spawn_interval:
 			spawn_AI_figure()
 			move_number = 0
+		
 
 func _ready() -> void:
 	initialize_markers()
@@ -143,6 +144,7 @@ func move_figure_AI(move: Dictionary) -> void:
 	state[move["end"]] = figure
 	figure.chess_component.change_position(move["end"])
 	move_number += 1
+	ui.support.freeze_number += 1
 
 func spawn_AI_figure():
 	var pos : Vector2i
