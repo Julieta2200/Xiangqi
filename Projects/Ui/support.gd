@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 
 
 func _on_freeze_gui_input(event: InputEvent) -> void:
-	if !event.is_pressed():
+	if !event.is_action_pressed("click"):
 		return
 	
 	emit_signal("freeze", freeze_chance)
