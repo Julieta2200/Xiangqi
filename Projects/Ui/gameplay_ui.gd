@@ -26,3 +26,7 @@ func _on_support_freeze(chance: float) -> void:
 
 func _on_support_wall() -> void:
 	board.wall()
+
+
+func _on_support_destroy_wall() -> void:
+	board.destroy_wall()

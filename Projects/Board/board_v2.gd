@@ -306,5 +306,12 @@ func wall(team: Teams = Teams.Red) -> void:
 	_selected_figure = null
 	ai.make_move()
 
+func destroy_wall(team: Teams = Teams.Red) -> void:
+	print("AAA")
+	for pos in wall_positions[team]:
+		if state.has(pos) and state[pos].chess_component.team == BoardV2.Teams.Wall:
+			state[pos].delete()
+			state.erase(pos)
+
 func activate_support(result: bool) -> void:
 	ui.support.activate(result)

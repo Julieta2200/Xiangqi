@@ -18,5 +18,6 @@ distance = 1
 [node name="Support" parent="." instance=ExtResource("4_tjqak")]
 
 [connection signal="card_selected" from="Garrison" to="." method="_on_garrison_card_selected"]
+[connection signal="destroy_wall" from="Support" to="." method="_on_support_destroy_wall"]
 [connection signal="freeze" from="Support" to="." method="_on_support_freeze"]
 [connection signal="wall" from="Support" to="." method="_on_support_wall"]
