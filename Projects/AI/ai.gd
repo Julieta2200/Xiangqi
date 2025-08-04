@@ -122,6 +122,8 @@ func get_all_legal_moves(team: BoardV2.Teams, state: Dictionary) -> Array[Dictio
 		var figure: FigureComponent = state[pos]
 		if figure.chess_component.team != team:
 			continue
+		if figure.frozen:
+			continue
 		var moves: Array[Vector2i] = figure.chess_component.calculate_moves(state, pos)
 		for move in moves:
 			legal_moves.append({

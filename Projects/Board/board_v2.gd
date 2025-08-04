@@ -46,6 +46,7 @@ var scenes: Dictionary = {
 	}
 }
 
+
 @export var ai: AI
 @export var ui: GameplayUI
 
@@ -65,8 +66,10 @@ var markers : Dictionary
 var turn: Teams = Teams.Red :
 	set(t):
 		turn = t
+		clear_markers()
 		activate_reds(turn == Teams.Red)
 		activate_garrison(turn == Teams.Red)
+		unfreeze_figures()
 
 var state: Dictionary
 # For which figure the markers are currently highlighted
@@ -240,3 +243,19 @@ func check_game_over() -> bool:
 		return true
 	return false
 		
+
+func freeze(chance: float, team: Teams = Teams.Black) -> void:
+	for pos in state:
+		if !palace_positions.has(pos) and state[pos].chess_component.team == team:
+			var ch: float = randf()
+			if ch <= chance:
+				state[pos].freeze()
+	turn = team
+	# without this blacks will do 2 moves in a row
+	_selected_figure = null
+	ai.make_move()
+
+func unfreeze_figures() -> void:
+	for pos in state:
+		if state[pos].chess_component.team != turn:
+			state[pos].unfreeze()

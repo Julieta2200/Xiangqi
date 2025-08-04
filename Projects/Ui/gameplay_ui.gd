@@ -17,3 +17,7 @@ func _process(delta: float) -> void:
 
 func _on_garrison_card_selected(selected_card: FigureCard) -> void:
 	board.spawn_highlight(selected_card.type)
+
+
+func _on_support_freeze(chance: float) -> void:
+	board.freeze(chance)
