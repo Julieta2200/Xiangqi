@@ -1,8 +1,6 @@
 extends Control
 
 @export var freeze_chance: float = 0.5
-@onready var freeze_card: Panel = $Cards/Freeze
-
 
 signal freeze(chance: float)
 
@@ -22,5 +20,5 @@ func _on_freeze_gui_input(event: InputEvent) -> void:
 	
 	emit_signal("freeze", freeze_chance)
 	
-func freeze_activate(result: bool) -> void:
-	freeze_card.visible = result
+func activate(result: bool) -> void:
+	visible = result

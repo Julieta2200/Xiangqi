@@ -69,7 +69,8 @@ var turn: Teams = Teams.Red :
 		clear_markers()
 		activate_reds(turn == Teams.Red)
 		activate_garrison(turn == Teams.Red)
-		activate_freeze(turn == Teams.Red)
+		activate_support(turn == Teams.Red)
+		unfreeze_figures()
 
 var state: Dictionary
 # For which figure the markers are currently highlighted
@@ -259,6 +260,5 @@ func unfreeze_figures() -> void:
 		if state[pos].chess_component.team != turn:
 			state[pos].unfreeze()
 
-func activate_freeze(result: bool) -> void:
-	unfreeze_figures()
-	ui.support.freeze_activate(result)
+func activate_support(result: bool) -> void:
+	ui.support.activate(result)
