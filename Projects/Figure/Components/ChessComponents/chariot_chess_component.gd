@@ -30,7 +30,7 @@ func calculate_moves(state: Dictionary, current_position: Vector2i) -> Array[Vec
 			if !state.has(new_pos):
 				moves.append(new_pos)
 			else:
-				if state[new_pos].chess_component.team != team:
+				if move_or_capture(new_pos, state):
 					moves.append(new_pos)
 				break
 			new_pos += dir

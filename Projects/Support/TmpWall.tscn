@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://carksrp1tmpjf"]
+
+[ext_resource type="Script" path="res://Projects/Support/tmp_wall.gd" id="1_wipcm"]
+[ext_resource type="Texture2D" uid="uid://b5y5veoqw6otr" path="res://Assets/Characters/Magma/Pawn/Pawn_front.png" id="2_nrr72"]
+[ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/soldier_chess_component.gd" id="25_yxp6o"]
+
+[node name="tmp_wall" type="CharacterBody2D" node_paths=PackedStringArray("chess_component")]
+script = ExtResource("1_wipcm")
+chess_component = NodePath("ChessComponent")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-4, -97)
+scale = Vector2(2, 2)
+texture = ExtResource("2_nrr72")
+
+[node name="ChessComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "move_component")]
+script = ExtResource("25_yxp6o")
+team = 3
+figure_component = NodePath("..")
+move_component = NodePath("")

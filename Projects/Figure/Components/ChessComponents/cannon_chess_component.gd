@@ -33,7 +33,7 @@ func calculate_moves(state: Dictionary, current_position: Vector2i) -> Array[Vec
 			elif !have_anchor:
 				have_anchor = true
 			elif state.has(new_pos):
-				if state[new_pos].chess_component.team != team:
+				if move_or_capture(new_pos, state):
 					moves.append(new_pos)
 				break
 			new_pos += dir

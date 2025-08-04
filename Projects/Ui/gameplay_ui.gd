@@ -22,3 +22,7 @@ func _on_garrison_card_selected(selected_card: FigureCard) -> void:
 
 func _on_support_freeze(chance: float) -> void:
 	board.freeze(chance)
+
+
+func _on_support_wall() -> void:
+	board.wall()

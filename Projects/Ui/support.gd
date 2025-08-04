@@ -3,6 +3,7 @@ extends Control
 @export var freeze_chance: float = 0.5
 
 signal freeze(chance: float)
+signal wall()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,3 +23,10 @@ func _on_freeze_gui_input(event: InputEvent) -> void:
 	
 func activate(result: bool) -> void:
 	visible = result
+
+
+func _on_wall_gui_input(event: InputEvent) -> void:
+	if !event.is_action_pressed("click"):
+		return
+	
+	emit_signal("wall")

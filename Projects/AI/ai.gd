@@ -29,7 +29,7 @@ func evaluate_position(state: Dictionary, team: BoardV2.Teams) -> int:
 			score += get_mobility_bonus(pos, state)
 			if figure.type == FigureComponent.Types.GENERAL:
 				black_general = true
-		else:
+		elif figure.chess_component.team != BoardV2.Teams.Wall:
 			score -= figure.chess_component.value
 			score -= get_aggression_bonus(pos, state)
 			score -= get_mobility_bonus(pos, state)

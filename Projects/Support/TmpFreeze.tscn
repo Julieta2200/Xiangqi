@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bs12lo32ymctj"]
 
-[ext_resource type="Texture2D" uid="uid://dqcomibobm70r" path="res://Assets/tmp/Square.png" id="1_xc2sn"]
+[ext_resource type="Texture2D" uid="uid://dqcomibobm70r" path="res://Assets/tmp/Square.png" id="1_84m7p"]
 
 [node name="TmpFreeze" type="Node2D"]
 
@@ -8,4 +8,4 @@
 modulate = Color(0.337255, 1, 1, 0.447059)
 position = Vector2(0, -98)
 scale = Vector2(2, 2)
-texture = ExtResource("1_xc2sn")
+texture = ExtResource("1_84m7p")

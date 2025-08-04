@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Projects/Ui/gameplay_ui.gd" id="1_clwfc"]
 [ext_resource type="PackedScene" uid="uid://b2isxa0mvvipm" path="res://Projects/Ui/power_meter.tscn" id="1_mqmx6"]
 [ext_resource type="PackedScene" uid="uid://pxqrvonok1lr" path="res://Projects/Garrison/garrison.tscn" id="2_usbfr"]
-[ext_resource type="PackedScene" uid="uid://bqq5uqqns6rxr" path="res://Projects/Ui/support.tscn" id="4_tjqak"]
+[ext_resource type="PackedScene" uid="uid://bn7uwqu8alpuo" path="res://Projects/Ui/support.tscn" id="4_tjqak"]
 
 [node name="GameplayUI" type="CanvasLayer"]
 script = ExtResource("1_clwfc")
@@ -19,3 +19,4 @@ distance = 1
 
 [connection signal="card_selected" from="Garrison" to="." method="_on_garrison_card_selected"]
 [connection signal="freeze" from="Support" to="." method="_on_support_freeze"]
+[connection signal="wall" from="Support" to="." method="_on_support_wall"]

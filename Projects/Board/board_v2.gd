@@ -2,7 +2,7 @@ class_name BoardV2 extends Node2D
 
 const board_rows = 10
 const board_cols = 9
-enum Teams {Red = 1, Black = 2}
+enum Teams {Red = 1, Black = 2, Wall = 3}
 enum Kingdoms {MAGMA = 1, CLOUD = 2}
 
 const palace_positions: Dictionary = {
@@ -25,6 +25,32 @@ const palace_positions: Dictionary = {
 	Vector2i(4,9): true,
 	Vector2i(5,9): true
 }
+
+const wall_positions: Dictionary = {
+	Teams.Red: {
+		Vector2i(2,0): true,
+		Vector2i(6,0): true,
+		Vector2i(2,1): true,
+		Vector2i(6,1): true,
+		Vector2i(2,2): true,
+		Vector2i(6,2): true,
+		Vector2i(3,3): true,
+		Vector2i(4,3): true,
+		Vector2i(5,3): true,
+	},
+	Teams.Black: {
+		Vector2i(2,9): true,
+		Vector2i(6,9): true,
+		Vector2i(2,8): true,
+		Vector2i(6,8): true,
+		Vector2i(2,7): true,
+		Vector2i(6,7): true,
+		Vector2i(3,6): true,
+		Vector2i(4,6): true,
+		Vector2i(5,6): true,
+	}
+}
+
 var scenes: Dictionary = {
 	Kingdoms.MAGMA: {
 		FigureComponent.Types.SOLDIER: load("res://Projects/Figure/V2/Magma/Soldier/Soldier.tscn"),
@@ -45,6 +71,8 @@ var scenes: Dictionary = {
 		FigureComponent.Types.CANNON : load("res://Projects/Figure/V2/Cloud/Cannon/Cannon.tscn"),
 	}
 }
+
+var wall_scene = load("res://Projects/Support/TmpWall.tscn")
 
 
 @export var ai: AI
@@ -107,6 +135,12 @@ func instantiate_figure(kingdom: Kingdoms, type: FigureComponent.Types, pos: Vec
 	figure.chess_component.position = pos
 	figure.move_component.move_done.connect(figure_move_done)
 	add_child(figure)
+
+func instantiate_wall(pos: Vector2i):
+	var w: FigureComponent = wall_scene.instantiate()
+	w.board = self
+	w.chess_component.position = pos
+	add_child(w)
 
 func show_move_markers(positions: Array[Vector2i], figure: FigureComponent) -> void:
 	clear_markers()
@@ -188,9 +222,12 @@ func spawn_highlight(spawn_figure_type : FigureComponent.Types) -> void:
 		for j in range(ui.power_meter.distance + 1):
 			var pos: Vector2i = Vector2i(i,j)
 			var marker: BoardMarker = markers[pos]
-			if (state.has(pos) &&  
-			!(state[pos].type == FigureComponent.Types.SOLDIER && spawn_figure_type == FigureComponent.Types.SOLDIER) && 
-			 state[pos].chess_component.team == Teams.Red) || palace_positions.has(pos):
+			if palace_positions.has(pos):
+				continue
+			if state.has(pos) and state[pos].chess_component.team != Teams.Red:
+				continue
+			if state.has(pos) and !(state[pos].type == FigureComponent.Types.SOLDIER and 
+			spawn_figure_type == FigureComponent.Types.SOLDIER):
 				continue
 			marker.highlight(BoardMarker.Highlights.SPAWN)
 
@@ -259,6 +296,14 @@ func unfreeze_figures() -> void:
 	for pos in state:
 		if state[pos].chess_component.team != turn:
 			state[pos].unfreeze()
+
+func wall(team: Teams = Teams.Red) -> void:
+	for pos in wall_positions[team]:
+		instantiate_wall(pos)
+	turn = BoardV2.Teams.Black
+	# without this blacks will do 2 moves in a row
+	_selected_figure = null
+	ai.make_move()
 
 func activate_support(result: bool) -> void:
 	ui.support.activate(result)

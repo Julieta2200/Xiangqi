@@ -10,7 +10,7 @@ enum Types {SOLDIER, GENERAL, ADVISOR, CHARIOT, HORSE, ELEPHANT, CANNON}
 @export var type: Types
 
 var frozen: bool = false
-@onready var tmp_freeze_scene = load("res://Projects/Support/tmp_freeze.tscn")
+@onready var tmp_freeze_scene = load("res://Projects/Support/TmpFreeze.tscn")
 var freeze_obj: Node2D
 
 func delete() -> void:
