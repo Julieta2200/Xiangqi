@@ -2,6 +2,7 @@ class_name GameplayUI extends CanvasLayer
 
 @onready var garrison: Garrison = $Garrison
 @onready var power_meter: PowerMeter = $PowerMeter
+@onready var support: Control = $Support
 
 @export var board: BoardV2
 
