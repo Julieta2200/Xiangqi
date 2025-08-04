@@ -2,11 +2,21 @@ extends Control
 
 @export var freeze_chance: float = 0.5
 
+@onready var freeze_card: Panel = $Cards/Freeze
+@onready var wall_card: Panel = $Cards/Wall
+
 signal freeze(chance: float)
 signal wall()
 signal destroy_wall()
 
-var freeze_active: bool = true
+var freeze_active: bool = true:
+	set(a):
+		freeze_active = a
+		if freeze_active:
+			freeze_card.modulate.a = 1.0
+		else:
+			freeze_card.modulate.a = 0.4
+			
 var freeze_counter: int : 
 	set(fc):
 		if fc < 0:
@@ -16,7 +26,14 @@ var freeze_counter: int :
 
 @export var freeze_counter_limit: int = 2
 
-var wall_active: bool = true
+var wall_active: bool = true:
+	set(a):
+		wall_active = a
+		if wall_active:
+			wall_card.modulate.a = 1.0
+		else:
+			wall_card.modulate.a = 0.4
+
 var wall_counter: int :
 	set(wc):
 		if wc < 0:
