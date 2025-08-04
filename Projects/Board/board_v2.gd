@@ -299,7 +299,8 @@ func unfreeze_figures() -> void:
 
 func wall(team: Teams = Teams.Red) -> void:
 	for pos in wall_positions[team]:
-		instantiate_wall(pos)
+		if !state.has(pos):
+			instantiate_wall(pos)
 	turn = BoardV2.Teams.Black
 	# without this blacks will do 2 moves in a row
 	_selected_figure = null
