@@ -86,9 +86,9 @@ const fusion_chances: Dictionary = {
 }
 
 @export var spawn_AI_figure_chances: Dictionary = {
-	FigureComponent.Types.CHARIOT: 0.25,
-	FigureComponent.Types.CANNON: 0.3,
-	FigureComponent.Types.HORSE: 0.45,
+	FigureComponent.Types.CHARIOT: 0.3,
+	FigureComponent.Types.CANNON: 0.4,
+	FigureComponent.Types.HORSE: 0.3,
 }
 var markers : Dictionary
 var turn: Teams = Teams.Red :
@@ -104,7 +104,7 @@ var state: Dictionary
 # For which figure the markers are currently highlighted
 var _selected_figure: FigureComponent
 
-@export var ai_spawn_interval : int = 7
+@export var ai_spawn_interval : int = 4
 
 var move_number: int = 0:
 	set(n):
