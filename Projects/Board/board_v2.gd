@@ -69,6 +69,7 @@ var turn: Teams = Teams.Red :
 		clear_markers()
 		activate_reds(turn == Teams.Red)
 		activate_garrison(turn == Teams.Red)
+		activate_support(turn == Teams.Red)
 		unfreeze_figures()
 
 var state: Dictionary
@@ -208,7 +209,6 @@ func spawn_figure(marker: BoardMarker) -> void:
 func activate_garrison(result: bool) -> void:
 	ui.garrison.activate(result)
 
-
 func fusion(marker: BoardMarker) -> void:
 	var chance: float = randf()
 	capture(marker.board_position)
@@ -259,3 +259,6 @@ func unfreeze_figures() -> void:
 	for pos in state:
 		if state[pos].chess_component.team != turn:
 			state[pos].unfreeze()
+
+func activate_support(result: bool) -> void:
+	ui.support.activate(result)

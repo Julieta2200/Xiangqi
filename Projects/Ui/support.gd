@@ -20,3 +20,5 @@ func _on_freeze_gui_input(event: InputEvent) -> void:
 	
 	emit_signal("freeze", freeze_chance)
 	
+func activate(result: bool) -> void:
+	visible = result
