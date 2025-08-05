@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://btst40g2n6wda"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_mjqwp"]
-[ext_resource type="Texture2D" uid="uid://dr12x21j78cqx" path="res://Assets/tmp/cannon_red.png" id="2_rrjlf"]
+[ext_resource type="Texture2D" uid="uid://bk6g8vf7w5v1o" path="res://Assets/Characters/Magma/Cannon/Cannon_Back.png" id="2_elgjk"]
 [ext_resource type="PackedScene" uid="uid://dylnbquiybg16" path="res://Projects/Figure/Components/figure_ui_component.tscn" id="3_v23kq"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/cannon_chess_component.gd" id="4_w6i5p"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="5_b5pty"]
@@ -10,7 +10,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_rrjlf")
+"texture": ExtResource("2_elgjk")
 }],
 "loop": true,
 "name": &"idle_up",
@@ -18,8 +18,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qnuwo"]
-radius = 72.0
-height = 144.0
+radius = 55.0
+height = 218.0
 
 [node name="Cannon" type="CharacterBody2D" node_paths=PackedStringArray("chess_component", "ui_component", "move_component")]
 script = ExtResource("1_mjqwp")
@@ -29,7 +29,8 @@ move_component = NodePath("MoveComponent")
 type = 6
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(3, -61)
+position = Vector2(0, -101)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_eul7x")
 animation = &"idle_up"
 autoplay = "idle_up"
@@ -38,7 +39,7 @@ autoplay = "idle_up"
 chess_component = NodePath("../ChessComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FigureUIComponent"]
-position = Vector2(0, -64)
+position = Vector2(1, -102)
 shape = SubResource("CapsuleShape2D_qnuwo")
 
 [node name="ChessComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "move_component")]

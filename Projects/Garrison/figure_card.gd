@@ -5,7 +5,7 @@ class_name FigureCard extends Control
 	FigureComponent.Types.ELEPHANT: load("res://Assets/Characters/Magma/Elephant/Elephant_Front.png"),
 	FigureComponent.Types.CHARIOT: load("res://Assets/Characters/Magma/Chariot/Chariot_Front.png"),
 	FigureComponent.Types.HORSE: load("res://Assets/tmp/horse_red.png"),
-	FigureComponent.Types.CANNON: load("res://Assets/tmp/cannon_red.png")
+	FigureComponent.Types.CANNON: load("res://Assets/Characters/Magma/Cannon/Cannon_Front.png")
 }
 const figure_names = {
 	FigureComponent.Types.SOLDIER: "Pawn",
@@ -49,6 +49,10 @@ func _ready() -> void:
 		$card/image.scale = Vector2(3,3)
 		$card/image.value = 50
 		$card/image.position = Vector2(-5,59)
+	if type == FigureComponent.Types.CANNON:
+		$card/image.scale = Vector2(5,5)
+		$card/image.value = 40
+		$card/image.position = Vector2(25,36)
 		
 	$card/image.texture_progress = sprites[type]
 	$card/name.text = figure_names[type]
