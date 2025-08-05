@@ -48,7 +48,12 @@ var wall_counter: int :
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	for support in GameState.state["support"]:
+		match support:
+			"freeze":
+				freeze_card.show()
+			"wall":
+				wall_card.show()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
