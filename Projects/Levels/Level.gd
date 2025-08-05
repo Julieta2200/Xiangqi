@@ -17,6 +17,8 @@ func _on_board_game_over(win):
 	if win:
 		if has_decision:
 			gameplay_ui.decision_activate()
+		else:
+			load_main_scene()
 	else:
 		get_tree().reload_current_scene()
 
