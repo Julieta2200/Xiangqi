@@ -1,9 +1,14 @@
 class_name Overworld extends Node2D
 
-
+@onready var levels: Dictionary = {
+	"1": $"Levels/1",
+	"2": $"Levels/2",
+	"3": $"Levels/3"
+}
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	for level in GameState.state["levels"]:
+		levels[level].state = GameState.state["levels"][level]
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
