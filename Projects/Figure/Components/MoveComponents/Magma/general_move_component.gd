@@ -1,12 +1,12 @@
 extends MoveComponent
 
 
-func move_animation(old_pos: Vector2, new_pos: Vector2) -> void:
+func move_animation(old_pos: Vector2i, new_pos: Vector2i) -> void:
 	var direction = old_pos - new_pos
 	
-	if direction.y > 0:
+	if direction.y < 0:
 		animated_sprite.play("move_back")
-	elif direction.y < 0:
+	elif direction.y > 0:
 		animated_sprite.play("move_front")
 	elif direction.x > 0:
 		animated_sprite.play("move_left")
