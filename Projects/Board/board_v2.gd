@@ -73,7 +73,7 @@ var scenes: Dictionary = {
 }
 
 var wall_scene = load("res://Projects/Support/TmpWall.tscn")
-
+signal game_over
 
 @export var ai: AI
 @export var ui: GameplayUI
@@ -276,7 +276,7 @@ func get_generals() -> Array[FigureComponent]:
 
 func check_game_over() -> bool:
 	if get_generals().size() < 2:
-		get_tree().change_scene_to_file("res://Projects/Levels/PrototypeMenu/prototype_menu.tscn")
+		emit_signal("game_over")
 		return true
 	return false
 		
