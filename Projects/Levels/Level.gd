@@ -11,7 +11,7 @@ func _ready() -> void:
 func game_over_energy_depleted():
 	load_main_scene()
 
-func _on_board_game_over():
+func _on_board_game_over(winner_team):
 	load_main_scene()
 
 func load_main_scene():
