@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://dm5shbg7n5s3k"]
+
+[ext_resource type="Script" path="res://Projects/Ui/Decision/decision.gd" id="1_1avob"]
+
+[sub_resource type="FontVariation" id="FontVariation_kcf6t"]
+
+[node name="Decision" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1avob")
+
+[node name="SetFree" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -290.0
+offset_top = -30.0
+offset_right = -160.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+theme_override_font_sizes/font_size = 30
+text = "Set Free"
+
+[node name="Claim" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 160.0
+offset_top = -30.0
+offset_right = 290.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+theme_override_fonts/font = SubResource("FontVariation_kcf6t")
+theme_override_font_sizes/font_size = 30
+text = "Claim"
+
+[connection signal="gui_input" from="SetFree" to="." method="_on_set_free_gui_input"]
+[connection signal="gui_input" from="Claim" to="." method="_on_claim_gui_input"]
