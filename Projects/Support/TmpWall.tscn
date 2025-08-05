@@ -14,8 +14,7 @@ position = Vector2(-4, -97)
 scale = Vector2(2, 2)
 texture = ExtResource("2_nrr72")
 
-[node name="ChessComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "move_component")]
+[node name="ChessComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component")]
 script = ExtResource("25_yxp6o")
 team = 3
 figure_component = NodePath("..")
-move_component = NodePath("")

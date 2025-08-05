@@ -15,6 +15,10 @@ run/main_scene="res://Projects/Levels/PrototypeMenu/prototype_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameState="*res://Projects/Levels/Overworld/game_state.gd"
+
 [display]
 
 window/size/viewport_width=2200

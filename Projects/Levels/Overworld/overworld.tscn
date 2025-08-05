@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqe6oo0n2f6fc"]
+
+[ext_resource type="Script" path="res://Projects/Levels/Overworld/overworld.gd" id="1_6480g"]
+[ext_resource type="PackedScene" uid="uid://dt7elk36ldfbg" path="res://Projects/Levels/Overworld/level_marker.tscn" id="2_m64e3"]
+[ext_resource type="PackedScene" uid="uid://d3giqvti0ieng" path="res://Projects/Levels/Level_2/level_2.tscn" id="3_1gxvu"]
+
+[node name="Overworld" type="Node2D"]
+script = ExtResource("1_6480g")
+
+[node name="Levels" type="Node2D" parent="."]
+
+[node name="LevelMarker" parent="Levels" instance=ExtResource("2_m64e3")]
+position = Vector2(225, 268)
+level = ExtResource("3_1gxvu")
