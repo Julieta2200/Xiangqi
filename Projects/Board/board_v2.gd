@@ -73,7 +73,7 @@ var scenes: Dictionary = {
 }
 
 var wall_scene = load("res://Projects/Support/TmpWall.tscn")
-
+signal game_over(win)
 
 @export var ai: AI
 @export var ui: GameplayUI
@@ -275,11 +275,15 @@ func get_generals() -> Array[FigureComponent]:
 	return generals
 
 func check_game_over() -> bool:
-	if get_generals().size() < 2:
-		get_tree().change_scene_to_file("res://Projects/Levels/PrototypeMenu/prototype_menu.tscn")
+	var generals = get_generals()
+	if generals.size() < 2:
+		var win = is_victory(generals)
+		emit_signal("game_over", win)
 		return true
 	return false
-		
+
+func is_victory(generals: Array) -> bool:
+	return Teams.Red == generals[0].chess_component.team
 
 func freeze(chance: float, team: Teams = Teams.Black) -> void:
 	for pos in state:
