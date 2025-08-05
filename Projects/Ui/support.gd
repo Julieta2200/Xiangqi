@@ -1,6 +1,6 @@
 extends Control
 
-@export var freeze_chance: float = 0.5
+@export var freeze_chance: float = 0.6
 
 @onready var freeze_card: Panel = $Cards/Freeze
 @onready var wall_card: Panel = $Cards/Wall
@@ -24,7 +24,7 @@ var freeze_counter: int :
 		freeze_counter = fc
 		freeze_active = freeze_counter == 0
 
-@export var freeze_counter_limit: int = 2
+@export var freeze_counter_limit: int = 3
 
 var wall_active: bool = true:
 	set(a):
