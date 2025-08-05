@@ -2,7 +2,7 @@ extends Node
 
 var state: Dictionary = {
 	"energy": 100,
-	"support": ["freeze, wall"],
+	"support": ["freeze","wall"],
 	"levels": {
 		"1": LevelMarker.LevelState.Open,
 		"2": LevelMarker.LevelState.Closed,
@@ -28,7 +28,7 @@ func save_game() -> void:
 func load_game() -> void:
 	if not FileAccess.file_exists("user://savegame.save"):
 		return
-	
+		
 	var save_file = FileAccess.open("user://savegame.save", FileAccess.READ)
 	var json_string = save_file.get_line()
 	var json = JSON.new()
