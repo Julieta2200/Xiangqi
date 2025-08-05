@@ -73,7 +73,7 @@ var scenes: Dictionary = {
 }
 
 var wall_scene = load("res://Projects/Support/TmpWall.tscn")
-signal game_over(winner_team)
+signal game_over(win)
 
 @export var ai: AI
 @export var ui: GameplayUI
@@ -277,13 +277,13 @@ func get_generals() -> Array[FigureComponent]:
 func check_game_over() -> bool:
 	var generals = get_generals()
 	if generals.size() < 2:
-		var winner_team = get_winner_team(generals)
-		emit_signal("game_over", winner_team)
+		var win = is_victory(generals)
+		emit_signal("game_over", win)
 		return true
 	return false
 
-func get_winner_team(generals: Array) -> Teams:
-	return generals[0].chess_component.team
+func is_victory(generals: Array) -> bool:
+	return Teams.Red == generals[0].chess_component.team
 
 func freeze(chance: float, team: Teams = Teams.Black) -> void:
 	for pos in state:
