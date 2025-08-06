@@ -48,5 +48,5 @@ theme_override_fonts/font = SubResource("FontVariation_kcf6t")
 theme_override_font_sizes/font_size = 30
 text = "Claim"
 
-[connection signal="gui_input" from="SetFree" to="." method="_on_set_free_gui_input"]
-[connection signal="gui_input" from="Claim" to="." method="_on_claim_gui_input"]
+[connection signal="pressed" from="SetFree" to="." method="_on_set_free_pressed"]
+[connection signal="pressed" from="Claim" to="." method="_on_claim_pressed"]
