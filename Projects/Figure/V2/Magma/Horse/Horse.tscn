@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://5jjfnly25ose"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_w5du6"]
-[ext_resource type="Texture2D" uid="uid://irmtu4ps57i5" path="res://Assets/tmp/horse_red.png" id="2_buk4o"]
+[ext_resource type="Texture2D" uid="uid://brn8h7t3gmfel" path="res://Assets/Characters/Magma/Horse/Horse_Back.png" id="2_kri40"]
 [ext_resource type="PackedScene" uid="uid://dylnbquiybg16" path="res://Projects/Figure/Components/figure_ui_component.tscn" id="3_14xfn"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/horse_chess_component.gd" id="4_2k2ar"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="5_nvpil"]
@@ -10,7 +10,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_buk4o")
+"texture": ExtResource("2_kri40")
 }],
 "loop": true,
 "name": &"idle_up",
@@ -18,8 +18,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qnuwo"]
-radius = 72.0
-height = 144.0
+radius = 57.0
+height = 126.0
 
 [node name="Horse" type="CharacterBody2D" node_paths=PackedStringArray("chess_component", "ui_component", "move_component")]
 script = ExtResource("1_w5du6")
@@ -29,7 +29,8 @@ move_component = NodePath("MoveComponent")
 type = 4
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-2, -63)
+position = Vector2(-1, -41)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_rkcc6")
 animation = &"idle_up"
 
@@ -37,7 +38,7 @@ animation = &"idle_up"
 chess_component = NodePath("../ChessComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FigureUIComponent"]
-position = Vector2(0, -64)
+position = Vector2(0, -43)
 shape = SubResource("CapsuleShape2D_qnuwo")
 
 [node name="ChessComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "move_component")]

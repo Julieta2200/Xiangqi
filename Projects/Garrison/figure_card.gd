@@ -4,7 +4,7 @@ class_name FigureCard extends Control
 	FigureComponent.Types.SOLDIER: load("res://Assets/Characters/Magma/Pawn/Pawn_front.png"),
 	FigureComponent.Types.ELEPHANT: load("res://Assets/Characters/Magma/Elephant/Elephant_Front.png"),
 	FigureComponent.Types.CHARIOT: load("res://Assets/Characters/Magma/Chariot/Chariot_Front.png"),
-	FigureComponent.Types.HORSE: load("res://Assets/tmp/horse_red.png"),
+	FigureComponent.Types.HORSE: load("res://Assets/Characters/Magma/Horse/Horse_Front.png"),
 	FigureComponent.Types.CANNON: load("res://Assets/Characters/Magma/Cannon/Cannon_Front.png")
 }
 const figure_names = {
@@ -38,21 +38,22 @@ var _selected :bool
 var energy: float
 
 func _ready() -> void:
-	if type != FigureComponent.Types.SOLDIER:
-		$card/image.scale = Vector2(1.3,1.3)
-		$card/image.value = 100
 	if type == FigureComponent.Types.CHARIOT:
 		$card/image.scale = Vector2(2.5,2.5)
 		$card/image.value = 60
 		$card/image.position = Vector2(-23,46)
-	if type == FigureComponent.Types.ELEPHANT:
+	elif type == FigureComponent.Types.ELEPHANT:
 		$card/image.scale = Vector2(3,3)
 		$card/image.value = 50
 		$card/image.position = Vector2(-5,59)
-	if type == FigureComponent.Types.CANNON:
+	elif type == FigureComponent.Types.CANNON:
 		$card/image.scale = Vector2(5,5)
 		$card/image.value = 40
 		$card/image.position = Vector2(25,36)
+	elif type == FigureComponent.Types.HORSE:
+		$card/image.scale = Vector2(3.7,3.7)
+		$card/image.value = 85
+		$card/image.position = Vector2(0,54)
 		
 	$card/image.texture_progress = sprites[type]
 	$card/name.text = figure_names[type]
