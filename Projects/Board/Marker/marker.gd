@@ -1,6 +1,6 @@
 class_name BoardMarker extends Node2D
 
-enum Highlights {NONE, MOVE, CAPTURE, SPAWN}
+enum Highlights {NONE, MOVE, CAPTURE, SPAWN, SELECTED}
 
 var board_position: Vector2i
 @onready var walking_marker: Sprite2D = $walking_marker
@@ -34,9 +34,15 @@ func highlight(type: Highlights) -> void:
 			walking_marker.show()
 		Highlights.SPAWN:
 			spawn_marker.show()
+		Highlights.SELECTED:
+			$walking_marker/highlight.play("capture_highlight")
+			walking_marker.show()
+			$walking_marker/highlight.show()
 		
 		
 func unhighlight():
+	if state == Highlights.SELECTED:
+		$walking_marker/highlight.hide()
 	state = Highlights.NONE
 	walking_marker.hide()
 	spawn_marker.hide()
@@ -45,4 +51,6 @@ func _on_area_2d_mouse_entered() -> void:
 	$walking_marker/highlight.visible = $walking_marker.visible
 
 func _on_area_2d_mouse_exited() -> void:
+	if state == Highlights.SELECTED:
+		return
 	$walking_marker/highlight.hide()

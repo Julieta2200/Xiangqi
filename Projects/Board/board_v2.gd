@@ -145,6 +145,7 @@ func instantiate_wall(pos: Vector2i):
 func show_move_markers(positions: Array[Vector2i], figure: FigureComponent) -> void:
 	clear_markers()
 	_selected_figure = figure
+	markers[figure.chess_component.position].highlight(BoardMarker.Highlights.SELECTED)
 	for pos in positions:
 		var marker: BoardMarker = markers[pos]
 		marker.highlight(BoardMarker.Highlights.MOVE)
