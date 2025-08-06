@@ -2,7 +2,7 @@ extends Node
 
 var state: Dictionary = {
 	"energy": 100,
-	"support": ["freeze","wall"],
+	"support": [],
 	"levels": {
 		"1": LevelMarker.LevelState.Open,
 		"2": LevelMarker.LevelState.Closed,

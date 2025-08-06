@@ -2,6 +2,7 @@ class_name Overworld extends Node2D
 
 @onready var levels: Dictionary = {
 	"1": $"Levels/1",
+	"1_bonus": $"Levels/1/bonus_1",
 	"2": $"Levels/2",
 	"3": $"Levels/3"
 }

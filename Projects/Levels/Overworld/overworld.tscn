@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqe6oo0n2f6fc"]
+[gd_scene load_steps=7 format=3 uid="uid://bqe6oo0n2f6fc"]
 
 [ext_resource type="Script" path="res://Projects/Levels/Overworld/overworld.gd" id="1_6480g"]
 [ext_resource type="PackedScene" uid="uid://dt7elk36ldfbg" path="res://Projects/Levels/Overworld/level_marker.tscn" id="2_m64e3"]
 [ext_resource type="PackedScene" uid="uid://d3giqvti0ieng" path="res://Projects/Levels/Level_1/level_1.tscn" id="3_1gxvu"]
+[ext_resource type="PackedScene" uid="uid://ccqx1h7ffxvau" path="res://Projects/Levels/Bonus_levels/bonus_level.tscn" id="4_k78vk"]
 [ext_resource type="PackedScene" uid="uid://etksxsfuk15y" path="res://Projects/Levels/Level_2/level_2.tscn" id="4_l7pks"]
 [ext_resource type="PackedScene" uid="uid://ba7bayl6q6g14" path="res://Projects/Levels/Level_3/level_3.tscn" id="4_rn2x1"]
 
@@ -14,6 +15,10 @@ script = ExtResource("1_6480g")
 [node name="1" parent="Levels" instance=ExtResource("2_m64e3")]
 position = Vector2(468, 973)
 level = ExtResource("3_1gxvu")
+
+[node name="bonus_1" parent="Levels/1" instance=ExtResource("2_m64e3")]
+position = Vector2(0, -200)
+level = ExtResource("4_k78vk")
 
 [node name="2" parent="Levels" instance=ExtResource("2_m64e3")]
 position = Vector2(944, 971)
