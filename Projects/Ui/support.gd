@@ -48,7 +48,9 @@ var wall_counter: int :
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	print(GameState.state["support"])
 	for support in GameState.state["support"]:
+		print(support)
 		match support:
 			"freeze":
 				freeze_card.show()

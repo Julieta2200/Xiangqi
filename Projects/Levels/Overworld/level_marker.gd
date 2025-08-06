@@ -35,7 +35,7 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_mouse_entered() -> void:
-	if state == LevelState.Closed:
+	if state != LevelState.Open:
 		return
 	hover.show()
 
@@ -45,7 +45,7 @@ func _on_area_2d_mouse_exited() -> void:
 
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if state == LevelState.Closed:
+	if state != LevelState.Open:
 		return
 	if event is InputEventMouseButton:
 		var mouse_event := event as InputEventMouseButton

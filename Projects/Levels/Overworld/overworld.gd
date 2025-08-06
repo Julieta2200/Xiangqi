@@ -8,7 +8,8 @@ class_name Overworld extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for level in GameState.state["levels"]:
-		levels[level].state = GameState.state["levels"][level]
+		if levels.has(level):
+			levels[level].state = GameState.state["levels"][level]
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

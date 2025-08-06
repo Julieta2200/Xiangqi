@@ -9,6 +9,7 @@
 
 [node name="Level_3" type="Node2D"]
 script = ExtResource("1_1nc6y")
+level_name = "2"
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -2

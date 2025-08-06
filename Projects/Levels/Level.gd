@@ -1,7 +1,8 @@
 class_name Level extends Node2D
 
-@export var has_decision: bool = true
+@export var has_decision: bool
 @export var support : String
+@export var level_name: String
 @onready var board: BoardV2 = %Board
 @onready var gameplay_ui: GameplayUI = $GameplayUI
 
@@ -21,6 +22,9 @@ func _on_board_game_over(win):
 		if has_decision:
 			gameplay_ui.decision_activate()
 		else:
+			GameState.state["levels"][level_name] = LevelMarker.LevelState.Captured
+			GameState.state["levels"][level_name+"_bonus"] = LevelMarker.LevelState.Open
+			GameState.state["levels"][str(int(level_name)+1)] = LevelMarker.LevelState.Open
 			load_main_scene()
 	else:
 		get_tree().reload_current_scene()
@@ -30,10 +34,12 @@ func load_main_scene():
 
 func _on_gameplay_ui_set_free() -> void:
 	GameState.state["support"].append(support)
+	GameState.state["levels"][level_name] = LevelMarker.LevelState.Free
 	GameState.save_game()
 	load_main_scene()
 
 func _on_gameplay_ui_claim():
 	GameState.state["energy"] += 15
+	GameState.state["levels"][level_name] = LevelMarker.LevelState.Captured
 	GameState.save_game()
 	load_main_scene()
