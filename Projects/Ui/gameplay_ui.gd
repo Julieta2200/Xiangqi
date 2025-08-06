@@ -7,7 +7,6 @@ class_name GameplayUI extends CanvasLayer
 
 @export var board: BoardV2
 
-
 func _on_garrison_card_selected(selected_card: FigureCard) -> void:
 	board.spawn_highlight(selected_card.type)
 
@@ -25,3 +24,6 @@ func _on_support_destroy_wall() -> void:
 
 func decision_activate():
 	decision.show()
+
+func decision_deactivate():
+	decision.hide()
