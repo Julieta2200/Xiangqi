@@ -511,7 +511,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qnuwo"]
 radius = 47.0
-height = 208.0
+height = 174.0
 
 [node name="Advisor" type="CharacterBody2D" node_paths=PackedStringArray("chess_component", "ui_component", "move_component")]
 script = ExtResource("1_ts1i4")
@@ -621,7 +621,7 @@ autoplay = "idle_up"
 chess_component = NodePath("../ChessComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FigureUIComponent"]
-position = Vector2(0, -98)
+position = Vector2(0, -85)
 shape = SubResource("CapsuleShape2D_qnuwo")
 
 [node name="ChessComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "move_component")]
