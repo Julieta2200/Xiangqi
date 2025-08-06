@@ -24,6 +24,3 @@ func _on_support_destroy_wall() -> void:
 
 func decision_activate():
 	decision.show()
-
-func decision_deactivate():
-	decision.hide()

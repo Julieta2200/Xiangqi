@@ -30,13 +30,10 @@ func load_main_scene():
 
 func _on_gameplay_ui_set_free() -> void:
 	GameState.state["support"].append(support)
-	save_game_state()
+	GameState.save_game()
+	load_main_scene()
 
 func _on_gameplay_ui_claim():
 	GameState.state["energy"] += 15
-	save_game_state()
-
-func save_game_state():
-	gameplay_ui.decision_deactivate()
-	load_main_scene()
 	GameState.save_game()
+	load_main_scene()
