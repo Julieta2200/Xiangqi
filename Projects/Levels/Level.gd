@@ -18,6 +18,7 @@ func game_over_energy_depleted():
 	load_main_scene()
 
 func _on_board_game_over(win):
+	await get_tree().process_frame
 	if win:
 		if has_decision:
 			gameplay_ui.decision_activate()

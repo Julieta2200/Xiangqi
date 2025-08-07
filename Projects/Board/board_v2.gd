@@ -116,6 +116,10 @@ var move_number: int = 0:
 func _ready() -> void:
 	initialize_markers()
 	
+func _process(delta: float) -> void:
+	if Input.is_action_just_released("instant_win"):
+		emit_signal("game_over", true)
+
 func initialize_markers():
 	for i in range(board_rows):
 		for j in range(board_cols):
