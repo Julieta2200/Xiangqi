@@ -26,6 +26,7 @@ func _on_board_game_over(win):
 			GameState.state["levels"][level_name] = LevelMarker.LevelState.Captured
 			GameState.state["levels"][level_name+"_bonus"] = LevelMarker.LevelState.Open
 			GameState.state["levels"][str(int(level_name)+1)] = LevelMarker.LevelState.Open
+			GameState.save_game()
 			load_main_scene()
 	else:
 		get_tree().reload_current_scene()
