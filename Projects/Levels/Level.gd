@@ -17,9 +17,10 @@ func _ready() -> void:
 func game_over_energy_depleted():
 	load_main_scene()
 
-func _on_board_game_over(win):
+func _on_board_game_over(win, move_number):
 	await get_tree().process_frame
 	if win:
+		update_best_move_number(move_number)
 		if GameState.state["levels"][level_name]["state"] != LevelMarker.LevelState.Open:
 			load_main_scene()
 			return
@@ -48,3 +49,8 @@ func _on_gameplay_ui_claim():
 	GameState.state["levels"][level_name]["state"] = LevelMarker.LevelState.Captured
 	GameState.save_game()
 	load_main_scene()
+
+func update_best_move_number(current_move_number: int)-> void:
+	var best_move_number = GameState.state["levels"][level_name]["move_count"]
+	if current_move_number < best_move_number:
+		best_move_number = current_move_number
