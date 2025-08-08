@@ -4,9 +4,30 @@ var state: Dictionary = {
 	"energy": 100,
 	"support": [],
 	"levels": {
-		"1": LevelMarker.LevelState.Open,
-		"2": LevelMarker.LevelState.Closed,
-		"3": LevelMarker.LevelState.Closed
+		"1": {
+			"state": LevelMarker.LevelState.Open,
+			"move_count" : 0
+		},
+		"1_bonus": {
+			"state": LevelMarker.LevelState.Closed,
+			"move_count" : 0
+		},
+		"2": {
+			"state": LevelMarker.LevelState.Closed,
+			"move_count" : 0
+		},
+		"2_bonus": {
+			"state": LevelMarker.LevelState.Closed,
+			"move_count" : 0
+		},
+		"3": {
+			"state": LevelMarker.LevelState.Closed,
+			"move_count" : 0
+		},
+		"3_bonus": {
+			"state": LevelMarker.LevelState.Closed,
+			"move_count" : 0
+		},
 	}
 }
 
