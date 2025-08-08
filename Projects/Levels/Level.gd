@@ -51,6 +51,5 @@ func _on_gameplay_ui_claim():
 	load_main_scene()
 
 func update_best_move_number(current_move_number: int)-> void:
-	var best_move_number = GameState.state["levels"][level_name]["move_count"]
-	if current_move_number < best_move_number:
-		best_move_number = current_move_number
+	if current_move_number < GameState.state["levels"][level_name]["move_count"] or GameState.state["levels"][level_name]["move_count"] == 0:
+		GameState.state["levels"][level_name]["move_count"] = current_move_number

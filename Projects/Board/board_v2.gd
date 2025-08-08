@@ -104,7 +104,7 @@ var state: Dictionary
 # For which figure the markers are currently highlighted
 var _selected_figure: FigureComponent
 
-@export var ai_spawn_interval : int = 4
+@export var ai_spawn_interval : int = 10
 
 var ai_move_number: int = 0:
 	set(n):
@@ -123,7 +123,7 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	if Input.is_action_just_released("instant_win"):
-		emit_signal("game_over", true, 0)
+		emit_signal("game_over", true, INF)
 
 func initialize_markers():
 	for i in range(board_rows):
