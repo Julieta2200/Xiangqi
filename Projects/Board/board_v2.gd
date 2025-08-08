@@ -73,7 +73,7 @@ var scenes: Dictionary = {
 }
 
 var wall_scene = load("res://Projects/Support/TmpWall.tscn")
-signal game_over(win)
+signal game_over(win,move_number)
 
 @export var ai: AI
 @export var ui: GameplayUI
@@ -123,7 +123,7 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	if Input.is_action_just_released("instant_win"):
-		emit_signal("game_over", true)
+		emit_signal("game_over", true, move_number)
 
 func initialize_markers():
 	for i in range(board_rows):
@@ -288,7 +288,7 @@ func check_game_over() -> bool:
 	var generals = get_generals()
 	if generals.size() < 2:
 		var win = is_victory(generals)
-		emit_signal("game_over", win)
+		emit_signal("game_over", win, move_number)
 		return true
 	return false
 
