@@ -4,7 +4,9 @@ class_name Overworld extends Node2D
 	"1": $"Levels/1",
 	"1_bonus": $"Levels/1/bonus_1",
 	"2": $"Levels/2",
-	"3": $"Levels/3"
+	"2_bonus": $"Levels/2/bonus_2",
+	"3": $"Levels/3",
+	"3_bonus": $"Levels/3/bonus_3",
 }
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
