@@ -20,6 +20,11 @@ var state: LevelState :
 		state = s
 		marker.modulate = colors[state]
 
+var move_number: 
+	set(n):
+		move_number = n
+		$move_number.text = str(move_number)
+
 @onready var hover: Sprite2D = $Hover
 @onready var marker: Sprite2D = $Marker
 @export var level: PackedScene
