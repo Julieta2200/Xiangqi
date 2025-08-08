@@ -123,7 +123,7 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	if Input.is_action_just_released("instant_win"):
-		emit_signal("game_over", true, 0)
+		emit_signal("game_over", true, move_number)
 
 func initialize_markers():
 	for i in range(board_rows):
