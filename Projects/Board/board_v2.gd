@@ -106,13 +106,18 @@ var _selected_figure: FigureComponent
 
 @export var ai_spawn_interval : int = 4
 
+var ai_move_number: int = 0:
+	set(n):
+		ai_move_number = n
+		if n == ai_spawn_interval:
+			spawn_AI_figure()
+			ai_move_number = 0 
+
 var move_number: int = 0:
 	set(n):
 		move_number = n
-		if n == ai_spawn_interval:
-			spawn_AI_figure()
-			move_number = 0
-
+		ai_move_number += 1
+		
 func _ready() -> void:
 	initialize_markers()
 	
