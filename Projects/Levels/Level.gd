@@ -28,8 +28,10 @@ func _on_board_game_over(win, move_number):
 			gameplay_ui.decision_activate()
 		else:
 			GameState.state["levels"][level_name]["state"] = LevelMarker.LevelState.Captured
-			GameState.state["levels"][level_name+"_bonus"]["state"] = LevelMarker.LevelState.Open
-			GameState.state["levels"][str(int(level_name)+1)]["state"] = LevelMarker.LevelState.Open
+			if GameState.state["levels"].has(level_name+"_bonus"):
+				GameState.state["levels"][level_name+"_bonus"]["state"] = LevelMarker.LevelState.Open
+			if GameState.state["levels"].has(str(int(level_name) + 1)):
+				GameState.state["levels"][str(int(level_name)+1)]["state"] = LevelMarker.LevelState.Open
 			GameState.save_game()
 			load_main_scene()
 	else:
