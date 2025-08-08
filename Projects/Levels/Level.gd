@@ -20,6 +20,9 @@ func game_over_energy_depleted():
 func _on_board_game_over(win):
 	await get_tree().process_frame
 	if win:
+		if GameState.state["levels"][level_name] != LevelMarker.LevelState.Open:
+			load_main_scene()
+			return
 		if has_decision:
 			gameplay_ui.decision_activate()
 		else:

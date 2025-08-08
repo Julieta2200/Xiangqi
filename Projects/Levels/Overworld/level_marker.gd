@@ -35,7 +35,7 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_mouse_entered() -> void:
-	if state != LevelState.Open:
+	if state == LevelState.Closed:
 		return
 	hover.show()
 
@@ -45,9 +45,9 @@ func _on_area_2d_mouse_exited() -> void:
 
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if state != LevelState.Open:
+	if state == LevelState.Closed:
 		return
 	if event is InputEventMouseButton:
 		var mouse_event := event as InputEventMouseButton
 		if mouse_event.button_index == MOUSE_BUTTON_LEFT and mouse_event.pressed:
-			get_tree().change_scene_to_packed(level) 
+			get_tree().change_scene_to_packed(level)
