@@ -10,6 +10,7 @@ signal energy_depleted
 @export var energy_fill: int = 7
 
 const max_energy: int  = 100
+
 # Stores the energy value and updates the energy display while emitting a signal when it changes
 @export var energy: float :
 	set(e):
