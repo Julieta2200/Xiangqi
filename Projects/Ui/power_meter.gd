@@ -12,7 +12,9 @@ signal energy_depleted
 var max_energy: int :
 	set(e):
 		max_energy = e
-		$energy/Label.text = str(energy) + " / " + str(max_energy)
+		$energy.max_value = max_energy
+		energy = max_energy
+		
 
 # Stores the energy value and updates the energy display while emitting a signal when it changes
 @export var energy: float :
