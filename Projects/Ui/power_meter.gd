@@ -9,7 +9,10 @@ signal energy_depleted
 # amount of energy added after each step
 @export var energy_fill: int = 7
 
-const max_energy: int  = 100
+var max_energy: int :
+	set(e):
+		max_energy = e
+		$energy/Label.text = str(energy) + " / " + str(max_energy)
 
 # Stores the energy value and updates the energy display while emitting a signal when it changes
 @export var energy: float :
@@ -33,7 +36,10 @@ const max_energy: int  = 100
 				i.visible = true
 			else:
 				i.visible = false
-	
+
+func _ready() -> void:
+	max_energy = GameState.state["energy"]
+
 func fill_energy():
 	energy += energy_fill
 	garrison.update_cards(energy)
