@@ -34,7 +34,7 @@ theme_override_constants/separation = 200
 custom_minimum_size = Vector2(159, 173)
 layout_mode = 2
 
-[node name="FigureCard4" parent="FigureCards" instance=ExtResource("2_f5xw8")]
+[node name="FigureCard2" parent="FigureCards" instance=ExtResource("2_f5xw8")]
 custom_minimum_size = Vector2(159, 173)
 layout_mode = 2
 type = 5
@@ -44,18 +44,18 @@ custom_minimum_size = Vector2(159, 173)
 layout_mode = 2
 type = 4
 
-[node name="FigureCard5" parent="FigureCards" instance=ExtResource("2_f5xw8")]
+[node name="FigureCard4" parent="FigureCards" instance=ExtResource("2_f5xw8")]
 custom_minimum_size = Vector2(159, 173)
 layout_mode = 2
 type = 6
 
-[node name="FigureCard2" parent="FigureCards" instance=ExtResource("2_f5xw8")]
+[node name="FigureCard5" parent="FigureCards" instance=ExtResource("2_f5xw8")]
 custom_minimum_size = Vector2(159, 173)
 layout_mode = 2
 type = 3
 
 [connection signal="selected" from="FigureCards/FigureCard" to="." method="_on_figure_card_selected"]
-[connection signal="selected" from="FigureCards/FigureCard4" to="." method="_on_figure_card_selected"]
-[connection signal="selected" from="FigureCards/FigureCard3" to="." method="_on_figure_card_selected"]
-[connection signal="selected" from="FigureCards/FigureCard5" to="." method="_on_figure_card_selected"]
 [connection signal="selected" from="FigureCards/FigureCard2" to="." method="_on_figure_card_selected"]
+[connection signal="selected" from="FigureCards/FigureCard3" to="." method="_on_figure_card_selected"]
+[connection signal="selected" from="FigureCards/FigureCard4" to="." method="_on_figure_card_selected"]
+[connection signal="selected" from="FigureCards/FigureCard5" to="." method="_on_figure_card_selected"]
