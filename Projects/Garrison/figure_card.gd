@@ -56,7 +56,7 @@ func _ready() -> void:
 		$card/image.position = Vector2(0,54)
 		
 	$card/image.texture_progress = sprites[type]
-	$card/name.text = figure_names[type]
+	$card/info.text = figure_names[type] + " - " + str(figure_energies[type])
 	energy = figure_energies[type]
 
 func _on_card_gui_input(event: InputEvent):
