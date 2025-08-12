@@ -23,6 +23,16 @@ texture_under = ExtResource("2_jhnqh")
 texture_progress = ExtResource("3_stb25")
 texture_progress_offset = Vector2(145, 25)
 
+[node name="Label" type="Label" parent="energy"]
+layout_mode = 0
+offset_left = 772.0
+offset_top = -10.0
+offset_right = 1054.0
+offset_bottom = 93.0
+theme_override_colors/font_color = Color(0.0807833, 0.0807833, 0.0807833, 1)
+theme_override_font_sizes/font_size = 75
+text = "0 / 100"
+
 [node name="distances" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 58.0

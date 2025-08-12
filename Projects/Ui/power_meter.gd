@@ -9,6 +9,7 @@ signal energy_depleted
 # amount of energy added after each step
 @export var energy_fill: int = 7
 
+const max_energy: int  = 100
 # Stores the energy value and updates the energy display while emitting a signal when it changes
 @export var energy: float :
 	set(e):
@@ -17,6 +18,7 @@ signal energy_depleted
 			emit_signal("energy_depleted")
 		energy = e
 		$energy.value = energy
+		$energy/Label.text = str(energy) + " / " + str(max_energy)
 
 # Stores the distance value and updates the visibility of distance bars based on the value
 @export var distance: int :
