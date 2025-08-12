@@ -24,7 +24,7 @@ anchor_bottom = 0.5
 offset_left = -284.0
 offset_top = -1036.0
 offset_right = 14.0
-offset_bottom = 700.0
+offset_bottom = 784.0
 grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(0.8, 0.8)
@@ -37,7 +37,7 @@ layout_mode = 2
 [node name="FigureCard2" parent="FigureCards" instance=ExtResource("2_f5xw8")]
 custom_minimum_size = Vector2(159, 173)
 layout_mode = 2
-type = 3
+type = 5
 
 [node name="FigureCard3" parent="FigureCards" instance=ExtResource("2_f5xw8")]
 custom_minimum_size = Vector2(159, 173)
@@ -47,12 +47,12 @@ type = 4
 [node name="FigureCard4" parent="FigureCards" instance=ExtResource("2_f5xw8")]
 custom_minimum_size = Vector2(159, 173)
 layout_mode = 2
-type = 5
+type = 6
 
 [node name="FigureCard5" parent="FigureCards" instance=ExtResource("2_f5xw8")]
 custom_minimum_size = Vector2(159, 173)
 layout_mode = 2
-type = 6
+type = 3
 
 [connection signal="selected" from="FigureCards/FigureCard" to="." method="_on_figure_card_selected"]
 [connection signal="selected" from="FigureCards/FigureCard2" to="." method="_on_figure_card_selected"]

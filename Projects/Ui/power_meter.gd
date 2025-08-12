@@ -9,6 +9,13 @@ signal energy_depleted
 # amount of energy added after each step
 @export var energy_fill: int = 7
 
+var max_energy: int :
+	set(e):
+		max_energy = e
+		$energy.max_value = max_energy
+		energy = max_energy
+		
+
 # Stores the energy value and updates the energy display while emitting a signal when it changes
 @export var energy: float :
 	set(e):
@@ -17,6 +24,7 @@ signal energy_depleted
 			emit_signal("energy_depleted")
 		energy = e
 		$energy.value = energy
+		$energy/Label.text = str(energy) + " / " + str(max_energy)
 
 # Stores the distance value and updates the visibility of distance bars based on the value
 @export var distance: int :
@@ -30,7 +38,10 @@ signal energy_depleted
 				i.visible = true
 			else:
 				i.visible = false
-	
+
+func _ready() -> void:
+	max_energy = GameState.state["energy"]
+
 func fill_energy():
 	energy += energy_fill
 	garrison.update_cards(energy)
