@@ -1,10 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bw8dv5fpgw8eu"]
+[gd_scene load_steps=6 format=3 uid="uid://bw8dv5fpgw8eu"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_4h3cj"]
-[ext_resource type="Texture2D" uid="uid://3hh1yr5ux5hm" path="res://Assets/Characters/Cloud/General/Idle/Idle1.png" id="2_dtmg2"]
-[ext_resource type="Texture2D" uid="uid://bqnjw0nydxaxi" path="res://Assets/Characters/Cloud/General/Idle/Idle2.png" id="3_chtnb"]
-[ext_resource type="Texture2D" uid="uid://dwfxmwt37fkl0" path="res://Assets/Characters/Cloud/General/Idle/Idle3.png" id="4_ccj6k"]
-[ext_resource type="Texture2D" uid="uid://d2aali6u2vgnl" path="res://Assets/Characters/Cloud/General/Idle/Idle4.png" id="5_0jjps"]
+[ext_resource type="Texture2D" uid="uid://dbjfqd8pdblx" path="res://Assets/Characters/Fog/General/General_Front.png" id="2_rsyqj"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/general_chess_component.gd" id="6_2w1ol"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="7_xfyqe"]
 
@@ -12,16 +9,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_dtmg2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_chtnb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_ccj6k")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_0jjps")
+"texture": ExtResource("2_rsyqj")
 }],
 "loop": true,
 "name": &"idle_down",
@@ -35,12 +23,11 @@ move_component = NodePath("MoveComponent")
 type = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, -117)
+position = Vector2(0, -105)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_pi8o7")
 animation = &"idle_down"
 autoplay = "idle_down"
-frame = 3
 frame_progress = 0.0530308
 
 [node name="ChessComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "move_component")]

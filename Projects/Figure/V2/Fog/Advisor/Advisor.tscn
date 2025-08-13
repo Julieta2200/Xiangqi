@@ -1,9 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://c0tti725mtjpo"]
+[gd_scene load_steps=6 format=3 uid="uid://c0tti725mtjpo"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_gk4bo"]
-[ext_resource type="Texture2D" uid="uid://bppng3t15l7jf" path="res://Assets/Characters/Cloud/Advisor/Idle/Idle1.png" id="2_otlq8"]
-[ext_resource type="Texture2D" uid="uid://dikdmp5hhd6sj" path="res://Assets/Characters/Cloud/Advisor/Idle/Idle2.png" id="3_h2dbv"]
-[ext_resource type="Texture2D" uid="uid://ko1slreus2st" path="res://Assets/Characters/Cloud/Advisor/Idle/Idle3.png" id="4_hkc10"]
+[ext_resource type="Texture2D" uid="uid://5ft2bavrlrkr" path="res://Assets/Characters/Fog/Advisor/Fog_Advisor_Front.png" id="2_quffa"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/advisor_chess_component.gd" id="5_72hvj"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="6_n42uo"]
 
@@ -11,13 +9,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_otlq8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_h2dbv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_hkc10")
+"texture": ExtResource("2_quffa")
 }],
 "loop": true,
 "name": &"idle_down",
@@ -31,7 +23,7 @@ move_component = NodePath("MoveComponent")
 type = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-3, -132)
+position = Vector2(3, -104)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_pi8o7")
 animation = &"idle_down"
