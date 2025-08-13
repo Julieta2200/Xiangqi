@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://bh478vfokopqw"]
+
+[ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_s7cam"]
+[ext_resource type="Texture2D" uid="uid://dqnrgl6736m3s" path="res://Assets/tmp/horse_black.png" id="2_dtu3b"]
+[ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/horse_chess_component.gd" id="3_ccssm"]
+[ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="4_hq3fp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h2yje"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dtu3b")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 5.0
+}]
+
+[node name="Horse" type="CharacterBody2D" node_paths=PackedStringArray("chess_component", "move_component")]
+script = ExtResource("1_s7cam")
+chess_component = NodePath("ChessComponent")
+move_component = NodePath("MoveComponent")
+type = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4, -59)
+sprite_frames = SubResource("SpriteFrames_h2yje")
+animation = &"idle_down"
+
+[node name="ChessComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "move_component")]
+script = ExtResource("3_ccssm")
+value = 40.0
+team = 2
+figure_component = NodePath("..")
+move_component = NodePath("../MoveComponent")
+
+[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component")]
+script = ExtResource("4_hq3fp")
+speed = 500.0
+figure_component = NodePath("..")

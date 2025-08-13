@@ -3,7 +3,7 @@ class_name BoardV2 extends Node2D
 const board_rows = 10
 const board_cols = 9
 enum Teams {Red = 1, Black = 2, Wall = 3}
-enum Kingdoms {MAGMA = 1, CLOUD = 2}
+enum Kingdoms {MAGMA = 1, CLOUD = 2, FOG = 3}
 
 const palace_positions: Dictionary = {
 	Vector2i(3,0): true,
@@ -69,7 +69,16 @@ var scenes: Dictionary = {
 		FigureComponent.Types.HORSE: load("res://Projects/Figure/V2/Cloud/Horse/Horse.tscn"),
 		FigureComponent.Types.ELEPHANT: load("res://Projects/Figure/V2/Cloud/Elephant/Elephant.tscn"),
 		FigureComponent.Types.CANNON : load("res://Projects/Figure/V2/Cloud/Cannon/Cannon.tscn"),
-	}
+	},
+	Kingdoms.FOG: {
+		FigureComponent.Types.SOLDIER: load("res://Projects/Figure/V2/Fog/Soldier/Soldier.tscn"),
+		FigureComponent.Types.GENERAL: load("res://Projects/Figure/V2/Fog/General/General.tscn"),
+		FigureComponent.Types.ADVISOR: load("res://Projects/Figure/V2/Fog/Advisor/Advisor.tscn"),
+		FigureComponent.Types.CHARIOT: load("res://Projects/Figure/V2/Fog/Chariot/Chariot.tscn"),
+		FigureComponent.Types.HORSE: load("res://Projects/Figure/V2/Fog/Horse/Horse.tscn"),
+		FigureComponent.Types.ELEPHANT: load("res://Projects/Figure/V2/Fog/Elephant/Elephant.tscn"),
+		FigureComponent.Types.CANNON : load("res://Projects/Figure/V2/Fog/Cannon/Cannon.tscn"),
+	},
 }
 
 var wall_scene = load("res://Projects/Support/TmpWall.tscn")
