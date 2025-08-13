@@ -1,13 +1,29 @@
-[gd_scene load_steps=10 format=3 uid="uid://30cxk3vocnf5"]
+[gd_scene load_steps=26 format=3 uid="uid://30cxk3vocnf5"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_gfrox"]
 [ext_resource type="Texture2D" uid="uid://cdvhysgpncwws" path="res://Assets/Characters/Cloud/Pawn/Idle/Front idle/Front1.png" id="2_jg03d"]
-[ext_resource type="Texture2D" uid="uid://f1jvrq55cicp" path="res://Assets/Characters/Magma/Pawn/Idle/Back idle/Back_idle1.png" id="2_tcr8t"]
-[ext_resource type="Texture2D" uid="uid://detlb0txib850" path="res://Assets/Characters/Magma/Pawn/Idle/Back idle/Back_idle2.png" id="3_jtcyu"]
 [ext_resource type="Texture2D" uid="uid://4upnq23t384k" path="res://Assets/Characters/Cloud/Pawn/Idle/Front idle/Front2.png" id="3_o2u1k"]
 [ext_resource type="Texture2D" uid="uid://delw3ejtdfqhn" path="res://Assets/Characters/Cloud/Pawn/Idle/Front idle/Front3.png" id="4_sbbrh"]
+[ext_resource type="Texture2D" uid="uid://b1fn4cnfqkdwf" path="res://Assets/Characters/Cloud/Pawn/Run/Front/Front1.png" id="5_2py60"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/soldier_chess_component.gd" id="6_67shb"]
-[ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="7_ap5dw"]
+[ext_resource type="Texture2D" uid="uid://b6pfhw0mcq543" path="res://Assets/Characters/Cloud/Pawn/Run/Front/Front2.png" id="6_ioem3"]
+[ext_resource type="Texture2D" uid="uid://b32b7kglm7ib0" path="res://Assets/Characters/Cloud/Pawn/Run/Front/Front3.png" id="7_inn26"]
+[ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/Cloud/soldier_move_component.gd" id="8_f2iq2"]
+[ext_resource type="Texture2D" uid="uid://buj2puiqxii75" path="res://Assets/Characters/Cloud/Pawn/Run/Front/Front4.png" id="8_im6gi"]
+[ext_resource type="Texture2D" uid="uid://c0lxbq10wpr7g" path="res://Assets/Characters/Cloud/Pawn/Run/Front/Front5.png" id="9_8kir1"]
+[ext_resource type="Texture2D" uid="uid://cxextxtwum7np" path="res://Assets/Characters/Cloud/Pawn/Run/Front/Front6.png" id="10_4py8m"]
+[ext_resource type="Texture2D" uid="uid://dv4y23eusjfta" path="res://Assets/Characters/Cloud/Pawn/Run/Left/Left1.png" id="11_myc1b"]
+[ext_resource type="Texture2D" uid="uid://b6xgkgf4tslxr" path="res://Assets/Characters/Cloud/Pawn/Run/Left/Left2.png" id="12_0xivt"]
+[ext_resource type="Texture2D" uid="uid://coducfhqp4a5y" path="res://Assets/Characters/Cloud/Pawn/Run/Left/Left3.png" id="13_2whsa"]
+[ext_resource type="Texture2D" uid="uid://jrjc5fc02ubi" path="res://Assets/Characters/Cloud/Pawn/Run/Left/Left4.png" id="14_ayyj1"]
+[ext_resource type="Texture2D" uid="uid://bxgg2bfrywo5e" path="res://Assets/Characters/Cloud/Pawn/Run/Left/Left5.png" id="15_agenu"]
+[ext_resource type="Texture2D" uid="uid://dm68jox7xtkhe" path="res://Assets/Characters/Cloud/Pawn/Run/Left/Left6.png" id="16_todwu"]
+[ext_resource type="Texture2D" uid="uid://dhnn0jg4cseq7" path="res://Assets/Characters/Cloud/Pawn/Run/Right/Right1.png" id="17_lx6nd"]
+[ext_resource type="Texture2D" uid="uid://ijf77wpfxe57" path="res://Assets/Characters/Cloud/Pawn/Run/Right/Right2.png" id="18_th5c4"]
+[ext_resource type="Texture2D" uid="uid://bat83bmspli3u" path="res://Assets/Characters/Cloud/Pawn/Run/Right/Right3.png" id="19_njcg4"]
+[ext_resource type="Texture2D" uid="uid://cob76lxlwgxho" path="res://Assets/Characters/Cloud/Pawn/Run/Right/Right4.png" id="20_cjy1u"]
+[ext_resource type="Texture2D" uid="uid://b73oonushcdix" path="res://Assets/Characters/Cloud/Pawn/Run/Right/Right5.png" id="21_io20r"]
+[ext_resource type="Texture2D" uid="uid://b4v1hboda31b4" path="res://Assets/Characters/Cloud/Pawn/Run/Right/Right6.png" id="22_y73og"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pi8o7"]
 animations = [{
@@ -22,19 +38,77 @@ animations = [{
 "texture": ExtResource("4_sbbrh")
 }],
 "loop": true,
-"name": &"idle_down",
+"name": &"idle",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_tcr8t")
+"texture": ExtResource("5_2py60")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_jtcyu")
+"texture": ExtResource("6_ioem3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_inn26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_im6gi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8kir1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_4py8m")
 }],
-"loop": true,
-"name": &"idle_up",
-"speed": 5.0
+"loop": false,
+"name": &"move_front",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_myc1b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_0xivt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_2whsa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ayyj1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_agenu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_todwu")
+}],
+"loop": false,
+"name": &"move_left",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_lx6nd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_th5c4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_njcg4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_cjy1u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_io20r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_y73og")
+}],
+"loop": false,
+"name": &"move_right",
+"speed": 7.0
 }]
 
 [node name="Soldier" type="CharacterBody2D" node_paths=PackedStringArray("chess_component", "move_component")]
@@ -46,9 +120,8 @@ move_component = NodePath("MoveComponent")
 position = Vector2(8, -119)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_pi8o7")
-animation = &"idle_down"
-autoplay = "idle_down"
-frame_progress = 0.211815
+animation = &"idle"
+autoplay = "idle"
 
 [node name="ChessComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "move_component")]
 script = ExtResource("6_67shb")
@@ -58,6 +131,8 @@ figure_component = NodePath("..")
 move_component = NodePath("../MoveComponent")
 
 [node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component")]
-script = ExtResource("7_ap5dw")
+script = ExtResource("8_f2iq2")
 speed = 300.0
 figure_component = NodePath("..")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="MoveComponent" method="_on_figure_animation_finished"]
