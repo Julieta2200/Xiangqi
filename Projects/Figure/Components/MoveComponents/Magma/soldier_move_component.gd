@@ -2,7 +2,6 @@ extends MoveComponent
 
 
 func move_animation(old_pos: Vector2i, new_pos: Vector2i) -> void:
-	print("m")
 	var direction = old_pos - new_pos
 	
 	if direction.y < 0:
