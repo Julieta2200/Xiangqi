@@ -1,6 +1,7 @@
 extends MoveComponent
 
 var target_position: Vector2i
+
 func move_animation(old_pos: Vector2i, new_pos: Vector2i) -> void:
 	animated_sprite.play("move_1")
 
@@ -12,4 +13,5 @@ func _on_figure_animation_finished() -> void:
 		figure_component.global_position = target_position
 		animated_sprite.play("move_2")
 	else:
+		emit_signal("move_done")
 		animated_sprite.play("idle")
