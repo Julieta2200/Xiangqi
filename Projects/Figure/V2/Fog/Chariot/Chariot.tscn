@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://ba0tspyjjo8ax"]
+
+[ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_e2klm"]
+[ext_resource type="Texture2D" uid="uid://bvntmi43ujymc" path="res://Assets/tmp/chariot_black.png" id="2_yevn6"]
+[ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/chariot_chess_component.gd" id="3_ihlxr"]
+[ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="4_fjxo8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hqh0k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yevn6")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 5.0
+}]
+
+[node name="Chariot" type="CharacterBody2D" node_paths=PackedStringArray("chess_component", "move_component")]
+script = ExtResource("1_e2klm")
+chess_component = NodePath("ChessComponent")
+move_component = NodePath("MoveComponent")
+type = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -64)
+sprite_frames = SubResource("SpriteFrames_hqh0k")
+animation = &"idle_down"
+autoplay = "idle_down"
+
+[node name="ChessComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "move_component")]
+script = ExtResource("3_ihlxr")
+value = 90.0
+team = 2
+figure_component = NodePath("..")
+move_component = NodePath("../MoveComponent")
+
+[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component")]
+script = ExtResource("4_fjxo8")
+speed = 500.0
+figure_component = NodePath("..")

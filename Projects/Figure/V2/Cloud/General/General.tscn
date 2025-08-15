@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://7gykvdhclu4f"]
+[gd_scene load_steps=21 format=3 uid="uid://7gykvdhclu4f"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_neag0"]
 [ext_resource type="Texture2D" uid="uid://3hh1yr5ux5hm" path="res://Assets/Characters/Cloud/General/Idle/Idle1.png" id="2_33s0b"]
@@ -6,7 +6,19 @@
 [ext_resource type="Texture2D" uid="uid://dwfxmwt37fkl0" path="res://Assets/Characters/Cloud/General/Idle/Idle3.png" id="4_spc4u"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/general_chess_component.gd" id="4_tenn6"]
 [ext_resource type="Texture2D" uid="uid://d2aali6u2vgnl" path="res://Assets/Characters/Cloud/General/Idle/Idle4.png" id="5_o3mcs"]
-[ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="5_v7gxe"]
+[ext_resource type="Texture2D" uid="uid://dn16b03h3g2mg" path="res://Assets/Characters/Cloud/General/Run/Front/General_front1.png" id="6_f75ga"]
+[ext_resource type="Texture2D" uid="uid://pphn2qimjvyl" path="res://Assets/Characters/Cloud/General/Run/Front/General_front2.png" id="7_r1n13"]
+[ext_resource type="Texture2D" uid="uid://d0qujmx57bruq" path="res://Assets/Characters/Cloud/General/Run/Front/General_front3.png" id="8_d3gc6"]
+[ext_resource type="Texture2D" uid="uid://ceww7asjkbrjy" path="res://Assets/Characters/Cloud/General/Run/Front/General_front4.png" id="9_vcnj3"]
+[ext_resource type="Texture2D" uid="uid://c6kgy2ghu6ldo" path="res://Assets/Characters/Cloud/General/Run/Front/General_front5.png" id="10_g7stb"]
+[ext_resource type="Texture2D" uid="uid://c1pds8m1rysko" path="res://Assets/Characters/Cloud/General/Run/Front/General_front6.png" id="11_soe8a"]
+[ext_resource type="Texture2D" uid="uid://c618wr6qa56be" path="res://Assets/Characters/Cloud/General/Run/Front/General_front7.png" id="12_pvgxc"]
+[ext_resource type="Texture2D" uid="uid://43oy2ofc2jl3" path="res://Assets/Characters/Cloud/General/Run/Front/General_front8.png" id="13_etv4i"]
+[ext_resource type="Texture2D" uid="uid://cu66gadx2i74l" path="res://Assets/Characters/Cloud/General/Run/Front/General_front9.png" id="14_q64ve"]
+[ext_resource type="Texture2D" uid="uid://bhjqndhlwlddp" path="res://Assets/Characters/Cloud/General/Run/Front/General_front10.png" id="15_n71wh"]
+[ext_resource type="Texture2D" uid="uid://4oq6ckhoqyco" path="res://Assets/Characters/Cloud/General/Run/Front/General_front11.png" id="16_ip6ha"]
+[ext_resource type="Texture2D" uid="uid://de7xmb48cywv" path="res://Assets/Characters/Cloud/General/Run/Front/General_front12.png" id="17_5f8qk"]
+[ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/Cloud/general_move_component.gd" id="19_vhgm2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pi8o7"]
 animations = [{
@@ -24,8 +36,93 @@ animations = [{
 "texture": ExtResource("5_o3mcs")
 }],
 "loop": true,
-"name": &"idle_down",
+"name": &"idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_f75ga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_r1n13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_d3gc6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_vcnj3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_g7stb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_soe8a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_pvgxc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_etv4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_q64ve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_n71wh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ip6ha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_5f8qk")
+}],
+"loop": false,
+"name": &"move_1",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 5.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_5f8qk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ip6ha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_n71wh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_q64ve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_etv4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_pvgxc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_soe8a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_g7stb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_vcnj3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_d3gc6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_r1n13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_f75ga")
+}],
+"loop": false,
+"name": &"move_2",
+"speed": 7.0
 }]
 
 [node name="General" type="CharacterBody2D" node_paths=PackedStringArray("chess_component", "move_component")]
@@ -38,10 +135,8 @@ type = 1
 position = Vector2(1, -117)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_pi8o7")
-animation = &"idle_down"
-autoplay = "idle_down"
-frame = 3
-frame_progress = 0.0530308
+animation = &"move_2"
+autoplay = "idle"
 
 [node name="ChessComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "move_component")]
 script = ExtResource("4_tenn6")
@@ -51,6 +146,8 @@ figure_component = NodePath("..")
 move_component = NodePath("../MoveComponent")
 
 [node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component")]
-script = ExtResource("5_v7gxe")
+script = ExtResource("19_vhgm2")
 speed = 300.0
 figure_component = NodePath("..")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="MoveComponent" method="_on_figure_animation_finished"]

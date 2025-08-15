@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://ccptjppldlh1k"]
+
+[ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_ngfbc"]
+[ext_resource type="Texture2D" uid="uid://dv0qhosv8odjm" path="res://Assets/tmp/elephant_black.png" id="2_xdert"]
+[ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/elephant_chess_component.gd" id="3_5e7ov"]
+[ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="4_jn1wh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4prq8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xdert")
+}],
+"loop": true,
+"name": &"idle_dawn",
+"speed": 5.0
+}]
+
+[node name="Elephant" type="CharacterBody2D" node_paths=PackedStringArray("chess_component", "move_component")]
+script = ExtResource("1_ngfbc")
+chess_component = NodePath("ChessComponent")
+move_component = NodePath("MoveComponent")
+type = 5
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4, -69)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_4prq8")
+animation = &"idle_dawn"
+autoplay = "idle_dawn"
+
+[node name="ChessComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "move_component")]
+script = ExtResource("3_5e7ov")
+value = 20.0
+team = 2
+figure_component = NodePath("..")
+move_component = NodePath("../MoveComponent")
+
+[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component")]
+script = ExtResource("4_jn1wh")
+speed = 500.0
+figure_component = NodePath("..")

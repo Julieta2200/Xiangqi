@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://e0vofw5ghj4q"]
+
+[ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_31ffd"]
+[ext_resource type="Texture2D" uid="uid://dwnei5gaalkw5" path="res://Assets/tmp/cannon_black.png" id="2_lqj0u"]
+[ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/cannon_chess_component.gd" id="3_t6o6c"]
+[ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="4_av3l6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ns0u8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lqj0u")
+}],
+"loop": true,
+"name": &"idle_dawn",
+"speed": 5.0
+}]
+
+[node name="Cannon" type="CharacterBody2D" node_paths=PackedStringArray("chess_component", "move_component")]
+script = ExtResource("1_31ffd")
+chess_component = NodePath("ChessComponent")
+move_component = NodePath("MoveComponent")
+type = 6
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -66)
+sprite_frames = SubResource("SpriteFrames_ns0u8")
+animation = &"idle_dawn"
+autoplay = "idle_dawn"
+
+[node name="ChessComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "move_component")]
+script = ExtResource("3_t6o6c")
+value = 45.0
+team = 2
+figure_component = NodePath("..")
+move_component = NodePath("../MoveComponent")
+
+[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component")]
+script = ExtResource("4_av3l6")
+speed = 500.0
+figure_component = NodePath("..")
