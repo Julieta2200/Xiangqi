@@ -1,11 +1,31 @@
-[gd_scene load_steps=8 format=3 uid="uid://cdn3jcelemlvp"]
+[gd_scene load_steps=28 format=3 uid="uid://cdn3jcelemlvp"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_261fv"]
 [ext_resource type="Texture2D" uid="uid://bppng3t15l7jf" path="res://Assets/Characters/Cloud/Advisor/Idle/Idle1.png" id="2_wtnwi"]
 [ext_resource type="Texture2D" uid="uid://dikdmp5hhd6sj" path="res://Assets/Characters/Cloud/Advisor/Idle/Idle2.png" id="3_2tso5"]
 [ext_resource type="Texture2D" uid="uid://ko1slreus2st" path="res://Assets/Characters/Cloud/Advisor/Idle/Idle3.png" id="4_483u7"]
+[ext_resource type="Texture2D" uid="uid://dsbr0cnpmavgm" path="res://Assets/Characters/Cloud/Advisor/Run/Back/Back_left1.png" id="5_62usm"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/advisor_chess_component.gd" id="5_n73m4"]
-[ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="6_shemc"]
+[ext_resource type="Texture2D" uid="uid://6p4ac0jgbyq1" path="res://Assets/Characters/Cloud/Advisor/Run/Back/Back_left2t.png" id="6_xgyvo"]
+[ext_resource type="Texture2D" uid="uid://c5eh2b0nvycq8" path="res://Assets/Characters/Cloud/Advisor/Run/Back/Back_left3.png" id="7_2knql"]
+[ext_resource type="Texture2D" uid="uid://d8ajcqlw5bfk" path="res://Assets/Characters/Cloud/Advisor/Run/Back/Back_left4.png" id="8_cmqbi"]
+[ext_resource type="Texture2D" uid="uid://pr36kjadicfd" path="res://Assets/Characters/Cloud/Advisor/Run/Back/Back_left5.png" id="9_kwxuk"]
+[ext_resource type="Texture2D" uid="uid://bupbmqbtvtcl4" path="res://Assets/Characters/Cloud/Advisor/Run/Back/Back1.png" id="10_fqep6"]
+[ext_resource type="Texture2D" uid="uid://d11fooi3oefx5" path="res://Assets/Characters/Cloud/Advisor/Run/Back/Back2.png" id="11_ep436"]
+[ext_resource type="Texture2D" uid="uid://m1ar3tks7cxb" path="res://Assets/Characters/Cloud/Advisor/Run/Back/Back3.png" id="12_mhwyu"]
+[ext_resource type="Texture2D" uid="uid://ct80oulxyy85v" path="res://Assets/Characters/Cloud/Advisor/Run/Back/Back4.png" id="13_8k61y"]
+[ext_resource type="Texture2D" uid="uid://dcq5ps00h3ytj" path="res://Assets/Characters/Cloud/Advisor/Run/Back/Back5.png" id="14_lbaig"]
+[ext_resource type="Texture2D" uid="uid://niiuar3rjgj" path="res://Assets/Characters/Cloud/Advisor/Run/Right(Left)/Front_left1.png" id="15_vsgxe"]
+[ext_resource type="Texture2D" uid="uid://d0odek71d6yx2" path="res://Assets/Characters/Cloud/Advisor/Run/Right(Left)/Front_left2.png" id="16_1yqqs"]
+[ext_resource type="Texture2D" uid="uid://5ygw1anppf4b" path="res://Assets/Characters/Cloud/Advisor/Run/Right(Left)/Front_left3.png" id="17_g6les"]
+[ext_resource type="Texture2D" uid="uid://du1gqdwxwg7xe" path="res://Assets/Characters/Cloud/Advisor/Run/Right(Left)/Front_left4.png" id="18_kpnrm"]
+[ext_resource type="Texture2D" uid="uid://c5hhnunkahtxg" path="res://Assets/Characters/Cloud/Advisor/Run/Right(Left)/Front_left5png.png" id="19_yvobu"]
+[ext_resource type="Texture2D" uid="uid://b5l12jx8y0ivy" path="res://Assets/Characters/Cloud/Advisor/Run/Right(Left)/Front1.png" id="20_jhnb1"]
+[ext_resource type="Texture2D" uid="uid://btf354pqxu3j8" path="res://Assets/Characters/Cloud/Advisor/Run/Right(Left)/Front2.png" id="21_6ry61"]
+[ext_resource type="Texture2D" uid="uid://bqaqx654whlc4" path="res://Assets/Characters/Cloud/Advisor/Run/Right(Left)/Front3.png" id="22_lpiod"]
+[ext_resource type="Texture2D" uid="uid://bd1ebg58tjn3w" path="res://Assets/Characters/Cloud/Advisor/Run/Right(Left)/Front4.png" id="23_sjxq6"]
+[ext_resource type="Texture2D" uid="uid://b3g2750qjg4d8" path="res://Assets/Characters/Cloud/Advisor/Run/Right(Left)/Front5.png" id="24_dgdbp"]
+[ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/Cloud/advisor_move_component.gd" id="26_1j1do"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pi8o7"]
 animations = [{
@@ -20,7 +40,87 @@ animations = [{
 "texture": ExtResource("4_483u7")
 }],
 "loop": true,
-"name": &"idle_down",
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_62usm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xgyvo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2knql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_cmqbi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_kwxuk")
+}],
+"loop": false,
+"name": &"move_back_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_fqep6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ep436")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_mhwyu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_8k61y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_lbaig")
+}],
+"loop": false,
+"name": &"move_back_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_vsgxe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_1yqqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_g6les")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_kpnrm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_yvobu")
+}],
+"loop": false,
+"name": &"move_front_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_jhnb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_6ry61")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_lpiod")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_sjxq6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_dgdbp")
+}],
+"loop": false,
+"name": &"move_front_right",
 "speed": 5.0
 }]
 
@@ -34,9 +134,8 @@ type = 2
 position = Vector2(-3, -132)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_pi8o7")
-animation = &"idle_down"
-autoplay = "idle_down"
-frame_progress = 0.408885
+animation = &"idle"
+autoplay = "idle"
 
 [node name="ChessComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "move_component")]
 script = ExtResource("5_n73m4")
@@ -46,6 +145,8 @@ figure_component = NodePath("..")
 move_component = NodePath("../MoveComponent")
 
 [node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component")]
-script = ExtResource("6_shemc")
+script = ExtResource("26_1j1do")
 speed = 300.0
 figure_component = NodePath("..")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="MoveComponent" method="_on_figure_animation_finished"]

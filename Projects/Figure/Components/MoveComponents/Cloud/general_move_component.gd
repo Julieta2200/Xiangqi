@@ -9,8 +9,7 @@ func generate_move_tween(target_pos):
 	
 func _on_figure_animation_finished() -> void:
 	if animated_sprite.animation == "move_1":
-		animated_sprite.play("move_2")
-	elif  animated_sprite.animation == "move_2":
 		figure_component.global_position = target_position
+		animated_sprite.play("move_2")
 	else:
 		animated_sprite.play("idle")

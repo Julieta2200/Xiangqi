@@ -113,7 +113,7 @@ var state: Dictionary
 # For which figure the markers are currently highlighted
 var _selected_figure: FigureComponent
 
-@export var ai_spawn_interval : int = 4
+@export var ai_spawn_interval : int = 6
 
 var ai_move_number: int = 0:
 	set(n):
