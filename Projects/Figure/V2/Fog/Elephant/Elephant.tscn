@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://ccptjppldlh1k"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_ngfbc"]
-[ext_resource type="Texture2D" uid="uid://dv0qhosv8odjm" path="res://Assets/tmp/elephant_black.png" id="2_xdert"]
+[ext_resource type="Texture2D" uid="uid://nvubh1ywrtal" path="res://Assets/Characters/Fog/Elephant/Elephant_Front.png" id="2_3ct80"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/elephant_chess_component.gd" id="3_5e7ov"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="4_jn1wh"]
 
@@ -9,7 +9,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_xdert")
+"texture": ExtResource("2_3ct80")
 }],
 "loop": true,
 "name": &"idle_dawn",
@@ -23,8 +23,8 @@ move_component = NodePath("MoveComponent")
 type = 5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(4, -69)
-scale = Vector2(0.8, 0.8)
+position = Vector2(-1, -105)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_4prq8")
 animation = &"idle_dawn"
 autoplay = "idle_dawn"
