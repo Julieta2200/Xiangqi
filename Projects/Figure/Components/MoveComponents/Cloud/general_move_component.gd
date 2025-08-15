@@ -9,9 +9,10 @@ func generate_move_tween(target_pos):
 	target_position = target_pos
 	
 func _on_figure_animation_finished() -> void:
+	await get_tree().process_frame
 	if animated_sprite.animation == "move_1":
 		figure_component.global_position = target_position
 		animated_sprite.play("move_2")
 	else:
-		emit_signal("move_done")
 		animated_sprite.play("idle")
+		emit_signal("move_done")
