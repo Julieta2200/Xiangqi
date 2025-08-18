@@ -176,7 +176,7 @@ func move_figure(marker: BoardMarker) -> void:
 	clear_markers()
 	state.erase(_selected_figure.chess_component.position)
 	if state.has(marker.board_position):
-		capture(marker.board_position)
+		capture(marker.board_position,_selected_figure.chess_component.position)
 	state[marker.board_position] = _selected_figure
 	_selected_figure.chess_component.change_position(marker.board_position)
 	turn = Teams.Black
@@ -192,7 +192,7 @@ func move_figure_AI(move: Dictionary) -> void:
 	var figure: FigureComponent = state[move["start"]]
 	state.erase(move["start"])
 	if state.has(move["end"]):
-		capture(move["end"])
+		capture(move["end"],move["start"])
 	state[move["end"]] = figure
 	figure.chess_component.change_position(move["end"])
 	move_number += 1
@@ -211,8 +211,8 @@ func spawn_AI_figure():
 	else:
 		instantiate_figure(Kingdoms.CLOUD, FigureComponent.Types.HORSE, pos)
 		
-func capture(pos: Vector2i) -> void:
-	state[pos].delete()
+func capture(target_pos: Vector2i, attacker_pos = Vector2i(-1,-1)) -> void:
+	state[target_pos].move_component.attack(attacker_pos)
 	if get_generals().size() == 2:
 		ui.power_meter.update_distance(get_figures(Teams.Red).size())
 

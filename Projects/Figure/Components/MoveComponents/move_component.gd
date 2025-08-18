@@ -24,3 +24,9 @@ func generate_move_tween(target_position):
 	tween.tween_property(figure_component, "global_position",
 	 target_position, figure_component.global_position.distance_to(target_position)/speed)
 	tween.finished.connect(func(): emit_signal("move_done"))
+
+func attack(attacker_pos: Vector2i):
+	figure_component.delete()
+
+func attack_animation(target_pos: Vector2i, attacker_pos: Vector2i):
+	pass
