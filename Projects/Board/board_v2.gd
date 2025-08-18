@@ -174,11 +174,12 @@ func set_figure(figure: FigureComponent, pos: Vector2i) -> void:
 
 func move_figure(marker: BoardMarker) -> void:
 	clear_markers()
-	state.erase(_selected_figure.chess_component.position)
 	if state.has(marker.board_position):
 		capture(marker.board_position,_selected_figure.chess_component.position)
-	state[marker.board_position] = _selected_figure
-	_selected_figure.chess_component.change_position(marker.board_position)
+	else:
+		state.erase(_selected_figure.chess_component.position)
+		state[marker.board_position] = _selected_figure
+		_selected_figure.chess_component.change_position(marker.board_position)
 	turn = Teams.Black
 	update_energy_by_figure_type(_selected_figure.type)
 	
@@ -190,11 +191,12 @@ func update_energy_by_figure_type(figure_type : FigureComponent.Types) -> void:
 
 func move_figure_AI(move: Dictionary) -> void:
 	var figure: FigureComponent = state[move["start"]]
-	state.erase(move["start"])
 	if state.has(move["end"]):
 		capture(move["end"],move["start"])
-	state[move["end"]] = figure
-	figure.chess_component.change_position(move["end"])
+	else:
+		state.erase(move["start"])
+		state[move["end"]] = figure
+		figure.chess_component.change_position(move["end"])
 	move_number += 1
 
 func spawn_AI_figure():
@@ -215,6 +217,12 @@ func capture(target_pos: Vector2i, attacker_pos = Vector2i(-1,-1)) -> void:
 	state[target_pos].move_component.disappear(attacker_pos)
 	if get_generals().size() == 2:
 		ui.power_meter.update_distance(get_figures(Teams.Red).size())
+	if attacker_pos == Vector2i(-1,-1):
+		return
+	var attacker = state[attacker_pos]
+	attacker.move_component.attack(target_pos)
+	state.erase(attacker_pos)
+	state[target_pos] = attacker
 
 func clear_markers() -> void:
 	for pos in markers:
