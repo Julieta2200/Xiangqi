@@ -11,7 +11,7 @@ func move_animation(old_pos: Vector2i, new_pos: Vector2i) -> void:
 	else:
 		animated_sprite.play("move_right")
 
-func attack_animation(target_pos: Vector2i, attacker_pos: Vector2i):
+func disappear_animation(target_pos: Vector2i, attacker_pos: Vector2i):
 	var direction = target_pos - attacker_pos
 	
 	if direction.y < 0:
@@ -29,8 +29,8 @@ func _on_figure_animation_finished() -> void:
 		figure_component.delete()
 	animated_sprite.play("idle")
 
-func attack(attacker_pos: Vector2i):
+func disappear(attacker_pos: Vector2i):
 	if attacker_pos == Vector2i(-1,-1):
 		animated_sprite.play("disappear_back")
 		return
-	attack_animation(figure_component.chess_component.position,attacker_pos)
+	disappear_animation(figure_component.chess_component.position,attacker_pos)

@@ -212,7 +212,7 @@ func spawn_AI_figure():
 		instantiate_figure(Kingdoms.CLOUD, FigureComponent.Types.HORSE, pos)
 		
 func capture(target_pos: Vector2i, attacker_pos = Vector2i(-1,-1)) -> void:
-	state[target_pos].move_component.attack(attacker_pos)
+	state[target_pos].move_component.disappear(attacker_pos)
 	if get_generals().size() == 2:
 		ui.power_meter.update_distance(get_figures(Teams.Red).size())
 
