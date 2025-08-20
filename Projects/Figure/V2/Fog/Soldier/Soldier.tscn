@@ -1,11 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://b4u0rern1rgw"]
+[gd_scene load_steps=6 format=3 uid="uid://b4u0rern1rgw"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_0l350"]
-[ext_resource type="Texture2D" uid="uid://cdvhysgpncwws" path="res://Assets/Characters/Cloud/Pawn/Idle/Front idle/Front1.png" id="2_rqnap"]
-[ext_resource type="Texture2D" uid="uid://4upnq23t384k" path="res://Assets/Characters/Cloud/Pawn/Idle/Front idle/Front2.png" id="3_81047"]
-[ext_resource type="Texture2D" uid="uid://delw3ejtdfqhn" path="res://Assets/Characters/Cloud/Pawn/Idle/Front idle/Front3.png" id="4_4a7n6"]
-[ext_resource type="Texture2D" uid="uid://f1jvrq55cicp" path="res://Assets/Characters/Magma/Pawn/Idle/Back idle/Back_idle1.png" id="5_1xgyw"]
-[ext_resource type="Texture2D" uid="uid://detlb0txib850" path="res://Assets/Characters/Magma/Pawn/Idle/Back idle/Back_idle2.png" id="6_a8j3s"]
+[ext_resource type="Texture2D" uid="uid://cfxyr4st34q2v" path="res://Assets/Characters/Fog/Soldier/Soldier_Front.png" id="2_6gvuf"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/soldier_chess_component.gd" id="7_fkygt"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="8_n0clu"]
 
@@ -13,25 +9,13 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_rqnap")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_81047")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_4a7n6")
+"texture": ExtResource("2_6gvuf")
 }],
 "loop": true,
 "name": &"idle_down",
 "speed": 5.0
 }, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_1xgyw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_a8j3s")
-}],
+"frames": [],
 "loop": true,
 "name": &"idle_up",
 "speed": 5.0
@@ -43,12 +27,11 @@ chess_component = NodePath("ChessComponent")
 move_component = NodePath("MoveComponent")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(8, -119)
+position = Vector2(1, -104)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_pi8o7")
 animation = &"idle_down"
 autoplay = "idle_down"
-frame_progress = 0.211815
 
 [node name="ChessComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "move_component")]
 script = ExtResource("7_fkygt")
