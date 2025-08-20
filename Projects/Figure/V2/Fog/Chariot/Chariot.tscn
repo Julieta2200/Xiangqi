@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://ba0tspyjjo8ax"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_e2klm"]
-[ext_resource type="Texture2D" uid="uid://bvntmi43ujymc" path="res://Assets/tmp/chariot_black.png" id="2_yevn6"]
+[ext_resource type="Texture2D" uid="uid://16o84uwsmu7t" path="res://Assets/Characters/Fog/Chariot/Chariot_Front.png" id="2_8tu35"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/chariot_chess_component.gd" id="3_ihlxr"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="4_fjxo8"]
 
@@ -9,7 +9,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_yevn6")
+"texture": ExtResource("2_8tu35")
 }],
 "loop": true,
 "name": &"idle_down",
@@ -23,7 +23,8 @@ move_component = NodePath("MoveComponent")
 type = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -64)
+position = Vector2(1, -97)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_hqh0k")
 animation = &"idle_down"
 autoplay = "idle_down"
