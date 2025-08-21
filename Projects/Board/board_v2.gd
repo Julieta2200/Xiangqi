@@ -205,11 +205,11 @@ func spawn_AI_figure():
 			break
 	var chance: float = randf()
 	if chance < spawn_AI_figure_chances[FigureComponent.Types.CHARIOT]:
-		instantiate_figure(Kingdoms.CLOUD, FigureComponent.Types.CHARIOT, pos)
+		instantiate_figure(Kingdoms.FOG, FigureComponent.Types.CHARIOT, pos)
 	elif chance < spawn_AI_figure_chances[FigureComponent.Types.CHARIOT] + spawn_AI_figure_chances[FigureComponent.Types.CANNON]:
-		instantiate_figure(Kingdoms.CLOUD, FigureComponent.Types.CANNON, pos)
+		instantiate_figure(Kingdoms.FOG, FigureComponent.Types.CANNON, pos)
 	else:
-		instantiate_figure(Kingdoms.CLOUD, FigureComponent.Types.HORSE, pos)
+		instantiate_figure(Kingdoms.FOG, FigureComponent.Types.HORSE, pos)
 		
 func capture(target_pos: Vector2i, attacker_pos = Vector2i(-1,-1)) -> void:
 	state[target_pos].move_component.disappear(attacker_pos)
