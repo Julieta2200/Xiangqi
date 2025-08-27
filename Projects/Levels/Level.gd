@@ -15,7 +15,7 @@ func _ready() -> void:
 
 
 func game_over_energy_depleted():
-	load_main_scene()
+	get_tree().reload_current_scene()
 
 func _on_board_game_over(win, move_number):
 	await get_tree().process_frame
