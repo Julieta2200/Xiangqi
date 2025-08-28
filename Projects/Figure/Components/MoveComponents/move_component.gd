@@ -30,3 +30,6 @@ func disappear(attacker_pos: Vector2i):
 
 func disappear_animation(target_pos: Vector2i, attacker_pos: Vector2i):
 	pass
+
+func attack(captured_pos: Vector2i):
+	figure_component.chess_component.change_position(captured_pos)
