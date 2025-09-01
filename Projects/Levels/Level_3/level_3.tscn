@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://ba7bayl6q6g14"]
 
 [ext_resource type="Script" path="res://Projects/Levels/Level_3/level_3.gd" id="1_1nc6y"]
-[ext_resource type="Texture2D" uid="uid://dtrlw2ivmev3l" path="res://Assets/backgrounds/cloud/background.png" id="1_kbfg4"]
+[ext_resource type="Texture2D" uid="uid://vwdx6ewivw4v" path="res://Assets/backgrounds/Fog/Background.png" id="2_034v6"]
 [ext_resource type="PackedScene" uid="uid://dpyrcsgpodbx7" path="res://Projects/Board/board.tscn" id="2_agd8d"]
 [ext_resource type="PackedScene" uid="uid://d0l5epq1wemnr" path="res://Projects/AI/ai.tscn" id="3_jg0gk"]
 [ext_resource type="PackedScene" uid="uid://br5fqscax7ejf" path="res://Projects/Camera/camera.tscn" id="4_wgc5j"]
@@ -15,7 +15,7 @@ level_name = "3"
 z_index = -2
 position = Vector2(1960, 1496)
 scale = Vector2(2, 2)
-texture = ExtResource("1_kbfg4")
+texture = ExtResource("2_034v6")
 
 [node name="Board" parent="." node_paths=PackedStringArray("ai", "ui") instance=ExtResource("2_agd8d")]
 unique_name_in_owner = true
