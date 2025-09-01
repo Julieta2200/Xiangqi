@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bx11h40qosjm0"]
+[gd_scene load_steps=9 format=3 uid="uid://bx11h40qosjm0"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_joy3s"]
-[ext_resource type="Texture2D" uid="uid://c7rv8s3jslxgs" path="res://Assets/Characters/Magma/Elephant/Elephant_Back.png" id="2_xuxf5"]
+[ext_resource type="Texture2D" uid="uid://csjbks1mympdt" path="res://Assets/Characters/Magma/Elephant/Idle/Elephant1.png" id="2_swpv1"]
 [ext_resource type="PackedScene" uid="uid://dylnbquiybg16" path="res://Projects/Figure/Components/figure_ui_component.tscn" id="3_2lvq0"]
+[ext_resource type="Texture2D" uid="uid://b2i1l7ntb1n8v" path="res://Assets/Characters/Magma/Elephant/Idle/Elephant2.png" id="3_fd2y2"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="4_j63sy"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/elephant_chess_component.gd" id="4_sbf10"]
 
@@ -10,11 +11,14 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_xuxf5")
+"texture": ExtResource("2_swpv1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fd2y2")
 }],
 "loop": true,
-"name": &"idle_up",
-"speed": 5.0
+"name": &"idle",
+"speed": 1.8
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qnuwo"]
@@ -29,11 +33,12 @@ move_component = NodePath("MoveComponent")
 type = 5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1, -106)
+position = Vector2(2, -96)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_5rg0u")
-animation = &"idle_up"
-autoplay = "idle_up"
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.0352847
 
 [node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component") instance=ExtResource("3_2lvq0")]
 chess_component = NodePath("../ChessComponent")

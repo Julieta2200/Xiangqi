@@ -614,8 +614,9 @@ frame_progress = 1.0
 position = Vector2(1, -106)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_pi8o7")
-animation = &"disappear_down_left"
+animation = &"idle_up"
 autoplay = "idle_up"
+frame_progress = 0.761258
 
 [node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component") instance=ExtResource("4_eq2gi")]
 chess_component = NodePath("../ChessComponent")

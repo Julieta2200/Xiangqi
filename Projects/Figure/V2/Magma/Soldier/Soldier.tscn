@@ -738,8 +738,9 @@ move_component = NodePath("MoveComponent")
 position = Vector2(8, -168)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_pi8o7")
-animation = &"attack_right"
+animation = &"idle"
 autoplay = "idle"
+frame_progress = 0.519546
 
 [node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component") instance=ExtResource("4_qchhg")]
 chess_component = NodePath("../ChessComponent")
