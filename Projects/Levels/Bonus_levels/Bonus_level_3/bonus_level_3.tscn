@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://letuyg8vxfsj"]
+[gd_scene load_steps=8 format=3 uid="uid://letuyg8vxfsj"]
 
 [ext_resource type="Script" path="res://Projects/Levels/Bonus_levels/Bonus_level_3/bonus_level_3.gd" id="1_wjyvd"]
 [ext_resource type="Texture2D" uid="uid://vwdx6ewivw4v" path="res://Assets/backgrounds/Fog/Background.png" id="2_u4akn"]
 [ext_resource type="PackedScene" uid="uid://dpyrcsgpodbx7" path="res://Projects/Board/board.tscn" id="3_fglsu"]
+[ext_resource type="Texture2D" uid="uid://1b7ifghtfjsy" path="res://Assets/backgrounds/Fog/Big_trees.png" id="3_ybq7w"]
 [ext_resource type="PackedScene" uid="uid://d0l5epq1wemnr" path="res://Projects/AI/ai.tscn" id="4_hb2mj"]
 [ext_resource type="PackedScene" uid="uid://br5fqscax7ejf" path="res://Projects/Camera/camera.tscn" id="5_8qu1q"]
 [ext_resource type="PackedScene" uid="uid://bip87oin8clme" path="res://Projects/Ui/gameplay_ui.tscn" id="6_rwypo"]
@@ -18,9 +19,12 @@ position = Vector2(1960, 1496)
 scale = Vector2(2, 2)
 texture = ExtResource("2_u4akn")
 
+[node name="trees" type="Sprite2D" parent="Background"]
+texture = ExtResource("3_ybq7w")
+
 [node name="Board" parent="." node_paths=PackedStringArray("ai", "ui") instance=ExtResource("3_fglsu")]
 unique_name_in_owner = true
-position = Vector2(848, 212)
+position = Vector2(879, 363)
 ai = NodePath("../AI")
 ui = NodePath("../GameplayUI")
 
@@ -28,7 +32,7 @@ ui = NodePath("../GameplayUI")
 board = NodePath("../Board")
 
 [node name="Camera" parent="." instance=ExtResource("5_8qu1q")]
-position = Vector2(1924, 1272)
+position = Vector2(1966, 1410)
 
 [node name="GameplayUI" parent="." node_paths=PackedStringArray("board") instance=ExtResource("6_rwypo")]
 board = NodePath("../Board")
