@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cavxgtpxtng4j"]
+
+[ext_resource type="AudioStream" uid="uid://dmkbwpl6ay0hy" path="res://Assets/Music/Dark Forest V2-PB2.mp3" id="1_6qkid"]
+
+[node name="Music" type="Node2D"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_6qkid")
+autoplay = true

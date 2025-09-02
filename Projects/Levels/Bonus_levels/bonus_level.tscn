@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ccqx1h7ffxvau"]
+[gd_scene load_steps=10 format=3 uid="uid://ccqx1h7ffxvau"]
 
 [ext_resource type="Script" path="res://Projects/Levels/Bonus_levels/bonus_level.gd" id="1_x85n2"]
 [ext_resource type="PackedScene" uid="uid://dpyrcsgpodbx7" path="res://Projects/Board/board.tscn" id="2_7j1bk"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://br5fqscax7ejf" path="res://Projects/Camera/camera.tscn" id="4_0utih"]
 [ext_resource type="PackedScene" uid="uid://dcwk0tqri5mkr" path="res://Projects/Board/background_fog/fog.tscn" id="4_36elx"]
 [ext_resource type="PackedScene" uid="uid://bip87oin8clme" path="res://Projects/Ui/gameplay_ui.tscn" id="5_8f8tq"]
+[ext_resource type="PackedScene" uid="uid://cavxgtpxtng4j" path="res://Projects/Music/Music.tscn" id="9_h0ufh"]
 
 [node name="bonus_level" type="Node2D"]
 script = ExtResource("1_x85n2")
@@ -41,3 +42,5 @@ position = Vector2(1966, 1410)
 
 [node name="GameplayUI" parent="." node_paths=PackedStringArray("board") instance=ExtResource("5_8f8tq")]
 board = NodePath("../Board")
+
+[node name="Music" parent="." instance=ExtResource("9_h0ufh")]
