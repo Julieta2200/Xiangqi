@@ -87,13 +87,6 @@ signal game_over(win,move_number)
 @export var ai: AI
 @export var ui: GameplayUI
 
-const fusion_chances: Dictionary = {
-	FigureComponent.Types.SOLDIER: 0.4,
-	FigureComponent.Types.CHARIOT: 0.15,
-	FigureComponent.Types.CANNON: 0.25,
-	FigureComponent.Types.HORSE: 0.3,
-}
-
 @export var spawn_AI_figure_chances: Dictionary = {
 	FigureComponent.Types.CHARIOT: 0.3,
 	FigureComponent.Types.CANNON: 0.4,
@@ -241,41 +234,23 @@ func spawn_highlight(spawn_figure_type : FigureComponent.Types) -> void:
 		for j in range(ui.power_meter.distance + 1):
 			var pos: Vector2i = Vector2i(i,j)
 			var marker: BoardMarker = markers[pos]
-			if palace_positions.has(pos):
+			if palace_positions.has(pos) or state.has(pos):
 				continue
-			if state.has(pos) and state[pos].chess_component.team != Teams.Red:
-				continue
-			if state.has(pos) and !(state[pos].type == FigureComponent.Types.SOLDIER and 
-			spawn_figure_type == FigureComponent.Types.SOLDIER):
-				continue
+			#if state.has(pos) and !(state[pos].type == FigureComponent.Types.SOLDIER and 
+			#spawn_figure_type == FigureComponent.Types.SOLDIER):
+				#continue
 			marker.highlight(BoardMarker.Highlights.SPAWN)
 
 func spawn_figure(marker: BoardMarker) -> void:
 	clear_markers()
 	ui.power_meter.substruct_energy()
-	if state.has(marker.board_position):
-		fusion(marker)
-	else:
-		instantiate_figure(Kingdoms.MAGMA, ui.garrison.selected_figure.type, marker.board_position)
-	if state.has(marker.board_position):
-		var figure = state[marker.board_position]
-		figure.ui_component.active = false
+	instantiate_figure(Kingdoms.MAGMA, ui.garrison.selected_figure.type, marker.board_position)
+	var figure = state[marker.board_position]
+	figure.ui_component.active = false
 	ui.power_meter.update_distance(get_figures(Teams.Red).size())
 
 func activate_garrison(result: bool) -> void:
 	ui.garrison.activate(result)
-
-func fusion(marker: BoardMarker) -> void:
-	var chance: float = randf()
-	capture(marker.board_position)
-	if chance < fusion_chances[FigureComponent.Types.CHARIOT]:
-		instantiate_figure(Kingdoms.MAGMA, FigureComponent.Types.CHARIOT, marker.board_position)
-	elif chance < fusion_chances[FigureComponent.Types.CHARIOT] + fusion_chances[FigureComponent.Types.CANNON]:
-		instantiate_figure(Kingdoms.MAGMA, FigureComponent.Types.CANNON, marker.board_position)
-	elif chance < fusion_chances[FigureComponent.Types.CHARIOT] + fusion_chances[FigureComponent.Types.CANNON] + fusion_chances[FigureComponent.Types.HORSE]:
-		instantiate_figure(Kingdoms.MAGMA, FigureComponent.Types.HORSE, marker.board_position)
-	else:
-		state.erase(marker.board_position)
 
 func figure_move_done() -> void:
 	if check_game_over():
