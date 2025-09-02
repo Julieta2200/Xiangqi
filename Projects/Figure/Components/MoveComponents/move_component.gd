@@ -6,7 +6,6 @@ class_name MoveComponent extends Node
 @onready var animated_sprite: AnimatedSprite2D = $"../AnimatedSprite2D"
 signal move_done()
 
-
 func move_to_position(marker: BoardMarker, initial_position: Vector2i = Vector2i.ZERO) -> void:
 	var target_position: Vector2 = marker.global_position
 	
@@ -18,7 +17,6 @@ func move_animation(old_pos: Vector2i, new_pos: Vector2i) -> void:
 	pass
 
 func _on_figure_animation_finished() -> void:
-	var current_animation = animated_sprite.animation
 	animated_sprite.play("idle")
 
 func generate_move_tween(target_position):
