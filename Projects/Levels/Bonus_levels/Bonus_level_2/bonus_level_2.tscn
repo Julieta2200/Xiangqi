@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://badxk8aexm8hy"]
+[gd_scene load_steps=9 format=3 uid="uid://badxk8aexm8hy"]
 
 [ext_resource type="Script" path="res://Projects/Levels/Bonus_levels/Bonus_level_2/bonus_level_2.gd" id="1_xwalk"]
 [ext_resource type="Texture2D" uid="uid://vwdx6ewivw4v" path="res://Assets/backgrounds/Fog/Background.png" id="2_pagoc"]
 [ext_resource type="Texture2D" uid="uid://1b7ifghtfjsy" path="res://Assets/backgrounds/Fog/Big_trees.png" id="3_24qav"]
 [ext_resource type="PackedScene" uid="uid://dpyrcsgpodbx7" path="res://Projects/Board/board.tscn" id="3_npk6u"]
 [ext_resource type="PackedScene" uid="uid://d0l5epq1wemnr" path="res://Projects/AI/ai.tscn" id="4_3qxqa"]
+[ext_resource type="PackedScene" uid="uid://dcwk0tqri5mkr" path="res://Projects/Board/background_fog/fog.tscn" id="4_e73v0"]
 [ext_resource type="PackedScene" uid="uid://br5fqscax7ejf" path="res://Projects/Camera/camera.tscn" id="5_01ykw"]
 [ext_resource type="PackedScene" uid="uid://bip87oin8clme" path="res://Projects/Ui/gameplay_ui.tscn" id="6_xpor4"]
 
@@ -22,6 +23,9 @@ texture = ExtResource("2_pagoc")
 
 [node name="trees" type="Sprite2D" parent="Background"]
 texture = ExtResource("3_24qav")
+
+[node name="Fog" parent="Background" instance=ExtResource("4_e73v0")]
+position = Vector2(-1499.5, -929)
 
 [node name="Board" parent="." node_paths=PackedStringArray("ai", "ui") instance=ExtResource("3_npk6u")]
 unique_name_in_owner = true
