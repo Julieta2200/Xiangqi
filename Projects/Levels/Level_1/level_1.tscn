@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://d3giqvti0ieng"]
+[gd_scene load_steps=9 format=3 uid="uid://d3giqvti0ieng"]
 
 [ext_resource type="Script" path="res://Projects/Levels/Level_1/level_1.gd" id="1_guf0p"]
 [ext_resource type="Texture2D" uid="uid://vwdx6ewivw4v" path="res://Assets/backgrounds/Fog/Background.png" id="2_tqs66"]
 [ext_resource type="PackedScene" uid="uid://dpyrcsgpodbx7" path="res://Projects/Board/board.tscn" id="3_6d5dt"]
 [ext_resource type="Texture2D" uid="uid://1b7ifghtfjsy" path="res://Assets/backgrounds/Fog/Big_trees.png" id="3_liqre"]
 [ext_resource type="PackedScene" uid="uid://d0l5epq1wemnr" path="res://Projects/AI/ai.tscn" id="4_36857"]
+[ext_resource type="PackedScene" uid="uid://dcwk0tqri5mkr" path="res://Projects/Board/background_fog/fog.tscn" id="4_yiko3"]
 [ext_resource type="PackedScene" uid="uid://br5fqscax7ejf" path="res://Projects/Camera/camera.tscn" id="5_rioux"]
 [ext_resource type="PackedScene" uid="uid://bip87oin8clme" path="res://Projects/Ui/gameplay_ui.tscn" id="6_12mkh"]
 
@@ -20,6 +21,9 @@ texture = ExtResource("2_tqs66")
 
 [node name="trees" type="Sprite2D" parent="Background"]
 texture = ExtResource("3_liqre")
+
+[node name="Fog" parent="Background" instance=ExtResource("4_yiko3")]
+position = Vector2(-1499.5, -929)
 
 [node name="Board" parent="." node_paths=PackedStringArray("ai", "ui") instance=ExtResource("3_6d5dt")]
 unique_name_in_owner = true
