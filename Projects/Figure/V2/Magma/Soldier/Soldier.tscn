@@ -1,4 +1,4 @@
-[gd_scene load_steps=170 format=3 uid="uid://bxjowytodmlln"]
+[gd_scene load_steps=175 format=3 uid="uid://bxjowytodmlln"]
 
 [ext_resource type="Texture2D" uid="uid://f1jvrq55cicp" path="res://Assets/Characters/Magma/Pawn/Idle/Back idle/Back_idle1.png" id="1_4usx7"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_ebhfi"]
@@ -167,6 +167,11 @@
 [ext_resource type="Texture2D" uid="uid://cfksq1vl1vs0h" path="res://Assets/Characters/Magma/Pawn/Disappear/Right/Right25.png" id="107_jr2it"]
 [ext_resource type="Texture2D" uid="uid://ch88810er3mru" path="res://Assets/Characters/Magma/Pawn/Disappear/Right/Right26.png" id="108_2l73c"]
 [ext_resource type="Texture2D" uid="uid://bum4v76ovvd2l" path="res://Assets/Characters/Magma/Pawn/Disappear/Right/Right27.png" id="109_daaqc"]
+[ext_resource type="Texture2D" uid="uid://bb4wdux8lu07e" path="res://Assets/Characters/Magma/Pawn/Teleport/Teleport1.png" id="165_3sea7"]
+[ext_resource type="Texture2D" uid="uid://bpgxaak5anmw4" path="res://Assets/Characters/Magma/Pawn/Teleport/Teleport2.png" id="166_tpku3"]
+[ext_resource type="Texture2D" uid="uid://cjivfn3sc7yq4" path="res://Assets/Characters/Magma/Pawn/Teleport/Teleport3.png" id="167_cw1uh"]
+[ext_resource type="Texture2D" uid="uid://bw8cvdgw70jta" path="res://Assets/Characters/Magma/Pawn/Teleport/Teleport4.png" id="168_okur4"]
+[ext_resource type="Texture2D" uid="uid://bd1auyflbitpa" path="res://Assets/Characters/Magma/Pawn/Teleport/Teleport5.png" id="169_fpkgw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pi8o7"]
 animations = [{
@@ -722,6 +727,38 @@ animations = [{
 "loop": false,
 "name": &"move_right",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 5.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("165_3sea7")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("165_3sea7")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("166_tpku3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("167_cw1uh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("168_okur4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("169_fpkgw")
+}],
+"loop": false,
+"name": &"spawn",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qnuwo"]
@@ -738,9 +775,10 @@ move_component = NodePath("MoveComponent")
 position = Vector2(8, -168)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_pi8o7")
-animation = &"idle"
+animation = &"spawn"
 autoplay = "idle"
-frame_progress = 0.519546
+frame = 8
+frame_progress = 1.0
 
 [node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component") instance=ExtResource("4_qchhg")]
 chess_component = NodePath("../ChessComponent")

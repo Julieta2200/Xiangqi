@@ -1,12 +1,12 @@
 [gd_scene load_steps=11 format=3 uid="uid://ckd2du3jaxixc"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_dej4m"]
-[ext_resource type="Texture2D" uid="uid://blrj3nija8eqn" path="res://Assets/Characters/Magma/Chariot/Idle/Rook1.png" id="2_o4kas"]
-[ext_resource type="Texture2D" uid="uid://bd6kspv7ayqc2" path="res://Assets/Characters/Magma/Chariot/Idle/Rook2.png" id="3_s1xor"]
+[ext_resource type="Texture2D" uid="uid://blrj3nija8eqn" path="res://Assets/Characters/Magma/Chariot/Idle/Chariot1.png" id="2_o4kas"]
+[ext_resource type="Texture2D" uid="uid://bd6kspv7ayqc2" path="res://Assets/Characters/Magma/Chariot/Idle/Chariot2.png" id="3_s1xor"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/chariot_chess_component.gd" id="4_6m8uf"]
 [ext_resource type="PackedScene" uid="uid://dylnbquiybg16" path="res://Projects/Figure/Components/figure_ui_component.tscn" id="4_70rel"]
-[ext_resource type="Texture2D" uid="uid://bpwd05qov76bv" path="res://Assets/Characters/Magma/Chariot/Idle/Rook3.png" id="4_kuwha"]
-[ext_resource type="Texture2D" uid="uid://c2l8i21ncj6c6" path="res://Assets/Characters/Magma/Chariot/Idle/Rook4.png" id="5_1dqel"]
+[ext_resource type="Texture2D" uid="uid://bpwd05qov76bv" path="res://Assets/Characters/Magma/Chariot/Idle/Chariot3.png" id="4_kuwha"]
+[ext_resource type="Texture2D" uid="uid://c2l8i21ncj6c6" path="res://Assets/Characters/Magma/Chariot/Idle/Chariot4.png" id="5_1dqel"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="6_0nrd7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ny2w2"]
@@ -27,6 +27,17 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 2.0
+}, {
+"frames": [{
+"duration": 5.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_o4kas")
+}],
+"loop": false,
+"name": &"spawn",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qnuwo"]
@@ -44,9 +55,9 @@ type = 3
 position = Vector2(-5, -89)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_ny2w2")
-animation = &"idle"
+animation = &"spawn"
 autoplay = "idle"
-frame_progress = 0.626307
+frame_progress = 1.0
 
 [node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component") instance=ExtResource("4_70rel")]
 chess_component = NodePath("../ChessComponent")

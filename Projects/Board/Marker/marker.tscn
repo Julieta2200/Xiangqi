@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dlkpgwakp3ub7"]
+[gd_scene load_steps=27 format=3 uid="uid://dlkpgwakp3ub7"]
 
 [ext_resource type="Script" path="res://Projects/Board/Marker/marker.gd" id="1_y3i0m"]
 [ext_resource type="Texture2D" uid="uid://732mny3nbody" path="res://Assets/UI/Position_Marker/Marker/Red/Position_Marker1.png" id="2_hdwit"]
@@ -18,6 +18,10 @@
 [ext_resource type="Texture2D" uid="uid://dtwr87qvog2ie" path="res://Assets/UI/Position_Marker/Marker/Red/Position_Marker10.png" id="11_usxe1"]
 [ext_resource type="Texture2D" uid="uid://drskf8y8ouqku" path="res://Assets/UI/Position_Marker/Marker/Red/Position_Marker11.png" id="12_hrvm4"]
 [ext_resource type="Texture2D" uid="uid://m47qaoksbd8c" path="res://Assets/UI/Position_Marker/Marker/Red/Position_Marker_Hover.png" id="13_i52l4"]
+[ext_resource type="Texture2D" uid="uid://dhoaysyphqi5n" path="res://Assets/UI/Position_Marker/Light/Red/Light(1).png" id="14_b3lj8"]
+[ext_resource type="Texture2D" uid="uid://b2f2wx0vnklxm" path="res://Assets/UI/Position_Marker/Light/Red/Light(2).png" id="15_7n74w"]
+[ext_resource type="Texture2D" uid="uid://bgb85470yc28d" path="res://Assets/UI/Position_Marker/Light/Red/Light(3).png" id="16_63jhy"]
+[ext_resource type="Texture2D" uid="uid://y7r71wir7q45" path="res://Assets/UI/Position_Marker/Light/Red/Light(4).png" id="17_0x4tg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6aho4"]
 animations = [{
@@ -63,6 +67,35 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_vn7pl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_b3lj8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_7n74w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_63jhy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_0x4tg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_63jhy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_7n74w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_b3lj8")
+}],
+"loop": false,
+"name": &"light",
+"speed": 3.0
+}]
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_o72yf"]
 animations = [{
 "frames": [{
@@ -103,6 +136,12 @@ sprite_frames = SubResource("SpriteFrames_6aho4")
 autoplay = "default"
 frame_progress = 0.279335
 
+[node name="light" type="AnimatedSprite2D" parent="spawn_marker"]
+visible = false
+position = Vector2(0, -64)
+sprite_frames = SubResource("SpriteFrames_vn7pl")
+animation = &"light"
+
 [node name="walking_marker" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(-1, -5)
@@ -124,6 +163,7 @@ top_level = true
 z_index = 1
 shape = SubResource("CapsuleShape2D_vg2kh")
 
+[connection signal="animation_finished" from="spawn_marker/light" to="." method="_on_spawn_light_animation_finished"]
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

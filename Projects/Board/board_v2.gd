@@ -135,6 +135,7 @@ func initialize_markers():
 			markers[Vector2i(j,i)].board_position = Vector2i(j,i)
 			marker.figure_move.connect(move_figure)
 			marker.figure_spawn.connect(spawn_figure)
+			marker.spawn_done.connect(spawn_done)
 
 func initialize_position(init_state: Array[State]):
 	for s in init_state:
@@ -145,6 +146,7 @@ func instantiate_figure(kingdom: Kingdoms, type: FigureComponent.Types, pos: Vec
 	figure.board = self
 	figure.chess_component.position = pos
 	figure.move_component.move_done.connect(figure_move_done)
+	#figure.move_component.spawn_done.connect(figure_spawn_done)
 	add_child(figure)
 
 func instantiate_wall(pos: Vector2i):
@@ -239,11 +241,12 @@ func spawn_highlight(spawn_figure_type : FigureComponent.Types) -> void:
 			marker.highlight(BoardMarker.Highlights.SPAWN)
 
 func spawn_figure(marker: BoardMarker) -> void:
-	clear_markers()
+	#clear_markers()
 	ui.power_meter.substruct_energy()
 	instantiate_figure(Kingdoms.MAGMA, ui.garrison.selected_figure.type, marker.board_position)
 	var figure = state[marker.board_position]
 	figure.ui_component.active = false
+	figure.move_component.spawn_animation()
 	ui.power_meter.update_distance(get_figures(Teams.Red).size())
 
 func activate_garrison(result: bool) -> void:
@@ -310,3 +313,7 @@ func destroy_wall(team: Teams = Teams.Red) -> void:
 
 func activate_support(result: bool) -> void:
 	ui.support.activate(result)
+
+func spawn_done():
+	await get_tree().process_frame
+	clear_markers()
