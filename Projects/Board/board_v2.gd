@@ -236,9 +236,6 @@ func spawn_highlight(spawn_figure_type : FigureComponent.Types) -> void:
 			var marker: BoardMarker = markers[pos]
 			if palace_positions.has(pos) or state.has(pos):
 				continue
-			#if state.has(pos) and !(state[pos].type == FigureComponent.Types.SOLDIER and 
-			#spawn_figure_type == FigureComponent.Types.SOLDIER):
-				#continue
 			marker.highlight(BoardMarker.Highlights.SPAWN)
 
 func spawn_figure(marker: BoardMarker) -> void:
