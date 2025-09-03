@@ -8,6 +8,7 @@ var board_position: Vector2i
 
 signal figure_move(marker)
 signal figure_spawn(marker)
+signal spawn_done
 signal highlight_end
 
 var state: Highlights
@@ -20,6 +21,8 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 				Highlights.MOVE, Highlights.CAPTURE:
 					emit_signal("figure_move",self)
 				Highlights.SPAWN:
+					$spawn_marker/light.show()
+					$spawn_marker/light.play("light")
 					emit_signal("figure_spawn",self)
 
 
@@ -43,9 +46,11 @@ func highlight(type: Highlights) -> void:
 func unhighlight():
 	if state == Highlights.SELECTED:
 		$walking_marker/highlight.hide()
+	elif state == Highlights.SPAWN:
+		$spawn_marker/light.hide()
 	state = Highlights.NONE
-	walking_marker.hide()
 	spawn_marker.hide()
+	walking_marker.hide()
 
 func _on_area_2d_mouse_entered() -> void:
 	$walking_marker/highlight.visible = $walking_marker.visible
@@ -54,3 +59,6 @@ func _on_area_2d_mouse_exited() -> void:
 	if state == Highlights.SELECTED:
 		return
 	$walking_marker/highlight.hide()
+
+func _on_spawn_light_animation_finished() -> void:
+	emit_signal("spawn_done")

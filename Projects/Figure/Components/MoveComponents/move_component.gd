@@ -30,3 +30,6 @@ func disappear(attacker_pos: Vector2i):
 
 func disappear_animation(target_pos: Vector2i, attacker_pos: Vector2i):
 	pass
+
+func spawn_animation():
+	animated_sprite.play("spawn")
