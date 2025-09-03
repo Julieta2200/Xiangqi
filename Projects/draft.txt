@@ -1,0 +1,14 @@
+Card Mechanic
+
+2 types
+	HL
+		Can be picked 1 
+	LL
+		Can be picked 3
+
+* Cooldown
+* Special action
+
+Container with 3 LL slots and 1 HL slot
+List of all LLs
+List of al  HLs

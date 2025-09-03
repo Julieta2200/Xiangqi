@@ -1,0 +1,1 @@
+class_name SpecialManager extends Node2D
