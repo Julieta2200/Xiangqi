@@ -100,6 +100,8 @@ var turn: Teams = Teams.Red :
 		activate_reds(turn == Teams.Red)
 		activate_garrison(turn == Teams.Red)
 		activate_cards(turn == Teams.Red)
+		unfreeze_piece()
+
 
 var state: Dictionary
 # For which figure the markers are currently highlighted
@@ -285,6 +287,7 @@ func spawn_done():
 
 
 func special_markers_highlight(special: CardSlots.SPECIALS, is_free: bool = false, for_enemy: bool = false) -> void:
+	_selected_special = special
 	for pos in markers:
 		# specials are not affecting the palaces
 		if palace_positions.has(pos):
@@ -317,3 +320,13 @@ func clear_wall() -> void:
 			state.erase(wall.chess_component.position)
 			# TODO: need to create delete method for wall
 			wall.queue_free()
+
+func freeze_piece(markers: Array[BoardMarker] , freeze_scene: PackedScene):
+	for m in markers:
+		var figure = state[m.board_position]
+		figure.freeze()
+
+func unfreeze_piece() -> void:
+	for pos in state:
+		if state[pos].chess_component.team != turn:
+			state[pos].unfreeze()
