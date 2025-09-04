@@ -27,9 +27,20 @@ func _ready() -> void:
 	var card: SpecialCard = card_scene.instantiate()
 	ll_slots.add_child(card)
 	card.on_click.connect(_on_card_click)
+	
 
 
 func _on_card_click(s: SPECIALS):
 	match s:
 		SPECIALS.TreeTrunk:
 			board.special_markers_highlight(s, true, false)
+
+func use_special(s: SPECIALS, m: BoardMarker = null):
+	match s:
+		SPECIALS.TreeTrunk:
+			board.spawn_wall([m], tree_trunk)
+	
+	board.clear_markers()
+
+func activate(result: bool) -> void:
+	visible = result

@@ -83,6 +83,7 @@ var scenes: Dictionary = {
 
 var wall_scene = load("res://Projects/Support/TmpWall.tscn")
 signal game_over(win,move_number)
+signal use_special(s: CardSlots.SPECIALS, m: BoardMarker)
 
 @export var ai: AI
 @export var ui: GameplayUI
@@ -99,11 +100,13 @@ var turn: Teams = Teams.Red :
 		clear_markers()
 		activate_reds(turn == Teams.Red)
 		activate_garrison(turn == Teams.Red)
-		unfreeze_figures()
+		activate_cards(turn == Teams.Red)
 
 var state: Dictionary
 # For which figure the markers are currently highlighted
 var _selected_figure: FigureComponent
+# For which special the markers are currently highlighted
+var _selected_special: CardSlots.SPECIALS
 
 @export var ai_spawn_interval : int = 6
 
@@ -135,7 +138,7 @@ func initialize_markers():
 			marker.figure_move.connect(move_figure)
 			marker.figure_spawn.connect(spawn_figure)
 			marker.spawn_done.connect(spawn_done)
-			marker.special.connect(use_special)
+			marker.special.connect(_on_use_special)
 
 func initialize_position(init_state: Array[State]):
 	for s in init_state:
@@ -147,12 +150,6 @@ func instantiate_figure(kingdom: Kingdoms, type: FigureComponent.Types, pos: Vec
 	figure.chess_component.position = pos
 	figure.move_component.move_done.connect(figure_move_done)
 	add_child(figure)
-
-func instantiate_wall(pos: Vector2i):
-	var w: FigureComponent = wall_scene.instantiate()
-	w.board = self
-	w.chess_component.position = pos
-	add_child(w)
 
 func show_move_markers(positions: Array[Vector2i], figure: FigureComponent) -> void:
 	clear_markers()
@@ -250,6 +247,9 @@ func spawn_figure(marker: BoardMarker) -> void:
 func activate_garrison(result: bool) -> void:
 	ui.garrison.activate(result)
 
+func activate_cards(result: bool) -> void:
+	ui.card_slots.activate(result)
+
 func figure_move_done() -> void:
 	if check_game_over():
 		return
@@ -277,38 +277,6 @@ func check_game_over() -> bool:
 func is_victory(generals: Array) -> bool:
 	return Teams.Red == generals[0].chess_component.team
 
-func freeze(chance: float, team: Teams = Teams.Black) -> void:
-	for pos in state:
-		if !palace_positions.has(pos) and state[pos].chess_component.team == team:
-			var ch: float = randf()
-			if ch <= chance:
-				state[pos].freeze()
-	turn = team
-	# without this blacks will do 2 moves in a row
-	_selected_figure = null
-	ai.make_move()
-
-func unfreeze_figures() -> void:
-	for pos in state:
-		if state[pos].chess_component.team != turn:
-			state[pos].unfreeze()
-
-func wall(team: Teams = Teams.Red) -> void:
-	for pos in wall_positions[team]:
-		if !state.has(pos):
-			instantiate_wall(pos)
-	turn = BoardV2.Teams.Black
-	# without this blacks will do 2 moves in a row
-	_selected_figure = null
-	ai.make_move()
-
-func destroy_wall(team: Teams = Teams.Red) -> void:
-	for pos in wall_positions[team]:
-		if state.has(pos) and state[pos].chess_component.team == BoardV2.Teams.Wall:
-			state[pos].delete()
-			state.erase(pos)
-
-
 func spawn_done():
 	await get_tree().process_frame
 	clear_markers()
@@ -329,5 +297,13 @@ func special_markers_highlight(special: CardSlots.SPECIALS, is_free: bool = fals
 		markers[pos].highlight(BoardMarker.Highlights.SPECIAL)
 
 
-func use_special(m: BoardMarker):
-	pass
+func _on_use_special(m: BoardMarker):
+	emit_signal("use_special", _selected_special, m)
+
+func spawn_wall(markers: Array[BoardMarker], wall_scene: PackedScene):
+	for m in markers:
+		var w: FigureComponent = wall_scene.instantiate()
+		w.board = self
+		w.chess_component.position = m.board_position
+		add_child(w)
+	

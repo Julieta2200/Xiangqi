@@ -9,6 +9,7 @@ class_name GameplayUI extends CanvasLayer
 
 func _ready() -> void:
 	card_slots.board = board
+	board.use_special.connect(card_slots.use_special)
 
 func _on_garrison_card_selected(selected_card: FigureCard) -> void:
 	board.spawn_highlight(selected_card.type)
