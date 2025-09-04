@@ -99,7 +99,6 @@ var turn: Teams = Teams.Red :
 		clear_markers()
 		activate_reds(turn == Teams.Red)
 		activate_garrison(turn == Teams.Red)
-		activate_support(turn == Teams.Red)
 		unfreeze_figures()
 
 var state: Dictionary
@@ -136,6 +135,7 @@ func initialize_markers():
 			marker.figure_move.connect(move_figure)
 			marker.figure_spawn.connect(spawn_figure)
 			marker.spawn_done.connect(spawn_done)
+			marker.special.connect(use_special)
 
 func initialize_position(init_state: Array[State]):
 	for s in init_state:
@@ -303,15 +303,31 @@ func wall(team: Teams = Teams.Red) -> void:
 	ai.make_move()
 
 func destroy_wall(team: Teams = Teams.Red) -> void:
-	print("AAA")
 	for pos in wall_positions[team]:
 		if state.has(pos) and state[pos].chess_component.team == BoardV2.Teams.Wall:
 			state[pos].delete()
 			state.erase(pos)
 
-func activate_support(result: bool) -> void:
-	ui.support.activate(result)
 
 func spawn_done():
 	await get_tree().process_frame
 	clear_markers()
+
+
+func special_markers_highlight(special: CardSlots.SPECIALS, is_free: bool = false, for_enemy: bool = false) -> void:
+	for pos in markers:
+		# specials are not affecting the palaces
+		if palace_positions.has(pos):
+			continue
+			
+		if is_free and state.has(pos):
+			continue
+		
+		if for_enemy and (!state.has(pos) or state[pos].chess_component.team != Teams.Black):
+			continue
+		
+		markers[pos].highlight(BoardMarker.Highlights.SPECIAL)
+
+
+func use_special(m: BoardMarker):
+	pass

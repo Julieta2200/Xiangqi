@@ -4,13 +4,19 @@ var ll_cards: Array[SpecialCard]
 var hl_card: SpecialCard
 
 @onready var ll_slots = $LLSlots
-@export var board: BoardV2
+var board: BoardV2
 
 enum SPECIALS {TreeTrunk}
 
 const specials_scenes = {
 	SPECIALS.TreeTrunk: preload("res://Projects/Support/world1/tree_trunk.tscn")
 }
+
+
+# specials assets
+const tree_trunk = preload("res://Projects/Support/TmpWall.tscn")
+
+# end special assets
 
 static func get_card_scene(s: SPECIALS):
 	return specials_scenes[s]
@@ -24,4 +30,6 @@ func _ready() -> void:
 
 
 func _on_card_click(s: SPECIALS):
-	print(s)
+	match s:
+		SPECIALS.TreeTrunk:
+			board.special_markers_highlight(s, true, false)
