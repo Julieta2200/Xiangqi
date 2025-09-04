@@ -81,7 +81,6 @@ var scenes: Dictionary = {
 	},
 }
 
-var wall_scene = load("res://Projects/Support/TmpWall.tscn")
 signal game_over(win,move_number)
 signal use_special(s: CardSlots.SPECIALS, m: BoardMarker)
 
@@ -107,6 +106,8 @@ var state: Dictionary
 var _selected_figure: FigureComponent
 # For which special the markers are currently highlighted
 var _selected_special: CardSlots.SPECIALS
+var _walls: Array[FigureComponent]
+
 
 @export var ai_spawn_interval : int = 6
 
@@ -121,6 +122,7 @@ var move_number: int = 0:
 	set(n):
 		move_number = n
 		ai_move_number += 1
+		clear_wall()
 		
 func _ready() -> void:
 	initialize_markers()
@@ -300,10 +302,18 @@ func special_markers_highlight(special: CardSlots.SPECIALS, is_free: bool = fals
 func _on_use_special(m: BoardMarker):
 	emit_signal("use_special", _selected_special, m)
 
-func spawn_wall(markers: Array[BoardMarker], wall_scene: PackedScene):
+func spawn_wall(markers: Array[BoardMarker], wall_scene: PackedScene) -> void:
 	for m in markers:
 		var w: FigureComponent = wall_scene.instantiate()
 		w.board = self
 		w.chess_component.position = m.board_position
 		add_child(w)
+		_walls.append(w)
 	
+func clear_wall() -> void:
+	for wall in _walls:
+		wall.wall_component.move_count -= 1
+		if wall.wall_component.move_count == 0:
+			state.erase(wall.chess_component.position)
+			# TODO: need to create delete method for wall
+			wall.queue_free()
