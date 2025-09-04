@@ -1,11 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://bs12lo32ymctj"]
+[gd_scene load_steps=4 format=3 uid="uid://bs12lo32ymctj"]
 
 [ext_resource type="Texture2D" uid="uid://dqcomibobm70r" path="res://Assets/tmp/Square.png" id="1_84m7p"]
+[ext_resource type="Script" path="res://Projects/Support/tmp_freeze.gd" id="1_ewkd1"]
+[ext_resource type="PackedScene" uid="uid://cg1utr2bw1cwd" path="res://Projects/Figure/Components/Freeze_component/freeze_component.tscn" id="2_nkhc0"]
 
-[node name="TmpFreeze" type="Node2D"]
+[node name="TmpFreeze" type="Node2D" node_paths=PackedStringArray("freeze_component")]
+script = ExtResource("1_ewkd1")
+freeze_component = NodePath("FreezeComponent")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.337255, 1, 1, 0.447059)
 position = Vector2(0, -98)
 scale = Vector2(2, 2)
 texture = ExtResource("1_84m7p")
+
+[node name="FreezeComponent" parent="." instance=ExtResource("2_nkhc0")]
+move_count = 2
