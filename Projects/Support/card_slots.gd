@@ -16,7 +16,6 @@ const specials_scenes = {
 
 # specials assets
 const tree_trunk = preload("res://Projects/Support/TmpWall.tscn")
-const snake_chain = preload("res://Projects/Support/TmpFreeze.tscn")
 
 # end special assets
 
@@ -43,7 +42,7 @@ func use_special(s: SPECIALS, m: BoardMarker = null):
 		SPECIALS.TreeTrunk:
 			board.spawn_wall([m], tree_trunk)
 		SPECIALS.SnakeChain:
-			board.freeze_piece([m],snake_chain)
+			board.freeze_piece([m])
 	
 	board.clear_markers()
 

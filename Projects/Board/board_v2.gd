@@ -321,7 +321,7 @@ func clear_wall() -> void:
 			# TODO: need to create delete method for wall
 			wall.queue_free()
 
-func freeze_piece(markers: Array[BoardMarker] , freeze_scene: PackedScene):
+func freeze_piece(markers: Array[BoardMarker]):
 	for m in markers:
 		var figure = state[m.board_position]
 		figure.freeze()
