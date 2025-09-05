@@ -339,7 +339,6 @@ func unfreeze_piece() -> void:
 	for freeze in _freezes:
 		freeze.freeze_component.move_count -= 1
 		if freeze.freeze_component.move_count == 0:
-			_freezes.erase(freeze)
 			state[freeze.board_position].frozen = false
 			freeze.queue_free()
 	
