@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cg1utr2bw1cwd"]
+
+[ext_resource type="Script" path="res://Projects/Figure/Components/Freeze_component/freeze_component.gd" id="1_vpkl6"]
+
+[node name="FreezeComponent" type="Node"]
+script = ExtResource("1_vpkl6")

@@ -101,12 +101,14 @@ var turn: Teams = Teams.Red :
 		activate_garrison(turn == Teams.Red)
 		activate_cards(turn == Teams.Red)
 
+
 var state: Dictionary
 # For which figure the markers are currently highlighted
 var _selected_figure: FigureComponent
 # For which special the markers are currently highlighted
 var _selected_special: CardSlots.SPECIALS
 var _walls: Array[FigureComponent]
+var _freezes: Array
 
 
 @export var ai_spawn_interval : int = 6
@@ -123,6 +125,7 @@ var move_number: int = 0:
 		move_number = n
 		ai_move_number += 1
 		clear_wall()
+		unfreeze_piece()
 		
 func _ready() -> void:
 	initialize_markers()
@@ -285,6 +288,7 @@ func spawn_done():
 
 
 func special_markers_highlight(special: CardSlots.SPECIALS, is_free: bool = false, for_enemy: bool = false) -> void:
+	_selected_special = special
 	for pos in markers:
 		# specials are not affecting the palaces
 		if palace_positions.has(pos):
@@ -317,3 +321,21 @@ func clear_wall() -> void:
 			state.erase(wall.chess_component.position)
 			# TODO: need to create delete method for wall
 			wall.queue_free()
+
+func freeze_piece(markers: Array[BoardMarker] , freeze_scene: PackedScene):
+	for m in markers:
+		var f = freeze_scene.instantiate()
+		f.board_position = m.board_position
+		f.global_position = m.position
+		var figure = state[m.board_position]
+		figure.frozen = true
+		add_child(f)
+		_freezes.append(f)
+
+func unfreeze_piece() -> void:
+	for freeze in _freezes:
+		freeze.freeze_component.move_count -= 1
+		if freeze.freeze_component.move_count == 0:
+			_freezes.erase(freeze)
+			state[freeze.board_position].frozen = false
+			freeze.queue_free()
