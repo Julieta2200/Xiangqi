@@ -315,12 +315,15 @@ func spawn_wall(markers: Array[BoardMarker], wall_scene: PackedScene) -> void:
 		_walls.append(w)
 	
 func clear_wall() -> void:
+	var i: int = 0
 	for wall in _walls:
 		wall.wall_component.move_count -= 1
 		if wall.wall_component.move_count == 0:
 			state.erase(wall.chess_component.position)
 			# TODO: need to create delete method for wall
 			wall.queue_free()
+	
+	_walls = _walls.filter(func(w): return w.wall_component.move_count > 0)
 
 func freeze_piece(markers: Array[BoardMarker] , freeze_scene: PackedScene):
 	for m in markers:
@@ -339,3 +342,5 @@ func unfreeze_piece() -> void:
 			_freezes.erase(freeze)
 			state[freeze.board_position].frozen = false
 			freeze.queue_free()
+	
+	_freezes = _freezes.filter(func(f): return f.freeze_component.move_count > 0)
