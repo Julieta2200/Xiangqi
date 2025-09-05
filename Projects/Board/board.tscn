@@ -9,6 +9,8 @@ process_thread_group = 2
 process_thread_group_order = 0
 process_thread_messages = 0
 script = ExtResource("1_ehao4")
+spawn_AI_figure_chances = null
+ai_spawn_interval = null
 
 [node name="Xiangqi" type="Sprite2D" parent="."]
 z_index = -2

@@ -5,6 +5,7 @@ enum Highlights {NONE, MOVE, CAPTURE, SPAWN, SELECTED, SPECIAL}
 var board_position: Vector2i
 @onready var walking_marker: Sprite2D = $walking_marker
 @onready var spawn_marker: AnimatedSprite2D = $spawn_marker
+@onready var spawn_light: AnimatedSprite2D = $spawn_marker/light
 
 signal figure_move(marker)
 signal figure_spawn(marker)
@@ -22,8 +23,8 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 				Highlights.MOVE, Highlights.CAPTURE:
 					emit_signal("figure_move",self)
 				Highlights.SPAWN:
-					$spawn_marker/light.show()
-					$spawn_marker/light.play("light")
+					spawn_light.show()
+					spawn_light.play("light")
 					emit_signal("figure_spawn",self)
 				Highlights.SPECIAL:
 					emit_signal("special", self)
@@ -51,9 +52,6 @@ func highlight(type: Highlights) -> void:
 func unhighlight():
 	if state == Highlights.SELECTED:
 		$walking_marker/highlight.hide()
-	elif state == Highlights.SPAWN:
-		$spawn_marker/light.hide()
-	state = Highlights.NONE
 	spawn_marker.hide()
 	walking_marker.hide()
 	$special_marker.hide()
@@ -68,3 +66,5 @@ func _on_area_2d_mouse_exited() -> void:
 
 func _on_spawn_light_animation_finished() -> void:
 	emit_signal("spawn_done")
+	await get_tree().process_frame
+	spawn_light.hide()

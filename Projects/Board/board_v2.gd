@@ -217,6 +217,11 @@ func clear_markers() -> void:
 		var m: BoardMarker = markers[pos]
 		m.unhighlight()
 
+func neutralize_markers() -> void:
+	for pos in markers:
+		var m: BoardMarker = markers[pos]
+		m.state = m.Highlights.NONE
+
 func activate_reds(result: bool) -> void:
 	for pos in state:
 		var figure: FigureComponent = state[pos]
@@ -242,6 +247,7 @@ func spawn_highlight(spawn_figure_type : FigureComponent.Types) -> void:
 			marker.highlight(BoardMarker.Highlights.SPAWN)
 
 func spawn_figure(marker: BoardMarker) -> void:
+	neutralize_markers()
 	ui.power_meter.substruct_energy()
 	instantiate_figure(Kingdoms.MAGMA, ui.garrison.selected_figure.type, marker.board_position)
 	var figure = state[marker.board_position]
@@ -288,6 +294,7 @@ func spawn_done():
 
 
 func special_markers_highlight(special: CardSlots.SPECIALS, is_free: bool = false, for_enemy: bool = false) -> void:
+	clear_markers()
 	_selected_special = special
 	for pos in markers:
 		# specials are not affecting the palaces
@@ -297,7 +304,7 @@ func special_markers_highlight(special: CardSlots.SPECIALS, is_free: bool = fals
 		if is_free and state.has(pos):
 			continue
 		
-		if for_enemy and (!state.has(pos) or state[pos].chess_component.team != Teams.Black):
+		if for_enemy and (!state.has(pos) or state[pos].chess_component.team != Teams.Black or state[pos].frozen):
 			continue
 		
 		markers[pos].highlight(BoardMarker.Highlights.SPECIAL)

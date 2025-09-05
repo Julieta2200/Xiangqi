@@ -31,6 +31,8 @@ unique_name_in_owner = true
 position = Vector2(879, 363)
 ai = NodePath("../AI")
 ui = NodePath("../GameplayUI")
+spawn_AI_figure_chances = null
+ai_spawn_interval = null
 
 [node name="AI" parent="." node_paths=PackedStringArray("board") instance=ExtResource("4_36857")]
 board = NodePath("../Board")
