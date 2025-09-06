@@ -311,7 +311,7 @@ func elephant_moves(team: int, position: Array[Array], start_y: int, start_x: in
 		var new_y: int = start_y + d[0]
 		var new_x: int = start_x + d[1]
 		if in_boundaries(boundaries[team], new_y, new_x) \
-		 and position[start_y + d[0]/2][start_x + d[0]/2] == 0 \
+		 and position[start_y + d[0]/2][start_x + d[1]/2] == 0 \
 		 and free_or_capture(position, new_y, new_x, team):
 			legal_moves.append([start_y, start_x, new_y, new_x])	
 	
