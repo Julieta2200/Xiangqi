@@ -110,7 +110,7 @@ func general_moves(team: int, position: Array[Array], start_y: int, start_x: int
 			continue
 		if !free_or_capture(position, new_y, new_x, team):
 			continue
-		legal_moves.append([new_y, new_x])
+		legal_moves.append([start_y, start_x, new_y, new_x])
 	
 	var fly_start: int = start_y + fly_directions[team]
 	while fly_start >= 0 and fly_start < 10:
@@ -123,26 +123,202 @@ func general_moves(team: int, position: Array[Array], start_y: int, start_x: int
 
 func advisor_moves(team: int, position: Array[Array], start_y: int, start_x: int) -> Array[Array]:
 	var legal_moves: Array[Array] = []
+	const boundaries = {
+		1: [
+			[0,2],
+			[3,5]
+		],
+		2: [
+			[7,9],
+			[3,5]
+		]
+	}
+	
+	const directions = [
+		[1,1],
+		[1,-1],
+		[-1,1],
+		[-1,-1]
+	]
+	
+	for d in directions:
+		var new_y: int = start_y + d[0]
+		var new_x: int = start_x + d[1]
+		if !in_boundaries(boundaries[team], new_y, new_x):
+			continue
+		if !free_or_capture(position, new_y, new_x, team):
+			continue
+		legal_moves.append([start_y, start_x, new_y, new_x])
 	return legal_moves
 
 func chariot_moves(team: int, position: Array[Array], start_y: int, start_x: int) -> Array[Array]:
 	var legal_moves: Array[Array] = []
+	const boundaries = {
+		1: [
+			[0,9],
+			[0,8]
+		],
+		2: [
+			[0,9],
+			[0,8]
+		]
+	}
+	
+	const directions = [
+		[1,0],
+		[-1,0],
+		[0,1],
+		[0,-1]
+	]
+	
+	for d in directions:
+		var new_y: int = start_y + d[0]
+		var new_x: int = start_x + d[1]
+		while in_boundaries(boundaries[team], new_y, new_x):
+			if position[new_y][new_x] == 0:
+				legal_moves.append([start_y, start_x, new_y, new_x])
+			else:
+				if free_or_capture(position, new_y, new_x, team):
+					legal_moves.append([start_y, start_x, new_y, new_x])
+				break
+			new_y += d[0]
+			new_x += d[1]
+	
 	return legal_moves
 
 func cannon_moves(team: int, position: Array[Array], start_y: int, start_x: int) -> Array[Array]:
 	var legal_moves: Array[Array] = []
+	const boundaries = {
+		1: [
+			[0,9],
+			[0,8]
+		],
+		2: [
+			[0,9],
+			[0,8]
+		]
+	}
+	
+	const directions = [
+		[1,0],
+		[-1,0],
+		[0,1],
+		[0,-1]
+	]
+	
+	for d in directions:
+		var new_y: int = start_y + d[0]
+		var new_x: int = start_x + d[1]
+		var have_anchor: bool = false
+		while in_boundaries(boundaries[team], new_y, new_x):
+			if position[new_y][new_x] == 0 and !have_anchor:
+				legal_moves.append([start_y, start_x, new_y, new_x])
+			elif !have_anchor:
+				have_anchor = true
+			elif position[new_y][new_x] != 0:
+				if free_or_capture(position, new_y, new_x, team):
+					legal_moves.append([start_y, start_x, new_y, new_x])
+				break
+			new_y += d[0]
+			new_x += d[1]
+	
 	return legal_moves
 
 func horse_moves(team: int, position: Array[Array], start_y: int, start_x: int) -> Array[Array]:
 	var legal_moves: Array[Array] = []
+	const boundaries = {
+		1: [
+			[0,9],
+			[0,8]
+		],
+		2: [
+			[0,9],
+			[0,8]
+		]
+	}
+	const directions = [
+		[[-2,-1],[-1,0]],
+		[[-2,1],[-1,0]],
+		[[2,-1],[1,0]],
+		[[2,1],[1,0]],
+		[[-1,-2],[0,-1]],
+		[[1,-2],[0,-1]],
+		[[-1,2],[0,1]],
+		[[-1,2],[0,1]],
+	]
+	for d in directions:
+		var new_y: int = start_y + d[0][0]
+		var new_x: int = start_x + d[0][1]
+		var blocker_pos = d[1]
+		if in_boundaries(boundaries[team], new_y, new_x) \
+		 and position[start_y + blocker_pos[0]][start_x + blocker_pos[1]] == 0 \
+		 and free_or_capture(position, new_y, new_x, team):       
+			legal_moves.append([start_y, start_x, new_y, new_x])
+	
+	
 	return legal_moves
 
 func elephant_moves(team: int, position: Array[Array], start_y: int, start_x: int) -> Array[Array]:
 	var legal_moves: Array[Array] = []
+	const boundaries = {
+		1: [
+			[0,4],
+			[0,8]
+		],
+		2: [
+			[5,9],
+			[0,8]
+		]
+	}
+	
+	const directions = [
+		[-2,2],
+		[-2,-2],
+		[2,2],
+		[2,-2]
+	]
+	
+	for d in directions:
+		var new_y: int = start_y + d[0]
+		var new_x: int = start_x + d[1]
+		if in_boundaries(boundaries[team], new_y, new_x) \
+		 and position[start_y + d[0]/2][start_x + d[0]/2] == 0 \
+		 and free_or_capture(position, new_y, new_x, team):
+			legal_moves.append([start_y, start_x, new_y, new_x])	
+	
 	return legal_moves
 
 func soldier_moves(team: int, position: Array[Array], start_y: int, start_x: int) -> Array[Array]:
 	var legal_moves: Array[Array] = []
+	const boundaries = {
+		1: [
+			[0,9],
+			[0,8]
+		],
+		2: [
+			[0,9],
+			[0,8]
+		]
+	}
+	
+	var directions = []
+	match team:
+		1:
+			directions.append([1,0])
+			if start_y >= 5:
+				directions.append_array([[0,-1],[0,1]])
+		2:
+			directions.append([-1,0])
+			if start_y <= 4:
+				directions.append_array([[0,-1],[0,1]])
+	
+	for d in directions:
+		var new_y: int = start_y + d[0]
+		var new_x: int = start_x + d[1]
+		if in_boundaries(boundaries[team], new_y, new_x) \
+		 and free_or_capture(position, new_y, new_x, team):
+			legal_moves.append([start_y, start_x, new_y, new_x])
+	
 	return legal_moves
 
 func in_boundaries(boundaries: Array, y: int, x: int) -> bool:
@@ -158,7 +334,7 @@ func free_or_capture(position: Array[Array], y: int, x: int, team: int) -> bool:
 	var piece_number: int = position[y][x] - 10*other_team(team)
 	if piece_number >= 0 and piece_number < 10:
 		return true
-	return true
+	return false
 	
 func other_team(team: int) -> int:
 	if team == 1:
