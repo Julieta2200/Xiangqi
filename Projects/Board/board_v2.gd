@@ -84,7 +84,7 @@ var scenes: Dictionary = {
 signal game_over(win,move_number)
 signal use_special(s: CardSlots.SPECIALS, m: BoardMarker)
 
-@export var ai: AI
+@export var ai: AIV2
 @export var ui: GameplayUI
 
 @export var spawn_AI_figure_chances: Dictionary = {
