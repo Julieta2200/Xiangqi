@@ -42,6 +42,9 @@ var figure_legal_moves = {
 }
 
 var moved_numbers: Array[int] = []
+var current_eval: int = 0
+var transposition_table: Dictionary = {}
+
 
 func _ready() -> void:
 	randomize()
@@ -373,13 +376,75 @@ func other_team(team: int) -> int:
 	return 1
 
 func simulate_move(position: Array[Array], move: Array) -> void:
-	moved_numbers.append(position[move[2]][move[3]])
-	position[move[2]][move[3]] = position[move[0]][move[1]]
-	position[move[0]][move[1]] = 0
+	var sy = move[0]
+	var sx = move[1]
+	var dy = move[2]
+	var dx = move[3]
+
+	var moving_piece = position[sy][sx]
+	var captured_piece = position[dy][dx]
+
+	moved_numbers.append(captured_piece)
+
+	# --- remove old bonuses for moving piece ---
+	var m_team = get_team_number(abs(moving_piece))
+	var m_fig = get_figure_number(abs(moving_piece), m_team)
+	current_eval -= aggression_bonus_for_piece(position, sy, sx, m_team, m_fig)
+	current_eval -= mobility_bonus_for_piece(position, sy, sx, m_team, m_fig)
+
+	# --- remove captured piece’s contribution ---
+	if captured_piece != 0:
+		var c_team = get_team_number(abs(captured_piece))
+		var c_fig = get_figure_number(abs(captured_piece), c_team)
+		var val = figure_values[c_fig]
+		if c_team == 2: current_eval -= val
+		elif c_team == 1: current_eval += val
+
+		current_eval -= aggression_bonus_for_piece(position, dy, dx, c_team, c_fig)
+		current_eval -= mobility_bonus_for_piece(position, dy, dx, c_team, c_fig)
+
+	# move piece
+	position[dy][dx] = moving_piece
+	position[sy][sx] = 0
+
+	# --- add new bonuses for moving piece at destination ---
+	current_eval += aggression_bonus_for_piece(position, dy, dx, m_team, m_fig)
+	current_eval += mobility_bonus_for_piece(position, dy, dx, m_team, m_fig)
 
 func undo_move(position: Array[Array], move: Array) -> void:
-	position[move[0]][move[1]] = position[move[2]][move[3]]
-	position[move[2]][move[3]] = moved_numbers.pop_back()
+	var sy = move[0]
+	var sx = move[1]
+	var dy = move[2]
+	var dx = move[3]
+
+	var moving_piece = position[dy][dx]
+	var captured_piece = moved_numbers.pop_back()
+
+	var m_team = get_team_number(abs(moving_piece))
+	var m_fig = get_figure_number(abs(moving_piece), m_team)
+
+	# remove bonuses at destination
+	current_eval -= aggression_bonus_for_piece(position, dy, dx, m_team, m_fig)
+	current_eval -= mobility_bonus_for_piece(position, dy, dx, m_team, m_fig)
+
+	# restore captured piece
+	if captured_piece != 0:
+		var c_team = get_team_number(abs(captured_piece))
+		var c_fig = get_figure_number(abs(captured_piece), c_team)
+		var val = figure_values[c_fig]
+		if c_team == 2: current_eval += val
+		elif c_team == 1: current_eval -= val
+
+		current_eval += aggression_bonus_for_piece(position, dy, dx, c_team, c_fig)
+		current_eval += mobility_bonus_for_piece(position, dy, dx, c_team, c_fig)
+
+	# move back
+	position[sy][sx] = moving_piece
+	position[dy][dx] = captured_piece
+
+	# re-add bonuses at original square
+	current_eval += aggression_bonus_for_piece(position, sy, sx, m_team, m_fig)
+	current_eval += mobility_bonus_for_piece(position, sy, sx, m_team, m_fig)
 	
 func minimax(position: Array[Array], depth: int, maximizingPlayer: bool, alpha: int, beta: int) -> int:
 	var team: int = 2
@@ -387,6 +452,9 @@ func minimax(position: Array[Array], depth: int, maximizingPlayer: bool, alpha: 
 		team = 1
 	if depth == 0 or game_over():
 		return evaluate_position(position, 2)
+	var key = position_hash(position, depth, maximizingPlayer)
+	if transposition_table.has(key):
+		return transposition_table[key]
 	
 	if maximizingPlayer:
 		var maxEval = -infinite
@@ -398,6 +466,8 @@ func minimax(position: Array[Array], depth: int, maximizingPlayer: bool, alpha: 
 			alpha = max(alpha, eval)
 			if beta <= alpha:
 				break
+		transposition_table[key] = maxEval
+
 		return maxEval
 	else:
 		var minEval = infinite
@@ -409,86 +479,62 @@ func minimax(position: Array[Array], depth: int, maximizingPlayer: bool, alpha: 
 			beta = min(beta, eval)
 			if beta <= alpha:
 				break
+		transposition_table[key] = minEval
 		return minEval
 
 func game_over() -> bool:
 	return moved_numbers.has(10) or moved_numbers.has(20)
 	
 func evaluate_position(position: Array[Array], team: int) -> int:
-	var red_general: bool
-	var black_general: bool
-	var score: int = 0
-	for y in position.size():
-		for x in position[y].size():
-			if position[y][x] == 0:
-				continue
-			var team_number = get_team_number(position[y][x])
-			var figure_number = get_figure_number(position[y][x], team_number)
-			if  team_number == team:
-				score += figure_values[figure_number]
-				score += get_aggression_bonus(position, y, x, team_number)
-				score += get_mobility_bonus(position, y, x, team_number)
-				if figure_number == 0:
-					black_general = true
-			elif team_number != 3:
-				score -= figure_values[figure_number]
-				score -= get_aggression_bonus(position, y, x, team_number)
-				score -= get_mobility_bonus(position, y, x, team_number)
-				if figure_number == 0:
-					red_general = true
-		
-	if !red_general:
-		return infinite-1
-	
-	if !black_general:
-		return -infinite+1
-	
-	return score
-
-func get_aggression_bonus(position: Array[Array], y: int, x: int, team: int) -> int:
-	var bonus: int = 0
-	if position[y][x] < 0:
-		return bonus
-	var figure_number: int = get_figure_number(position[y][x], team)
-	# Encourage advancing soldiers
-	if figure_number == 6:
-		match team:
-			1:
-				if y >= 5:
-					bonus += 10
-			2:
-				if y <= 4:
-					bonus += 10
-	const palaces = {
-		1: [
-			[0,2],
-			[3,5]
-		],
-		2: [
-			[7,9],
-			[3,5]
-		]
-	}
-	# Encourage pieces near enemy palace
-	if y >= palaces[team][0][0] and y <= palaces[team][0][1] \
-	 and x >= palaces[team][1][0] and x <= palaces[team][1][1]:
-		bonus += 10
-	
-	var moves = figure_legal_moves[figure_number].call(team, position, y, x)
-	for move in moves:
-		if position[move[2]][move[3]] != 0:
-			bonus += 10
-	
-	return bonus
-
-func get_mobility_bonus(position: Array[Array], y: int, x: int, team: int) -> int:
-	if position[y][x] < 0:
-		return 0
-	var figure_number: int = get_figure_number(position[y][x], team)
-	return figure_legal_moves[figure_number].call(team, position, y, x).size()*2
+	return current_eval
 
 func get_figure_number(number: int, team: int) -> int:
 	return number - 10*team
 
 func get_team_number(number: int) -> int:
 	return number/10
+
+
+func aggression_bonus_for_piece(position: Array[Array], y: int, x: int, team: int, figure_number: int) -> int:
+	var bonus: int = 0
+	if position[y][x] < 0:
+		return 0
+
+	# Encourage advancing soldiers
+	if figure_number == 6: # soldier
+		match team:
+			1: if y >= 5: bonus += 10
+			2: if y <= 4: bonus += 10
+
+	const palaces = {
+		1: [[0,2],[3,5]],
+		2: [[7,9],[3,5]]
+	}
+
+	# Encourage pieces near enemy palace
+	if y >= palaces[team][0][0] and y <= palaces[team][0][1] \
+	 and x >= palaces[team][1][0] and x <= palaces[team][1][1]:
+		bonus += 10
+
+	# Encourage threatening moves
+	var moves = figure_legal_moves[figure_number].call(team, position, y, x)
+	for move in moves:
+		if position[move[2]][move[3]] != 0:
+			bonus += 10
+
+	return bonus
+
+
+func mobility_bonus_for_piece(position: Array[Array], y: int, x: int, team: int, figure_number: int) -> int:
+	if position[y][x] < 0:
+		return 0
+	return figure_legal_moves[figure_number].call(team, position, y, x).size() * 2
+
+
+func position_hash(position: Array[Array], depth: int, maximizing: bool) -> String:
+	var hash := ""
+	for y in range(10):
+		for x in range(9):
+			hash += str(position[y][x]) + ","
+	hash += str(depth) + "," + str(maximizing)
+	return hash
