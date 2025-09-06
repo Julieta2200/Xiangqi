@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxe4r4gbsebhf"]
+
+[ext_resource type="Texture2D" uid="uid://dqcomibobm70r" path="res://Assets/tmp/Square.png" id="1_akw35"]
+[ext_resource type="Script" path="res://Projects/Support/tmp_trap.gd" id="1_o7uho"]
+
+[node name="tmp_trap" type="Node2D"]
+script = ExtResource("1_o7uho")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.337255, 1, 1, 0.447059)
+self_modulate = Color(0.764706, 0, 0.145098, 1)
+position = Vector2(1, -45.5)
+scale = Vector2(2, 0.908163)
+texture = ExtResource("1_akw35")
