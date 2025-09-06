@@ -6,17 +6,19 @@ var hl_card: SpecialCard
 @onready var ll_slots = $LLSlots
 var board: BoardV2
 
-enum SPECIALS {TreeTrunk, SnakeChain}
+enum SPECIALS {TreeTrunk, SnakeChain, WaterPortal}
 
 const specials_scenes = {
 	SPECIALS.TreeTrunk: preload("res://Projects/Support/world1/tree_trunk.tscn"),
-	SPECIALS.SnakeChain: preload("res://Projects/Support/world1/snake_chain.tscn")
+	SPECIALS.SnakeChain: preload("res://Projects/Support/world1/snake_chain.tscn"),
+	SPECIALS.WaterPortal: preload("res://Projects/Support/world1/water_portal.tscn")
 }
 
 
 # specials assets
 const tree_trunk = preload("res://Projects/Support/TmpWall.tscn")
 const snake_chain = preload("res://Projects/Support/TmpFreeze.tscn")
+const water_portal = preload("res://Projects/Support/TmpTrap.tscn")
 
 # end special assets
 
@@ -37,6 +39,8 @@ func _on_card_click(s: SPECIALS):
 			board.special_markers_highlight(s, true, false)
 		SPECIALS.SnakeChain:
 			board.special_markers_highlight(s, false, true)
+		SPECIALS.WaterPortal:
+			board.special_markers_highlight(s, true, false)
 
 func use_special(s: SPECIALS, m: BoardMarker = null):
 	match s:
@@ -44,6 +48,8 @@ func use_special(s: SPECIALS, m: BoardMarker = null):
 			board.spawn_wall([m], tree_trunk)
 		SPECIALS.SnakeChain:
 			board.freeze_piece([m],snake_chain)
+		SPECIALS.WaterPortal:
+			board.set_trap([m],water_portal)
 	
 	board.clear_markers()
 

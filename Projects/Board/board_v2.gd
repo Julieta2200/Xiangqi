@@ -2,7 +2,7 @@ class_name BoardV2 extends Node2D
 
 const board_rows = 10
 const board_cols = 9
-enum Teams {Red = 1, Black = 2, Wall = 3}
+enum Teams {Red = 1, Black = 2, Wall = 3, Trap = 4}
 enum Kingdoms {MAGMA = 1, CLOUD = 2, FOG = 3}
 
 const palace_positions: Dictionary = {
@@ -101,7 +101,7 @@ var turn: Teams = Teams.Red :
 		activate_garrison(turn == Teams.Red)
 		activate_cards(turn == Teams.Red)
 
-
+var _AI_figure: FigureComponent
 var state: Dictionary
 # For which figure the markers are currently highlighted
 var _selected_figure: FigureComponent
@@ -109,6 +109,7 @@ var _selected_figure: FigureComponent
 var _selected_special: CardSlots.SPECIALS
 var _walls: Array[FigureComponent]
 var _freezes: Array
+var _traps: Array
 
 
 @export var ai_spawn_interval : int = 6
@@ -192,6 +193,7 @@ func move_figure_AI(move: Dictionary) -> void:
 	state[move["end"]] = figure
 	figure.chess_component.change_position(move["end"])
 	move_number += 1
+	_AI_figure = figure
 
 func spawn_AI_figure():
 	var pos : Vector2i
@@ -262,12 +264,16 @@ func activate_cards(result: bool) -> void:
 	ui.card_slots.activate(result)
 
 func figure_move_done() -> void:
+	var f
 	if check_game_over():
 		return
 	if _selected_figure != null:
+		f = _selected_figure
 		_selected_figure = null
 		ai.make_move()
 	else:
+		if _AI_figure != null:
+			check_trap(_AI_figure)
 		turn = Teams.Red
 
 func get_generals() -> Array[FigureComponent]:
@@ -350,3 +356,20 @@ func unfreeze_piece() -> void:
 			freeze.queue_free()
 	
 	_freezes = _freezes.filter(func(f): return f.freeze_component.move_count > 0)
+
+func set_trap(markers: Array[BoardMarker] , trap_scene: PackedScene):
+	for m in markers:
+		var t = trap_scene.instantiate()
+		t.board_position = m.board_position
+		t.global_position = m.position
+		add_child(t)
+		_traps.append(t)
+
+func check_trap(figure) -> void:
+	for trap in _traps:
+		if figure.chess_component.position == trap.board_position:
+			figure.delete()
+			state.erase(figure.chess_component.position)
+			trap.queue_free()
+	
+	_traps = _traps.filter(func(t): return figure.chess_component.position != t.board_position)
