@@ -72,6 +72,8 @@ func state_to_position(state: Dictionary) -> Array[Array]:
 	for pos in state:
 		var figure: FigureComponent = state[pos]
 		var number: int = 10*team_numbers[figure.chess_component.team] + figure_numbers[figure.type]
+		if figure.frozen:
+			number *= -1
 		position[pos.y][pos.x] = number
 		
 	return position
@@ -445,6 +447,8 @@ func evaluate_position(position: Array[Array], team: int) -> int:
 
 func get_aggression_bonus(position: Array[Array], y: int, x: int, team: int) -> int:
 	var bonus: int = 0
+	if position[y][x] < 0:
+		return bonus
 	var figure_number: int = get_figure_number(position[y][x], team)
 	# Encourage advancing soldiers
 	if figure_number == 6:
@@ -478,6 +482,8 @@ func get_aggression_bonus(position: Array[Array], y: int, x: int, team: int) -> 
 	return bonus
 
 func get_mobility_bonus(position: Array[Array], y: int, x: int, team: int) -> int:
+	if position[y][x] < 0:
+		return 0
 	var figure_number: int = get_figure_number(position[y][x], team)
 	return figure_legal_moves[figure_number].call(team, position, y, x).size()*2
 
