@@ -34,8 +34,10 @@ func in_boundaries(pos: Vector2i) -> bool:
 		and pos.y >= boundaries[team].y.x and pos.y <= boundaries[team].y.y
 
 func move_or_capture(pos: Vector2i, state: Dictionary) -> bool:
-	return !state.has(pos) || (state[pos].chess_component.team != team and
-	 state[pos].chess_component.team != BoardV2.Teams.Wall)
+	var marker: BoardMarker = figure_component.board.markers[pos]
+	return (!state.has(pos) and team == BoardV2.Teams.Red and !marker.trap) or\
+	 (state.has(pos) and (state[pos].chess_component.team != team and
+	 state[pos].chess_component.team != BoardV2.Teams.Wall))
 
 func change_position(p: Vector2i) -> void:
 	var marker: BoardMarker = figure_component.board.markers[p]
