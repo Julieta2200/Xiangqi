@@ -2,7 +2,7 @@ class_name BoardV2 extends Node2D
 
 const board_rows = 10
 const board_cols = 9
-enum Teams {Red = 1, Black = 2, Wall = 3, Trap = 4}
+enum Teams {Red = 1, Black = 2, Wall = 3}
 enum Kingdoms {MAGMA = 1, CLOUD = 2, FOG = 3}
 
 const palace_positions: Dictionary = {
@@ -307,7 +307,7 @@ func special_markers_highlight(special: CardSlots.SPECIALS, is_free: bool = fals
 		if palace_positions.has(pos):
 			continue
 			
-		if is_free and state.has(pos):
+		if is_free and (state.has(pos) or markers[pos].trap):
 			continue
 		
 		if for_enemy and (!state.has(pos) or state[pos].chess_component.team != Teams.Black or state[pos].frozen):
@@ -362,6 +362,7 @@ func set_trap(markers: Array[BoardMarker] , trap_scene: PackedScene):
 		var t = trap_scene.instantiate()
 		t.board_position = m.board_position
 		t.global_position = m.position
+		m.trap = true
 		add_child(t)
 		_traps.append(t)
 
@@ -369,6 +370,7 @@ func check_trap(figure) -> void:
 	for trap in _traps:
 		if figure.chess_component.position == trap.board_position:
 			figure.delete()
+			markers[figure.chess_component.position].trap = false
 			state.erase(figure.chess_component.position)
 			trap.queue_free()
 	
