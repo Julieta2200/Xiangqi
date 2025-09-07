@@ -127,6 +127,7 @@ var move_number: int = 0:
 		ai_move_number += 1
 		clear_wall()
 		unfreeze_piece()
+		ui.card_slots.countdown()
 		
 func _ready() -> void:
 	initialize_markers()

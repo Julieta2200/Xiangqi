@@ -5,6 +5,7 @@ var hl_card: SpecialCard
 
 @onready var ll_slots = $LLSlots
 var board: BoardV2
+var cards: Dictionary = {}
 
 enum SPECIALS {TreeTrunk, SnakeChain, WaterPortal}
 
@@ -32,8 +33,11 @@ func _ready() -> void:
 		var card: SpecialCard = card_scene.instantiate()
 		ll_slots.add_child(card)
 		card.on_click.connect(_on_card_click)
+		cards[special] = card
 
 func _on_card_click(s: SPECIALS):
+	if cards[s].cooldown_counter != 0:
+		return
 	match s:
 		SPECIALS.TreeTrunk:
 			board.special_markers_highlight(s, true, false)
@@ -50,8 +54,12 @@ func use_special(s: SPECIALS, m: BoardMarker = null):
 			board.freeze_piece([m],snake_chain)
 		SPECIALS.WaterPortal:
 			board.set_trap([m],water_portal)
-	
+	cards[s].start_cooldown()
 	board.clear_markers()
 
 func activate(result: bool) -> void:
 	visible = result
+
+func countdown() -> void:
+	for c in cards:
+		cards[c].countdown()

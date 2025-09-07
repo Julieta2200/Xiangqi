@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqwpan7ass1hi"]
+[gd_scene load_steps=2 format=3 uid="uid://g02214kyco20"]
 
 [ext_resource type="Script" path="res://Projects/Support/world1/water_portal.gd" id="1_yxr8v"]
 
@@ -7,6 +7,7 @@ custom_minimum_size = Vector2(200, 200)
 script = ExtResource("1_yxr8v")
 type = 1
 special = 2
+cooldown = 3
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
