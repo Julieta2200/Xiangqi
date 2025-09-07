@@ -28,7 +28,7 @@ static func get_card_scene(s: SPECIALS):
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	for special in SPECIALS.values():
+	for special in GameState.state["lls"]:
 		var card_scene = get_card_scene(special)
 		var card: SpecialCard = card_scene.instantiate()
 		ll_slots.add_child(card)

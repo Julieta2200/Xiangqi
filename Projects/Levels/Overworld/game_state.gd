@@ -2,7 +2,10 @@ extends Node
 
 var state: Dictionary = {
 	"energy": 100,
-	"support": [],
+	"cards": [],
+	"lls": [0,2],
+	"hl": -1,
+	"orbs": 0,
 	"levels": {
 		"1": {
 			"state": LevelMarker.LevelState.Open,
@@ -33,7 +36,7 @@ var state: Dictionary = {
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	load_game()
+	save_game()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

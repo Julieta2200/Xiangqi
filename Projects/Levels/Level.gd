@@ -1,7 +1,7 @@
 class_name Level extends Node2D
 
 @export var has_decision: bool
-@export var support : String
+@export var card : CardSlots.SPECIALS
 @export var level_name: String
 @onready var board: BoardV2 = %Board
 @onready var gameplay_ui: GameplayUI = $GameplayUI
@@ -41,13 +41,13 @@ func load_main_scene():
 	get_tree().change_scene_to_file("res://Projects/Levels/Overworld/overworld.tscn")
 
 func _on_gameplay_ui_set_free() -> void:
-	GameState.state["support"].append(support)
+	GameState.state["cards"].append(card)
 	GameState.state["levels"][level_name]["state"] = LevelMarker.LevelState.Free
 	GameState.save_game()
 	load_main_scene()
 
 func _on_gameplay_ui_claim():
-	GameState.state["energy"] += 15
+	GameState.state["orbs"] += 1
 	GameState.state["levels"][level_name]["state"] = LevelMarker.LevelState.Captured
 	GameState.save_game()
 	load_main_scene()
