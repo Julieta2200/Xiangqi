@@ -56,6 +56,7 @@ func unhighlight():
 	spawn_marker.hide()
 	walking_marker.hide()
 	$special_marker.hide()
+	state = Highlights.NONE
 
 func _on_area_2d_mouse_entered() -> void:
 	$walking_marker/highlight.visible = $walking_marker.visible
