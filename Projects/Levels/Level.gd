@@ -12,7 +12,7 @@ func _ready() -> void:
 	gameplay_ui.power_meter.energy_depleted.connect(game_over_energy_depleted)
 	gameplay_ui.decision.set_free.connect(_on_gameplay_ui_set_free)
 	gameplay_ui.decision.claim.connect(_on_gameplay_ui_claim)
-
+	gameplay_ui.decision.get_card_name(CardSlots.card_names[card])
 
 func game_over_energy_depleted():
 	get_tree().reload_current_scene()
@@ -44,6 +44,7 @@ func _on_gameplay_ui_set_free() -> void:
 	GameState.state["cards"].append(card)
 	GameState.state["levels"][level_name]["state"] = LevelMarker.LevelState.Free
 	GameState.save_game()
+	#gameplay_ui.decision.show_card(CardSlots.card_names[card])
 	load_main_scene()
 
 func _on_gameplay_ui_claim():

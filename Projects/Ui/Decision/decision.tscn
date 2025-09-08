@@ -20,15 +20,46 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -290.0
-offset_top = -30.0
-offset_right = -160.0
-offset_bottom = 30.0
+offset_left = -456.0
+offset_top = -38.0
+offset_right = -326.0
+offset_bottom = 22.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3, 3)
 theme_override_font_sizes/font_size = 30
 text = "Set Free"
+
+[node name="Card_panel" type="Panel" parent="SetFree"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = 42.6667
+offset_right = 256.0
+offset_bottom = 192.667
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+
+[node name="name" type="Label" parent="SetFree/Card_panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.0
+offset_top = -34.5
+offset_right = 132.0
+offset_bottom = 34.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "Card name"
 
 [node name="Claim" type="Button" parent="."]
 layout_mode = 1
@@ -37,10 +68,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 160.0
-offset_top = -30.0
-offset_right = 290.0
-offset_bottom = 30.0
+offset_left = 84.0
+offset_top = -34.0
+offset_right = 214.0
+offset_bottom = 26.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3, 3)
