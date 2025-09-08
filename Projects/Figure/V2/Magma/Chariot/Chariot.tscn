@@ -1,7 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://ckd2du3jaxixc"]
+[gd_scene load_steps=12 format=3 uid="uid://ckd2du3jaxixc"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_dej4m"]
-[ext_resource type="Material" uid="uid://b5ews8a5nl326" path="res://Projects/Shaders/spawn.tres" id="2_gfn0q"]
 [ext_resource type="Texture2D" uid="uid://blrj3nija8eqn" path="res://Assets/Characters/Magma/Chariot/Idle/Chariot1.png" id="2_o4kas"]
 [ext_resource type="Texture2D" uid="uid://bd6kspv7ayqc2" path="res://Assets/Characters/Magma/Chariot/Idle/Chariot2.png" id="3_s1xor"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/chariot_chess_component.gd" id="4_6m8uf"]
@@ -29,17 +28,6 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 2.0
-}, {
-"frames": [{
-"duration": 5.0,
-"texture": null
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_o4kas")
-}],
-"loop": false,
-"name": &"spawn",
-"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qnuwo"]
@@ -54,7 +42,6 @@ move_component = NodePath("MoveComponent")
 type = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-material = ExtResource("2_gfn0q")
 position = Vector2(-5, -89)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_ny2w2")

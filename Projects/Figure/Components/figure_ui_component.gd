@@ -3,16 +3,22 @@ class_name FigureUIComponent extends Area2D
 var active: bool = true
 
 @export var highlight_material: Material
+@onready var spawn_material: Material = load("res://Projects/Shaders/spawn.tres")
 
 @export var chess_component: ChessComponent
 @export var main_sprite: AnimatedSprite2D
 
 var spawn_progress: float = 0.0
 var spawn_speed: float = 0.3
+var scale_speed: float = 1.0
 
 func _ready() -> void:
-	if main_sprite.material is ShaderMaterial:
-		main_sprite.material = main_sprite.material.duplicate()
+	main_sprite.material = spawn_material.duplicate()
+	main_sprite.scale = Vector2.ZERO
+	var tween = create_tween()
+	tween.tween_property(main_sprite, "scale",
+	 Vector2.ONE*2, scale_speed)
+	
 
 func _process(delta):
 	if main_sprite.material is ShaderMaterial  and \

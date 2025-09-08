@@ -255,7 +255,6 @@ func spawn_figure(marker: BoardMarker) -> void:
 	instantiate_figure(Kingdoms.MAGMA, ui.garrison.selected_figure.type, marker.board_position)
 	var figure = state[marker.board_position]
 	figure.ui_component.active = false
-	figure.move_component.spawn_animation()
 	ui.power_meter.update_distance(get_figures(Teams.Red).size())
 
 func activate_garrison(result: bool) -> void:
