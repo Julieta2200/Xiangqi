@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://btst40g2n6wda"]
+[gd_scene load_steps=11 format=3 uid="uid://btst40g2n6wda"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_mjqwp"]
 [ext_resource type="Texture2D" uid="uid://cq5aoxlt43cv8" path="res://Assets/Characters/Magma/Cannon/Idle/Catapult1.png" id="2_uf8g5"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/cannon_chess_component.gd" id="4_w6i5p"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="5_b5pty"]
 [ext_resource type="Material" uid="uid://e3w5tox88i13" path="res://Projects/Shaders/outline.tres" id="5_sv2oy"]
+[ext_resource type="PackedScene" uid="uid://cy1y1kpvwk5sq" path="res://Projects/Figure/Components/ShaderComponent/shader_component.tscn" id="7_8tkf7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eul7x"]
 animations = [{
@@ -51,10 +52,9 @@ sprite_frames = SubResource("SpriteFrames_eul7x")
 animation = &"spawn"
 autoplay = "idle"
 
-[node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component", "main_sprite") instance=ExtResource("3_v23kq")]
-highlight_material = ExtResource("5_sv2oy")
+[node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component", "shader_component") instance=ExtResource("3_v23kq")]
 chess_component = NodePath("../ChessComponent")
-main_sprite = NodePath("../AnimatedSprite2D")
+shader_component = NodePath("../ShaderComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FigureUIComponent"]
 position = Vector2(0, -94)
@@ -71,3 +71,7 @@ move_component = NodePath("../MoveComponent")
 script = ExtResource("5_b5pty")
 speed = 500.0
 figure_component = NodePath("..")
+
+[node name="ShaderComponent" parent="." node_paths=PackedStringArray("main_sprite") instance=ExtResource("7_8tkf7")]
+main_sprite = NodePath("../AnimatedSprite2D")
+highlight_material = ExtResource("5_sv2oy")

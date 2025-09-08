@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ckd2du3jaxixc"]
+[gd_scene load_steps=13 format=3 uid="uid://ckd2du3jaxixc"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_dej4m"]
 [ext_resource type="Texture2D" uid="uid://blrj3nija8eqn" path="res://Assets/Characters/Magma/Chariot/Idle/Chariot1.png" id="2_o4kas"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c2l8i21ncj6c6" path="res://Assets/Characters/Magma/Chariot/Idle/Chariot4.png" id="5_1dqel"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="6_0nrd7"]
 [ext_resource type="Material" uid="uid://e3w5tox88i13" path="res://Projects/Shaders/outline.tres" id="7_k3y6k"]
+[ext_resource type="PackedScene" uid="uid://cy1y1kpvwk5sq" path="res://Projects/Figure/Components/ShaderComponent/shader_component.tscn" id="9_wuq8e"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ny2w2"]
 animations = [{
@@ -48,10 +49,9 @@ sprite_frames = SubResource("SpriteFrames_ny2w2")
 animation = &"idle"
 autoplay = "idle"
 
-[node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component", "main_sprite") instance=ExtResource("4_70rel")]
-highlight_material = ExtResource("7_k3y6k")
+[node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component", "shader_component") instance=ExtResource("4_70rel")]
 chess_component = NodePath("../ChessComponent")
-main_sprite = NodePath("../AnimatedSprite2D")
+shader_component = NodePath("../ShaderComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FigureUIComponent"]
 position = Vector2(0, -85)
@@ -68,3 +68,7 @@ move_component = NodePath("../MoveComponent")
 script = ExtResource("6_0nrd7")
 speed = 500.0
 figure_component = NodePath("..")
+
+[node name="ShaderComponent" parent="." node_paths=PackedStringArray("main_sprite") instance=ExtResource("9_wuq8e")]
+main_sprite = NodePath("../AnimatedSprite2D")
+highlight_material = ExtResource("7_k3y6k")

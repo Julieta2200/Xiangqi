@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bx11h40qosjm0"]
+[gd_scene load_steps=11 format=3 uid="uid://bx11h40qosjm0"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_joy3s"]
 [ext_resource type="Texture2D" uid="uid://csjbks1mympdt" path="res://Assets/Characters/Magma/Elephant/Idle/Elephant1.png" id="2_swpv1"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="4_j63sy"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/elephant_chess_component.gd" id="4_sbf10"]
 [ext_resource type="Material" uid="uid://e3w5tox88i13" path="res://Projects/Shaders/outline.tres" id="5_64wpi"]
+[ext_resource type="PackedScene" uid="uid://cy1y1kpvwk5sq" path="res://Projects/Figure/Components/ShaderComponent/shader_component.tscn" id="7_sm5jv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5rg0u"]
 animations = [{
@@ -52,10 +53,9 @@ animation = &"spawn"
 autoplay = "idle"
 frame_progress = 1.0
 
-[node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component", "main_sprite") instance=ExtResource("3_2lvq0")]
-highlight_material = ExtResource("5_64wpi")
+[node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component", "shader_component") instance=ExtResource("3_2lvq0")]
 chess_component = NodePath("../ChessComponent")
-main_sprite = NodePath("../AnimatedSprite2D")
+shader_component = NodePath("../ShaderComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FigureUIComponent"]
 position = Vector2(0, -95)
@@ -72,3 +72,7 @@ move_component = NodePath("../MoveComponent")
 script = ExtResource("4_j63sy")
 speed = 500.0
 figure_component = NodePath("..")
+
+[node name="ShaderComponent" parent="." node_paths=PackedStringArray("main_sprite") instance=ExtResource("7_sm5jv")]
+main_sprite = NodePath("../AnimatedSprite2D")
+highlight_material = ExtResource("5_64wpi")
