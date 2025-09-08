@@ -1,4 +1,4 @@
-[gd_scene load_steps=175 format=3 uid="uid://bxjowytodmlln"]
+[gd_scene load_steps=176 format=3 uid="uid://bxjowytodmlln"]
 
 [ext_resource type="Texture2D" uid="uid://f1jvrq55cicp" path="res://Assets/Characters/Magma/Pawn/Idle/Back idle/Back_idle1.png" id="1_4usx7"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_ebhfi"]
@@ -172,6 +172,7 @@
 [ext_resource type="Texture2D" uid="uid://cjivfn3sc7yq4" path="res://Assets/Characters/Magma/Pawn/Teleport/Teleport3.png" id="167_cw1uh"]
 [ext_resource type="Texture2D" uid="uid://bw8cvdgw70jta" path="res://Assets/Characters/Magma/Pawn/Teleport/Teleport4.png" id="168_okur4"]
 [ext_resource type="Texture2D" uid="uid://bd1auyflbitpa" path="res://Assets/Characters/Magma/Pawn/Teleport/Teleport5.png" id="169_fpkgw"]
+[ext_resource type="Material" uid="uid://e3w5tox88i13" path="res://Projects/Shaders/outline.tres" id="171_lnamv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pi8o7"]
 animations = [{
@@ -780,8 +781,10 @@ autoplay = "idle"
 frame = 8
 frame_progress = 1.0
 
-[node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component") instance=ExtResource("4_qchhg")]
+[node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component", "main_sprite") instance=ExtResource("4_qchhg")]
+highlight_material = ExtResource("171_lnamv")
 chess_component = NodePath("../ChessComponent")
+main_sprite = NodePath("../AnimatedSprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FigureUIComponent"]
 position = Vector2(0, -92)

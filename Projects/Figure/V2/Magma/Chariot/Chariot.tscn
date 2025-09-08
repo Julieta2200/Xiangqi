@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://ckd2du3jaxixc"]
+[gd_scene load_steps=13 format=3 uid="uid://ckd2du3jaxixc"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_dej4m"]
+[ext_resource type="Material" uid="uid://b5ews8a5nl326" path="res://Projects/Shaders/spawn.tres" id="2_gfn0q"]
 [ext_resource type="Texture2D" uid="uid://blrj3nija8eqn" path="res://Assets/Characters/Magma/Chariot/Idle/Chariot1.png" id="2_o4kas"]
 [ext_resource type="Texture2D" uid="uid://bd6kspv7ayqc2" path="res://Assets/Characters/Magma/Chariot/Idle/Chariot2.png" id="3_s1xor"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/chariot_chess_component.gd" id="4_6m8uf"]
@@ -8,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bpwd05qov76bv" path="res://Assets/Characters/Magma/Chariot/Idle/Chariot3.png" id="4_kuwha"]
 [ext_resource type="Texture2D" uid="uid://c2l8i21ncj6c6" path="res://Assets/Characters/Magma/Chariot/Idle/Chariot4.png" id="5_1dqel"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="6_0nrd7"]
+[ext_resource type="Material" uid="uid://e3w5tox88i13" path="res://Projects/Shaders/outline.tres" id="7_k3y6k"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ny2w2"]
 animations = [{
@@ -52,15 +54,17 @@ move_component = NodePath("MoveComponent")
 type = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = ExtResource("2_gfn0q")
 position = Vector2(-5, -89)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_ny2w2")
-animation = &"spawn"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 1.0
 
-[node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component") instance=ExtResource("4_70rel")]
+[node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component", "main_sprite") instance=ExtResource("4_70rel")]
+highlight_material = ExtResource("7_k3y6k")
 chess_component = NodePath("../ChessComponent")
+main_sprite = NodePath("../AnimatedSprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FigureUIComponent"]
 position = Vector2(0, -85)

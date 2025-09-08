@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://5jjfnly25ose"]
+[gd_scene load_steps=10 format=3 uid="uid://5jjfnly25ose"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_w5du6"]
 [ext_resource type="Texture2D" uid="uid://85bpv2edt1pb" path="res://Assets/Characters/Magma/Horse/Idle/Horse1.png" id="2_7r4f1"]
 [ext_resource type="PackedScene" uid="uid://dylnbquiybg16" path="res://Projects/Figure/Components/figure_ui_component.tscn" id="3_14xfn"]
 [ext_resource type="Texture2D" uid="uid://dyqr57h5ie1um" path="res://Assets/Characters/Magma/Horse/Idle/Horse2.png" id="3_agbna"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/horse_chess_component.gd" id="4_2k2ar"]
+[ext_resource type="Material" uid="uid://e3w5tox88i13" path="res://Projects/Shaders/outline.tres" id="5_ntxl1"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="5_nvpil"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rkcc6"]
@@ -50,8 +51,10 @@ sprite_frames = SubResource("SpriteFrames_rkcc6")
 animation = &"spawn"
 autoplay = "idle"
 
-[node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component") instance=ExtResource("3_14xfn")]
+[node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component", "main_sprite") instance=ExtResource("3_14xfn")]
+highlight_material = ExtResource("5_ntxl1")
 chess_component = NodePath("../ChessComponent")
+main_sprite = NodePath("../AnimatedSprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FigureUIComponent"]
 position = Vector2(1, -38)

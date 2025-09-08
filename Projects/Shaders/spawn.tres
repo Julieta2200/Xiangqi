@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b5ews8a5nl326"]
+
+[ext_resource type="Shader" path="res://Projects/Shaders/spawn.gdshader" id="1_tkter"]
+
+[resource]
+shader = ExtResource("1_tkter")
+shader_parameter/progress = 0.0

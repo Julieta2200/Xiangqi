@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://xnkcry6frvgx"]
+[gd_scene load_steps=56 format=3 uid="uid://xnkcry6frvgx"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_ts1i4"]
 [ext_resource type="Texture2D" uid="uid://di3yukoh8siaj" path="res://Assets/Characters/Magma/Advisor/Run/Back_Left_Side/Back_Left_Side1.png" id="2_a3x3p"]
@@ -47,6 +47,7 @@
 [ext_resource type="Texture2D" uid="uid://doexy5gjn5fx4" path="res://Assets/Characters/Magma/Advisor/Run/Front_Right_Side/Front_Right_Side8.png" id="22_xqeoy"]
 [ext_resource type="Texture2D" uid="uid://cuvkb6ievy7a7" path="res://Assets/Characters/Magma/Advisor/Run/Back_Right_Side/Back_Right_Side9.png" id="23_34lgj"]
 [ext_resource type="Texture2D" uid="uid://doeboxndmsx7h" path="res://Assets/Characters/Magma/Advisor/Run/Front_Right_Side/Front_Right_Side9.png" id="23_amfd0"]
+[ext_resource type="Material" uid="uid://e3w5tox88i13" path="res://Projects/Shaders/outline.tres" id="46_8oo55"]
 
 [sub_resource type="Animation" id="Animation_eddeg"]
 length = 0.001
@@ -618,8 +619,10 @@ animation = &"idle_up"
 autoplay = "idle_up"
 frame_progress = 0.761258
 
-[node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component") instance=ExtResource("4_eq2gi")]
+[node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component", "main_sprite") instance=ExtResource("4_eq2gi")]
+highlight_material = ExtResource("46_8oo55")
 chess_component = NodePath("../ChessComponent")
+main_sprite = NodePath("../AnimatedSprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FigureUIComponent"]
 position = Vector2(0, -85)
