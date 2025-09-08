@@ -2,10 +2,10 @@ class_name ShaderComponenet extends Node
 
 @export var main_sprite: AnimatedSprite2D
 @export var highlight_material: Material
-@onready var spawn_material: Material = load("res://Projects/Shaders/spawn.tres")
+@export var spawn_material: Material 
+@export var spawn_speed: float = 0.3
 
 var spawn_progress: float = 0.0
-var spawn_speed: float = 0.3
 var scale_speed: float = 1.0
 
 func _ready() -> void:

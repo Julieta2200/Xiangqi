@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ckd2du3jaxixc"]
+[gd_scene load_steps=14 format=3 uid="uid://ckd2du3jaxixc"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_dej4m"]
 [ext_resource type="Texture2D" uid="uid://blrj3nija8eqn" path="res://Assets/Characters/Magma/Chariot/Idle/Chariot1.png" id="2_o4kas"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="6_0nrd7"]
 [ext_resource type="Material" uid="uid://e3w5tox88i13" path="res://Projects/Shaders/outline.tres" id="7_k3y6k"]
 [ext_resource type="PackedScene" uid="uid://cy1y1kpvwk5sq" path="res://Projects/Figure/Components/ShaderComponent/shader_component.tscn" id="9_wuq8e"]
+[ext_resource type="Material" uid="uid://b5ews8a5nl326" path="res://Projects/Shaders/spawn.tres" id="11_ertx5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ny2w2"]
 animations = [{
@@ -72,3 +73,4 @@ figure_component = NodePath("..")
 [node name="ShaderComponent" parent="." node_paths=PackedStringArray("main_sprite") instance=ExtResource("9_wuq8e")]
 main_sprite = NodePath("../AnimatedSprite2D")
 highlight_material = ExtResource("7_k3y6k")
+spawn_material = ExtResource("11_ertx5")

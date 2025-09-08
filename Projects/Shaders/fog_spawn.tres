@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cn0gyjph0f1nv"]
+
+[ext_resource type="Shader" path="res://Projects/Shaders/fog_spawn.gdshader" id="1_prxlv"]
+
+[resource]
+shader = ExtResource("1_prxlv")
+shader_parameter/progress = 0.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://xnkcry6frvgx"]
+[gd_scene load_steps=58 format=3 uid="uid://xnkcry6frvgx"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_ts1i4"]
 [ext_resource type="Texture2D" uid="uid://di3yukoh8siaj" path="res://Assets/Characters/Magma/Advisor/Run/Back_Left_Side/Back_Left_Side1.png" id="2_a3x3p"]
@@ -49,6 +49,7 @@
 [ext_resource type="Texture2D" uid="uid://doeboxndmsx7h" path="res://Assets/Characters/Magma/Advisor/Run/Front_Right_Side/Front_Right_Side9.png" id="23_amfd0"]
 [ext_resource type="Material" uid="uid://e3w5tox88i13" path="res://Projects/Shaders/outline.tres" id="46_8oo55"]
 [ext_resource type="PackedScene" uid="uid://cy1y1kpvwk5sq" path="res://Projects/Figure/Components/ShaderComponent/shader_component.tscn" id="49_ju1ay"]
+[ext_resource type="Material" uid="uid://b5ews8a5nl326" path="res://Projects/Shaders/spawn.tres" id="50_2riwu"]
 
 [sub_resource type="Animation" id="Animation_eddeg"]
 length = 0.001
@@ -647,6 +648,7 @@ figure_component = NodePath("..")
 [node name="ShaderComponent" parent="." node_paths=PackedStringArray("main_sprite") instance=ExtResource("49_ju1ay")]
 main_sprite = NodePath("../AnimatedSprite2D")
 highlight_material = ExtResource("46_8oo55")
+spawn_material = ExtResource("50_2riwu")
 
 [connection signal="animation_finished" from="BoardSigns/EdgeSign" to="MoveComponent" method="_on_sign_animation_finished"]
 [connection signal="animation_finished" from="BoardSigns/CenterSign" to="MoveComponent" method="_on_sign_animation_finished"]
