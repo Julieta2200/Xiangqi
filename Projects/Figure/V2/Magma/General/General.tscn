@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cvuhiknm2cdl5"]
+[gd_scene load_steps=46 format=3 uid="uid://cvuhiknm2cdl5"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_xl4gj"]
 [ext_resource type="Material" uid="uid://e3w5tox88i13" path="res://Projects/Shaders/outline.tres" id="2_2hpvn"]
@@ -42,6 +42,7 @@
 [ext_resource type="Texture2D" uid="uid://tv0vwsjgfsrh" path="res://Assets/Characters/Magma/General/Run/Right/Right8.png" id="36_asbp8"]
 [ext_resource type="Texture2D" uid="uid://kwskwkinrgtd" path="res://Assets/Characters/Magma/General/Run/Right/Right9.png" id="37_oqu4r"]
 [ext_resource type="Texture2D" uid="uid://c67lqlfds5u4v" path="res://Assets/Characters/Magma/General/Run/Right/Right10.png" id="38_67wvn"]
+[ext_resource type="PackedScene" uid="uid://cy1y1kpvwk5sq" path="res://Projects/Figure/Components/ShaderComponent/shader_component.tscn" id="43_o44jy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pi8o7"]
 animations = [{
@@ -206,10 +207,9 @@ sprite_frames = SubResource("SpriteFrames_pi8o7")
 animation = &"move_left"
 autoplay = "idle"
 
-[node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component", "main_sprite") instance=ExtResource("5_n8y44")]
-highlight_material = ExtResource("2_2hpvn")
+[node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component", "shader_component") instance=ExtResource("5_n8y44")]
 chess_component = NodePath("../ChessComponent")
-main_sprite = NodePath("../AnimatedSprite2D")
+shader_component = NodePath("../ShaderComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FigureUIComponent"]
 position = Vector2(-1, -89)
@@ -226,5 +226,9 @@ move_component = NodePath("../MoveComponent")
 script = ExtResource("5_5ts7d")
 speed = 300.0
 figure_component = NodePath("..")
+
+[node name="ShaderComponent" parent="." node_paths=PackedStringArray("main_sprite") instance=ExtResource("43_o44jy")]
+main_sprite = NodePath("../AnimatedSprite2D")
+highlight_material = ExtResource("2_2hpvn")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="MoveComponent" method="_on_figure_animation_finished"]

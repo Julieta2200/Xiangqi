@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://xnkcry6frvgx"]
+[gd_scene load_steps=57 format=3 uid="uid://xnkcry6frvgx"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_ts1i4"]
 [ext_resource type="Texture2D" uid="uid://di3yukoh8siaj" path="res://Assets/Characters/Magma/Advisor/Run/Back_Left_Side/Back_Left_Side1.png" id="2_a3x3p"]
@@ -48,6 +48,7 @@
 [ext_resource type="Texture2D" uid="uid://cuvkb6ievy7a7" path="res://Assets/Characters/Magma/Advisor/Run/Back_Right_Side/Back_Right_Side9.png" id="23_34lgj"]
 [ext_resource type="Texture2D" uid="uid://doeboxndmsx7h" path="res://Assets/Characters/Magma/Advisor/Run/Front_Right_Side/Front_Right_Side9.png" id="23_amfd0"]
 [ext_resource type="Material" uid="uid://e3w5tox88i13" path="res://Projects/Shaders/outline.tres" id="46_8oo55"]
+[ext_resource type="PackedScene" uid="uid://cy1y1kpvwk5sq" path="res://Projects/Figure/Components/ShaderComponent/shader_component.tscn" id="49_ju1ay"]
 
 [sub_resource type="Animation" id="Animation_eddeg"]
 length = 0.001
@@ -619,10 +620,9 @@ animation = &"idle_up"
 autoplay = "idle_up"
 frame_progress = 0.761258
 
-[node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component", "main_sprite") instance=ExtResource("4_eq2gi")]
-highlight_material = ExtResource("46_8oo55")
+[node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component", "shader_component") instance=ExtResource("4_eq2gi")]
 chess_component = NodePath("../ChessComponent")
-main_sprite = NodePath("../AnimatedSprite2D")
+shader_component = NodePath("../ShaderComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FigureUIComponent"]
 position = Vector2(0, -85)
@@ -643,6 +643,10 @@ edge_sign = NodePath("../BoardSigns/EdgeSign")
 center_sign = NodePath("../BoardSigns/CenterSign")
 main_sprite = NodePath("../AnimatedSprite2D")
 figure_component = NodePath("..")
+
+[node name="ShaderComponent" parent="." node_paths=PackedStringArray("main_sprite") instance=ExtResource("49_ju1ay")]
+main_sprite = NodePath("../AnimatedSprite2D")
+highlight_material = ExtResource("46_8oo55")
 
 [connection signal="animation_finished" from="BoardSigns/EdgeSign" to="MoveComponent" method="_on_sign_animation_finished"]
 [connection signal="animation_finished" from="BoardSigns/CenterSign" to="MoveComponent" method="_on_sign_animation_finished"]
