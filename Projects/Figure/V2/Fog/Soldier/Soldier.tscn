@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://b4u0rern1rgw"]
+[gd_scene load_steps=9 format=3 uid="uid://b4u0rern1rgw"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_0l350"]
 [ext_resource type="Texture2D" uid="uid://cfxyr4st34q2v" path="res://Assets/Characters/Fog/Soldier/Soldier_Front.png" id="2_6gvuf"]
+[ext_resource type="PackedScene" uid="uid://cy1y1kpvwk5sq" path="res://Projects/Figure/Components/ShaderComponent/shader_component.tscn" id="5_nl4y3"]
+[ext_resource type="Material" uid="uid://e3w5tox88i13" path="res://Projects/Shaders/outline.tres" id="6_40en2"]
+[ext_resource type="Material" uid="uid://cn0gyjph0f1nv" path="res://Projects/Shaders/fog_spawn.tres" id="7_afnf1"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/soldier_chess_component.gd" id="7_fkygt"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="8_n0clu"]
 
@@ -44,3 +47,8 @@ move_component = NodePath("../MoveComponent")
 script = ExtResource("8_n0clu")
 speed = 300.0
 figure_component = NodePath("..")
+
+[node name="ShaderComponent" parent="." node_paths=PackedStringArray("main_sprite") instance=ExtResource("5_nl4y3")]
+main_sprite = NodePath("../AnimatedSprite2D")
+highlight_material = ExtResource("6_40en2")
+spawn_material = ExtResource("7_afnf1")

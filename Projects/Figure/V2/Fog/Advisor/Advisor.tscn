@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c0tti725mtjpo"]
+[gd_scene load_steps=8 format=3 uid="uid://c0tti725mtjpo"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_gk4bo"]
 [ext_resource type="Texture2D" uid="uid://5ft2bavrlrkr" path="res://Assets/Characters/Fog/Advisor/Fog_Advisor_Front.png" id="2_quffa"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/advisor_chess_component.gd" id="5_72hvj"]
+[ext_resource type="PackedScene" uid="uid://cy1y1kpvwk5sq" path="res://Projects/Figure/Components/ShaderComponent/shader_component.tscn" id="5_h0d8b"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="6_n42uo"]
+[ext_resource type="Material" uid="uid://cn0gyjph0f1nv" path="res://Projects/Shaders/fog_spawn.tres" id="7_ki6r4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pi8o7"]
 animations = [{
@@ -41,3 +43,7 @@ move_component = NodePath("../MoveComponent")
 script = ExtResource("6_n42uo")
 speed = 300.0
 figure_component = NodePath("..")
+
+[node name="ShaderComponent" parent="." node_paths=PackedStringArray("main_sprite") instance=ExtResource("5_h0d8b")]
+main_sprite = NodePath("../AnimatedSprite2D")
+spawn_material = ExtResource("7_ki6r4")

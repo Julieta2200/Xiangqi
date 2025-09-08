@@ -1,9 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://bh478vfokopqw"]
+[gd_scene load_steps=9 format=3 uid="uid://bh478vfokopqw"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_s7cam"]
 [ext_resource type="Texture2D" uid="uid://dcv7ypx014t3u" path="res://Assets/Characters/Fog/Horse/Horse_Front.png" id="2_8h4xs"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/horse_chess_component.gd" id="3_ccssm"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="4_hq3fp"]
+[ext_resource type="PackedScene" uid="uid://cy1y1kpvwk5sq" path="res://Projects/Figure/Components/ShaderComponent/shader_component.tscn" id="5_8plax"]
+[ext_resource type="Material" uid="uid://e3w5tox88i13" path="res://Projects/Shaders/outline.tres" id="6_5s7wg"]
+[ext_resource type="Material" uid="uid://cn0gyjph0f1nv" path="res://Projects/Shaders/fog_spawn.tres" id="7_2wldo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_h2yje"]
 animations = [{
@@ -39,3 +42,8 @@ move_component = NodePath("../MoveComponent")
 script = ExtResource("4_hq3fp")
 speed = 500.0
 figure_component = NodePath("..")
+
+[node name="ShaderComponent" parent="." node_paths=PackedStringArray("main_sprite") instance=ExtResource("5_8plax")]
+main_sprite = NodePath("../AnimatedSprite2D")
+highlight_material = ExtResource("6_5s7wg")
+spawn_material = ExtResource("7_2wldo")

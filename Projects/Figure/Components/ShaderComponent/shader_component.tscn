@@ -4,3 +4,4 @@
 
 [node name="ShaderComponent" type="Node"]
 script = ExtResource("1_i7cps")
+spawn_speed = 0.6

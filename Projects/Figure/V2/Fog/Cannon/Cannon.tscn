@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://e0vofw5ghj4q"]
+[gd_scene load_steps=8 format=3 uid="uid://e0vofw5ghj4q"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_31ffd"]
 [ext_resource type="Texture2D" uid="uid://dkbr350km05ge" path="res://Assets/Characters/Fog/Cannon/Cannon_Front.png" id="2_g8jfd"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/cannon_chess_component.gd" id="3_t6o6c"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="4_av3l6"]
+[ext_resource type="PackedScene" uid="uid://cy1y1kpvwk5sq" path="res://Projects/Figure/Components/ShaderComponent/shader_component.tscn" id="5_sbnhw"]
+[ext_resource type="Material" uid="uid://cn0gyjph0f1nv" path="res://Projects/Shaders/fog_spawn.tres" id="6_4m3hy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ns0u8"]
 animations = [{
@@ -40,3 +42,7 @@ move_component = NodePath("../MoveComponent")
 script = ExtResource("4_av3l6")
 speed = 500.0
 figure_component = NodePath("..")
+
+[node name="ShaderComponent" parent="." node_paths=PackedStringArray("main_sprite") instance=ExtResource("5_sbnhw")]
+main_sprite = NodePath("../AnimatedSprite2D")
+spawn_material = ExtResource("6_4m3hy")
