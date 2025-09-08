@@ -14,10 +14,6 @@ var scale_speed: float = 1.0
 
 func _ready() -> void:
 	main_sprite.material = spawn_material.duplicate()
-	main_sprite.scale = Vector2.ZERO
-	var tween = create_tween()
-	tween.tween_property(main_sprite, "scale",
-	 Vector2.ONE*2, scale_speed)
 	
 
 func _process(delta):
