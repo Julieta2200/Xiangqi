@@ -11,6 +11,6 @@ func _on_set_free_pressed() -> void:
 func _on_claim_pressed() -> void:
 	emit_signal("claim")
 
-func get_card_name(name : String) -> void:
+func set_card_name(name : String) -> void:
 	card_name.text = name
 	
