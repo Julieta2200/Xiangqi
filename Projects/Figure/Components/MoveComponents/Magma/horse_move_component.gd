@@ -1,8 +1,10 @@
 extends MoveComponent
 
-var o_pos: Vector2i
-var n_pos: Vector2i
+var old_pos: Vector2i
+var new_pos: Vector2i
 var target_position: Vector2i
+
+@onready var lava: Sprite2D = $"../lava"
 
 func move_to_position(marker: BoardMarker, initial_position: Vector2i = Vector2i.ZERO) -> void:
 	target_position = marker.global_position
@@ -10,41 +12,54 @@ func move_to_position(marker: BoardMarker, initial_position: Vector2i = Vector2i
 	move_animation(figure_component.chess_component.position, marker.board_position)
 
 func move_animation(old_pos: Vector2i, new_pos: Vector2i) -> void:
-	o_pos = old_pos
-	n_pos = new_pos
+	self.old_pos = old_pos
+	self.new_pos = new_pos
+	var animation: String = "move"
 	var direction = old_pos - new_pos
-	print("dd",direction)
-	if direction.y < 0 and direction.x > 0 and direction.y == -1:
-		animated_sprite.play("move_back_semi_left")
-	elif direction.y < 0 and direction.x > 0 and direction.y == -2:
-		animated_sprite.play("move_back_lite_left")
-	elif direction.y < 0 and direction.x < 0 and direction.y == -1:
-		animated_sprite.play("move_back_semi_right")
-	elif direction.y < 0 and direction.x < 0 and direction.y == -2:
-		animated_sprite.play("move_back_lite_right")
-	elif direction.y > 0 and direction.x > 0 and direction.y == 1:
-		animated_sprite.play("move_front_semi_left")
-	elif direction.y > 0 and direction.x > 0 and direction.y == 2:
-		animated_sprite.play("move_front_lite_left")
-	elif direction.y < 0 and direction.x < 0 and direction.y == -1:
-		animated_sprite.play("move_front_semi_left")
-	else:
-		animated_sprite.play("move_front_lite_right")
-
-#func generate_move_tween(target_pos):
-	#await get_tree().create_timer(0.5).timeout
-	#super.generate_move_tween(target_pos)
 	
+	if direction.y < 0:
+		animation += "_back"
+	elif direction.y > 0:
+		animation += "_front"
+
+	match abs(direction.y):
+		1: animation += "_semi"
+		2: animation += "_lite"
+
+	if direction.x > 0:
+		animation += "_left"
+	elif direction.x < 0:
+		animation += "_right"
+	animated_sprite.play(animation)
+
 func _on_figure_animation_finished() -> void:
 	var current_animation = animated_sprite.animation
 	if current_animation.find("move") != -1:
 		if animated_sprite.speed_scale == -1:
 			animated_sprite.speed_scale = 1
+			lava.modulate = Color(1,1,1,0)
+			animated_sprite.play("idle")
 			emit_signal("move_done")
 		else:
-			animated_sprite.speed_scale = -1
-			animated_sprite.frame = animated_sprite.sprite_frames.get_frame_count(current_animation) - 1
-			move_animation(o_pos, n_pos)
-			figure_component.global_position = target_position
+			start_lava_tween()
 	else:
 		animated_sprite.play("idle")
+
+func start_lava_tween():
+	var tween = create_tween()
+	lava.modulate = Color(1,1,1,1)
+	animated_sprite.modulate = Color(1,1,1,0)
+	tween.tween_property(lava, "scale", Vector2(0, 0), 0.5)
+	tween.finished.connect(end_lava_tween)
+
+func end_lava_tween():
+	var tween = create_tween()
+	figure_component.global_position = target_position
+	tween.tween_property(lava, "scale", Vector2(2, 2), 0.5)
+	tween.finished.connect(end_move_anim)
+
+func end_move_anim():
+	animated_sprite.modulate = Color(1,1,1,1)
+	animated_sprite.speed_scale = -1
+	animated_sprite.frame = animated_sprite.sprite_frames.get_frame_count(animated_sprite.animation) - 1
+	move_animation(old_pos, new_pos)

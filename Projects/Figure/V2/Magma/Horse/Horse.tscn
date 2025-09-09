@@ -127,7 +127,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"move_back_lite_left",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -156,7 +156,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"move_back_lite_right",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -188,7 +188,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"move_back_semi_left",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -220,7 +220,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"move_back_semi_right",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -258,7 +258,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"move_front_lite_left",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -299,7 +299,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"move_front_lite_right",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -334,7 +334,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"move_front_semi_left",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -369,7 +369,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"move_front_semi_right",
-"speed": 5.0
+"speed": 7.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qnuwo"]
@@ -383,11 +383,19 @@ ui_component = NodePath("FigureUIComponent")
 move_component = NodePath("MoveComponent")
 type = 4
 
+[node name="lava" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+z_index = -1
+position = Vector2(0, -4)
+scale = Vector2(2, 2)
+texture = ExtResource("37_wl5xe")
+offset = Vector2(0.5, -18.5792)
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -41)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_rkcc6")
-animation = &"move_front_semi_right"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component", "shader_component") instance=ExtResource("3_14xfn")]
