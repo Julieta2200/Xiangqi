@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://b3lmp8r4crgba"]
+[gd_scene load_steps=4 format=3 uid="uid://bxn74kybrqhcc"]
 
 [ext_resource type="Texture2D" uid="uid://cwnio6t1ew4t2" path="res://Assets/boards/Fog/board.png" id="1_fwkyr"]
 [ext_resource type="Shader" path="res://Projects/Shaders/mist.gdshader" id="1_pvfj2"]
