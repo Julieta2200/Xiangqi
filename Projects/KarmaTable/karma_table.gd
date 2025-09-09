@@ -20,10 +20,17 @@ func fill_lls() -> void:
 
 func _equip_ll(s: SpecialCard):
 	s.reparent(equiped_lls)
+	GameState.state.lls.append(s.special)
 	s.on_click_full.disconnect(_equip_ll)
 	s.on_click_full.connect(_dequip_ll)
 
 func _dequip_ll(s: SpecialCard):
 	s.reparent(lls)
+	GameState.state.lls = GameState.state.lls.filter(func(ll): return ll != s.special)
 	s.on_click_full.disconnect(_dequip_ll)
 	s.on_click_full.connect(_equip_ll)
+
+
+func _on_back_pressed() -> void:
+	GameState.save_game()
+	get_tree().change_scene_to_file("res://Projects/Levels/Overworld/overworld.tscn")

@@ -37,3 +37,22 @@ level = ExtResource("4_rn2x1")
 [node name="bonus_3" parent="Levels/3" instance=ExtResource("2_m64e3")]
 position = Vector2(0, -200)
 level = ExtResource("8_f3p8a")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="KarmaTable" type="Button" parent="CanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -267.0
+offset_top = -105.0
+offset_right = -161.0
+offset_bottom = -74.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(2, 2)
+text = "Karma Table"
+
+[connection signal="pressed" from="CanvasLayer/KarmaTable" to="." method="_on_karma_table_pressed"]

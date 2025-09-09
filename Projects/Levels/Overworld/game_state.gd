@@ -4,7 +4,7 @@ var state: Dictionary = {
 	"energy": 100,
 	"ll_cards": [0,1,2],
 	"hl_cards": [],
-	"lls": [0,2],
+	"lls": [],
 	"hl": -1,
 	"orbs": 0,
 	"levels": {
@@ -37,7 +37,7 @@ var state: Dictionary = {
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	save_game()
+	load_game()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
