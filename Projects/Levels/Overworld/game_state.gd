@@ -2,7 +2,8 @@ extends Node
 
 var state: Dictionary = {
 	"energy": 100,
-	"cards": [],
+	"ll_cards": [0,1,2],
+	"hl_cards": [],
 	"lls": [0,2],
 	"hl": -1,
 	"orbs": 0,

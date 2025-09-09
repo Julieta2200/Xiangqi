@@ -41,7 +41,7 @@ func load_main_scene():
 	get_tree().change_scene_to_file("res://Projects/Levels/Overworld/overworld.tscn")
 
 func _on_gameplay_ui_set_free() -> void:
-	GameState.state["cards"].append(card)
+	GameState.state["ll_cards"].append(card)
 	GameState.state["levels"][level_name]["state"] = LevelMarker.LevelState.Free
 	GameState.save_game()
 	load_main_scene()
