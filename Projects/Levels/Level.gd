@@ -12,7 +12,7 @@ func _ready() -> void:
 	gameplay_ui.power_meter.energy_depleted.connect(game_over_energy_depleted)
 	gameplay_ui.decision.set_free.connect(_on_gameplay_ui_set_free)
 	gameplay_ui.decision.claim.connect(_on_gameplay_ui_claim)
-
+	gameplay_ui.decision.set_card_name(CardSlots.card_names[card])
 
 func game_over_energy_depleted():
 	get_tree().reload_current_scene()

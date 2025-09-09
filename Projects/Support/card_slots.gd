@@ -9,6 +9,13 @@ var cards: Dictionary = {}
 
 enum SPECIALS {TreeTrunk, SnakeChain, WaterPortal}
 
+
+const card_names = {
+	SPECIALS.TreeTrunk: "Tree Trunk",
+	SPECIALS.SnakeChain: "Snake Chain",
+	SPECIALS.WaterPortal: "Water Portal"
+}
+
 const specials_scenes = {
 	SPECIALS.TreeTrunk: preload("res://Projects/Support/world1/tree_trunk.tscn"),
 	SPECIALS.SnakeChain: preload("res://Projects/Support/world1/snake_chain.tscn"),
