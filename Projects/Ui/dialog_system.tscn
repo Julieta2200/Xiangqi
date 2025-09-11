@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://fft0owblymrl"]
+
+[ext_resource type="Script" path="res://Projects/Ui/dialog_system.gd" id="1_t5gml"]
+
+[node name="DialogSystem" type="CanvasLayer"]
+script = ExtResource("1_t5gml")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
+offset_left = 419.0
+offset_top = 1942.0
+offset_right = 1623.0
+offset_bottom = 2199.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 50
+text = "Some test text"
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

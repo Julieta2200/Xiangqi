@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameState="*res://Projects/Levels/Overworld/game_state.gd"
+DialogSystem="*res://Projects/Ui/dialog_system.tscn"
 
 [display]
 
