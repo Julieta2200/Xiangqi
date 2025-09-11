@@ -47,7 +47,7 @@ func _on_gameplay_ui_set_free() -> void:
 	load_main_scene()
 
 func _on_gameplay_ui_claim():
-	GameState.state["orbs"] += 1
+	GameState.add_orb()
 	GameState.state["levels"][level_name]["state"] = LevelMarker.LevelState.Captured
 	GameState.save_game()
 	load_main_scene()

@@ -35,6 +35,10 @@ const water_portal = preload("res://Projects/Support/TmpTrap.tscn")
 static func get_card_scene(s: SPECIALS):
 	return specials_scenes[s]
 
+static var hl_points: Dictionary = {
+	SPECIALS.DisconnectionMistCard: 3
+}
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for special in GameState.state["lls"]:
@@ -43,10 +47,12 @@ func _ready() -> void:
 		ll_slots.add_child(card)
 		card.on_click.connect(_on_card_click)
 		cards[int(special)] = card
-	var card: SpecialCard = specials_scenes[SPECIALS.DisconnectionMistCard].instantiate()
-	hl_slot.add_child(card)
-	card.on_click.connect(_on_card_click)
-	cards[int(SPECIALS.DisconnectionMistCard)] = card
+	if GameState.state["hl"] >= 0:
+		var card: SpecialCard = specials_scenes[GameState.state["hl"]].instantiate()
+		hl_slot.add_child(card)
+		card.on_click.connect(_on_card_click)
+		cards[int(GameState.state["hl"])] = card
+	
 
 func _on_card_click(s: SPECIALS):
 	if cards[s].cooldown_counter != 0:

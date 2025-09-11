@@ -12,11 +12,30 @@ anchors_preset = 10
 anchor_right = 1.0
 grow_horizontal = 2
 
+[node name="HLs" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 538.0
+offset_bottom = 538.0
+grow_horizontal = 2
+
 [node name="EquipedLLs" type="HBoxContainer" parent="CanvasLayer"]
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="EquipedHLs" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = -458.0
+offset_right = -3.0
+offset_bottom = -458.0
 grow_horizontal = 2
 grow_vertical = 0
 

@@ -2,7 +2,7 @@ extends Node
 
 var state: Dictionary = {
 	"energy": 100,
-	"ll_cards": [0,1,2],
+	"ll_cards": [],
 	"hl_cards": [],
 	"lls": [],
 	"hl": -1,
@@ -44,6 +44,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+func add_orb() -> void:
+	state["orbs"] += 1
+	for s in CardSlots.hl_points:
+		if state["orbs"] == CardSlots.hl_points[s]:
+			state["hl_cards"].append(s)
 
 func save_game() -> void:
 	var save_file = FileAccess.open("user://savegame.save", FileAccess.WRITE)
