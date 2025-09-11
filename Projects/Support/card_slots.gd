@@ -40,7 +40,7 @@ func _ready() -> void:
 		var card: SpecialCard = card_scene.instantiate()
 		ll_slots.add_child(card)
 		card.on_click.connect(_on_card_click)
-		cards[special] = card
+		cards[int(special)] = card
 
 func _on_card_click(s: SPECIALS):
 	if cards[s].cooldown_counter != 0:
