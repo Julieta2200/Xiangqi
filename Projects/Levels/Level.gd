@@ -2,6 +2,7 @@ class_name Level extends Node2D
 
 @export var has_decision: bool
 @export var card : CardSlots.SPECIALS
+@export var hl_card = CardSlots.HL_SPECIALS.DisconnectionMistCard
 @export var level_name: String
 @onready var board: BoardV2 = %Board
 @onready var gameplay_ui: GameplayUI = $GameplayUI

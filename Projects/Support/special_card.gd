@@ -3,6 +3,7 @@ class_name SpecialCard extends Panel
 enum TYPE {HL, LL}
 @export var type: TYPE
 @export var special: CardSlots.SPECIALS
+@export var hl_special : CardSlots.HL_SPECIALS
 @export var cooldown: int
 
 var cooldown_counter: int = 0 :

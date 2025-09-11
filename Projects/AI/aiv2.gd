@@ -547,7 +547,7 @@ func use_special() -> void:
 	if _special_used:
 		return
 	match special:
-		CardSlots.HL_SPECIALS.DisconnectionMist:
+		CardSlots.HL_SPECIALS.DisconnectionMistCard:
 			disconnection_mist()
 
 func disconnection_mist() -> void:
