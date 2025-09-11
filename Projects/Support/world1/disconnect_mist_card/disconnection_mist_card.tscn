@@ -1,11 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://bhsbowdvy1em0"]
 
-[ext_resource type="Script" path="res://Projects/Support/world1/snake_chain.gd" id="1_ha2x8"]
+[ext_resource type="Script" path="res://Projects/Support/world1/disconnect_mist_card/disconnection_mist_card.gd" id="1_6on85"]
 
 [node name="DisconnectionMistCard" type="Panel"]
 custom_minimum_size = Vector2(200, 200)
-script = ExtResource("1_ha2x8")
-cooldown = 2
+script = ExtResource("1_6on85")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
