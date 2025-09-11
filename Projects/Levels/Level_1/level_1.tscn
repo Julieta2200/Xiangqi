@@ -33,6 +33,7 @@ ai = NodePath("../AI")
 ui = NodePath("../GameplayUI")
 
 [node name="AI" parent="." node_paths=PackedStringArray("board") instance=ExtResource("4_36857")]
+special = null
 board = NodePath("../Board")
 
 [node name="Camera" parent="." instance=ExtResource("5_rioux")]
