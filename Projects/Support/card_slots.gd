@@ -48,7 +48,7 @@ func _ready() -> void:
 		card.on_click.connect(_on_card_click)
 		cards[int(special)] = card
 	if GameState.state["hl"] >= 0:
-		var card: SpecialCard = specials_scenes[GameState.state["hl"]].instantiate()
+		var card: SpecialCard = specials_scenes[int(GameState.state["hl"])].instantiate()
 		hl_slot.add_child(card)
 		card.on_click.connect(_on_card_click)
 		cards[int(GameState.state["hl"])] = card
