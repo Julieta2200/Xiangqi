@@ -1,6 +1,8 @@
 class_name AIV2 extends Node
 
 @export var board: BoardV2
+@export var special: CardSlots.HL_SPECIALS
+var _special_used: bool = false
 
 const infinite : int = 500000
 var thinking_thread: Thread = Thread.new()
@@ -50,6 +52,7 @@ func _ready() -> void:
 	randomize()
 
 func make_move() -> bool:
+	use_special()
 	var position: Array[Array] = state_to_position(board.state)
 	thinking_thread.start(select_best_move.bind(position,3))
 	return true
@@ -538,3 +541,23 @@ func position_hash(position: Array[Array], depth: int, maximizing: bool) -> Stri
 			hash += str(position[y][x]) + ","
 	hash += str(depth) + "," + str(maximizing)
 	return hash
+
+
+func use_special() -> void:
+	if _special_used:
+		return
+	match special:
+		CardSlots.HL_SPECIALS.DisconnectionMist:
+			disconnection_mist()
+
+func disconnection_mist() -> void:
+	var enemy_count: int = 0
+	for pos in board.state:
+		if pos.y >= 5:
+			if board.state[pos].chess_component.team == BoardV2.Teams.Red:
+				enemy_count += 1
+	
+	#  if there are 2 enemies on AI side of board
+	if enemy_count >= 2:
+		board.activate_disconnection_mist(BoardV2.Teams.Red)
+		_special_used = true

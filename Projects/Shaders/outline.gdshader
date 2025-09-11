@@ -62,4 +62,3 @@ void fragment() {
     // Mix the original color with the bright outline color.
     COLOR = mix(original_color, outline_color, outline_factor);
 }
-

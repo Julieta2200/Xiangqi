@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxn74kybrqhcc"]
+[gd_scene load_steps=9 format=3 uid="uid://bxn74kybrqhcc"]
 
 [ext_resource type="Shader" path="res://Projects/Shaders/mist.gdshader" id="1_gkeom"]
 [ext_resource type="Script" path="res://Projects/Support/world1/disconnection_mist.gd" id="1_v7jkl"]
@@ -13,6 +13,74 @@ shader_parameter/softness = 0.446
 shader_parameter/scale = 1.0
 shader_parameter/border_softness = 0.25
 
+[sub_resource type="Animation" id="Animation_qaprp"]
+resource_name = "spawn"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mist:material:shader_parameter/density")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.69]
+}
+
+[sub_resource type="Animation" id="Animation_23sgv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mist:material:shader_parameter/density")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.69]
+}
+
+[sub_resource type="Animation" id="Animation_yy6qq"]
+resource_name = "remove"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mist:material:shader_parameter/density")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.69, 0.0]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.06667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"remove"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_atut3"]
+_data = {
+"RESET": SubResource("Animation_23sgv"),
+"remove": SubResource("Animation_yy6qq"),
+"spawn": SubResource("Animation_qaprp")
+}
+
 [node name="DisconnectionMist" type="Node2D"]
 script = ExtResource("1_v7jkl")
 
@@ -21,3 +89,9 @@ z_index = 10
 material = SubResource("ShaderMaterial_8ho0a")
 scale = Vector2(2, 1)
 texture = ExtResource("2_wgyo5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_atut3")
+}
+autoplay = "spawn"

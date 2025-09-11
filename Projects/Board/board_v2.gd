@@ -113,6 +113,8 @@ var _traps: Array
 
 
 @export var ai_spawn_interval : int = 6
+@onready var disconnection_mist_scene: PackedScene = preload("res://Projects/Support/world1/disconnection_mist.tscn")
+var _mist: DisconnectionMist
 
 var ai_move_number: int = 0:
 	set(n):
@@ -128,6 +130,8 @@ var move_number: int = 0:
 		clear_wall()
 		unfreeze_piece()
 		ui.card_slots.countdown()
+		if _mist != null:
+			_mist.deactivate(self)
 		
 func _ready() -> void:
 	initialize_markers()
@@ -163,6 +167,15 @@ func show_move_markers(positions: Array[Vector2i], figure: FigureComponent) -> v
 	_selected_figure = figure
 	markers[figure.chess_component.position].highlight(BoardMarker.Highlights.SELECTED)
 	for pos in positions:
+		# do not allow walk into the mist
+		if _mist != null:
+			match _mist.target_team:
+				Teams.Red:
+					if pos.y >= 5:
+						continue
+				Teams.Black:
+					if pos.y <= 4:
+						continue
 		var marker: BoardMarker = markers[pos]
 		marker.highlight(BoardMarker.Highlights.MOVE)
 
@@ -228,7 +241,7 @@ func neutralize_markers() -> void:
 func activate_reds(result: bool) -> void:
 	for pos in state:
 		var figure: FigureComponent = state[pos]
-		if figure.chess_component.team == Teams.Red:
+		if figure.chess_component.team == Teams.Red and !figure.frozen:
 			figure.ui_component.active = result
 
 func get_figures(team: Teams) -> Array[FigureComponent]:
@@ -375,3 +388,15 @@ func check_trap(figure) -> void:
 			trap.queue_free()
 	
 	_traps = _traps.filter(func(t): return figure.chess_component.position != t.board_position)
+
+func activate_disconnection_mist(target_team: Teams) -> void:
+	const positions: Dictionary = {
+		Teams.Red: Vector2(1100,500),
+		Teams.Black: Vector2(1100,1600)
+	}
+	
+	_mist = disconnection_mist_scene.instantiate()
+	_mist.position = positions[target_team]
+	_mist.target_team = target_team
+	add_child(_mist)
+	_mist.activate(self)

@@ -50,14 +50,14 @@ float snoise(vec2 v) {
 void fragment() {
     // Scale the UV coordinates to "zoom" the noise pattern in or out.
     vec2 scaled_uv = UV * scale;
-	
+
     // --- Scrolling Motion ---
     // We create two scrolling layers moving in slightly different directions and speeds.
     // This makes the mist look more natural and less like a simple scrolling texture.
     // TIME is a built-in Godot variable that contains the total elapsed time.
     vec2 motion1 = vec2(TIME * scroll_speed, TIME * scroll_speed * 0.7);
     vec2 motion2 = vec2(TIME * -scroll_speed * 0.5, TIME * scroll_speed * 0.9);
-	
+
     // --- Noise Generation ---
     // Generate two layers of noise. Using multiple layers (often called "octaves")
     // adds detail and complexity to the final effect.
@@ -65,7 +65,7 @@ void fragment() {
     float noise1 = (snoise(scaled_uv + motion1) + 1.0) * 0.5;
     // The second layer is scaled differently to create finer details.
     float noise2 = (snoise(scaled_uv * 2.1 + motion2) + 1.0) * 0.5;
-    
+
     // Combine the noise layers. We are weighting them to control their influence.
     float combined_noise = (noise1 * 0.6) + (noise2 * 0.4);
 
@@ -83,13 +83,12 @@ void fragment() {
     // --- Final Color Calculation ---
     // Invert density to create an intuitive threshold. Higher density = more mist.
     float threshold = 1.0 - density;
-    
+
     // Use smoothstep to create a feathered edge for the mist noise itself.
     float alpha = smoothstep(threshold - softness / 2.0, threshold + softness / 2.0, combined_noise);
-	
+
     // Set the final pixel color to the chosen mist_color.
     COLOR = mist_color;
     // The final alpha is a combination of the noise, the mist color's alpha, AND the new border fade.
     COLOR.a *= alpha * border_fade;
 }
-
