@@ -168,7 +168,7 @@ func show_move_markers(positions: Array[Vector2i], figure: FigureComponent) -> v
 	markers[figure.chess_component.position].highlight(BoardMarker.Highlights.SELECTED)
 	for pos in positions:
 		# do not allow walk into the mist
-		if _mist != null:
+		if _mist != null and _selected_figure.chess_component.team == _mist.target_team:
 			match _mist.target_team:
 				Teams.Red:
 					if pos.y >= 5:
@@ -389,7 +389,9 @@ func check_trap(figure) -> void:
 	
 	_traps = _traps.filter(func(t): return figure.chess_component.position != t.board_position)
 
-func activate_disconnection_mist(target_team: Teams) -> void:
+func activate_disconnection_mist(target_team: Teams) -> bool:
+	if _mist != null:
+		return false
 	const positions: Dictionary = {
 		Teams.Red: Vector2(1100,500),
 		Teams.Black: Vector2(1100,1600)
@@ -400,3 +402,4 @@ func activate_disconnection_mist(target_team: Teams) -> void:
 	_mist.target_team = target_team
 	add_child(_mist)
 	_mist.activate(self)
+	return true

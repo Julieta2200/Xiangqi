@@ -13,7 +13,8 @@ func activate(board: BoardV2) -> void:
 				BoardV2.Teams.Black:
 					if pos.y > 4:
 						continue
-			board.state[pos].ui_component.active = false
+			if board.state[pos].ui_component != null:
+				board.state[pos].ui_component.active = false
 			board.state[pos].frozen = true
 
 func deactivate(board: BoardV2) -> void:
@@ -30,7 +31,8 @@ func deactivate(board: BoardV2) -> void:
 			BoardV2.Teams.Black:
 				if pos.y > 4:
 					continue
-		board.state[pos].ui_component.active = true
+		if board.state[pos].ui_component != null:
+			board.state[pos].ui_component.active = true
 		board.state[pos].frozen = false
 	board._mist = null
 	$AnimationPlayer.play("remove")

@@ -1,7 +1,7 @@
 class_name AIV2 extends Node
 
 @export var board: BoardV2
-@export var special: CardSlots.HL_SPECIALS
+@export var special: CardSlots.SPECIALS
 var _special_used: bool = false
 
 const infinite : int = 500000
@@ -103,6 +103,15 @@ func select_best_move(position: Array[Array], depth: int) -> void:
 func get_all_legal_moves(team: int, position: Array[Array]) -> Array[Array]:
 	var legal_moves: Array[Array] = []
 	for y in position.size():
+		# Consider mist when calculating the moves
+		if board._mist != null and team_numbers[board._mist.target_team] == team:
+			match team:
+				1:
+					if y >= 5:
+						continue
+				2:
+					if y <= 4:
+						continue
 		for x in position[y].size():
 			# empty cell or inactive figure
 			if position[y][x] <= 0:
@@ -547,7 +556,7 @@ func use_special() -> void:
 	if _special_used:
 		return
 	match special:
-		CardSlots.HL_SPECIALS.DisconnectionMist:
+		CardSlots.SPECIALS.DisconnectionMistCard:
 			disconnection_mist()
 
 func disconnection_mist() -> void:
@@ -559,5 +568,4 @@ func disconnection_mist() -> void:
 	
 	#  if there are 2 enemies on AI side of board
 	if enemy_count >= 2:
-		board.activate_disconnection_mist(BoardV2.Teams.Red)
-		_special_used = true
+		_special_used = board.activate_disconnection_mist(BoardV2.Teams.Red)

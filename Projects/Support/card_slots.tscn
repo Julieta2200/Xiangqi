@@ -20,3 +20,9 @@ offset_right = 159.0
 offset_bottom = 359.5
 grow_vertical = 2
 theme_override_constants/separation = 100
+
+[node name="HLSlot" type="Control" parent="."]
+anchors_preset = 0
+offset_top = 821.0
+offset_right = 40.0
+offset_bottom = 861.0

@@ -4,22 +4,24 @@ var ll_cards: Array[SpecialCard]
 var hl_card: SpecialCard
 
 @onready var ll_slots = $LLSlots
+@onready var hl_slot = $HLSlot
 var board: BoardV2
 var cards: Dictionary = {}
 
-enum SPECIALS {TreeTrunk, SnakeChain, WaterPortal}
-enum HL_SPECIALS {DisconnectionMist}
+enum SPECIALS {TreeTrunk, SnakeChain, WaterPortal, DisconnectionMistCard}
 
 const card_names = {
 	SPECIALS.TreeTrunk: "Tree Trunk",
 	SPECIALS.SnakeChain: "Snake Chain",
-	SPECIALS.WaterPortal: "Water Portal"
+	SPECIALS.WaterPortal: "Water Portal",
+	SPECIALS.DisconnectionMistCard: "Disconnection Mist"
 }
 
 const specials_scenes = {
 	SPECIALS.TreeTrunk: preload("res://Projects/Support/world1/tree_trunk.tscn"),
 	SPECIALS.SnakeChain: preload("res://Projects/Support/world1/snake_chain.tscn"),
-	SPECIALS.WaterPortal: preload("res://Projects/Support/world1/water_portal.tscn")
+	SPECIALS.WaterPortal: preload("res://Projects/Support/world1/water_portal.tscn"),
+	SPECIALS.DisconnectionMistCard: preload("res://Projects/Support/world1/disconnection_mist_card.tscn")
 }
 
 
@@ -41,6 +43,10 @@ func _ready() -> void:
 		ll_slots.add_child(card)
 		card.on_click.connect(_on_card_click)
 		cards[int(special)] = card
+	var card: SpecialCard = specials_scenes[SPECIALS.DisconnectionMistCard].instantiate()
+	hl_slot.add_child(card)
+	card.on_click.connect(_on_card_click)
+	cards[int(SPECIALS.DisconnectionMistCard)] = card
 
 func _on_card_click(s: SPECIALS):
 	if cards[s].cooldown_counter != 0:
@@ -52,6 +58,8 @@ func _on_card_click(s: SPECIALS):
 			board.special_markers_highlight(s, false, true)
 		SPECIALS.WaterPortal:
 			board.special_markers_highlight(s, true, false)
+		SPECIALS.DisconnectionMistCard:
+			use_special(s)
 
 func use_special(s: SPECIALS, m: BoardMarker = null):
 	match s:
@@ -61,6 +69,9 @@ func use_special(s: SPECIALS, m: BoardMarker = null):
 			board.freeze_piece([m],snake_chain)
 		SPECIALS.WaterPortal:
 			board.set_trap([m],water_portal)
+		SPECIALS.DisconnectionMistCard:
+			if !board.activate_disconnection_mist(BoardV2.Teams.Black):
+				return
 	cards[s].start_cooldown()
 	board.clear_markers()
 
