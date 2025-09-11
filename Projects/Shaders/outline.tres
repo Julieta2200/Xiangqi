@@ -4,5 +4,8 @@
 
 [resource]
 shader = ExtResource("1_yctt6")
-shader_parameter/outline_color = Color(0.90724, 0.455142, 0.240165, 1)
+shader_parameter/outline_color = Color(0.360382, 0.590732, 0.996948, 1)
 shader_parameter/outline_width = 1.5
+shader_parameter/pulse_speed = 8.0
+shader_parameter/wave_frequency = 20.0
+shader_parameter/wave_strength = 1.5
