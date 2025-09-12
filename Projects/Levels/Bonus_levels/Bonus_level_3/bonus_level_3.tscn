@@ -28,11 +28,12 @@ texture = ExtResource("3_ybq7w")
 [node name="Fog" parent="Background" instance=ExtResource("4_fcetq")]
 position = Vector2(-1499.5, -929)
 
-[node name="Board" parent="." node_paths=PackedStringArray("ai", "ui") instance=ExtResource("3_fglsu")]
+[node name="Board" parent="." node_paths=PackedStringArray("ai", "ui", "camera") instance=ExtResource("3_fglsu")]
 unique_name_in_owner = true
 position = Vector2(879, 363)
 ai = NodePath("../AI")
 ui = NodePath("../GameplayUI")
+camera = NodePath("../Camera")
 
 [node name="AI" parent="." node_paths=PackedStringArray("board") instance=ExtResource("4_hb2mj")]
 board = NodePath("../Board")

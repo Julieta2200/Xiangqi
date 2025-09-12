@@ -129,7 +129,7 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_5rg0u")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.532875
+frame_progress = 0.964953
 
 [node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component", "shader_component") instance=ExtResource("3_2lvq0")]
 chess_component = NodePath("../ChessComponent")
