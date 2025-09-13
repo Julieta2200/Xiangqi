@@ -1,16 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://g163w3jd0hml"]
+[gd_scene load_steps=5 format=3 uid="uid://g163w3jd0hml"]
 
 [ext_resource type="Texture2D" uid="uid://mro7q50657qq" path="res://Assets/boards/crack.png" id="1_0gv37"]
 [ext_resource type="Shader" path="res://Projects/Shaders/cracks.gdshader" id="1_txspa"]
+[ext_resource type="Script" path="res://Projects/Shaders/crack.gd" id="3_kq7tr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_khc5t"]
 shader = ExtResource("1_txspa")
-shader_parameter/glow_color = Color(1, 0.851654, 0.934997, 1)
-shader_parameter/glow_strength = 1.0
-shader_parameter/glow_size = 0.5
-shader_parameter/samples = 16
+shader_parameter/glow_color = Color(0.243494, 0.44824, 0.76192, 1)
+shader_parameter/main_color = Color(0.0352941, 0.109804, 0.223529, 1)
+shader_parameter/glow_intensity = 5.0
+shader_parameter/glow_spread = 5.0
 
 [node name="Crack" type="Sprite2D"]
+modulate = Color(0.960784, 0.427451, 0.623529, 1)
 material = SubResource("ShaderMaterial_khc5t")
 scale = Vector2(2, 2)
 texture = ExtResource("1_0gv37")
+script = ExtResource("3_kq7tr")
