@@ -1,18 +1,16 @@
 [gd_scene load_steps=4 format=3 uid="uid://g163w3jd0hml"]
 
-[ext_resource type="Shader" path="res://Projects/Shaders/cracks.gdshader" id="1_qfu2k"]
+[ext_resource type="Texture2D" uid="uid://mro7q50657qq" path="res://Assets/boards/crack.png" id="1_0gv37"]
+[ext_resource type="Shader" path="res://Projects/Shaders/cracks.gdshader" id="1_txspa"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_fqvjn"]
-shader = ExtResource("1_qfu2k")
-shader_parameter/crack_progress = 1.0
-shader_parameter/crack_color = Color(0.789879, 0.789879, 0.789879, 1)
-shader_parameter/crack_width = 0.077
-shader_parameter/distortion = 0.0
-shader_parameter/branch_complexity = 5.0
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_engki"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_khc5t"]
+shader = ExtResource("1_txspa")
+shader_parameter/glow_color = Color(1, 0.851654, 0.934997, 1)
+shader_parameter/glow_strength = 1.0
+shader_parameter/glow_size = 0.5
+shader_parameter/samples = 16
 
 [node name="Crack" type="Sprite2D"]
-material = SubResource("ShaderMaterial_fqvjn")
-scale = Vector2(100, 100)
-texture = SubResource("PlaceholderTexture2D_engki")
+material = SubResource("ShaderMaterial_khc5t")
+scale = Vector2(2, 2)
+texture = ExtResource("1_0gv37")
