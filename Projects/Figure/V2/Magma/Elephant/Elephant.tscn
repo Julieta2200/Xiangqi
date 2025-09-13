@@ -1,14 +1,32 @@
-[gd_scene load_steps=12 format=3 uid="uid://bx11h40qosjm0"]
+[gd_scene load_steps=30 format=3 uid="uid://bx11h40qosjm0"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_joy3s"]
 [ext_resource type="Texture2D" uid="uid://csjbks1mympdt" path="res://Assets/Characters/Magma/Elephant/Idle/Elephant1.png" id="2_swpv1"]
 [ext_resource type="PackedScene" uid="uid://dylnbquiybg16" path="res://Projects/Figure/Components/figure_ui_component.tscn" id="3_2lvq0"]
 [ext_resource type="Texture2D" uid="uid://b2i1l7ntb1n8v" path="res://Assets/Characters/Magma/Elephant/Idle/Elephant2.png" id="3_fd2y2"]
-[ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="4_j63sy"]
+[ext_resource type="Texture2D" uid="uid://bxyivpn61haf" path="res://Assets/Characters/Magma/Elephant/Animation/Front_Right/Front_Right1.png" id="4_oi2l5"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/elephant_chess_component.gd" id="4_sbf10"]
 [ext_resource type="Material" uid="uid://e3w5tox88i13" path="res://Projects/Shaders/outline.tres" id="5_64wpi"]
+[ext_resource type="Texture2D" uid="uid://chp6gdhavsm32" path="res://Assets/Characters/Magma/Elephant/Animation/Front_Right/Front_Right2.png" id="5_litb0"]
+[ext_resource type="Texture2D" uid="uid://cg4crg7s7abp5" path="res://Assets/Characters/Magma/Elephant/Animation/Front_Right/Front_Right3.png" id="6_nn1m7"]
 [ext_resource type="PackedScene" uid="uid://cy1y1kpvwk5sq" path="res://Projects/Figure/Components/ShaderComponent/shader_component.tscn" id="7_sm5jv"]
+[ext_resource type="Texture2D" uid="uid://1ulql4ebcxwo" path="res://Assets/Characters/Magma/Elephant/Animation/Front_Right/Front_Right4.png" id="7_xmxpx"]
+[ext_resource type="Texture2D" uid="uid://bofmmlo6arb0e" path="res://Assets/Characters/Magma/Elephant/Animation/Front_Right/Front_Right5.png" id="8_vur0x"]
+[ext_resource type="Texture2D" uid="uid://crkjsvdh2orob" path="res://Assets/Characters/Magma/Elephant/Animation/Front_Right/Front_Right6.png" id="9_ggdd2"]
 [ext_resource type="Material" uid="uid://b5ews8a5nl326" path="res://Projects/Shaders/spawn.tres" id="9_ri67h"]
+[ext_resource type="Texture2D" uid="uid://b3qq2jb36f5ac" path="res://Assets/Characters/Magma/Elephant/Animation/Front_Right/Front_Right7.png" id="10_pjmdx"]
+[ext_resource type="Texture2D" uid="uid://6u7crnhhwj4t" path="res://Assets/Characters/Magma/Elephant/Animation/Front_Right/Front_Right8.png" id="11_c4y6f"]
+[ext_resource type="Texture2D" uid="uid://bk1crk3gh81x6" path="res://Assets/Characters/Magma/Elephant/Animation/Front_Right/Front_Right9.png" id="12_pp6c6"]
+[ext_resource type="Texture2D" uid="uid://bgikhpfieah8c" path="res://Assets/Characters/Magma/Elephant/Animation/Front_Right/Front_Right10.png" id="13_o1w30"]
+[ext_resource type="Texture2D" uid="uid://bsumjifex2uxy" path="res://Assets/Characters/Magma/Elephant/Animation/Front_Right/Front_Right11.png" id="14_f7lmn"]
+[ext_resource type="Texture2D" uid="uid://clcit05s4d5oi" path="res://Assets/Characters/Magma/Elephant/Animation/Front_Right/Front_Right12.png" id="15_wgoas"]
+[ext_resource type="Texture2D" uid="uid://jup2int31exn" path="res://Assets/Characters/Magma/Elephant/Animation/Front_Right/Front_Right13.png" id="16_fjhej"]
+[ext_resource type="Texture2D" uid="uid://cwnqjq51saa4b" path="res://Assets/Characters/Magma/Elephant/Animation/Front_Right/Front_Right14.png" id="17_byh1r"]
+[ext_resource type="Texture2D" uid="uid://bema7t5hv720p" path="res://Assets/Characters/Magma/Elephant/Animation/Front_Right/Front_Right15.png" id="18_jmcpc"]
+[ext_resource type="Texture2D" uid="uid://bikq1drf83dml" path="res://Assets/Characters/Magma/Elephant/Animation/Front_Right/Front_Right16.png" id="19_bf287"]
+[ext_resource type="Texture2D" uid="uid://6ljiena0ucnn" path="res://Assets/Characters/Magma/Elephant/Animation/Front_Right/Front_Right17.png" id="20_7i0nf"]
+[ext_resource type="Texture2D" uid="uid://cnec6a6k01obp" path="res://Assets/Characters/Magma/Elephant/Animation/Front_Right/Front_Right18.png" id="21_m1f10"]
+[ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/Magma/elephant_move_component.gd" id="24_xkce4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5rg0u"]
 animations = [{
@@ -22,6 +40,65 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 1.8
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_oi2l5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_litb0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_nn1m7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_xmxpx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vur0x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ggdd2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_pjmdx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_c4y6f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_pp6c6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_o1w30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_f7lmn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_wgoas")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_fjhej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_byh1r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_jmcpc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_bf287")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_7i0nf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_m1f10")
+}],
+"loop": true,
+"name": &"move_front_right",
+"speed": 18.0
 }, {
 "frames": [{
 "duration": 4.0,
@@ -47,12 +124,12 @@ move_component = NodePath("MoveComponent")
 type = 5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(2, -96)
+position = Vector2(3, -111)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_5rg0u")
-animation = &"spawn"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 1.0
+frame_progress = 0.964953
 
 [node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component", "shader_component") instance=ExtResource("3_2lvq0")]
 chess_component = NodePath("../ChessComponent")
@@ -70,11 +147,14 @@ figure_component = NodePath("..")
 move_component = NodePath("../MoveComponent")
 
 [node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component")]
-script = ExtResource("4_j63sy")
-speed = 500.0
+script = ExtResource("24_xkce4")
+speed = 300.0
 figure_component = NodePath("..")
 
 [node name="ShaderComponent" parent="." node_paths=PackedStringArray("main_sprite") instance=ExtResource("7_sm5jv")]
 main_sprite = NodePath("../AnimatedSprite2D")
 highlight_material = ExtResource("5_64wpi")
 spawn_material = ExtResource("9_ri67h")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="MoveComponent" method="_on_figure_animation_finished"]
+[connection signal="move_done" from="MoveComponent" to="MoveComponent" method="_on_move_done"]

@@ -86,6 +86,7 @@ signal use_special(s: CardSlots.SPECIALS, m: BoardMarker)
 
 @export var ai: AIV2
 @export var ui: GameplayUI
+@export var camera : Camera
 
 @export var spawn_AI_figure_chances: Dictionary = {
 	FigureComponent.Types.CHARIOT: 0.3,
@@ -184,6 +185,8 @@ func set_figure(figure: FigureComponent, pos: Vector2i) -> void:
 	figure.global_position = markers[pos].global_position
 
 func move_figure(marker: BoardMarker) -> void:
+	if _selected_figure.type == FigureComponent.Types.ELEPHANT:
+		camera.shake()
 	clear_markers()
 	state.erase(_selected_figure.chess_component.position)
 	if state.has(marker.board_position):

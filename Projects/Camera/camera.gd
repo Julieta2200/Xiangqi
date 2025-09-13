@@ -1,7 +1,9 @@
-extends Camera2D
+class_name Camera extends Camera2D
 
 @export var zoom_speed: float = 3
 @export var move_speed: float = 1000.0
+@export var shack_time: float = 2.0
+@export var shack_intensity: float = 7.0
 var zoom_min: float = 0.65
 var zoom_max: float = 2.275
 var viewport_size : Vector2
@@ -74,3 +76,17 @@ func lock() -> void:
 	
 func unlock() -> void:
 	locked = false
+
+func shake():
+	var tween = create_tween()
+	var steps = shack_time * 30
+	var time_per_step = shack_time / steps
+
+	for i in range(steps):
+		var rand_offset = Vector2(
+			randf_range(-shack_intensity, shack_intensity),
+			randf_range(-shack_intensity, shack_intensity)
+		)
+		tween.tween_property(self, "offset", rand_offset, time_per_step)
+
+	tween.tween_property(self, "offset", Vector2.ZERO, 0.1)
