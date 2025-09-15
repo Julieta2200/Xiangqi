@@ -86,6 +86,9 @@ func state_to_position(state: Dictionary) -> Array[Array]:
 
 func select_best_move(position: Array[Array], depth: int) -> void:
 	var t = Time.get_unix_time_from_system()
+	# Recalculate the entire board score from scratch before thinking.
+	current_eval = calculate_full_evaluation(position)
+
 	var best_score = -infinite
 	var best_move = null
 	var moves: Array[Array] = get_all_legal_moves(team_numbers[BoardV2.Teams.Black], position)
@@ -98,6 +101,7 @@ func select_best_move(position: Array[Array], depth: int) -> void:
 			best_move = move
 	print(Time.get_unix_time_from_system() - t)
 	if best_move:
+		print(best_score)
 		call_deferred("make_move_main_thread", best_move)
 
 func get_all_legal_moves(team: int, position: Array[Array]) -> Array[Array]:
@@ -401,9 +405,6 @@ func simulate_move(position: Array[Array], move: Array) -> void:
 	# --- remove old bonuses for moving piece ---
 	var m_team = get_team_number(abs(moving_piece))
 	var m_fig = get_figure_number(abs(moving_piece), m_team)
-	current_eval -= aggression_bonus_for_piece(position, sy, sx, m_team, m_fig)
-	current_eval -= mobility_bonus_for_piece(position, sy, sx, m_team, m_fig)
-
 	# --- remove captured piece’s contribution ---
 	if captured_piece != 0:
 		var c_team = get_team_number(abs(captured_piece))
@@ -412,16 +413,10 @@ func simulate_move(position: Array[Array], move: Array) -> void:
 		if c_team == 2: current_eval -= val
 		elif c_team == 1: current_eval += val
 
-		current_eval -= aggression_bonus_for_piece(position, dy, dx, c_team, c_fig)
-		current_eval -= mobility_bonus_for_piece(position, dy, dx, c_team, c_fig)
-
 	# move piece
 	position[dy][dx] = moving_piece
 	position[sy][sx] = 0
 
-	# --- add new bonuses for moving piece at destination ---
-	current_eval += aggression_bonus_for_piece(position, dy, dx, m_team, m_fig)
-	current_eval += mobility_bonus_for_piece(position, dy, dx, m_team, m_fig)
 
 func undo_move(position: Array[Array], move: Array) -> void:
 	var sy = move[0]
@@ -435,9 +430,6 @@ func undo_move(position: Array[Array], move: Array) -> void:
 	var m_team = get_team_number(abs(moving_piece))
 	var m_fig = get_figure_number(abs(moving_piece), m_team)
 
-	# remove bonuses at destination
-	current_eval -= aggression_bonus_for_piece(position, dy, dx, m_team, m_fig)
-	current_eval -= mobility_bonus_for_piece(position, dy, dx, m_team, m_fig)
 
 	# restore captured piece
 	if captured_piece != 0:
@@ -447,16 +439,11 @@ func undo_move(position: Array[Array], move: Array) -> void:
 		if c_team == 2: current_eval += val
 		elif c_team == 1: current_eval -= val
 
-		current_eval += aggression_bonus_for_piece(position, dy, dx, c_team, c_fig)
-		current_eval += mobility_bonus_for_piece(position, dy, dx, c_team, c_fig)
 
 	# move back
 	position[sy][sx] = moving_piece
 	position[dy][dx] = captured_piece
 
-	# re-add bonuses at original square
-	current_eval += aggression_bonus_for_piece(position, sy, sx, m_team, m_fig)
-	current_eval += mobility_bonus_for_piece(position, sy, sx, m_team, m_fig)
 	
 func minimax(position: Array[Array], depth: int, maximizingPlayer: bool, alpha: int, beta: int) -> int:
 	var team: int = 2
@@ -506,43 +493,6 @@ func get_figure_number(number: int, team: int) -> int:
 func get_team_number(number: int) -> int:
 	return number/10
 
-
-func aggression_bonus_for_piece(position: Array[Array], y: int, x: int, team: int, figure_number: int) -> int:
-	var bonus: int = 0
-	if position[y][x] < 0:
-		return 0
-
-	# Encourage advancing soldiers
-	if figure_number == 6: # soldier
-		match team:
-			1: if y >= 5: bonus += 10
-			2: if y <= 4: bonus += 10
-
-	const palaces = {
-		1: [[0,2],[3,5]],
-		2: [[7,9],[3,5]]
-	}
-
-	# Encourage pieces near enemy palace
-	if y >= palaces[team][0][0] and y <= palaces[team][0][1] \
-	 and x >= palaces[team][1][0] and x <= palaces[team][1][1]:
-		bonus += 10
-
-	# Encourage threatening moves
-	var moves = figure_legal_moves[figure_number].call(team, position, y, x)
-	for move in moves:
-		if position[move[2]][move[3]] != 0:
-			bonus += 10
-
-	return bonus
-
-
-func mobility_bonus_for_piece(position: Array[Array], y: int, x: int, team: int, figure_number: int) -> int:
-	if position[y][x] < 0:
-		return 0
-	return figure_legal_moves[figure_number].call(team, position, y, x).size() * 2
-
-
 func position_hash(position: Array[Array], depth: int, maximizing: bool) -> String:
 	var hash := ""
 	for y in range(10):
@@ -569,3 +519,27 @@ func disconnection_mist() -> void:
 	#  if there are 2 enemies on AI side of board
 	if enemy_count >= 2:
 		_special_used = board.activate_disconnection_mist(BoardV2.Teams.Red)
+
+func calculate_full_evaluation(position: Array[Array]) -> int:
+	var total_eval: int = 0
+	for y in position.size():
+		for x in position[y].size():
+			var piece = position[y][x]
+			if piece == 0:
+				continue
+			
+			var team = get_team_number(abs(piece))
+			var figure_num = get_figure_number(abs(piece), team)
+			
+			var value = figure_values[figure_num]
+			
+			var piece_score = value
+			
+			# AI is team 2 (Black), so its pieces are positive.
+			# Player is team 1 (Red), so its pieces are negative.
+			if team == 2:
+				total_eval += piece_score
+			else:
+				total_eval -= piece_score
+				
+	return total_eval
