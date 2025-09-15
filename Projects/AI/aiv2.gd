@@ -52,7 +52,7 @@ func _ready() -> void:
 	randomize()
 
 func make_move() -> bool:
-	use_special()
+	call_deferred("use_special")
 	var position: Array[Array] = state_to_position(board.state)
 	thinking_thread.start(select_best_move.bind(position,3))
 	return true
