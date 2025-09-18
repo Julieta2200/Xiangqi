@@ -1,42 +1,91 @@
-[gd_scene load_steps=10 format=3 uid="uid://bqe6oo0n2f6fc"]
+[gd_scene load_steps=31 format=3 uid="uid://bqe6oo0n2f6fc"]
 
 [ext_resource type="Script" path="res://Projects/Levels/Overworld/overworld.gd" id="1_6480g"]
+[ext_resource type="Texture2D" uid="uid://dcslgins2nf6r" path="res://Assets/Map/Whole Map/Background.png" id="2_hes21"]
+[ext_resource type="Texture2D" uid="uid://dy8dvqug1rldr" path="res://Assets/Map/Whole Map/Land.png" id="2_i1qo8"]
 [ext_resource type="PackedScene" uid="uid://dt7elk36ldfbg" path="res://Projects/Levels/Overworld/level_marker.tscn" id="2_m64e3"]
 [ext_resource type="PackedScene" uid="uid://d3giqvti0ieng" path="res://Projects/Levels/Level_1/level_1.tscn" id="3_1gxvu"]
 [ext_resource type="PackedScene" uid="uid://ccqx1h7ffxvau" path="res://Projects/Levels/Bonus_levels/bonus_level.tscn" id="4_k78vk"]
 [ext_resource type="PackedScene" uid="uid://etksxsfuk15y" path="res://Projects/Levels/Level_2/level_2.tscn" id="4_l7pks"]
 [ext_resource type="PackedScene" uid="uid://ba7bayl6q6g14" path="res://Projects/Levels/Level_3/level_3.tscn" id="4_rn2x1"]
+[ext_resource type="Texture2D" uid="uid://dx4r24w450ff0" path="res://Assets/Map/First Part/All.png" id="5_0qper"]
+[ext_resource type="Texture2D" uid="uid://r3ovl366yx1d" path="res://Assets/Map/First Part/Water.png" id="6_j1shd"]
 [ext_resource type="PackedScene" uid="uid://badxk8aexm8hy" path="res://Projects/Levels/Bonus_levels/Bonus_level_2/bonus_level_2.tscn" id="6_wvnqw"]
+[ext_resource type="Texture2D" uid="uid://cjnr1qtll6s63" path="res://Assets/Map/First Island/All.png" id="7_menss"]
+[ext_resource type="Texture2D" uid="uid://b7d511i1nij2t" path="res://Assets/Map/First Part/Island.png" id="7_xp02a"]
 [ext_resource type="PackedScene" uid="uid://letuyg8vxfsj" path="res://Projects/Levels/Bonus_levels/Bonus_level_3/bonus_level_3.tscn" id="8_f3p8a"]
+[ext_resource type="Texture2D" uid="uid://cx8g77fopn1yh" path="res://Assets/Map/Second Island/All.png" id="8_gnete"]
+[ext_resource type="Texture2D" uid="uid://big2313qesscr" path="res://Assets/Map/First Island/Island.png" id="9_8hxbq"]
 [ext_resource type="PackedScene" uid="uid://xa1gmrhmbjba" path="res://Projects/Ui/orbs.tscn" id="9_qj7bv"]
+[ext_resource type="Texture2D" uid="uid://dthqg3lcpsl3r" path="res://Assets/Map/First Island/Water.png" id="10_v2sed"]
+[ext_resource type="Texture2D" uid="uid://b4qoc2gdi5kgq" path="res://Assets/Map/Second Part/All.png" id="11_40r4i"]
+[ext_resource type="Texture2D" uid="uid://c17jfss8xqocc" path="res://Assets/Map/Third Part/All.png" id="11_omsi1"]
+[ext_resource type="Texture2D" uid="uid://bskrfwdmxswok" path="res://Assets/Map/Second Island/Island.png" id="14_fe1n8"]
+[ext_resource type="Texture2D" uid="uid://rml1ubf2s05y" path="res://Assets/Map/Second Part/Water.png" id="14_ixmfm"]
+[ext_resource type="PackedScene" uid="uid://br5fqscax7ejf" path="res://Projects/Camera/camera.tscn" id="15_ix7hs"]
+[ext_resource type="Texture2D" uid="uid://dy5a0tvtfx38l" path="res://Assets/Map/Third Island/All.png" id="15_vdlx2"]
+[ext_resource type="Texture2D" uid="uid://07vyoa7j3a5" path="res://Assets/Map/Second Part/Island.png" id="15_vxjd7"]
+[ext_resource type="Texture2D" uid="uid://c2pusevtme515" path="res://Assets/Map/Second Island/Water.png" id="18_s6hq3"]
+[ext_resource type="Texture2D" uid="uid://uqd3gi0icktu" path="res://Assets/Map/Third Island/Island.png" id="19_ueuy7"]
+[ext_resource type="Texture2D" uid="uid://bbi3vn0pr30bs" path="res://Assets/Map/Third Part/Water.png" id="22_8r75w"]
+[ext_resource type="Texture2D" uid="uid://cm7nxuyjgeij" path="res://Assets/Map/Third Part/Isand.png" id="23_dyq2l"]
+[ext_resource type="Texture2D" uid="uid://dkcu2jqstbxx5" path="res://Assets/Map/Third Island/Water.png" id="26_br2ah"]
 
 [node name="Overworld" type="Node2D"]
 script = ExtResource("1_6480g")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(1163, 1426)
+scale = Vector2(2, 2)
+texture = ExtResource("2_hes21")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1109, 1689)
+scale = Vector2(2, 2)
+texture = ExtResource("2_i1qo8")
 
 [node name="Levels" type="Node2D" parent="."]
 
 [node name="1" parent="Levels" instance=ExtResource("2_m64e3")]
 position = Vector2(468, 973)
+map = ExtResource("5_0qper")
+water = ExtResource("6_j1shd")
+island = ExtResource("7_xp02a")
 level = ExtResource("3_1gxvu")
 
 [node name="bonus_1" parent="Levels/1" instance=ExtResource("2_m64e3")]
-position = Vector2(0, -200)
+position = Vector2(79, -437)
+map = ExtResource("7_menss")
+water = ExtResource("10_v2sed")
+island = ExtResource("9_8hxbq")
 level = ExtResource("4_k78vk")
 
 [node name="2" parent="Levels" instance=ExtResource("2_m64e3")]
-position = Vector2(944, 971)
+position = Vector2(812, 826)
+map = ExtResource("11_40r4i")
+water = ExtResource("14_ixmfm")
+island = ExtResource("15_vxjd7")
 level = ExtResource("4_l7pks")
 
 [node name="bonus_2" parent="Levels/2" instance=ExtResource("2_m64e3")]
-position = Vector2(0, -200)
+position = Vector2(193, -387)
+map = ExtResource("8_gnete")
+water = ExtResource("18_s6hq3")
+island = ExtResource("14_fe1n8")
 level = ExtResource("6_wvnqw")
 
 [node name="3" parent="Levels" instance=ExtResource("2_m64e3")]
-position = Vector2(1387, 973)
+position = Vector2(1331, 799)
+map = ExtResource("11_omsi1")
+water = ExtResource("22_8r75w")
+island = ExtResource("23_dyq2l")
 level = ExtResource("4_rn2x1")
 
 [node name="bonus_3" parent="Levels/3" instance=ExtResource("2_m64e3")]
-position = Vector2(0, -200)
+position = Vector2(98, -359)
+map = ExtResource("15_vdlx2")
+water = ExtResource("26_br2ah")
+island = ExtResource("19_ueuy7")
 level = ExtResource("8_f3p8a")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -57,5 +106,8 @@ scale = Vector2(2, 2)
 text = "Karma Table"
 
 [node name="Orbs" parent="CanvasLayer" instance=ExtResource("9_qj7bv")]
+
+[node name="Camera" parent="." instance=ExtResource("15_ix7hs")]
+position = Vector2(998, 955)
 
 [connection signal="pressed" from="CanvasLayer/KarmaTable" to="." method="_on_karma_table_pressed"]
