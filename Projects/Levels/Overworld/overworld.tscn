@@ -23,11 +23,11 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8xjyt"]
 shader = ExtResource("7_fkmex")
-shader_parameter/mist_color = Color(0.8, 0.85, 0.9, 0.6)
-shader_parameter/scroll_speed = 0.096
-shader_parameter/density = 0.337
-shader_parameter/softness = 0.976
-shader_parameter/scale = 4.087
+shader_parameter/mist_color = Color(0.8, 0.85098, 0.901961, 0.764706)
+shader_parameter/scroll_speed = 0.12
+shader_parameter/density = 0.567
+shader_parameter/softness = 1.0
+shader_parameter/scale = 1.9
 shader_parameter/border_softness = 0.25
 
 [node name="Overworld" type="Node2D"]
@@ -69,182 +69,8 @@ texture = ExtResource("26_br2ah")
 
 [node name="Fog" type="Sprite2D" parent="Dragon"]
 material = SubResource("ShaderMaterial_8xjyt")
-position = Vector2(-365.5, -318)
-scale = Vector2(0.378629, 0.285925)
-texture = ExtResource("11_omsi1")
-
-[node name="Fog2" type="Sprite2D" parent="Dragon"]
-material = SubResource("ShaderMaterial_8xjyt")
-position = Vector2(-330, -368)
-scale = Vector2(0.378629, 0.285925)
-texture = ExtResource("11_omsi1")
-
-[node name="Fog3" type="Sprite2D" parent="Dragon"]
-material = SubResource("ShaderMaterial_8xjyt")
-position = Vector2(-285, -411)
-scale = Vector2(0.378629, 0.285925)
-texture = ExtResource("11_omsi1")
-
-[node name="Fog4" type="Sprite2D" parent="Dragon"]
-material = SubResource("ShaderMaterial_8xjyt")
-position = Vector2(-254, -364.5)
-scale = Vector2(0.378629, 0.285925)
-texture = ExtResource("11_omsi1")
-
-[node name="Fog5" type="Sprite2D" parent="Dragon"]
-material = SubResource("ShaderMaterial_8xjyt")
-position = Vector2(-200.5, -423.5)
-scale = Vector2(0.378629, 0.285925)
-texture = ExtResource("11_omsi1")
-
-[node name="Fog6" type="Sprite2D" parent="Dragon"]
-material = SubResource("ShaderMaterial_8xjyt")
-position = Vector2(-169, -380.5)
-scale = Vector2(0.378629, 0.285925)
-texture = ExtResource("11_omsi1")
-
-[node name="Fog7" type="Sprite2D" parent="Dragon"]
-material = SubResource("ShaderMaterial_8xjyt")
-position = Vector2(-122, -451)
-scale = Vector2(0.378629, 0.285925)
-texture = ExtResource("11_omsi1")
-
-[node name="Fog8" type="Sprite2D" parent="Dragon"]
-material = SubResource("ShaderMaterial_8xjyt")
-position = Vector2(-91, -390.5)
-scale = Vector2(0.378629, 0.285925)
-texture = ExtResource("11_omsi1")
-
-[node name="Fog9" type="Sprite2D" parent="Dragon"]
-material = SubResource("ShaderMaterial_8xjyt")
-position = Vector2(-45, -456)
-scale = Vector2(0.378629, 0.285925)
-texture = ExtResource("11_omsi1")
-
-[node name="Fog10" type="Sprite2D" parent="Dragon"]
-material = SubResource("ShaderMaterial_8xjyt")
-position = Vector2(-3.5, -395)
-scale = Vector2(0.378629, 0.285925)
-texture = ExtResource("11_omsi1")
-
-[node name="Fog11" type="Sprite2D" parent="Dragon"]
-material = SubResource("ShaderMaterial_8xjyt")
-position = Vector2(31.5, -463.5)
-scale = Vector2(0.378629, 0.285925)
-texture = ExtResource("11_omsi1")
-
-[node name="Fog12" type="Sprite2D" parent="Dragon"]
-material = SubResource("ShaderMaterial_8xjyt")
-position = Vector2(69.5, -418.5)
-scale = Vector2(0.378629, 0.285925)
-texture = ExtResource("11_omsi1")
-
-[node name="Fog13" type="Sprite2D" parent="Dragon"]
-material = SubResource("ShaderMaterial_8xjyt")
-position = Vector2(123, -471.5)
-scale = Vector2(0.378629, 0.285925)
-texture = ExtResource("11_omsi1")
-
-[node name="Fog14" type="Sprite2D" parent="Dragon"]
-material = SubResource("ShaderMaterial_8xjyt")
-position = Vector2(196, -472.5)
-scale = Vector2(0.378629, 0.285925)
-texture = ExtResource("11_omsi1")
-
-[node name="Fog15" type="Sprite2D" parent="Dragon"]
-material = SubResource("ShaderMaterial_8xjyt")
-position = Vector2(163.5, -410)
-scale = Vector2(0.378629, 0.285925)
-texture = ExtResource("11_omsi1")
-
-[node name="Fog16" type="Sprite2D" parent="Dragon"]
-material = SubResource("ShaderMaterial_8xjyt")
-position = Vector2(-164.5, -479.5)
-scale = Vector2(0.378629, 0.285925)
-texture = ExtResource("11_omsi1")
-
-[node name="Fog17" type="Sprite2D" parent="Dragon"]
-material = SubResource("ShaderMaterial_8xjyt")
-position = Vector2(-92, -501.5)
-scale = Vector2(0.378629, 0.285925)
-texture = ExtResource("11_omsi1")
-
-[node name="Fog18" type="Sprite2D" parent="Dragon"]
-material = SubResource("ShaderMaterial_8xjyt")
-position = Vector2(7, -510)
-scale = Vector2(0.378629, 0.285925)
-texture = ExtResource("11_omsi1")
-
-[node name="Fog19" type="Sprite2D" parent="Dragon"]
-material = SubResource("ShaderMaterial_8xjyt")
-position = Vector2(87.5, -508)
-scale = Vector2(0.378629, 0.285925)
-texture = ExtResource("11_omsi1")
-
-[node name="Fog20" type="Sprite2D" parent="Dragon"]
-material = SubResource("ShaderMaterial_8xjyt")
-position = Vector2(-235, -466.5)
-scale = Vector2(0.378629, 0.285925)
-texture = ExtResource("11_omsi1")
-
-[node name="Fog21" type="Sprite2D" parent="Dragon"]
-material = SubResource("ShaderMaterial_8xjyt")
-position = Vector2(-245, -536)
-scale = Vector2(0.378629, 0.285925)
-texture = ExtResource("11_omsi1")
-
-[node name="Fog22" type="Sprite2D" parent="Dragon"]
-material = SubResource("ShaderMaterial_8xjyt")
-position = Vector2(-254, -580)
-scale = Vector2(0.378629, 0.285925)
-texture = ExtResource("11_omsi1")
-
-[node name="Fog23" type="Sprite2D" parent="Dragon"]
-material = SubResource("ShaderMaterial_8xjyt")
-position = Vector2(-306.5, -621.5)
-scale = Vector2(0.378629, 0.285925)
-texture = ExtResource("11_omsi1")
-
-[node name="Fog24" type="Sprite2D" parent="Dragon"]
-material = SubResource("ShaderMaterial_8xjyt")
-position = Vector2(-78, -673)
-scale = Vector2(0.378629, 0.285925)
-texture = ExtResource("11_omsi1")
-
-[node name="Fog25" type="Sprite2D" parent="Dragon"]
-material = SubResource("ShaderMaterial_8xjyt")
-position = Vector2(-52, -628.5)
-scale = Vector2(0.378629, 0.285925)
-texture = ExtResource("11_omsi1")
-
-[node name="Fog26" type="Sprite2D" parent="Dragon"]
-material = SubResource("ShaderMaterial_8xjyt")
-position = Vector2(-52.5, -581.5)
-scale = Vector2(0.378629, 0.285925)
-texture = ExtResource("11_omsi1")
-
-[node name="Fog27" type="Sprite2D" parent="Dragon"]
-material = SubResource("ShaderMaterial_8xjyt")
-position = Vector2(138, -575.5)
-scale = Vector2(0.378629, 0.285925)
-texture = ExtResource("11_omsi1")
-
-[node name="Fog28" type="Sprite2D" parent="Dragon"]
-material = SubResource("ShaderMaterial_8xjyt")
-position = Vector2(165.5, -616)
-scale = Vector2(0.378629, 0.285925)
-texture = ExtResource("11_omsi1")
-
-[node name="Fog29" type="Sprite2D" parent="Dragon"]
-material = SubResource("ShaderMaterial_8xjyt")
-position = Vector2(156, -679)
-scale = Vector2(0.378629, 0.285925)
-texture = ExtResource("11_omsi1")
-
-[node name="Fog30" type="Sprite2D" parent="Dragon"]
-material = SubResource("ShaderMaterial_8xjyt")
-position = Vector2(202, -614.5)
-scale = Vector2(0.378629, 0.285925)
+position = Vector2(-89.5, -499)
+scale = Vector2(2.71996, 2.02092)
 texture = ExtResource("11_omsi1")
 
 [node name="Levels" type="Node2D" parent="."]
