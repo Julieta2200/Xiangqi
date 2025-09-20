@@ -157,7 +157,7 @@ func _on_elephant_pressed() -> void:
 
 func _on_cannon_pressed() -> void:
 	var state: Array[State] = [
-		State.new(BoardV2.Kingdoms.MAGMA, FigureComponent.Types.CANNON, Vector2i(1,2)),
+		State.new(BoardV2.Kingdoms.MAGMA, FigureComponent.Types.CANNON, Vector2i(7,2)),
 		State.new(BoardV2.Kingdoms.FOG, FigureComponent.Types.SOLDIER, Vector2i(1,5)),
 		State.new(BoardV2.Kingdoms.FOG, FigureComponent.Types.SOLDIER, Vector2i(1,7)),
 	]
