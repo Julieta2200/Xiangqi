@@ -63,4 +63,10 @@ layout_mode = 2
 focus_mode = 0
 text = "Pawn"
 
+[node name="Horse" type="Button" parent="CanvasLayer/SectionsContainer"]
+layout_mode = 2
+focus_mode = 0
+text = "Horse"
+
 [connection signal="pressed" from="CanvasLayer/SectionsContainer/Pawn" to="." method="_on_pawn_pressed"]
+[connection signal="pressed" from="CanvasLayer/SectionsContainer/Horse" to="." method="_on_horse_pressed"]

@@ -73,6 +73,7 @@ func _on_pawn_pressed() -> void:
 	passed_text_shown = false
 
 func check_state() -> void:
+	await get_tree().process_frame
 	if passed_text_shown:
 		return
 	match current_section:
@@ -85,3 +86,25 @@ func check_state() -> void:
 					DialogSystem.DialogText.new("Great! Now try moving it sideways.", DialogSystem.CHARACTERS.Ashes),
 				], false, 3.0)
 				passed_text_shown = true
+		TutorialSections.HORSE:
+			if (board.get_figures(BoardV2.Teams.Black).size() == 0):
+				DialogSystem.start_dialog([
+					DialogSystem.DialogText.new("Well done! You have captured the enemy Pawn.", DialogSystem.CHARACTERS.Ashes),
+				], false, 5.0)
+				passed_text_shown = true
+
+		
+func _on_horse_pressed() -> void:
+	var state: Array[State] = [
+		State.new(BoardV2.Kingdoms.MAGMA, FigureComponent.Types.HORSE, Vector2i(4,4)),
+		State.new(BoardV2.Kingdoms.FOG, FigureComponent.Types.SOLDIER, Vector2i(5,4)),
+	]
+	board.clear_board()
+	board.initialize_position(state)
+	DialogSystem.start_dialog([
+		DialogSystem.DialogText.new("This is a Horse. Horses move in an L-shape: two steps in one direction and then one step perpendicular.", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("However, if there is a piece directly next to the Horse in the direction it is moving, it cannot jump over it.", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("Try moving the Horse around, and capture the enemy Pawn!", DialogSystem.CHARACTERS.Ashes),
+	], true)
+	current_section = TutorialSections.HORSE
+	passed_text_shown = false
