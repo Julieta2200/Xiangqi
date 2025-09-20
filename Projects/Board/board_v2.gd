@@ -234,8 +234,6 @@ func spawn_AI_figure():
 		
 func capture(target_pos: Vector2i, attacker_pos = Vector2i(-1,-1)) -> void:
 	state[target_pos].move_component.disappear(attacker_pos)
-	if get_generals().size() == 2:
-		ui.power_meter.update_distance(get_figures(Teams.Red).size())
 
 func clear_markers() -> void:
 	for pos in markers:
@@ -285,6 +283,8 @@ func activate_cards(result: bool) -> void:
 	ui.card_slots.activate(result)
 
 func figure_move_done() -> void:
+	if tutorial:
+		return
 	if check_game_over():
 		return
 	if _selected_figure != null:
