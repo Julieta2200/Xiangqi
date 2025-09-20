@@ -52,4 +52,3 @@ void fragment() {
 
 	COLOR = vec4(final_rgb, final_alpha);
 }
-
