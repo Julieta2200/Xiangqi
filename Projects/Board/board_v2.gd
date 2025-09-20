@@ -285,11 +285,9 @@ func activate_cards(result: bool) -> void:
 	ui.card_slots.activate(result)
 
 func figure_move_done() -> void:
-	var f
 	if check_game_over():
 		return
 	if _selected_figure != null:
-		f = _selected_figure
 		_selected_figure = null
 		if tutorial:
 			return
