@@ -9,6 +9,7 @@ const green: Color = Color(0,1,0)
 	TutorialSections.ELEPHANT: $CanvasLayer/SectionsContainer/Elephant,
 	TutorialSections.CANNON: $CanvasLayer/SectionsContainer/Cannon,
 	TutorialSections.CHARIOT: $CanvasLayer/SectionsContainer/Chariot,
+	TutorialSections.ADVISOR: $CanvasLayer/SectionsContainer/Advisor,
 }
 
 enum TutorialSections {
@@ -117,6 +118,12 @@ func check_state() -> void:
 					DialogSystem.DialogText.new("Awesome! You have captured the enemy Pawn.", DialogSystem.CHARACTERS.Ashes),
 				], false, 5.0)
 				passed_text_shown = true
+		TutorialSections.ADVISOR:
+			if (board.get_figures(BoardV2.Teams.Black).size() == 0):
+				DialogSystem.start_dialog([
+					DialogSystem.DialogText.new("Congratulations! You have captured the enemy Pawn.", DialogSystem.CHARACTERS.Ashes),
+				], false, 5.0)
+				passed_text_shown = true
 
 func _on_pawn_pressed() -> void:
 	var state: Array[State] = [
@@ -190,4 +197,18 @@ func _on_chariot_pressed() -> void:
 		DialogSystem.DialogText.new("Try moving the Chariot around, and capture the enemy Pawn!", DialogSystem.CHARACTERS.Ashes),
 	], true)
 	current_section = TutorialSections.CHARIOT
+	passed_text_shown = false
+
+func _on_advisor_pressed() -> void:
+	var state: Array[State] = [
+		State.new(BoardV2.Kingdoms.MAGMA, FigureComponent.Types.ADVISOR, Vector2i(3,0)),
+		State.new(BoardV2.Kingdoms.FOG, FigureComponent.Types.SOLDIER, Vector2i(5,2)),
+	]
+	board.clear_board()
+	board.initialize_position(state)
+	DialogSystem.start_dialog([
+		DialogSystem.DialogText.new("This is an Advisor. Advisors move one point diagonally and must stay within the palace.", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("Try moving the Advisor around, and capture the enemy Pawn!", DialogSystem.CHARACTERS.Ashes),
+	], true)
+	current_section = TutorialSections.ADVISOR
 	passed_text_shown = false

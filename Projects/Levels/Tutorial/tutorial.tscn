@@ -88,9 +88,15 @@ layout_mode = 2
 focus_mode = 0
 text = "Chariot"
 
+[node name="Advisor" type="Button" parent="CanvasLayer/SectionsContainer"]
+layout_mode = 2
+focus_mode = 0
+text = "Advisor"
+
 [connection signal="pressed" from="CanvasLayer/SectionsContainer/Free" to="." method="_on_free_pressed"]
 [connection signal="pressed" from="CanvasLayer/SectionsContainer/Pawn" to="." method="_on_pawn_pressed"]
 [connection signal="pressed" from="CanvasLayer/SectionsContainer/Horse" to="." method="_on_horse_pressed"]
 [connection signal="pressed" from="CanvasLayer/SectionsContainer/Elephant" to="." method="_on_elephant_pressed"]
 [connection signal="pressed" from="CanvasLayer/SectionsContainer/Cannon" to="." method="_on_cannon_pressed"]
 [connection signal="pressed" from="CanvasLayer/SectionsContainer/Chariot" to="." method="_on_chariot_pressed"]
+[connection signal="pressed" from="CanvasLayer/SectionsContainer/Advisor" to="." method="_on_advisor_pressed"]
