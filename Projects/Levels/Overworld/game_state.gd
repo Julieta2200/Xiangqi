@@ -32,17 +32,14 @@ var state: Dictionary = {
 			"state": LevelMarker.LevelState.Closed,
 			"move_count" : 0
 		},
-	}
+	},
+	"passed_tutorials": []
 }
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	load_game()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 func add_orb() -> void:
 	state["orbs"] += 1

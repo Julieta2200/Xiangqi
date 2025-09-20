@@ -16,10 +16,18 @@ var passed_text_shown: bool = false :
 	set(v):
 		if v:
 			sections[current_section].modulate = green
+			GameState.state["passed_tutorials"].append(current_section)
+			GameState.save_game()
 		passed_text_shown = v
 
 func _ready() -> void:
 	super._ready()
+	if !GameState.state.has("passed_tutorials"):
+		GameState.state["passed_tutorials"] = []
+		GameState.save_game()
+	for s in GameState.state["passed_tutorials"]:
+		if sections.has(int(s)):
+			sections[int(s)].modulate = green
 	board.move_done.connect(check_state)
 	_on_free_pressed()
 	
