@@ -5,7 +5,7 @@
 [node name="DialogSystem" type="CanvasLayer"]
 script = ExtResource("1_t5gml")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="Text" type="RichTextLabel" parent="."]
 visible = false
 offset_left = 419.0
 offset_top = 1942.0
@@ -14,6 +14,16 @@ offset_bottom = 2199.0
 mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 50
 text = "Some test text"
+
+[node name="SkipText" type="RichTextLabel" parent="."]
+visible = false
+offset_left = 1549.0
+offset_top = 2054.0
+offset_right = 2154.0
+offset_bottom = 2186.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 50
+text = "Press Space to skip"
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

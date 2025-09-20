@@ -39,3 +39,7 @@ func _ready() -> void:
 		State.new(BoardV2.Kingdoms.FOG, FigureComponent.Types.SOLDIER, Vector2i(8,6)),
 	]
 	board.initialize_position(state)
+
+	DialogSystem.start_dialog([
+		DialogSystem.DialogText.new("Welcome to the tutorial level! Here, you'll learn the basics of the game.", DialogSystem.CHARACTERS.Ashes),
+	], true)

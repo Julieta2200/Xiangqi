@@ -6,7 +6,8 @@ var text_queue: Array[DialogText]
 var skipable: bool
 var duration: float
 
-@onready var text_obj: RichTextLabel = $RichTextLabel
+@onready var text_obj: RichTextLabel = $Text
+@onready var skip_text_obj: RichTextLabel = $SkipText
 @onready var timer: Timer = $Timer
 
 # Called when the node enters the scene tree for the first time.
@@ -17,6 +18,7 @@ func start_dialog(texts: Array[DialogText], skipable: bool = false, duration: fl
 	text_queue = texts
 	self.duration = duration
 	self.skipable = skipable
+	skip_text_obj.visible = skipable
 	_next_dialog()
 
 func _next_dialog() -> void:
@@ -25,6 +27,7 @@ func _next_dialog() -> void:
 		timer.start()
 	if text_queue.size() == 0:
 		text_obj.hide()
+		skip_text_obj.hide()
 		return
 	var dt: DialogText = text_queue.pop_front()
 	text_obj.text = dt.text
