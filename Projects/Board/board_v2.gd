@@ -84,6 +84,8 @@ var scenes: Dictionary = {
 signal game_over(win,move_number)
 signal use_special(s: CardSlots.SPECIALS, m: BoardMarker)
 
+@export var tutorial: bool
+
 @export var ai: AIV2
 @export var ui: GameplayUI
 @export var camera : Camera
@@ -96,7 +98,10 @@ signal use_special(s: CardSlots.SPECIALS, m: BoardMarker)
 var markers : Dictionary
 var turn: Teams = Teams.Red :
 	set(t):
-		turn = t
+		if tutorial :
+			turn = Teams.Red
+		else :
+			turn = t
 		clear_markers()
 		activate_reds(turn == Teams.Red)
 		activate_garrison(turn == Teams.Red)
@@ -286,6 +291,8 @@ func figure_move_done() -> void:
 	if _selected_figure != null:
 		f = _selected_figure
 		_selected_figure = null
+		if tutorial:
+			return
 		ai.make_move()
 	else:
 		if _AI_figure != null:
@@ -300,6 +307,8 @@ func get_generals() -> Array[FigureComponent]:
 	return generals
 
 func check_game_over() -> bool:
+	if tutorial:
+		return false
 	var generals = get_generals()
 	if generals.size() < 2:
 		var win = is_victory(generals)
