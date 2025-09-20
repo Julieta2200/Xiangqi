@@ -6,6 +6,8 @@ const green: Color = Color(0,1,0)
 
 @onready var sections: Dictionary = {
 	TutorialSections.PAWN: $CanvasLayer/SectionsContainer/Pawn,
+	TutorialSections.HORSE: $CanvasLayer/SectionsContainer/Horse,
+	TutorialSections.FREE: $CanvasLayer/SectionsContainer/Free,
 }
 
 enum TutorialSections {
@@ -16,6 +18,11 @@ var passed_text_shown: bool = false
 
 func _ready() -> void:
 	super._ready()
+	board.move_done.connect(check_state)
+	_on_free_pressed()
+	
+
+func _on_free_pressed() -> void:
 	var state: Array[State] = [
 		State.new(BoardV2.Kingdoms.MAGMA, FigureComponent.Types.GENERAL, Vector2i(4,0)),
 		State.new(BoardV2.Kingdoms.MAGMA, FigureComponent.Types.ADVISOR, Vector2i(3,0)),
@@ -51,13 +58,13 @@ func _ready() -> void:
 		State.new(BoardV2.Kingdoms.FOG, FigureComponent.Types.SOLDIER, Vector2i(6,6)),
 		State.new(BoardV2.Kingdoms.FOG, FigureComponent.Types.SOLDIER, Vector2i(8,6)),
 	]
+	board.clear_board()
 	board.initialize_position(state)
-	board.move_done.connect(check_state)
 
 	DialogSystem.start_dialog([
 		DialogSystem.DialogText.new("Welcome to the Playground! You can play around here, or choose a topic which you want to learn!", DialogSystem.CHARACTERS.Ashes),
 	], false, 3.0)
-
+	current_section = TutorialSections.FREE
 
 func _on_pawn_pressed() -> void:
 	var state: Array[State] = [

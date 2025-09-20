@@ -58,6 +58,11 @@ offset_bottom = 20.0
 grow_vertical = 2
 scale = Vector2(2, 2)
 
+[node name="Free" type="Button" parent="CanvasLayer/SectionsContainer"]
+layout_mode = 2
+focus_mode = 0
+text = "Free"
+
 [node name="Pawn" type="Button" parent="CanvasLayer/SectionsContainer"]
 layout_mode = 2
 focus_mode = 0
@@ -68,5 +73,6 @@ layout_mode = 2
 focus_mode = 0
 text = "Horse"
 
+[connection signal="pressed" from="CanvasLayer/SectionsContainer/Free" to="." method="_on_free_pressed"]
 [connection signal="pressed" from="CanvasLayer/SectionsContainer/Pawn" to="." method="_on_pawn_pressed"]
 [connection signal="pressed" from="CanvasLayer/SectionsContainer/Horse" to="." method="_on_horse_pressed"]
