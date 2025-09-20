@@ -84,6 +84,7 @@ var scenes: Dictionary = {
 
 signal game_over(win,move_number)
 signal use_special(s: CardSlots.SPECIALS, m: BoardMarker)
+signal move_done()
 
 @export var tutorial: bool
 
@@ -299,6 +300,7 @@ func activate_cards(result: bool) -> void:
 	ui.card_slots.activate(result)
 
 func figure_move_done() -> void:
+	emit_signal("move_done")
 	if tutorial:
 		return
 	if check_game_over():
