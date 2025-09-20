@@ -41,6 +41,26 @@ special = 3
 position = Vector2(1962, 1499)
 
 [node name="GameplayUI" parent="." node_paths=PackedStringArray("board") instance=ExtResource("8_njyh2")]
+visible = false
 board = NodePath("../Board")
 
 [node name="Music" parent="." instance=ExtResource("9_tpfdr")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SectionsContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+scale = Vector2(2, 2)
+
+[node name="Pawn" type="Button" parent="CanvasLayer/SectionsContainer"]
+layout_mode = 2
+focus_mode = 0
+text = "Pawn"
+
+[connection signal="pressed" from="CanvasLayer/SectionsContainer/Pawn" to="." method="_on_pawn_pressed"]

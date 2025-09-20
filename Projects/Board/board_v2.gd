@@ -161,7 +161,23 @@ func initialize_markers():
 func initialize_position(init_state: Array[State]):
 	for s in init_state:
 		instantiate_figure(s.kingdom, s.type, s.position)
-	
+
+func clear_board() -> void:
+	for pos in state:
+		state[pos].delete()
+	state.clear()
+	clear_markers()
+	_selected_figure = null
+	_walls.clear()
+	_freezes.clear()
+	_traps.clear()
+	if _mist != null:
+		_mist.queue_free()
+		_mist = null
+	turn = Teams.Red
+	move_number = 0
+	ai_move_number = 0
+
 func instantiate_figure(kingdom: Kingdoms, type: FigureComponent.Types, pos: Vector2i) -> void:
 	var figure: FigureComponent = scenes[kingdom][type].instantiate()
 	figure.board = self

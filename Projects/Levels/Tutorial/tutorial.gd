@@ -41,5 +41,18 @@ func _ready() -> void:
 	board.initialize_position(state)
 
 	DialogSystem.start_dialog([
-		DialogSystem.DialogText.new("Welcome to the tutorial level! Here, you'll learn the basics of the game.", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("Welcome to the Playground! You can play around here, or choose a topic which you want to learn!", DialogSystem.CHARACTERS.Ashes),
+	], false, 3.0)
+
+
+func _on_pawn_pressed() -> void:
+	var state: Array[State] = [
+		State.new(BoardV2.Kingdoms.MAGMA, FigureComponent.Types.SOLDIER, Vector2i(4,3)),
+	]
+	board.clear_board()
+	board.initialize_position(state)
+	DialogSystem.start_dialog([
+		DialogSystem.DialogText.new("This is a Soldier. Soldiers can only move forward one step at a time, but once they cross the river, they can also move sideways.", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("Try moving the Soldier to the other side of the river!", DialogSystem.CHARACTERS.Ashes),
 	], true)
+

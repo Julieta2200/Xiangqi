@@ -25,6 +25,8 @@ func _next_dialog() -> void:
 	if !skipable:
 		timer.wait_time = duration
 		timer.start()
+	else:
+		timer.stop()
 	if text_queue.size() == 0:
 		text_obj.hide()
 		skip_text_obj.hide()
