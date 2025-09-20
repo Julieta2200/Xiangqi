@@ -12,10 +12,12 @@ const green: Color = Color(0,1,0)
 	TutorialSections.ADVISOR: $CanvasLayer/SectionsContainer/Advisor,
 	TutorialSections.GENERAL: $CanvasLayer/SectionsContainer/General,
 	TutorialSections.FLYINGGENERAL: $CanvasLayer/SectionsContainer/FlyingGeneral,
+	TutorialSections.SPAWNING: $CanvasLayer/SectionsContainer/Spawning,
 }
 
 enum TutorialSections {
-	FREE, PAWN, GENERAL, ADVISOR, ELEPHANT, HORSE, CHARIOT, CANNON, FLYINGGENERAL
+	FREE, PAWN, GENERAL, ADVISOR, ELEPHANT, HORSE, CHARIOT, CANNON, FLYINGGENERAL,
+	SPAWNING
 }
 var current_section: TutorialSections = TutorialSections.FREE
 var passed_text_shown: bool = false :
@@ -82,6 +84,7 @@ func _on_free_pressed() -> void:
 		DialogSystem.DialogText.new("Welcome to the Playground! You can play around here, or choose a topic which you want to learn!", DialogSystem.CHARACTERS.Ashes),
 	], false, 3.0)
 	current_section = TutorialSections.FREE
+	gameplay_ui.hide()
 
 func check_state() -> void:
 	await get_tree().process_frame
@@ -138,6 +141,12 @@ func check_state() -> void:
 					DialogSystem.DialogText.new("Amazing! You have captured the enemy General and won the game!", DialogSystem.CHARACTERS.Ashes),
 				], false, 5.0)
 				passed_text_shown = true
+		TutorialSections.SPAWNING:
+			if board.get_figures(BoardV2.Teams.Red).size() > 1:
+				DialogSystem.start_dialog([
+					DialogSystem.DialogText.new("Great! You have spawned a piece!", DialogSystem.CHARACTERS.Ashes),
+				], false, 5.0)
+				passed_text_shown = true
 
 func _on_pawn_pressed() -> void:
 	var state: Array[State] = [
@@ -152,6 +161,7 @@ func _on_pawn_pressed() -> void:
 	], true)
 	current_section = TutorialSections.PAWN
 	passed_text_shown = false
+	gameplay_ui.hide()
 		
 func _on_horse_pressed() -> void:
 	var state: Array[State] = [
@@ -167,6 +177,7 @@ func _on_horse_pressed() -> void:
 	], true)
 	current_section = TutorialSections.HORSE
 	passed_text_shown = false
+	gameplay_ui.hide()
 
 func _on_elephant_pressed() -> void:
 	var state: Array[State] = [
@@ -182,6 +193,7 @@ func _on_elephant_pressed() -> void:
 	], true)
 	current_section = TutorialSections.ELEPHANT
 	passed_text_shown = false
+	gameplay_ui.hide()
 
 func _on_cannon_pressed() -> void:
 	var state: Array[State] = [
@@ -198,6 +210,7 @@ func _on_cannon_pressed() -> void:
 	], true)
 	current_section = TutorialSections.CANNON
 	passed_text_shown = false
+	gameplay_ui.hide()
 
 func _on_chariot_pressed() -> void:
 	var state: Array[State] = [
@@ -212,6 +225,7 @@ func _on_chariot_pressed() -> void:
 	], true)
 	current_section = TutorialSections.CHARIOT
 	passed_text_shown = false
+	gameplay_ui.hide()
 
 func _on_advisor_pressed() -> void:
 	var state: Array[State] = [
@@ -226,6 +240,7 @@ func _on_advisor_pressed() -> void:
 	], true)
 	current_section = TutorialSections.ADVISOR
 	passed_text_shown = false
+	gameplay_ui.hide()
 
 func _on_general_pressed() -> void:
 	var state: Array[State] = [
@@ -241,6 +256,7 @@ func _on_general_pressed() -> void:
 	], true)
 	current_section = TutorialSections.GENERAL
 	passed_text_shown = false
+	gameplay_ui.hide()
 
 func _on_flying_general_pressed() -> void:
 	var state: Array[State] = [
@@ -257,3 +273,22 @@ func _on_flying_general_pressed() -> void:
 	], true)
 	current_section = TutorialSections.FLYINGGENERAL
 	passed_text_shown = false
+	gameplay_ui.hide()
+
+func _on_spawning_pressed() -> void:
+	var state: Array[State] = [
+		State.new(BoardV2.Kingdoms.MAGMA, FigureComponent.Types.GENERAL, Vector2i(4,0)),
+		State.new(BoardV2.Kingdoms.FOG, FigureComponent.Types.GENERAL, Vector2i(5,9)),
+	]
+	board.clear_board()
+	board.initialize_position(state)
+	DialogSystem.start_dialog([
+		DialogSystem.DialogText.new("You can spawn pieces in first 3 rows.", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("When spawning you lose energy.", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("You can't move with newly summoned piece.", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("Spawn a piece and make a move with it!", DialogSystem.CHARACTERS.Ashes),
+	], true)
+	current_section = TutorialSections.SPAWNING
+	passed_text_shown = false
+	gameplay_ui.show()
+	gameplay_ui.card_slots.activate(false)

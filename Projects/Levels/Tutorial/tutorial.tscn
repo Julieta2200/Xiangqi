@@ -103,6 +103,11 @@ layout_mode = 2
 focus_mode = 0
 text = "Flying General"
 
+[node name="Spawning" type="Button" parent="CanvasLayer/SectionsContainer"]
+layout_mode = 2
+focus_mode = 0
+text = "Spawning"
+
 [connection signal="pressed" from="CanvasLayer/SectionsContainer/Free" to="." method="_on_free_pressed"]
 [connection signal="pressed" from="CanvasLayer/SectionsContainer/Pawn" to="." method="_on_pawn_pressed"]
 [connection signal="pressed" from="CanvasLayer/SectionsContainer/Horse" to="." method="_on_horse_pressed"]
@@ -112,3 +117,4 @@ text = "Flying General"
 [connection signal="pressed" from="CanvasLayer/SectionsContainer/Advisor" to="." method="_on_advisor_pressed"]
 [connection signal="pressed" from="CanvasLayer/SectionsContainer/General" to="." method="_on_general_pressed"]
 [connection signal="pressed" from="CanvasLayer/SectionsContainer/FlyingGeneral" to="." method="_on_flying_general_pressed"]
+[connection signal="pressed" from="CanvasLayer/SectionsContainer/Spawning" to="." method="_on_spawning_pressed"]
