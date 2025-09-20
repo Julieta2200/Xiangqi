@@ -11,10 +11,11 @@ const green: Color = Color(0,1,0)
 	TutorialSections.CHARIOT: $CanvasLayer/SectionsContainer/Chariot,
 	TutorialSections.ADVISOR: $CanvasLayer/SectionsContainer/Advisor,
 	TutorialSections.GENERAL: $CanvasLayer/SectionsContainer/General,
+	TutorialSections.FLYINGGENERAL: $CanvasLayer/SectionsContainer/FlyingGeneral,
 }
 
 enum TutorialSections {
-	FREE, PAWN, GENERAL, ADVISOR, ELEPHANT, HORSE, CHARIOT, CANNON
+	FREE, PAWN, GENERAL, ADVISOR, ELEPHANT, HORSE, CHARIOT, CANNON, FLYINGGENERAL
 }
 var current_section: TutorialSections = TutorialSections.FREE
 var passed_text_shown: bool = false :
@@ -131,6 +132,12 @@ func check_state() -> void:
 					DialogSystem.DialogText.new("You did it! You have captured the enemy Pawn.", DialogSystem.CHARACTERS.Ashes),
 				], false, 5.0)
 				passed_text_shown = true
+		TutorialSections.FLYINGGENERAL:
+			if (board.get_generals().size() == 1):
+				DialogSystem.start_dialog([
+					DialogSystem.DialogText.new("Amazing! You have captured the enemy General and won the game!", DialogSystem.CHARACTERS.Ashes),
+				], false, 5.0)
+				passed_text_shown = true
 
 func _on_pawn_pressed() -> void:
 	var state: Array[State] = [
@@ -233,4 +240,20 @@ func _on_general_pressed() -> void:
 		DialogSystem.DialogText.new("Try moving the General around, and capture the enemy Pawn!", DialogSystem.CHARACTERS.Ashes),
 	], true)
 	current_section = TutorialSections.GENERAL
+	passed_text_shown = false
+
+func _on_flying_general_pressed() -> void:
+	var state: Array[State] = [
+		State.new(BoardV2.Kingdoms.MAGMA, FigureComponent.Types.GENERAL, Vector2i(4,0)),
+		State.new(BoardV2.Kingdoms.MAGMA, FigureComponent.Types.ELEPHANT, Vector2i(4,3)),
+		State.new(BoardV2.Kingdoms.FOG, FigureComponent.Types.GENERAL, Vector2i(4,9)),
+	]
+	board.clear_board()
+	board.initialize_position(state)
+	DialogSystem.start_dialog([
+		DialogSystem.DialogText.new("This is the Flying General rule.", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("If the two Generals face each other on the same file with no pieces in between, the General whose turn it is can move directly to capture the opposing General.", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("Try capturing the enemy General!", DialogSystem.CHARACTERS.Ashes),
+	], true)
+	current_section = TutorialSections.FLYINGGENERAL
 	passed_text_shown = false
