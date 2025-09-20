@@ -6,6 +6,7 @@ const green: Color = Color(0,1,0)
 	TutorialSections.PAWN: $CanvasLayer/SectionsContainer/Pawn,
 	TutorialSections.HORSE: $CanvasLayer/SectionsContainer/Horse,
 	TutorialSections.FREE: $CanvasLayer/SectionsContainer/Free,
+	TutorialSections.ELEPHANT: $CanvasLayer/SectionsContainer/Elephant,
 }
 
 enum TutorialSections {
@@ -96,6 +97,12 @@ func check_state() -> void:
 					DialogSystem.DialogText.new("Well done! You have captured the enemy Pawn.", DialogSystem.CHARACTERS.Ashes),
 				], false, 5.0)
 				passed_text_shown = true
+		TutorialSections.ELEPHANT:
+			if (board.get_figures(BoardV2.Teams.Black).size() == 0):
+				DialogSystem.start_dialog([
+					DialogSystem.DialogText.new("Excellent! You have captured the enemy Pawn.", DialogSystem.CHARACTERS.Ashes),
+				], false, 5.0)
+				passed_text_shown = true
 
 func _on_pawn_pressed() -> void:
 	var state: Array[State] = [
@@ -124,4 +131,19 @@ func _on_horse_pressed() -> void:
 		DialogSystem.DialogText.new("Try moving the Horse around, and capture the enemy Pawn!", DialogSystem.CHARACTERS.Ashes),
 	], true)
 	current_section = TutorialSections.HORSE
+	passed_text_shown = false
+
+func _on_elephant_pressed() -> void:
+	var state: Array[State] = [
+		State.new(BoardV2.Kingdoms.MAGMA, FigureComponent.Types.ELEPHANT, Vector2i(2,0)),
+		State.new(BoardV2.Kingdoms.FOG, FigureComponent.Types.SOLDIER, Vector2i(6,0)),
+	]
+	board.clear_board()
+	board.initialize_position(state)
+	DialogSystem.start_dialog([
+		DialogSystem.DialogText.new("This is an Elephant. Elephants move exactly two points diagonally and cannot jump over intervening pieces.", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("Elephants cannot cross the river to the opponent's side of the board.", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("Try moving the Elephant around, and capture the enemy Pawn!", DialogSystem.CHARACTERS.Ashes),
+	], true)
+	current_section = TutorialSections.ELEPHANT
 	passed_text_shown = false
