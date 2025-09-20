@@ -10,6 +10,7 @@ const green: Color = Color(0,1,0)
 	TutorialSections.CANNON: $CanvasLayer/SectionsContainer/Cannon,
 	TutorialSections.CHARIOT: $CanvasLayer/SectionsContainer/Chariot,
 	TutorialSections.ADVISOR: $CanvasLayer/SectionsContainer/Advisor,
+	TutorialSections.GENERAL: $CanvasLayer/SectionsContainer/General,
 }
 
 enum TutorialSections {
@@ -124,6 +125,12 @@ func check_state() -> void:
 					DialogSystem.DialogText.new("Congratulations! You have captured the enemy Pawn.", DialogSystem.CHARACTERS.Ashes),
 				], false, 5.0)
 				passed_text_shown = true
+		TutorialSections.GENERAL:
+			if (board.get_figures(BoardV2.Teams.Black).size() == 0):
+				DialogSystem.start_dialog([
+					DialogSystem.DialogText.new("You did it! You have captured the enemy Pawn.", DialogSystem.CHARACTERS.Ashes),
+				], false, 5.0)
+				passed_text_shown = true
 
 func _on_pawn_pressed() -> void:
 	var state: Array[State] = [
@@ -211,4 +218,19 @@ func _on_advisor_pressed() -> void:
 		DialogSystem.DialogText.new("Try moving the Advisor around, and capture the enemy Pawn!", DialogSystem.CHARACTERS.Ashes),
 	], true)
 	current_section = TutorialSections.ADVISOR
+	passed_text_shown = false
+
+func _on_general_pressed() -> void:
+	var state: Array[State] = [
+		State.new(BoardV2.Kingdoms.MAGMA, FigureComponent.Types.GENERAL, Vector2i(4,0)),
+		State.new(BoardV2.Kingdoms.FOG, FigureComponent.Types.SOLDIER, Vector2i(5,2)),
+	]
+	board.clear_board()
+	board.initialize_position(state)
+	DialogSystem.start_dialog([
+		DialogSystem.DialogText.new("This is the General. The General moves one point either vertically or horizontally and must stay within the palace.", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("You should always protect your General. If your General is captured, you lose the game!", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("Try moving the General around, and capture the enemy Pawn!", DialogSystem.CHARACTERS.Ashes),
+	], true)
+	current_section = TutorialSections.GENERAL
 	passed_text_shown = false

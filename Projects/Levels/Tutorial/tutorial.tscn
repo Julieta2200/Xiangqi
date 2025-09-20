@@ -93,6 +93,11 @@ layout_mode = 2
 focus_mode = 0
 text = "Advisor"
 
+[node name="General" type="Button" parent="CanvasLayer/SectionsContainer"]
+layout_mode = 2
+focus_mode = 0
+text = "General"
+
 [connection signal="pressed" from="CanvasLayer/SectionsContainer/Free" to="." method="_on_free_pressed"]
 [connection signal="pressed" from="CanvasLayer/SectionsContainer/Pawn" to="." method="_on_pawn_pressed"]
 [connection signal="pressed" from="CanvasLayer/SectionsContainer/Horse" to="." method="_on_horse_pressed"]
@@ -100,3 +105,4 @@ text = "Advisor"
 [connection signal="pressed" from="CanvasLayer/SectionsContainer/Cannon" to="." method="_on_cannon_pressed"]
 [connection signal="pressed" from="CanvasLayer/SectionsContainer/Chariot" to="." method="_on_chariot_pressed"]
 [connection signal="pressed" from="CanvasLayer/SectionsContainer/Advisor" to="." method="_on_advisor_pressed"]
+[connection signal="pressed" from="CanvasLayer/SectionsContainer/General" to="." method="_on_general_pressed"]
