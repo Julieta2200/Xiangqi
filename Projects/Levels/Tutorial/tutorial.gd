@@ -16,7 +16,8 @@ var passed_text_shown: bool = false :
 	set(v):
 		if v:
 			sections[current_section].modulate = green
-			GameState.state["passed_tutorials"].append(current_section)
+			if !GameState.state["passed_tutorials"].has(current_section):
+				GameState.state["passed_tutorials"].append(current_section)
 			GameState.save_game()
 		passed_text_shown = v
 
@@ -76,20 +77,6 @@ func _on_free_pressed() -> void:
 	], false, 3.0)
 	current_section = TutorialSections.FREE
 
-func _on_pawn_pressed() -> void:
-	var state: Array[State] = [
-		State.new(BoardV2.Kingdoms.MAGMA, FigureComponent.Types.SOLDIER, Vector2i(4,3)),
-		State.new(BoardV2.Kingdoms.FOG, FigureComponent.Types.SOLDIER, Vector2i(5,5)),
-	]
-	board.clear_board()
-	board.initialize_position(state)
-	DialogSystem.start_dialog([
-		DialogSystem.DialogText.new("This is a Pawn. Pawns can only move forward one step at a time, but once they cross the river, they can also move sideways.", DialogSystem.CHARACTERS.Ashes),
-		DialogSystem.DialogText.new("Try moving the Pawn to the other side of the river and capture enemy Pawn!", DialogSystem.CHARACTERS.Ashes),
-	], true)
-	current_section = TutorialSections.PAWN
-	passed_text_shown = false
-
 func check_state() -> void:
 	await get_tree().process_frame
 	if passed_text_shown:
@@ -110,6 +97,19 @@ func check_state() -> void:
 				], false, 5.0)
 				passed_text_shown = true
 
+func _on_pawn_pressed() -> void:
+	var state: Array[State] = [
+		State.new(BoardV2.Kingdoms.MAGMA, FigureComponent.Types.SOLDIER, Vector2i(4,3)),
+		State.new(BoardV2.Kingdoms.FOG, FigureComponent.Types.SOLDIER, Vector2i(5,5)),
+	]
+	board.clear_board()
+	board.initialize_position(state)
+	DialogSystem.start_dialog([
+		DialogSystem.DialogText.new("This is a Pawn. Pawns can only move forward one step at a time, but once they cross the river, they can also move sideways.", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("Try moving the Pawn to the other side of the river and capture enemy Pawn!", DialogSystem.CHARACTERS.Ashes),
+	], true)
+	current_section = TutorialSections.PAWN
+	passed_text_shown = false
 		
 func _on_horse_pressed() -> void:
 	var state: Array[State] = [
