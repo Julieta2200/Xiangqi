@@ -1,7 +1,5 @@
 class_name Tutorial extends Level
 
-const black: Color = Color(0,0,0)
-const blue: Color = Color(0,0,1)
 const green: Color = Color(0,1,0)
 
 @onready var sections: Dictionary = {
@@ -14,7 +12,11 @@ enum TutorialSections {
 	FREE, PAWN, GENERAL, ADVISOR, ELEPHANT, HORSE, CHARIOT, CANNON
 }
 var current_section: TutorialSections = TutorialSections.FREE
-var passed_text_shown: bool = false
+var passed_text_shown: bool = false :
+	set(v):
+		if v:
+			sections[current_section].modulate = green
+		passed_text_shown = v
 
 func _ready() -> void:
 	super._ready()
