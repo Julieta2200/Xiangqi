@@ -7,6 +7,7 @@ const green: Color = Color(0,1,0)
 	TutorialSections.HORSE: $CanvasLayer/SectionsContainer/Horse,
 	TutorialSections.FREE: $CanvasLayer/SectionsContainer/Free,
 	TutorialSections.ELEPHANT: $CanvasLayer/SectionsContainer/Elephant,
+	TutorialSections.CANNON: $CanvasLayer/SectionsContainer/Cannon,
 }
 
 enum TutorialSections {
@@ -103,6 +104,12 @@ func check_state() -> void:
 					DialogSystem.DialogText.new("Excellent! You have captured the enemy Pawn.", DialogSystem.CHARACTERS.Ashes),
 				], false, 5.0)
 				passed_text_shown = true
+		TutorialSections.CANNON:
+			if (board.get_figures(BoardV2.Teams.Black).size() == 1):
+				DialogSystem.start_dialog([
+					DialogSystem.DialogText.new("Fantastic! You have captured the enemy Pawn.", DialogSystem.CHARACTERS.Ashes),
+				], false, 5.0)
+				passed_text_shown = true
 
 func _on_pawn_pressed() -> void:
 	var state: Array[State] = [
@@ -146,4 +153,20 @@ func _on_elephant_pressed() -> void:
 		DialogSystem.DialogText.new("Try moving the Elephant around, and capture the enemy Pawn!", DialogSystem.CHARACTERS.Ashes),
 	], true)
 	current_section = TutorialSections.ELEPHANT
+	passed_text_shown = false
+
+func _on_cannon_pressed() -> void:
+	var state: Array[State] = [
+		State.new(BoardV2.Kingdoms.MAGMA, FigureComponent.Types.CANNON, Vector2i(1,2)),
+		State.new(BoardV2.Kingdoms.FOG, FigureComponent.Types.SOLDIER, Vector2i(1,5)),
+		State.new(BoardV2.Kingdoms.FOG, FigureComponent.Types.SOLDIER, Vector2i(1,7)),
+	]
+	board.clear_board()
+	board.initialize_position(state)
+	DialogSystem.start_dialog([
+		DialogSystem.DialogText.new("This is a Cannon. Cannons move vertically or horizontally any number of unoccupied squares.", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("To capture, the Cannon must jump over exactly one piece along its path to the target piece.", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("Try moving the Cannon around, and capture the enemy Pawn!", DialogSystem.CHARACTERS.Ashes),
+	], true)
+	current_section = TutorialSections.CANNON
 	passed_text_shown = false
