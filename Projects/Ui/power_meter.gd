@@ -3,8 +3,6 @@ class_name PowerMeter extends Control
 signal energy_depleted
 
 @export var garrison: Garrison
-# the full extent of the playing distance
-@export var distance_fill :int = 1
 
 # amount of energy added after each step
 @export var energy_fill: int = 7
@@ -26,18 +24,6 @@ var max_energy: int :
 		$energy.value = energy
 		$energy/Label.text = str(energy) + " / " + str(max_energy)
 
-# Stores the distance value and updates the visibility of distance bars based on the value
-@export var distance: int :
-	set(d):
-		if d < 0:
-			d = 0
-		distance = d
-		for i in $distances/distance_bars.get_children():
-			if d >= distance_fill:
-				d -= min(distance,distance_fill)
-				i.visible = true
-			else:
-				i.visible = false
 
 func _ready() -> void:
 	max_energy = GameState.state["energy"]
@@ -45,9 +31,6 @@ func _ready() -> void:
 func fill_energy():
 	energy += energy_fill
 	garrison.update_cards(energy)
-
-func update_distance(num: int):
-	distance = num/3
 
 func substruct_energy():
 	energy -= garrison.selected_figure.energy

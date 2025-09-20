@@ -2,6 +2,7 @@ class_name BoardV2 extends Node2D
 
 const board_rows = 10
 const board_cols = 9
+const spawn_distance: int = 3
 enum Teams {Red = 1, Black = 2, Wall = 3}
 enum Kingdoms {MAGMA = 1, CLOUD = 2, FOG = 3}
 
@@ -263,7 +264,7 @@ func get_figures(team: Teams) -> Array[FigureComponent]:
 func spawn_highlight(spawn_figure_type : FigureComponent.Types) -> void:
 	clear_markers()
 	for i in range(board_cols):
-		for j in range(ui.power_meter.distance + 1):
+		for j in range(spawn_distance):
 			var pos: Vector2i = Vector2i(i,j)
 			var marker: BoardMarker = markers[pos]
 			if palace_positions.has(pos) or state.has(pos):
@@ -276,7 +277,6 @@ func spawn_figure(marker: BoardMarker) -> void:
 	instantiate_figure(Kingdoms.MAGMA, ui.garrison.selected_figure.type, marker.board_position)
 	var figure = state[marker.board_position]
 	figure.ui_component.active = false
-	ui.power_meter.update_distance(get_figures(Teams.Red).size())
 
 func activate_garrison(result: bool) -> void:
 	ui.garrison.activate(result)

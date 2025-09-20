@@ -13,7 +13,6 @@ script = ExtResource("1_clwfc")
 [node name="PowerMeter" parent="." node_paths=PackedStringArray("garrison") instance=ExtResource("1_mqmx6")]
 garrison = NodePath("../Garrison")
 energy = 100.0
-distance = 1
 
 [node name="Garrison" parent="." instance=ExtResource("2_usbfr")]
 
