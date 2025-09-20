@@ -116,6 +116,21 @@ grow_vertical = 0
 scale = Vector2(2, 2)
 text = "Karma Table"
 
+[node name="Tutorial" type="Button" parent="CanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -522.0
+offset_top = -105.0
+offset_right = -416.0
+offset_bottom = -74.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(2, 2)
+text = "Tutorial"
+
 [node name="Orbs" parent="CanvasLayer" instance=ExtResource("9_qj7bv")]
 
 [node name="Camera" parent="." instance=ExtResource("15_ix7hs")]
@@ -123,3 +138,4 @@ position = Vector2(550, 930)
 zoom = Vector2(3, 3)
 
 [connection signal="pressed" from="CanvasLayer/KarmaTable" to="." method="_on_karma_table_pressed"]
+[connection signal="pressed" from="CanvasLayer/Tutorial" to="." method="_on_tutorial_pressed"]

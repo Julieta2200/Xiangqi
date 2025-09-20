@@ -23,3 +23,7 @@ func _process(delta: float) -> void:
 
 func _on_karma_table_pressed() -> void:
 	get_tree().change_scene_to_file("res://Projects/KarmaTable/karma_table.tscn")
+
+
+func _on_tutorial_pressed() -> void:
+	get_tree().change_scene_to_file("res://Projects/Levels/Tutorial/tutorial.tscn")
