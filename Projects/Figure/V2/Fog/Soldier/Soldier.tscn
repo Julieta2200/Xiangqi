@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b4u0rern1rgw"]
+[gd_scene load_steps=13 format=3 uid="uid://b4u0rern1rgw"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_0l350"]
 [ext_resource type="Texture2D" uid="uid://cfxyr4st34q2v" path="res://Assets/Characters/Fog/Soldier/Soldier_Front.png" id="2_6gvuf"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/soldier_chess_component.gd" id="7_fkygt"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="8_n0clu"]
 [ext_resource type="PackedScene" uid="uid://dhpouhurhy80p" path="res://Projects/Figure/Components/figure_target_component.tscn" id="8_wnk6m"]
+[ext_resource type="PackedScene" uid="uid://d05lmiobxnn3t" path="res://Projects/Figure/shadow_pivot.tscn" id="9_6emw6"]
+[ext_resource type="Material" uid="uid://blvd6fmf8jtbp" path="res://Projects/Shaders/blur_shadow.tres" id="10_u1px8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pi8o7"]
 animations = [{
@@ -49,20 +51,33 @@ team = 2
 figure_component = NodePath("..")
 move_component = NodePath("../MoveComponent")
 
-[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component")]
+[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "shadow")]
 script = ExtResource("8_n0clu")
 speed = 300.0
 figure_component = NodePath("..")
+shadow = NodePath("../ShadowPivot/Shadow")
 
 [node name="ShaderComponent" parent="." node_paths=PackedStringArray("main_sprite") instance=ExtResource("5_nl4y3")]
 main_sprite = NodePath("../AnimatedSprite2D")
 highlight_material = ExtResource("6_becww")
 spawn_material = ExtResource("7_afnf1")
 
-[node name="FigureTargetComponent" parent="." node_paths=PackedStringArray("chess_component", "shader_component") instance=ExtResource("8_wnk6m")]
-chess_component = NodePath("../ChessComponent")
+[node name="FigureTargetComponent" parent="." node_paths=PackedStringArray("shader_component") instance=ExtResource("8_wnk6m")]
 shader_component = NodePath("../ShaderComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FigureTargetComponent"]
 position = Vector2(1, -82)
 shape = SubResource("CapsuleShape2D_tnfs6")
+
+[node name="ShadowPivot" parent="." node_paths=PackedStringArray("shadow") instance=ExtResource("9_6emw6")]
+shadow = NodePath("Shadow")
+
+[node name="Shadow" type="AnimatedSprite2D" parent="ShadowPivot"]
+z_index = -1
+material = ExtResource("10_u1px8")
+position = Vector2(1, -104)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_pi8o7")
+animation = &"idle_down"
+autoplay = "idle_down"
+flip_h = true
