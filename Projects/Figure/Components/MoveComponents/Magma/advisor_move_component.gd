@@ -29,6 +29,8 @@ func move_to_position(marker: BoardMarker, initial_position: Vector2i = Vector2i
 	else:
 		animation += "right"
 	self.animation = animation
+	if shadow != null:
+		shadow.play(animation)
 	main_sprite.play(animation)
 
 
@@ -83,6 +85,8 @@ func setup_signs(start: Vector2i, end: Vector2i) -> void:
 	show_signs(edge)
 
 func show_signs(edge: bool) -> void:
+	if shadow != null:
+		shadow.hide()
 	main_sprite.hide()
 	get_sign_with_direction(edge)
 	sign.show()
@@ -100,10 +104,14 @@ func hide_sign() -> void:
 
 func appear_animation() -> void:
 	appear = true
+	if shadow != null:
+		shadow.show()
 	main_sprite.show()
 	main_sprite.play_backwards(animation)
 
 func main_sprite_idle_animation():
+	if shadow != null:
+		shadow.play("idle_up")
 	main_sprite.play("idle_up")
 	appear = false
 	emit_signal("move_done")

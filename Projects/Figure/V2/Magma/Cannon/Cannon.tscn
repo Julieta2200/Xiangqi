@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://btst40g2n6wda"]
+[gd_scene load_steps=14 format=3 uid="uid://btst40g2n6wda"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_mjqwp"]
 [ext_resource type="Texture2D" uid="uid://cq5aoxlt43cv8" path="res://Assets/Characters/Magma/Cannon/Idle/Catapult1.png" id="2_uf8g5"]
@@ -9,6 +9,8 @@
 [ext_resource type="Material" uid="uid://e3w5tox88i13" path="res://Projects/Shaders/outline.tres" id="5_sv2oy"]
 [ext_resource type="PackedScene" uid="uid://cy1y1kpvwk5sq" path="res://Projects/Figure/Components/ShaderComponent/shader_component.tscn" id="7_8tkf7"]
 [ext_resource type="Material" uid="uid://b5ews8a5nl326" path="res://Projects/Shaders/spawn.tres" id="9_x54yj"]
+[ext_resource type="PackedScene" path="res://Projects/Figure/shadow_pivot.tscn" id="10_r11ff"]
+[ext_resource type="Material" path="res://Projects/Shaders/blur_shadow.tres" id="11_1nnni"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eul7x"]
 animations = [{
@@ -50,7 +52,7 @@ type = 6
 position = Vector2(3, -89)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_eul7x")
-animation = &"spawn"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component", "shader_component") instance=ExtResource("3_v23kq")]
@@ -68,12 +70,26 @@ team = 1
 figure_component = NodePath("..")
 move_component = NodePath("../MoveComponent")
 
-[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component")]
+[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "shadow")]
 script = ExtResource("5_b5pty")
 speed = 500.0
 figure_component = NodePath("..")
+shadow = NodePath("../ShadowPivot/Shadow")
 
 [node name="ShaderComponent" parent="." node_paths=PackedStringArray("main_sprite") instance=ExtResource("7_8tkf7")]
 main_sprite = NodePath("../AnimatedSprite2D")
 highlight_material = ExtResource("5_sv2oy")
 spawn_material = ExtResource("9_x54yj")
+
+[node name="ShadowPivot" parent="." node_paths=PackedStringArray("shadow") instance=ExtResource("10_r11ff")]
+shadow = NodePath("Shadow")
+
+[node name="Shadow" type="AnimatedSprite2D" parent="ShadowPivot"]
+z_index = -1
+material = ExtResource("11_1nnni")
+position = Vector2(3, -89)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_eul7x")
+animation = &"idle"
+autoplay = "idle"
+flip_h = true
