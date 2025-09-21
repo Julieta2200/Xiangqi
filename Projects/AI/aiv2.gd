@@ -410,8 +410,12 @@ func simulate_move(position: Array[Array], move: Array) -> void:
 		var c_team = get_team_number(abs(captured_piece))
 		var c_fig = get_figure_number(abs(captured_piece), c_team)
 		var val = figure_values[c_fig]
-		if c_team == 2: current_eval -= val
-		elif c_team == 1: current_eval += val
+		var frozen_bonus = 0
+		var aggression_bonus = 20
+		if captured_piece < 0:
+			frozen_bonus = 50
+		if c_team == 2: current_eval -= val + frozen_bonus + aggression_bonus
+		elif c_team == 1: current_eval += val + frozen_bonus + aggression_bonus
 
 	# move piece
 	position[dy][dx] = moving_piece
