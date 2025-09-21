@@ -208,6 +208,18 @@ sprite_frames = SubResource("SpriteFrames_pi8o7")
 animation = &"move_left"
 autoplay = "idle"
 
+[node name="Shadow" type="AnimatedSprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.247059)
+z_index = -1
+position = Vector2(53, 30)
+rotation = 3.2341
+scale = Vector2(2, 2)
+skew = -1.17635
+sprite_frames = SubResource("SpriteFrames_pi8o7")
+animation = &"move_left"
+autoplay = "idle"
+flip_h = true
+
 [node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component", "shader_component") instance=ExtResource("5_n8y44")]
 chess_component = NodePath("../ChessComponent")
 shader_component = NodePath("../ShaderComponent")
@@ -223,10 +235,11 @@ team = 1
 figure_component = NodePath("..")
 move_component = NodePath("../MoveComponent")
 
-[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component")]
+[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "shadow")]
 script = ExtResource("5_5ts7d")
 speed = 300.0
 figure_component = NodePath("..")
+shadow = NodePath("../Shadow")
 
 [node name="ShaderComponent" parent="." node_paths=PackedStringArray("main_sprite") instance=ExtResource("43_o44jy")]
 main_sprite = NodePath("../AnimatedSprite2D")
@@ -234,3 +247,4 @@ highlight_material = ExtResource("2_2hpvn")
 spawn_material = ExtResource("44_f730a")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="MoveComponent" method="_on_figure_animation_finished"]
+[connection signal="animation_finished" from="Shadow" to="MoveComponent" method="_on_figure_animation_finished"]
