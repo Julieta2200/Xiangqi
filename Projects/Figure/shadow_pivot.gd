@@ -12,8 +12,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	# Rotate the node at a constant speed (e.g., 90 degrees per second)
-	rotation += deg_to_rad(25) * delta
-	rotation = fmod(rotation, TAU)  # Keep rotation within 0 to 2*PI
+	rotation = ShadowController.rotation
 	if shadow == null:
 		return
 	if rotation_degrees > flip_limit and rotation_degrees < flip_limit2:
