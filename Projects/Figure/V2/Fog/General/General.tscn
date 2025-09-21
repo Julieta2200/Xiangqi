@@ -1,12 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://bw8dv5fpgw8eu"]
+[gd_scene load_steps=11 format=3 uid="uid://bw8dv5fpgw8eu"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_4h3cj"]
 [ext_resource type="Texture2D" uid="uid://dbjfqd8pdblx" path="res://Assets/Characters/Fog/General/General_Front.png" id="2_rsyqj"]
 [ext_resource type="PackedScene" uid="uid://cy1y1kpvwk5sq" path="res://Projects/Figure/Components/ShaderComponent/shader_component.tscn" id="5_qigdr"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/general_chess_component.gd" id="6_2w1ol"]
-[ext_resource type="Material" uid="uid://e3w5tox88i13" path="res://Projects/Shaders/outline.tres" id="6_uxjlm"]
+[ext_resource type="Material" uid="uid://extfukhqcdhc" path="res://Projects/Shaders/target_outline.tres" id="6_k8a60"]
 [ext_resource type="Material" uid="uid://cn0gyjph0f1nv" path="res://Projects/Shaders/fog_spawn.tres" id="7_eggrh"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="7_xfyqe"]
+[ext_resource type="PackedScene" uid="uid://dhpouhurhy80p" path="res://Projects/Figure/Components/figure_target_component.tscn" id="8_7ui4q"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pi8o7"]
 animations = [{
@@ -19,10 +20,15 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="General" type="CharacterBody2D" node_paths=PackedStringArray("chess_component", "move_component")]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pyewa"]
+radius = 43.0
+height = 236.0
+
+[node name="General" type="CharacterBody2D" node_paths=PackedStringArray("chess_component", "move_component", "target_component")]
 script = ExtResource("1_4h3cj")
 chess_component = NodePath("ChessComponent")
 move_component = NodePath("MoveComponent")
+target_component = NodePath("FigureTargetComponent")
 type = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -47,5 +53,12 @@ figure_component = NodePath("..")
 
 [node name="ShaderComponent" parent="." node_paths=PackedStringArray("main_sprite") instance=ExtResource("5_qigdr")]
 main_sprite = NodePath("../AnimatedSprite2D")
-highlight_material = ExtResource("6_uxjlm")
+highlight_material = ExtResource("6_k8a60")
 spawn_material = ExtResource("7_eggrh")
+
+[node name="FigureTargetComponent" parent="." node_paths=PackedStringArray("shader_component") instance=ExtResource("8_7ui4q")]
+shader_component = NodePath("../ShaderComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FigureTargetComponent"]
+position = Vector2(1, -86)
+shape = SubResource("CapsuleShape2D_pyewa")

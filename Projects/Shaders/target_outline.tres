@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://extfukhqcdhc"]
+
+[ext_resource type="Shader" path="res://Projects/Shaders/outline.gdshader" id="1_2sgww"]
+
+[resource]
+shader = ExtResource("1_2sgww")
+shader_parameter/outline_color = Color(0.937395, 0.242597, 0.41561, 1)
+shader_parameter/outline_width = 2.0
+shader_parameter/pulse_speed = 8.0
+shader_parameter/wave_frequency = 20.0
+shader_parameter/wave_strength = 1.5

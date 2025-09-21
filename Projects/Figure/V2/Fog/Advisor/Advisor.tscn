@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://c0tti725mtjpo"]
+[gd_scene load_steps=11 format=3 uid="uid://c0tti725mtjpo"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_gk4bo"]
 [ext_resource type="Texture2D" uid="uid://5ft2bavrlrkr" path="res://Assets/Characters/Fog/Advisor/Fog_Advisor_Front.png" id="2_quffa"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/advisor_chess_component.gd" id="5_72hvj"]
 [ext_resource type="PackedScene" uid="uid://cy1y1kpvwk5sq" path="res://Projects/Figure/Components/ShaderComponent/shader_component.tscn" id="5_h0d8b"]
+[ext_resource type="Material" uid="uid://extfukhqcdhc" path="res://Projects/Shaders/target_outline.tres" id="6_mtx70"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="6_n42uo"]
+[ext_resource type="PackedScene" uid="uid://dhpouhurhy80p" path="res://Projects/Figure/Components/figure_target_component.tscn" id="7_h7e5m"]
 [ext_resource type="Material" uid="uid://cn0gyjph0f1nv" path="res://Projects/Shaders/fog_spawn.tres" id="7_ki6r4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pi8o7"]
@@ -18,10 +20,15 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Advisor" type="CharacterBody2D" node_paths=PackedStringArray("chess_component", "move_component")]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ubx5v"]
+radius = 39.0
+height = 258.0
+
+[node name="Advisor" type="CharacterBody2D" node_paths=PackedStringArray("chess_component", "move_component", "target_component")]
 script = ExtResource("1_gk4bo")
 chess_component = NodePath("ChessComponent")
 move_component = NodePath("MoveComponent")
+target_component = NodePath("FigureTargetComponent")
 type = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -46,4 +53,12 @@ figure_component = NodePath("..")
 
 [node name="ShaderComponent" parent="." node_paths=PackedStringArray("main_sprite") instance=ExtResource("5_h0d8b")]
 main_sprite = NodePath("../AnimatedSprite2D")
+highlight_material = ExtResource("6_mtx70")
 spawn_material = ExtResource("7_ki6r4")
+
+[node name="FigureTargetComponent" parent="." node_paths=PackedStringArray("shader_component") instance=ExtResource("7_h7e5m")]
+shader_component = NodePath("../ShaderComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FigureTargetComponent"]
+position = Vector2(1, -89)
+shape = SubResource("CapsuleShape2D_ubx5v")

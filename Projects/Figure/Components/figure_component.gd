@@ -7,6 +7,7 @@ enum Types {SOLDIER, GENERAL, ADVISOR, CHARIOT, HORSE, ELEPHANT, CANNON}
 @export var ui_component: FigureUIComponent
 @export var move_component: MoveComponent
 @export var wall_component: WallComponent
+@export var target_component: FigureTargetComponent
 
 @export var type: Types
 

@@ -158,6 +158,7 @@ func initialize_markers():
 			marker.figure_spawn.connect(spawn_figure)
 			marker.spawn_done.connect(spawn_done)
 			marker.special.connect(_on_use_special)
+			marker.board = self
 
 func initialize_position(init_state: Array[State]):
 	for s in init_state:
