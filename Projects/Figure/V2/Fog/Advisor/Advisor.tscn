@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c0tti725mtjpo"]
+[gd_scene load_steps=13 format=3 uid="uid://c0tti725mtjpo"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_gk4bo"]
 [ext_resource type="Texture2D" uid="uid://5ft2bavrlrkr" path="res://Assets/Characters/Fog/Advisor/Fog_Advisor_Front.png" id="2_quffa"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="6_n42uo"]
 [ext_resource type="PackedScene" uid="uid://dhpouhurhy80p" path="res://Projects/Figure/Components/figure_target_component.tscn" id="7_h7e5m"]
 [ext_resource type="Material" uid="uid://cn0gyjph0f1nv" path="res://Projects/Shaders/fog_spawn.tres" id="7_ki6r4"]
+[ext_resource type="PackedScene" uid="uid://d05lmiobxnn3t" path="res://Projects/Figure/shadow_pivot.tscn" id="9_l11ao"]
+[ext_resource type="Material" uid="uid://blvd6fmf8jtbp" path="res://Projects/Shaders/blur_shadow.tres" id="10_7kprc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pi8o7"]
 animations = [{
@@ -46,10 +48,11 @@ team = 2
 figure_component = NodePath("..")
 move_component = NodePath("../MoveComponent")
 
-[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component")]
+[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "shadow")]
 script = ExtResource("6_n42uo")
 speed = 300.0
 figure_component = NodePath("..")
+shadow = NodePath("../ShadowPivot/Shadow")
 
 [node name="ShaderComponent" parent="." node_paths=PackedStringArray("main_sprite") instance=ExtResource("5_h0d8b")]
 main_sprite = NodePath("../AnimatedSprite2D")
@@ -62,3 +65,17 @@ shader_component = NodePath("../ShaderComponent")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FigureTargetComponent"]
 position = Vector2(1, -89)
 shape = SubResource("CapsuleShape2D_ubx5v")
+
+[node name="ShadowPivot" parent="." node_paths=PackedStringArray("shadow") instance=ExtResource("9_l11ao")]
+shadow = NodePath("Shadow")
+
+[node name="Shadow" type="AnimatedSprite2D" parent="ShadowPivot"]
+z_index = -1
+material = ExtResource("10_7kprc")
+position = Vector2(3, -104)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_pi8o7")
+animation = &"idle_down"
+autoplay = "idle_down"
+frame_progress = 0.408885
+flip_h = true

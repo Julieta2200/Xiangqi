@@ -1,4 +1,4 @@
-[gd_scene load_steps=178 format=3 uid="uid://bxjowytodmlln"]
+[gd_scene load_steps=180 format=3 uid="uid://bxjowytodmlln"]
 
 [ext_resource type="Texture2D" uid="uid://f1jvrq55cicp" path="res://Assets/Characters/Magma/Pawn/Idle/Back idle/Back_idle1.png" id="1_4usx7"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_ebhfi"]
@@ -175,6 +175,8 @@
 [ext_resource type="Material" uid="uid://e3w5tox88i13" path="res://Projects/Shaders/outline.tres" id="171_lnamv"]
 [ext_resource type="PackedScene" uid="uid://cy1y1kpvwk5sq" path="res://Projects/Figure/Components/ShaderComponent/shader_component.tscn" id="173_2aeto"]
 [ext_resource type="Material" uid="uid://b5ews8a5nl326" path="res://Projects/Shaders/spawn.tres" id="175_p2gdl"]
+[ext_resource type="PackedScene" path="res://Projects/Figure/shadow_pivot.tscn" id="176_duf2y"]
+[ext_resource type="Material" path="res://Projects/Shaders/blur_shadow.tres" id="177_2ekrr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pi8o7"]
 animations = [{
@@ -798,14 +800,31 @@ team = 1
 figure_component = NodePath("..")
 move_component = NodePath("../MoveComponent")
 
-[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component")]
+[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "shadow")]
 script = ExtResource("26_e3we4")
 speed = 200.0
 figure_component = NodePath("..")
+shadow = NodePath("../ShadowPivot/Shadow")
 
 [node name="ShaderComponent" parent="." node_paths=PackedStringArray("main_sprite") instance=ExtResource("173_2aeto")]
 main_sprite = NodePath("../AnimatedSprite2D")
 highlight_material = ExtResource("171_lnamv")
 spawn_material = ExtResource("175_p2gdl")
 
+[node name="ShadowPivot" parent="." node_paths=PackedStringArray("shadow") instance=ExtResource("176_duf2y")]
+shadow = NodePath("Shadow")
+
+[node name="Shadow" type="AnimatedSprite2D" parent="ShadowPivot"]
+z_index = -1
+material = ExtResource("177_2ekrr")
+position = Vector2(8, -168)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_pi8o7")
+animation = &"spawn"
+autoplay = "idle"
+frame = 8
+frame_progress = 1.0
+flip_h = true
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="MoveComponent" method="_on_figure_animation_finished"]
+[connection signal="animation_finished" from="ShadowPivot/Shadow" to="MoveComponent" method="_on_figure_animation_finished"]
