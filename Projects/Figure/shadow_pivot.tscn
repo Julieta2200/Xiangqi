@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d05lmiobxnn3t"]
+
+[ext_resource type="Script" path="res://Projects/Figure/shadow_pivot.gd" id="1_bqis4"]
+
+[node name="ShadowPivot" type="Node2D"]
+skew = 0.401426
+script = ExtResource("1_bqis4")

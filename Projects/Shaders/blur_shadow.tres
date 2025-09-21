@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://blvd6fmf8jtbp"]
+
+[ext_resource type="Shader" path="res://Projects/Shaders/blur_shadow.gdshader" id="1_m24tv"]
+
+[resource]
+shader = ExtResource("1_m24tv")
+shader_parameter/blur_size = 2.016
+shader_parameter/shadow_opacity = 0.147
