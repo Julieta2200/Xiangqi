@@ -42,18 +42,26 @@ offset_bottom = 989.0
 
 [node name="Close" type="Button" parent="Panel"]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
+anchors_preset = 2
 anchor_top = 1.0
-anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -222.0
-offset_top = -112.0
-offset_right = -111.0
-offset_bottom = -49.0
-grow_horizontal = 0
+offset_top = -63.0
+offset_right = 111.0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 40
 text = "Close"
 
+[node name="Play" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 203.0
+offset_top = -63.0
+offset_right = 314.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "Play"
+
 [connection signal="pressed" from="Panel/Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="Panel/Play" to="." method="_on_play_pressed"]

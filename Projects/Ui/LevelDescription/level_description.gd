@@ -22,24 +22,27 @@ var additional_objectives: Array[String] = [] :
 			label.text = "• " + objective
 			objectives_container.add_child(label)
 
+var level: PackedScene
+
 @onready var title_label: Label  = $Panel/Title
 @onready var story_label: RichTextLabel  = $Panel/Story
 @onready var objectives_container: VBoxContainer  = $Panel/Objectives
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	setup("Title1", "This is a sample story for the level description. It can be quite long and detailed.", ["Find the hidden key", "Defeat all enemies", "Rescue the hostages"])
+	hide()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-func setup(title: String, story: String, additional_objectives: Array[String]) -> void:
+func setup(title: String, story: String, additional_objectives: Array[String], level: PackedScene) -> void:
 	self.title = title
 	self.story = story
 	self.additional_objectives = additional_objectives
+	self.level = level
 	show()
 
 func _on_close_pressed() -> void:
 	hide()
+	
+func _on_play_pressed() -> void:
+	if level:
+		get_tree().change_scene_to_packed(level)
