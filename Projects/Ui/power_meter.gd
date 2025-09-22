@@ -6,12 +6,7 @@ signal energy_depleted
 
 # amount of energy added after each step
 @export var energy_fill: int = 7
-
-var max_energy: int :
-	set(e):
-		max_energy = e
-		$energy.max_value = max_energy
-		energy = max_energy
+const max_energy: int = 100
 		
 
 # Stores the energy value and updates the energy display while emitting a signal when it changes
@@ -21,12 +16,10 @@ var max_energy: int :
 			e = 0
 			emit_signal("energy_depleted")
 		energy = e
+		if energy > max_energy:
+			energy = max_energy
 		$energy.value = energy
 		$energy/Label.text = str(energy) + " / " + str(max_energy)
-
-
-func _ready() -> void:
-	max_energy = GameState.state["energy"]
 
 func fill_energy():
 	energy += energy_fill
