@@ -119,10 +119,6 @@ var _walls: Array[FigureComponent]
 var _freezes: Array
 var _traps: Array
 
-var spawn_points: Dictionary = {
-	FigureComponent.Types.SOLDIER : [Vector2i(0,3), Vector2i(2,3), Vector2i(4,3), Vector2i(6,3),Vector2i(8,3)]
-}
-
 @export var ai_spawn_interval : int = 6
 @onready var disconnection_mist_scene: PackedScene = preload("res://Projects/Support/world1/disconnection_mist.tscn")
 var _mist: DisconnectionMist
@@ -283,8 +279,9 @@ func get_figures(team: Teams) -> Array[FigureComponent]:
 
 func spawn_highlight(spawn_figure_type : FigureComponent.Types) -> void:
 	clear_markers()
+	const soldier_spawn_points = [Vector2i(0,3), Vector2i(2,3), Vector2i(4,3), Vector2i(6,3),Vector2i(8,3)]
 	if spawn_figure_type == FigureComponent.Types.SOLDIER:
-		for i in spawn_points[spawn_figure_type]:
+		for i in soldier_spawn_points:
 			var marker: BoardMarker = markers[i]
 			if !state.has(i):
 				marker.highlight(BoardMarker.Highlights.SPAWN)
