@@ -189,6 +189,7 @@ func instantiate_figure(kingdom: Kingdoms, type: FigureComponent.Types, pos: Vec
 
 func show_move_markers(positions: Array[Vector2i], figure: FigureComponent) -> void:
 	clear_markers()
+	ui.garrison.deselect_cards()
 	_selected_figure = figure
 	markers[figure.chess_component.position].highlight(BoardMarker.Highlights.SELECTED)
 	for pos in positions:
@@ -346,6 +347,7 @@ func spawn_done(marker: BoardMarker) -> void:
 
 func special_markers_highlight(special: CardSlots.SPECIALS, is_free: bool = false, for_enemy: bool = false) -> void:
 	clear_markers()
+	ui.garrison.deselect_cards()
 	_selected_special = special
 	for pos in markers:
 		# specials are not affecting the palaces
