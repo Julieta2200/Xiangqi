@@ -22,3 +22,8 @@ func update_cards(energy: int) -> void:
 	for card in figure_cards:
 		card.activate(card.energy < energy)
 		card.deselect()
+
+func deselect_cards() -> void:
+	if selected_figure != null:
+		selected_figure.deselect()
+		selected_figure = null

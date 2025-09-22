@@ -11,7 +11,7 @@ var board: BoardV2
 
 signal figure_move(marker)
 signal figure_spawn(marker)
-signal spawn_done
+signal spawn_done(marker)
 signal highlight_end
 signal special(marker)
 
@@ -84,6 +84,6 @@ func _on_area_2d_mouse_exited() -> void:
 	$walking_marker/highlight.hide()
 
 func _on_spawn_light_animation_finished() -> void:
-	emit_signal("spawn_done")
+	emit_signal("spawn_done", self)
 	await get_tree().process_frame
 	spawn_light.hide()

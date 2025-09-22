@@ -253,8 +253,10 @@ func spawn_AI_figure():
 func capture(target_pos: Vector2i, attacker_pos = Vector2i(-1,-1)) -> void:
 	state[target_pos].move_component.disappear(attacker_pos)
 
-func clear_markers() -> void:
+func clear_markers(exceptions: Array[Vector2i] = []) -> void:
 	for pos in markers:
+		if pos in exceptions:
+			continue
 		var m: BoardMarker = markers[pos]
 		m.unhighlight()
 
@@ -289,6 +291,7 @@ func spawn_highlight(spawn_figure_type : FigureComponent.Types) -> void:
 
 func spawn_figure(marker: BoardMarker) -> void:
 	neutralize_markers()
+	clear_markers([marker.board_position])
 	ui.power_meter.substruct_energy()
 	instantiate_figure(Kingdoms.MAGMA, ui.garrison.selected_figure.type, marker.board_position)
 	var figure = state[marker.board_position]
@@ -336,9 +339,9 @@ func check_game_over() -> bool:
 func is_victory(generals: Array) -> bool:
 	return Teams.Red == generals[0].chess_component.team
 
-func spawn_done():
+func spawn_done(marker: BoardMarker) -> void:
 	await get_tree().process_frame
-	clear_markers()
+	marker.unhighlight()
 
 
 func special_markers_highlight(special: CardSlots.SPECIALS, is_free: bool = false, for_enemy: bool = false) -> void:
