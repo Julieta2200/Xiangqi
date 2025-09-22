@@ -138,8 +138,6 @@ var move_number: int = 0:
 		clear_wall()
 		unfreeze_piece()
 		ui.card_slots.countdown()
-		if _mist != null:
-			_mist.deactivate(self)
 		
 func _ready() -> void:
 	initialize_markers()
@@ -319,6 +317,8 @@ func figure_move_done() -> void:
 		if _AI_figure != null:
 			check_trap(_AI_figure)
 		turn = Teams.Red
+	if _mist != null and _mist.target_team != turn:
+		_mist.deactivate(self)
 
 func get_generals() -> Array[FigureComponent]:
 	var generals: Array[FigureComponent] = []
