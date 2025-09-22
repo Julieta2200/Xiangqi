@@ -37,6 +37,7 @@ camera = NodePath("../Camera")
 
 [node name="AI" parent="." node_paths=PackedStringArray("board") instance=ExtResource("4_hb2mj")]
 board = NodePath("../Board")
+special = 3
 
 [node name="Camera" parent="." instance=ExtResource("5_8qu1q")]
 position = Vector2(1966, 1410)
