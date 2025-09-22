@@ -44,7 +44,10 @@ var figure_legal_moves = {
 }
 
 var moved_numbers: Array[int] = []
-var current_eval: int = 0
+var current_eval: int = 0 :
+	set(e):
+		current_eval = e
+		print("Current evaluation updated to: ", current_eval)
 var transposition_table: Dictionary = {}
 
 
@@ -85,7 +88,7 @@ func state_to_position(state: Dictionary) -> Array[Array]:
 	return position
 
 func select_best_move(position: Array[Array], depth: int) -> void:
-	var t = Time.get_unix_time_from_system()
+	print("AI thinking...")
 	# Recalculate the entire board score from scratch before thinking.
 	current_eval = calculate_full_evaluation(position)
 
@@ -99,9 +102,8 @@ func select_best_move(position: Array[Array], depth: int) -> void:
 		if score > best_score:
 			best_score = score
 			best_move = move
-	print(Time.get_unix_time_from_system() - t)
 	if best_move:
-		print(best_score)
+		print("AI selected move: ", best_move, " with score ", best_score)
 		call_deferred("make_move_main_thread", best_move)
 
 func get_all_legal_moves(team: int, position: Array[Array]) -> Array[Array]:
@@ -410,12 +412,9 @@ func simulate_move(position: Array[Array], move: Array) -> void:
 		var c_team = get_team_number(abs(captured_piece))
 		var c_fig = get_figure_number(abs(captured_piece), c_team)
 		var val = figure_values[c_fig]
-		var frozen_bonus = 0
-		var aggression_bonus = 20
-		if captured_piece < 0:
-			frozen_bonus = 50
-		if c_team == 2: current_eval -= val + frozen_bonus + aggression_bonus
-		elif c_team == 1: current_eval += val + frozen_bonus + aggression_bonus
+		
+		if c_team == 2: current_eval -= val
+		elif c_team == 1: current_eval += val
 
 	# move piece
 	position[dy][dx] = moving_piece
@@ -454,7 +453,9 @@ func minimax(position: Array[Array], depth: int, maximizingPlayer: bool, alpha: 
 	if !maximizingPlayer:
 		team = 1
 	if depth == 0 or game_over():
-		return evaluate_position(position, 2)
+		var eval = evaluate_position(position, 2)
+		# print("Eval at depth ", depth, ": ", eval)
+		return eval
 	var key = position_hash(position, depth, maximizingPlayer)
 	if transposition_table.has(key):
 		return transposition_table[key]
@@ -470,7 +471,7 @@ func minimax(position: Array[Array], depth: int, maximizingPlayer: bool, alpha: 
 			if beta <= alpha:
 				break
 		transposition_table[key] = maxEval
-
+		# print("MaxEval at depth ", depth, ": ", maxEval)
 		return maxEval
 	else:
 		var minEval = infinite
@@ -483,6 +484,7 @@ func minimax(position: Array[Array], depth: int, maximizingPlayer: bool, alpha: 
 			if beta <= alpha:
 				break
 		transposition_table[key] = minEval
+		# print("MinEval at depth ", depth, ": ", minEval)
 		return minEval
 
 func game_over() -> bool:
