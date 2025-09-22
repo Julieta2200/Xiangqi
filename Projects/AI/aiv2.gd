@@ -381,7 +381,7 @@ func in_boundaries(boundaries: Array, y: int, x: int) -> bool:
 func free_or_capture(position: Array[Array], y: int, x: int, team: int) -> bool:
 	if position[y][x] == 0:
 		return true
-	var piece_number: int = position[y][x] - 10*other_team(team)
+	var piece_number: int = abs(position[y][x]) - 10*other_team(team)
 	if piece_number >= 0 and piece_number < 10:
 		return true
 	return false
