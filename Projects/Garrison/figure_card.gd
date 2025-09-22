@@ -19,8 +19,8 @@ const figure_energies = {
 	FigureComponent.Types.SOLDIER: 15,
 	FigureComponent.Types.ELEPHANT: 20,
 	FigureComponent.Types.CHARIOT: 60,
-	FigureComponent.Types.HORSE: 25,
-	FigureComponent.Types.CANNON: 55
+	FigureComponent.Types.HORSE: 20,
+	FigureComponent.Types.CANNON: 30
 }
 
 @export var type: FigureComponent.Types 
