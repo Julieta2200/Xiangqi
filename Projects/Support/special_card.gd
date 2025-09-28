@@ -15,6 +15,7 @@ var cooldown_counter: int = 0 :
 signal on_click(s: CardSlots.SPECIALS)
 signal on_click_full(s: SpecialCard)
 
+# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
 
