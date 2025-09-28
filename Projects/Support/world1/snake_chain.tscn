@@ -1,13 +1,115 @@
-[gd_scene load_steps=2 format=3 uid="uid://5ewsc72pyogy"]
+[gd_scene load_steps=7 format=3 uid="uid://5ewsc72pyogy"]
 
 [ext_resource type="Script" path="res://Projects/Support/world1/snake_chain.gd" id="1_ih27t"]
+[ext_resource type="Texture2D" uid="uid://cd220aqm28g0m" path="res://Assets/tmp/cards/freezing.png" id="1_sry8x"]
+[ext_resource type="Texture2D" uid="uid://dkbqgtk776q1c" path="res://Assets/tmp/cards/card.png" id="3_b884b"]
 
-[node name="SnakeChain" type="Panel"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cd2y5"]
+texture = ExtResource("1_sry8x")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3anc1"]
+texture = ExtResource("3_b884b")
+
+[sub_resource type="FontFile" id="FontFile_uo56n"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/14/0/ascent = 0.0
+cache/0/14/0/descent = 0.0
+cache/0/14/0/underline_position = 0.0
+cache/0/14/0/underline_thickness = 0.0
+cache/0/14/0/scale = 1.0
+cache/0/13/0/ascent = 0.0
+cache/0/13/0/descent = 0.0
+cache/0/13/0/underline_position = 0.0
+cache/0/13/0/underline_thickness = 0.0
+cache/0/13/0/scale = 1.0
+cache/0/15/0/ascent = 0.0
+cache/0/15/0/descent = 0.0
+cache/0/15/0/underline_position = 0.0
+cache/0/15/0/underline_thickness = 0.0
+cache/0/15/0/scale = 1.0
+cache/0/17/0/ascent = 0.0
+cache/0/17/0/descent = 0.0
+cache/0/17/0/underline_position = 0.0
+cache/0/17/0/underline_thickness = 0.0
+cache/0/17/0/scale = 1.0
+cache/0/18/0/ascent = 0.0
+cache/0/18/0/descent = 0.0
+cache/0/18/0/underline_position = 0.0
+cache/0/18/0/underline_thickness = 0.0
+cache/0/18/0/scale = 1.0
+cache/0/19/0/ascent = 0.0
+cache/0/19/0/descent = 0.0
+cache/0/19/0/underline_position = 0.0
+cache/0/19/0/underline_thickness = 0.0
+cache/0/19/0/scale = 1.0
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/21/0/ascent = 0.0
+cache/0/21/0/descent = 0.0
+cache/0/21/0/underline_position = 0.0
+cache/0/21/0/underline_thickness = 0.0
+cache/0/21/0/scale = 1.0
+cache/0/22/0/ascent = 0.0
+cache/0/22/0/descent = 0.0
+cache/0/22/0/underline_position = 0.0
+cache/0/22/0/underline_thickness = 0.0
+cache/0/22/0/scale = 1.0
+cache/0/23/0/ascent = 0.0
+cache/0/23/0/descent = 0.0
+cache/0/23/0/underline_position = 0.0
+cache/0/23/0/underline_thickness = 0.0
+cache/0/23/0/scale = 1.0
+cache/0/24/0/ascent = 0.0
+cache/0/24/0/descent = 0.0
+cache/0/24/0/underline_position = 0.0
+cache/0/24/0/underline_thickness = 0.0
+cache/0/24/0/scale = 1.0
+cache/0/25/0/ascent = 0.0
+cache/0/25/0/descent = 0.0
+cache/0/25/0/underline_position = 0.0
+cache/0/25/0/underline_thickness = 0.0
+cache/0/25/0/scale = 1.0
+cache/0/26/0/ascent = 0.0
+cache/0/26/0/descent = 0.0
+cache/0/26/0/underline_position = 0.0
+cache/0/26/0/underline_thickness = 0.0
+cache/0/26/0/scale = 1.0
+cache/0/27/0/ascent = 0.0
+cache/0/27/0/descent = 0.0
+cache/0/27/0/underline_position = 0.0
+cache/0/27/0/underline_thickness = 0.0
+cache/0/27/0/scale = 1.0
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/29/0/ascent = 0.0
+cache/0/29/0/descent = 0.0
+cache/0/29/0/underline_position = 0.0
+cache/0/29/0/underline_thickness = 0.0
+cache/0/29/0/scale = 1.0
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+
+[node name="SnakeChain" type="Panel" node_paths=PackedStringArray("description")]
 custom_minimum_size = Vector2(200, 200)
+theme_override_styles/panel = SubResource("StyleBoxTexture_cd2y5")
 script = ExtResource("1_ih27t")
 type = 1
 special = 1
 cooldown = 3
+description = NodePath("Description")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -16,12 +118,64 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -42.0
-offset_top = -11.5
-offset_right = 42.0
-offset_bottom = 11.5
+offset_left = -47.5
+offset_top = -61.5
+offset_right = 47.5
+offset_bottom = -38.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/font_size = 25
 text = "Snake Chain"
 
+[node name="Description" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -40.5
+offset_top = -43.0
+offset_right = 40.5
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 13
+text = "Description"
+
+[node name="DescriptionText" type="Panel" parent="."]
+visible = false
+offset_right = 200.0
+offset_bottom = 200.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_3anc1")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DescriptionText"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.0
+offset_top = -66.0
+offset_right = 78.0
+offset_bottom = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Freezes the selected piece for 1 move. Outside of the palace․"
+
+[node name="Back" type="Button" parent="DescriptionText"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 152.0
+offset_right = 172.0
+offset_bottom = 180.0
+size_flags_horizontal = 4
+theme_override_fonts/font = SubResource("FontFile_uo56n")
+theme_override_font_sizes/font_size = 14
+text = "Back"
+
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="pressed" from="Description" to="." method="_on_description_pressed"]
+[connection signal="pressed" from="DescriptionText/Back" to="." method="_on_back_pressed"]

@@ -10,7 +10,9 @@ script = ExtResource("1_xkm3q")
 [node name="LLs" type="HBoxContainer" parent="CanvasLayer"]
 anchors_preset = 10
 anchor_right = 1.0
+offset_right = -1100.0
 grow_horizontal = 2
+scale = Vector2(2, 2)
 
 [node name="HLs" type="HBoxContainer" parent="CanvasLayer"]
 anchors_preset = 10
