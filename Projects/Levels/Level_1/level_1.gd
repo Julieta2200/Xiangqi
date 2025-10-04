@@ -25,6 +25,8 @@ func _ready() -> void:
 	], true)
 	_disable_play()
 	DialogSystem.connect("dialog_finished", _enable_play)
+	gameplay_ui.power_meter.energy = 3
+	gameplay_ui.garrison.update_cards(gameplay_ui.power_meter.energy)
 
 func _on_board_game_over(win, move_number):
 	await get_tree().process_frame
