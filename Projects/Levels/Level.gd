@@ -56,3 +56,13 @@ func update_best_move_number(current_move_number: int)-> void:
 	if current_move_number < GameState.state["levels"][level_name]["move_count"] or GameState.state["levels"][level_name]["move_count"] == 0:
 		GameState.state["levels"][level_name]["move_count"] = current_move_number
 		GameState.save_game()
+
+func _enable_play() -> void:
+	gameplay_ui.show()
+	board.activate_reds(true)
+	if DialogSystem.is_connected("dialog_finished", _enable_play):
+		DialogSystem.disconnect("dialog_finished", _enable_play)
+
+func _disable_play() -> void:
+	gameplay_ui.hide()
+	board.activate_reds(false)
