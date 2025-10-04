@@ -1,11 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://b40x7q53qt4ua"]
+[gd_scene load_steps=3 format=3 uid="uid://b40x7q53qt4ua"]
 
 [ext_resource type="Script" path="res://Projects/KarmaTable/karma_table.gd" id="1_xkm3q"]
+[ext_resource type="Texture2D" uid="uid://8m8mqm5e3ixt" path="res://Assets/backgrounds/Karma/Karna_Table.png" id="2_hjx1e"]
 
 [node name="KarmaTable" type="Node2D"]
 script = ExtResource("1_xkm3q")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -2000.0
+offset_right = 2000.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_hjx1e")
 
 [node name="LLs" type="HBoxContainer" parent="CanvasLayer"]
 anchors_preset = 10
