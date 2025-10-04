@@ -4,6 +4,7 @@ enum TYPE {HL, LL}
 @export var type: TYPE
 @export var special: CardSlots.SPECIALS
 @export var cooldown: int
+@export var description: Button
 
 var cooldown_counter: int = 0 :
 	set(cc):
@@ -30,3 +31,9 @@ func countdown() -> void:
 	cooldown_counter -= 1
 	if cooldown_counter == 0:
 		modulate.a = 1
+
+func _on_description_pressed() -> void:
+	$DescriptionText.show()
+
+func _on_back_pressed() -> void:
+	$DescriptionText.hide()
