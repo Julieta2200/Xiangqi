@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bx11h40qosjm0"]
+[gd_scene load_steps=43 format=3 uid="uid://bx11h40qosjm0"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_joy3s"]
 [ext_resource type="Texture2D" uid="uid://csjbks1mympdt" path="res://Assets/Characters/Magma/Elephant/Idle/Elephant1.png" id="2_swpv1"]
@@ -29,6 +29,16 @@
 [ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/Magma/elephant_move_component.gd" id="24_xkce4"]
 [ext_resource type="PackedScene" uid="uid://d05lmiobxnn3t" path="res://Projects/Figure/shadow_pivot.tscn" id="28_20our"]
 [ext_resource type="Material" uid="uid://blvd6fmf8jtbp" path="res://Projects/Shaders/blur_shadow.tres" id="29_tox1b"]
+[ext_resource type="AudioStream" uid="uid://bk1uc35vpkhwo" path="res://Assets/SFX/CHARACTER MOVEMENT SFX/Elephant Movement/Elephant-Movement-1.wav" id="30_l4kby"]
+[ext_resource type="AudioStream" uid="uid://wvwidf6lrk6k" path="res://Assets/SFX/CHARACTER MOVEMENT SFX/Elephant Movement/Elephant-Movement-2.wav" id="31_x6anr"]
+[ext_resource type="AudioStream" uid="uid://de2xm18gliedq" path="res://Assets/SFX/CHARACTER MOVEMENT SFX/Elephant Movement/Elephant-Movement-3.wav" id="32_qgy5l"]
+[ext_resource type="AudioStream" uid="uid://tx0vm0tjjjxg" path="res://Assets/SFX/CHARACTER MOVEMENT SFX/Elephant Movement/Elephant-Movement-4.wav" id="33_nexu5"]
+[ext_resource type="AudioStream" uid="uid://dncy1p2fs7fvh" path="res://Assets/SFX/CHARACTER MOVEMENT SFX/Elephant Movement/Elephant-Movement-5.wav" id="34_j8w87"]
+[ext_resource type="AudioStream" uid="uid://bk5ewbd13oxno" path="res://Assets/SFX/CHARACTER MOVEMENT SFX/Elephant Movement/Elephant-Movement-6.wav" id="35_uncdr"]
+[ext_resource type="AudioStream" uid="uid://btviph08qyprg" path="res://Assets/SFX/CHARACTER MOVEMENT SFX/Elephant Movement/Elephant-Movement-7.wav" id="36_ky31b"]
+[ext_resource type="AudioStream" uid="uid://b5g4c3ud44sy2" path="res://Assets/SFX/CHARACTER MOVEMENT SFX/Elephant Movement/Elephant-Movement-8.wav" id="37_jl2mf"]
+[ext_resource type="AudioStream" uid="uid://bx0oivhjnfsd8" path="res://Assets/SFX/CHARACTER MOVEMENT SFX/Elephant Movement/Elephant-Movement-9.wav" id="38_1u62i"]
+[ext_resource type="AudioStream" uid="uid://deq62jvgfnodp" path="res://Assets/SFX/CHARACTER MOVEMENT SFX/Elephant Movement/Elephant-Movement-10.wav" id="39_1vykr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5rg0u"]
 animations = [{
@@ -118,6 +128,19 @@ animations = [{
 radius = 80.0
 height = 190.0
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_x84wc"]
+streams_count = 10
+stream_0/stream = ExtResource("30_l4kby")
+stream_1/stream = ExtResource("31_x6anr")
+stream_2/stream = ExtResource("32_qgy5l")
+stream_3/stream = ExtResource("33_nexu5")
+stream_4/stream = ExtResource("34_j8w87")
+stream_5/stream = ExtResource("35_uncdr")
+stream_6/stream = ExtResource("36_ky31b")
+stream_7/stream = ExtResource("37_jl2mf")
+stream_8/stream = ExtResource("38_1u62i")
+stream_9/stream = ExtResource("39_1vykr")
+
 [node name="Elephant" type="CharacterBody2D" node_paths=PackedStringArray("chess_component", "ui_component", "move_component")]
 script = ExtResource("1_joy3s")
 chess_component = NodePath("ChessComponent")
@@ -148,11 +171,12 @@ team = 1
 figure_component = NodePath("..")
 move_component = NodePath("../MoveComponent")
 
-[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "shadow")]
+[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "shadow", "move_audio")]
 script = ExtResource("24_xkce4")
 speed = 300.0
 figure_component = NodePath("..")
 shadow = NodePath("../ShadowPivot/Shadow")
+move_audio = NodePath("../MoveAudio")
 
 [node name="ShaderComponent" parent="." node_paths=PackedStringArray("main_sprite") instance=ExtResource("7_sm5jv")]
 main_sprite = NodePath("../AnimatedSprite2D")
@@ -171,6 +195,9 @@ sprite_frames = SubResource("SpriteFrames_5rg0u")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.964953
+
+[node name="MoveAudio" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_x84wc")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="MoveComponent" method="_on_figure_animation_finished"]
 [connection signal="move_done" from="MoveComponent" to="MoveComponent" method="_on_move_done"]

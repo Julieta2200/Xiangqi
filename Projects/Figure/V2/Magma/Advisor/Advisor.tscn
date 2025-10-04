@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://xnkcry6frvgx"]
+[gd_scene load_steps=64 format=3 uid="uid://xnkcry6frvgx"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_ts1i4"]
 [ext_resource type="Texture2D" uid="uid://di3yukoh8siaj" path="res://Assets/Characters/Magma/Advisor/Run/Back_Left_Side/Back_Left_Side1.png" id="2_a3x3p"]
@@ -50,8 +50,11 @@
 [ext_resource type="Material" uid="uid://e3w5tox88i13" path="res://Projects/Shaders/outline.tres" id="46_8oo55"]
 [ext_resource type="PackedScene" uid="uid://cy1y1kpvwk5sq" path="res://Projects/Figure/Components/ShaderComponent/shader_component.tscn" id="49_ju1ay"]
 [ext_resource type="Material" uid="uid://b5ews8a5nl326" path="res://Projects/Shaders/spawn.tres" id="50_2riwu"]
-[ext_resource type="PackedScene" path="res://Projects/Figure/shadow_pivot.tscn" id="51_j64ny"]
-[ext_resource type="Material" path="res://Projects/Shaders/blur_shadow.tres" id="52_7pkpa"]
+[ext_resource type="PackedScene" uid="uid://d05lmiobxnn3t" path="res://Projects/Figure/shadow_pivot.tscn" id="51_j64ny"]
+[ext_resource type="Material" uid="uid://blvd6fmf8jtbp" path="res://Projects/Shaders/blur_shadow.tres" id="52_7pkpa"]
+[ext_resource type="AudioStream" uid="uid://du4swgpk5otc" path="res://Assets/SFX/CHARACTER MOVEMENT SFX/The Advisor Movement/The Advisor-Movement-1.wav" id="53_s3xot"]
+[ext_resource type="AudioStream" uid="uid://dpye8tuqn13ik" path="res://Assets/SFX/CHARACTER MOVEMENT SFX/The Advisor Movement/The Advisor-Movement-2.wav" id="54_xsfcc"]
+[ext_resource type="AudioStream" uid="uid://dvhs7yy1ggnpu" path="res://Assets/SFX/CHARACTER MOVEMENT SFX/The Advisor Movement/The Advisor-Movement-3.wav" id="55_8sj5t"]
 
 [sub_resource type="Animation" id="Animation_eddeg"]
 length = 0.001
@@ -518,6 +521,12 @@ animations = [{
 radius = 47.0
 height = 174.0
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_eh503"]
+streams_count = 3
+stream_0/stream = ExtResource("53_s3xot")
+stream_1/stream = ExtResource("54_xsfcc")
+stream_2/stream = ExtResource("55_8sj5t")
+
 [node name="Advisor" type="CharacterBody2D" node_paths=PackedStringArray("chess_component", "ui_component", "move_component")]
 script = ExtResource("1_ts1i4")
 chess_component = NodePath("ChessComponent")
@@ -638,7 +647,7 @@ team = 1
 figure_component = NodePath("..")
 move_component = NodePath("../MoveComponent")
 
-[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("path_signs", "path_animation", "edge_sign", "center_sign", "main_sprite", "figure_component", "shadow")]
+[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("path_signs", "path_animation", "edge_sign", "center_sign", "main_sprite", "figure_component", "shadow", "move_audio")]
 script = ExtResource("9_74u5g")
 path_signs = NodePath("../BoardSigns/PathSigns")
 path_animation = NodePath("../BoardSigns/PathAnimation")
@@ -648,6 +657,7 @@ main_sprite = NodePath("../AnimatedSprite2D")
 speed = 300.0
 figure_component = NodePath("..")
 shadow = NodePath("../ShadowPivot/Shadow")
+move_audio = NodePath("../MoveAudio")
 
 [node name="ShaderComponent" parent="." node_paths=PackedStringArray("main_sprite") instance=ExtResource("49_ju1ay")]
 main_sprite = NodePath("../AnimatedSprite2D")
@@ -667,6 +677,9 @@ animation = &"idle_up"
 autoplay = "idle_up"
 frame_progress = 0.761258
 flip_h = true
+
+[node name="MoveAudio" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_eh503")
 
 [connection signal="animation_finished" from="BoardSigns/EdgeSign" to="MoveComponent" method="_on_sign_animation_finished"]
 [connection signal="animation_finished" from="BoardSigns/CenterSign" to="MoveComponent" method="_on_sign_animation_finished"]

@@ -15,3 +15,5 @@ var frozen: bool = false
 
 func delete() -> void:
 	queue_free()
+
+		

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cukf376p68ptx"
+path="res://.godot/imported/Horse-Movement-3.wav-345be747451bc7576fff690bba4e581a.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/CHARACTER MOVEMENT SFX/Horse Movement/Horse-Movement-3.wav"
+dest_files=["res://.godot/imported/Horse-Movement-3.wav-345be747451bc7576fff690bba4e581a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

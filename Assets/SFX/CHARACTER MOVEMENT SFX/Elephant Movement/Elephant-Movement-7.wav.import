@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://btviph08qyprg"
+path="res://.godot/imported/Elephant-Movement-7.wav-5f6f929a331015b7a1446a7cc6f18a3d.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/CHARACTER MOVEMENT SFX/Elephant Movement/Elephant-Movement-7.wav"
+dest_files=["res://.godot/imported/Elephant-Movement-7.wav-5f6f929a331015b7a1446a7cc6f18a3d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
