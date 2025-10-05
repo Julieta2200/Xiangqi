@@ -33,7 +33,8 @@ var state: Dictionary = {
 			"move_count" : 0
 		},
 	},
-	"passed_tutorials": []
+	"passed_tutorials": [],
+	"first_run": true
 }
 
 # Called when the node enters the scene tree for the first time.
@@ -64,3 +65,5 @@ func load_game() -> void:
 		print("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
 		return
 	state = json.data
+	if !state.has("first_run"):
+		state["first_run"] = true

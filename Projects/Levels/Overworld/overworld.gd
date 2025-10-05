@@ -10,6 +10,11 @@ class_name Overworld extends Node2D
 }
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if GameState.state["first_run"]:
+		GameState.state["first_run"] = false
+		GameState.save_game()
+		_on_tutorial_pressed()
+	
 	for level in GameState.state["levels"]:
 		if levels.has(level):
 			levels[level].state = GameState.state["levels"][level]["state"]

@@ -58,11 +58,6 @@ offset_bottom = 20.0
 grow_vertical = 2
 scale = Vector2(2, 2)
 
-[node name="Free" type="Button" parent="CanvasLayer/SectionsContainer"]
-layout_mode = 2
-focus_mode = 0
-text = "Free"
-
 [node name="Pawn" type="Button" parent="CanvasLayer/SectionsContainer"]
 layout_mode = 2
 focus_mode = 0
@@ -108,7 +103,11 @@ layout_mode = 2
 focus_mode = 0
 text = "Spawning"
 
-[connection signal="pressed" from="CanvasLayer/SectionsContainer/Free" to="." method="_on_free_pressed"]
+[node name="Free" type="Button" parent="CanvasLayer/SectionsContainer"]
+layout_mode = 2
+focus_mode = 0
+text = "Free"
+
 [connection signal="pressed" from="CanvasLayer/SectionsContainer/Pawn" to="." method="_on_pawn_pressed"]
 [connection signal="pressed" from="CanvasLayer/SectionsContainer/Horse" to="." method="_on_horse_pressed"]
 [connection signal="pressed" from="CanvasLayer/SectionsContainer/Elephant" to="." method="_on_elephant_pressed"]
@@ -118,3 +117,4 @@ text = "Spawning"
 [connection signal="pressed" from="CanvasLayer/SectionsContainer/General" to="." method="_on_general_pressed"]
 [connection signal="pressed" from="CanvasLayer/SectionsContainer/FlyingGeneral" to="." method="_on_flying_general_pressed"]
 [connection signal="pressed" from="CanvasLayer/SectionsContainer/Spawning" to="." method="_on_spawning_pressed"]
+[connection signal="pressed" from="CanvasLayer/SectionsContainer/Free" to="." method="_on_free_pressed"]

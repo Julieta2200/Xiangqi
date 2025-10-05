@@ -38,7 +38,7 @@ func _ready() -> void:
 		if sections.has(int(s)):
 			sections[int(s)].modulate = green
 	board.move_done.connect(check_state)
-	_on_free_pressed()
+	_on_pawn_pressed()
 	
 
 func _on_free_pressed() -> void:
@@ -149,6 +149,7 @@ func check_state() -> void:
 				passed_text_shown = true
 
 func _on_pawn_pressed() -> void:
+	gameplay_ui.power_meter.energy = 100
 	var state: Array[State] = [
 		State.new(BoardV2.Kingdoms.MAGMA, FigureComponent.Types.SOLDIER, Vector2i(4,3)),
 		State.new(BoardV2.Kingdoms.FOG, FigureComponent.Types.SOLDIER, Vector2i(5,5)),
@@ -164,6 +165,7 @@ func _on_pawn_pressed() -> void:
 	gameplay_ui.hide()
 		
 func _on_horse_pressed() -> void:
+	gameplay_ui.power_meter.energy = 100
 	var state: Array[State] = [
 		State.new(BoardV2.Kingdoms.MAGMA, FigureComponent.Types.HORSE, Vector2i(4,4)),
 		State.new(BoardV2.Kingdoms.FOG, FigureComponent.Types.SOLDIER, Vector2i(5,4)),
@@ -180,6 +182,7 @@ func _on_horse_pressed() -> void:
 	gameplay_ui.hide()
 
 func _on_elephant_pressed() -> void:
+	gameplay_ui.power_meter.energy = 100
 	var state: Array[State] = [
 		State.new(BoardV2.Kingdoms.MAGMA, FigureComponent.Types.ELEPHANT, Vector2i(2,0)),
 		State.new(BoardV2.Kingdoms.FOG, FigureComponent.Types.SOLDIER, Vector2i(6,0)),
@@ -196,6 +199,7 @@ func _on_elephant_pressed() -> void:
 	gameplay_ui.hide()
 
 func _on_cannon_pressed() -> void:
+	gameplay_ui.power_meter.energy = 100
 	var state: Array[State] = [
 		State.new(BoardV2.Kingdoms.MAGMA, FigureComponent.Types.CANNON, Vector2i(7,2)),
 		State.new(BoardV2.Kingdoms.FOG, FigureComponent.Types.SOLDIER, Vector2i(1,5)),
@@ -213,6 +217,7 @@ func _on_cannon_pressed() -> void:
 	gameplay_ui.hide()
 
 func _on_chariot_pressed() -> void:
+	gameplay_ui.power_meter.energy = 100
 	var state: Array[State] = [
 		State.new(BoardV2.Kingdoms.MAGMA, FigureComponent.Types.CHARIOT, Vector2i(0,0)),
 		State.new(BoardV2.Kingdoms.FOG, FigureComponent.Types.SOLDIER, Vector2i(4,4)),
@@ -228,6 +233,7 @@ func _on_chariot_pressed() -> void:
 	gameplay_ui.hide()
 
 func _on_advisor_pressed() -> void:
+	gameplay_ui.power_meter.energy = 100
 	var state: Array[State] = [
 		State.new(BoardV2.Kingdoms.MAGMA, FigureComponent.Types.ADVISOR, Vector2i(3,0)),
 		State.new(BoardV2.Kingdoms.FOG, FigureComponent.Types.SOLDIER, Vector2i(5,2)),
@@ -243,6 +249,7 @@ func _on_advisor_pressed() -> void:
 	gameplay_ui.hide()
 
 func _on_general_pressed() -> void:
+	gameplay_ui.power_meter.energy = 100
 	var state: Array[State] = [
 		State.new(BoardV2.Kingdoms.MAGMA, FigureComponent.Types.GENERAL, Vector2i(4,0)),
 		State.new(BoardV2.Kingdoms.FOG, FigureComponent.Types.SOLDIER, Vector2i(5,2)),
@@ -259,6 +266,7 @@ func _on_general_pressed() -> void:
 	gameplay_ui.hide()
 
 func _on_flying_general_pressed() -> void:
+	gameplay_ui.power_meter.energy = 100
 	var state: Array[State] = [
 		State.new(BoardV2.Kingdoms.MAGMA, FigureComponent.Types.GENERAL, Vector2i(4,0)),
 		State.new(BoardV2.Kingdoms.MAGMA, FigureComponent.Types.ELEPHANT, Vector2i(4,3)),
@@ -276,6 +284,7 @@ func _on_flying_general_pressed() -> void:
 	gameplay_ui.hide()
 
 func _on_spawning_pressed() -> void:
+	gameplay_ui.power_meter.energy = 100
 	var state: Array[State] = [
 		State.new(BoardV2.Kingdoms.MAGMA, FigureComponent.Types.GENERAL, Vector2i(4,0)),
 		State.new(BoardV2.Kingdoms.FOG, FigureComponent.Types.GENERAL, Vector2i(5,9)),
