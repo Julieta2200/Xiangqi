@@ -27,31 +27,6 @@ const palace_positions: Dictionary = {
 	Vector2i(5,9): true
 }
 
-const wall_positions: Dictionary = {
-	Teams.Red: {
-		Vector2i(2,0): true,
-		Vector2i(6,0): true,
-		Vector2i(2,1): true,
-		Vector2i(6,1): true,
-		Vector2i(2,2): true,
-		Vector2i(6,2): true,
-		Vector2i(3,3): true,
-		Vector2i(4,3): true,
-		Vector2i(5,3): true,
-	},
-	Teams.Black: {
-		Vector2i(2,9): true,
-		Vector2i(6,9): true,
-		Vector2i(2,8): true,
-		Vector2i(6,8): true,
-		Vector2i(2,7): true,
-		Vector2i(6,7): true,
-		Vector2i(3,6): true,
-		Vector2i(4,6): true,
-		Vector2i(5,6): true,
-	}
-}
-
 var scenes: Dictionary = {
 	Kingdoms.MAGMA: {
 		FigureComponent.Types.SOLDIER: load("res://Projects/Figure/V2/Magma/Soldier/Soldier.tscn"),
