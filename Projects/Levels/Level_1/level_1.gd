@@ -4,6 +4,7 @@ extends Level
 @onready var hints: Array[HintBubble] = [
 	$GameplayUI/Hints/HintBubble,
 	$GameplayUI/Hints/HintBubble2,
+	$GameplayUI/Hints/HintBubble4,
 	$GameplayUI/Hints/HintBubble3,
 ]
 
