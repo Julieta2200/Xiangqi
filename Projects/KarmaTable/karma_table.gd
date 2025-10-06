@@ -102,7 +102,6 @@ func _on_play_pressed() -> void:
 		get_tree().change_scene_to_packed(GameState.current_level_info["scene"])
 
 func run_hint_system() -> void:
-	print("Running hint system")
 	if _hint_index >= hint_bubbles.size():
 		run_dialog()
 		return
