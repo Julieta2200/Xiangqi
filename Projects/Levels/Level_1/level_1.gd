@@ -7,6 +7,7 @@ extends Level
 	$GameplayUI/Hints/HintBubble4,
 	$GameplayUI/Hints/HintBubble3,
 ]
+@onready var palace_light: PointLight2D = $Board/PalaceLight
 
 var _hint_index: int = 0
 
@@ -66,3 +67,6 @@ func run_hint_system() -> void:
 		return
 	hints[_hint_index].show()
 	_hint_index += 1
+
+func _palace_hint_shown() -> void:
+	palace_light.visible = hints[3].visible
