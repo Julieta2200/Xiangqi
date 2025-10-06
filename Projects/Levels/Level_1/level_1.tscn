@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://ba32qvdi6rk4u" path="res://Projects/Ui/hint_bubble.tscn" id="9_c7knn"]
 
 [sub_resource type="Gradient" id="Gradient_htidq"]
-offsets = PackedFloat32Array(0.14538, 0.315217, 1)
+offsets = PackedFloat32Array(0.14538, 0.315217, 0.762228)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_m3dqu"]
@@ -44,7 +44,6 @@ ui = NodePath("../GameplayUI")
 camera = NodePath("../Camera")
 
 [node name="PalaceLight" type="PointLight2D" parent="Board"]
-visible = false
 position = Vector2(1071, 1856)
 energy = 1.2
 texture = SubResource("GradientTexture2D_m3dqu")
