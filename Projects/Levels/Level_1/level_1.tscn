@@ -44,6 +44,7 @@ ui = NodePath("../GameplayUI")
 camera = NodePath("../Camera")
 
 [node name="PalaceLight" type="PointLight2D" parent="Board"]
+visible = false
 position = Vector2(1071, 1856)
 energy = 1.2
 texture = SubResource("GradientTexture2D_m3dqu")

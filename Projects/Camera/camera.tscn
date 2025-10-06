@@ -9,6 +9,21 @@ shader_parameter/center = Vector2(0.5, 0.5)
 shader_parameter/radius = 0.252
 shader_parameter/softness = 0.229
 
+[sub_resource type="Animation" id="Animation_j5g31"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/radius")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.252]
+}
+
 [sub_resource type="Animation" id="Animation_a6eoe"]
 resource_name = "heartbeat"
 loop_mode = 1
@@ -25,21 +40,6 @@ tracks/0/keys = {
 "values": [0.252, 0.374, 0.218, 0.252]
 }
 
-[sub_resource type="Animation" id="Animation_j5g31"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:material:shader_parameter/radius")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.252]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p6ujh"]
 _data = {
 "RESET": SubResource("Animation_j5g31"),
@@ -47,6 +47,7 @@ _data = {
 }
 
 [node name="Camera" type="Camera2D"]
+zoom = Vector2(0.9, 0.9)
 limit_left = -2000
 limit_top = -500
 limit_right = 5950
