@@ -5,10 +5,27 @@ extends Node2D
 @onready var equiped_lls: HBoxContainer = $CanvasLayer/EquipedLLs
 @onready var equiped_hls: HBoxContainer = $CanvasLayer/EquipedHLs
 
+
+var level_1_dialog: Array[DialogSystem.DialogText] = [
+	DialogSystem.DialogText.new("Some test text", DialogSystem.CHARACTERS.Jakat),
+]
+
+var dialogs: Dictionary = {
+	"1": level_1_dialog,
+}
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	fill_lls()
 	fill_hls()
+	print("Current level info: " + str(GameState.current_level_info))
+	print(dialogs)
+	if dialogs.has(GameState.current_level_info["name"]):
+		var dialog: Array[DialogSystem.DialogText] = dialogs[GameState.current_level_info["name"]]
+		if dialog.size() > 0:
+			print("Starting dialog for level: " + GameState.current_level_info["name"])
+			DialogSystem.start_dialog(dialog, true)
 
 
 func fill_lls() -> void:

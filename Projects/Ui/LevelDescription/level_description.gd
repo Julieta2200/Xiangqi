@@ -22,6 +22,8 @@ var additional_objectives: Array[String] = [] :
 			label.text = "• " + objective
 			objectives_container.add_child(label)
 
+var number: String = ""
+
 var level: PackedScene
 
 @onready var title_label: Label  = $Panel/Title
@@ -33,11 +35,12 @@ func _ready() -> void:
 	hide()
 
 
-func setup(title: String, story: String, additional_objectives: Array[String], level: PackedScene) -> void:
+func setup(title: String, story: String, additional_objectives: Array[String], level: PackedScene, number: String) -> void:
 	self.title = title
 	self.story = story
 	self.additional_objectives = additional_objectives
 	self.level = level
+	self.number = number
 	show()
 
 func _on_close_pressed() -> void:
@@ -45,4 +48,6 @@ func _on_close_pressed() -> void:
 	
 func _on_play_pressed() -> void:
 	if level:
-		get_tree().change_scene_to_packed(level)
+		GameState.current_level_info["scene"] = level
+		GameState.current_level_info["name"] = number
+		get_tree().change_scene_to_file("res://Projects/KarmaTable/karma_table.tscn")

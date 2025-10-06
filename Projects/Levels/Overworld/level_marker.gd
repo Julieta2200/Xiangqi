@@ -34,6 +34,7 @@ var move_count:
 @export var title: String
 @export var story: String
 @export var additional_objectives: Array[String] = []
+@export var number: String
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -61,4 +62,4 @@ func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int
 	if event is InputEventMouseButton:
 		var mouse_event := event as InputEventMouseButton
 		if mouse_event.button_index == MOUSE_BUTTON_LEFT and mouse_event.pressed:
-			level_description.setup(title, story, additional_objectives, level)
+			level_description.setup(title, story, additional_objectives, level, number)

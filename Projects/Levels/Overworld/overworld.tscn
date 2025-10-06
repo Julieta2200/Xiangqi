@@ -16,9 +16,9 @@
 [ext_resource type="Texture2D" uid="uid://dthqg3lcpsl3r" path="res://Assets/Map/First Island/Water.png" id="10_v2sed"]
 [ext_resource type="Texture2D" uid="uid://c17jfss8xqocc" path="res://Assets/Map/Third Part/All.png" id="11_omsi1"]
 [ext_resource type="Texture2D" uid="uid://rml1ubf2s05y" path="res://Assets/Map/Second Part/Water.png" id="14_ixmfm"]
-[ext_resource type="PackedScene" uid="uid://br5fqscax7ejf" path="res://Projects/Camera/camera.tscn" id="15_ix7hs"]
 [ext_resource type="Texture2D" uid="uid://c2pusevtme515" path="res://Assets/Map/Second Island/Water.png" id="18_s6hq3"]
 [ext_resource type="PackedScene" uid="uid://chmuokpujhvya" path="res://Projects/Ui/LevelDescription/level_description.tscn" id="20_uvu7o"]
+[ext_resource type="Script" path="res://Projects/Levels/Overworld/camera.gd" id="21_6fygh"]
 [ext_resource type="Texture2D" uid="uid://bbi3vn0pr30bs" path="res://Assets/Map/Third Part/Water.png" id="22_8r75w"]
 [ext_resource type="Texture2D" uid="uid://dkcu2jqstbxx5" path="res://Assets/Map/Third Island/Water.png" id="26_br2ah"]
 
@@ -80,9 +80,10 @@ texture = ExtResource("11_omsi1")
 position = Vector2(628, 899)
 level_description = NodePath("../../CanvasLayer/LevelDescription")
 level = ExtResource("3_1gxvu")
-title = "Khosrov - Part 1"
-story = "Here is a story for that"
-additional_objectives = Array[String](["Additional Objective 1", "Additional Objective 2", "Additional Objective 3"])
+title = "Khosrov Forest - Part 1"
+story = "At the beginning of their journey Ashes and his advisors need to pass through the dark forest Khosrov which is under control of the Fog Army."
+additional_objectives = Array[String](["Capture all enemy Pawns", "Don't let your advisors to be captured"])
+number = "1"
 
 [node name="bonus_1" parent="Levels/1" node_paths=PackedStringArray("level_description") instance=ExtResource("2_m64e3")]
 position = Vector2(-49, -378)
@@ -90,6 +91,7 @@ level_description = NodePath("../../../CanvasLayer/LevelDescription")
 level = ExtResource("4_k78vk")
 title = "Khosrov - Wood World"
 story = "Story for wood world"
+number = "1_bonus"
 
 [node name="2" parent="Levels" node_paths=PackedStringArray("level_description") instance=ExtResource("2_m64e3")]
 position = Vector2(977, 777)
@@ -97,6 +99,7 @@ level_description = NodePath("../../CanvasLayer/LevelDescription")
 level = ExtResource("4_l7pks")
 title = "Khosrov - Part  2"
 story = "Story for part 2"
+number = "2"
 
 [node name="bonus_2" parent="Levels/2" node_paths=PackedStringArray("level_description") instance=ExtResource("2_m64e3")]
 position = Vector2(32, -321)
@@ -104,6 +107,7 @@ level_description = NodePath("../../../CanvasLayer/LevelDescription")
 level = ExtResource("6_wvnqw")
 title = "Khosrov - Animal Kingdom"
 story = "Story for animal kingdom"
+number = "2_bonus"
 
 [node name="3" parent="Levels" node_paths=PackedStringArray("level_description") instance=ExtResource("2_m64e3")]
 position = Vector2(1326, 796)
@@ -111,6 +115,7 @@ level_description = NodePath("../../CanvasLayer/LevelDescription")
 level = ExtResource("4_rn2x1")
 title = "Khosrov - Part 3"
 story = "Story for part 3"
+number = "3"
 
 [node name="bonus_3" parent="Levels/3" node_paths=PackedStringArray("level_description") instance=ExtResource("2_m64e3")]
 position = Vector2(111, -342)
@@ -118,23 +123,9 @@ level_description = NodePath("../../../CanvasLayer/LevelDescription")
 level = ExtResource("8_f3p8a")
 title = "Khosrov - Lake World"
 story = "Story for lake world"
+number = "3_bonus"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="KarmaTable" type="Button" parent="CanvasLayer"]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -267.0
-offset_top = -105.0
-offset_right = -161.0
-offset_bottom = -74.0
-grow_horizontal = 0
-grow_vertical = 0
-scale = Vector2(2, 2)
-text = "Karma Table"
 
 [node name="Tutorial" type="Button" parent="CanvasLayer"]
 anchors_preset = 3
@@ -156,9 +147,9 @@ text = "Tutorial"
 [node name="LevelDescription" parent="CanvasLayer" instance=ExtResource("20_uvu7o")]
 visible = false
 
-[node name="Camera" parent="." instance=ExtResource("15_ix7hs")]
-position = Vector2(550, 930)
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(628, 776)
 zoom = Vector2(3, 3)
+script = ExtResource("21_6fygh")
 
-[connection signal="pressed" from="CanvasLayer/KarmaTable" to="." method="_on_karma_table_pressed"]
 [connection signal="pressed" from="CanvasLayer/Tutorial" to="." method="_on_tutorial_pressed"]

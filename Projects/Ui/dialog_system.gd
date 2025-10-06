@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-enum CHARACTERS {Ashes, Mara, Advisor}
+enum CHARACTERS {Ashes, Mara, Advisor, Jakat}
 
 var text_queue: Array[DialogText]
 var skipable: bool

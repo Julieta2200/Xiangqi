@@ -10,11 +10,6 @@ class_name Overworld extends Node2D
 }
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if GameState.state["first_run"]:
-		GameState.state["first_run"] = false
-		GameState.save_game()
-		_on_tutorial_pressed()
-	
 	for level in GameState.state["levels"]:
 		if levels.has(level):
 			levels[level].state = GameState.state["levels"][level]["state"]
@@ -24,11 +19,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
-
-func _on_karma_table_pressed() -> void:
-	get_tree().change_scene_to_file("res://Projects/KarmaTable/karma_table.tscn")
-
 
 func _on_tutorial_pressed() -> void:
 	get_tree().change_scene_to_file("res://Projects/Levels/Tutorial/tutorial.tscn")

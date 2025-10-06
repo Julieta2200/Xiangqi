@@ -37,6 +37,11 @@ var state: Dictionary = {
 	"first_run": true
 }
 
+var current_level_info: Dictionary = {
+	"scene": null,
+	"name": "",
+}
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	load_game()

@@ -1,0 +1,60 @@
+extends Camera2D
+
+var viewport_size : Vector2
+
+# Variables for determining the limits of camera movement in 4 directions
+var move_right_max:float
+var move_left_max: float 
+var move_up_max: float
+var move_down_max: float
+
+@export var locked: bool = false
+@export var move_speed: float = 1000.0
+
+func _ready() -> void:
+	viewport_size = get_viewport().size
+	calculate_limits(zoom)
+
+# Calculates camera movement limits based on zoom level and viewport size
+func calculate_limits(z: Vector2) -> void:
+	move_right_max = limit_right - viewport_size.x / (2*z.x)
+	move_left_max = limit_left + viewport_size.x / (2*z.x)
+	move_down_max = limit_bottom - viewport_size.y / (2*z.x)
+	move_up_max = limit_top + viewport_size.y / (2*z.x)
+
+func _process(delta):
+	if locked:
+		return
+	camera_move(delta)
+	
+	
+func camera_move(delta):
+	var move_direction = Vector2.ZERO
+	if Input.is_action_pressed("move_right"):
+		move_direction.x += 1
+		position.x = min(move_right_max,position.x + move_direction.x * delta * move_speed)
+
+	if Input.is_action_pressed("move_left"):
+		move_direction.x -= 1
+		position.x = max(move_left_max,position.x + move_direction.x * delta * move_speed)
+	
+	if Input.is_action_pressed("move_up"):
+		move_direction.y -= 1
+		position.y = max(move_up_max,position.y + move_direction.y * delta * move_speed)
+		
+	if Input.is_action_pressed("move_down"):
+		move_direction.y  += 1
+		position.y = min(move_down_max,position.y + move_direction.y * delta * move_speed)
+	
+	if Input.is_action_just_pressed("exit"):
+		get_tree().change_scene_to_file("res://Projects/Levels/Overworld/overworld.tscn")
+	
+	if Input.is_action_just_pressed("restart"):
+		get_tree().reload_current_scene()
+
+func lock() -> void:
+	locked = true
+	
+func unlock() -> void:
+	locked = false
+

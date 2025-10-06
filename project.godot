@@ -23,7 +23,7 @@ ShadowController="*res://Projects/Figure/shadow_controller.gd"
 
 [display]
 
-window/size/viewport_width=2200
+window/size/viewport_width=3911
 window/size/viewport_height=2200
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_height"
