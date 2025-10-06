@@ -10,6 +10,9 @@ extends Node2D
 	$CanvasLayer/Hints/HintBubble2,
 	$CanvasLayer/Hints/HintBubble3,
 ]
+@onready var play_button: Button = $CanvasLayer/Play
+@onready var back_button: Button = $CanvasLayer/Back
+
 var _hint_index: int = 0
 
 
@@ -102,7 +105,13 @@ func _on_play_pressed() -> void:
 		get_tree().change_scene_to_packed(GameState.current_level_info["scene"])
 
 func run_hint_system() -> void:
+	play_button.hide()
+	back_button.hide()
 	if _hint_index >= hint_bubbles.size():
+		GameState.state["first_karma_table_run"] = false
+		GameState.save_game()
+		play_button.show()
+		back_button.show()
 		run_dialog()
 		return
 	hint_bubbles[_hint_index].show()
