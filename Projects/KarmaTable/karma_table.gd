@@ -19,12 +19,9 @@ var dialogs: Dictionary = {
 func _ready() -> void:
 	fill_lls()
 	fill_hls()
-	print("Current level info: " + str(GameState.current_level_info))
-	print(dialogs)
 	if dialogs.has(GameState.current_level_info["name"]):
 		var dialog: Array[DialogSystem.DialogText] = dialogs[GameState.current_level_info["name"]]
 		if dialog.size() > 0:
-			print("Starting dialog for level: " + GameState.current_level_info["name"])
 			DialogSystem.start_dialog(dialog, true)
 
 
@@ -85,3 +82,7 @@ func _dequip_hl(s: SpecialCard):
 func _on_back_pressed() -> void:
 	GameState.save_game()
 	get_tree().change_scene_to_file("res://Projects/Levels/Overworld/overworld.tscn")
+
+func _on_play_pressed() -> void:
+	if GameState.current_level_info["scene"]:
+		get_tree().change_scene_to_packed(GameState.current_level_info["scene"])
