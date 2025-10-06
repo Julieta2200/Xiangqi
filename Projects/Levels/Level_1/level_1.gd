@@ -1,5 +1,13 @@
 extends Level
 
+@onready var blocking_panel: Control = $GameplayUI/BlockingPanel
+@onready var hints: Array[HintBubble] = [
+	$GameplayUI/Hints/HintBubble,
+	$GameplayUI/Hints/HintBubble2,
+	$GameplayUI/Hints/HintBubble3,
+]
+
+var _hint_index: int = 0
 
 func _ready() -> void:
 	super._ready()
@@ -43,3 +51,18 @@ func _final_dialog_ended():
 	if DialogSystem.is_connected("dialog_finished", _final_dialog_ended):
 		DialogSystem.disconnect("dialog_finished", _final_dialog_ended)
 	super._on_board_game_over(true, board.move_number)
+
+func _enable_play():
+	super._enable_play()
+	if GameState.state["first_pawn_introduction"]:
+		blocking_panel.show()
+		run_hint_system()
+
+func run_hint_system() -> void:
+	if _hint_index >= hints.size():
+		GameState.state["first_karma_table_run"] = false
+		GameState.save_game()
+		blocking_panel.hide()
+		return
+	hints[_hint_index].show()
+	_hint_index += 1

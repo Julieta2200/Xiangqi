@@ -36,6 +36,7 @@ var state: Dictionary = {
 	"passed_tutorials": [],
 	"first_run": true,
 	"first_karma_table_run": true,
+	"first_pawn_introduction": true,
 }
 
 var current_level_info: Dictionary = {
@@ -75,3 +76,5 @@ func load_game() -> void:
 		state["first_run"] = true
 	if !state.has("first_karma_table_run"):
 		state["first_karma_table_run"] = true
+	if !state.has("first_pawn_introduction"):
+		state["first_pawn_introduction"] = true
