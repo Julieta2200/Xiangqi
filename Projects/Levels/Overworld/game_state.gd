@@ -34,7 +34,8 @@ var state: Dictionary = {
 		},
 	},
 	"passed_tutorials": [],
-	"first_run": true
+	"first_run": true,
+	"first_karma_table_run": true,
 }
 
 var current_level_info: Dictionary = {
@@ -72,3 +73,5 @@ func load_game() -> void:
 	state = json.data
 	if !state.has("first_run"):
 		state["first_run"] = true
+	if !state.has("first_karma_table_run"):
+		state["first_karma_table_run"] = true

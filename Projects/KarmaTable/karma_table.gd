@@ -5,6 +5,13 @@ extends Node2D
 @onready var equiped_lls: HBoxContainer = $CanvasLayer/EquipedLLs
 @onready var equiped_hls: HBoxContainer = $CanvasLayer/EquipedHLs
 
+@onready var hint_bubbles: Array[HintBubble] = [
+	$CanvasLayer/Hints/HintBubble,
+	$CanvasLayer/Hints/HintBubble2,
+	$CanvasLayer/Hints/HintBubble3,
+]
+var _hint_index: int = 0
+
 
 var level_1_dialog: Array[DialogSystem.DialogText] = [
 	DialogSystem.DialogText.new("Some test text", DialogSystem.CHARACTERS.Jakat),
@@ -19,11 +26,18 @@ var dialogs: Dictionary = {
 func _ready() -> void:
 	fill_lls()
 	fill_hls()
+	if GameState.state["first_karma_table_run"]:
+		run_hint_system()
+		return
+
+	run_dialog()
+
+
+func run_dialog() -> void:
 	if dialogs.has(GameState.current_level_info["name"]):
 		var dialog: Array[DialogSystem.DialogText] = dialogs[GameState.current_level_info["name"]]
 		if dialog.size() > 0:
 			DialogSystem.start_dialog(dialog, true)
-
 
 func fill_lls() -> void:
 	for c in GameState.state.ll_cards:
@@ -86,3 +100,12 @@ func _on_back_pressed() -> void:
 func _on_play_pressed() -> void:
 	if GameState.current_level_info["scene"]:
 		get_tree().change_scene_to_packed(GameState.current_level_info["scene"])
+
+func run_hint_system() -> void:
+	print("Running hint system")
+	if _hint_index >= hint_bubbles.size():
+		run_dialog()
+		return
+	hint_bubbles[_hint_index].show()
+	_hint_index += 1
+	

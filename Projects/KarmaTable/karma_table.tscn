@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b40x7q53qt4ua"]
+[gd_scene load_steps=4 format=3 uid="uid://b40x7q53qt4ua"]
 
 [ext_resource type="Script" path="res://Projects/KarmaTable/karma_table.gd" id="1_xkm3q"]
 [ext_resource type="Texture2D" uid="uid://8m8mqm5e3ixt" path="res://Assets/backgrounds/Karma/Karna_Table.png" id="2_hjx1e"]
+[ext_resource type="PackedScene" uid="uid://ba32qvdi6rk4u" path="res://Projects/Ui/hint_bubble.tscn" id="3_ddsu4"]
 
 [node name="KarmaTable" type="Node2D"]
 script = ExtResource("1_xkm3q")
@@ -88,5 +89,40 @@ scale = Vector2(2, 2)
 size_flags_horizontal = 4
 text = "Play"
 
+[node name="Hints" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HintBubble" parent="CanvasLayer/Hints" instance=ExtResource("3_ddsu4")]
+visible = false
+layout_mode = 1
+hint = "Hint1"
+number = "1/3"
+
+[node name="HintBubble2" parent="CanvasLayer/Hints" instance=ExtResource("3_ddsu4")]
+visible = false
+layout_mode = 1
+offset_left = 1311.0
+offset_top = 638.0
+offset_right = 1311.0
+offset_bottom = 638.0
+hint = "Hint2"
+number = "2/3"
+
+[node name="HintBubble3" parent="CanvasLayer/Hints" instance=ExtResource("3_ddsu4")]
+visible = false
+layout_mode = 1
+offset_left = 237.0
+offset_top = 1484.0
+offset_right = 237.0
+offset_bottom = 1484.0
+hint = "Hint3"
+number = "3/3"
+
 [connection signal="pressed" from="CanvasLayer/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="CanvasLayer/Play" to="." method="_on_play_pressed"]
+[connection signal="hint_finished" from="CanvasLayer/Hints/HintBubble" to="." method="run_hint_system"]
+[connection signal="hint_finished" from="CanvasLayer/Hints/HintBubble2" to="." method="run_hint_system"]
+[connection signal="hint_finished" from="CanvasLayer/Hints/HintBubble3" to="." method="run_hint_system"]
