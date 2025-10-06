@@ -62,6 +62,7 @@ signal use_special(s: CardSlots.SPECIALS, m: BoardMarker)
 signal move_done()
 
 @export var tutorial: bool
+@export var ai_can_spawn: bool = true
 
 @export var ai: AIV2
 @export var ui: GameplayUI
@@ -102,7 +103,8 @@ var ai_move_number: int = 0:
 	set(n):
 		ai_move_number = n
 		if n == ai_spawn_interval:
-			spawn_AI_figure()
+			if ai_can_spawn:
+				spawn_AI_figure()
 			ai_move_number = 0 
 
 var move_number: int = 0:
