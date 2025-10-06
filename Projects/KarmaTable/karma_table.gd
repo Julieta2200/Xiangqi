@@ -102,6 +102,7 @@ func _on_back_pressed() -> void:
 
 func _on_play_pressed() -> void:
 	if GameState.current_level_info["scene"]:
+		GameState.save_game()
 		get_tree().change_scene_to_packed(GameState.current_level_info["scene"])
 
 func run_hint_system() -> void:
