@@ -17,7 +17,11 @@ var _hint_index: int = 0
 
 
 var level_1_dialog: Array[DialogSystem.DialogText] = [
-	DialogSystem.DialogText.new("Some test text", DialogSystem.CHARACTERS.Jakat),
+	DialogSystem.DialogText.new("Ashes, you will meet your friend here.", DialogSystem.CHARACTERS.Jakat),
+	DialogSystem.DialogText.new("I don’t have any.", DialogSystem.CHARACTERS.Ashes),
+	DialogSystem.DialogText.new("Driven by revenge, you’ll get what you give, Karma will catch you.", DialogSystem.CHARACTERS.Jakat),
+	DialogSystem.DialogText.new("Don’t forget who you’re talking to, just stop talking and lend me your powers.", DialogSystem.CHARACTERS.Ashes),
+	DialogSystem.DialogText.new("Time is ticking…", DialogSystem.CHARACTERS.Jakat),
 ]
 
 var dialogs: Dictionary = {
