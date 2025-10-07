@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://ba32qvdi6rk4u"]
+[gd_scene load_steps=4 format=3 uid="uid://ba32qvdi6rk4u"]
 
 [ext_resource type="Script" path="res://Projects/Ui/hint_bubble.gd" id="1_i75f0"]
+[ext_resource type="Texture2D" uid="uid://bumwyubrqbqec" path="res://Assets/UI/Hint System/Hint system.png" id="2_s3lf0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0c41v"]
+texture = ExtResource("2_s3lf0")
 
 [node name="HintBubble" type="Control"]
 layout_mode = 3
@@ -9,37 +13,45 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(2, 2)
 script = ExtResource("1_i75f0")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_right = 413.0
-offset_bottom = 309.0
+offset_right = 827.0
+offset_bottom = 444.0
+scale = Vector2(0.8, 0.8)
+theme_override_styles/panel = SubResource("StyleBoxTexture_0c41v")
 
 [node name="Hint" type="RichTextLabel" parent="Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 76.0
+offset_top = 76.5
+offset_right = -101.0
+offset_bottom = -97.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 30
 text = "Here are the hints for the Karma table"
 
 [node name="Number" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 356.0
-offset_top = 273.0
-offset_right = 396.0
-offset_bottom = 296.0
+offset_left = 76.0
+offset_top = 24.5
+offset_right = 116.0
+offset_bottom = 47.5
+theme_override_font_sizes/font_size = 30
 text = "1/5"
 
 [node name="Button" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = 276.0
-offset_top = 268.0
-offset_right = 321.0
-offset_bottom = 299.0
-text = "Next"
+offset_left = 667.5
+offset_top = 337.5
+offset_right = 751.5
+offset_bottom = 387.5
+theme_override_font_sizes/font_size = 30
+text = "NEXT"
 
 [connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

@@ -1,16 +1,19 @@
 [gd_scene load_steps=7 format=3 uid="uid://g02214kyco20"]
 
-[ext_resource type="Texture2D" uid="uid://dhws728wkjxvu" path="res://Assets/tmp/cards/trap.png" id="1_sske6"]
 [ext_resource type="Script" path="res://Projects/Support/world1/water_portal.gd" id="1_yxr8v"]
+[ext_resource type="Texture2D" uid="uid://v0w1yayeoooc" path="res://Assets/UI/SpecialCard/Low level.png" id="2_1d0ts"]
 [ext_resource type="Texture2D" uid="uid://dkbqgtk776q1c" path="res://Assets/tmp/cards/card.png" id="3_m371i"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1m2ak"]
-texture = ExtResource("1_sske6")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o2r5i"]
+texture = ExtResource("2_1d0ts")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4pr3d"]
 texture = ExtResource("3_m371i")
 
 [sub_resource type="FontFile" id="FontFile_safrs"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -102,29 +105,30 @@ cache/0/30/0/underline_position = 0.0
 cache/0/30/0/underline_thickness = 0.0
 cache/0/30/0/scale = 1.0
 
-[node name="WaterPortal" type="Panel" node_paths=PackedStringArray("description")]
-custom_minimum_size = Vector2(200, 200)
-theme_override_styles/panel = SubResource("StyleBoxTexture_1m2ak")
+[node name="WaterPortal" type="Control" node_paths=PackedStringArray("description")]
+custom_minimum_size = Vector2(174, 199)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 174.0
+offset_bottom = 199.0
 script = ExtResource("1_yxr8v")
 type = 1
 special = 2
 cooldown = 3
 description = NodePath("Description")
 
+[node name="Panel" type="Panel" parent="."]
+offset_right = 174.0
+offset_bottom = 199.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_o2r5i")
+
 [node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -47.5
-offset_top = -61.5
-offset_right = 50.5
-offset_bottom = -38.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 25
+layout_mode = 0
+offset_left = 30.0
+offset_top = 83.0
+offset_right = 146.0
+offset_bottom = 110.0
+theme_override_font_sizes/font_size = 19
 text = "Water Portal"
 
 [node name="Description" type="Button" parent="."]
@@ -146,6 +150,7 @@ text = "Description"
 
 [node name="DescriptionText" type="Panel" parent="."]
 visible = false
+layout_mode = 0
 offset_right = 200.0
 offset_bottom = 200.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_4pr3d")

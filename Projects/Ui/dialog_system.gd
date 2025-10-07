@@ -2,19 +2,32 @@ extends CanvasLayer
 
 enum CHARACTERS {Ashes, Mara, Advisor, Jakat}
 
+var figures_image: Dictionary = {
+	CHARACTERS.Ashes: load("res://Assets/Characters/Magma/General/Sides/Ashes_front.png"),
+	CHARACTERS.Advisor: load("res://Assets/Characters/Magma/Advisor/Advisor_front.png"),
+	CHARACTERS.Mara : load("res://Assets/Characters/Fog/General/General_Front.png"),
+	CHARACTERS.Jakat : null
+}
+var figures_name: Dictionary = {
+	CHARACTERS.Ashes: "Ashes",
+	CHARACTERS.Advisor: "Asvisor",
+	CHARACTERS.Mara : "Mara",
+	CHARACTERS.Jakat : "Jakat"
+}
 var text_queue: Array[DialogText]
 var skipable: bool
 var duration: float
 
-@onready var text_obj: RichTextLabel = $Text
-@onready var skip_text_obj: RichTextLabel = $SkipText
+@onready var text_obj: RichTextLabel = $Panel/Text
+@onready var skip_text_obj: RichTextLabel = $Panel/SkipText
+@onready var figure_name: Label = $Panel/Name
+@onready var image: TextureProgressBar = $Panel/image
 @onready var timer: Timer = $Timer
+@onready var panel: Panel = $Panel
 
 signal dialog_finished()
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass
-	
+
+
 func start_dialog(texts: Array[DialogText], skipable: bool = false, duration: float = 0.0) -> void:
 	text_queue = texts
 	self.duration = duration
@@ -29,13 +42,14 @@ func _next_dialog() -> void:
 	else:
 		timer.stop()
 	if text_queue.size() == 0:
-		text_obj.hide()
-		skip_text_obj.hide()
+		panel.hide()
 		emit_signal("dialog_finished")
 		return
 	var dt: DialogText = text_queue.pop_front()
 	text_obj.text = dt.text
-	text_obj.show()
+	figure_name.text = figures_name[dt.character]
+	image.texture_progress = figures_image[dt.character]
+	panel.show()
 
 
 func _process(delta: float) -> void:

@@ -1,31 +1,37 @@
-[gd_scene load_steps=5 format=3 uid="uid://fft0owblymrl"]
+[gd_scene load_steps=5 format=3 uid="uid://bkqlg03rv0gyo"]
 
-[ext_resource type="Script" path="res://Projects/Ui/dialog_system.gd" id="1_t5gml"]
-[ext_resource type="Texture2D" uid="uid://doujrdgk07gyx" path="res://Assets/UI/Dialog panel/Dialog panel.png" id="2_cfggg"]
-[ext_resource type="Texture2D" uid="uid://cf5bqffnhr1ky" path="res://Assets/Characters/Magma/General/Sides/Ashes_front.png" id="3_kf74n"]
+[ext_resource type="Script" path="res://Projects/Dialog/dialog.gd" id="1_0lrns"]
+[ext_resource type="Texture2D" uid="uid://doujrdgk07gyx" path="res://Assets/UI/Dialog panel/Dialog panel.png" id="2_bsd36"]
+[ext_resource type="Texture2D" uid="uid://cf5bqffnhr1ky" path="res://Assets/Characters/Magma/General/Sides/Ashes_front.png" id="3_kngti"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ouhy0"]
-texture = ExtResource("2_cfggg")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mxf6b"]
+texture = ExtResource("2_bsd36")
 
-[node name="DialogSystem" type="CanvasLayer"]
-script = ExtResource("1_t5gml")
+[node name="Dialog" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_0lrns")
 
 [node name="Panel" type="Panel" parent="."]
-visible = false
+layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -858.5
-offset_top = -447.0
-offset_right = 1605.5
-offset_bottom = -1.0
+offset_left = -1232.0
+offset_top = -500.0
+offset_right = 1232.0
+offset_bottom = -54.0
 grow_horizontal = 2
 grow_vertical = 0
-scale = Vector2(0.7, 0.7)
 mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxTexture_ouhy0")
+theme_override_styles/panel = SubResource("StyleBoxTexture_mxf6b")
 
 [node name="Text" type="RichTextLabel" parent="Panel"]
 layout_mode = 1
@@ -39,7 +45,12 @@ offset_bottom = -88.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/normal_font_size = 51
+bbcode_enabled = true
+text = "ghhhhhhhhhhhhhhhhhhhh"
+fit_content = true
+visible_characters = 0
+visible_ratio = 0.0
 
 [node name="Name" type="Label" parent="Panel"]
 layout_mode = 0
@@ -53,7 +64,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SkipText" type="RichTextLabel" parent="Panel"]
-visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -71,16 +81,11 @@ text = "SPACEBAR to Continue"
 
 [node name="image" type="TextureProgressBar" parent="Panel"]
 layout_mode = 0
-offset_left = 16.2501
-offset_top = -228.75
-offset_right = 68.2501
-offset_bottom = -130.75
+offset_left = 44.0
+offset_top = -182.0
+offset_right = 96.0
+offset_bottom = -84.0
 scale = Vector2(10, 10)
 value = 60.0
 fill_mode = 2
-texture_progress = ExtResource("3_kf74n")
-
-[node name="Timer" type="Timer" parent="."]
-one_shot = true
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+texture_progress = ExtResource("3_kngti")
