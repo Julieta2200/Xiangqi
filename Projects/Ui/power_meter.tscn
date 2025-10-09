@@ -11,21 +11,21 @@ script = ExtResource("1_qudxp")
 
 [node name="energy" type="TextureProgressBar" parent="."]
 layout_mode = 1
-offset_left = 58.0
-offset_top = 51.0
-offset_right = 747.0
-offset_bottom = 151.0
-scale = Vector2(0.5, 0.5)
+offset_left = 640.0
+offset_top = 200.0
+offset_right = 1189.0
+offset_bottom = 302.0
+scale = Vector2(0.6, 0.6)
 texture_under = ExtResource("2_jhnqh")
 texture_progress = ExtResource("3_stb25")
-texture_progress_offset = Vector2(145, 25)
+texture_progress_offset = Vector2(60, 20)
 
 [node name="Label" type="Label" parent="energy"]
 layout_mode = 0
-offset_left = 772.0
-offset_top = -10.0
-offset_right = 1054.0
-offset_bottom = 93.0
+offset_left = 576.667
+offset_top = 13.3333
+offset_right = 716.667
+offset_bottom = 74.3333
 theme_override_colors/font_color = Color(0.0807833, 0.0807833, 0.0807833, 1)
-theme_override_font_sizes/font_size = 75
+theme_override_font_sizes/font_size = 44
 text = "0 / 100"
