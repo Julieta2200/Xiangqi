@@ -3,9 +3,9 @@ extends CanvasLayer
 enum CHARACTERS {Ashes, Mara, Advisor, Jakat}
 
 var figures_image: Dictionary = {
-	CHARACTERS.Ashes: load("res://Assets/Characters/Magma/General/Sides/Ashes_front.png"),
-	CHARACTERS.Advisor: load("res://Assets/Characters/Magma/Advisor/Advisor_front.png"),
-	CHARACTERS.Mara : load("res://Assets/Characters/Fog/General/General_Front.png"),
+	CHARACTERS.Ashes: load("res://Assets/UI/Dialog panel/Characters/Ashes.png"),
+	CHARACTERS.Advisor: load("res://Assets/UI/Dialog panel/Characters/Advisor.png"),
+	CHARACTERS.Mara : load("res://Assets/UI/Dialog panel/Characters/Mara.png"),
 	CHARACTERS.Jakat : null
 }
 var figures_name: Dictionary = {

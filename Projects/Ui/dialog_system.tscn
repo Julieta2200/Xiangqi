@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Projects/Ui/dialog_system.gd" id="1_t5gml"]
 [ext_resource type="Texture2D" uid="uid://doujrdgk07gyx" path="res://Assets/UI/Dialog panel/Dialog panel.png" id="2_cfggg"]
-[ext_resource type="Texture2D" uid="uid://cf5bqffnhr1ky" path="res://Assets/Characters/Magma/General/Sides/Ashes_front.png" id="3_kf74n"]
+[ext_resource type="Texture2D" uid="uid://0rd1et2bfsv8" path="res://Assets/UI/Dialog panel/Characters/Mara.png" id="3_nlevf"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ouhy0"]
 texture = ExtResource("2_cfggg")
@@ -53,32 +53,29 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SkipText" type="RichTextLabel" parent="Panel"]
-visible = false
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -454.0
-offset_top = -138.0
-offset_right = -73.0
-offset_bottom = -50.0
-grow_horizontal = 0
+offset_left = 28.0001
+offset_top = -116.0
+offset_right = 188.0
+offset_bottom = -35.9999
+grow_horizontal = 2
 grow_vertical = 0
-theme_override_font_sizes/normal_font_size = 34
-text = "SPACEBAR to Continue"
+theme_override_font_sizes/normal_font_size = 44
+text = "SPACE"
 
-[node name="image" type="TextureProgressBar" parent="Panel"]
+[node name="image" type="TextureRect" parent="Panel"]
 layout_mode = 0
 offset_left = 16.2501
 offset_top = -228.75
-offset_right = 68.2501
-offset_bottom = -130.75
+offset_right = 65.2501
+offset_bottom = -168.75
 scale = Vector2(10, 10)
-value = 60.0
-fill_mode = 2
-texture_progress = ExtResource("3_kf74n")
+texture = ExtResource("3_nlevf")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

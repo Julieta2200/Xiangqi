@@ -1,14 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dx4jnvlwb7e31"]
+[gd_scene load_steps=2 format=3 uid="uid://dx4jnvlwb7e31"]
 
-[ext_resource type="Texture2D" uid="uid://v0w1yayeoooc" path="res://Assets/UI/SpecialCard/Low level.png" id="1_a04qs"]
 [ext_resource type="Script" path="res://Projects/Support/special_card.gd" id="1_pncbk"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_olb0y"]
-texture = ExtResource("1_a04qs")
-
-[node name="SpecialCard" type="Panel"]
+[node name="SpecialCard" type="Control"]
 layout_direction = 1
+layout_mode = 3
+anchors_preset = 0
 offset_right = 174.0
 offset_bottom = 199.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_olb0y")
 script = ExtResource("1_pncbk")
