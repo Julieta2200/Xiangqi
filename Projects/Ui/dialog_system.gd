@@ -2,12 +2,30 @@ extends CanvasLayer
 
 enum CHARACTERS {Ashes, Mara, Advisor, Jakat}
 
+const character_names = {
+	CHARACTERS.Ashes: "Ashes",
+	CHARACTERS.Mara: "Mara",
+	CHARACTERS.Advisor: "Advisor",
+	CHARACTERS.Jakat: "Jakat"
+}
+
+@onready var character_sprites = {
+	CHARACTERS.Ashes: preload("res://Assets/UI/Dialog Panel/Characters/Ashes.png"),
+	CHARACTERS.Mara: preload("res://Assets/UI/Dialog Panel/Characters/Mara.png"),
+	CHARACTERS.Advisor: preload("res://Assets/UI/Dialog Panel/Characters/Advisor.png"),
+	CHARACTERS.Jakat: null
+}
+
+
 var text_queue: Array[DialogText]
 var skipable: bool
 var duration: float
 
-@onready var text_obj: RichTextLabel = $Text
-@onready var skip_text_obj: RichTextLabel = $SkipText
+@onready var text_obj: Label = $Panel/Text
+@onready var name_obj: Label = $Panel/Name
+@onready var avatar_obj: TextureRect = $Panel/Avatar
+@onready var skip_text_obj: RichTextLabel = $Panel/Skip
+@onready var panel: TextureRect = $Panel
 @onready var timer: Timer = $Timer
 
 signal dialog_finished()
@@ -29,13 +47,19 @@ func _next_dialog() -> void:
 	else:
 		timer.stop()
 	if text_queue.size() == 0:
-		text_obj.hide()
+		panel.hide()
 		skip_text_obj.hide()
 		emit_signal("dialog_finished")
 		return
 	var dt: DialogText = text_queue.pop_front()
 	text_obj.text = dt.text
-	text_obj.show()
+	name_obj.text = character_names[dt.character]
+	if character_sprites[dt.character] != null:
+		avatar_obj.texture = character_sprites[dt.character]
+		avatar_obj.show()
+	else:
+		avatar_obj.hide()
+	panel.show()
 
 
 func _process(delta: float) -> void:
