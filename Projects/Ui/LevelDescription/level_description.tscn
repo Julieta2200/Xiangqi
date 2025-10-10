@@ -1,6 +1,39 @@
-[gd_scene load_steps=2 format=3 uid="uid://chmuokpujhvya"]
+[gd_scene load_steps=15 format=3 uid="uid://chmuokpujhvya"]
 
 [ext_resource type="Script" path="res://Projects/Ui/LevelDescription/level_description.gd" id="1_h34w6"]
+[ext_resource type="Texture2D" uid="uid://ckayx5tiplihp" path="res://Assets/UI/Level Description/World_Info_Screen.png" id="2_32huv"]
+[ext_resource type="Texture2D" uid="uid://xlfx4x7qsoxk" path="res://Assets/UI/Level Description/Task_Panel.png" id="3_3w34j"]
+[ext_resource type="Texture2D" uid="uid://dtxqtqw7vh0b5" path="res://Assets/UI/Level Description/Buuton.png" id="5_8btgg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_avhuy"]
+texture = ExtResource("2_32huv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d32ry"]
+texture = ExtResource("3_3w34j")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ibtv8"]
+texture = ExtResource("5_8btgg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_58y7q"]
+texture = ExtResource("5_8btgg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aur21"]
+texture = ExtResource("5_8btgg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ktv4j"]
+texture = ExtResource("5_8btgg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cj6p8"]
+texture = ExtResource("5_8btgg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_usvnt"]
+texture = ExtResource("5_8btgg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ssdjx"]
+texture = ExtResource("5_8btgg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1jwao"]
+texture = ExtResource("5_8btgg")
 
 [node name="LevelDescription" type="Control"]
 layout_mode = 3
@@ -13,54 +46,111 @@ script = ExtResource("1_h34w6")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -961.0
+offset_top = -613.0
+offset_right = 961.0
+offset_bottom = 613.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_avhuy")
 
 [node name="Title" type="Label" parent="Panel"]
-layout_mode = 0
-offset_right = 267.0
-offset_bottom = 110.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -133.5
+offset_top = 100.0
+offset_right = 133.5
+offset_bottom = 210.0
+grow_horizontal = 2
 theme_override_font_sizes/font_size = 80
 text = "Level 1"
 
+[node name="TaskPanel" type="Panel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -829.0
+offset_top = 37.0
+offset_right = 829.0
+offset_bottom = 337.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_d32ry")
+
+[node name="Objectives" type="VBoxContainer" parent="Panel/TaskPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 154.0
+offset_top = 30.0
+offset_right = -173.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
 [node name="Story" type="RichTextLabel" parent="Panel"]
 layout_mode = 1
-offset_top = 173.0
-offset_right = 1859.0
-offset_bottom = 508.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -850.0
+offset_top = -313.0
+offset_right = 850.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 40
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.	"
-
-[node name="Objectives" type="VBoxContainer" parent="Panel"]
-layout_mode = 1
-offset_top = 654.0
-offset_right = 1859.0
-offset_bottom = 989.0
 
 [node name="Close" type="Button" parent="Panel"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -63.0
-offset_right = 111.0
+offset_left = 310.0
+offset_top = -226.0
+offset_right = 588.0
+offset_bottom = -113.0
 grow_vertical = 0
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxTexture_ibtv8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_58y7q")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_aur21")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ktv4j")
 text = "Close"
 
 [node name="Play" type="Button" parent="Panel"]
 layout_mode = 1
-anchors_preset = 2
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 203.0
-offset_top = -63.0
-offset_right = 314.0
+offset_left = -622.0
+offset_top = -226.0
+offset_right = -344.0
+offset_bottom = -113.0
+grow_horizontal = 0
 grow_vertical = 0
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxTexture_cj6p8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_usvnt")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ssdjx")
+theme_override_styles/normal = SubResource("StyleBoxTexture_1jwao")
 text = "Play"
 
 [connection signal="pressed" from="Panel/Close" to="." method="_on_close_pressed"]
