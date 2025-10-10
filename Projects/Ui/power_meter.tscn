@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://b2isxa0mvvipm"]
 
 [ext_resource type="Script" path="res://Projects/Ui/power_meter.gd" id="1_qudxp"]
-[ext_resource type="Texture2D" uid="uid://d2ulo8xmvkwmb" path="res://Assets/UI/Energy meter/Big size/Energy meter.png" id="2_jhnqh"]
-[ext_resource type="Texture2D" uid="uid://bb6yarprybdp0" path="res://Assets/UI/Energy meter/Big size/Scale.png" id="3_stb25"]
+[ext_resource type="Texture2D" uid="uid://cu25ea5a4lkds" path="res://Assets/UI/Energy meter/Energy meter.png" id="2_0g1e2"]
+[ext_resource type="Texture2D" uid="uid://dey2cx60fg1a3" path="res://Assets/UI/Energy meter/Scale.png" id="3_o7hqn"]
 
 [node name="PowerMeter" type="Control"]
 layout_mode = 3
@@ -13,19 +13,18 @@ script = ExtResource("1_qudxp")
 layout_mode = 1
 offset_left = 58.0
 offset_top = 51.0
-offset_right = 747.0
-offset_bottom = 151.0
-scale = Vector2(0.5, 0.5)
-texture_under = ExtResource("2_jhnqh")
-texture_progress = ExtResource("3_stb25")
-texture_progress_offset = Vector2(145, 25)
+offset_right = 607.0
+offset_bottom = 153.0
+texture_under = ExtResource("2_0g1e2")
+texture_progress = ExtResource("3_o7hqn")
+texture_progress_offset = Vector2(65, 20)
 
 [node name="Label" type="Label" parent="energy"]
 layout_mode = 0
-offset_left = 772.0
-offset_top = -10.0
-offset_right = 1054.0
-offset_bottom = 93.0
+offset_left = 574.0
+offset_top = 17.0
+offset_right = 856.0
+offset_bottom = 120.0
 theme_override_colors/font_color = Color(0.0807833, 0.0807833, 0.0807833, 1)
-theme_override_font_sizes/font_size = 75
+theme_override_font_sizes/font_size = 35
 text = "0 / 100"

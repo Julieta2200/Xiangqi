@@ -15,6 +15,10 @@ garrison = NodePath("../Garrison")
 energy = 100.0
 
 [node name="Garrison" parent="." instance=ExtResource("2_usbfr")]
+offset_left = 162.0
+offset_top = 15.0
+offset_right = 162.0
+offset_bottom = 15.0
 
 [node name="Decision" parent="." instance=ExtResource("5_ax0dm")]
 visible = false

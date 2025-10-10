@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://Projects/Garrison/figure_card.gd" id="1_qr4yr"]
 [ext_resource type="Texture2D" uid="uid://b5y5veoqw6otr" path="res://Assets/Characters/Magma/Pawn/Pawn_front.png" id="2_h5u7g"]
-[ext_resource type="Texture2D" uid="uid://dletkiixibera" path="res://Assets/UI/Garrison/Big size/Garrison.png" id="2_p5kgd"]
+[ext_resource type="Texture2D" uid="uid://cnbpgq18nac7e" path="res://Assets/Garrison.png" id="2_itgl5"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5aqk6"]
-texture = ExtResource("2_p5kgd")
+texture = ExtResource("2_itgl5")
 
 [node name="FigureCard" type="Control"]
 layout_mode = 3
@@ -26,9 +26,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -121.5
-offset_top = 49.0
+offset_top = 52.0
 offset_right = 16.5
-offset_bottom = 180.0
+offset_bottom = 183.0
 grow_horizontal = 2
 scale = Vector2(5, 5)
 value = 40.0
