@@ -17,10 +17,17 @@ var additional_objectives: Array[String] = [] :
 			objective.queue_free()
 
 		for objective in additional_objectives:
+			var task =  Control.new()
 			var label = Label.new()
+			var icon = TextureRect.new()
+			task.custom_minimum_size.y = 66
+			icon.texture = icon_image
+			label.position.x = 100
 			label.add_theme_font_size_override("font_size", 40)
-			label.text = "• " + objective
-			objectives_container.add_child(label)
+			label.text = objective
+			objectives_container.add_child(task)
+			task.add_child(label)
+			task.add_child(icon)
 
 var number: String = ""
 
@@ -28,7 +35,9 @@ var level: PackedScene
 
 @onready var title_label: Label  = $Panel/Title
 @onready var story_label: RichTextLabel  = $Panel/Story
-@onready var objectives_container: VBoxContainer  = $Panel/Objectives
+@onready var objectives_container: VBoxContainer  = $Panel/TaskPanel/Objectives
+
+@onready var icon_image = load("res://Assets/UI/Level Description/icon.png")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
