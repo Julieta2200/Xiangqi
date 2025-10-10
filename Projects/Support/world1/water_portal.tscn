@@ -1,16 +1,19 @@
 [gd_scene load_steps=7 format=3 uid="uid://g02214kyco20"]
 
-[ext_resource type="Texture2D" uid="uid://dhws728wkjxvu" path="res://Assets/tmp/cards/trap.png" id="1_sske6"]
+[ext_resource type="Texture2D" uid="uid://f5sb83eur5g6" path="res://Assets/UI/Specials/Low level.png" id="1_8iwxh"]
 [ext_resource type="Script" path="res://Projects/Support/world1/water_portal.gd" id="1_yxr8v"]
 [ext_resource type="Texture2D" uid="uid://dkbqgtk776q1c" path="res://Assets/tmp/cards/card.png" id="3_m371i"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1m2ak"]
-texture = ExtResource("1_sske6")
+texture = ExtResource("1_8iwxh")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4pr3d"]
 texture = ExtResource("3_m371i")
 
 [sub_resource type="FontFile" id="FontFile_safrs"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -103,7 +106,7 @@ cache/0/30/0/underline_thickness = 0.0
 cache/0/30/0/scale = 1.0
 
 [node name="WaterPortal" type="Panel" node_paths=PackedStringArray("description")]
-custom_minimum_size = Vector2(200, 200)
+custom_minimum_size = Vector2(179, 199)
 theme_override_styles/panel = SubResource("StyleBoxTexture_1m2ak")
 script = ExtResource("1_yxr8v")
 type = 1
@@ -118,14 +121,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -47.5
-offset_top = -61.5
-offset_right = 50.5
-offset_bottom = -38.5
+offset_left = -76.0
+offset_top = -17.5
+offset_right = 76.0
+offset_bottom = 17.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 20
 text = "Water Portal"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Description" type="Button" parent="."]
 visible = false
@@ -146,6 +151,7 @@ text = "Description"
 
 [node name="DescriptionText" type="Panel" parent="."]
 visible = false
+layout_mode = 0
 offset_right = 200.0
 offset_bottom = 200.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_4pr3d")

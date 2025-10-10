@@ -27,5 +27,7 @@ visible = false
 visible = false
 
 [node name="CardSlots" parent="." instance=ExtResource("6_h3dqn")]
+offset_left = -310.0
+offset_right = -310.0
 
 [connection signal="card_selected" from="Garrison" to="." method="_on_garrison_card_selected"]
