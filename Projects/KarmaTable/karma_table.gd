@@ -1,9 +1,7 @@
 extends Node2D
 
-@onready var lls: HBoxContainer = $CanvasLayer/LLs
-@onready var hls: HBoxContainer = $CanvasLayer/HLs
-@onready var equiped_lls: HBoxContainer = $CanvasLayer/EquipedLLs
-@onready var equiped_hls: HBoxContainer = $CanvasLayer/EquipedHLs
+@onready var lls: Control = $CanvasLayer/LLs
+@onready var hls: Control = $CanvasLayer/HLs
 
 @onready var hint_bubbles: Array[HintBubble] = [
 	$CanvasLayer/Hints/HintBubble,
@@ -47,55 +45,45 @@ func run_dialog() -> void:
 			DialogSystem.start_dialog(dialog, true)
 
 func fill_lls() -> void:
-	for c in GameState.state.ll_cards:
-		var card_scene = CardSlots.get_card_scene(c)
-		var card: SpecialCard = card_scene.instantiate()
-		if GameState.state.lls.has(c):
-			card.description.hide()
-			equiped_lls.add_child(card)
-			card.on_click_full.connect(_dequip_ll)
-		else:
-			card.description.show()
-			lls.add_child(card)
-			card.on_click_full.connect(_equip_ll)
+	for ll_card in lls.get_children():
+		if ll_card is not Label:
+			ll_card.active = GameState.state.ll_cards.has(ll_card.special)
+			ll_card.selected = GameState.state.lls.has(ll_card.special)
+			if ll_card.selected:
+				ll_card.on_click_full.connect(_dequip_ll)
+			else:
+				ll_card.on_click_full.connect(_equip_ll)
 
 func fill_hls() -> void:
-	for c in GameState.state.hl_cards:
-		var card_scene = CardSlots.get_card_scene(c)
-		var card: SpecialCard = card_scene.instantiate()
-		if GameState.state.hl == c:
-			card.description.hide()
-			equiped_hls.add_child(card)
-			card.on_click_full.connect(_dequip_hl)
-		else:
-			card.description.show()
-			hls.add_child(card)
-			card.on_click_full.connect(_equip_hl)
+	for hl_card in hls.get_children():
+		if hl_card is not Label:
+			hl_card.active = GameState.state.hl_cards.has(hl_card.special)
+			hl_card.selected = GameState.state.hl == hl_card.special
+			if hl_card.selected:
+				hl_card.on_click_full.connect(_dequip_hl)
+			else:
+				hl_card.on_click_full.connect(_equip_hl)
 
 func _equip_ll(s: SpecialCard):
-	s.description.hide()
-	s.reparent(equiped_lls)
+	s.selected = true
 	GameState.state.lls.append(s.special)
 	s.on_click_full.disconnect(_equip_ll)
 	s.on_click_full.connect(_dequip_ll)
 
 func _dequip_ll(s: SpecialCard):
-	s.description.show()
-	s.reparent(lls)
+	s.selected = false
 	GameState.state.lls = GameState.state.lls.filter(func(ll): return ll != s.special)
 	s.on_click_full.disconnect(_dequip_ll)
 	s.on_click_full.connect(_equip_ll)
 
 func _equip_hl(s: SpecialCard):
-	s.description.hide()
-	s.reparent(equiped_hls)
+	s.selected = true
 	GameState.state.hl = s.special
 	s.on_click_full.disconnect(_equip_hl)
 	s.on_click_full.connect(_dequip_hl)
 
 func _dequip_hl(s: SpecialCard):
-	s.description.show()
-	s.reparent(hls)
+	s.selected = false
 	GameState.state.hl = -1
 	s.on_click_full.disconnect(_dequip_hl)
 	s.on_click_full.connect(_equip_hl)

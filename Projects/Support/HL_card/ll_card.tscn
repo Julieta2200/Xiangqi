@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://daoanpyhhfx4g"]
+
+[ext_resource type="Texture2D" uid="uid://f5sb83eur5g6" path="res://Assets/UI/Specials/Low level.png" id="1_1nrnc"]
+[ext_resource type="Script" path="res://Projects/Support/world1/snake_chain.gd" id="2_rlo82"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cd2y5"]
+texture = ExtResource("1_1nrnc")
+
+[node name="LL_card" type="Panel"]
+custom_minimum_size = Vector2(179, 199)
+theme_override_styles/panel = SubResource("StyleBoxTexture_cd2y5")
+script = ExtResource("2_rlo82")
+type = 1
+special = 4
+cooldown = 3
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.5
+offset_top = -14.0
+offset_right = 59.5
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "LL card"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
