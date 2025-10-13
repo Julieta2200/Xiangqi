@@ -45,24 +45,24 @@ func run_dialog() -> void:
 			DialogSystem.start_dialog(dialog, true)
 
 func fill_lls() -> void:
-	for i in lls.get_children():
-		if i is not Label:
-			i.active = GameState.state.ll_cards.has(i.special)
-			i.selected = GameState.state.lls.has(i.special)
-			if i.selected:
-				i.on_click_full.connect(_dequip_ll)
+	for ll_card in lls.get_children():
+		if ll_card is not Label:
+			ll_card.active = GameState.state.ll_cards.has(ll_card.special)
+			ll_card.selected = GameState.state.lls.has(ll_card.special)
+			if ll_card.selected:
+				ll_card.on_click_full.connect(_dequip_ll)
 			else:
-				i.on_click_full.connect(_equip_ll)
+				ll_card.on_click_full.connect(_equip_ll)
 
 func fill_hls() -> void:
-	for i in hls.get_children():
-		if i is not Label:
-			i.active = GameState.state.hl_cards.has(i.special)
-			i.selected = GameState.state.hl == i.special
-			if i.selected:
-				i.on_click_full.connect(_dequip_hl)
+	for hl_card in hls.get_children():
+		if hl_card is not Label:
+			hl_card.active = GameState.state.hl_cards.has(hl_card.special)
+			hl_card.selected = GameState.state.hl == hl_card.special
+			if hl_card.selected:
+				hl_card.on_click_full.connect(_dequip_hl)
 			else:
-				i.on_click_full.connect(_equip_hl)
+				hl_card.on_click_full.connect(_equip_hl)
 
 func _equip_ll(s: SpecialCard):
 	s.selected = true
