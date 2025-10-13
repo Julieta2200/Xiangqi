@@ -8,7 +8,7 @@ var hl_card: SpecialCard
 var board: BoardV2
 var cards: Dictionary = {}
 
-enum SPECIALS {TreeTrunk, SnakeChain, WaterPortal, DisconnectionMistCard}
+enum SPECIALS {TreeTrunk, SnakeChain, WaterPortal, DisconnectionMistCard, Null}
 
 const card_names = {
 	SPECIALS.TreeTrunk: "Tree Trunk",

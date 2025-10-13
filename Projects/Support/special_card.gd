@@ -6,6 +6,19 @@ enum TYPE {HL, LL}
 @export var cooldown: int
 @export var description: Button
 
+var active : bool = true:
+	set(a):
+		active = a
+		$Label.visible = a
+
+var selected: bool:
+	set(s):
+		selected = s
+		if s:
+			modulate = Color(0.6,1,1,1)
+		else:
+			modulate = Color(1,1,1,1)
+
 var cooldown_counter: int = 0 :
 	set(cc):
 		cooldown_counter = cc
@@ -19,7 +32,7 @@ func _ready() -> void:
 	pass
 
 func _on_gui_input(event: InputEvent) -> void:
-	if event.is_action_pressed("click"):
+	if event.is_action_pressed("click") and active:
 		emit_signal("on_click", special)
 		emit_signal("on_click_full", self)
 
