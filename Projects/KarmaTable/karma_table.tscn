@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://b40x7q53qt4ua"]
 
 [ext_resource type="Script" path="res://Projects/KarmaTable/karma_table.gd" id="1_xkm3q"]
-[ext_resource type="Texture2D" uid="uid://8m8mqm5e3ixt" path="res://Assets/backgrounds/Karma/Karna_Table.png" id="2_hjx1e"]
+[ext_resource type="Texture2D" uid="uid://dvtm10ok7ifu" path="res://Assets/backgrounds/Karma/Karma_Table.png" id="2_f4ew5"]
 [ext_resource type="PackedScene" uid="uid://ba32qvdi6rk4u" path="res://Projects/Ui/hint_bubble.tscn" id="3_ddsu4"]
 [ext_resource type="Texture2D" uid="uid://bq0aml3er67g5" path="res://Assets/UI/Karma Table/gradient.png" id="4_623ob"]
 [ext_resource type="PackedScene" uid="uid://bhsr2d285j8uq" path="res://Projects/Support/HL_card/hl_card.tscn" id="4_r0sd7"]
@@ -22,13 +22,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -2000.0
-offset_top = -1000.0
-offset_right = 2000.0
-offset_bottom = 1000.0
+offset_left = -2015.0
+offset_top = -1100.0
+offset_right = 2015.0
+offset_bottom = 1100.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_hjx1e")
+texture = ExtResource("2_f4ew5")
 
 [node name="Gradient" type="TextureRect" parent="CanvasLayer"]
 anchors_preset = 8

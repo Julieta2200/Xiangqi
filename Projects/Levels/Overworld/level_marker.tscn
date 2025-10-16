@@ -1,37 +1,45 @@
 [gd_scene load_steps=5 format=3 uid="uid://dt7elk36ldfbg"]
 
 [ext_resource type="Script" path="res://Projects/Levels/Overworld/level_marker.gd" id="1_vg6g7"]
-[ext_resource type="Texture2D" uid="uid://dia2v0yg34v87" path="res://Assets/UI/Markers/Step Icon/icon.png" id="2_rc1pc"]
+[ext_resource type="Texture2D" uid="uid://qgqvjijxph05" path="res://Assets/Map/Markers/Big/Marker White.png" id="2_mhiqo"]
 [ext_resource type="Texture2D" uid="uid://ut2w4mpj4tg7" path="res://Assets/UI/Markers/StepGlow (Yellow)/StepGlow(1).png" id="3_kd8id"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0tqeo"]
-size = Vector2(65, 71)
+size = Vector2(46, 43)
 
 [node name="LevelMarker" type="Node2D"]
 script = ExtResource("1_vg6g7")
 
 [node name="Marker" type="Sprite2D" parent="."]
-scale = Vector2(2, 2)
-texture = ExtResource("2_rc1pc")
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("2_mhiqo")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-0.5, 2.5)
+visible = false
+position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_0tqeo")
 
 [node name="Hover" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(0, -26)
+position = Vector2(0, -28)
 scale = Vector2(2, 2)
 texture = ExtResource("3_kd8id")
 
 [node name="move_count" type="Label" parent="."]
-offset_left = -12.0
-offset_top = 38.0
-offset_right = 11.0
-offset_bottom = 93.0
-theme_override_font_sizes/font_size = 40
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = 30.0
+offset_right = 7.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
 text = "0"
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

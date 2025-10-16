@@ -3,22 +3,17 @@ class_name LevelMarker extends Node2D
 
 enum LevelState {Closed, Open, Captured, Free}
 
-const black: Color = Color(0,0,0)
-const white: Color = Color(1,1,1)
-const green: Color = Color(0,0.8,0)
-const red: Color = Color(0.8,0,0)
-
-const colors: Dictionary = {
-	LevelState.Closed: black,
-	LevelState.Open: white,
-	LevelState.Captured: red,
-	LevelState.Free: green
+@onready var image: Dictionary = {
+	LevelState.Closed: load("res://Assets/Map/Markers/Big/Marker Blue.png"),
+	LevelState.Open: load("res://Assets/Map/Markers/Big/Marker White.png"),
+	LevelState.Captured: load("res://Assets/Map/Markers/Big/Marker Red.png"),
+	LevelState.Free: load("res://Assets/Map/Markers/Big/Marker Green.png")
 }
 
 var state: LevelState : 
 	set(s):
 		state = s
-		marker.modulate = colors[state]
+		marker.texture = image[state]
 
 var move_count: 
 	set(n):
