@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b40x7q53qt4ua"]
+[gd_scene load_steps=13 format=3 uid="uid://b40x7q53qt4ua"]
 
 [ext_resource type="Script" path="res://Projects/KarmaTable/karma_table.gd" id="1_xkm3q"]
 [ext_resource type="Texture2D" uid="uid://dvtm10ok7ifu" path="res://Assets/backgrounds/Karma/Karma_Table.png" id="2_f4ew5"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://i2st0blcugot" path="res://Projects/Support/world1/disconnection_mist_card.tscn" id="5_s8rvq"]
 [ext_resource type="PackedScene" uid="uid://g02214kyco20" path="res://Projects/Support/world1/water_portal.tscn" id="6_ivn0y"]
 [ext_resource type="PackedScene" uid="uid://cq8tb18e3ym20" path="res://Projects/Support/world1/tree_trunk.tscn" id="7_o6as5"]
+[ext_resource type="FontFile" uid="uid://cjr0s74nid7hs" path="res://Assets/Fonts/Amanojaku-zrqe3.otf" id="8_1xmtj"]
+[ext_resource type="FontFile" uid="uid://b6syxpc7ft767" path="res://Assets/Fonts/kaijuz/Kaijuz.otf" id="11_i4lx2"]
 
 [node name="KarmaTable" type="Node2D"]
 script = ExtResource("1_xkm3q")
@@ -49,186 +51,209 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -1911.0
+offset_right = -3911.0
+offset_bottom = -2200.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="LL_card" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
-layout_mode = 0
-offset_left = 948.0
-offset_top = 1827.0
-offset_right = 1127.0
-offset_bottom = 2026.0
-
 [node name="LL_card2" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
 layout_mode = 0
-offset_left = 805.0
-offset_top = 1628.0
-offset_right = 984.0
-offset_bottom = 1827.0
+offset_left = 940.0
+offset_top = 1670.0
+offset_right = 1119.0
+offset_bottom = 1869.0
 
 [node name="LL_card3" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
 layout_mode = 0
-offset_left = 688.0
-offset_top = 1405.0
-offset_right = 867.0
-offset_bottom = 1604.0
+offset_left = 764.0
+offset_top = 1502.0
+offset_right = 943.0
+offset_bottom = 1701.0
 
 [node name="LL_card4" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
 layout_mode = 0
-offset_left = 586.0
-offset_top = 1164.0
-offset_right = 765.0
-offset_bottom = 1363.0
+offset_left = 644.0
+offset_top = 1294.0
+offset_right = 823.0
+offset_bottom = 1493.0
 
 [node name="LL_card5" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
 layout_mode = 0
-offset_left = 579.0
-offset_top = 911.0
-offset_right = 758.0
-offset_bottom = 1110.0
+offset_left = 588.0
+offset_top = 1062.0
+offset_right = 767.0
+offset_bottom = 1261.0
 
 [node name="LL_card6" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
 layout_mode = 0
-offset_left = 618.0
-offset_top = 658.0
-offset_right = 797.0
-offset_bottom = 857.0
+offset_left = 604.0
+offset_top = 830.0
+offset_right = 783.0
+offset_bottom = 1029.0
 
 [node name="LL_card7" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
 layout_mode = 0
-offset_left = 716.0
-offset_top = 442.0
-offset_right = 895.0
-offset_bottom = 641.0
+offset_left = 668.0
+offset_top = 614.0
+offset_right = 847.0
+offset_bottom = 813.0
 
 [node name="LL_card8" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
 layout_mode = 0
-offset_left = 855.0
-offset_top = 247.0
-offset_right = 1034.0
-offset_bottom = 446.0
+offset_left = 780.0
+offset_top = 422.0
+offset_right = 959.0
+offset_bottom = 621.0
 
 [node name="LL_card9" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
 layout_mode = 0
-offset_left = 1027.0
-offset_top = 94.0
-offset_right = 1206.0
-offset_bottom = 293.0
+offset_left = 948.0
+offset_top = 270.0
+offset_right = 1127.0
+offset_bottom = 469.0
+
+[node name="LL_card" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
+layout_mode = 0
+offset_left = 421.0
+offset_top = 1585.0
+offset_right = 600.0
+offset_bottom = 1784.0
 
 [node name="LL_card10" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
 layout_mode = 0
-offset_left = 250.0
-offset_top = 356.0
-offset_right = 429.0
-offset_bottom = 555.0
+offset_left = 413.0
+offset_top = 377.0
+offset_right = 592.0
+offset_bottom = 576.0
 
 [node name="LL_card11" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
 layout_mode = 0
-offset_left = 166.0
-offset_top = 655.0
-offset_right = 345.0
-offset_bottom = 854.0
+offset_left = 269.0
+offset_top = 601.0
+offset_right = 448.0
+offset_bottom = 800.0
 
 [node name="SnakeChain" parent="CanvasLayer/LLs" instance=ExtResource("5_hpxo4")]
 layout_mode = 0
-offset_left = 129.0
-offset_top = 976.0
-offset_right = 308.0
-offset_bottom = 1175.0
+offset_left = 213.0
+offset_top = 849.0
+offset_right = 392.0
+offset_bottom = 1048.0
 
 [node name="WaterPortal" parent="CanvasLayer/LLs" instance=ExtResource("6_ivn0y")]
 layout_mode = 0
-offset_left = 166.0
-offset_top = 1286.0
-offset_right = 345.0
-offset_bottom = 1485.0
+offset_left = 205.0
+offset_top = 1113.0
+offset_right = 384.0
+offset_bottom = 1312.0
 
 [node name="TreeTrunk" parent="CanvasLayer/LLs" instance=ExtResource("7_o6as5")]
 layout_mode = 0
-offset_left = 257.0
-offset_top = 1572.0
-offset_right = 431.0
-offset_bottom = 1771.0
+offset_left = 277.0
+offset_top = 1369.0
+offset_right = 451.0
+offset_bottom = 1568.0
 
 [node name="Label" type="Label" parent="CanvasLayer/LLs"]
-layout_mode = 0
-offset_left = 200.0
+layout_mode = 1
+offset_left = 300.0
 offset_top = 100.0
-offset_right = 674.0
-offset_bottom = 237.0
+offset_right = 777.0
+offset_bottom = 296.0
+theme_override_colors/font_color = Color(0.984314, 0.760784, 0.211765, 1)
+theme_override_fonts/font = ExtResource("8_1xmtj")
 theme_override_font_sizes/font_size = 100
 text = "Low Level"
 
 [node name="HLs" type="Control" parent="CanvasLayer"]
 layout_mode = 3
-anchors_preset = 6
+anchors_preset = 1
 anchor_left = 1.0
-anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 0.5
 grow_horizontal = 0
-grow_vertical = 2
 
 [node name="HL_card" parent="CanvasLayer/HLs" instance=ExtResource("4_r0sd7")]
 layout_mode = 2
-offset_left = -868.0
-offset_top = -461.0
-offset_right = -622.0
-offset_bottom = -186.0
+offset_left = -863.0
+offset_top = 534.0
+offset_right = -617.0
+offset_bottom = 809.0
 
 [node name="HL_card2" parent="CanvasLayer/HLs" instance=ExtResource("4_r0sd7")]
 layout_mode = 2
-offset_left = -767.0
-offset_top = -92.0
-offset_right = -521.0
-offset_bottom = 183.0
+offset_left = -762.0
+offset_top = 903.0
+offset_right = -516.0
+offset_bottom = 1178.0
 
 [node name="HL_card3" parent="CanvasLayer/HLs" instance=ExtResource("4_r0sd7")]
 layout_mode = 2
-offset_left = -833.0
-offset_top = 289.0
-offset_right = -587.0
-offset_bottom = 564.0
+offset_left = -828.0
+offset_top = 1284.0
+offset_right = -582.0
+offset_bottom = 1559.0
 
 [node name="HL_card4" parent="CanvasLayer/HLs" instance=ExtResource("4_r0sd7")]
 layout_mode = 2
-offset_left = -1053.0
-offset_top = 603.0
-offset_right = -807.0
-offset_bottom = 878.0
+offset_left = -1048.0
+offset_top = 1598.0
+offset_right = -802.0
+offset_bottom = 1873.0
 
 [node name="DisconnectionMist" parent="CanvasLayer/HLs" instance=ExtResource("5_s8rvq")]
 layout_mode = 0
-offset_left = -1068.0
-offset_top = -755.0
-offset_right = -822.0
-offset_bottom = -480.0
+offset_left = -1063.0
+offset_top = 240.0
+offset_right = -817.0
+offset_bottom = 515.0
 
 [node name="Label" type="Label" parent="CanvasLayer/HLs"]
-layout_mode = 0
-offset_left = -783.0
-offset_top = -1012.0
-offset_right = -284.0
-offset_bottom = -875.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -800.0
+offset_top = 100.0
+offset_right = -283.0
+offset_bottom = 296.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.984314, 0.760784, 0.211765, 1)
+theme_override_fonts/font = ExtResource("8_1xmtj")
 theme_override_font_sizes/font_size = 100
 text = "High Level"
 
 [node name="Back" type="Button" parent="CanvasLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -1755.5
-offset_top = 900.0
-offset_right = -1710.5
-offset_bottom = 931.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(4, 4)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 350.0
+offset_top = -300.0
+offset_right = 607.0
+offset_bottom = -96.0
+grow_vertical = 0
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.984314, 0.760784, 0.211765, 1)
+theme_override_fonts/font = ExtResource("8_1xmtj")
+theme_override_font_sizes/font_size = 100
+action_mode = 0
+keep_pressed_outside = true
 text = "Back"
+flat = true
+
+[node name="arrow" type="Label" parent="CanvasLayer/Back"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -69.0
+offset_right = -16.0
+offset_bottom = 33.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.984314, 0.760784, 0.211765, 1)
+theme_override_fonts/font = ExtResource("11_i4lx2")
+theme_override_font_sizes/font_size = 100
+text = "<<"
 
 [node name="Play" type="Button" parent="CanvasLayer"]
 anchors_preset = 3
@@ -236,15 +261,38 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -311.0
-offset_top = -200.0
-offset_right = -266.0
-offset_bottom = -169.0
+offset_left = -591.0
+offset_top = -300.0
+offset_right = -361.0
+offset_bottom = -96.0
 grow_horizontal = 0
 grow_vertical = 0
-scale = Vector2(4, 4)
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.984314, 0.760784, 0.211765, 1)
+theme_override_fonts/font = ExtResource("8_1xmtj")
+theme_override_font_sizes/font_size = 100
+action_mode = 0
+keep_pressed_outside = true
 text = "Play"
+flat = true
+
+[node name="arrow" type="Label" parent="CanvasLayer/Play"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 22.0
+offset_top = -81.0
+offset_right = 129.0
+offset_bottom = 21.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.984314, 0.760784, 0.211765, 1)
+theme_override_fonts/font = ExtResource("11_i4lx2")
+theme_override_font_sizes/font_size = 100
+text = ">>"
 
 [node name="Hints" type="Control" parent="CanvasLayer"]
 layout_mode = 3

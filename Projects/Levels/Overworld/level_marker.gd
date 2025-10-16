@@ -3,7 +3,7 @@ class_name LevelMarker extends Node2D
 
 enum LevelState {Closed, Open, Captured, Free}
 
-@onready var image: Dictionary = {
+@onready var images: Dictionary = {
 	LevelState.Closed: load("res://Assets/Map/Markers/Big/Marker Blue.png"),
 	LevelState.Open: load("res://Assets/Map/Markers/Big/Marker White.png"),
 	LevelState.Captured: load("res://Assets/Map/Markers/Big/Marker Red.png"),
@@ -13,7 +13,7 @@ enum LevelState {Closed, Open, Captured, Free}
 var state: LevelState : 
 	set(s):
 		state = s
-		marker.texture = image[state]
+		marker.texture = images[state]
 
 var move_count: 
 	set(n):
@@ -21,7 +21,7 @@ var move_count:
 		move_count_label.text = str(move_count)
 
 @onready var move_count_label: Label = $move_count
-@onready var hover: Sprite2D = $Hover
+@onready var hover: TextureProgressBar = $Hover
 @onready var marker: Sprite2D = $Marker
 
 @export var level_description: LevelDescription
