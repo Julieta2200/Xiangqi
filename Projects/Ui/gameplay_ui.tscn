@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://b2isxa0mvvipm" path="res://Projects/Ui/power_meter.tscn" id="1_mqmx6"]
 [ext_resource type="PackedScene" uid="uid://pxqrvonok1lr" path="res://Projects/Garrison/garrison.tscn" id="2_usbfr"]
 [ext_resource type="PackedScene" uid="uid://dm5shbg7n5s3k" path="res://Projects/Ui/Decision/decision.tscn" id="5_ax0dm"]
+[ext_resource type="PackedScene" uid="uid://fft0owblymrl" path="res://Projects/Ui/dialog_system.tscn" id="5_xeg13"]
 [ext_resource type="PackedScene" uid="uid://dehksgitrkv53" path="res://Projects/Support/card_slots.tscn" id="6_h3dqn"]
-[ext_resource type="PackedScene" uid="uid://bkqlg03rv0gyo" path="res://Projects/Dialog/dialog.tscn" id="6_yiaxc"]
 
 [node name="GameplayUI" type="CanvasLayer"]
 script = ExtResource("1_clwfc")
@@ -23,7 +23,7 @@ offset_bottom = 15.0
 [node name="Decision" parent="." instance=ExtResource("5_ax0dm")]
 visible = false
 
-[node name="Dialog" parent="." instance=ExtResource("6_yiaxc")]
+[node name="DialogSystem" parent="." instance=ExtResource("5_xeg13")]
 visible = false
 
 [node name="CardSlots" parent="." instance=ExtResource("6_h3dqn")]
