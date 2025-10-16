@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://chmuokpujhvya"]
+[gd_scene load_steps=16 format=3 uid="uid://chmuokpujhvya"]
 
 [ext_resource type="Script" path="res://Projects/Ui/LevelDescription/level_description.gd" id="1_h34w6"]
 [ext_resource type="Texture2D" uid="uid://ckayx5tiplihp" path="res://Assets/UI/Level Description/World_Info_Screen.png" id="2_32huv"]
 [ext_resource type="Texture2D" uid="uid://xlfx4x7qsoxk" path="res://Assets/UI/Level Description/Task_Panel.png" id="3_3w34j"]
+[ext_resource type="FontFile" uid="uid://cjr0s74nid7hs" path="res://Assets/Fonts/Amanojaku-zrqe3.otf" id="3_rfxfl"]
 [ext_resource type="Texture2D" uid="uid://dtxqtqw7vh0b5" path="res://Assets/UI/Level Description/Buuton.png" id="5_8btgg"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_avhuy"]
@@ -69,6 +70,8 @@ offset_top = 100.0
 offset_right = 133.5
 offset_bottom = 210.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0.984314, 0.760784, 0.211765, 1)
+theme_override_fonts/font = ExtResource("3_rfxfl")
 theme_override_font_sizes/font_size = 80
 text = "Level 1"
 
@@ -89,13 +92,15 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_d32ry")
 
 [node name="Objectives" type="VBoxContainer" parent="Panel/TaskPanel"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 154.0
-offset_top = 30.0
-offset_right = -173.0
-offset_bottom = -30.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -655.5
+offset_top = -98.5
+offset_right = 655.5
+offset_bottom = 98.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
@@ -126,6 +131,7 @@ offset_top = -226.0
 offset_right = 588.0
 offset_bottom = -113.0
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_rfxfl")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/focus = SubResource("StyleBoxTexture_ibtv8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_58y7q")
@@ -146,12 +152,18 @@ offset_right = -344.0
 offset_bottom = -113.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_rfxfl")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/focus = SubResource("StyleBoxTexture_cj6p8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_usvnt")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ssdjx")
 theme_override_styles/normal = SubResource("StyleBoxTexture_1jwao")
 text = "Play"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="pressed" from="Panel/Close" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="Panel/Play" to="." method="_on_play_pressed"]

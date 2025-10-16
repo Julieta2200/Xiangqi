@@ -15,7 +15,7 @@ var selected: bool:
 	set(s):
 		selected = s
 		if s:
-			modulate = Color(0.6,1,1,1)
+			modulate = Color(0.984,0.761,0.212,1)
 		else:
 			modulate = Color(1,1,1,1)
 

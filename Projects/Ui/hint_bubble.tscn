@@ -52,8 +52,11 @@ offset_right = -33.5
 offset_bottom = -10.5
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 17
 theme_override_styles/normal = SubResource("StyleBoxEmpty_k1xa7")
+action_mode = 0
+keep_pressed_outside = true
 text = "Next"
+flat = true
 
 [connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

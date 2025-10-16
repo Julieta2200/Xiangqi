@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://fft0owblymrl"]
+[gd_scene load_steps=5 format=3 uid="uid://fft0owblymrl"]
 
 [ext_resource type="Script" path="res://Projects/Ui/dialog_system.gd" id="1_t5gml"]
 [ext_resource type="Texture2D" uid="uid://bxdqxkn65751e" path="res://Assets/UI/Dialog panel/Big size/Dialog panel.png" id="2_upaih"]
+[ext_resource type="FontFile" uid="uid://cjr0s74nid7hs" path="res://Assets/Fonts/Amanojaku-zrqe3.otf" id="3_7lekr"]
 [ext_resource type="Texture2D" uid="uid://cwri8doswhdcd" path="res://Assets/UI/Dialog panel/Characters/Ashes.png" id="3_e7hcw"]
 
 [node name="DialogSystem" type="CanvasLayer"]
@@ -15,8 +16,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -955.5
-offset_top = -363.0
+offset_top = -500.0
 offset_right = 1812.5
+offset_bottom = -137.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.7, 0.7)
@@ -27,11 +29,14 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -147.0
-offset_right = 147.0
-offset_bottom = 85.0
+offset_left = -95.5
+offset_top = 40.0
+offset_right = 95.5
+offset_bottom = 168.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 50
+theme_override_colors/font_color = Color(0.984314, 0.760784, 0.211765, 1)
+theme_override_fonts/font = ExtResource("3_7lekr")
+theme_override_font_sizes/font_size = 65
 text = "Ashes"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -44,10 +49,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -486.0
-offset_top = -74.0
-offset_right = 486.0
-offset_bottom = 74.0
+offset_left = -485.429
+offset_top = -67.2143
+offset_right = 486.572
+offset_bottom = 80.7857
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 50
@@ -63,12 +68,13 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -84.0
-offset_top = -77.0
-offset_right = 84.0
+offset_left = -62.5714
+offset_top = -87.2856
+offset_right = 105.429
+offset_bottom = -10.2856
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_font_sizes/italics_font_size = 50
+theme_override_font_sizes/italics_font_size = 42
 bbcode_enabled = true
 text = "[i]SPACE[/i]"
 
