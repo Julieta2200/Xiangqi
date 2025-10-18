@@ -11,10 +11,8 @@ script = ExtResource("1_qudxp")
 
 [node name="energy" type="TextureProgressBar" parent="."]
 layout_mode = 1
-offset_left = 280.0
-offset_top = 200.0
-offset_right = 829.0
-offset_bottom = 302.0
+offset_right = 549.0
+offset_bottom = 102.0
 scale = Vector2(0.7, 0.7)
 texture_under = ExtResource("2_0g1e2")
 texture_progress = ExtResource("3_o7hqn")

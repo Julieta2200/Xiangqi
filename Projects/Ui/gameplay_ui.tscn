@@ -11,14 +11,18 @@
 script = ExtResource("1_clwfc")
 
 [node name="PowerMeter" parent="." node_paths=PackedStringArray("garrison") instance=ExtResource("1_mqmx6")]
+offset_left = 616.0
+offset_top = 75.0
+offset_right = 616.0
+offset_bottom = 75.0
 garrison = NodePath("../Garrison")
 energy = 100.0
 
 [node name="Garrison" parent="." instance=ExtResource("2_usbfr")]
-offset_left = 162.0
-offset_top = 15.0
-offset_right = 162.0
-offset_bottom = 15.0
+offset_left = 402.0
+offset_top = -90.0
+offset_right = 402.0
+offset_bottom = -90.0
 
 [node name="Decision" parent="." instance=ExtResource("5_ax0dm")]
 visible = false
@@ -27,7 +31,7 @@ visible = false
 visible = false
 
 [node name="CardSlots" parent="." instance=ExtResource("6_h3dqn")]
-offset_left = -310.0
-offset_right = -310.0
+offset_left = -711.0
+offset_right = -711.0
 
 [connection signal="card_selected" from="Garrison" to="." method="_on_garrison_card_selected"]

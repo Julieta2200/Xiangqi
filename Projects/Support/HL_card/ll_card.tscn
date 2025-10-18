@@ -7,7 +7,7 @@
 texture = ExtResource("1_1nrnc")
 
 [node name="LL_card" type="Panel"]
-custom_minimum_size = Vector2(179, 199)
+custom_minimum_size = Vector2(192, 192)
 theme_override_styles/panel = SubResource("StyleBoxTexture_cd2y5")
 script = ExtResource("2_rlo82")
 type = 1

@@ -44,11 +44,11 @@ func _process(_delta: float) -> void:
 func _on_area_2d_mouse_entered() -> void:
 	if state == LevelState.Closed:
 		return
-	hover.show()
+	$AnimationPlayer.play("hover")
 
 
 func _on_area_2d_mouse_exited() -> void:
-	hover.hide()
+	$AnimationPlayer.play("RESET")
 
 
 func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:

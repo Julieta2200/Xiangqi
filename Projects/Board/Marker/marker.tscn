@@ -1,23 +1,22 @@
-[gd_scene load_steps=27 format=3 uid="uid://dlkpgwakp3ub7"]
+[gd_scene load_steps=26 format=3 uid="uid://dlkpgwakp3ub7"]
 
 [ext_resource type="Script" path="res://Projects/Board/Marker/marker.gd" id="1_y3i0m"]
-[ext_resource type="Texture2D" uid="uid://732mny3nbody" path="res://Assets/UI/Position_Marker/Marker/Red/Position_Marker1.png" id="2_hdwit"]
+[ext_resource type="Texture2D" uid="uid://dsyf0a73jp6x8" path="res://Assets/UI/Position_Marker/new/Position_Marker1.png" id="2_ptf1s"]
 [ext_resource type="Texture2D" uid="uid://dia2v0yg34v87" path="res://Assets/UI/Markers/Step Icon/icon.png" id="2_r8c08"]
 [ext_resource type="Texture2D" uid="uid://bufqung6psup2" path="res://Assets/UI/Markers/StepGlow (Red)/StepGlow(1).png" id="2_s7g8i"]
+[ext_resource type="Texture2D" uid="uid://cfygcxdlbtl2p" path="res://Assets/UI/Position_Marker/new/Position_Marker2.png" id="3_m6i3h"]
 [ext_resource type="Texture2D" uid="uid://ut2w4mpj4tg7" path="res://Assets/UI/Markers/StepGlow (Yellow)/StepGlow(1).png" id="3_tltih"]
-[ext_resource type="Texture2D" uid="uid://ccwodwoe14r4p" path="res://Assets/UI/Position_Marker/Marker/Red/Position_Marker2.png" id="3_w2owv"]
-[ext_resource type="Texture2D" uid="uid://bh4r14cfuti55" path="res://Assets/UI/Position_Marker/Marker/Red/Position_Marker3.png" id="4_j4wt3"]
+[ext_resource type="Texture2D" uid="uid://cfo0oka0s8dxt" path="res://Assets/UI/Position_Marker/new/Position_Marker3.png" id="4_2pspl"]
+[ext_resource type="Texture2D" uid="uid://bft1pujlaiybb" path="res://Assets/UI/Position_Marker/new/Position_Marker4.png" id="5_amcgv"]
 [ext_resource type="Texture2D" uid="uid://nthq6mgcs2f0" path="res://Assets/UI/Markers/StepGlow (Yellow)/StepGlow(2).png" id="5_bnpjt"]
-[ext_resource type="Texture2D" uid="uid://cdg0kb8256qav" path="res://Assets/UI/Position_Marker/Marker/Red/Position_Marker4.png" id="5_g5mea"]
-[ext_resource type="Texture2D" uid="uid://dxa1iqamvyfrc" path="res://Assets/UI/Position_Marker/Marker/Red/Position_Marker5.png" id="6_pmeqy"]
-[ext_resource type="Texture2D" uid="uid://cahbq2pysmo63" path="res://Assets/UI/Position_Marker/Marker/Red/Position_Marker6.png" id="7_b127m"]
+[ext_resource type="Texture2D" uid="uid://cmpe6g3ydn6fu" path="res://Assets/UI/Position_Marker/new/Position_Marker5.png" id="6_6rdwj"]
+[ext_resource type="Texture2D" uid="uid://dtb01pc0c4jnj" path="res://Assets/UI/Position_Marker/new/Position_Marker6.png" id="7_6uy0i"]
 [ext_resource type="Texture2D" uid="uid://c6khya78ox7ud" path="res://Assets/UI/Markers/StepGlow (Red)/StepGlow(2).png" id="7_ulkbh"]
-[ext_resource type="Texture2D" uid="uid://dw0r62alb3t4j" path="res://Assets/UI/Position_Marker/Marker/Red/Position_Marker7.png" id="8_8c164"]
-[ext_resource type="Texture2D" uid="uid://oi75v1bx50s7" path="res://Assets/UI/Position_Marker/Marker/Red/Position_Marker8.png" id="9_c3llg"]
-[ext_resource type="Texture2D" uid="uid://0xci0dtuw8v3" path="res://Assets/UI/Position_Marker/Marker/Red/Position_Marker9.png" id="10_q5um7"]
-[ext_resource type="Texture2D" uid="uid://dtwr87qvog2ie" path="res://Assets/UI/Position_Marker/Marker/Red/Position_Marker10.png" id="11_usxe1"]
-[ext_resource type="Texture2D" uid="uid://drskf8y8ouqku" path="res://Assets/UI/Position_Marker/Marker/Red/Position_Marker11.png" id="12_hrvm4"]
-[ext_resource type="Texture2D" uid="uid://m47qaoksbd8c" path="res://Assets/UI/Position_Marker/Marker/Red/Position_Marker_Hover.png" id="13_i52l4"]
+[ext_resource type="Texture2D" uid="uid://ynp41d0tippr" path="res://Assets/UI/Position_Marker/new/Position_Marker7.png" id="8_ksut5"]
+[ext_resource type="Texture2D" uid="uid://2y36gtxvvhl7" path="res://Assets/UI/Position_Marker/new/Position_Marker8.png" id="9_umryo"]
+[ext_resource type="Texture2D" uid="uid://c6di7b4tkki2u" path="res://Assets/UI/Position_Marker/new/Position_Marker9.png" id="10_vrceb"]
+[ext_resource type="Texture2D" uid="uid://6ya7sjcu4udj" path="res://Assets/UI/Position_Marker/new/Position_Marker10.png" id="11_mjurj"]
+[ext_resource type="Texture2D" uid="uid://7mbq0tas1n8q" path="res://Assets/UI/Position_Marker/new/Position_Marker11.png" id="12_p28n8"]
 [ext_resource type="Texture2D" uid="uid://dhoaysyphqi5n" path="res://Assets/UI/Position_Marker/Light/Red/Light(1).png" id="14_b3lj8"]
 [ext_resource type="Texture2D" uid="uid://b2f2wx0vnklxm" path="res://Assets/UI/Position_Marker/Light/Red/Light(2).png" id="15_7n74w"]
 [ext_resource type="Texture2D" uid="uid://bgb85470yc28d" path="res://Assets/UI/Position_Marker/Light/Red/Light(3).png" id="16_63jhy"]
@@ -27,44 +26,68 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_hdwit")
+"texture": ExtResource("2_ptf1s")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_w2owv")
+"texture": ExtResource("3_m6i3h")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_j4wt3")
+"texture": ExtResource("4_2pspl")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_g5mea")
+"texture": ExtResource("5_amcgv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_pmeqy")
+"texture": ExtResource("6_6rdwj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_b127m")
+"texture": ExtResource("7_6uy0i")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_8c164")
+"texture": ExtResource("8_ksut5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_c3llg")
+"texture": ExtResource("9_umryo")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_q5um7")
+"texture": ExtResource("10_vrceb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_usxe1")
+"texture": ExtResource("11_mjurj")
+}, {
+"duration": 7.0,
+"texture": ExtResource("12_p28n8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_hrvm4")
+"texture": ExtResource("11_mjurj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_i52l4")
+"texture": ExtResource("10_vrceb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_umryo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ksut5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_6uy0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_amcgv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2pspl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_m6i3h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ptf1s")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vn7pl"]
@@ -134,7 +157,7 @@ visible = false
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_6aho4")
 autoplay = "default"
-frame_progress = 0.279335
+frame_progress = 0.44509
 
 [node name="light" type="AnimatedSprite2D" parent="spawn_marker"]
 visible = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b40x7q53qt4ua"]
+[gd_scene load_steps=10 format=3 uid="uid://b40x7q53qt4ua"]
 
 [ext_resource type="Script" path="res://Projects/KarmaTable/karma_table.gd" id="1_xkm3q"]
 [ext_resource type="Texture2D" uid="uid://dvtm10ok7ifu" path="res://Assets/backgrounds/Karma/Karma_Table.png" id="2_f4ew5"]
@@ -7,10 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bhsr2d285j8uq" path="res://Projects/Support/HL_card/hl_card.tscn" id="4_r0sd7"]
 [ext_resource type="PackedScene" uid="uid://daoanpyhhfx4g" path="res://Projects/Support/HL_card/ll_card.tscn" id="4_w83hs"]
 [ext_resource type="PackedScene" uid="uid://i2st0blcugot" path="res://Projects/Support/world1/disconnection_mist_card.tscn" id="5_s8rvq"]
-[ext_resource type="PackedScene" uid="uid://5ewsc72pyogy" path="res://Projects/Support/world1/snake_chain.tscn" id="6_1dcfh"]
-[ext_resource type="PackedScene" uid="uid://cq8tb18e3ym20" path="res://Projects/Support/world1/tree_trunk.tscn" id="7_3s6r8"]
 [ext_resource type="FontFile" uid="uid://cjr0s74nid7hs" path="res://Assets/Fonts/Amanojaku-zrqe3.otf" id="8_1xmtj"]
-[ext_resource type="PackedScene" uid="uid://g02214kyco20" path="res://Projects/Support/world1/water_portal.tscn" id="8_ujwfo"]
 [ext_resource type="FontFile" uid="uid://b6syxpc7ft767" path="res://Assets/Fonts/kaijuz/Kaijuz.otf" id="11_i4lx2"]
 
 [node name="KarmaTable" type="Node2D"]
@@ -67,6 +64,27 @@ theme_override_fonts/font = ExtResource("8_1xmtj")
 theme_override_font_sizes/font_size = 100
 text = "Low Level"
 
+[node name="LL_card" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 522.0
+offset_right = 372.0
+offset_bottom = 721.0
+
+[node name="LL_card2" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
+layout_mode = 0
+offset_left = 420.0
+offset_top = 522.0
+offset_right = 612.0
+offset_bottom = 721.0
+
+[node name="LL_card3" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
+layout_mode = 0
+offset_left = 660.0
+offset_top = 522.0
+offset_right = 852.0
+offset_bottom = 721.0
+
 [node name="LL_card4" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
 layout_mode = 0
 offset_left = 900.0
@@ -86,84 +104,63 @@ layout_mode = 0
 offset_left = 180.0
 offset_top = 800.0
 offset_right = 372.0
-offset_bottom = 992.0
+offset_bottom = 999.0
 
 [node name="LL_card8" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
 layout_mode = 0
 offset_left = 420.0
 offset_top = 800.0
 offset_right = 612.0
-offset_bottom = 992.0
+offset_bottom = 999.0
 
 [node name="LL_card9" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
 layout_mode = 0
 offset_left = 660.0
 offset_top = 800.0
 offset_right = 852.0
-offset_bottom = 992.0
+offset_bottom = 999.0
 
 [node name="LL_card10" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
 layout_mode = 0
 offset_left = 900.0
 offset_top = 800.0
 offset_right = 1092.0
-offset_bottom = 992.0
+offset_bottom = 999.0
 
 [node name="LL_card11" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
 layout_mode = 0
 offset_left = 1140.0
 offset_top = 800.0
 offset_right = 1332.0
-offset_bottom = 992.0
+offset_bottom = 999.0
 
 [node name="LL_card13" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
 layout_mode = 0
 offset_left = 312.0
 offset_top = 1078.0
 offset_right = 504.0
-offset_bottom = 1270.0
+offset_bottom = 1277.0
 
 [node name="LL_card14" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
 layout_mode = 0
 offset_left = 552.0
 offset_top = 1078.0
 offset_right = 744.0
-offset_bottom = 1270.0
+offset_bottom = 1277.0
 
 [node name="LL_card15" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
 layout_mode = 0
 offset_left = 792.0
 offset_top = 1078.0
 offset_right = 984.0
-offset_bottom = 1270.0
+offset_bottom = 1277.0
 
 [node name="LL_card16" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
 layout_mode = 0
 offset_left = 1032.0
 offset_top = 1078.0
 offset_right = 1224.0
-offset_bottom = 1270.0
-
-[node name="SnakeChain" parent="CanvasLayer/LLs" instance=ExtResource("6_1dcfh")]
-layout_mode = 0
-offset_left = 180.0
-offset_top = 522.0
-offset_right = 372.0
-offset_bottom = 721.0
-
-[node name="TreeTrunk" parent="CanvasLayer/LLs" instance=ExtResource("7_3s6r8")]
-layout_mode = 0
-offset_left = 420.0
-offset_top = 522.0
-offset_right = 612.0
-offset_bottom = 714.0
-
-[node name="WaterPortal" parent="CanvasLayer/LLs" instance=ExtResource("8_ujwfo")]
-layout_mode = 0
-offset_left = 660.0
-offset_top = 522.0
-offset_right = 852.0
-offset_bottom = 714.0
+offset_bottom = 1277.0
 
 [node name="HLs" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -242,6 +239,7 @@ text = "Back"
 flat = true
 
 [node name="arrow" type="Label" parent="CanvasLayer/Back"]
+modulate = Color(0.984314, 0.760784, 0.211765, 1)
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -252,7 +250,6 @@ offset_right = 93.0
 offset_bottom = 145.0
 grow_vertical = 2
 rotation = 3.14159
-theme_override_colors/font_color = Color(0.984314, 0.760784, 0.211765, 1)
 theme_override_fonts/font = ExtResource("11_i4lx2")
 theme_override_font_sizes/font_size = 100
 text = ">>"
@@ -305,40 +302,37 @@ offset_bottom = 40.0
 [node name="HintBubble" parent="CanvasLayer/Hints" instance=ExtResource("3_ddsu4")]
 visible = false
 layout_mode = 1
-offset_left = 2599.0
-offset_top = 1229.0
-offset_right = 2599.0
-offset_bottom = 1229.0
+offset_left = 2500.0
+offset_top = 124.0
+offset_right = 2500.0
+offset_bottom = 124.0
 hint = "Low level special abilities cards․LL special ability is open when you set free bonus level. "
 number = "1/3"
 
 [node name="HintBubble2" parent="CanvasLayer/Hints" instance=ExtResource("3_ddsu4")]
 visible = false
 layout_mode = 1
-offset_left = 331.0
-offset_top = 1407.0
-offset_right = 331.0
-offset_bottom = 1407.0
+offset_left = 2500.0
+offset_top = 500.0
+offset_right = 2500.0
+offset_bottom = 500.0
 hint = "High level special abilities cards․New HL special ability is open when you conquer 3 bonus levels."
 number = "2/3"
 
 [node name="HintBubble3" parent="CanvasLayer/Hints" instance=ExtResource("3_ddsu4")]
 visible = false
 layout_mode = 1
-offset_left = 1633.0
-offset_top = 562.0
-offset_right = 1633.0
-offset_bottom = 562.0
+offset_left = 2500.0
+offset_top = 1388.0
+offset_right = 2500.0
+offset_bottom = 1388.0
 hint = "The selected cards will appear in this section. You can choose up to 3 LL cards and 1 HL card."
 number = "3/3"
 
-[connection signal="button_down" from="CanvasLayer/Back" to="." method="_on_back_button_down"]
-[connection signal="button_up" from="CanvasLayer/Back" to="." method="_on_back_button_up"]
 [connection signal="mouse_entered" from="CanvasLayer/Back" to="." method="_on_back_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Back" to="." method="_on_button_mouse_exited"]
 [connection signal="mouse_exited" from="CanvasLayer/Back" to="." method="_on_back_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/Back" to="." method="_on_back_pressed"]
-[connection signal="button_down" from="CanvasLayer/Play" to="." method="_on_play_button_down"]
-[connection signal="button_up" from="CanvasLayer/Play" to="." method="_on_play_button_up"]
 [connection signal="mouse_entered" from="CanvasLayer/Play" to="." method="_on_play_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Play" to="." method="_on_play_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/Play" to="." method="_on_play_pressed"]

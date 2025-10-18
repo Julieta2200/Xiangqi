@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dt7elk36ldfbg"]
+[gd_scene load_steps=8 format=3 uid="uid://dt7elk36ldfbg"]
 
 [ext_resource type="Script" path="res://Projects/Levels/Overworld/level_marker.gd" id="1_vg6g7"]
 [ext_resource type="Texture2D" uid="uid://qgqvjijxph05" path="res://Assets/Map/Markers/Big/Marker White.png" id="2_mhiqo"]
@@ -6,6 +6,42 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0tqeo"]
 size = Vector2(46, 43)
+
+[sub_resource type="Animation" id="Animation_15bcx"]
+resource_name = "hover"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hover:value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 100.0]
+}
+
+[sub_resource type="Animation" id="Animation_ghvt3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hover:value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tciei"]
+_data = {
+"RESET": SubResource("Animation_ghvt3"),
+"hover": SubResource("Animation_15bcx")
+}
 
 [node name="LevelMarker" type="Node2D"]
 script = ExtResource("1_vg6g7")
@@ -21,12 +57,10 @@ position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_0tqeo")
 
 [node name="Hover" type="TextureProgressBar" parent="."]
-visible = false
 offset_left = -17.0
 offset_top = -49.0
 offset_right = 17.0
 offset_bottom = 16.0
-value = 100.0
 fill_mode = 3
 texture_progress = ExtResource("3_bwkg7")
 
@@ -46,6 +80,9 @@ theme_override_font_sizes/font_size = 24
 text = "0"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_tciei")
+}
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]

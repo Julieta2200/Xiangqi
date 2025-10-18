@@ -106,7 +106,7 @@ cache/0/30/0/underline_thickness = 0.0
 cache/0/30/0/scale = 1.0
 
 [node name="WaterPortal" type="Panel" node_paths=PackedStringArray("description")]
-custom_minimum_size = Vector2(179, 199)
+custom_minimum_size = Vector2(192, 192)
 theme_override_styles/panel = SubResource("StyleBoxTexture_1m2ak")
 script = ExtResource("1_yxr8v")
 type = 1

@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://i2st0blcugot"]
 
-[ext_resource type="Texture2D" uid="uid://bffdhue3iqkjm" path="res://Assets/UI/Specials/High Level.png" id="1_uikku"]
+[ext_resource type="Texture2D" uid="uid://bffdhue3iqkjm" path="res://Assets/UI/Specials/High level.png" id="1_ma4g4"]
 [ext_resource type="Script" path="res://Projects/Support/world1/disconnection_mist_card.gd" id="1_ypdkt"]
 [ext_resource type="Texture2D" uid="uid://dkbqgtk776q1c" path="res://Assets/tmp/cards/card.png" id="3_v7bdm"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_up2ph"]
-texture = ExtResource("1_uikku")
+texture = ExtResource("1_ma4g4")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3y6up"]
 texture = ExtResource("3_v7bdm")
@@ -106,9 +106,9 @@ cache/0/30/0/underline_thickness = 0.0
 cache/0/30/0/scale = 1.0
 
 [node name="DisconnectionMist" type="Panel" node_paths=PackedStringArray("description")]
-custom_minimum_size = Vector2(246, 275)
-offset_right = 246.0
-offset_bottom = 275.0
+custom_minimum_size = Vector2(260, 260)
+offset_right = 260.0
+offset_bottom = 260.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_up2ph")
 script = ExtResource("1_ypdkt")
 special = 3

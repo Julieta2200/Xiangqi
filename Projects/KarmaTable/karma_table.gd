@@ -109,4 +109,28 @@ func run_hint_system() -> void:
 		return
 	hint_bubbles[_hint_index].show()
 	_hint_index += 1
-	
+
+
+func _on_back_mouse_entered() -> void:
+	$CanvasLayer/Back/arrow.text = "> >"
+
+func _on_back_mouse_exited() -> void:
+	$CanvasLayer/Back/arrow.text = ">>"
+
+func _on_play_mouse_entered() -> void:
+	$CanvasLayer/Play/arrow.text = "> >"
+
+func _on_play_mouse_exited() -> void:
+	$CanvasLayer/Play/arrow.text = ">>"
+
+func _on_play_button_down() -> void:
+	$CanvasLayer/Play/arrow.add_theme_color_override("font_color", Color(0.49, 0.349, 0, 1))
+
+func _on_back_button_down() -> void:
+	$CanvasLayer/Back/arrow.add_theme_color_override("font_color", Color(0.49, 0.349, 0, 1))
+
+func _on_play_button_up() -> void:
+	$CanvasLayer/Play/arrow.add_theme_color_override("font_color", Color(0.98, 0.76, 0.21,1))
+
+func _on_back_button_up() -> void:
+	$CanvasLayer/Back/arrow.add_theme_color_override("font_color", Color(0.98, 0.76, 0.21,1))

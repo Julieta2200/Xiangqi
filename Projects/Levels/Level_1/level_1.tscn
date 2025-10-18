@@ -30,11 +30,11 @@ position = Vector2(1960, 1496)
 scale = Vector2(2, 2)
 texture = ExtResource("2_tqs66")
 
-[node name="trees" type="Sprite2D" parent="Background"]
-texture = ExtResource("3_liqre")
-
 [node name="Fog" parent="Background" instance=ExtResource("4_yiko3")]
 position = Vector2(-1499.5, -929)
+
+[node name="trees" type="Sprite2D" parent="Background"]
+texture = ExtResource("3_liqre")
 
 [node name="Board" parent="." node_paths=PackedStringArray("ai", "ui", "camera") instance=ExtResource("3_6d5dt")]
 unique_name_in_owner = true
@@ -83,10 +83,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_bottom = 0.0
-offset_left = -1145.0
-offset_top = 56.0
-offset_right = -1145.0
-offset_bottom = 56.0
+offset_left = -2940.0
+offset_top = 919.0
+offset_right = -2940.0
+offset_bottom = 919.0
 grow_horizontal = 0
 grow_vertical = 1
 hint = "From the garrison you can choose which unit you want to spawn"
@@ -98,10 +98,10 @@ layout_mode = 1
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 635.0
-offset_top = 22.0
-offset_right = 635.0
-offset_bottom = 22.0
+offset_left = 1025.0
+offset_top = 140.0
+offset_right = 1025.0
+offset_bottom = 140.0
 grow_horizontal = 1
 grow_vertical = 1
 hint = "Spawning units will decrease your energy"
@@ -113,10 +113,10 @@ layout_mode = 1
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 635.0
-offset_top = 22.0
-offset_right = 635.0
-offset_bottom = 22.0
+offset_left = 1025.0
+offset_top = 140.0
+offset_right = 1025.0
+offset_bottom = 140.0
 grow_horizontal = 1
 grow_vertical = 1
 hint = "You can regain energy by making moves"
@@ -128,10 +128,10 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_right = 0.0
-offset_left = 176.0
-offset_top = -747.0
-offset_right = 176.0
-offset_bottom = -747.0
+offset_left = 868.0
+offset_top = -538.0
+offset_right = 868.0
+offset_bottom = -538.0
 grow_horizontal = 1
 grow_vertical = 0
 hint = "Making moves in the palace will decrease your energy."

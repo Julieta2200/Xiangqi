@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bffdhue3iqkjm"
-path="res://.godot/imported/High level.png-05664c52637fa5705d2ec75ec8b3017c.ctex"
+uid="uid://cfygcxdlbtl2p"
+path="res://.godot/imported/Position_Marker2.png-2e6ab243cca1f550b8eda1b6e5c5e1de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Specials/High level.png"
-dest_files=["res://.godot/imported/High level.png-05664c52637fa5705d2ec75ec8b3017c.ctex"]
+source_file="res://Assets/UI/Position_Marker/new/Position_Marker2.png"
+dest_files=["res://.godot/imported/Position_Marker2.png-2e6ab243cca1f550b8eda1b6e5c5e1de.ctex"]
 
 [params]
 

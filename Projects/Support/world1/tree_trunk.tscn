@@ -106,7 +106,7 @@ cache/0/30/0/underline_thickness = 0.0
 cache/0/30/0/scale = 1.0
 
 [node name="TreeTrunk" type="Panel" node_paths=PackedStringArray("description")]
-custom_minimum_size = Vector2(174, 199)
+custom_minimum_size = Vector2(192, 192)
 theme_override_styles/panel = SubResource("StyleBoxTexture_ud0bc")
 script = ExtResource("1_su2v2")
 type = 1

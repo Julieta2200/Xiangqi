@@ -1,15 +1,15 @@
 [gd_scene load_steps=4 format=3 uid="uid://bhsr2d285j8uq"]
 
-[ext_resource type="Texture2D" uid="uid://bffdhue3iqkjm" path="res://Assets/UI/Specials/High Level.png" id="1_68oq7"]
+[ext_resource type="Texture2D" uid="uid://bffdhue3iqkjm" path="res://Assets/UI/Specials/High level.png" id="1_68oq7"]
 [ext_resource type="Script" path="res://Projects/Support/world1/disconnection_mist_card.gd" id="2_2bglo"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_up2ph"]
 texture = ExtResource("1_68oq7")
 
 [node name="HL_card" type="Panel" node_paths=PackedStringArray("description")]
-custom_minimum_size = Vector2(246, 275)
-offset_right = 246.0
-offset_bottom = 275.0
+custom_minimum_size = Vector2(260, 260)
+offset_right = 260.0
+offset_bottom = 260.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_up2ph")
 script = ExtResource("2_2bglo")
 special = 4

@@ -41,19 +41,19 @@ func _ready() -> void:
 	if type == FigureComponent.Types.CHARIOT:
 		$card/image.scale = Vector2(2.5,2.5)
 		$card/image.value = 60
-		$card/image.position = Vector2(-23,46)
+		$card/image.position = Vector2(-47,20)
 	elif type == FigureComponent.Types.ELEPHANT:
-		$card/image.scale = Vector2(3,3)
-		$card/image.value = 50
-		$card/image.position = Vector2(-5,59)
+		$card/image.scale = Vector2(2.5,2.5)
+		$card/image.value = 57
+		$card/image.position = Vector2(5,44)
 	elif type == FigureComponent.Types.CANNON:
 		$card/image.scale = Vector2(5,5)
-		$card/image.value = 40
-		$card/image.position = Vector2(25,36)
+		$card/image.value = 34
+		$card/image.position = Vector2(8,51)
 	elif type == FigureComponent.Types.HORSE:
-		$card/image.scale = Vector2(3.7,3.7)
-		$card/image.value = 85
-		$card/image.position = Vector2(0,54)
+		$card/image.scale = Vector2(3.2,3.2)
+		$card/image.value = 87
+		$card/image.position = Vector2(2,51)
 		
 	$card/image.texture_progress = sprites[type]
 	$card/info.text = figure_names[type] + " - " + str(figure_energies[type])
