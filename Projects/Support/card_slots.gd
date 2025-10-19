@@ -9,13 +9,6 @@ var board: BoardV2
 var cards: Dictionary = {}
 
 enum SPECIALS {TreeTrunk, SnakeChain, WaterPortal, DisconnectionMistCard, Null}
-var active: bool:
-	set(a):
-		active = a 
-		if active:
-			modulate = Color(1,1,1)
-		else:
-			modulate = Color(0.35, 0.35, 0.35)
 
 const card_names = {
 	SPECIALS.TreeTrunk: "Tree Trunk",
