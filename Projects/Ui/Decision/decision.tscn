@@ -1,8 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://dm5shbg7n5s3k"]
+[gd_scene load_steps=7 format=3 uid="uid://dm5shbg7n5s3k"]
 
 [ext_resource type="Script" path="res://Projects/Ui/Decision/decision.gd" id="1_1avob"]
+[ext_resource type="FontFile" uid="uid://cog0aa6cr4xc2" path="res://Assets/Fonts/NotoSans-VariableFont_wdth,wght.ttf" id="2_ukk8o"]
+[ext_resource type="Texture2D" uid="uid://dtxqtqw7vh0b5" path="res://Assets/UI/Level Description/Buuton.png" id="3_h4yb7"]
+[ext_resource type="FontFile" uid="uid://b1rirrr2b225e" path="res://Assets/Fonts/NotoSans-Italic-VariableFont_wdth,wght.ttf" id="4_nenfy"]
 
-[sub_resource type="FontVariation" id="FontVariation_kcf6t"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_21db1"]
+texture = ExtResource("3_h4yb7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yt1ix"]
+texture = ExtResource("3_h4yb7")
 
 [node name="Decision" type="Control"]
 layout_mode = 3
@@ -20,14 +27,19 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -456.0
-offset_top = -38.0
-offset_right = -326.0
-offset_bottom = 22.0
+offset_left = -655.5
+offset_top = -56.5
+offset_right = -377.5
+offset_bottom = 56.5
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(3, 3)
-theme_override_font_sizes/font_size = 30
+scale = Vector2(2, 2)
+theme_override_fonts/font = ExtResource("2_ukk8o")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxTexture_21db1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_21db1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_21db1")
+theme_override_styles/normal = SubResource("StyleBoxTexture_yt1ix")
 text = "Set Free"
 
 [node name="Card_panel" type="Panel" parent="SetFree"]
@@ -38,9 +50,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -44.0
-offset_top = 42.6667
+offset_top = 73.5
 offset_right = 256.0
-offset_bottom = 192.667
+offset_bottom = 223.5
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.3, 0.3)
@@ -58,8 +70,11 @@ offset_right = 132.0
 offset_bottom = 34.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_nenfy")
 theme_override_font_sizes/font_size = 50
 text = "Card name"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Claim" type="Button" parent="."]
 layout_mode = 1
@@ -68,15 +83,19 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 84.0
-offset_top = -34.0
-offset_right = 214.0
-offset_bottom = 26.0
+offset_left = -55.5
+offset_top = -56.5
+offset_right = 222.5
+offset_bottom = 56.5
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(3, 3)
-theme_override_fonts/font = SubResource("FontVariation_kcf6t")
-theme_override_font_sizes/font_size = 30
+scale = Vector2(2, 2)
+theme_override_fonts/font = ExtResource("2_ukk8o")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxTexture_21db1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_21db1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_21db1")
+theme_override_styles/normal = SubResource("StyleBoxTexture_21db1")
 text = "Claim"
 
 [node name="Card_panel" type="Panel" parent="Claim"]
@@ -87,9 +106,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -44.0
-offset_top = 42.6667
+offset_top = 73.5
 offset_right = 256.0
-offset_bottom = 192.667
+offset_bottom = 223.5
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.3, 0.3)
@@ -107,8 +126,11 @@ offset_right = 132.0
 offset_bottom = 34.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_nenfy")
 theme_override_font_sizes/font_size = 50
 text = "+1 Orb"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="SetFree" to="." method="_on_set_free_pressed"]
 [connection signal="pressed" from="Claim" to="." method="_on_claim_pressed"]

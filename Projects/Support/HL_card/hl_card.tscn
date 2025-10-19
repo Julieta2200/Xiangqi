@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhsr2d285j8uq"]
+[gd_scene load_steps=5 format=3 uid="uid://bhsr2d285j8uq"]
 
 [ext_resource type="Texture2D" uid="uid://bffdhue3iqkjm" path="res://Assets/UI/Specials/High level.png" id="1_68oq7"]
 [ext_resource type="Script" path="res://Projects/Support/world1/disconnection_mist_card.gd" id="2_2bglo"]
+[ext_resource type="FontFile" uid="uid://cog0aa6cr4xc2" path="res://Assets/Fonts/NotoSans-VariableFont_wdth,wght.ttf" id="3_ahrjy"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_up2ph"]
 texture = ExtResource("1_68oq7")
@@ -23,13 +24,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -74.0
-offset_top = -11.5
-offset_right = 74.0
-offset_bottom = 11.5
+offset_left = -80.0
+offset_top = -25.0
+offset_right = 80.0
+offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 16
+theme_override_fonts/font = ExtResource("3_ahrjy")
+theme_override_font_sizes/font_size = 30
 text = "HL card"
 horizontal_alignment = 1
 vertical_alignment = 1

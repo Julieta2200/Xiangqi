@@ -5,16 +5,22 @@ enum TYPE {HL, LL}
 @export var special: CardSlots.SPECIALS
 @export var cooldown: int
 @export var description: Button
+@onready var card_name: Label = $Label
 
-var active : bool = true:
+
+var active: bool = true:
 	set(a):
-		active = a
-		$Label.visible = a
+		active = a 
+		card_name.visible = a
+		if active:
+			modulate = Color(1,1,1,1)
+		else:
+			modulate.a = 0.4
 
 var selected: bool:
 	set(s):
 		selected = s
-		if s:
+		if selected:
 			modulate = Color(0.984,0.761,0.212,1)
 		else:
 			modulate = Color(1,1,1,1)

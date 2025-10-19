@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://xa1gmrhmbjba"]
+[gd_scene load_steps=3 format=3 uid="uid://xa1gmrhmbjba"]
 
 [ext_resource type="Script" path="res://Projects/Ui/orbs.gd" id="1_hdacd"]
+[ext_resource type="FontFile" uid="uid://cog0aa6cr4xc2" path="res://Assets/Fonts/NotoSans-VariableFont_wdth,wght.ttf" id="2_2slon"]
 
 [node name="Orbs" type="Control"]
 layout_mode = 3
@@ -17,4 +18,6 @@ offset_top = 12.0
 offset_right = -42.0
 offset_bottom = 35.0
 scale = Vector2(2, 2)
+theme_override_fonts/font = ExtResource("2_2slon")
+theme_override_font_sizes/font_size = 20
 text = "1"
