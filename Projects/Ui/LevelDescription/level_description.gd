@@ -17,17 +17,18 @@ var additional_objectives: Array[String] = [] :
 			objective.queue_free()
 
 		for objective in additional_objectives:
-			var task =  Control.new()
-			var label = Label.new()
+			var task = HBoxContainer.new()
 			var icon = TextureRect.new()
-			task.custom_minimum_size.y = 66
+			var label = Label.new()
 			icon.texture = icon_image
-			label.position.x = 100
-			label.add_theme_font_size_override("font_size", 40)
+			icon.stretch_mode = TextureRect.STRETCH_KEEP_CENTERED
 			label.text = objective
+			label.add_theme_font_size_override("font_size", 40)
+			task.add_theme_constant_override("separation", 30)
+			task.size_flags_vertical = Control.SIZE_EXPAND_FILL
 			objectives_container.add_child(task)
-			task.add_child(label)
 			task.add_child(icon)
+			task.add_child(label)
 
 var number: String = ""
 

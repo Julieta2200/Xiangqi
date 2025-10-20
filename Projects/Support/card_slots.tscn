@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dehksgitrkv53"]
+[gd_scene load_steps=6 format=3 uid="uid://dehksgitrkv53"]
 
 [ext_resource type="Script" path="res://Projects/Support/card_slots.gd" id="1_tg5d2"]
+[ext_resource type="PackedScene" uid="uid://cq8tb18e3ym20" path="res://Projects/Support/world1/tree_trunk.tscn" id="2_x8dql"]
+[ext_resource type="PackedScene" uid="uid://g02214kyco20" path="res://Projects/Support/world1/water_portal.tscn" id="3_yq2x0"]
+[ext_resource type="PackedScene" uid="uid://5ewsc72pyogy" path="res://Projects/Support/world1/snake_chain.tscn" id="4_gjexk"]
+[ext_resource type="PackedScene" uid="uid://i2st0blcugot" path="res://Projects/Support/world1/disconnection_mist_card.tscn" id="5_00ukd"]
 
 [node name="CardSlots" type="Control"]
 layout_mode = 3
@@ -19,13 +23,22 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -398.5
-offset_right = -21.0
-offset_bottom = 398.5
+offset_left = -218.0
+offset_top = -604.0
+offset_right = -26.0
+offset_bottom = 193.0
 grow_horizontal = 0
 grow_vertical = 2
-theme_override_constants/separation = 100
+theme_override_constants/separation = 70
+
+[node name="TreeTrunk" parent="LLSlots" instance=ExtResource("2_x8dql")]
+layout_mode = 2
+
+[node name="WaterPortal" parent="LLSlots" instance=ExtResource("3_yq2x0")]
+layout_mode = 2
+
+[node name="SnakeChain" parent="LLSlots" instance=ExtResource("4_gjexk")]
+layout_mode = 2
 
 [node name="HLSlot" type="Control" parent="."]
 layout_mode = 1
@@ -34,8 +47,12 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -246.0
-offset_top = -500.0
-offset_bottom = -225.0
+offset_left = -245.0
+offset_top = -804.0
+offset_right = 1.0
+offset_bottom = -529.0
 grow_horizontal = 0
 grow_vertical = 0
+
+[node name="DisconnectionMist" parent="HLSlot" instance=ExtResource("5_00ukd")]
+layout_mode = 0

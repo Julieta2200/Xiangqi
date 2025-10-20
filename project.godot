@@ -27,7 +27,7 @@ window/size/viewport_width=3911
 window/size/viewport_height=2200
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_height"
-mouse_cursor/custom_image="res://Assets/UI/Mouse/Big size/Mouse.png"
+mouse_cursor/custom_image="res://Assets/UI/Mouse/Mouse small.png"
 
 [editor]
 

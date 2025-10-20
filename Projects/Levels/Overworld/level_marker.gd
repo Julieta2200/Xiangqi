@@ -3,22 +3,17 @@ class_name LevelMarker extends Node2D
 
 enum LevelState {Closed, Open, Captured, Free}
 
-const black: Color = Color(0,0,0)
-const white: Color = Color(1,1,1)
-const green: Color = Color(0,0.8,0)
-const red: Color = Color(0.8,0,0)
-
-const colors: Dictionary = {
-	LevelState.Closed: black,
-	LevelState.Open: white,
-	LevelState.Captured: red,
-	LevelState.Free: green
+@onready var images: Dictionary = {
+	LevelState.Closed: load("res://Assets/Map/Markers/Big/Marker Blue.png"),
+	LevelState.Open: load("res://Assets/Map/Markers/Big/Marker White.png"),
+	LevelState.Captured: load("res://Assets/Map/Markers/Big/Marker Red.png"),
+	LevelState.Free: load("res://Assets/Map/Markers/Big/Marker Green.png")
 }
 
 var state: LevelState : 
 	set(s):
 		state = s
-		marker.modulate = colors[state]
+		marker.texture = images[state]
 
 var move_count: 
 	set(n):
@@ -26,7 +21,7 @@ var move_count:
 		move_count_label.text = str(move_count)
 
 @onready var move_count_label: Label = $move_count
-@onready var hover: Sprite2D = $Hover
+@onready var hover: TextureProgressBar = $Hover
 @onready var marker: Sprite2D = $Marker
 
 @export var level_description: LevelDescription
@@ -49,11 +44,11 @@ func _process(_delta: float) -> void:
 func _on_area_2d_mouse_entered() -> void:
 	if state == LevelState.Closed:
 		return
-	hover.show()
+	$AnimationPlayer.play("hover")
 
 
 func _on_area_2d_mouse_exited() -> void:
-	hover.hide()
+	$AnimationPlayer.play("RESET")
 
 
 func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:

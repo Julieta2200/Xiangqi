@@ -41,18 +41,16 @@ static var hl_points: Dictionary = {
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	for special in GameState.state["lls"]:
-		var card_scene = get_card_scene(special)
-		var card: SpecialCard = card_scene.instantiate()
-		ll_slots.add_child(card)
-		card.on_click.connect(_on_card_click)
-		cards[int(special)] = card
-	if GameState.state["hl"] >= 0:
-		var card: SpecialCard = specials_scenes[int(GameState.state["hl"])].instantiate()
-		hl_slot.add_child(card)
-		card.on_click.connect(_on_card_click)
-		cards[int(GameState.state["hl"])] = card
-	
+	for ll_slot in ll_slots.get_children():
+		ll_slot.active = GameState.state["lls"].has(ll_slot.special)
+		if ll_slot.active:
+			ll_slot.on_click.connect(_on_card_click)
+			cards[int(ll_slot.special)] = ll_slot
+	var hl = hl_slot.get_child(0)
+	hl.active = (GameState.state["hl"] >= 0)
+	if hl.active:
+		cards[int(GameState.state["hl"])] = hl
+		hl.on_click.connect(_on_card_click)
 
 func _on_card_click(s: SPECIALS):
 	if cards[s].cooldown_counter != 0:

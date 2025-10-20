@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://i2st0blcugot"]
+[gd_scene load_steps=8 format=3 uid="uid://i2st0blcugot"]
 
-[ext_resource type="Texture2D" uid="uid://bffdhue3iqkjm" path="res://Assets/UI/Specials/High Level.png" id="1_uikku"]
+[ext_resource type="Texture2D" uid="uid://bffdhue3iqkjm" path="res://Assets/UI/Specials/High level.png" id="1_ma4g4"]
 [ext_resource type="Script" path="res://Projects/Support/world1/disconnection_mist_card.gd" id="1_ypdkt"]
+[ext_resource type="FontFile" uid="uid://cog0aa6cr4xc2" path="res://Assets/Fonts/NotoSans-VariableFont_wdth,wght.ttf" id="3_5m8vp"]
 [ext_resource type="Texture2D" uid="uid://dkbqgtk776q1c" path="res://Assets/tmp/cards/card.png" id="3_v7bdm"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_up2ph"]
-texture = ExtResource("1_uikku")
+texture = ExtResource("1_ma4g4")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3y6up"]
 texture = ExtResource("3_v7bdm")
@@ -106,9 +107,9 @@ cache/0/30/0/underline_thickness = 0.0
 cache/0/30/0/scale = 1.0
 
 [node name="DisconnectionMist" type="Panel" node_paths=PackedStringArray("description")]
-custom_minimum_size = Vector2(246, 275)
-offset_right = 246.0
-offset_bottom = 275.0
+custom_minimum_size = Vector2(260, 260)
+offset_right = 260.0
+offset_bottom = 260.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_up2ph")
 script = ExtResource("1_ypdkt")
 special = 3
@@ -122,13 +123,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -74.0
-offset_top = -11.5
-offset_right = 74.0
-offset_bottom = 11.5
+offset_left = -110.0
+offset_top = -20.0
+offset_right = 110.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 16
+theme_override_fonts/font = ExtResource("3_5m8vp")
+theme_override_font_sizes/font_size = 23
 text = "Disconnection Mist"
 horizontal_alignment = 1
 vertical_alignment = 1

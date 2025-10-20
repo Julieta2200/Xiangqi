@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://g02214kyco20"]
+[gd_scene load_steps=8 format=3 uid="uid://g02214kyco20"]
 
 [ext_resource type="Texture2D" uid="uid://f5sb83eur5g6" path="res://Assets/UI/Specials/Low level.png" id="1_8iwxh"]
 [ext_resource type="Script" path="res://Projects/Support/world1/water_portal.gd" id="1_yxr8v"]
 [ext_resource type="Texture2D" uid="uid://dkbqgtk776q1c" path="res://Assets/tmp/cards/card.png" id="3_m371i"]
+[ext_resource type="FontFile" uid="uid://cog0aa6cr4xc2" path="res://Assets/Fonts/NotoSans-VariableFont_wdth,wght.ttf" id="3_mtgtp"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1m2ak"]
 texture = ExtResource("1_8iwxh")
@@ -106,7 +107,7 @@ cache/0/30/0/underline_thickness = 0.0
 cache/0/30/0/scale = 1.0
 
 [node name="WaterPortal" type="Panel" node_paths=PackedStringArray("description")]
-custom_minimum_size = Vector2(179, 199)
+custom_minimum_size = Vector2(192, 192)
 theme_override_styles/panel = SubResource("StyleBoxTexture_1m2ak")
 script = ExtResource("1_yxr8v")
 type = 1
@@ -121,13 +122,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -76.0
-offset_top = -17.5
-offset_right = 76.0
-offset_bottom = 17.5
+offset_left = -85.0
+offset_top = -30.0
+offset_right = 85.0
+offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("3_mtgtp")
+theme_override_font_sizes/font_size = 25
 text = "Water Portal"
 horizontal_alignment = 1
 vertical_alignment = 1

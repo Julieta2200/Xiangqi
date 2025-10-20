@@ -11,13 +11,13 @@ script = ExtResource("1_qudxp")
 
 [node name="energy" type="TextureProgressBar" parent="."]
 layout_mode = 1
-offset_left = 58.0
-offset_top = 51.0
-offset_right = 607.0
-offset_bottom = 153.0
+offset_right = 549.0
+offset_bottom = 102.0
+scale = Vector2(0.7, 0.7)
+value = 100.0
 texture_under = ExtResource("2_0g1e2")
 texture_progress = ExtResource("3_o7hqn")
-texture_progress_offset = Vector2(65, 20)
+texture_progress_offset = Vector2(62, 19)
 
 [node name="Label" type="Label" parent="energy"]
 layout_mode = 0

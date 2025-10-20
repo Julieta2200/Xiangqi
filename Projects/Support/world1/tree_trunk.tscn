@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cq8tb18e3ym20"]
+[gd_scene load_steps=8 format=3 uid="uid://cq8tb18e3ym20"]
 
 [ext_resource type="Texture2D" uid="uid://f5sb83eur5g6" path="res://Assets/UI/Specials/Low level.png" id="1_c0wu8"]
 [ext_resource type="Script" path="res://Projects/Support/world1/tree_trunk.gd" id="1_su2v2"]
 [ext_resource type="Texture2D" uid="uid://dkbqgtk776q1c" path="res://Assets/tmp/cards/card.png" id="3_i58b5"]
+[ext_resource type="FontFile" uid="uid://cog0aa6cr4xc2" path="res://Assets/Fonts/NotoSans-VariableFont_wdth,wght.ttf" id="3_o3mj7"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ud0bc"]
 texture = ExtResource("1_c0wu8")
@@ -106,7 +107,7 @@ cache/0/30/0/underline_thickness = 0.0
 cache/0/30/0/scale = 1.0
 
 [node name="TreeTrunk" type="Panel" node_paths=PackedStringArray("description")]
-custom_minimum_size = Vector2(174, 199)
+custom_minimum_size = Vector2(192, 192)
 theme_override_styles/panel = SubResource("StyleBoxTexture_ud0bc")
 script = ExtResource("1_su2v2")
 type = 1
@@ -120,13 +121,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -65.5
-offset_top = -17.5
-offset_right = 65.5
-offset_bottom = 17.5
+offset_left = -70.0
+offset_top = -20.0
+offset_right = 70.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("3_o3mj7")
+theme_override_font_sizes/font_size = 25
 text = "Tree Trunk"
 horizontal_alignment = 1
 vertical_alignment = 1

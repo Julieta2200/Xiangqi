@@ -1,8 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://dm5shbg7n5s3k"]
+[gd_scene load_steps=10 format=3 uid="uid://dm5shbg7n5s3k"]
 
 [ext_resource type="Script" path="res://Projects/Ui/Decision/decision.gd" id="1_1avob"]
+[ext_resource type="Texture2D" uid="uid://dv5ik6skdn1l0" path="res://Assets/UI/Choice/Screen.png" id="2_lvngd"]
+[ext_resource type="FontFile" uid="uid://dvp3kgcd16fjp" path="res://Assets/Fonts/Cinzel-VariableFont_wght.ttf" id="3_5kxd0"]
+[ext_resource type="Texture2D" uid="uid://dtxqtqw7vh0b5" path="res://Assets/UI/Level Description/Buuton.png" id="3_h4yb7"]
+[ext_resource type="FontFile" uid="uid://c0kp0wxgu75s1" path="res://Assets/Fonts/NotoSans-Bold.ttf" id="5_1p5yh"]
 
-[sub_resource type="FontVariation" id="FontVariation_kcf6t"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dvv5u"]
+texture = ExtResource("2_lvngd")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_21db1"]
+texture = ExtResource("3_h4yb7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yt1ix"]
+texture = ExtResource("3_h4yb7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d4oo4"]
 
 [node name="Decision" type="Control"]
 layout_mode = 3
@@ -13,102 +26,107 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1avob")
 
-[node name="SetFree" type="Button" parent="."]
+[node name="Panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -456.0
-offset_top = -38.0
-offset_right = -326.0
-offset_bottom = 22.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(3, 3)
-theme_override_font_sizes/font_size = 30
-text = "Set Free"
-
-[node name="Card_panel" type="Panel" parent="SetFree"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -44.0
-offset_top = 42.6667
-offset_right = 256.0
-offset_bottom = 192.667
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.3, 0.3)
-
-[node name="name" type="Label" parent="SetFree/Card_panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -132.0
-offset_top = -34.5
-offset_right = 132.0
-offset_bottom = 34.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 50
-text = "Card name"
-
-[node name="Claim" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 84.0
-offset_top = -34.0
-offset_right = 214.0
+offset_left = -1038.5
+offset_top = -206.0
+offset_right = -39.5
 offset_bottom = 26.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(3, 3)
-theme_override_fonts/font = SubResource("FontVariation_kcf6t")
+scale = Vector2(2, 2)
+theme_override_styles/panel = SubResource("StyleBoxTexture_dvv5u")
+
+[node name="SetFree" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -230.0
+offset_top = -51.0
+offset_right = -21.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_color = Color(0.984314, 0.760784, 0.211765, 1)
+theme_override_colors/font_pressed_color = Color(0.984314, 0.760784, 0.211765, 1)
+theme_override_fonts/font = ExtResource("3_5kxd0")
 theme_override_font_sizes/font_size = 30
-text = "Claim"
+theme_override_styles/focus = SubResource("StyleBoxTexture_21db1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_21db1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_21db1")
+theme_override_styles/normal = SubResource("StyleBoxTexture_yt1ix")
+text = "SET FREE"
 
-[node name="Card_panel" type="Panel" parent="Claim"]
+[node name="name" type="Label" parent="Panel/SetFree"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -44.0
-offset_top = 42.6667
-offset_right = 256.0
-offset_bottom = 192.667
+offset_left = -39.0
+offset_top = 46.75
+offset_right = 42.0
+offset_bottom = 66.75
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = ExtResource("5_1p5yh")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxTexture_d4oo4")
+text = "CARD NAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
 
-[node name="name" type="Label" parent="Claim/Card_panel"]
+[node name="Claim" type="Button" parent="Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -132.0
-offset_top = -34.5
-offset_right = 132.0
-offset_bottom = 34.5
+offset_left = 21.5
+offset_top = -51.0
+offset_right = 230.5
+offset_bottom = 34.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 50
-text = "+1 Orb"
+theme_override_colors/font_hover_color = Color(0.984314, 0.760784, 0.211765, 1)
+theme_override_colors/font_pressed_color = Color(0.984314, 0.760784, 0.211765, 1)
+theme_override_fonts/font = ExtResource("3_5kxd0")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxTexture_21db1")
+theme_override_styles/hover = SubResource("StyleBoxTexture_21db1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_21db1")
+theme_override_styles/normal = SubResource("StyleBoxTexture_21db1")
+text = "CLAIM"
 
-[connection signal="pressed" from="SetFree" to="." method="_on_set_free_pressed"]
-[connection signal="pressed" from="Claim" to="." method="_on_claim_pressed"]
+[node name="name" type="Label" parent="Panel/Claim"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = 46.75
+offset_right = 27.0
+offset_bottom = 66.75
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_1p5yh")
+theme_override_font_sizes/font_size = 18
+text = "+1 ORB"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Panel/SetFree" to="." method="_on_set_free_pressed"]
+[connection signal="pressed" from="Panel/Claim" to="." method="_on_claim_pressed"]

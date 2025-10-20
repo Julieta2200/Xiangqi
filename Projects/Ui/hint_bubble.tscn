@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ba32qvdi6rk4u"]
+[gd_scene load_steps=6 format=3 uid="uid://ba32qvdi6rk4u"]
 
 [ext_resource type="Script" path="res://Projects/Ui/hint_bubble.gd" id="1_i75f0"]
 [ext_resource type="Texture2D" uid="uid://dyifme75yew4k" path="res://Assets/UI/Hint system.png" id="2_py56b"]
+[ext_resource type="FontFile" uid="uid://cog0aa6cr4xc2" path="res://Assets/Fonts/NotoSans-VariableFont_wdth,wght.ttf" id="3_20ua1"]
+[ext_resource type="FontFile" uid="uid://dng46o0j6hxr6" path="res://Assets/Fonts/Cinzel-Bold.ttf" id="5_7sdqd"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k1xa7"]
 
@@ -23,11 +25,19 @@ texture = ExtResource("2_py56b")
 
 [node name="Hint" type="RichTextLabel" parent="Panel"]
 layout_mode = 1
-offset_left = 53.0
-offset_top = 55.0
-offset_right = 361.0
-offset_bottom = 165.0
-theme_override_font_sizes/normal_font_size = 12
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -151.5
+offset_top = -60.0
+offset_right = 188.5
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_20ua1")
+theme_override_font_sizes/normal_font_size = 17
 text = "Here are the hints for the Karma table"
 
 [node name="Number" type="Label" parent="Panel"]
@@ -36,6 +46,7 @@ offset_left = 53.0
 offset_top = 14.5
 offset_right = 114.0
 offset_bottom = 69.5
+theme_override_fonts/font = ExtResource("3_20ua1")
 theme_override_font_sizes/font_size = 20
 text = "1/5"
 
@@ -52,8 +63,12 @@ offset_right = -33.5
 offset_bottom = -10.5
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("5_7sdqd")
+theme_override_font_sizes/font_size = 17
 theme_override_styles/normal = SubResource("StyleBoxEmpty_k1xa7")
-text = "Next"
+action_mode = 0
+keep_pressed_outside = true
+text = "NEXT"
+flat = true
 
 [connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

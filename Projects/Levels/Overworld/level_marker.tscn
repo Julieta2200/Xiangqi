@@ -1,38 +1,91 @@
-[gd_scene load_steps=5 format=3 uid="uid://dt7elk36ldfbg"]
+[gd_scene load_steps=9 format=3 uid="uid://dt7elk36ldfbg"]
 
 [ext_resource type="Script" path="res://Projects/Levels/Overworld/level_marker.gd" id="1_vg6g7"]
-[ext_resource type="Texture2D" uid="uid://dia2v0yg34v87" path="res://Assets/UI/Markers/Step Icon/icon.png" id="2_rc1pc"]
-[ext_resource type="Texture2D" uid="uid://ut2w4mpj4tg7" path="res://Assets/UI/Markers/StepGlow (Yellow)/StepGlow(1).png" id="3_kd8id"]
+[ext_resource type="Texture2D" uid="uid://qgqvjijxph05" path="res://Assets/Map/Markers/Big/Marker White.png" id="2_mhiqo"]
+[ext_resource type="Texture2D" uid="uid://c0elk1d0cex1a" path="res://Assets/Map/Markers/Hover.png" id="3_bwkg7"]
+[ext_resource type="FontFile" uid="uid://cog0aa6cr4xc2" path="res://Assets/Fonts/NotoSans-VariableFont_wdth,wght.ttf" id="4_cuv2n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0tqeo"]
-size = Vector2(65, 71)
+size = Vector2(46, 43)
+
+[sub_resource type="Animation" id="Animation_ghvt3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hover:value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_15bcx"]
+resource_name = "hover"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hover:value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 100.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tciei"]
+_data = {
+"RESET": SubResource("Animation_ghvt3"),
+"hover": SubResource("Animation_15bcx")
+}
 
 [node name="LevelMarker" type="Node2D"]
 script = ExtResource("1_vg6g7")
 
 [node name="Marker" type="Sprite2D" parent="."]
-scale = Vector2(2, 2)
-texture = ExtResource("2_rc1pc")
+texture = ExtResource("2_mhiqo")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-0.5, 2.5)
+visible = false
+position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_0tqeo")
 
-[node name="Hover" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(0, -26)
-scale = Vector2(2, 2)
-texture = ExtResource("3_kd8id")
+[node name="Hover" type="TextureProgressBar" parent="."]
+offset_left = -17.0
+offset_top = -49.0
+offset_right = 17.0
+offset_bottom = 16.0
+fill_mode = 3
+texture_progress = ExtResource("3_bwkg7")
 
 [node name="move_count" type="Label" parent="."]
-offset_left = -12.0
-offset_top = 38.0
-offset_right = 11.0
-offset_bottom = 93.0
-theme_override_font_sizes/font_size = 40
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = 30.0
+offset_right = 7.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_cuv2n")
+theme_override_font_sizes/font_size = 24
 text = "0"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_tciei")
+}
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]

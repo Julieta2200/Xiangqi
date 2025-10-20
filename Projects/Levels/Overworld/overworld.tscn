@@ -68,12 +68,6 @@ texture = ExtResource("18_s6hq3")
 position = Vector2(160, -624.5)
 texture = ExtResource("26_br2ah")
 
-[node name="Fog" type="Sprite2D" parent="Dragon"]
-material = SubResource("ShaderMaterial_8xjyt")
-position = Vector2(-89.5, -499)
-scale = Vector2(2.71996, 2.02092)
-texture = ExtResource("11_omsi1")
-
 [node name="Levels" type="Node2D" parent="."]
 
 [node name="1" parent="Levels" node_paths=PackedStringArray("level_description") instance=ExtResource("2_m64e3")]
@@ -149,7 +143,13 @@ visible = false
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(628, 776)
-zoom = Vector2(3, 3)
+zoom = Vector2(2.5, 2.5)
 script = ExtResource("21_6fygh")
+
+[node name="Fog" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_8xjyt")
+position = Vector2(930, 691)
+scale = Vector2(5.43992, 4.04184)
+texture = ExtResource("11_omsi1")
 
 [connection signal="pressed" from="CanvasLayer/Tutorial" to="." method="_on_tutorial_pressed"]
