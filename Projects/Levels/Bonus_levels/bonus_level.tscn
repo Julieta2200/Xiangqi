@@ -21,11 +21,11 @@ position = Vector2(1960, 1496)
 scale = Vector2(2, 2)
 texture = ExtResource("2_tkcjl")
 
-[node name="trees" type="Sprite2D" parent="Background"]
-texture = ExtResource("3_8tfsb")
-
 [node name="Fog" parent="Background" instance=ExtResource("4_36elx")]
 position = Vector2(-1499.5, -929)
+
+[node name="trees" type="Sprite2D" parent="Background"]
+texture = ExtResource("3_8tfsb")
 
 [node name="Board" parent="." node_paths=PackedStringArray("ai", "ui", "camera") instance=ExtResource("2_7j1bk")]
 unique_name_in_owner = true
