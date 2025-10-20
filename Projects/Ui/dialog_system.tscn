@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://fft0owblymrl"]
+[gd_scene load_steps=7 format=3 uid="uid://fft0owblymrl"]
 
 [ext_resource type="Script" path="res://Projects/Ui/dialog_system.gd" id="1_t5gml"]
 [ext_resource type="Texture2D" uid="uid://bxdqxkn65751e" path="res://Assets/UI/Dialog panel/Big size/Dialog panel.png" id="2_upaih"]
+[ext_resource type="FontFile" uid="uid://c0kp0wxgu75s1" path="res://Assets/Fonts/NotoSans-Bold.ttf" id="3_bb20n"]
 [ext_resource type="Texture2D" uid="uid://cwri8doswhdcd" path="res://Assets/UI/Dialog panel/Characters/Ashes.png" id="3_e7hcw"]
 [ext_resource type="FontFile" uid="uid://cog0aa6cr4xc2" path="res://Assets/Fonts/NotoSans-VariableFont_wdth,wght.ttf" id="3_s68gg"]
 [ext_resource type="FontFile" uid="uid://b1rirrr2b225e" path="res://Assets/Fonts/NotoSans-Italic-VariableFont_wdth,wght.ttf" id="4_2vgsv"]
@@ -35,7 +36,7 @@ offset_top = 27.1428
 offset_right = 101.286
 offset_bottom = 155.143
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("3_s68gg")
+theme_override_fonts/font = ExtResource("3_bb20n")
 theme_override_font_sizes/font_size = 65
 text = "Ashes"
 horizontal_alignment = 1

@@ -3,7 +3,7 @@ extends Control
 signal claim
 signal set_free
 
-@onready var card_name: Label = $SetFree/Card_panel/name
+@onready var card_name: Label = $Panel/SetFree/name
 
 func _on_set_free_pressed() -> void:
 	emit_signal("set_free")
