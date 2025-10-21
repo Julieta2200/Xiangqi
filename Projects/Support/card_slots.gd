@@ -7,7 +7,7 @@ var hl_card: SpecialCard
 @onready var hl_slot = $HLSlot
 var board: BoardV2
 var cards: Dictionary = {}
-
+var selected_card : SpecialCard
 enum SPECIALS {TreeTrunk, SnakeChain, WaterPortal, DisconnectionMistCard, Null}
 
 const card_names = {
@@ -52,18 +52,27 @@ func _ready() -> void:
 		cards[int(GameState.state["hl"])] = hl
 		hl.on_click.connect(_on_card_click)
 
+func deselect_cards() -> void:
+	if selected_card != null:
+		selected_card.use = false
+		selected_card = null
+
 func _on_card_click(s: SPECIALS):
 	if cards[s].cooldown_counter != 0:
 		return
-	match s:
-		SPECIALS.TreeTrunk:
-			board.special_markers_highlight(s, true, false)
-		SPECIALS.SnakeChain:
-			board.special_markers_highlight(s, false, true)
-		SPECIALS.WaterPortal:
-			board.special_markers_highlight(s, true, false)
-		SPECIALS.DisconnectionMistCard:
-			use_special(s)
+	selected_card = cards[s]
+	if selected_card.use:
+		match s:
+			SPECIALS.TreeTrunk:
+				board.special_markers_highlight(s, true, false)
+			SPECIALS.SnakeChain:
+				board.special_markers_highlight(s, false, true)
+			SPECIALS.WaterPortal:
+				board.special_markers_highlight(s, true, false)
+			SPECIALS.DisconnectionMistCard:
+				use_special(s)
+	else:
+		board.clear_markers()
 
 func use_special(s: SPECIALS, m: BoardMarker = null):
 	match s:

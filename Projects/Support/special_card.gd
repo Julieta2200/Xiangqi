@@ -5,25 +5,30 @@ enum TYPE {HL, LL}
 @export var special: CardSlots.SPECIALS
 @export var cooldown: int
 @export var description: Button
-@onready var card_name: Label = $Label
-
+@onready var icon: TextureRect = $Icon
 
 var active: bool = true:
 	set(a):
 		active = a 
-		card_name.visible = a
-		if active:
-			modulate = Color(1,1,1,1)
-		else:
-			modulate.a = 0.4
+		icon.visible = a
+		modulate.a = 0.4
 
 var selected: bool:
 	set(s):
 		selected = s
 		if selected:
+			#modulate = Color(1,1,1,1)
 			modulate = Color(0.984,0.761,0.212,1)
 		else:
 			modulate = Color(1,1,1,1)
+var use: bool:
+	set(s):
+		use = s
+		if use:
+			modulate = Color(1,1,1,1)
+			#modulate = Color(0.984,0.761,0.212,1)
+		else:
+			modulate.a = 0.4
 
 var cooldown_counter: int = 0 :
 	set(cc):
@@ -39,17 +44,20 @@ func _ready() -> void:
 
 func _on_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("click") and active:
+		use = !use
 		emit_signal("on_click", special)
 		emit_signal("on_click_full", self)
 
 func start_cooldown() -> void:
+	active = false
 	cooldown_counter = cooldown
-	modulate.a = 0.4
+	#modulate.a = 0.4
 
 func countdown() -> void:
 	cooldown_counter -= 1
 	if cooldown_counter == 0:
-		modulate.a = 1
+		active = true
+		#modulate.a = 1
 
 func _on_description_pressed() -> void:
 	$DescriptionText.show()

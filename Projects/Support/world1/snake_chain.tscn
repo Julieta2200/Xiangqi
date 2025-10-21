@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Projects/Support/world1/snake_chain.gd" id="1_ih27t"]
 [ext_resource type="Texture2D" uid="uid://f5sb83eur5g6" path="res://Assets/UI/Specials/Low level.png" id="1_v6e2l"]
 [ext_resource type="Texture2D" uid="uid://dkbqgtk776q1c" path="res://Assets/tmp/cards/card.png" id="3_b884b"]
-[ext_resource type="FontFile" uid="uid://cog0aa6cr4xc2" path="res://Assets/Fonts/NotoSans-VariableFont_wdth,wght.ttf" id="3_y858n"]
+[ext_resource type="Texture2D" uid="uid://jv28e22tm7js" path="res://Assets/UI/Icons/Low level/Snake_Chain.png" id="3_eudre"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cd2y5"]
 texture = ExtResource("1_v6e2l")
@@ -117,24 +117,21 @@ special = 1
 cooldown = 3
 description = NodePath("Description")
 
-[node name="Label" type="Label" parent="."]
+[node name="Icon" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -80.0
-offset_top = -20.0
-offset_right = 80.0
-offset_bottom = 20.0
+offset_left = -61.0
+offset_top = -63.5
+offset_right = 3.0
+offset_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("3_y858n")
-theme_override_font_sizes/font_size = 25
-text = "Snake Chain"
-horizontal_alignment = 1
-vertical_alignment = 1
+scale = Vector2(2, 2)
+texture = ExtResource("3_eudre")
 
 [node name="Description" type="Button" parent="."]
 visible = false
