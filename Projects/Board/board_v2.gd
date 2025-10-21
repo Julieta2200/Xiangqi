@@ -256,6 +256,7 @@ func get_figures(team: Teams) -> Array[FigureComponent]:
 	return figures
 
 func spawn_highlight(spawn_figure_type : FigureComponent.Types) -> void:
+	ui.card_slots.deselect_cards()
 	clear_markers()
 	const soldier_spawn_points = [Vector2i(0,3), Vector2i(2,3), Vector2i(4,3), Vector2i(6,3),Vector2i(8,3)]
 	if spawn_figure_type == FigureComponent.Types.SOLDIER:

@@ -17,16 +17,15 @@ var selected: bool:
 	set(s):
 		selected = s
 		if selected:
-			#modulate = Color(1,1,1,1)
 			modulate = Color(0.984,0.761,0.212,1)
 		else:
 			modulate = Color(1,1,1,1)
+
 var use: bool:
 	set(s):
 		use = s
 		if use:
 			modulate = Color(1,1,1,1)
-			#modulate = Color(0.984,0.761,0.212,1)
 		else:
 			modulate.a = 0.4
 
@@ -51,13 +50,11 @@ func _on_gui_input(event: InputEvent) -> void:
 func start_cooldown() -> void:
 	active = false
 	cooldown_counter = cooldown
-	#modulate.a = 0.4
 
 func countdown() -> void:
 	cooldown_counter -= 1
 	if cooldown_counter == 0:
 		active = true
-		#modulate.a = 1
 
 func _on_description_pressed() -> void:
 	$DescriptionText.show()

@@ -8,6 +8,7 @@ var hl_card: SpecialCard
 var board: BoardV2
 var cards: Dictionary = {}
 var selected_card : SpecialCard
+
 enum SPECIALS {TreeTrunk, SnakeChain, WaterPortal, DisconnectionMistCard, Null}
 
 const card_names = {
