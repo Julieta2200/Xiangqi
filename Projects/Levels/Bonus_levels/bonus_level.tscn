@@ -42,6 +42,7 @@ special = 3
 position = Vector2(1966, 1410)
 
 [node name="GameplayUI" parent="." node_paths=PackedStringArray("board") instance=ExtResource("5_8f8tq")]
+is_active = false
 board = NodePath("../Board")
 
 [node name="Music" parent="." instance=ExtResource("9_h0ufh")]
