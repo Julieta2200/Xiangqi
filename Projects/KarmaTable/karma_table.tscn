@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b40x7q53qt4ua"]
+[gd_scene load_steps=14 format=3 uid="uid://b40x7q53qt4ua"]
 
 [ext_resource type="Script" path="res://Projects/KarmaTable/karma_table.gd" id="1_xkm3q"]
 [ext_resource type="Texture2D" uid="uid://dvtm10ok7ifu" path="res://Assets/backgrounds/Karma/Karma_Table.png" id="2_f4ew5"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://5ewsc72pyogy" path="res://Projects/Support/world1/snake_chain.tscn" id="6_1dcfh"]
 [ext_resource type="PackedScene" uid="uid://cq8tb18e3ym20" path="res://Projects/Support/world1/tree_trunk.tscn" id="7_3s6r8"]
 [ext_resource type="PackedScene" uid="uid://g02214kyco20" path="res://Projects/Support/world1/water_portal.tscn" id="8_ujwfo"]
+[ext_resource type="PackedScene" uid="uid://cavxgtpxtng4j" path="res://Projects/Music/Music.tscn" id="12_qky3m"]
+[ext_resource type="AudioStream" uid="uid://24dwra2qr3qu" path="res://Assets/Music/Karma Table V3-B1.wav" id="13_oa16i"]
 
 [node name="KarmaTable" type="Node2D"]
 script = ExtResource("1_xkm3q")
@@ -330,6 +332,9 @@ offset_right = 1633.0
 offset_bottom = 562.0
 hint = "The selected cards will appear in this section. You can choose up to 3 LL cards and 1 HL card."
 number = "3/3"
+
+[node name="Music" parent="." instance=ExtResource("12_qky3m")]
+music = ExtResource("13_oa16i")
 
 [connection signal="button_down" from="CanvasLayer/Back" to="." method="_on_back_button_down"]
 [connection signal="button_up" from="CanvasLayer/Back" to="." method="_on_back_button_up"]

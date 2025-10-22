@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cavxgtpxtng4j"]
+[gd_scene load_steps=3 format=3 uid="uid://cavxgtpxtng4j"]
 
 [ext_resource type="AudioStream" uid="uid://4sescxq31i01" path="res://Assets/Music/Dark Forest V4-B1M1.wav" id="1_42j3k"]
+[ext_resource type="Script" path="res://Projects/Music/music.gd" id="1_wopt7"]
 
 [node name="Music" type="Node2D"]
+script = ExtResource("1_wopt7")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_42j3k")

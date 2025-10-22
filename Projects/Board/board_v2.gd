@@ -164,6 +164,7 @@ func instantiate_figure(kingdom: Kingdoms, type: FigureComponent.Types, pos: Vec
 func show_move_markers(positions: Array[Vector2i], figure: FigureComponent) -> void:
 	clear_markers()
 	ui.garrison.deselect_cards()
+	ui.card_slots.deselect_cards()
 	_selected_figure = figure
 	markers[figure.chess_component.position].highlight(BoardMarker.Highlights.SELECTED)
 	for pos in positions:
@@ -255,6 +256,7 @@ func get_figures(team: Teams) -> Array[FigureComponent]:
 	return figures
 
 func spawn_highlight(spawn_figure_type : FigureComponent.Types) -> void:
+	ui.card_slots.deselect_cards()
 	clear_markers()
 	const soldier_spawn_points = [Vector2i(0,3), Vector2i(2,3), Vector2i(4,3), Vector2i(6,3),Vector2i(8,3)]
 	if spawn_figure_type == FigureComponent.Types.SOLDIER:

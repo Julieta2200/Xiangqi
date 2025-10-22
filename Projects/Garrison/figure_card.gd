@@ -26,6 +26,7 @@ const figure_energies = {
 @export var type: FigureComponent.Types 
 
 signal selected(FigureCard)
+
 var active: bool = true :
 	set(a):
 		active = a 
