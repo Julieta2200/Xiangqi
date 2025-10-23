@@ -82,8 +82,9 @@ var turn: Teams = Teams.Red :
 			turn = t
 		clear_markers()
 		activate_reds(turn == Teams.Red)
-		activate_garrison(turn == Teams.Red)
-		activate_cards(turn == Teams.Red)
+		if ui.with_specials:
+			activate_garrison(turn == Teams.Red)
+			activate_cards(turn == Teams.Red)
 
 var _AI_figure: FigureComponent
 var state: Dictionary
