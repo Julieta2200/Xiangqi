@@ -15,3 +15,11 @@ func _ready() -> void:
 		State.new(BoardV2.Kingdoms.FOG, FigureComponent.Types.ADVISOR, Vector2i(5,9)),
 	]
 	board.initialize_position(state)
+
+func check_game_over() -> bool:
+	if super.check_game_over():
+		return true
+	if board.move_number > 7:
+		_on_game_over(BoardV2.GameOverResults.Lose, board.move_number)
+		return true
+	return false
