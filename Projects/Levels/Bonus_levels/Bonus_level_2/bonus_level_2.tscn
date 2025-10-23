@@ -34,15 +34,16 @@ position = Vector2(879, 363)
 ai = NodePath("../AI")
 ui = NodePath("../GameplayUI")
 camera = NodePath("../Camera")
+ai_spawn_interval = -1
 
 [node name="AI" parent="." node_paths=PackedStringArray("board") instance=ExtResource("4_3qxqa")]
 board = NodePath("../Board")
-special = 3
 
 [node name="Camera" parent="." instance=ExtResource("5_01ykw")]
 position = Vector2(1966, 1410)
 
 [node name="GameplayUI" parent="." node_paths=PackedStringArray("board") instance=ExtResource("6_xpor4")]
+with_specials = false
 board = NodePath("../Board")
 
 [node name="Music" parent="." instance=ExtResource("9_dkfau")]
