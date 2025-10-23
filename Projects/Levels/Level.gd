@@ -8,7 +8,8 @@ class_name Level extends Node2D
 
 
 func _ready() -> void:
-	board.game_over.connect(_on_board_game_over)
+	board.level = self
+	board.game_over.connect(_on_game_over)
 	gameplay_ui.power_meter.energy_depleted.connect(game_over_energy_depleted)
 	gameplay_ui.decision.set_free.connect(_on_gameplay_ui_set_free)
 	gameplay_ui.decision.claim.connect(_on_gameplay_ui_claim)
@@ -17,9 +18,9 @@ func _ready() -> void:
 func game_over_energy_depleted():
 	get_tree().reload_current_scene()
 
-func _on_board_game_over(win, move_number):
+func _on_game_over(win: BoardV2.GameOverResults, move_number: int):
 	await get_tree().process_frame
-	if win:
+	if win == BoardV2.GameOverResults.Win:
 		update_best_move_number(move_number)
 		if GameState.state["levels"][level_name]["state"] != LevelMarker.LevelState.Open:
 			load_main_scene()
@@ -66,3 +67,14 @@ func _enable_play() -> void:
 func _disable_play() -> void:
 	gameplay_ui.hide()
 	board.activate_reds(false)
+
+func check_game_over() -> bool:
+	if board.tutorial:
+		return false
+	var generals = board.get_generals()
+	if generals.size() < 2:
+		var win: bool = board.is_victory(generals)
+		var result: BoardV2.GameOverResults = BoardV2.GameOverResults.Win if win else BoardV2.GameOverResults.Lose
+		_on_game_over(result, board.move_number)
+		return true
+	return false

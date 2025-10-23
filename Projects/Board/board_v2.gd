@@ -5,6 +5,7 @@ const board_cols = 9
 const spawn_distance: int = 3
 enum Teams {Red = 1, Black = 2, Wall = 3}
 enum Kingdoms {MAGMA = 1, CLOUD = 2, FOG = 3}
+enum GameOverResults {None, Win, Lose}
 
 const palace_positions: Dictionary = {
 	Vector2i(3,0): true,
@@ -73,6 +74,8 @@ signal move_done()
 	FigureComponent.Types.CANNON: 0.4,
 	FigureComponent.Types.HORSE: 0.3,
 }
+
+var level: Level
 var markers : Dictionary
 var turn: Teams = Teams.Red :
 	set(t):
@@ -314,14 +317,7 @@ func get_generals() -> Array[FigureComponent]:
 	return generals
 
 func check_game_over() -> bool:
-	if tutorial:
-		return false
-	var generals = get_generals()
-	if generals.size() < 2:
-		var win = is_victory(generals)
-		emit_signal("game_over", win, move_number)
-		return true
-	return false
+	return level.check_game_over()
 
 func is_victory(generals: Array) -> bool:
 	return Teams.Red == generals[0].chess_component.team
