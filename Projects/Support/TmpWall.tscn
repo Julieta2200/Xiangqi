@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://carksrp1tmpjf"]
 
 [ext_resource type="Script" path="res://Projects/Support/tmp_wall.gd" id="1_wipcm"]
-[ext_resource type="Texture2D" uid="uid://b5y5veoqw6otr" path="res://Assets/Characters/Magma/Pawn/Pawn_front.png" id="2_nrr72"]
+[ext_resource type="Texture2D" uid="uid://cv0uvjwvjd7ia" path="res://Assets/special_cards/Tree_trunk.png" id="2_c85aj"]
 [ext_resource type="PackedScene" uid="uid://m5ni7nkfydth" path="res://Projects/Figure/Components/WallComponents/wall_component.tscn" id="4_5ra5r"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/soldier_chess_component.gd" id="25_yxp6o"]
 
@@ -11,10 +11,9 @@ chess_component = NodePath("ChessComponent")
 wall_component = NodePath("WallComponent")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(-4, -97)
+position = Vector2(0, -24)
 scale = Vector2(2, 2)
-texture = ExtResource("2_nrr72")
+texture = ExtResource("2_c85aj")
 
 [node name="ChessComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component")]
 script = ExtResource("25_yxp6o")
