@@ -36,9 +36,9 @@ func _ready() -> void:
 	DialogSystem.connect("dialog_finished", _enable_play)
 	gameplay_ui.garrison.update_cards(gameplay_ui.power_meter.energy)
 
-func _on_game_over(win, move_number):
+func _on_game_over(win: BoardV2.GameOverResults, move_number: int):
 	await get_tree().process_frame
-	if win:
+	if win == BoardV2.GameOverResults.Win:
 		DialogSystem.start_dialog([
 			DialogSystem.DialogText.new("She’s getting away!", DialogSystem.CHARACTERS.Advisor),
 			DialogSystem.DialogText.new("Should we go after her?", DialogSystem.CHARACTERS.Advisor),
@@ -73,3 +73,16 @@ func run_hint_system() -> void:
 
 func _palace_hint_shown() -> void:
 	palace_light.visible = hints[3].visible
+
+func check_game_over() -> bool:
+	if super.check_game_over():
+		return true
+	var soldiers = board.get_figures(BoardV2.Teams.Black).filter(func(f): return f.type == FigureComponent.Types.SOLDIER)
+	if soldiers.size() == 0:
+		_on_game_over(BoardV2.GameOverResults.Win, board.move_number)
+		return true
+	for soldier in soldiers:
+		if soldier.chess_component.position.y < 4:
+			_on_game_over(BoardV2.GameOverResults.Lose, board.move_number)
+			return true
+	return false
