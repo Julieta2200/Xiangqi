@@ -101,6 +101,7 @@ level_description = NodePath("../../../CanvasLayer/LevelDescription")
 level = ExtResource("6_wvnqw")
 title = "Khosrov - Animal Kingdom"
 story = "Story for animal kingdom"
+additional_objectives = Array[String](["Capture the enemy general in less than 7 moves"])
 number = "2_bonus"
 
 [node name="3" parent="Levels" node_paths=PackedStringArray("level_description") instance=ExtResource("2_m64e3")]

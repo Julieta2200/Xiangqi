@@ -19,7 +19,7 @@ func _ready() -> void:
 func check_game_over() -> bool:
 	if super.check_game_over():
 		return true
-	if board.move_number > 7:
+	if board.move_number >= 7:
 		_on_game_over(BoardV2.GameOverResults.Lose, board.move_number)
 		return true
 	return false
