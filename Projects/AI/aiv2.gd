@@ -2,6 +2,7 @@ class_name AIV2 extends Node
 
 @export var board: BoardV2
 @export var special: CardSlots.SPECIALS
+@export var depth: int = 3
 var _special_used: bool = false
 
 const infinite : int = 500000
@@ -57,7 +58,7 @@ func _ready() -> void:
 func make_move() -> bool:
 	call_deferred("use_special")
 	var position: Array[Array] = state_to_position(board.state)
-	thinking_thread.start(select_best_move.bind(position,3))
+	thinking_thread.start(select_best_move.bind(position,depth))
 	return true
 
 func make_move_main_thread(best_move):
