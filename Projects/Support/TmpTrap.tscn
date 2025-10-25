@@ -1,14 +1,58 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxe4r4gbsebhf"]
+[gd_scene load_steps=9 format=3 uid="uid://dxe4r4gbsebhf"]
 
-[ext_resource type="Texture2D" uid="uid://dqcomibobm70r" path="res://Assets/tmp/Square.png" id="1_akw35"]
 [ext_resource type="Script" path="res://Projects/Support/tmp_trap.gd" id="1_o7uho"]
+[ext_resource type="Texture2D" uid="uid://dee8dkq3scjsb" path="res://Assets/special_cards/Water Portal/Water_Portal.png" id="2_3f27t"]
+[ext_resource type="Texture2D" uid="uid://c5oo4mmv5cm3b" path="res://Assets/special_cards/Water Portal/Rings/Rings1.png" id="3_u6f1h"]
+[ext_resource type="Texture2D" uid="uid://d3tqlp6apkak6" path="res://Assets/special_cards/Water Portal/Rings/Rings2.png" id="4_lp1m0"]
+[ext_resource type="Texture2D" uid="uid://cngni8sptlbei" path="res://Assets/special_cards/Water Portal/Rings/Rings3.png" id="5_2cdpx"]
+[ext_resource type="Texture2D" uid="uid://cedm6rjsej783" path="res://Assets/special_cards/Water Portal/Rings/Rings4.png" id="6_sb3mw"]
+[ext_resource type="Texture2D" uid="uid://cs3apeq3y0owv" path="res://Assets/special_cards/Water Portal/Rings/Rings5.png" id="7_2mhi4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xd50q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_u6f1h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lp1m0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2cdpx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_sb3mw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2mhi4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="tmp_trap" type="Node2D"]
 script = ExtResource("1_o7uho")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.337255, 1, 1, 0.447059)
-self_modulate = Color(0.764706, 0, 0.145098, 1)
-position = Vector2(1, -45.5)
-scale = Vector2(2, 0.908163)
-texture = ExtResource("1_akw35")
+position = Vector2(-5, -1)
+scale = Vector2(2, 2)
+texture = ExtResource("2_3f27t")
+
+[node name="Ring_animation" type="Node2D" parent="Sprite2D"]
+position = Vector2(2.5, 1.10112)
+scale = Vector2(0.5, 1.10112)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D/Ring_animation"]
+position = Vector2(18, 3.9949)
+scale = Vector2(2, 0.908)
+sprite_frames = SubResource("SpriteFrames_xd50q")
+autoplay = "default"
+frame_progress = 0.12348
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Sprite2D/Ring_animation"]
+position = Vector2(-24, -1.90816)
+scale = Vector2(2, 0.908)
+sprite_frames = SubResource("SpriteFrames_xd50q")
+autoplay = "default"
+frame_progress = 0.471732
