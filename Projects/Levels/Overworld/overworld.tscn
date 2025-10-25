@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bqe6oo0n2f6fc"]
+[gd_scene load_steps=24 format=3 uid="uid://bqe6oo0n2f6fc"]
 
 [ext_resource type="Script" path="res://Projects/Levels/Overworld/overworld.gd" id="1_6480g"]
 [ext_resource type="Texture2D" uid="uid://dcslgins2nf6r" path="res://Assets/Map/Whole Map/Background.png" id="2_hes21"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://chmuokpujhvya" path="res://Projects/Ui/LevelDescription/level_description.tscn" id="20_uvu7o"]
 [ext_resource type="Script" path="res://Projects/Levels/Overworld/camera.gd" id="21_6fygh"]
 [ext_resource type="Texture2D" uid="uid://bbi3vn0pr30bs" path="res://Assets/Map/Third Part/Water.png" id="22_8r75w"]
+[ext_resource type="AudioStream" uid="uid://bbxmsqcsaufp5" path="res://Assets/Music/Overworld V1-B2M1.wav" id="22_cjf4v"]
 [ext_resource type="Texture2D" uid="uid://dkcu2jqstbxx5" path="res://Assets/Map/Third Island/Water.png" id="26_br2ah"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8xjyt"]
@@ -152,5 +153,9 @@ material = SubResource("ShaderMaterial_8xjyt")
 position = Vector2(930, 691)
 scale = Vector2(5.43992, 4.04184)
 texture = ExtResource("11_omsi1")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_cjf4v")
+autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/Tutorial" to="." method="_on_tutorial_pressed"]
