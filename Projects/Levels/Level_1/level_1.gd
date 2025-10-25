@@ -6,6 +6,9 @@ extends Level
 	$GameplayUI/Hints/HintBubble2,
 	$GameplayUI/Hints/HintBubble4,
 	$GameplayUI/Hints/HintBubble3,
+	$GameplayUI/Hints/Generals,
+	$GameplayUI/Hints/Advisors,
+	$GameplayUI/Hints/Pawns,
 ]
 @onready var palace_light: PointLight2D = $Board/PalaceLight
 
@@ -88,3 +91,31 @@ func check_game_over() -> bool:
 			_on_game_over(BoardV2.GameOverResults.Lose, board.move_number)
 			return true
 	return false
+
+func _generals_hint_shown() -> void:
+	var generals: Array[FigureComponent] = board.get_figures_by_type(FigureComponent.Types.GENERAL)
+	if hints[4].visible:
+		for general in generals:
+			general.shader_component.hint_highlight()
+	else:
+		for general in generals:
+			general.shader_component.hint_unhighlight()
+
+
+func _advisors_hint_shown() -> void:
+	var advisors: Array[FigureComponent] = board.get_figures_by_type(FigureComponent.Types.ADVISOR)
+	if hints[5].visible:
+		for advisor in advisors:
+			advisor.shader_component.hint_highlight()
+	else:
+		for advisor in advisors:
+			advisor.shader_component.hint_unhighlight()
+
+func _pawns_hint_shown() -> void:
+	var pawns: Array[FigureComponent] = board.get_figures_by_type(FigureComponent.Types.SOLDIER)
+	if hints[6].visible:
+		for pawn in pawns:
+			pawn.shader_component.hint_highlight()
+	else:
+		for pawn in pawns:
+			pawn.shader_component.hint_unhighlight()

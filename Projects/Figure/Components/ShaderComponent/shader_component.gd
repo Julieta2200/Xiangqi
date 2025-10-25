@@ -5,6 +5,8 @@ class_name ShaderComponenet extends Node
 @export var spawn_material: Material 
 @export var spawn_speed: float = 0.3
 
+@onready var hint_highlight_material: Material = preload("res://Projects/Shaders/hint_highlight.tres")
+
 var spawn_progress: float = 0.0
 var scale_speed: float = 1.0
 
@@ -28,4 +30,10 @@ func mouse_entered():
 func mouse_exited():
 	if main_sprite == null or main_sprite.material != highlight_material:
 		return
+	main_sprite.material = null
+
+func hint_highlight() -> void:
+	main_sprite.material = hint_highlight_material
+
+func hint_unhighlight() -> void:
 	main_sprite.material = null

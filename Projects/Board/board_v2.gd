@@ -259,6 +259,14 @@ func get_figures(team: Teams) -> Array[FigureComponent]:
 			figures.append(figure)
 	return figures
 
+func get_figures_by_type(type: FigureComponent.Types) -> Array[FigureComponent]:
+	var figures: Array[FigureComponent] = []
+	for pos in state:
+		var figure: FigureComponent = state[pos]
+		if figure.type == type:
+			figures.append(figure)
+	return figures
+
 func spawn_highlight(spawn_figure_type : FigureComponent.Types) -> void:
 	ui.card_slots.deselect_cards()
 	clear_markers()

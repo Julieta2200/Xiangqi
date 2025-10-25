@@ -95,7 +95,7 @@ offset_bottom = 919.0
 grow_horizontal = 0
 grow_vertical = 1
 hint = "From the garrison you can choose which unit you want to spawn"
-number = "1/4"
+number = "1/7"
 
 [node name="HintBubble2" parent="GameplayUI/Hints" instance=ExtResource("9_c7knn")]
 visible = false
@@ -110,7 +110,7 @@ offset_bottom = 140.0
 grow_horizontal = 1
 grow_vertical = 1
 hint = "Spawning units will decrease your energy"
-number = "2/4"
+number = "2/7"
 
 [node name="HintBubble4" parent="GameplayUI/Hints" instance=ExtResource("9_c7knn")]
 visible = false
@@ -125,7 +125,7 @@ offset_bottom = 140.0
 grow_horizontal = 1
 grow_vertical = 1
 hint = "You can regain energy by making moves"
-number = "3/4"
+number = "3/7"
 
 [node name="HintBubble3" parent="GameplayUI/Hints" instance=ExtResource("9_c7knn")]
 visible = false
@@ -140,7 +140,52 @@ offset_bottom = -538.0
 grow_horizontal = 1
 grow_vertical = 0
 hint = "Making moves in the palace will decrease your energy."
-number = "4/4"
+number = "4/7"
+
+[node name="Generals" parent="GameplayUI/Hints" instance=ExtResource("9_c7knn")]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 0.0
+offset_left = 1063.0
+offset_top = -1632.0
+offset_right = 1063.0
+offset_bottom = -1632.0
+grow_horizontal = 1
+grow_vertical = 0
+hint = "The General moves one point either vertically or horizontally and must stay within the palace."
+number = "5/7"
+
+[node name="Advisors" parent="GameplayUI/Hints" instance=ExtResource("9_c7knn")]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 0.0
+offset_left = 878.0
+offset_top = -1601.0
+offset_right = 878.0
+offset_bottom = -1601.0
+grow_horizontal = 1
+grow_vertical = 0
+hint = "Advisors move one point diagonally and must stay within the palace."
+number = "6/7"
+
+[node name="Pawns" parent="GameplayUI/Hints" instance=ExtResource("9_c7knn")]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 0.0
+offset_left = 624.0
+offset_top = -954.0
+offset_right = 624.0
+offset_bottom = -954.0
+grow_horizontal = 1
+grow_vertical = 0
+hint = " Pawns can only move forward one step at a time, but once they cross the river, they can also move sideways."
+number = "7/7"
 
 [node name="Music" parent="." instance=ExtResource("9_1ahl8")]
 
@@ -149,3 +194,9 @@ number = "4/4"
 [connection signal="hint_finished" from="GameplayUI/Hints/HintBubble4" to="." method="run_hint_system"]
 [connection signal="hint_finished" from="GameplayUI/Hints/HintBubble3" to="." method="run_hint_system"]
 [connection signal="visibility_changed" from="GameplayUI/Hints/HintBubble3" to="." method="_palace_hint_shown"]
+[connection signal="hint_finished" from="GameplayUI/Hints/Generals" to="." method="run_hint_system"]
+[connection signal="visibility_changed" from="GameplayUI/Hints/Generals" to="." method="_generals_hint_shown"]
+[connection signal="hint_finished" from="GameplayUI/Hints/Advisors" to="." method="run_hint_system"]
+[connection signal="visibility_changed" from="GameplayUI/Hints/Advisors" to="." method="_advisors_hint_shown"]
+[connection signal="hint_finished" from="GameplayUI/Hints/Pawns" to="." method="run_hint_system"]
+[connection signal="visibility_changed" from="GameplayUI/Hints/Pawns" to="." method="_pawns_hint_shown"]

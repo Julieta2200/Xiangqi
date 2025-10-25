@@ -9,6 +9,8 @@ enum Types {SOLDIER, GENERAL, ADVISOR, CHARIOT, HORSE, ELEPHANT, CANNON}
 @export var wall_component: WallComponent
 @export var target_component: FigureTargetComponent
 
+@onready var shader_component: ShaderComponenet = $ShaderComponent
+
 @export var type: Types
 
 var frozen: bool = false
