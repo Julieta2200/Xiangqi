@@ -304,34 +304,22 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="HintBubble" parent="CanvasLayer/Hints" instance=ExtResource("3_ddsu4")]
-visible = false
 layout_mode = 1
-offset_left = 2599.0
-offset_top = 1229.0
-offset_right = 2599.0
-offset_bottom = 1229.0
+offset_left = 1115.0
+offset_top = 181.0
+offset_right = 1115.0
+offset_bottom = 181.0
 hint = "Low level special abilities cards․LL special ability is open when you set free bonus level. "
-number = "1/3"
+number = "1/2"
 
 [node name="HintBubble2" parent="CanvasLayer/Hints" instance=ExtResource("3_ddsu4")]
-visible = false
 layout_mode = 1
-offset_left = 331.0
-offset_top = 1407.0
-offset_right = 331.0
-offset_bottom = 1407.0
+offset_left = 2039.0
+offset_top = 171.0
+offset_right = 2039.0
+offset_bottom = 171.0
 hint = "High level special abilities cards․New HL special ability is open when you conquer 3 bonus levels."
-number = "2/3"
-
-[node name="HintBubble3" parent="CanvasLayer/Hints" instance=ExtResource("3_ddsu4")]
-visible = false
-layout_mode = 1
-offset_left = 1633.0
-offset_top = 562.0
-offset_right = 1633.0
-offset_bottom = 562.0
-hint = "The selected cards will appear in this section. You can choose up to 3 LL cards and 1 HL card."
-number = "3/3"
+number = "2/2"
 
 [node name="Music" parent="." instance=ExtResource("12_qky3m")]
 music = ExtResource("13_oa16i")
@@ -348,4 +336,3 @@ music = ExtResource("13_oa16i")
 [connection signal="pressed" from="CanvasLayer/Play" to="." method="_on_play_pressed"]
 [connection signal="hint_finished" from="CanvasLayer/Hints/HintBubble" to="." method="run_hint_system"]
 [connection signal="hint_finished" from="CanvasLayer/Hints/HintBubble2" to="." method="run_hint_system"]
-[connection signal="hint_finished" from="CanvasLayer/Hints/HintBubble3" to="." method="run_hint_system"]

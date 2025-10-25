@@ -6,7 +6,6 @@ extends Node2D
 @onready var hint_bubbles: Array[HintBubble] = [
 	$CanvasLayer/Hints/HintBubble,
 	$CanvasLayer/Hints/HintBubble2,
-	$CanvasLayer/Hints/HintBubble3,
 ]
 @onready var play_button: Button = $CanvasLayer/Play
 @onready var back_button: Button = $CanvasLayer/Back
