@@ -42,6 +42,7 @@ var state: Dictionary = {
 var current_level_info: Dictionary = {
 	"scene": null,
 	"name": "",
+	"objectives": [],
 }
 
 # Called when the node enters the scene tree for the first time.

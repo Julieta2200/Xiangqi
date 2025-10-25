@@ -4,6 +4,7 @@ class_name GameplayUI extends CanvasLayer
 @onready var power_meter: PowerMeter = $PowerMeter
 @onready var decision: Control = $Decision
 @onready var card_slots: CardSlots = $CardSlots
+@onready var objectives: Objectives = $Objectives
 @export var with_specials: bool = true
 
 @export var board: BoardV2

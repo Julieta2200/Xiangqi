@@ -24,6 +24,7 @@ func game_over_energy_depleted():
 func _on_game_over(win: BoardV2.GameOverResults, move_number: int):
 	await get_tree().process_frame
 	if win == BoardV2.GameOverResults.Win:
+		gameplay_ui.objectives.complete_objectives(true)
 		update_best_move_number(move_number)
 		if GameState.state["levels"][level_name]["state"] != LevelMarker.LevelState.Open:
 			load_main_scene()
@@ -39,6 +40,7 @@ func _on_game_over(win: BoardV2.GameOverResults, move_number: int):
 			GameState.save_game()
 			load_main_scene()
 	else:
+		gameplay_ui.objectives.complete_objectives(false)
 		get_tree().reload_current_scene()
 
 func load_main_scene():

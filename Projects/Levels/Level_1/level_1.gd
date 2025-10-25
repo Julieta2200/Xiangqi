@@ -39,12 +39,14 @@ func _ready() -> void:
 func _on_game_over(win: BoardV2.GameOverResults, move_number: int):
 	await get_tree().process_frame
 	if win == BoardV2.GameOverResults.Win:
+		gameplay_ui.objectives.complete_objectives(true)
 		DialogSystem.start_dialog([
 			DialogSystem.DialogText.new("She’s getting away!", DialogSystem.CHARACTERS.Advisor),
 			DialogSystem.DialogText.new("Should we go after her?", DialogSystem.CHARACTERS.Advisor),
 			DialogSystem.DialogText.new("It doesn’t matter, she’ll come back anyways.", DialogSystem.CHARACTERS.Ashes),
 		], true)
 	else:
+		gameplay_ui.objectives.complete_objectives(false)
 		DialogSystem.start_dialog([
 			DialogSystem.DialogText.new("I’m sorry Ashes, you left me no other choice.", DialogSystem.CHARACTERS.Mara)
 		],true)
