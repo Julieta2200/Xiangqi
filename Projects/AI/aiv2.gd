@@ -48,7 +48,6 @@ var moved_numbers: Array[int] = []
 var current_eval: int = 0 :
 	set(e):
 		current_eval = e
-		print("Current evaluation updated to: ", current_eval)
 var transposition_table: Dictionary = {}
 
 
@@ -89,7 +88,6 @@ func state_to_position(state: Dictionary) -> Array[Array]:
 	return position
 
 func select_best_move(position: Array[Array], depth: int) -> void:
-	print("AI thinking...")
 	# Recalculate the entire board score from scratch before thinking.
 	current_eval = calculate_full_evaluation(position)
 
@@ -104,7 +102,6 @@ func select_best_move(position: Array[Array], depth: int) -> void:
 			best_score = score
 			best_move = move
 	if best_move:
-		print("AI selected move: ", best_move, " with score ", best_score)
 		call_deferred("make_move_main_thread", best_move)
 
 func get_all_legal_moves(team: int, position: Array[Array]) -> Array[Array]:

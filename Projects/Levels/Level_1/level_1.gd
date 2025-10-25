@@ -69,7 +69,7 @@ func _enable_play():
 
 func run_hint_system() -> void:
 	if _hint_index >= hints.size():
-		GameState.state["first_karma_table_run"] = false
+		GameState.state["first_pawn_introduction"] = false
 		GameState.save_game()
 		blocking_panel.hide()
 		return

@@ -37,6 +37,7 @@ var state: Dictionary = {
 	"first_run": true,
 	"first_karma_table_run": true,
 	"first_pawn_introduction": true,
+	"first_bonus_introduction": true,
 }
 
 var current_level_info: Dictionary = {
