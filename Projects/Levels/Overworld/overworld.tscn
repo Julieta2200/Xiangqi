@@ -84,8 +84,9 @@ number = "1"
 position = Vector2(-49, -378)
 level_description = NodePath("../../../CanvasLayer/LevelDescription")
 level = ExtResource("4_k78vk")
-title = "Khosrov - Wood World"
-story = "Story for wood world"
+title = "Khosrov Forest - Wood World"
+story = "Ashes enters Wood World, Will he decide to give them back the control, or take all to himself."
+additional_objectives = Array[String](["Capture the enemy general", "Don't make more than 10 moves"])
 number = "1_bonus"
 
 [node name="2" parent="Levels" node_paths=PackedStringArray("level_description") instance=ExtResource("2_m64e3")]
