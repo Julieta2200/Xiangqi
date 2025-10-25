@@ -16,6 +16,7 @@ func _ready() -> void:
 	gameplay_ui.decision.claim.connect(_on_gameplay_ui_claim)
 	gameplay_ui.decision.set_card_name(CardSlots.card_names[card])
 	gameplay_ui.garrison.garrison_limitations = garrison_limitations
+	gameplay_ui.garrison.update_cards(gameplay_ui.power_meter.energy)
 
 func game_over_energy_depleted():
 	get_tree().reload_current_scene()
