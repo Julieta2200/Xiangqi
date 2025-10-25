@@ -304,6 +304,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="HintBubble" parent="CanvasLayer/Hints" instance=ExtResource("3_ddsu4")]
+visible = false
 layout_mode = 1
 offset_left = 1115.0
 offset_top = 181.0
@@ -313,6 +314,7 @@ hint = "Low level special abilities cards․LL special ability is open when you 
 number = "1/2"
 
 [node name="HintBubble2" parent="CanvasLayer/Hints" instance=ExtResource("3_ddsu4")]
+visible = false
 layout_mode = 1
 offset_left = 2039.0
 offset_top = 171.0
