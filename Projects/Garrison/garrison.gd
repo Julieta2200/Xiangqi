@@ -3,6 +3,7 @@ class_name Garrison extends Control
 @onready var figure_cards: Array = $FigureCards.get_children()
 
 var selected_figure: FigureCard
+var garrison_limitations: Array[FigureComponent.Types] = []
 
 signal card_selected(selected_card: FigureCard)
 
@@ -20,7 +21,7 @@ func activate(result: bool) -> void:
 
 func update_cards(energy: int) -> void:
 	for card in figure_cards:
-		card.activate(card.energy < energy)
+		card.activate(card.energy < energy and card.type not in garrison_limitations)
 		card.deselect()
 
 func deselect_cards() -> void:

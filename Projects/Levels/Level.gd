@@ -3,6 +3,7 @@ class_name Level extends Node2D
 @export var has_decision: bool
 @export var card : CardSlots.SPECIALS
 @export var level_name: String
+@export var garrison_limitations: Array[FigureComponent.Types] = []
 @onready var board: BoardV2 = %Board
 @onready var gameplay_ui: GameplayUI = $GameplayUI
 
@@ -14,6 +15,7 @@ func _ready() -> void:
 	gameplay_ui.decision.set_free.connect(_on_gameplay_ui_set_free)
 	gameplay_ui.decision.claim.connect(_on_gameplay_ui_claim)
 	gameplay_ui.decision.set_card_name(CardSlots.card_names[card])
+	gameplay_ui.garrison.garrison_limitations = garrison_limitations
 
 func game_over_energy_depleted():
 	get_tree().reload_current_scene()

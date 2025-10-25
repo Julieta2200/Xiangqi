@@ -23,9 +23,9 @@ fill_from = Vector2(0.5, 0.5)
 
 [node name="Level_1" type="Node2D"]
 script = ExtResource("1_guf0p")
-has_decision = null
 card = 3
 level_name = "1"
+garrison_limitations = Array[int]([3, 4, 5, 6])
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -3
