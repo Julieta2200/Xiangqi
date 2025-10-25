@@ -94,7 +94,7 @@ offset_right = -2940.0
 offset_bottom = 919.0
 grow_horizontal = 0
 grow_vertical = 1
-hint = "From the garrison you can choose which unit you want to spawn"
+hint = "From the garrison you can choose which unit you want to spawn. Newly spawned units can not make a move."
 number = "1/7"
 
 [node name="HintBubble2" parent="GameplayUI/Hints" instance=ExtResource("9_c7knn")]

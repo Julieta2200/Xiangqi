@@ -21,8 +21,16 @@ var level_1_dialog: Array[DialogSystem.DialogText] = [
 	DialogSystem.DialogText.new("Time is ticking…", DialogSystem.CHARACTERS.Jakat),
 ]
 
+var level_1_bonus_dialog: Array[DialogSystem.DialogText] = [
+	DialogSystem.DialogText.new("You're going out of our path, aren't you?", DialogSystem.CHARACTERS.Jakat),
+	DialogSystem.DialogText.new("I have my own path.", DialogSystem.CHARACTERS.Ashes),
+	DialogSystem.DialogText.new("You're on your own here, Ashes.", DialogSystem.CHARACTERS.Jakat),
+	DialogSystem.DialogText.new("Such a tragedy...", DialogSystem.CHARACTERS.Ashes)
+]
+
 var dialogs: Dictionary = {
 	"1": level_1_dialog,
+	"1_bonus": level_1_bonus_dialog,
 }
 
 
