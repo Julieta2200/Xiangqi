@@ -1,6 +1,9 @@
 extends Node
 
+const VERSION: int = 1
+
 var state: Dictionary = {
+	"version": 1,
 	"energy": 100,
 	"ll_cards": [],
 	"hl_cards": [],
@@ -73,10 +76,15 @@ func load_game() -> void:
 	if not parse_result == OK:
 		print("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
 		return
-	state = json.data
-	if !state.has("first_run"):
-		state["first_run"] = true
-	if !state.has("first_karma_table_run"):
-		state["first_karma_table_run"] = true
-	if !state.has("first_pawn_introduction"):
-		state["first_pawn_introduction"] = true
+	var s = json.data
+	if !s.has("version"):
+		return
+	if !s.has("first_run"):
+		s["first_run"] = true
+	if !s.has("first_karma_table_run"):
+		s["first_karma_table_run"] = true
+	if !s.has("first_pawn_introduction"):
+		s["first_pawn_introduction"] = true
+	if !s.has("first_bonus_introduction"):
+		s["first_bonus_introduction"] = true
+	state = s
