@@ -93,8 +93,9 @@ number = "1_bonus"
 position = Vector2(977, 777)
 level_description = NodePath("../../CanvasLayer/LevelDescription")
 level = ExtResource("4_l7pks")
-title = "Khosrov - Part  2"
-story = "Story for part 2"
+title = "Khosrov Forest - Part  2"
+story = "Ashes and his Advisors meet Mara again, Mara is determined to stop them at any cost."
+additional_objectives = Array[String](["Capture the enemy horse.", "Don't let Advisors or Ashes to get captured."])
 number = "2"
 
 [node name="bonus_2" parent="Levels/2" node_paths=PackedStringArray("level_description") instance=ExtResource("2_m64e3")]
