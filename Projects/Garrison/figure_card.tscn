@@ -32,6 +32,7 @@ offset_right = 13.0
 offset_bottom = 185.0
 grow_horizontal = 2
 scale = Vector2(5, 5)
+mouse_filter = 2
 value = 34.0
 fill_mode = 2
 texture_progress = ExtResource("2_h5u7g")

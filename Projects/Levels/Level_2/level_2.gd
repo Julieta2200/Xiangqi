@@ -10,7 +10,7 @@ func _ready() -> void:
 		State.new(BoardV2.Kingdoms.FOG, FigureComponent.Types.GENERAL, Vector2i(4,9)),
 		State.new(BoardV2.Kingdoms.FOG, FigureComponent.Types.ADVISOR, Vector2i(5,9)),
 		State.new(BoardV2.Kingdoms.FOG, FigureComponent.Types.ADVISOR, Vector2i(4,8)),
-		State.new(BoardV2.Kingdoms.FOG, FigureComponent.Types.HORSE, Vector2i(6,1)),
+		State.new(BoardV2.Kingdoms.FOG, FigureComponent.Types.HORSE, Vector2i(4,5)),
 	]
 	board.initialize_position(state)
 	
