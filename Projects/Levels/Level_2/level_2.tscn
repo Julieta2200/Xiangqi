@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://etksxsfuk15y"]
+[gd_scene load_steps=11 format=3 uid="uid://etksxsfuk15y"]
 
 [ext_resource type="Script" path="res://Projects/Levels/Level_2/level_2.gd" id="1_0x84n"]
 [ext_resource type="Texture2D" uid="uid://vwdx6ewivw4v" path="res://Assets/backgrounds/Fog/Background.png" id="2_m8tki"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dcwk0tqri5mkr" path="res://Projects/Board/background_fog/fog.tscn" id="4_x6rwi"]
 [ext_resource type="PackedScene" uid="uid://br5fqscax7ejf" path="res://Projects/Camera/camera.tscn" id="5_an2ys"]
 [ext_resource type="PackedScene" uid="uid://bip87oin8clme" path="res://Projects/Ui/gameplay_ui.tscn" id="6_3msqg"]
+[ext_resource type="PackedScene" uid="uid://ba32qvdi6rk4u" path="res://Projects/Ui/hint_bubble.tscn" id="9_ibaq1"]
 [ext_resource type="PackedScene" uid="uid://cavxgtpxtng4j" path="res://Projects/Music/Music.tscn" id="9_pvlwv"]
 
 [node name="Level_2" type="Node2D"]
@@ -45,4 +46,35 @@ position = Vector2(1966, 1410)
 [node name="GameplayUI" parent="." node_paths=PackedStringArray("board") instance=ExtResource("6_3msqg")]
 board = NodePath("../Board")
 
+[node name="BlockingPanel" type="Control" parent="GameplayUI"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Hints" type="Control" parent="GameplayUI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Horses" parent="GameplayUI/Hints" instance=ExtResource("9_ibaq1")]
+visible = false
+layout_mode = 1
+offset_left = 1055.0
+offset_top = 1373.0
+offset_right = 1055.0
+offset_bottom = 1373.0
+hint = "Horses move in an L-shape: two steps in one direction and then one step perpendicular."
+number = "1/1"
+
 [node name="Music" parent="." instance=ExtResource("9_pvlwv")]
+
+[connection signal="hint_finished" from="GameplayUI/Hints/Horses" to="." method="run_hint_system"]
+[connection signal="visibility_changed" from="GameplayUI/Hints/Horses" to="." method="_horses_hint_shown"]
