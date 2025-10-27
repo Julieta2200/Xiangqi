@@ -1,7 +1,9 @@
 class_name LevelMarker extends Node2D
 
-
 enum LevelState {Closed, Open, Captured, Free}
+
+@onready var hover_music: AudioStreamPlayer = $HoverMusic
+@onready var hover_music_effects: AudioStreamPlayer = $HoverMusicEffects
 
 @onready var images: Dictionary = {
 	LevelState.Closed: load("res://Assets/Map/Markers/Big/Marker Blue.png"),
@@ -9,6 +11,9 @@ enum LevelState {Closed, Open, Captured, Free}
 	LevelState.Captured: load("res://Assets/Map/Markers/Big/Marker Red.png"),
 	LevelState.Free: load("res://Assets/Map/Markers/Big/Marker Green.png")
 }
+
+var hover_music_on = load("res://Assets/Music/UI SFX-Overworld-Hover ON.wav")
+var hover_music_off = load("res://Assets/Music/UI SFX-Overworld-Hover OFF.wav")
 
 var state: LevelState : 
 	set(s):
@@ -45,10 +50,16 @@ func _on_area_2d_mouse_entered() -> void:
 	if state == LevelState.Closed:
 		return
 	$AnimationPlayer.play("hover")
+	hover_music.play()
+	hover_music_effects.stream = hover_music_on
+	hover_music_effects.play()
 
 
 func _on_area_2d_mouse_exited() -> void:
 	$AnimationPlayer.play("RESET")
+	hover_music.stop()
+	hover_music_effects.stream = hover_music_off
+	hover_music_effects.play()
 
 
 func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
@@ -57,4 +68,5 @@ func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int
 	if event is InputEventMouseButton:
 		var mouse_event := event as InputEventMouseButton
 		if mouse_event.button_index == MOUSE_BUTTON_LEFT and mouse_event.pressed:
+			hover_music.stop()
 			level_description.setup(title, story, additional_objectives, level, number)
