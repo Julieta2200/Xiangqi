@@ -9,8 +9,6 @@ var sounds := {
 
 func _ready() -> void:
 	add_child(music_player)
-	#music_player.autoplay = false
-	#music_player.bus = "Master"
 
 func play_sound(name: String) -> void:
 	if sounds.has(name):
