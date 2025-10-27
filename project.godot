@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 GameState="*res://Projects/Levels/Overworld/game_state.gd"
 DialogSystem="*res://Projects/Ui/dialog_system.tscn"
 ShadowController="*res://Projects/Figure/shadow_controller.gd"
+AudioManager="*res://Projects/Music/AudioManager.gd"
 
 [display]
 

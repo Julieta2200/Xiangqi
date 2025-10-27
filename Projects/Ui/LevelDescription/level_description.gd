@@ -40,6 +40,19 @@ var level: PackedScene
 
 @onready var icon_image = load("res://Assets/UI/Level Description/icon.png")
 
+@onready var hover_music: AudioStreamPlayer = $HoverMusic
+@onready var hover_music_effects: AudioStreamPlayer = $HoverMusicEffects
+
+var sounds := {
+	"hover_off": preload("res://Assets/Music/UI SFX-Overworld-Hover OFF.wav"),
+
+	"play_hover_on": preload("res://Assets/Music/overworld/UI SFX-Overworld-PLAY BUTTON HOVER ON.wav"),
+	"play_hover_loop": preload("res://Assets/Music/overworld/UI SFX-Overworld-CLOSE BUTTON HOVER LOOP.wav"),
+	
+	"close_hover_on": preload("res://Assets/Music/overworld/UI SFX-Overworld-CLOSE BUTTON HOVER ON.wav"),
+	"close_hover_loop": preload("res://Assets/Music/overworld/UI SFX-Overworld-PLAY BUTTON HOVER LOOP.wav"),
+}
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	hide()
@@ -54,11 +67,32 @@ func setup(title: String, story: String, additional_objectives: Array[String], l
 	show()
 
 func _on_close_pressed() -> void:
+	AudioManager.play_sound("button_select")
 	hide()
 	
 func _on_play_pressed() -> void:
 	if level:
+		AudioManager.play_sound("play_button_select")
 		GameState.current_level_info["scene"] = level
 		GameState.current_level_info["name"] = number
 		GameState.current_level_info["objectives"] = additional_objectives
 		get_tree().change_scene_to_file("res://Projects/KarmaTable/karma_table.tscn")
+
+
+func _on_close_mouse_entered() -> void:
+	play_sound(hover_music, "close_hover_loop")
+	play_sound(hover_music_effects, "close_hover_on")
+
+func _on_play_mouse_entered() -> void:
+	play_sound(hover_music, "play_hover_loop")
+	play_sound(hover_music_effects, "play_hover_on")
+
+func _on_button_mouse_exited() -> void:
+	if !hover_music.playing:
+		return
+	hover_music.stop()
+	play_sound(hover_music_effects, "hover_off")
+
+func play_sound(player: AudioStreamPlayer, sound_name: String) -> void:
+	player.stream = sounds[sound_name]
+	player.play()
