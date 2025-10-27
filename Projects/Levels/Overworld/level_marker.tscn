@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dt7elk36ldfbg"]
+[gd_scene load_steps=10 format=3 uid="uid://dt7elk36ldfbg"]
 
 [ext_resource type="Script" path="res://Projects/Levels/Overworld/level_marker.gd" id="1_vg6g7"]
 [ext_resource type="Texture2D" uid="uid://qgqvjijxph05" path="res://Assets/Map/Markers/Big/Marker White.png" id="2_mhiqo"]
 [ext_resource type="Texture2D" uid="uid://c0elk1d0cex1a" path="res://Assets/Map/Markers/Hover.png" id="3_bwkg7"]
 [ext_resource type="FontFile" uid="uid://cog0aa6cr4xc2" path="res://Assets/Fonts/NotoSans-VariableFont_wdth,wght.ttf" id="4_cuv2n"]
+[ext_resource type="AudioStream" uid="uid://l1liciqrwh63" path="res://Assets/Music/UI SFX-Overworld-Hover LOOP.wav" id="5_wwm5f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0tqeo"]
 size = Vector2(46, 43)
@@ -86,6 +87,12 @@ text = "0"
 libraries = {
 "": SubResource("AnimationLibrary_tciei")
 }
+
+[node name="HoverMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_wwm5f")
+
+[node name="HoverMusicEffects" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_wwm5f")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
