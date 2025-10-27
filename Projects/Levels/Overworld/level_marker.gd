@@ -55,10 +55,11 @@ func _on_area_2d_mouse_entered() -> void:
 	hover_music_effects.play()
 
 func _on_area_2d_mouse_exited() -> void:
+	if state != LevelState.Closed:
+		hover_music.stop()
+		hover_music_effects.stream = hover_music_off
+		hover_music_effects.play()
 	$AnimationPlayer.play("RESET")
-	hover_music.stop()
-	hover_music_effects.stream = hover_music_off
-	hover_music_effects.play()
 
 
 func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
