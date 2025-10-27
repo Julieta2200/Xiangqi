@@ -54,7 +54,6 @@ func _on_area_2d_mouse_entered() -> void:
 	hover_music_effects.stream = hover_music_on
 	hover_music_effects.play()
 
-
 func _on_area_2d_mouse_exited() -> void:
 	$AnimationPlayer.play("RESET")
 	hover_music.stop()
