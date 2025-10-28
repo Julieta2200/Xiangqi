@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://chmuokpujhvya"]
+[gd_scene load_steps=22 format=3 uid="uid://chmuokpujhvya"]
 
 [ext_resource type="Script" path="res://Projects/Ui/LevelDescription/level_description.gd" id="1_h34w6"]
 [ext_resource type="Texture2D" uid="uid://ckayx5tiplihp" path="res://Assets/UI/Level Description/World_Info_Screen.png" id="2_32huv"]
@@ -9,6 +9,8 @@
 [ext_resource type="FontFile" uid="uid://cog0aa6cr4xc2" path="res://Assets/Fonts/NotoSans-VariableFont_wdth,wght.ttf" id="5_f3rhk"]
 [ext_resource type="FontFile" uid="uid://dvp3kgcd16fjp" path="res://Assets/Fonts/Cinzel-VariableFont_wght.ttf" id="5_hfxyk"]
 [ext_resource type="FontFile" uid="uid://dng46o0j6hxr6" path="res://Assets/Fonts/Cinzel-Bold.ttf" id="5_nysge"]
+[ext_resource type="AudioStream" uid="uid://l1liciqrwh63" path="res://Assets/Music/UI SFX-Overworld-Hover LOOP.wav" id="10_d0rng"]
+[ext_resource type="AudioStream" uid="uid://si2lcb3dnurs" path="res://Assets/Music/overworld/UI SFX-Overworld-PLAY BUTTON SELECT.wav" id="12_0g4sm"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_avhuy"]
 texture = ExtResource("2_32huv")
@@ -181,5 +183,15 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_ssdjx")
 theme_override_styles/normal = SubResource("StyleBoxTexture_1jwao")
 text = "PLAY"
 
+[node name="HoverMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_d0rng")
+
+[node name="HoverMusicEffects" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_0g4sm")
+
+[connection signal="mouse_entered" from="Panel/Close" to="." method="_on_close_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/Close" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="Panel/Close" to="." method="_on_close_pressed"]
+[connection signal="mouse_entered" from="Panel/Play" to="." method="_on_play_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/Play" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="Panel/Play" to="." method="_on_play_pressed"]

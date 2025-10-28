@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://ba32qvdi6rk4u"]
+[gd_scene load_steps=8 format=3 uid="uid://ba32qvdi6rk4u"]
 
 [ext_resource type="Script" path="res://Projects/Ui/hint_bubble.gd" id="1_i75f0"]
 [ext_resource type="Texture2D" uid="uid://dyifme75yew4k" path="res://Assets/UI/Hint system.png" id="2_py56b"]
 [ext_resource type="FontFile" uid="uid://cog0aa6cr4xc2" path="res://Assets/Fonts/NotoSans-VariableFont_wdth,wght.ttf" id="3_20ua1"]
 [ext_resource type="FontFile" uid="uid://dng46o0j6hxr6" path="res://Assets/Fonts/Cinzel-Bold.ttf" id="5_7sdqd"]
+[ext_resource type="AudioStream" uid="uid://c4dqj2i8q0gx2" path="res://Assets/Music/karma_table/UI SFX-Karma Table-DIALOG BOX SHOWN.wav" id="5_g2cyu"]
+[ext_resource type="AudioStream" uid="uid://l1liciqrwh63" path="res://Assets/Music/UI SFX-Overworld-Hover LOOP.wav" id="6_2obqo"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k1xa7"]
 
@@ -71,4 +73,12 @@ keep_pressed_outside = true
 text = "NEXT"
 flat = true
 
+[node name="HoverMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_g2cyu")
+
+[node name="HoverMusicEffects" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_2obqo")
+
+[connection signal="mouse_entered" from="Panel/Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/Button" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
