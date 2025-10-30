@@ -20,6 +20,7 @@ signal special(marker)
 
 var state: Highlights
 var trap: bool = false
+var tween : Tween
 
 func play_spawn_audio():
 	if spawn_audio != null:
@@ -88,6 +89,16 @@ func unhighlight():
 
 func _on_area_2d_mouse_entered() -> void:
 	$walking_marker/highlight.visible = $walking_marker.visible
+	var highlight_mat = $walking_marker/highlight.material
+	highlight_mat.set_shader_parameter("reveal_progress", 0.0)
+	
+	if tween != null and tween.is_valid():
+		tween.stop()
+	tween = create_tween()
+	tween.tween_property(highlight_mat, "shader_parameter/reveal_progress", 1,1 ) \
+		.set_trans(Tween.TRANS_SINE) \
+		.set_ease(Tween.EASE_OUT)
+
 
 func _on_area_2d_mouse_exited() -> void:
 	if state == Highlights.SELECTED:

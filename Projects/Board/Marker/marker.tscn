@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dlkpgwakp3ub7"]
+[gd_scene load_steps=39 format=3 uid="uid://dlkpgwakp3ub7"]
 
 [ext_resource type="Script" path="res://Projects/Board/Marker/marker.gd" id="1_y3i0m"]
 [ext_resource type="Texture2D" uid="uid://dsyf0a73jp6x8" path="res://Assets/UI/Position_Marker/new/Position_Marker1.png" id="2_ptf1s"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://c8muq0ypwo4p2" path="res://Assets/UI/Markers/Step/Green/Step(green).png" id="17_dhjjc"]
 [ext_resource type="Texture2D" uid="uid://d4m2tnrgj6wrw" path="res://Assets/UI/Markers/Step/Red/Step(red).png" id="17_dydj3"]
 [ext_resource type="Texture2D" uid="uid://ciifsokvcvanb" path="res://Assets/UI/Markers/Step/Red/Hover(red).png" id="18_8dlv2"]
+[ext_resource type="Material" uid="uid://3mruadlod26m" path="res://Projects/Shaders/reveal.tres" id="19_7h5fy"]
 [ext_resource type="Texture2D" uid="uid://bk6ur1iod1mo1" path="res://Assets/UI/Markers/Step/Green/Hover(green).png" id="19_vtfx4"]
 [ext_resource type="AudioStream" uid="uid://dpp82cn8plei0" path="res://Assets/Music/Spawn_sound/UI SFX-SPAWNING-CLICK ON BOARD.wav" id="22_4drkn"]
 [ext_resource type="AudioStream" uid="uid://btcd0gd2a511t" path="res://Assets/Music/Spawn_sound/CHARACTER SPAWN-1.wav" id="22_linaf"]
@@ -252,6 +253,7 @@ autoplay = "move"
 
 [node name="highlight" type="AnimatedSprite2D" parent="walking_marker"]
 visible = false
+material = ExtResource("19_7h5fy")
 position = Vector2(0, -33.5)
 sprite_frames = SubResource("SpriteFrames_o72yf")
 animation = &"highlight"
