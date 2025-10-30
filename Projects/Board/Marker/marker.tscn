@@ -2,16 +2,11 @@
 
 [ext_resource type="Script" path="res://Projects/Board/Marker/marker.gd" id="1_y3i0m"]
 [ext_resource type="Texture2D" uid="uid://dsyf0a73jp6x8" path="res://Assets/UI/Position_Marker/new/Position_Marker1.png" id="2_ptf1s"]
-[ext_resource type="Texture2D" uid="uid://dia2v0yg34v87" path="res://Assets/UI/Markers/Step Icon/icon.png" id="2_r8c08"]
-[ext_resource type="Texture2D" uid="uid://bufqung6psup2" path="res://Assets/UI/Markers/StepGlow (Red)/StepGlow(1).png" id="2_s7g8i"]
 [ext_resource type="Texture2D" uid="uid://cfygcxdlbtl2p" path="res://Assets/UI/Position_Marker/new/Position_Marker2.png" id="3_m6i3h"]
-[ext_resource type="Texture2D" uid="uid://ut2w4mpj4tg7" path="res://Assets/UI/Markers/StepGlow (Yellow)/StepGlow(1).png" id="3_tltih"]
 [ext_resource type="Texture2D" uid="uid://cfo0oka0s8dxt" path="res://Assets/UI/Position_Marker/new/Position_Marker3.png" id="4_2pspl"]
 [ext_resource type="Texture2D" uid="uid://bft1pujlaiybb" path="res://Assets/UI/Position_Marker/new/Position_Marker4.png" id="5_amcgv"]
-[ext_resource type="Texture2D" uid="uid://nthq6mgcs2f0" path="res://Assets/UI/Markers/StepGlow (Yellow)/StepGlow(2).png" id="5_bnpjt"]
 [ext_resource type="Texture2D" uid="uid://cmpe6g3ydn6fu" path="res://Assets/UI/Position_Marker/new/Position_Marker5.png" id="6_6rdwj"]
 [ext_resource type="Texture2D" uid="uid://dtb01pc0c4jnj" path="res://Assets/UI/Position_Marker/new/Position_Marker6.png" id="7_6uy0i"]
-[ext_resource type="Texture2D" uid="uid://c6khya78ox7ud" path="res://Assets/UI/Markers/StepGlow (Red)/StepGlow(2).png" id="7_ulkbh"]
 [ext_resource type="Texture2D" uid="uid://ynp41d0tippr" path="res://Assets/UI/Position_Marker/new/Position_Marker7.png" id="8_ksut5"]
 [ext_resource type="Texture2D" uid="uid://2y36gtxvvhl7" path="res://Assets/UI/Position_Marker/new/Position_Marker8.png" id="9_umryo"]
 [ext_resource type="Texture2D" uid="uid://c6di7b4tkki2u" path="res://Assets/UI/Position_Marker/new/Position_Marker9.png" id="10_vrceb"]
@@ -21,6 +16,10 @@
 [ext_resource type="Texture2D" uid="uid://b2f2wx0vnklxm" path="res://Assets/UI/Position_Marker/Light/Red/Light(2).png" id="15_7n74w"]
 [ext_resource type="Texture2D" uid="uid://bgb85470yc28d" path="res://Assets/UI/Position_Marker/Light/Red/Light(3).png" id="16_63jhy"]
 [ext_resource type="Texture2D" uid="uid://y7r71wir7q45" path="res://Assets/UI/Position_Marker/Light/Red/Light(4).png" id="17_0x4tg"]
+[ext_resource type="Texture2D" uid="uid://c8muq0ypwo4p2" path="res://Assets/UI/Markers/Step/Green/Step(green).png" id="17_dhjjc"]
+[ext_resource type="Texture2D" uid="uid://d4m2tnrgj6wrw" path="res://Assets/UI/Markers/Step/Red/Step(red).png" id="17_dydj3"]
+[ext_resource type="Texture2D" uid="uid://ciifsokvcvanb" path="res://Assets/UI/Markers/Step/Red/Hover(red).png" id="18_8dlv2"]
+[ext_resource type="Texture2D" uid="uid://bk6ur1iod1mo1" path="res://Assets/UI/Markers/Step/Green/Hover(green).png" id="19_vtfx4"]
 [ext_resource type="AudioStream" uid="uid://dpp82cn8plei0" path="res://Assets/Music/Spawn_sound/UI SFX-SPAWNING-CLICK ON BOARD.wav" id="22_4drkn"]
 [ext_resource type="AudioStream" uid="uid://btcd0gd2a511t" path="res://Assets/Music/Spawn_sound/CHARACTER SPAWN-1.wav" id="22_linaf"]
 [ext_resource type="AudioStream" uid="uid://k3tme5k5yily" path="res://Assets/Music/Spawn_sound/CHARACTER SPAWN-2.wav" id="23_xamy8"]
@@ -126,14 +125,30 @@ animations = [{
 "speed": 3.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_cs2ip"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_dydj3")
+}],
+"loop": true,
+"name": &"capture",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_dhjjc")
+}],
+"loop": true,
+"name": &"move",
+"speed": 5.0
+}]
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_o72yf"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_s7g8i")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_ulkbh")
+"texture": ExtResource("18_8dlv2")
 }],
 "loop": true,
 "name": &"capture_highlight",
@@ -141,10 +156,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_tltih")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_bnpjt")
+"texture": ExtResource("19_vtfx4")
 }],
 "loop": true,
 "name": &"highlight",
@@ -189,17 +201,18 @@ sprite_frames = SubResource("SpriteFrames_6aho4")
 autoplay = "default"
 frame_progress = 0.279335
 
-[node name="walking_marker" type="Sprite2D" parent="."]
+[node name="walking_marker" type="AnimatedSprite2D" parent="."]
 visible = false
-position = Vector2(-1, -5)
 scale = Vector2(2, 2)
-texture = ExtResource("2_r8c08")
+sprite_frames = SubResource("SpriteFrames_cs2ip")
+animation = &"move"
+autoplay = "move"
 
 [node name="highlight" type="AnimatedSprite2D" parent="walking_marker"]
 visible = false
-position = Vector2(0, -13)
+position = Vector2(0, -33.5)
 sprite_frames = SubResource("SpriteFrames_o72yf")
-animation = &"capture_highlight"
+animation = &"highlight"
 autoplay = "highlight"
 
 [node name="Area2D" type="Area2D" parent="."]

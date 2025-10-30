@@ -4,7 +4,7 @@ enum Highlights {NONE, MOVE, CAPTURE, SPAWN, SELECTED, SPECIAL}
 
 var board_position: Vector2i
 var clickable: bool = true
-@onready var walking_marker: Sprite2D = $walking_marker
+@onready var walking_marker: AnimatedSprite2D = $walking_marker
 @onready var spawn_marker: AnimatedSprite2D = $spawn_marker
 @onready var spawn_light: AnimatedSprite2D = $spawn_marker/light
 @onready var spawn_audio: AudioStreamPlayer = $spawn_audio
@@ -57,16 +57,16 @@ func highlight(type: Highlights) -> void:
 	match type:
 		Highlights.MOVE:
 			$walking_marker/highlight.play("highlight")
+			walking_marker.play("move")
 			walking_marker.show()
 		Highlights.CAPTURE:
+			walking_marker.play("capture")
 			$walking_marker/highlight.play("capture_highlight")
 			walking_marker.show()
 		Highlights.SPAWN:
 			spawn_marker.show()
 		Highlights.SELECTED:
-			$walking_marker/highlight.play("capture_highlight")
-			walking_marker.show()
-			$walking_marker/highlight.show()
+			pass
 		Highlights.SPECIAL:
 			$special_marker.show()
 		

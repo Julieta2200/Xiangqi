@@ -169,6 +169,8 @@ func show_move_markers(positions: Array[Vector2i], figure: FigureComponent) -> v
 	clear_markers()
 	ui.garrison.deselect_cards()
 	ui.card_slots.deselect_cards()
+	if _selected_figure != null:
+		_selected_figure.ui_component.selected = false
 	_selected_figure = figure
 	markers[figure.chess_component.position].highlight(BoardMarker.Highlights.SELECTED)
 	for pos in positions:
@@ -182,7 +184,11 @@ func show_move_markers(positions: Array[Vector2i], figure: FigureComponent) -> v
 					if pos.y <= 4:
 						continue
 		var marker: BoardMarker = markers[pos]
-		marker.highlight(BoardMarker.Highlights.MOVE)
+		
+		if state.has(pos) and figure.chess_component.position != pos:
+			marker.highlight(BoardMarker.Highlights.CAPTURE)
+		else:
+			marker.highlight(BoardMarker.Highlights.MOVE)
 
 func set_figure(figure: FigureComponent, pos: Vector2i) -> void:
 	state[pos] = figure
