@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dlkpgwakp3ub7"]
+[gd_scene load_steps=38 format=3 uid="uid://dlkpgwakp3ub7"]
 
 [ext_resource type="Script" path="res://Projects/Board/Marker/marker.gd" id="1_y3i0m"]
 [ext_resource type="Texture2D" uid="uid://dsyf0a73jp6x8" path="res://Assets/UI/Position_Marker/new/Position_Marker1.png" id="2_ptf1s"]
@@ -176,6 +176,46 @@ stream_3/stream = ExtResource("25_lkkaf")
 stream_4/stream = ExtResource("26_vvnlj")
 stream_5/stream = ExtResource("27_sxb85")
 
+[sub_resource type="Animation" id="Animation_78unw"]
+resource_name = "spawn_marker_unhighlight"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("spawn_marker:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ndf8l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("spawn_marker:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fs20w"]
+resource_name = "walking_marker_highlight"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yu1yn"]
+_data = {
+"RESET": SubResource("Animation_ndf8l"),
+"spawn_marker_unhighlight": SubResource("Animation_78unw"),
+"walking_marker_highlight": SubResource("Animation_fs20w")
+}
+
 [node name="Marker" type="Node2D"]
 visibility_layer = 17
 script = ExtResource("1_y3i0m")
@@ -192,6 +232,8 @@ visible = false
 position = Vector2(0, -64)
 sprite_frames = SubResource("SpriteFrames_vn7pl")
 animation = &"light"
+frame = 6
+frame_progress = 1.0
 
 [node name="special_marker" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -229,7 +271,13 @@ stream = SubResource("AudioStreamRandomizer_787hn")
 [node name="click_audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_4drkn")
 
+[node name="SpawnAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_yu1yn")
+}
+
 [connection signal="animation_finished" from="spawn_marker/light" to="." method="_on_spawn_light_animation_finished"]
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="animation_finished" from="SpawnAnimationPlayer" to="." method="_on_spawn_unhighlight_animation_finished"]

@@ -52,21 +52,23 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -3911.0
-offset_bottom = -2200.0
+offset_left = 30.0
+offset_top = 128.0
+offset_right = -3881.0
+offset_bottom = -2072.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/LLs"]
 layout_mode = 1
-offset_left = 520.0
-offset_top = 140.0
-offset_right = 997.0
-offset_bottom = 336.0
+offset_left = 464.0
+offset_top = 250.0
+offset_right = 1054.0
+offset_bottom = 446.0
 theme_override_colors/font_color = Color(0.984314, 0.760784, 0.211765, 1)
 theme_override_fonts/font = ExtResource("4_mo4m0")
 theme_override_font_sizes/font_size = 100
-text = "Low Level"
+text = "LOW LEVEL"
 
 [node name="LL_card4" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
 layout_mode = 0
@@ -171,6 +173,10 @@ layout_mode = 3
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
+offset_left = 30.0
+offset_top = 128.0
+offset_right = 30.0
+offset_bottom = 128.0
 grow_horizontal = 0
 
 [node name="HL_card" parent="CanvasLayer/HLs" instance=ExtResource("4_r0sd7")]
@@ -213,15 +219,15 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -935.0
-offset_top = 140.0
-offset_right = -418.0
-offset_bottom = 336.0
+offset_left = -983.0
+offset_top = 250.0
+offset_right = -346.0
+offset_bottom = 446.0
 grow_horizontal = 0
 theme_override_colors/font_color = Color(0.984314, 0.760784, 0.211765, 1)
 theme_override_fonts/font = ExtResource("4_mo4m0")
 theme_override_font_sizes/font_size = 100
-text = "High Level"
+text = "HIGH LEVEL"
 
 [node name="Back" type="Button" parent="CanvasLayer"]
 anchors_preset = 2

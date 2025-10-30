@@ -17,12 +17,8 @@ var state: LevelState :
 		state = s
 		marker.texture = images[state]
 
-var move_count: 
-	set(n):
-		move_count = n
-		move_count_label.text = str(move_count)
+var move_count: int
 
-@onready var move_count_label: Label = $move_count
 @onready var hover: TextureProgressBar = $Hover
 @onready var marker: Sprite2D = $Marker
 

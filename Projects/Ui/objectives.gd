@@ -19,6 +19,7 @@ var objectives: Array[String] = [] :
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if GameState.current_level_info["objectives"].size() > 0:
+		objectives_panel.show()
 		objectives = GameState.current_level_info["objectives"]
 
 

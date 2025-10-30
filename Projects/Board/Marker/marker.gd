@@ -74,7 +74,8 @@ func highlight(type: Highlights) -> void:
 func unhighlight():
 	if state == Highlights.SELECTED:
 		$walking_marker/highlight.hide()
-	spawn_marker.hide()
+	if spawn_marker.visible:
+		$SpawnAnimationPlayer.play("spawn_marker_unhighlight")
 	walking_marker.hide()
 	$special_marker.hide()
 	state = Highlights.NONE
@@ -97,3 +98,9 @@ func _on_spawn_light_animation_finished() -> void:
 	emit_signal("spawn_done", self)
 	await get_tree().process_frame
 	spawn_light.hide()
+
+
+func _on_spawn_unhighlight_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "spawn_marker_unhighlight":
+		$SpawnAnimationPlayer.play("RESET")
+		spawn_marker.call_deferred("hide")

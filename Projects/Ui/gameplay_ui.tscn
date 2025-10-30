@@ -32,5 +32,9 @@ offset_left = -711.0
 offset_right = -711.0
 
 [node name="Objectives" parent="." instance=ExtResource("6_tjnwn")]
+offset_left = -32.0
+offset_top = 8.0
+offset_right = -32.0
+offset_bottom = 8.0
 
 [connection signal="card_selected" from="Garrison" to="." method="_on_garrison_card_selected"]
