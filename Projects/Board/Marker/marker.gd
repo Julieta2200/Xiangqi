@@ -24,7 +24,8 @@ var trap: bool = false
 func play_spawn_audio():
 	if spawn_audio != null:
 		spawn_audio.play()
-	click_audio.play()
+	if click_audio != null:
+		click_audio.play()
 
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	if clickable and event is InputEventMouseButton:
