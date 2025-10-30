@@ -16,6 +16,7 @@ var active: bool = true:
 var selected: bool:
 	set(s):
 		selected = s
+		icon.modulate.a = 1
 		if selected:
 			modulate = Color(0.984,0.761,0.212,1)
 		else:

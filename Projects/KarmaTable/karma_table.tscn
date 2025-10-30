@@ -312,10 +312,10 @@ offset_bottom = 40.0
 [node name="HintBubble" parent="CanvasLayer/Hints" instance=ExtResource("3_ddsu4")]
 visible = false
 layout_mode = 1
-offset_left = 1115.0
-offset_top = 181.0
-offset_right = 1115.0
-offset_bottom = 181.0
+offset_left = 1248.0
+offset_top = 438.0
+offset_right = 1248.0
+offset_bottom = 438.0
 hint = "Low level special abilities cards․LL special ability is open when you set free bonus level. "
 number = "1/2"
 
@@ -323,9 +323,9 @@ number = "1/2"
 visible = false
 layout_mode = 1
 offset_left = 2039.0
-offset_top = 171.0
+offset_top = 450.0
 offset_right = 2039.0
-offset_bottom = 171.0
+offset_bottom = 450.0
 hint = "High level special abilities cards․New HL special ability is open when you conquer 3 bonus levels."
 number = "2/2"
 

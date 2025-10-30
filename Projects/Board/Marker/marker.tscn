@@ -16,11 +16,11 @@
 [ext_resource type="Texture2D" uid="uid://b2f2wx0vnklxm" path="res://Assets/UI/Position_Marker/Light/Red/Light(2).png" id="15_7n74w"]
 [ext_resource type="Texture2D" uid="uid://bgb85470yc28d" path="res://Assets/UI/Position_Marker/Light/Red/Light(3).png" id="16_63jhy"]
 [ext_resource type="Texture2D" uid="uid://y7r71wir7q45" path="res://Assets/UI/Position_Marker/Light/Red/Light(4).png" id="17_0x4tg"]
-[ext_resource type="Texture2D" uid="uid://c8muq0ypwo4p2" path="res://Assets/UI/Markers/Step/Green/Step(green).png" id="17_dhjjc"]
 [ext_resource type="Texture2D" uid="uid://d4m2tnrgj6wrw" path="res://Assets/UI/Markers/Step/Red/Step(red).png" id="17_dydj3"]
 [ext_resource type="Texture2D" uid="uid://ciifsokvcvanb" path="res://Assets/UI/Markers/Step/Red/Hover(red).png" id="18_8dlv2"]
+[ext_resource type="Texture2D" uid="uid://cn8ktjrpep7wu" path="res://Assets/UI/Markers/Step/Blue/Step(blue).png" id="18_fm4tj"]
 [ext_resource type="Material" uid="uid://3mruadlod26m" path="res://Projects/Shaders/reveal.tres" id="19_7h5fy"]
-[ext_resource type="Texture2D" uid="uid://bk6ur1iod1mo1" path="res://Assets/UI/Markers/Step/Green/Hover(green).png" id="19_vtfx4"]
+[ext_resource type="Texture2D" uid="uid://bea7ndghl31cw" path="res://Assets/UI/Markers/Step/Blue/Hover(blue).png" id="21_8cexq"]
 [ext_resource type="AudioStream" uid="uid://dpp82cn8plei0" path="res://Assets/Music/Spawn_sound/UI SFX-SPAWNING-CLICK ON BOARD.wav" id="22_4drkn"]
 [ext_resource type="AudioStream" uid="uid://btcd0gd2a511t" path="res://Assets/Music/Spawn_sound/CHARACTER SPAWN-1.wav" id="22_linaf"]
 [ext_resource type="AudioStream" uid="uid://k3tme5k5yily" path="res://Assets/Music/Spawn_sound/CHARACTER SPAWN-2.wav" id="23_xamy8"]
@@ -138,7 +138,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("17_dhjjc")
+"texture": ExtResource("18_fm4tj")
 }],
 "loop": true,
 "name": &"move",
@@ -157,7 +157,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("19_vtfx4")
+"texture": ExtResource("21_8cexq")
 }],
 "loop": true,
 "name": &"highlight",
