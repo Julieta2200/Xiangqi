@@ -24,6 +24,7 @@ const figure_energies = {
 }
 
 @export var type: FigureComponent.Types 
+@onready var click_sound: AudioStreamPlayer = $click_sound
 
 signal selected(FigureCard)
 
@@ -63,6 +64,7 @@ func _ready() -> void:
 func _on_card_gui_input(event: InputEvent):
 	if event.is_action_pressed("click") and active:
 		scale *= 1.2
+		click_sound.play()
 		emit_signal("selected", self)
 
 func deselect() -> void:

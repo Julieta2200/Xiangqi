@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://b64tprtkglda1"]
+[gd_scene load_steps=4 format=3 uid="uid://b64tprtkglda1"]
 
 [ext_resource type="Script" path="res://Projects/Ui/objectives.gd" id="1_tsv4s"]
+[ext_resource type="Texture2D" uid="uid://c0034h748dyxl" path="res://Assets/UI/Objective/Objective.png" id="2_0157r"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m4cil"]
+texture = ExtResource("2_0157r")
 
 [node name="Objectives" type="Control"]
 layout_mode = 3
@@ -12,16 +16,32 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_tsv4s")
 
-[node name="ObjectivesContainer" type="VBoxContainer" parent="."]
+[node name="Objectives_panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -387.0
-offset_top = -216.0
-offset_right = -347.0
-offset_bottom = -176.0
+offset_left = -918.0
+offset_top = -307.0
+offset_right = -509.0
+offset_bottom = -216.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(2, 2)
+theme_override_styles/panel = SubResource("StyleBoxTexture_m4cil")
+
+[node name="ObjectivesContainer" type="VBoxContainer" parent="Objectives_panel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -388.0
+offset_top = -81.0
+offset_right = -16.0
+offset_bottom = -11.0
 grow_horizontal = 0
 grow_vertical = 0

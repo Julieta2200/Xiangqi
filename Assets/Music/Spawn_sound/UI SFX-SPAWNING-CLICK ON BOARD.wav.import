@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dpp82cn8plei0"
+path="res://.godot/imported/UI SFX-SPAWNING-CLICK ON BOARD.wav-85fad817652a3383dda2cdc0af9ebcb1.sample"
+
+[deps]
+
+source_file="res://Assets/Music/Spawn_sound/UI SFX-SPAWNING-CLICK ON BOARD.wav"
+dest_files=["res://.godot/imported/UI SFX-SPAWNING-CLICK ON BOARD.wav-85fad817652a3383dda2cdc0af9ebcb1.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

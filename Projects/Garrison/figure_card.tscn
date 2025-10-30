@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dbvg1wddl1i3g"]
+[gd_scene load_steps=7 format=3 uid="uid://dbvg1wddl1i3g"]
 
 [ext_resource type="Script" path="res://Projects/Garrison/figure_card.gd" id="1_qr4yr"]
 [ext_resource type="Texture2D" uid="uid://ud0eci644pap" path="res://Assets/UI/Garrison/Garrison.png" id="2_gijka"]
 [ext_resource type="Texture2D" uid="uid://b5y5veoqw6otr" path="res://Assets/Characters/Magma/Pawn/Pawn_front.png" id="2_h5u7g"]
 [ext_resource type="FontFile" uid="uid://cog0aa6cr4xc2" path="res://Assets/Fonts/NotoSans-VariableFont_wdth,wght.ttf" id="4_7den3"]
+[ext_resource type="AudioStream" uid="uid://c4pqquaroe6pm" path="res://Assets/Music/Spawn_sound/UI SFX-SPAWNING-CLICK ON CHOOSER.wav" id="5_rj5qv"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5aqk6"]
 texture = ExtResource("2_gijka")
@@ -53,6 +54,9 @@ theme_override_font_sizes/font_size = 30
 text = "Pawn"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="click_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_rj5qv")
 
 [connection signal="gui_input" from="card" to="." method="_on_card_gui_input"]
 [connection signal="mouse_entered" from="card" to="." method="_on_card_mouse_entered"]
