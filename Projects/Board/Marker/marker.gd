@@ -7,18 +7,10 @@ var clickable: bool = true
 @onready var walking_marker: Sprite2D = $walking_marker
 @onready var spawn_marker: AnimatedSprite2D = $spawn_marker
 @onready var spawn_light: AnimatedSprite2D = $spawn_marker/light
-var board: BoardV2
+@onready var spawn_audio: AudioStreamPlayer = $spawn_audio
+@onready var click_audio: AudioStreamPlayer = $click_audio
 
-var spawn_sounds: Array = [
-	preload("res://Assets/Music/Spawn_sound/CHARACTER SPAWN-1.wav"),
-	preload("res://Assets/Music/Spawn_sound/CHARACTER SPAWN-2.wav"),
-	preload("res://Assets/Music/Spawn_sound/CHARACTER SPAWN-3.wav"),
-	preload("res://Assets/Music/Spawn_sound/CHARACTER SPAWN-4.wav"),
-	preload("res://Assets/Music/Spawn_sound/CHARACTER SPAWN-5.wav"),
-	preload("res://Assets/Music/Spawn_sound/CHARACTER SPAWN-6.wav")
-]
-@onready var spawn_sound: AudioStreamPlayer = $spawn_sound
-@onready var click_sound: AudioStreamPlayer = $click_sound
+var board: BoardV2
 
 signal figure_move(marker)
 signal figure_spawn(marker)
@@ -29,12 +21,10 @@ signal special(marker)
 var state: Highlights
 var trap: bool = false
 
-func play_sound():
-	randomize()
-	var sound = spawn_sounds.pick_random()
-	spawn_sound.stream = sound
-	spawn_sound.play()
-	click_sound.play()
+func play_spawn_audio():
+	if spawn_audio != null:
+		spawn_audio.play()
+	click_audio.play()
 
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	if clickable and event is InputEventMouseButton:
@@ -47,7 +37,7 @@ func click() -> void:
 		Highlights.MOVE, Highlights.CAPTURE:
 			emit_signal("figure_move",self)
 		Highlights.SPAWN:
-			play_sound()
+			play_spawn_audio()
 			spawn_light.show()
 			spawn_light.play("light")
 			emit_signal("figure_spawn",self)
