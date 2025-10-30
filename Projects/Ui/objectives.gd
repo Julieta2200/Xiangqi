@@ -1,16 +1,18 @@
 class_name Objectives extends Control
 
-const FAIL_OBJECTIVE_COLOR: Color = Color.RED
-const SUCCESS_OBJECTIVE_COLOR: Color = Color.GREEN
+const FAIL_OBJECTIVE_COLOR: Color = Color(0.85,0.28,0.28,1)
+const SUCCESS_OBJECTIVE_COLOR: Color = Color(0.23,0.92,0.92,1)
 
 
-@onready var objectives_container: VBoxContainer = $ObjectivesContainer
+@onready var objectives_container: VBoxContainer = $Objectives_panel/ObjectivesContainer
+@onready var objectives_panel: Panel = $Objectives_panel
+
 var objectives: Array[String] = [] :
 	set(value):
 		objectives = value
 		for objective in objectives:
 			var label = Label.new()
-			label.add_theme_font_size_override("font_size", 30)
+			label.size_flags_vertical = Control.SIZE_EXPAND_FILL
 			label.text = objective
 			objectives_container.add_child(label)
 
@@ -21,8 +23,7 @@ func _ready() -> void:
 
 
 func complete_objectives(win: bool) -> void:
-	for objective in objectives_container.get_children():
-		if win:
-			objective.add_theme_color_override("font_color", SUCCESS_OBJECTIVE_COLOR)
-		else:
-			objective.add_theme_color_override("font_color", FAIL_OBJECTIVE_COLOR)
+	if win:
+		objectives_panel.modulate = SUCCESS_OBJECTIVE_COLOR
+	else:
+		objectives_panel.modulate = FAIL_OBJECTIVE_COLOR

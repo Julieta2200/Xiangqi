@@ -6,9 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://dcslgins2nf6r" path="res://Assets/Map/Whole Map/Background.png" id="2_p2gw2"]
 [ext_resource type="Texture2D" uid="uid://xlfx4x7qsoxk" path="res://Assets/UI/Level Description/Task_Panel.png" id="3_3w34j"]
 [ext_resource type="Texture2D" uid="uid://dtxqtqw7vh0b5" path="res://Assets/UI/Level Description/Buuton.png" id="5_8btgg"]
-[ext_resource type="FontFile" uid="uid://cog0aa6cr4xc2" path="res://Assets/Fonts/NotoSans-VariableFont_wdth,wght.ttf" id="5_f3rhk"]
 [ext_resource type="FontFile" uid="uid://dvp3kgcd16fjp" path="res://Assets/Fonts/Cinzel-VariableFont_wght.ttf" id="5_hfxyk"]
 [ext_resource type="FontFile" uid="uid://dng46o0j6hxr6" path="res://Assets/Fonts/Cinzel-Bold.ttf" id="5_nysge"]
+[ext_resource type="FontFile" uid="uid://dm0qc34c6cd20" path="res://Assets/Fonts/NotoSans-ExtraLight.ttf" id="7_23st0"]
 [ext_resource type="AudioStream" uid="uid://l1liciqrwh63" path="res://Assets/Music/UI SFX-Overworld-Hover LOOP.wav" id="10_d0rng"]
 [ext_resource type="AudioStream" uid="uid://si2lcb3dnurs" path="res://Assets/Music/overworld/UI SFX-Overworld-PLAY BUTTON SELECT.wav" id="12_0g4sm"]
 
@@ -100,10 +100,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -829.0
-offset_top = 37.0
-offset_right = 829.0
-offset_bottom = 337.0
+offset_left = -830.5
+offset_top = -49.0
+offset_right = 827.5
+offset_bottom = 251.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_d32ry")
@@ -133,12 +133,12 @@ anchor_bottom = 0.5
 offset_left = -850.0
 offset_top = -313.0
 offset_right = 850.0
-offset_bottom = 22.0
+offset_bottom = -63.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/normal_font = ExtResource("5_f3rhk")
+theme_override_fonts/normal_font = ExtResource("7_23st0")
 theme_override_font_sizes/normal_font_size = 40
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.	"
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure "
 
 [node name="Close" type="Button" parent="Panel"]
 layout_mode = 1
@@ -153,7 +153,7 @@ grow_vertical = 0
 theme_override_colors/font_hover_color = Color(0.984314, 0.760784, 0.211765, 1)
 theme_override_colors/font_pressed_color = Color(0.984314, 0.760784, 0.211765, 1)
 theme_override_fonts/font = ExtResource("5_hfxyk")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 40
 theme_override_styles/focus = SubResource("StyleBoxTexture_ibtv8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_58y7q")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_aur21")
@@ -176,7 +176,7 @@ grow_vertical = 0
 theme_override_colors/font_hover_color = Color(0.984314, 0.760784, 0.211765, 1)
 theme_override_colors/font_pressed_color = Color(0.984314, 0.760784, 0.211765, 1)
 theme_override_fonts/font = ExtResource("5_hfxyk")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 40
 theme_override_styles/focus = SubResource("StyleBoxTexture_cj6p8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_usvnt")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ssdjx")

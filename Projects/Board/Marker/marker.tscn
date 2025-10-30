@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dlkpgwakp3ub7"]
+[gd_scene load_steps=27 format=3 uid="uid://dlkpgwakp3ub7"]
 
 [ext_resource type="Script" path="res://Projects/Board/Marker/marker.gd" id="1_y3i0m"]
 [ext_resource type="Texture2D" uid="uid://dsyf0a73jp6x8" path="res://Assets/UI/Position_Marker/new/Position_Marker1.png" id="2_ptf1s"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://b2f2wx0vnklxm" path="res://Assets/UI/Position_Marker/Light/Red/Light(2).png" id="15_7n74w"]
 [ext_resource type="Texture2D" uid="uid://bgb85470yc28d" path="res://Assets/UI/Position_Marker/Light/Red/Light(3).png" id="16_63jhy"]
 [ext_resource type="Texture2D" uid="uid://y7r71wir7q45" path="res://Assets/UI/Position_Marker/Light/Red/Light(4).png" id="17_0x4tg"]
+[ext_resource type="AudioStream" uid="uid://dpp82cn8plei0" path="res://Assets/Music/Spawn_sound/UI SFX-SPAWNING-CLICK ON BOARD.wav" id="22_4drkn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6aho4"]
 animations = [{
@@ -193,6 +194,11 @@ visible = false
 top_level = true
 z_index = 1
 shape = SubResource("CapsuleShape2D_vg2kh")
+
+[node name="spawn_sound" type="AudioStreamPlayer" parent="."]
+
+[node name="click_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_4drkn")
 
 [connection signal="animation_finished" from="spawn_marker/light" to="." method="_on_spawn_light_animation_finished"]
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
