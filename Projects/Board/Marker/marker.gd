@@ -4,7 +4,7 @@ enum Highlights {NONE, MOVE, CAPTURE, SPAWN, SELECTED, SPECIAL}
 
 var board_position: Vector2i
 var clickable: bool = true
-@onready var walking_marker: Sprite2D = $walking_marker
+@onready var walking_marker: AnimatedSprite2D = $walking_marker
 @onready var spawn_marker: AnimatedSprite2D = $spawn_marker
 @onready var spawn_light: AnimatedSprite2D = $spawn_marker/light
 @onready var spawn_audio: AudioStreamPlayer = $spawn_audio
@@ -20,6 +20,7 @@ signal special(marker)
 
 var state: Highlights
 var trap: bool = false
+var tween : Tween
 
 func play_spawn_audio():
 	if spawn_audio != null:
@@ -57,16 +58,16 @@ func highlight(type: Highlights) -> void:
 	match type:
 		Highlights.MOVE:
 			$walking_marker/highlight.play("highlight")
+			walking_marker.play("move")
 			walking_marker.show()
 		Highlights.CAPTURE:
+			walking_marker.play("capture")
 			$walking_marker/highlight.play("capture_highlight")
 			walking_marker.show()
 		Highlights.SPAWN:
 			spawn_marker.show()
 		Highlights.SELECTED:
-			$walking_marker/highlight.play("capture_highlight")
-			walking_marker.show()
-			$walking_marker/highlight.show()
+			pass
 		Highlights.SPECIAL:
 			$special_marker.show()
 		
@@ -74,7 +75,8 @@ func highlight(type: Highlights) -> void:
 func unhighlight():
 	if state == Highlights.SELECTED:
 		$walking_marker/highlight.hide()
-	spawn_marker.hide()
+	if spawn_marker.visible:
+		$SpawnAnimationPlayer.play("spawn_marker_unhighlight")
 	walking_marker.hide()
 	$special_marker.hide()
 	state = Highlights.NONE
@@ -87,6 +89,16 @@ func unhighlight():
 
 func _on_area_2d_mouse_entered() -> void:
 	$walking_marker/highlight.visible = $walking_marker.visible
+	var highlight_mat = $walking_marker/highlight.material
+	highlight_mat.set_shader_parameter("reveal_progress", 0.0)
+	
+	if tween != null and tween.is_valid():
+		tween.stop()
+	tween = create_tween()
+	tween.tween_property(highlight_mat, "shader_parameter/reveal_progress", 1,1 ) \
+		.set_trans(Tween.TRANS_SINE) \
+		.set_ease(Tween.EASE_OUT)
+
 
 func _on_area_2d_mouse_exited() -> void:
 	if state == Highlights.SELECTED:
@@ -97,3 +109,9 @@ func _on_spawn_light_animation_finished() -> void:
 	emit_signal("spawn_done", self)
 	await get_tree().process_frame
 	spawn_light.hide()
+
+
+func _on_spawn_unhighlight_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "spawn_marker_unhighlight":
+		$SpawnAnimationPlayer.play("RESET")
+		spawn_marker.call_deferred("hide")

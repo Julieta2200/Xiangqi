@@ -11,11 +11,12 @@ var active: bool = true:
 	set(a):
 		active = a 
 		icon.visible = a
-		modulate.a = 0.4
+		icon.modulate.a = 0.4
 
 var selected: bool:
 	set(s):
 		selected = s
+		icon.modulate.a = 1
 		if selected:
 			modulate = Color(0.984,0.761,0.212,1)
 		else:
@@ -25,9 +26,9 @@ var use: bool:
 	set(s):
 		use = s
 		if use:
-			modulate = Color(1,1,1,1)
+			icon.modulate.a = 1
 		else:
-			modulate.a = 0.4
+			icon.modulate.a = 0.4
 
 var cooldown_counter: int = 0 :
 	set(cc):

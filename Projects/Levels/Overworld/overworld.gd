@@ -13,7 +13,7 @@ func _ready() -> void:
 	for level in GameState.state["levels"]:
 		if levels.has(level):
 			levels[level].state = GameState.state["levels"][level]["state"]
-			levels[level].move_count = GameState.state["levels"][level]["move_count"]
+			#levels[level].move_count = GameState.state["levels"][level]["move_count"]
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

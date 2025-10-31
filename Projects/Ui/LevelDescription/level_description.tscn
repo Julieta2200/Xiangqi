@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dtxqtqw7vh0b5" path="res://Assets/UI/Level Description/Buuton.png" id="5_8btgg"]
 [ext_resource type="FontFile" uid="uid://dvp3kgcd16fjp" path="res://Assets/Fonts/Cinzel-VariableFont_wght.ttf" id="5_hfxyk"]
 [ext_resource type="FontFile" uid="uid://dng46o0j6hxr6" path="res://Assets/Fonts/Cinzel-Bold.ttf" id="5_nysge"]
-[ext_resource type="FontFile" uid="uid://dm0qc34c6cd20" path="res://Assets/Fonts/NotoSans-ExtraLight.ttf" id="7_23st0"]
+[ext_resource type="FontFile" uid="uid://dcdno0j53ve3l" path="res://Assets/Fonts/NotoSans-Light.ttf" id="7_4guvc"]
 [ext_resource type="AudioStream" uid="uid://l1liciqrwh63" path="res://Assets/Music/UI SFX-Overworld-Hover LOOP.wav" id="10_d0rng"]
 [ext_resource type="AudioStream" uid="uid://si2lcb3dnurs" path="res://Assets/Music/overworld/UI SFX-Overworld-PLAY BUTTON SELECT.wav" id="12_0g4sm"]
 
@@ -91,7 +91,8 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(0.984314, 0.760784, 0.211765, 1)
 theme_override_fonts/font = ExtResource("5_nysge")
 theme_override_font_sizes/font_size = 80
-text = "Level 1"
+text = "LEVEL 1"
+uppercase = true
 
 [node name="TaskPanel" type="Panel" parent="Panel"]
 layout_mode = 1
@@ -136,8 +137,8 @@ offset_right = 850.0
 offset_bottom = -63.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/normal_font = ExtResource("7_23st0")
-theme_override_font_sizes/normal_font_size = 40
+theme_override_fonts/normal_font = ExtResource("7_4guvc")
+theme_override_font_sizes/normal_font_size = 42
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure "
 
 [node name="Close" type="Button" parent="Panel"]
@@ -176,7 +177,7 @@ grow_vertical = 0
 theme_override_colors/font_hover_color = Color(0.984314, 0.760784, 0.211765, 1)
 theme_override_colors/font_pressed_color = Color(0.984314, 0.760784, 0.211765, 1)
 theme_override_fonts/font = ExtResource("5_hfxyk")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 43
 theme_override_styles/focus = SubResource("StyleBoxTexture_cj6p8")
 theme_override_styles/hover = SubResource("StyleBoxTexture_usvnt")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ssdjx")

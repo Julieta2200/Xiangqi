@@ -9,6 +9,14 @@ var active: bool = true :
 			shader_component.mouse_exited()
 
 var mouse_in: bool = false
+var selected: bool :
+	set(s):
+		selected = s
+		if selected:
+			shader_component.mouse_entered()
+		else:
+			shader_component.mouse_exited()
+			
 
 @export var chess_component: ChessComponent
 @export var shader_component: ShaderComponenet
@@ -22,7 +30,8 @@ func _on_mouse_entered() -> void:
 
 func _on_mouse_exited() -> void:
 	mouse_in = false
-	shader_component.mouse_exited()
+	if !selected:
+		shader_component.mouse_exited()
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if !active:
@@ -31,3 +40,4 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		var mouse_event := event as InputEventMouseButton
 		if mouse_event.button_index == MOUSE_BUTTON_LEFT and mouse_event.pressed:
 			chess_component.show_moves()
+			selected = !selected
