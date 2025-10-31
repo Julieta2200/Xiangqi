@@ -63,6 +63,7 @@ position = Vector2(846, 1866)
 
 [node name="Marker5" parent="Markers/2" instance=ExtResource("3_g0cu3")]
 position = Vector2(1078, 1865)
+scale = Vector2(1.12, 1)
 
 [node name="Marker6" parent="Markers/2" instance=ExtResource("3_g0cu3")]
 position = Vector2(1308, 1866)
@@ -266,6 +267,7 @@ position = Vector2(847, 402)
 
 [node name="Marker5" parent="Markers/9" instance=ExtResource("3_g0cu3")]
 position = Vector2(1079, 402)
+scale = Vector2(1.12, 1)
 
 [node name="Marker6" parent="Markers/9" instance=ExtResource("3_g0cu3")]
 position = Vector2(1309, 401)

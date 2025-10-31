@@ -182,8 +182,7 @@ func show_move_markers(positions: Array[Vector2i], figure: FigureComponent) -> v
 					if pos.y <= 4:
 						continue
 		var marker: BoardMarker = markers[pos]
-		if pos == Vector2i(4,1) or pos == Vector2i(4,8):
-			marker.scale.x = 1.12
+		
 		if state.has(pos) and figure.chess_component.position != pos:
 			marker.highlight(BoardMarker.Highlights.CAPTURE)
 		else:

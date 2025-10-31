@@ -9,10 +9,14 @@ func _on_mouse_entered() -> void:
 	if !active:
 		return
 	shader_component.mouse_entered()
+	if marker != null:
+		marker._on_area_2d_mouse_entered()
 
 
 func _on_mouse_exited() -> void:
 	shader_component.mouse_exited()
+	if marker != null:
+		marker._on_area_2d_mouse_exited()
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if !active:
