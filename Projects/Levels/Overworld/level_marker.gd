@@ -64,7 +64,7 @@ func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int
 		var mouse_event := event as InputEventMouseButton
 		if mouse_event.button_index == MOUSE_BUTTON_LEFT and mouse_event.pressed:
 			AudioManager.play_sound("button_select")
-			level_description.setup(title, story, additional_objectives, level, number)
+			level_description.setup(title, story, additional_objectives, level, number, move_count)
 
 func play_sound(player: AudioStreamPlayer, stream: AudioStream = null) -> void:
 	if stream:

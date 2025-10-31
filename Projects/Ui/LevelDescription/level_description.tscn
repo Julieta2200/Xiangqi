@@ -124,6 +124,17 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
 
+[node name="move_count" type="Label" parent="Panel/TaskPanel"]
+layout_mode = 0
+offset_left = 1359.0
+offset_top = 214.0
+offset_right = 1488.0
+offset_bottom = 263.0
+theme_override_colors/font_color = Color(0.984314, 0.760784, 0.211765, 1)
+theme_override_fonts/font = ExtResource("7_4guvc")
+theme_override_font_sizes/font_size = 35
+text = "MTB: 10"
+
 [node name="Story" type="RichTextLabel" parent="Panel"]
 layout_mode = 1
 anchors_preset = 8

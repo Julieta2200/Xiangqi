@@ -30,14 +30,20 @@ var additional_objectives: Array[String] = [] :
 			task.add_child(icon)
 			task.add_child(label)
 
+var move_count: int: 
+	set(value):
+		move_count = value
+		move_count_label.visible = move_count != 0
+		move_count_label.text = "MTB: " + str(move_count)
+
 var number: String = ""
 
 var level: PackedScene
 
 @onready var title_label: Label  = $Panel/Title
 @onready var story_label: RichTextLabel  = $Panel/Story
+@onready var move_count_label: Label = $Panel/TaskPanel/move_count
 @onready var objectives_container: VBoxContainer  = $Panel/TaskPanel/Objectives
-
 @onready var icon_image = load("res://Assets/UI/Level Description/icon.png")
 
 @onready var hover_music: AudioStreamPlayer = $HoverMusic
@@ -58,12 +64,13 @@ func _ready() -> void:
 	hide()
 
 
-func setup(title: String, story: String, additional_objectives: Array[String], level: PackedScene, number: String) -> void:
+func setup(title: String, story: String, additional_objectives: Array[String], level: PackedScene, number: String, move_count: int) -> void:
 	self.title = title
 	self.story = story
 	self.additional_objectives = additional_objectives
 	self.level = level
 	self.number = number
+	self.move_count = move_count
 	show()
 
 func _on_close_pressed() -> void:
