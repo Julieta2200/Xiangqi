@@ -16,7 +16,7 @@ var state: Dictionary = {
 			"move_count" : 0
 		},
 		"1_bonus": {
-			"state": LevelMarker.LevelState.Closed,
+			"state": LevelMarker.LevelState.Open,
 			"move_count" : 0
 		},
 		"2": {
@@ -42,6 +42,7 @@ var state: Dictionary = {
 	"first_pawn_introduction": true,
 	"first_bonus_introduction": true,
 	"first_horse_introduction": true,
+	"first_ll_introduction": true,
 }
 
 var current_level_info: Dictionary = {
@@ -90,4 +91,6 @@ func load_game() -> void:
 		s["first_bonus_introduction"] = true
 	if !s.has("first_horse_introduction"):
 		s["first_horse_introduction"] = true
+	if !s.has("first_ll_introduction"):
+		s["first_ll_introduction"] = true
 	state = s

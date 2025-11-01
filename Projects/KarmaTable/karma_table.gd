@@ -10,6 +10,8 @@ extends Node2D
 @onready var play_button: Button = $CanvasLayer/Play
 @onready var back_button: Button = $CanvasLayer/Back
 
+@onready var ll_hint_bubble: HintBubble = $CanvasLayer/Hints/HintBubble
+
 var _hint_index: int = 0
 
 
@@ -49,9 +51,20 @@ func _ready() -> void:
 	if GameState.state["first_karma_table_run"]:
 		run_hint_system()
 		return
-
+	if GameState.state["first_ll_introduction"] and GameState.state["ll_cards"].size() > 0:
+		run_ll_hint_system()
+		return
 	run_dialog()
 
+func run_ll_hint_system() -> void:
+	if GameState.state["first_ll_introduction"]:
+		ll_hint_bubble.show()
+		GameState.state["first_ll_introduction"] = false
+		GameState.save_game()
+
+func _ll_hint_shown() -> void:
+	ll_hint_bubble.hide()
+	run_dialog()
 
 func run_dialog() -> void:
 	if dialogs.has(GameState.current_level_info["name"]):

@@ -86,7 +86,7 @@ level_description = NodePath("../../../CanvasLayer/LevelDescription")
 level = ExtResource("4_k78vk")
 title = "Khosrov Forest - Wood World"
 story = "Ashes enters Wood World, Will he decide to give them back the control, or take all to himself."
-additional_objectives = Array[String](["Capture the enemy general", "Don't make more than 10 moves"])
+additional_objectives = Array[String](["Capture the enemy general", "Don't make more than 7 moves"])
 number = "1_bonus"
 
 [node name="2" parent="Levels" node_paths=PackedStringArray("level_description") instance=ExtResource("2_m64e3")]
@@ -103,8 +103,8 @@ position = Vector2(32, -321)
 level_description = NodePath("../../../CanvasLayer/LevelDescription")
 level = ExtResource("6_wvnqw")
 title = "Khosrov - Animal Kingdom"
-story = "Story for animal kingdom"
-additional_objectives = Array[String](["Capture the enemy general in less than 7 moves"])
+story = "Tired of the Fog Army's dominion, the Animal Kingdom's creatures are ready to seize any opening—even the smallest chance—to fight back."
+additional_objectives = Array[String](["Capture the enemy general in less than 7 moves", "Don't make more than 7 moves"])
 number = "2_bonus"
 
 [node name="3" parent="Levels" node_paths=PackedStringArray("level_description") instance=ExtResource("2_m64e3")]
