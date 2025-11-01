@@ -3,7 +3,9 @@ extends Level
 @onready var blocking_panel: Control = $GameplayUI/BlockingPanel
 @onready var hints: Array[HintBubble] = [
 	$GameplayUI/Hints/HintBubble,
+	$GameplayUI/Hints/FlyingGeneral,
 ]
+
 var _hint_index: int = 0
 
 func _ready() -> void:
@@ -78,3 +80,12 @@ func _ran_out_of_moves_dialog_finished() -> void:
 	if DialogSystem.is_connected("dialog_finished", _ran_out_of_moves_dialog_finished):
 		DialogSystem.disconnect("dialog_finished", _ran_out_of_moves_dialog_finished)
 	_on_game_over(BoardV2.GameOverResults.Lose, board.move_number)
+
+func _flying_general_hint_shown() -> void:
+	var generals: Array[FigureComponent] = board.get_figures_by_type(FigureComponent.Types.GENERAL)
+	if hints[1].visible:
+		for general in generals:
+			general.shader_component.hint_highlight()
+	else:
+		for general in generals:
+			general.shader_component.hint_unhighlight()

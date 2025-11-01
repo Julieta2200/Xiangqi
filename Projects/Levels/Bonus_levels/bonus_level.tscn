@@ -72,8 +72,20 @@ offset_top = 1470.0
 offset_right = 492.0
 offset_bottom = 1470.0
 hint = "This is a bonus level, so you can't use your special abilities."
-number = "1/1"
+number = "1/2"
+
+[node name="FlyingGeneral" parent="GameplayUI/Hints" instance=ExtResource("9_ex373")]
+visible = false
+layout_mode = 1
+offset_left = 818.0
+offset_top = 1544.0
+offset_right = 818.0
+offset_bottom = 1544.0
+hint = "General can attack the enemy general if they are in direct sight."
+number = "2/2"
 
 [node name="Music" parent="." instance=ExtResource("9_h0ufh")]
 
 [connection signal="hint_finished" from="GameplayUI/Hints/HintBubble" to="." method="run_hint_system"]
+[connection signal="hint_finished" from="GameplayUI/Hints/FlyingGeneral" to="." method="run_hint_system"]
+[connection signal="visibility_changed" from="GameplayUI/Hints/FlyingGeneral" to="." method="_flying_general_hint_shown"]

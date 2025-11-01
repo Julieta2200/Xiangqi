@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://d4m2tnrgj6wrw" path="res://Assets/UI/Markers/Step/Red/Step(red).png" id="17_dydj3"]
 [ext_resource type="Texture2D" uid="uid://ciifsokvcvanb" path="res://Assets/UI/Markers/Step/Red/Hover(red).png" id="18_8dlv2"]
 [ext_resource type="Texture2D" uid="uid://cn8ktjrpep7wu" path="res://Assets/UI/Markers/Step/Blue/Step(blue).png" id="18_fm4tj"]
-[ext_resource type="Material" uid="uid://3mruadlod26m" path="res://Projects/Shaders/reveal.tres" id="19_7h5fy"]
+[ext_resource type="Material" path="res://Projects/Shaders/reveal.tres" id="19_7h5fy"]
 [ext_resource type="Texture2D" uid="uid://bea7ndghl31cw" path="res://Assets/UI/Markers/Step/Blue/Hover(blue).png" id="21_8cexq"]
 [ext_resource type="AudioStream" uid="uid://dpp82cn8plei0" path="res://Assets/Music/Spawn_sound/UI SFX-SPAWNING-CLICK ON BOARD.wav" id="22_4drkn"]
 [ext_resource type="AudioStream" uid="uid://btcd0gd2a511t" path="res://Assets/Music/Spawn_sound/CHARACTER SPAWN-1.wav" id="22_linaf"]
@@ -248,7 +248,7 @@ frame_progress = 0.279335
 visible = false
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_cs2ip")
-animation = &"move"
+animation = &"capture"
 autoplay = "move"
 
 [node name="highlight" type="AnimatedSprite2D" parent="walking_marker"]
