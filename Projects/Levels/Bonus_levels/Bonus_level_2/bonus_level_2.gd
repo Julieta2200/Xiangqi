@@ -15,11 +15,24 @@ func _ready() -> void:
 		State.new(BoardV2.Kingdoms.FOG, FigureComponent.Types.ADVISOR, Vector2i(5,9)),
 	]
 	board.initialize_position(state)
+	DialogSystem.start_dialog([
+		DialogSystem.DialogText.new('Attack!', DialogSystem.CHARACTERS.Ashes)], true)
 
 func check_game_over() -> bool:
 	if super.check_game_over():
 		return true
-	if board.move_number >= 7:
-		_on_game_over(BoardV2.GameOverResults.Lose, board.move_number)
+	if board.move_number > 7:
+		ran_out_of_moves_dialog()
 		return true
+
 	return false
+
+func ran_out_of_moves_dialog() -> void:
+	DialogSystem.start_dialog([
+		DialogSystem.DialogText.new('We ran out of time!', DialogSystem.CHARACTERS.Advisor)], true)
+	DialogSystem.connect("dialog_finished", _ran_out_of_moves_dialog_finished)
+
+func _ran_out_of_moves_dialog_finished() -> void:
+	if DialogSystem.is_connected("dialog_finished", _ran_out_of_moves_dialog_finished):
+		DialogSystem.disconnect("dialog_finished", _ran_out_of_moves_dialog_finished)
+	_on_game_over(BoardV2.GameOverResults.Lose, board.move_number)

@@ -28,7 +28,7 @@ func _ready() -> void:
 func check_game_over() -> bool:
 	if super.check_game_over():
 		return true
-	if board.move_number > 10:
+	if board.move_number > 7:
 		ran_out_of_moves_dialog()
 		return true
 
