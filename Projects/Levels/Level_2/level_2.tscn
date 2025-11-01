@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://etksxsfuk15y"]
+[gd_scene load_steps=12 format=3 uid="uid://etksxsfuk15y"]
 
 [ext_resource type="Script" path="res://Projects/Levels/Level_2/level_2.gd" id="1_0x84n"]
 [ext_resource type="Texture2D" uid="uid://vwdx6ewivw4v" path="res://Assets/backgrounds/Fog/Background.png" id="2_m8tki"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dcwk0tqri5mkr" path="res://Projects/Board/background_fog/fog.tscn" id="4_x6rwi"]
 [ext_resource type="PackedScene" uid="uid://br5fqscax7ejf" path="res://Projects/Camera/camera.tscn" id="5_an2ys"]
 [ext_resource type="PackedScene" uid="uid://bip87oin8clme" path="res://Projects/Ui/gameplay_ui.tscn" id="6_3msqg"]
+[ext_resource type="Script" path="res://Projects/AI/level2_ai.gd" id="7_jh05l"]
 [ext_resource type="PackedScene" uid="uid://ba32qvdi6rk4u" path="res://Projects/Ui/hint_bubble.tscn" id="9_ibaq1"]
 [ext_resource type="PackedScene" uid="uid://cavxgtpxtng4j" path="res://Projects/Music/Music.tscn" id="9_pvlwv"]
 
@@ -37,8 +38,9 @@ ui = NodePath("../GameplayUI")
 camera = NodePath("../Camera")
 
 [node name="AI" parent="." node_paths=PackedStringArray("board") instance=ExtResource("4_dv8xk")]
+script = ExtResource("7_jh05l")
 board = NodePath("../Board")
-special = 3
+depth = 5
 
 [node name="Camera" parent="." instance=ExtResource("5_an2ys")]
 position = Vector2(1966, 1410)

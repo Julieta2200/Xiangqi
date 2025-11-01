@@ -24,7 +24,7 @@ const figure_numbers = {
 	FigureComponent.Types.SOLDIER: 6,
 }
 
-const figure_values = [
+var figure_values: Array[int] = [
 	10000, # general
 	20, # advisor
 	90, # chariot
