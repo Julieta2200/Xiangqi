@@ -44,6 +44,14 @@ func check_game_over() -> bool:
 	if board.move_number >= 8:
 		_on_game_over(BoardV2.GameOverResults.Lose, board.move_number)
 		return true
+	var advisors: Array[FigureComponent] = board.get_figures(BoardV2.Teams.Red).filter(func(f): return f.type == FigureComponent.Types.ADVISOR)
+	if advisors.size() < 2:
+		_on_game_over(BoardV2.GameOverResults.Lose, board.move_number)
+		return true
+	var generals: Array[FigureComponent] = board.get_figures(BoardV2.Teams.Red).filter(func(f): return f.type == FigureComponent.Types.GENERAL)
+	if generals.size() < 1:
+		_on_game_over(BoardV2.GameOverResults.Lose, board.move_number)
+		return true
 	return false
 
 func _enable_play():
@@ -69,3 +77,25 @@ func _horses_hint_shown() -> void:
 	else:
 		for horse in horses:
 			horse.shader_component.hint_unhighlight()
+
+func _on_game_over(win: BoardV2.GameOverResults, move_number: int):
+	await get_tree().process_frame
+	if win == BoardV2.GameOverResults.Win:
+		gameplay_ui.objectives.complete_objectives(true)
+		DialogSystem.start_dialog([
+			DialogSystem.DialogText.new("Is that all you've got?", DialogSystem.CHARACTERS.Ashes),
+			DialogSystem.DialogText.new("Ashes, give up, before it's too late...", DialogSystem.CHARACTERS.Mara),
+			DialogSystem.DialogText.new("I'm just getting started!", DialogSystem.CHARACTERS.Ashes),
+		], true)
+	else:
+		gameplay_ui.objectives.complete_objectives(false)
+		DialogSystem.start_dialog([
+			DialogSystem.DialogText.new("I’m sorry Ashes, you left me no other choice.", DialogSystem.CHARACTERS.Mara)
+		],true)
+	
+	DialogSystem.connect("dialog_finished", _final_dialog_ended.bind(win))
+
+func _final_dialog_ended(win):
+	if DialogSystem.is_connected("dialog_finished", _final_dialog_ended):
+		DialogSystem.disconnect("dialog_finished", _final_dialog_ended)
+	super._on_game_over(win, board.move_number)
