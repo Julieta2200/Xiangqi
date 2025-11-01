@@ -15,7 +15,7 @@
 [node name="Level_2" type="Node2D"]
 script = ExtResource("1_0x84n")
 level_name = "2"
-garrison_limitations = Array[int]([3, 5, 6])
+garrison_limitations = Array[int]([3, 6])
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -2
@@ -40,7 +40,6 @@ camera = NodePath("../Camera")
 [node name="AI" parent="." node_paths=PackedStringArray("board") instance=ExtResource("4_dv8xk")]
 script = ExtResource("7_jh05l")
 board = NodePath("../Board")
-depth = 5
 
 [node name="Camera" parent="." instance=ExtResource("5_an2ys")]
 position = Vector2(1966, 1410)
@@ -74,9 +73,20 @@ offset_top = 1373.0
 offset_right = 1055.0
 offset_bottom = 1373.0
 hint = "Horses move in an L-shape: two steps in one direction and then one step perpendicular."
-number = "1/1"
+number = "1/2"
+
+[node name="Elephants" parent="GameplayUI/Hints" instance=ExtResource("9_ibaq1")]
+visible = false
+layout_mode = 1
+offset_left = 1029.0
+offset_top = 1789.0
+offset_right = 1029.0
+offset_bottom = 1789.0
+hint = "Elephants move exactly two points diagonally and cannot jump over intervening pieces and they cannot cross the river."
+number = "2/2"
 
 [node name="Music" parent="." instance=ExtResource("9_pvlwv")]
 
 [connection signal="hint_finished" from="GameplayUI/Hints/Horses" to="." method="run_hint_system"]
 [connection signal="visibility_changed" from="GameplayUI/Hints/Horses" to="." method="_horses_hint_shown"]
+[connection signal="hint_finished" from="GameplayUI/Hints/Elephants" to="." method="run_hint_system"]
