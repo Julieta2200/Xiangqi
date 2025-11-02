@@ -50,12 +50,18 @@ var level_3_dialog: Array[DialogSystem.DialogText] = [
 	DialogSystem.DialogText.new("Karma will catch you...", DialogSystem.CHARACTERS.Jakat),
 ]
 
+var level_3_bonus_dialog: Array[DialogSystem.DialogText] = [
+	DialogSystem.DialogText.new("And again, you're fighting for others?", DialogSystem.CHARACTERS.Jakat),
+	DialogSystem.DialogText.new("You're talking too much!", DialogSystem.CHARACTERS.Ashes)
+]
+
 var dialogs: Dictionary = {
 	"1": level_1_dialog,
 	"1_bonus": level_1_bonus_dialog,
 	"2": level_2_dialog,
 	"2_bonus": level_2_bonus_dialog,
 	"3": level_3_dialog,
+	"3_bonus": level_3_bonus_dialog,
 }
 
 
