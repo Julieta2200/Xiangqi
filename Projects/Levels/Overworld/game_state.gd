@@ -43,6 +43,7 @@ var state: Dictionary = {
 	"first_bonus_introduction": true,
 	"first_horse_introduction": true,
 	"first_ll_introduction": true,
+	"first_chariot_introduction": true,
 }
 
 var current_level_info: Dictionary = {
@@ -93,4 +94,6 @@ func load_game() -> void:
 		s["first_horse_introduction"] = true
 	if !s.has("first_ll_introduction"):
 		s["first_ll_introduction"] = true
+	if !s.has("first_chariot_introduction"):
+		s["first_chariot_introduction"] = true
 	state = s

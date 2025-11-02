@@ -4,6 +4,7 @@ class_name AIV2 extends Node
 @export var special: CardSlots.SPECIALS
 @export var depth: int = 3
 var _special_used: bool = false
+var script_use_special: bool = false
 
 const infinite : int = 500000
 var thinking_thread: Thread = Thread.new()
@@ -108,7 +109,7 @@ func get_all_legal_moves(team: int, position: Array[Array]) -> Array[Array]:
 	var legal_moves: Array[Array] = []
 	for y in position.size():
 		# Consider mist when calculating the moves
-		if board._mist != null and team_numbers[board._mist.target_team] == team:
+		if board._mist != null and team_numbers[board._mist.target_team + 1] == team:
 			match team:
 				1:
 					if y >= 5:
@@ -521,7 +522,7 @@ func disconnection_mist() -> void:
 				enemy_count += 1
 	
 	#  if there are 2 enemies on AI side of board
-	if enemy_count >= 2:
+	if enemy_count >= 2 or script_use_special:
 		_special_used = board.activate_disconnection_mist(BoardV2.Teams.Red)
 
 func calculate_full_evaluation(position: Array[Array]) -> int:
