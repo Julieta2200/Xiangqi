@@ -47,7 +47,7 @@ var level_3_dialog: Array[DialogSystem.DialogText] = [
 	DialogSystem.DialogText.new("Mara has nowhere to escape now.", DialogSystem.CHARACTERS.Jakat),
 	DialogSystem.DialogText.new("What you're going to do?", DialogSystem.CHARACTERS.Jakat),
 	DialogSystem.DialogText.new("I don't care what happens to her.", DialogSystem.CHARACTERS.Ashes),
-	DialogSystem.DialogText.new("Karma will catch you!", DialogSystem.CHARACTERS.Jakat),
+	DialogSystem.DialogText.new("Karma will catch you...", DialogSystem.CHARACTERS.Jakat),
 ]
 
 var dialogs: Dictionary = {
