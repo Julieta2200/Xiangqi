@@ -54,7 +54,7 @@ var current_level_info: Dictionary = {
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	save_game()
+	load_game()
 
 
 func add_orb() -> void:
