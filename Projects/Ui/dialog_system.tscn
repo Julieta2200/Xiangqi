@@ -1,11 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://fft0owblymrl"]
+[gd_scene load_steps=8 format=3 uid="uid://fft0owblymrl"]
 
 [ext_resource type="Script" path="res://Projects/Ui/dialog_system.gd" id="1_t5gml"]
-[ext_resource type="Texture2D" uid="uid://bxdqxkn65751e" path="res://Assets/UI/Dialog panel/Big size/Dialog panel.png" id="2_upaih"]
 [ext_resource type="FontFile" uid="uid://c0kp0wxgu75s1" path="res://Assets/Fonts/NotoSans-Bold.ttf" id="3_bb20n"]
 [ext_resource type="Texture2D" uid="uid://cwri8doswhdcd" path="res://Assets/UI/Dialog panel/Characters/Ashes.png" id="3_e7hcw"]
 [ext_resource type="FontFile" uid="uid://cog0aa6cr4xc2" path="res://Assets/Fonts/NotoSans-VariableFont_wdth,wght.ttf" id="3_s68gg"]
 [ext_resource type="FontFile" uid="uid://b1rirrr2b225e" path="res://Assets/Fonts/NotoSans-Italic-VariableFont_wdth,wght.ttf" id="4_2vgsv"]
+
+[sub_resource type="Gradient" id="Gradient_5iacp"]
+offsets = PackedFloat32Array(0, 0.594101, 1)
+colors = PackedColorArray(0, 0, 0, 0.807843, 0, 0, 0, 0.489017, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_273jl"]
+gradient = SubResource("Gradient_5iacp")
+fill_from = Vector2(0, 0.00641026)
+fill_to = Vector2(0, 1)
 
 [node name="DialogSystem" type="CanvasLayer"]
 script = ExtResource("1_t5gml")
@@ -24,7 +32,7 @@ offset_bottom = -137.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.7, 0.7)
-texture = ExtResource("2_upaih")
+texture = SubResource("GradientTexture2D_273jl")
 
 [node name="Name" type="Label" parent="Panel"]
 layout_mode = 1
