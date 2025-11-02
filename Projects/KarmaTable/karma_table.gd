@@ -43,11 +43,19 @@ var level_2_bonus_dialog: Array[DialogSystem.DialogText] = [
 	DialogSystem.DialogText.new("Realize that everything connects to everything else.", DialogSystem.CHARACTERS.Jakat),
 ]
 
+var level_3_dialog: Array[DialogSystem.DialogText] = [
+	DialogSystem.DialogText.new("Mara has nowhere to escape now.", DialogSystem.CHARACTERS.Jakat),
+	DialogSystem.DialogText.new("What you're going to do?", DialogSystem.CHARACTERS.Jakat),
+	DialogSystem.DialogText.new("I don't care what happens to her.", DialogSystem.CHARACTERS.Ashes),
+	DialogSystem.DialogText.new("Karma will catch you!", DialogSystem.CHARACTERS.Jakat),
+]
+
 var dialogs: Dictionary = {
 	"1": level_1_dialog,
 	"1_bonus": level_1_bonus_dialog,
 	"2": level_2_dialog,
 	"2_bonus": level_2_bonus_dialog,
+	"3": level_3_dialog,
 }
 
 
