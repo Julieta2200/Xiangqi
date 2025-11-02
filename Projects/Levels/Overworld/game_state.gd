@@ -16,7 +16,7 @@ var state: Dictionary = {
 			"move_count" : 0
 		},
 		"1_bonus": {
-			"state": LevelMarker.LevelState.Open,
+			"state": LevelMarker.LevelState.Closed,
 			"move_count" : 0
 		},
 		"2": {

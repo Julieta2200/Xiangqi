@@ -10,7 +10,7 @@ extends Node2D
 @onready var play_button: Button = $CanvasLayer/Play
 @onready var back_button: Button = $CanvasLayer/Back
 
-@onready var ll_hint_bubble: HintBubble = $CanvasLayer/Hints/HintBubble
+@onready var ll_hint_bubble: HintBubble = $CanvasLayer/Hints/LLHint
 
 var _hint_index: int = 0
 
@@ -37,10 +37,17 @@ var level_2_dialog: Array[DialogSystem.DialogText] = [
 	DialogSystem.DialogText.new("Karma moves in two directions...", DialogSystem.CHARACTERS.Jakat),
 ]
 
+var level_2_bonus_dialog: Array[DialogSystem.DialogText] = [
+	DialogSystem.DialogText.new("What's the point? Why are you fighting for others?", DialogSystem.CHARACTERS.Jakat),
+	DialogSystem.DialogText.new("I'm fighting for me.", DialogSystem.CHARACTERS.Ashes),
+	DialogSystem.DialogText.new("Realize that everything connects to everything else.", DialogSystem.CHARACTERS.Jakat),
+]
+
 var dialogs: Dictionary = {
 	"1": level_1_dialog,
 	"1_bonus": level_1_bonus_dialog,
 	"2": level_2_dialog,
+	"2_bonus": level_2_bonus_dialog,
 }
 
 
@@ -57,13 +64,16 @@ func _ready() -> void:
 	run_dialog()
 
 func run_ll_hint_system() -> void:
-	if GameState.state["first_ll_introduction"]:
-		ll_hint_bubble.show()
-		GameState.state["first_ll_introduction"] = false
-		GameState.save_game()
+	ll_hint_bubble.show()
+	play_button.hide()
+	back_button.hide()
+	GameState.state["first_ll_introduction"] = false
+	GameState.save_game()
 
 func _ll_hint_shown() -> void:
 	ll_hint_bubble.hide()
+	play_button.show()
+	back_button.show()
 	run_dialog()
 
 func run_dialog() -> void:
