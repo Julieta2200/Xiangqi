@@ -17,8 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GameState="*res://Projects/Levels/Overworld/game_state.gd"
 DialogSystem="*res://Projects/Ui/dialog_system.tscn"
+GameState="*res://Projects/Levels/Overworld/game_state.gd"
 ShadowController="*res://Projects/Figure/shadow_controller.gd"
 AudioManager="*res://Projects/Music/AudioManager.gd"
 
@@ -26,6 +26,7 @@ AudioManager="*res://Projects/Music/AudioManager.gd"
 
 window/size/viewport_width=3911
 window/size/viewport_height=2200
+window/size/mode=3
 window/stretch/mode="viewport"
 mouse_cursor/custom_image="res://Assets/UI/Mouse/Mouse small.png"
 

@@ -12,27 +12,27 @@ var state: Dictionary = {
 	"orbs": 0,
 	"levels": {
 		"1": {
-			"state": LevelMarker.LevelState.Open,
+			"state": 1,
 			"move_count" : 0
 		},
 		"1_bonus": {
-			"state": LevelMarker.LevelState.Closed,
+			"state": 0,
 			"move_count" : 0
 		},
 		"2": {
-			"state": LevelMarker.LevelState.Closed,
+			"state": 0,
 			"move_count" : 0
 		},
 		"2_bonus": {
-			"state": LevelMarker.LevelState.Closed,
+			"state": 0,
 			"move_count" : 0
 		},
 		"3": {
-			"state": LevelMarker.LevelState.Closed,
+			"state": 0,
 			"move_count" : 0
 		},
 		"3_bonus": {
-			"state": LevelMarker.LevelState.Closed,
+			"state": 0,
 			"move_count" : 0
 		},
 	},

@@ -15,7 +15,7 @@ extends Node2D
 var _hint_index: int = 0
 
 
-var level_1_dialog: Array[DialogSystem.DialogText] = [
+@onready var level_1_dialog: Array[DialogSystem.DialogText] = [
 	DialogSystem.DialogText.new("Ashes, you will meet your friend here.", DialogSystem.CHARACTERS.Jakat),
 	DialogSystem.DialogText.new("I don’t have any.", DialogSystem.CHARACTERS.Ashes),
 	DialogSystem.DialogText.new("Driven by revenge, you’ll get what you give, Karma will catch you.", DialogSystem.CHARACTERS.Jakat),
@@ -23,50 +23,51 @@ var level_1_dialog: Array[DialogSystem.DialogText] = [
 	DialogSystem.DialogText.new("Time is ticking…", DialogSystem.CHARACTERS.Jakat),
 ]
 
-var level_1_bonus_dialog: Array[DialogSystem.DialogText] = [
+@onready var level_1_bonus_dialog: Array[DialogSystem.DialogText] = [
 	DialogSystem.DialogText.new("You're going out of our path, aren't you?", DialogSystem.CHARACTERS.Jakat),
 	DialogSystem.DialogText.new("I have my own path.", DialogSystem.CHARACTERS.Ashes),
 	DialogSystem.DialogText.new("You're on your own here, Ashes.", DialogSystem.CHARACTERS.Jakat),
 	DialogSystem.DialogText.new("Such a tragedy...", DialogSystem.CHARACTERS.Ashes)
 ]
 
-var level_2_dialog: Array[DialogSystem.DialogText] = [
+@onready var level_2_dialog: Array[DialogSystem.DialogText] = [
 	DialogSystem.DialogText.new("Jakat, I need more power.", DialogSystem.CHARACTERS.Ashes),
 	DialogSystem.DialogText.new("So be it. But don't forget our deal.", DialogSystem.CHARACTERS.Jakat),
 	DialogSystem.DialogText.new("I'll do what I have to do.", DialogSystem.CHARACTERS.Ashes),
 	DialogSystem.DialogText.new("Karma moves in two directions...", DialogSystem.CHARACTERS.Jakat),
 ]
 
-var level_2_bonus_dialog: Array[DialogSystem.DialogText] = [
+@onready var level_2_bonus_dialog: Array[DialogSystem.DialogText] = [
 	DialogSystem.DialogText.new("What's the point? Why are you fighting for others?", DialogSystem.CHARACTERS.Jakat),
 	DialogSystem.DialogText.new("I'm fighting for me.", DialogSystem.CHARACTERS.Ashes),
 	DialogSystem.DialogText.new("Realize that everything connects to everything else.", DialogSystem.CHARACTERS.Jakat),
 ]
 
-var level_3_dialog: Array[DialogSystem.DialogText] = [
+@onready var level_3_dialog: Array[DialogSystem.DialogText] = [
 	DialogSystem.DialogText.new("Mara has nowhere to escape now.", DialogSystem.CHARACTERS.Jakat),
 	DialogSystem.DialogText.new("What you're going to do?", DialogSystem.CHARACTERS.Jakat),
 	DialogSystem.DialogText.new("I don't care what happens to her.", DialogSystem.CHARACTERS.Ashes),
 	DialogSystem.DialogText.new("Karma will catch you...", DialogSystem.CHARACTERS.Jakat),
 ]
 
-var level_3_bonus_dialog: Array[DialogSystem.DialogText] = [
+@onready var level_3_bonus_dialog: Array[DialogSystem.DialogText] = [
 	DialogSystem.DialogText.new("And again, you're fighting for others?", DialogSystem.CHARACTERS.Jakat),
 	DialogSystem.DialogText.new("You're talking too much!", DialogSystem.CHARACTERS.Ashes)
 ]
 
-var dialogs: Dictionary = {
-	"1": level_1_dialog,
-	"1_bonus": level_1_bonus_dialog,
-	"2": level_2_dialog,
-	"2_bonus": level_2_bonus_dialog,
-	"3": level_3_dialog,
-	"3_bonus": level_3_bonus_dialog,
-}
+var dialogs: Dictionary
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	dialogs = {
+		"1": level_1_dialog,
+		"1_bonus": level_1_bonus_dialog,
+		"2": level_2_dialog,
+		"2_bonus": level_2_bonus_dialog,
+		"3": level_3_dialog,
+		"3_bonus": level_3_bonus_dialog,
+	}
 	fill_lls()
 	fill_hls()
 	if GameState.state["first_karma_table_run"]:

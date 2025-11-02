@@ -10,9 +10,9 @@ const character_names = {
 }
 
 @onready var character_sprites = {
-	CHARACTERS.Ashes: preload("res://Assets/UI/Dialog Panel/Characters/Ashes.png"),
-	CHARACTERS.Mara: preload("res://Assets/UI/Dialog Panel/Characters/Mara.png"),
-	CHARACTERS.Advisor: preload("res://Assets/UI/Dialog Panel/Characters/Advisor.png"),
+	CHARACTERS.Ashes: preload("res://Assets/UI/Dialog panel/Characters/Ashes.png"),
+	CHARACTERS.Mara: preload("res://Assets/UI/Dialog panel/Characters/Mara.png"),
+	CHARACTERS.Advisor: preload("res://Assets/UI/Dialog panel/Characters/Advisor.png"),
 	CHARACTERS.Jakat: null
 }
 
