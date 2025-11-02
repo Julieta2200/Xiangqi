@@ -86,3 +86,24 @@ func _on_board_move_done() -> void:
 func _part_2_start() -> void:
 	DialogSystem.disconnect("dialog_finished", _part_2_start)
 	blocking_panel.hide()
+
+func _on_game_over(win: BoardV2.GameOverResults, move_number: int):
+	await get_tree().process_frame
+	if win == BoardV2.GameOverResults.Win:
+		gameplay_ui.objectives.complete_objectives(true)
+		DialogSystem.start_dialog([
+			DialogSystem.DialogText.new("I'm sorry, Ashes...", DialogSystem.CHARACTERS.Mara),
+			DialogSystem.DialogText.new("Be gone...", DialogSystem.CHARACTERS.Ashes),
+		], true)
+	else:
+		gameplay_ui.objectives.complete_objectives(false)
+		DialogSystem.start_dialog([
+			DialogSystem.DialogText.new("I’m sorry Ashes, you left me no other choice.", DialogSystem.CHARACTERS.Mara)
+		],true)
+	
+	DialogSystem.connect("dialog_finished", _final_dialog_ended.bind(win))
+
+func _final_dialog_ended(win):
+	if DialogSystem.is_connected("dialog_finished", _final_dialog_ended):
+		DialogSystem.disconnect("dialog_finished", _final_dialog_ended)
+	super._on_game_over(win, board.move_number)
