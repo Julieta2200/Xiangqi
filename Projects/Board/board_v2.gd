@@ -183,6 +183,18 @@ func show_move_markers(positions: Array[Vector2i], figure: FigureComponent) -> v
 			marker.highlight(BoardMarker.Highlights.CAPTURE)
 		else:
 			marker.highlight(BoardMarker.Highlights.MOVE)
+			
+func show_hover_markers(positions: Array[Vector2i], figure: FigureComponent) -> void:
+	for pos in positions:
+		var marker: BoardMarker = markers[pos]
+		if marker.state == BoardMarker.Highlights.NONE:
+			marker.highlight(BoardMarker.Highlights.HOVER)
+
+func hide_hover_markers(positions: Array[Vector2i], figure: FigureComponent) -> void:
+	for pos in positions:
+		var marker: BoardMarker = markers[pos]
+		if marker.state == BoardMarker.Highlights.HOVER:
+			marker.unhighlight()
 
 func set_figure(figure: FigureComponent, pos: Vector2i) -> void:
 	state[pos] = figure
