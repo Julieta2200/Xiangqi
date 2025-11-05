@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bh478vfokopqw"]
+[gd_scene load_steps=14 format=3 uid="uid://bh478vfokopqw"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_s7cam"]
 [ext_resource type="Texture2D" uid="uid://dcv7ypx014t3u" path="res://Assets/Characters/Fog/Horse/Horse_Front.png" id="2_8h4xs"]
@@ -8,6 +8,8 @@
 [ext_resource type="Material" uid="uid://extfukhqcdhc" path="res://Projects/Shaders/target_outline.tres" id="6_nlcgd"]
 [ext_resource type="Material" uid="uid://cn0gyjph0f1nv" path="res://Projects/Shaders/fog_spawn.tres" id="7_2wldo"]
 [ext_resource type="PackedScene" uid="uid://dhpouhurhy80p" path="res://Projects/Figure/Components/figure_target_component.tscn" id="8_4625u"]
+[ext_resource type="PackedScene" uid="uid://dylnbquiybg16" path="res://Projects/Figure/Components/figure_ui_component.tscn" id="9_4unbd"]
+[ext_resource type="Script" path="res://Projects/Figure/Components/enemy_ui_component.gd" id="10_48tjg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_h2yje"]
 animations = [{
@@ -24,9 +26,14 @@ animations = [{
 radius = 55.0
 height = 126.0
 
-[node name="Horse" type="CharacterBody2D" node_paths=PackedStringArray("chess_component", "move_component", "target_component")]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5u7fw"]
+radius = 49.0
+height = 112.0
+
+[node name="Horse" type="CharacterBody2D" node_paths=PackedStringArray("chess_component", "ui_component", "move_component", "target_component")]
 script = ExtResource("1_s7cam")
 chess_component = NodePath("ChessComponent")
+ui_component = NodePath("FigureUIComponent")
 move_component = NodePath("MoveComponent")
 target_component = NodePath("FigureTargetComponent")
 type = 4
@@ -60,3 +67,12 @@ shader_component = NodePath("../ShaderComponent")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FigureTargetComponent"]
 position = Vector2(0, -23)
 shape = SubResource("CapsuleShape2D_v6vj0")
+
+[node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component") instance=ExtResource("9_4unbd")]
+position = Vector2(0, -6)
+script = ExtResource("10_48tjg")
+chess_component = NodePath("../ChessComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FigureUIComponent"]
+position = Vector2(2, -38)
+shape = SubResource("CapsuleShape2D_5u7fw")

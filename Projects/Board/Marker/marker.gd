@@ -53,13 +53,6 @@ func click() -> void:
 
 func highlight(type: Highlights) -> void:
 	state = type
-	if board.state.has(board_position):
-		var figure: FigureComponent = board.state[board_position]
-		if figure.target_component != null:
-			figure.target_component.active = true
-			figure.target_component.marker = self
-			clickable = false
-			
 	match type:
 		Highlights.MOVE:
 			$walking_marker/highlight.play("highlight")
@@ -77,7 +70,14 @@ func highlight(type: Highlights) -> void:
 			$special_marker.show()
 		Highlights.HOVER:
 			hover_marker.show()
-		
+			return
+	if board.state.has(board_position):
+		var figure: FigureComponent = board.state[board_position]
+		if figure.target_component != null:
+			figure.target_component.active = true
+			figure.target_component.marker = self
+			clickable = false
+			
 		
 func unhighlight():
 	if state == Highlights.HOVER:
