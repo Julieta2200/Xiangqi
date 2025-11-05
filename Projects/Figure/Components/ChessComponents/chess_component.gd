@@ -21,7 +21,12 @@ func show_moves():
 	if !figure_component.board:
 		return
 	var available_moves: Array[Vector2i] = calculate_moves(figure_component.board.state, position)
-	figure_component.board.show_move_markers(available_moves, figure_component)
+	if figure_component.ui_component.selected:
+		figure_component.board.show_move_markers(available_moves, figure_component)
+	elif figure_component.ui_component.mouse_in:
+		figure_component.board.show_hover_markers(available_moves, figure_component)
+	else:
+		figure_component.board.hide_hover_markers(available_moves, figure_component)
 
 func get_moves() -> Array[Vector2i]:
 	return calculate_moves(figure_component.board.state, position)
@@ -37,7 +42,8 @@ func move_or_capture(pos: Vector2i, state: Dictionary) -> bool:
 	var marker: BoardMarker = figure_component.board.markers[pos]
 	return (!state.has(pos) and team == BoardV2.Teams.Red and !marker.trap) or\
 	 (state.has(pos) and (state[pos].chess_component.team != team and
-	 state[pos].chess_component.team != BoardV2.Teams.Wall))
+	 state[pos].chess_component.team != BoardV2.Teams.Wall)) or\
+	(!state.has(pos) and team == BoardV2.Teams.Black)
 
 func change_position(p: Vector2i) -> void:
 	var marker: BoardMarker = figure_component.board.markers[p]

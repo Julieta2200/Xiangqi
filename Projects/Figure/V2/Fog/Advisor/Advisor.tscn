@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c0tti725mtjpo"]
+[gd_scene load_steps=16 format=3 uid="uid://c0tti725mtjpo"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_gk4bo"]
 [ext_resource type="Texture2D" uid="uid://5ft2bavrlrkr" path="res://Assets/Characters/Fog/Advisor/Fog_Advisor_Front.png" id="2_quffa"]
@@ -10,6 +10,8 @@
 [ext_resource type="Material" uid="uid://cn0gyjph0f1nv" path="res://Projects/Shaders/fog_spawn.tres" id="7_ki6r4"]
 [ext_resource type="PackedScene" uid="uid://d05lmiobxnn3t" path="res://Projects/Figure/shadow_pivot.tscn" id="9_l11ao"]
 [ext_resource type="Material" uid="uid://blvd6fmf8jtbp" path="res://Projects/Shaders/blur_shadow.tres" id="10_7kprc"]
+[ext_resource type="PackedScene" uid="uid://dylnbquiybg16" path="res://Projects/Figure/Components/figure_ui_component.tscn" id="11_gptex"]
+[ext_resource type="Script" path="res://Projects/Figure/Components/enemy_ui_component.gd" id="12_4eqpx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pi8o7"]
 animations = [{
@@ -26,9 +28,14 @@ animations = [{
 radius = 39.0
 height = 258.0
 
-[node name="Advisor" type="CharacterBody2D" node_paths=PackedStringArray("chess_component", "move_component", "target_component")]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jwvnb"]
+radius = 47.0
+height = 174.0
+
+[node name="Advisor" type="CharacterBody2D" node_paths=PackedStringArray("chess_component", "ui_component", "move_component", "target_component")]
 script = ExtResource("1_gk4bo")
 chess_component = NodePath("ChessComponent")
+ui_component = NodePath("FigureUIComponent")
 move_component = NodePath("MoveComponent")
 target_component = NodePath("FigureTargetComponent")
 type = 2
@@ -79,3 +86,11 @@ animation = &"idle_down"
 autoplay = "idle_down"
 frame_progress = 0.408885
 flip_h = true
+
+[node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component") instance=ExtResource("11_gptex")]
+script = ExtResource("12_4eqpx")
+chess_component = NodePath("../ChessComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FigureUIComponent"]
+position = Vector2(0, -85)
+shape = SubResource("CapsuleShape2D_jwvnb")

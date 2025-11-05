@@ -3,15 +3,23 @@ class_name FigureUIComponent extends Area2D
 var active: bool = true : 
 	set(a):
 		active = a
+		if shader_component == null:
+			return
 		if active and mouse_in:
 			shader_component.mouse_entered()
 		else:
 			shader_component.mouse_exited()
 
-var mouse_in: bool = false
+var mouse_in: bool = false:
+	set(m):
+		mouse_in = m
+		chess_component.show_moves()
+
 var selected: bool :
 	set(s):
 		selected = s
+		if shader_component == null:
+			return
 		if selected:
 			shader_component.mouse_entered()
 		else:
@@ -39,5 +47,5 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		var mouse_event := event as InputEventMouseButton
 		if mouse_event.button_index == MOUSE_BUTTON_LEFT and mouse_event.pressed:
-			chess_component.show_moves()
 			selected = !selected
+			chess_component.show_moves()

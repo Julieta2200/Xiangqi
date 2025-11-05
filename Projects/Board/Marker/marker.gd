@@ -1,11 +1,13 @@
 class_name BoardMarker extends Node2D
 
-enum Highlights {NONE, MOVE, CAPTURE, SPAWN, SELECTED, SPECIAL}
+enum Highlights {NONE, MOVE, CAPTURE, SPAWN, SELECTED, SPECIAL, HOVER}
 
 var board_position: Vector2i
 var clickable: bool = true
 @onready var walking_marker: AnimatedSprite2D = $walking_marker
 @onready var spawn_marker: AnimatedSprite2D = $spawn_marker
+@onready var hover_marker: Sprite2D = $hover_marker
+
 @onready var spawn_light: AnimatedSprite2D = $spawn_marker/light
 @onready var spawn_audio: AudioStreamPlayer = $spawn_audio
 @onready var click_audio: AudioStreamPlayer = $click_audio
@@ -21,6 +23,9 @@ signal special(marker)
 var state: Highlights
 var trap: bool = false
 var tween : Tween
+
+func _ready() -> void:
+	state = Highlights.NONE
 
 func play_spawn_audio():
 	if spawn_audio != null:
@@ -70,9 +75,15 @@ func highlight(type: Highlights) -> void:
 			pass
 		Highlights.SPECIAL:
 			$special_marker.show()
+		Highlights.HOVER:
+			hover_marker.show()
 		
 		
 func unhighlight():
+	if state == Highlights.HOVER:
+		hover_marker.hide()
+		state = Highlights.NONE
+		return
 	if state == Highlights.SELECTED:
 		$walking_marker/highlight.hide()
 	if spawn_marker.visible:
