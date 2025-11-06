@@ -61,6 +61,8 @@ func deselect_cards() -> void:
 func _on_card_click(s: SPECIALS):
 	if cards[s].cooldown_counter != 0:
 		return
+	if selected_card != cards[s]:
+		deselect_cards()
 	selected_card = cards[s]
 	if selected_card.use:
 		match s:
