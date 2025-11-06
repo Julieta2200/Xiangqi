@@ -63,6 +63,7 @@ func highlight(type: Highlights) -> void:
 			$walking_marker/highlight.play("capture_highlight")
 			walking_marker.show()
 		Highlights.SPAWN:
+			$SpawnAnimationPlayer.play("RESET")
 			spawn_marker.show()
 		Highlights.SELECTED:
 			pass

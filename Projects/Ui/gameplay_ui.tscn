@@ -37,4 +37,5 @@ offset_top = 8.0
 offset_right = -32.0
 offset_bottom = 8.0
 
+[connection signal="card_deselected" from="Garrison" to="." method="_on_garrison_card_deselected"]
 [connection signal="card_selected" from="Garrison" to="." method="_on_garrison_card_selected"]

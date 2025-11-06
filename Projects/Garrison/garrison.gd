@@ -6,12 +6,16 @@ var selected_figure: FigureCard
 var garrison_limitations: Array[FigureComponent.Types] = []
 
 signal card_selected(selected_card: FigureCard)
+signal card_deselected
 
 func _on_figure_card_selected(card: FigureCard):
 	select_card(card)
+	
+func _on_figure_card_deselected() -> void:
+	emit_signal("card_deselected")
 
 func select_card(card: FigureCard):
-	if selected_figure != null:
+	if selected_figure != null and selected_figure != card:
 		selected_figure.deselect()
 	selected_figure = card
 	emit_signal("card_selected", selected_figure)

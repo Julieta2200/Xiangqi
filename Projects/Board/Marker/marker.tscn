@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://dlkpgwakp3ub7"]
+[gd_scene load_steps=39 format=3 uid="uid://dlkpgwakp3ub7"]
 
 [ext_resource type="Script" path="res://Projects/Board/Marker/marker.gd" id="1_y3i0m"]
 [ext_resource type="Texture2D" uid="uid://dsyf0a73jp6x8" path="res://Assets/UI/Position_Marker/new/Position_Marker1.png" id="2_ptf1s"]
@@ -208,14 +208,10 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_fs20w"]
-resource_name = "walking_marker_highlight"
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yu1yn"]
 _data = {
 "RESET": SubResource("Animation_ndf8l"),
-"spawn_marker_unhighlight": SubResource("Animation_78unw"),
-"walking_marker_highlight": SubResource("Animation_fs20w")
+"spawn_marker_unhighlight": SubResource("Animation_78unw")
 }
 
 [node name="Marker" type="Node2D"]
