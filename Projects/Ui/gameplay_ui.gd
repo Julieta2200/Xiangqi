@@ -17,6 +17,8 @@ func _ready() -> void:
 func _on_garrison_card_selected(selected_card: FigureCard) -> void:
 	board.spawn_highlight(selected_card.type)
 
+func _on_garrison_card_deselected() -> void:
+	board.clear_markers()
 
 func decision_activate():
 	decision.show()

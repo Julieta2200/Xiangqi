@@ -49,8 +49,13 @@ custom_minimum_size = Vector2(159, 173)
 layout_mode = 2
 type = 3
 
+[connection signal="deselected" from="FigureCards/FigureCard" to="." method="_on_figure_card_deselected"]
 [connection signal="selected" from="FigureCards/FigureCard" to="." method="_on_figure_card_selected"]
+[connection signal="deselected" from="FigureCards/FigureCard2" to="." method="_on_figure_card_deselected"]
 [connection signal="selected" from="FigureCards/FigureCard2" to="." method="_on_figure_card_selected"]
+[connection signal="deselected" from="FigureCards/FigureCard3" to="." method="_on_figure_card_deselected"]
 [connection signal="selected" from="FigureCards/FigureCard3" to="." method="_on_figure_card_selected"]
+[connection signal="deselected" from="FigureCards/FigureCard4" to="." method="_on_figure_card_deselected"]
 [connection signal="selected" from="FigureCards/FigureCard4" to="." method="_on_figure_card_selected"]
+[connection signal="deselected" from="FigureCards/FigureCard5" to="." method="_on_figure_card_deselected"]
 [connection signal="selected" from="FigureCards/FigureCard5" to="." method="_on_figure_card_selected"]

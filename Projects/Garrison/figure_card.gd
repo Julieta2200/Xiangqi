@@ -27,6 +27,7 @@ const figure_energies = {
 @onready var click_sound: AudioStreamPlayer = $click_sound
 
 signal selected(FigureCard)
+signal deselected
 
 var active: bool = true :
 	set(a):
@@ -36,7 +37,16 @@ var active: bool = true :
 		else:
 			modulate = Color(0.35, 0.35, 0.35)
 
-var _selected :bool
+var _selected :bool:
+	set(s):
+		_selected = s
+		if _selected:
+			scale *= 1.2
+			emit_signal("selected", self)
+		else:
+			scale = Vector2(1,1)
+			emit_signal("deselected")
+			
 var energy: float
 
 func _ready() -> void:
@@ -63,12 +73,11 @@ func _ready() -> void:
 
 func _on_card_gui_input(event: InputEvent):
 	if event.is_action_pressed("click") and active:
-		scale *= 1.2
 		click_sound.play()
-		emit_signal("selected", self)
+		_selected = !_selected
 
 func deselect() -> void:
-	scale = Vector2(1,1)
+	_selected = false
 
 func activate(result: bool):
 	active = result
