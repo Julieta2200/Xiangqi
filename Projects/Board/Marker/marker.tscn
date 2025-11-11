@@ -272,6 +272,7 @@ shape = SubResource("CapsuleShape2D_vg2kh")
 
 [node name="spawn_audio" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_787hn")
+bus = &"Spawn audio"
 
 [node name="click_audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_4drkn")

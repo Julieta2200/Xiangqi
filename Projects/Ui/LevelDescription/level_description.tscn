@@ -200,6 +200,7 @@ stream = ExtResource("10_d0rng")
 
 [node name="HoverMusicEffects" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_0g4sm")
+bus = &"SFX"
 
 [connection signal="mouse_entered" from="Panel/Close" to="." method="_on_close_mouse_entered"]
 [connection signal="mouse_exited" from="Panel/Close" to="." method="_on_button_mouse_exited"]
