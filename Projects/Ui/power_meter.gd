@@ -12,14 +12,30 @@ const max_energy: int = 100
 # Stores the energy value and updates the energy display while emitting a signal when it changes
 @export var energy: float :
 	set(e):
-		if e <= 0:
-			e = 0
+		e = clamp(e, 0, max_energy)
+		if e == 0:
 			emit_signal("energy_depleted")
 		energy = e
-		if energy > max_energy:
-			energy = max_energy
-		$energy.value = energy
-		$energy/Label.text = str(energy) + " / " + str(max_energy)
+		altered_energy = energy
+		current_energy =  energy
+		$altered_energy/Label.text = str(energy) + " / " + str(max_energy)
+
+var altered_energy: float:
+	set(e):
+		altered_energy = e
+		$altered_energy.value = altered_energy
+
+var current_energy: float:
+	set(e):
+		current_energy = e
+		$current_energy.value = current_energy
+
+func show_energy_preview():
+	altered_energy -= garrison.selected_figure.energy
+
+func hide_energy_preview():
+	if energy != 0:
+		energy = energy
 
 func fill_energy():
 	energy += energy_fill
