@@ -15,9 +15,11 @@ func _ready() -> void:
 	board.use_special.connect(card_slots.use_special)
 
 func _on_garrison_card_selected(selected_card: FigureCard) -> void:
+	power_meter.show_energy_preview()
 	board.spawn_highlight(selected_card.type)
 
 func _on_garrison_card_deselected() -> void:
+	power_meter.hide_energy_preview()
 	board.clear_markers()
 
 func decision_activate():

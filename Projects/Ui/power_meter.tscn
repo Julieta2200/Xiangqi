@@ -9,7 +9,7 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_qudxp")
 
-[node name="energy" type="TextureProgressBar" parent="."]
+[node name="current_energy" type="TextureProgressBar" parent="."]
 layout_mode = 1
 offset_right = 549.0
 offset_bottom = 102.0
@@ -18,8 +18,18 @@ value = 100.0
 texture_under = ExtResource("2_0g1e2")
 texture_progress = ExtResource("3_o7hqn")
 texture_progress_offset = Vector2(62, 19)
+tint_progress = Color(1, 1, 1, 0.470588)
 
-[node name="Label" type="Label" parent="energy"]
+[node name="altered_energy" type="TextureProgressBar" parent="."]
+layout_mode = 1
+offset_right = 549.0
+offset_bottom = 102.0
+scale = Vector2(0.7, 0.7)
+value = 100.0
+texture_progress = ExtResource("3_o7hqn")
+texture_progress_offset = Vector2(62, 19)
+
+[node name="Label" type="Label" parent="altered_energy"]
 layout_mode = 0
 offset_left = 574.0
 offset_top = 17.0
