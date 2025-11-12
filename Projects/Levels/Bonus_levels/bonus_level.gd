@@ -57,6 +57,7 @@ func run_hint_system() -> void:
 		blocking_panel.hide()
 		attack_dialog()
 		return
+	AudioManager.play_sound("dialog_box")
 	hints[_hint_index].show()
 	_hint_index += 1
 

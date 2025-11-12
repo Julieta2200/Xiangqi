@@ -73,6 +73,7 @@ func run_hint_system() -> void:
 		GameState.save_game()
 		blocking_panel.hide()
 		return
+	AudioManager.play_sound("dialog_box")
 	hints[_hint_index].show()
 	_hint_index += 1
 
