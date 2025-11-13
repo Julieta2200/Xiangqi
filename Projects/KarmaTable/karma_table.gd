@@ -160,6 +160,7 @@ func run_hint_system() -> void:
 		back_button.show()
 		run_dialog()
 		return
+	AudioManager.play_sound("dialog_box")
 	hint_bubbles[_hint_index].show()
 	_hint_index += 1
 

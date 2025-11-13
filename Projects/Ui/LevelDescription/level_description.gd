@@ -54,7 +54,7 @@ var sounds := {
 
 	"play_hover_on": preload("res://Assets/Music/overworld/UI SFX-Overworld-PLAY BUTTON HOVER ON.wav"),
 	"play_hover_loop": preload("res://Assets/Music/overworld/UI SFX-Overworld-CLOSE BUTTON HOVER LOOP.wav"),
-	
+
 	"close_hover_on": preload("res://Assets/Music/overworld/UI SFX-Overworld-CLOSE BUTTON HOVER ON.wav"),
 	"close_hover_loop": preload("res://Assets/Music/overworld/UI SFX-Overworld-PLAY BUTTON HOVER LOOP.wav"),
 }

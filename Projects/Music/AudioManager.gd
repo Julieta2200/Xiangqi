@@ -4,7 +4,8 @@ extends Node
 
 var sounds := {
 	"play_button_select": preload("res://Assets/Music/overworld/UI SFX-Overworld-PLAY BUTTON SELECT.wav"),
-	"button_select": preload("res://Assets/Music/overworld/UI SFX-Overworld-GENERAL SELECT.wav")
+	"button_select": preload("res://Assets/Music/overworld/UI SFX-Overworld-GENERAL SELECT.wav"),
+	"dialog_box": preload("res://Assets/Music/karma_table/UI SFX-Karma Table-DIALOG BOX SHOWN.wav"),
 }
 
 func _ready() -> void:
