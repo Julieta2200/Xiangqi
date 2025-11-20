@@ -9,8 +9,8 @@
 [ext_resource type="Material" uid="uid://e3w5tox88i13" path="res://Projects/Shaders/outline.tres" id="5_sv2oy"]
 [ext_resource type="PackedScene" uid="uid://cy1y1kpvwk5sq" path="res://Projects/Figure/Components/ShaderComponent/shader_component.tscn" id="7_8tkf7"]
 [ext_resource type="Material" uid="uid://b5ews8a5nl326" path="res://Projects/Shaders/spawn.tres" id="9_x54yj"]
-[ext_resource type="PackedScene" path="res://Projects/Figure/shadow_pivot.tscn" id="10_r11ff"]
-[ext_resource type="Material" path="res://Projects/Shaders/blur_shadow.tres" id="11_1nnni"]
+[ext_resource type="PackedScene" uid="uid://d05lmiobxnn3t" path="res://Projects/Figure/shadow_pivot.tscn" id="10_r11ff"]
+[ext_resource type="Material" uid="uid://blvd6fmf8jtbp" path="res://Projects/Shaders/blur_shadow.tres" id="11_1nnni"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eul7x"]
 animations = [{
