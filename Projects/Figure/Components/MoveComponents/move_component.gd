@@ -24,7 +24,8 @@ func _on_figure_animation_finished() -> void:
 		shadow.play("idle")
 	if figure_component.chess_component.team == BoardV2.Teams.Black:
 		animated_sprite.play("idle_down")
-	animated_sprite.play("idle")
+	else:
+		animated_sprite.play("idle")
 
 func generate_move_tween(target_position):
 	var tween = create_tween()

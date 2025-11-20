@@ -1,18 +1,42 @@
-[gd_scene load_steps=17 format=3 uid="uid://e0vofw5ghj4q"]
+[gd_scene load_steps=41 format=3 uid="uid://e0vofw5ghj4q"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_31ffd"]
 [ext_resource type="Texture2D" uid="uid://csk6bpga70c4a" path="res://Assets/Characters/Fog/Cannon/Idle/Idle1.png" id="2_lp453"]
 [ext_resource type="Texture2D" uid="uid://du6vm6jeqpvhr" path="res://Assets/Characters/Fog/Cannon/Idle/Idle2.png" id="3_bd22a"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/cannon_chess_component.gd" id="3_t6o6c"]
-[ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="4_av3l6"]
+[ext_resource type="Texture2D" uid="uid://bq3g30tmflq8y" path="res://Assets/Characters/Fog/Cannon/Move/Back/Back1.png" id="4_q1v38"]
+[ext_resource type="Texture2D" uid="uid://dax1lxs7ubfsi" path="res://Assets/Characters/Fog/Cannon/Move/Back/Back2.png" id="5_lpbcc"]
 [ext_resource type="PackedScene" uid="uid://cy1y1kpvwk5sq" path="res://Projects/Figure/Components/ShaderComponent/shader_component.tscn" id="5_sbnhw"]
 [ext_resource type="Material" uid="uid://cn0gyjph0f1nv" path="res://Projects/Shaders/fog_spawn.tres" id="6_4m3hy"]
+[ext_resource type="Texture2D" uid="uid://kn2et0ajox8t" path="res://Assets/Characters/Fog/Cannon/Move/Back/Back3.png" id="6_tevom"]
 [ext_resource type="Material" uid="uid://extfukhqcdhc" path="res://Projects/Shaders/target_outline.tres" id="6_uxns4"]
 [ext_resource type="PackedScene" uid="uid://dhpouhurhy80p" path="res://Projects/Figure/Components/figure_target_component.tscn" id="7_2n4ku"]
+[ext_resource type="Texture2D" uid="uid://d2fmdyrx758ni" path="res://Assets/Characters/Fog/Cannon/Move/Back/Back4.png" id="7_3llh0"]
+[ext_resource type="Texture2D" uid="uid://dap2ptxbrcl8j" path="res://Assets/Characters/Fog/Cannon/Move/Back/Back5.png" id="8_qdgf7"]
+[ext_resource type="Texture2D" uid="uid://dx1tp8ysc45yj" path="res://Assets/Characters/Fog/Cannon/Move/Back/Back6.png" id="9_5c8fr"]
 [ext_resource type="PackedScene" uid="uid://d05lmiobxnn3t" path="res://Projects/Figure/shadow_pivot.tscn" id="9_riqk4"]
+[ext_resource type="Texture2D" uid="uid://m2q7t8ey2ts6" path="res://Assets/Characters/Fog/Cannon/Move/Right/Right1.png" id="10_e7tan"]
 [ext_resource type="Material" uid="uid://blvd6fmf8jtbp" path="res://Projects/Shaders/blur_shadow.tres" id="10_hvrtp"]
+[ext_resource type="Texture2D" uid="uid://d11qbwslh58qk" path="res://Assets/Characters/Fog/Cannon/Move/Front/Front1.png" id="11_10ffx"]
 [ext_resource type="PackedScene" uid="uid://dylnbquiybg16" path="res://Projects/Figure/Components/figure_ui_component.tscn" id="11_rmp31"]
+[ext_resource type="Texture2D" uid="uid://b5h2mhsa1ypul" path="res://Assets/Characters/Fog/Cannon/Move/Front/Front2.png" id="12_aswkx"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/enemy_ui_component.gd" id="12_kkk35"]
+[ext_resource type="Texture2D" uid="uid://fv0riu3m8tw3" path="res://Assets/Characters/Fog/Cannon/Move/Front/Front3.png" id="13_ky7dh"]
+[ext_resource type="Texture2D" uid="uid://c0nmj5ib6i3tv" path="res://Assets/Characters/Fog/Cannon/Move/Front/Front4.png" id="14_oj3lw"]
+[ext_resource type="Texture2D" uid="uid://l4jja6lxva0v" path="res://Assets/Characters/Fog/Cannon/Move/Front/Front5.png" id="15_6rhr2"]
+[ext_resource type="Texture2D" uid="uid://c5b4vp18gt3yw" path="res://Assets/Characters/Fog/Cannon/Move/Front/Front6.png" id="16_4i1ft"]
+[ext_resource type="Texture2D" uid="uid://dt270t2mb5nsf" path="res://Assets/Characters/Fog/Cannon/Move/Left/Left1.png" id="17_dnxu5"]
+[ext_resource type="Texture2D" uid="uid://d14k0xlcj7kef" path="res://Assets/Characters/Fog/Cannon/Move/Left/Left2.png" id="18_kp4dh"]
+[ext_resource type="Texture2D" uid="uid://c02mpeex1rpbs" path="res://Assets/Characters/Fog/Cannon/Move/Left/Left3.png" id="19_7mlj8"]
+[ext_resource type="Texture2D" uid="uid://cq86nq6hher1b" path="res://Assets/Characters/Fog/Cannon/Move/Left/Left4.png" id="20_gidgc"]
+[ext_resource type="Texture2D" uid="uid://c2oiq4tffo6lw" path="res://Assets/Characters/Fog/Cannon/Move/Left/Left5.png" id="21_edqvw"]
+[ext_resource type="Texture2D" uid="uid://ckuw52ga1ls06" path="res://Assets/Characters/Fog/Cannon/Move/Left/Left6.png" id="22_tbkji"]
+[ext_resource type="Texture2D" uid="uid://brpnnpo6sfyoe" path="res://Assets/Characters/Fog/Cannon/Move/Right/Right2.png" id="23_etwx8"]
+[ext_resource type="Texture2D" uid="uid://bul6erurvbmob" path="res://Assets/Characters/Fog/Cannon/Move/Right/Right3.png" id="24_b35a6"]
+[ext_resource type="Texture2D" uid="uid://d3fo6httal7qk" path="res://Assets/Characters/Fog/Cannon/Move/Right/Right4.png" id="25_gtqju"]
+[ext_resource type="Texture2D" uid="uid://udtomr4usnjy" path="res://Assets/Characters/Fog/Cannon/Move/Right/Right5.png" id="26_ulf3k"]
+[ext_resource type="Texture2D" uid="uid://cjnnuejs7bbhm" path="res://Assets/Characters/Fog/Cannon/Move/Right/Right6.png" id="27_mrbjh"]
+[ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/Fog/cannon_move_component.gd" id="29_0gwmv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ns0u8"]
 animations = [{
@@ -24,8 +48,103 @@ animations = [{
 "texture": ExtResource("3_bd22a")
 }],
 "loop": true,
-"name": &"idle_dawn",
+"name": &"idle_down",
 "speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_q1v38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_lpbcc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_tevom")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3llh0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qdgf7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5c8fr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_e7tan")
+}],
+"loop": false,
+"name": &"move_back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_10ffx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_aswkx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ky7dh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_oj3lw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_6rhr2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_4i1ft")
+}],
+"loop": false,
+"name": &"move_front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_dnxu5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_kp4dh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_7mlj8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_gidgc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_edqvw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_tbkji")
+}],
+"loop": false,
+"name": &"move_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_e7tan")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_etwx8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_b35a6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_gtqju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_ulf3k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_mrbjh")
+}],
+"loop": false,
+"name": &"move_right",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_grr7m"]
@@ -48,9 +167,8 @@ type = 6
 position = Vector2(0, -103)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_ns0u8")
-animation = &"idle_dawn"
-autoplay = "idle_dawn"
-frame_progress = 0.420128
+animation = &"move_back"
+autoplay = "idle_down"
 
 [node name="ChessComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "move_component")]
 script = ExtResource("3_t6o6c")
@@ -60,7 +178,7 @@ figure_component = NodePath("..")
 move_component = NodePath("../MoveComponent")
 
 [node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "shadow")]
-script = ExtResource("4_av3l6")
+script = ExtResource("29_0gwmv")
 speed = 500.0
 figure_component = NodePath("..")
 shadow = NodePath("../ShadowPivot/Shadow")
@@ -86,8 +204,8 @@ material = ExtResource("10_hvrtp")
 position = Vector2(0, -103)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_ns0u8")
-animation = &"idle_dawn"
-autoplay = "idle_dawn"
+animation = &"idle_down"
+autoplay = "idle_down"
 flip_h = true
 
 [node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component") instance=ExtResource("11_rmp31")]
@@ -98,3 +216,5 @@ chess_component = NodePath("../ChessComponent")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FigureUIComponent"]
 position = Vector2(0, -93)
 shape = SubResource("CapsuleShape2D_7fk3s")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="MoveComponent" method="_on_figure_animation_finished"]
