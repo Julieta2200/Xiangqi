@@ -22,6 +22,8 @@ func move_animation(old_pos: Vector2i, new_pos: Vector2i) -> void:
 func _on_figure_animation_finished() -> void:
 	if shadow != null:
 		shadow.play("idle")
+	if figure_component.chess_component.team == BoardV2.Teams.Black:
+		animated_sprite.play("idle_down")
 	animated_sprite.play("idle")
 
 func generate_move_tween(target_position):

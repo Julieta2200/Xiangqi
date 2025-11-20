@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://bw8dv5fpgw8eu"]
+[gd_scene load_steps=17 format=3 uid="uid://bw8dv5fpgw8eu"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_4h3cj"]
-[ext_resource type="Texture2D" uid="uid://dbjfqd8pdblx" path="res://Assets/Characters/Fog/General/General_Front.png" id="2_rsyqj"]
+[ext_resource type="Texture2D" uid="uid://b6l83t0hpr4j" path="res://Assets/Characters/Fog/General/Idle/Idle1.png" id="2_y6pmf"]
+[ext_resource type="Texture2D" uid="uid://q3en4u0hf6ao" path="res://Assets/Characters/Fog/General/Idle/Idle2.png" id="3_uuop4"]
 [ext_resource type="PackedScene" uid="uid://cy1y1kpvwk5sq" path="res://Projects/Figure/Components/ShaderComponent/shader_component.tscn" id="5_qigdr"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/general_chess_component.gd" id="6_2w1ol"]
 [ext_resource type="Material" uid="uid://extfukhqcdhc" path="res://Projects/Shaders/target_outline.tres" id="6_k8a60"]
@@ -17,11 +18,14 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_rsyqj")
+"texture": ExtResource("2_y6pmf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_uuop4")
 }],
 "loop": true,
 "name": &"idle_down",
-"speed": 5.0
+"speed": 2.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pyewa"]
@@ -46,7 +50,7 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_pi8o7")
 animation = &"idle_down"
 autoplay = "idle_down"
-frame_progress = 0.0530308
+frame_progress = 0.247114
 
 [node name="ChessComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "move_component")]
 script = ExtResource("6_2w1ol")

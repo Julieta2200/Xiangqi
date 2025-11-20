@@ -1,9 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://bh478vfokopqw"]
+[gd_scene load_steps=16 format=3 uid="uid://bh478vfokopqw"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_s7cam"]
-[ext_resource type="Texture2D" uid="uid://dcv7ypx014t3u" path="res://Assets/Characters/Fog/Horse/Horse_Front.png" id="2_8h4xs"]
+[ext_resource type="Texture2D" uid="uid://bfpmxwxecqcqd" path="res://Assets/Characters/Fog/Horse/Idle/Idle1.png" id="2_n62h7"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/horse_chess_component.gd" id="3_ccssm"]
+[ext_resource type="Texture2D" uid="uid://bibw4vxwbl0ve" path="res://Assets/Characters/Fog/Horse/Idle/Idle2.png" id="3_lc2q2"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="4_hq3fp"]
+[ext_resource type="Texture2D" uid="uid://bp0xj63hklst0" path="res://Assets/Characters/Fog/Horse/Idle/Idle3.png" id="4_wtu41"]
 [ext_resource type="PackedScene" uid="uid://cy1y1kpvwk5sq" path="res://Projects/Figure/Components/ShaderComponent/shader_component.tscn" id="5_8plax"]
 [ext_resource type="Material" uid="uid://extfukhqcdhc" path="res://Projects/Shaders/target_outline.tres" id="6_nlcgd"]
 [ext_resource type="Material" uid="uid://cn0gyjph0f1nv" path="res://Projects/Shaders/fog_spawn.tres" id="7_2wldo"]
@@ -15,11 +17,17 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_8h4xs")
+"texture": ExtResource("2_n62h7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lc2q2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wtu41")
 }],
 "loop": true,
 "name": &"idle_down",
-"speed": 5.0
+"speed": 2.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v6vj0"]
@@ -43,6 +51,7 @@ position = Vector2(1, -34)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_h2yje")
 animation = &"idle_down"
+frame_progress = 0.127397
 
 [node name="ChessComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "move_component")]
 script = ExtResource("3_ccssm")

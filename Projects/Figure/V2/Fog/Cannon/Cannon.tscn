@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://e0vofw5ghj4q"]
+[gd_scene load_steps=17 format=3 uid="uid://e0vofw5ghj4q"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_31ffd"]
-[ext_resource type="Texture2D" uid="uid://dkbr350km05ge" path="res://Assets/Characters/Fog/Cannon/Cannon_Front.png" id="2_g8jfd"]
+[ext_resource type="Texture2D" uid="uid://csk6bpga70c4a" path="res://Assets/Characters/Fog/Cannon/Idle/Idle1.png" id="2_lp453"]
+[ext_resource type="Texture2D" uid="uid://du6vm6jeqpvhr" path="res://Assets/Characters/Fog/Cannon/Idle/Idle2.png" id="3_bd22a"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/cannon_chess_component.gd" id="3_t6o6c"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="4_av3l6"]
 [ext_resource type="PackedScene" uid="uid://cy1y1kpvwk5sq" path="res://Projects/Figure/Components/ShaderComponent/shader_component.tscn" id="5_sbnhw"]
@@ -17,11 +18,14 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_g8jfd")
+"texture": ExtResource("2_lp453")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bd22a")
 }],
 "loop": true,
 "name": &"idle_dawn",
-"speed": 5.0
+"speed": 2.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_grr7m"]
@@ -46,6 +50,7 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_ns0u8")
 animation = &"idle_dawn"
 autoplay = "idle_dawn"
+frame_progress = 0.420128
 
 [node name="ChessComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "move_component")]
 script = ExtResource("3_t6o6c")
