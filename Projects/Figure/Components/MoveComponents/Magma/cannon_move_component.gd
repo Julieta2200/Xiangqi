@@ -3,7 +3,6 @@ extends MoveComponent
 var old_pos: Vector2i
 var new_pos: Vector2i
 var target_position: Vector2i
-@onready var shadow_pivot: Node2D = $"../ShadowPivot"
 
 func move_to_position(marker: BoardMarker, initial_position: Vector2i = Vector2i.ZERO) -> void:
 	target_position = marker.global_position
@@ -24,22 +23,21 @@ func move_animation(old_pos: Vector2i, new_pos: Vector2i) -> void:
 		animation += "_left"
 	elif direction.x < 0:
 		animation += "_right"
+	if shadow != null:
+		shadow.play(animation)
 	animated_sprite.play(animation)
-	shadow_pivot.modulate = Color(1,1,1,0)
 
 func _on_figure_animation_finished() -> void:
 	var current_animation = animated_sprite.animation
 	if current_animation.find("move") != -1:
 		if animated_sprite.speed_scale == -1:
 			animated_sprite.speed_scale = 1
-			animated_sprite.play("idle")
-			shadow_pivot.modulate = Color(1,1,1,1)
+			super._on_figure_animation_finished()
 			emit_signal("move_done")
 		else:
 			finish_move_animation()
 	else:
-		animated_sprite.play("idle")
-
+		super._on_figure_animation_finished()
 
 func finish_move_animation():
 	figure_component.global_position = target_position

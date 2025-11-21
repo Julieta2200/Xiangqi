@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b4u0rern1rgw"]
+[gd_scene load_steps=34 format=3 uid="uid://b4u0rern1rgw"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_0l350"]
 [ext_resource type="Texture2D" uid="uid://bngxuejgqoqbu" path="res://Assets/Characters/Fog/Soldier/Idle/Idle1.png" id="2_dx6pd"]
@@ -11,12 +11,25 @@
 [ext_resource type="Material" uid="uid://cn0gyjph0f1nv" path="res://Projects/Shaders/fog_spawn.tres" id="7_afnf1"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/soldier_chess_component.gd" id="7_fkygt"]
 [ext_resource type="Texture2D" uid="uid://chk0ut5p11ph" path="res://Assets/Characters/Fog/Soldier/Idle/Idle6.png" id="7_xdq7c"]
-[ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="8_n0clu"]
+[ext_resource type="Texture2D" uid="uid://cfxyr4st34q2v" path="res://Assets/Characters/Fog/Soldier/Soldier_Front.png" id="8_7ik5q"]
+[ext_resource type="Texture2D" uid="uid://x0bsldrmnnnn" path="res://Assets/Characters/Fog/Soldier/Move/Left/Left1.png" id="8_bbxxl"]
 [ext_resource type="PackedScene" uid="uid://dhpouhurhy80p" path="res://Projects/Figure/Components/figure_target_component.tscn" id="8_wnk6m"]
 [ext_resource type="PackedScene" uid="uid://d05lmiobxnn3t" path="res://Projects/Figure/shadow_pivot.tscn" id="9_6emw6"]
+[ext_resource type="Texture2D" uid="uid://dbaf23m5son8w" path="res://Assets/Characters/Fog/Soldier/Move/Left/Left2.png" id="9_ogku7"]
+[ext_resource type="Texture2D" uid="uid://c5crrybghei70" path="res://Assets/Characters/Fog/Soldier/Move/Left/Left3.png" id="10_22ajp"]
 [ext_resource type="Material" uid="uid://blvd6fmf8jtbp" path="res://Projects/Shaders/blur_shadow.tres" id="10_u1px8"]
+[ext_resource type="Texture2D" uid="uid://j3lo16k10iis" path="res://Assets/Characters/Fog/Soldier/Move/Left/Left4.png" id="11_ca1bf"]
 [ext_resource type="PackedScene" uid="uid://dylnbquiybg16" path="res://Projects/Figure/Components/figure_ui_component.tscn" id="11_jg1vf"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/enemy_ui_component.gd" id="12_gmspj"]
+[ext_resource type="Texture2D" uid="uid://d3lvobp0i6i1d" path="res://Assets/Characters/Fog/Soldier/Move/Left/Left5.png" id="12_lrlwh"]
+[ext_resource type="Texture2D" uid="uid://davve2v4ic3it" path="res://Assets/Characters/Fog/Soldier/Move/Left/Left6.png" id="13_ov7uu"]
+[ext_resource type="Texture2D" uid="uid://by7qcsuxhsijx" path="res://Assets/Characters/Fog/Soldier/Move/Right/Right1.png" id="14_noxmq"]
+[ext_resource type="Texture2D" uid="uid://qki3bapijv07" path="res://Assets/Characters/Fog/Soldier/Move/Right/Right2.png" id="15_tjy1s"]
+[ext_resource type="Texture2D" uid="uid://b6622f1qibogr" path="res://Assets/Characters/Fog/Soldier/Move/Right/Right3.png" id="16_aelah"]
+[ext_resource type="Texture2D" uid="uid://dvodot8hluulm" path="res://Assets/Characters/Fog/Soldier/Move/Right/Right4.png" id="17_bsnq0"]
+[ext_resource type="Texture2D" uid="uid://dh3en1lg8rc2p" path="res://Assets/Characters/Fog/Soldier/Move/Right/Right5.png" id="18_x7hbb"]
+[ext_resource type="Texture2D" uid="uid://rq8yloqcq71c" path="res://Assets/Characters/Fog/Soldier/Move/Right/Right6.png" id="19_qu2q5"]
+[ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/Fog/soldier_move_component.gd" id="22_gmf3p"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pi8o7"]
 animations = [{
@@ -47,6 +60,60 @@ animations = [{
 "loop": true,
 "name": &"idle_up",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_7ik5q")
+}],
+"loop": false,
+"name": &"move_front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_bbxxl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ogku7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_22ajp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ca1bf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_lrlwh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ov7uu")
+}],
+"loop": false,
+"name": &"move_left",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_noxmq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_tjy1s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_aelah")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_bsnq0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_x7hbb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_qu2q5")
+}],
+"loop": false,
+"name": &"move_right",
+"speed": 7.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tnfs6"]
@@ -70,7 +137,6 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_pi8o7")
 animation = &"idle_down"
 autoplay = "idle_down"
-frame_progress = 0.469628
 
 [node name="ChessComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "move_component")]
 script = ExtResource("7_fkygt")
@@ -80,7 +146,7 @@ figure_component = NodePath("..")
 move_component = NodePath("../MoveComponent")
 
 [node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "shadow")]
-script = ExtResource("8_n0clu")
+script = ExtResource("22_gmf3p")
 speed = 300.0
 figure_component = NodePath("..")
 shadow = NodePath("../ShadowPivot/Shadow")
@@ -106,7 +172,7 @@ material = ExtResource("10_u1px8")
 position = Vector2(1, -104)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_pi8o7")
-animation = &"idle_down"
+animation = &"move_right"
 autoplay = "idle_down"
 flip_h = true
 
@@ -118,3 +184,5 @@ chess_component = NodePath("../ChessComponent")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FigureUIComponent"]
 position = Vector2(2, -38)
 shape = SubResource("CapsuleShape2D_phus6")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="MoveComponent" method="_on_figure_animation_finished"]

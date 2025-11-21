@@ -48,7 +48,7 @@ animations = [{
 "texture": ExtResource("3_bd22a")
 }],
 "loop": true,
-"name": &"idle",
+"name": &"idle_down",
 "speed": 2.0
 }, {
 "frames": [{
@@ -168,7 +168,7 @@ position = Vector2(0, -103)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_ns0u8")
 animation = &"move_back"
-autoplay = "idle"
+autoplay = "idle_down"
 
 [node name="ChessComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "move_component")]
 script = ExtResource("3_t6o6c")
@@ -204,8 +204,8 @@ material = ExtResource("10_hvrtp")
 position = Vector2(0, -103)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_ns0u8")
-animation = &"idle"
-autoplay = "idle"
+animation = &"idle_down"
+autoplay = "idle_down"
 flip_h = true
 
 [node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component") instance=ExtResource("11_rmp31")]

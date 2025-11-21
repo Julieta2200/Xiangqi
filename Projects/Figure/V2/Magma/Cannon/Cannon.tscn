@@ -175,7 +175,7 @@ type = 6
 position = Vector2(3, -89)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_eul7x")
-animation = &"move_front"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component", "shader_component") instance=ExtResource("3_v23kq")]

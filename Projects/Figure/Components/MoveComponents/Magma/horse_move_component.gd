@@ -30,6 +30,8 @@ func move_animation(old_pos: Vector2i, new_pos: Vector2i) -> void:
 		animation += "_left"
 	elif direction.x < 0:
 		animation += "_right"
+	if shadow != null:
+		shadow.play(animation)
 	animated_sprite.play(animation)
 
 func _on_figure_animation_finished() -> void:
@@ -37,12 +39,12 @@ func _on_figure_animation_finished() -> void:
 	if current_animation.find("move") != -1:
 		if animated_sprite.speed_scale == -1:
 			animated_sprite.speed_scale = 1
-			animated_sprite.play("idle")
+			super._on_figure_animation_finished()
 			emit_signal("move_done")
 		else:
 			start_lava_tween()
 	else:
-		animated_sprite.play("idle")
+		super._on_figure_animation_finished()
 
 func start_lava_tween():
 	var tween = create_tween()

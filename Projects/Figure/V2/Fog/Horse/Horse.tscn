@@ -114,7 +114,7 @@ animations = [{
 "texture": ExtResource("4_wtu41")
 }],
 "loop": true,
-"name": &"idle",
+"name": &"idle_down",
 "speed": 2.0
 }, {
 "frames": [{
@@ -450,8 +450,8 @@ offset = Vector2(0.5, -18.5792)
 position = Vector2(1, -34)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_h2yje")
-animation = &"move_back_lite_left"
-autoplay = "idle"
+animation = &"idle_down"
+autoplay = "idle_down"
 
 [node name="ChessComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "move_component")]
 script = ExtResource("3_ccssm")
