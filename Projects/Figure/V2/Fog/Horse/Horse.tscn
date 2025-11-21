@@ -51,6 +51,7 @@ position = Vector2(1, -34)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_h2yje")
 animation = &"idle_down"
+autoplay = "idle_down"
 frame_progress = 0.127397
 
 [node name="ChessComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "move_component")]

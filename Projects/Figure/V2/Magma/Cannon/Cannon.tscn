@@ -1,16 +1,41 @@
-[gd_scene load_steps=14 format=3 uid="uid://btst40g2n6wda"]
+[gd_scene load_steps=39 format=3 uid="uid://btst40g2n6wda"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_mjqwp"]
 [ext_resource type="Texture2D" uid="uid://cq5aoxlt43cv8" path="res://Assets/Characters/Magma/Cannon/Idle/Catapult1.png" id="2_uf8g5"]
 [ext_resource type="Texture2D" uid="uid://coee58yma45wq" path="res://Assets/Characters/Magma/Cannon/Idle/Catapult2.png" id="3_5jur2"]
 [ext_resource type="PackedScene" uid="uid://dylnbquiybg16" path="res://Projects/Figure/Components/figure_ui_component.tscn" id="3_v23kq"]
+[ext_resource type="Texture2D" uid="uid://dufmha2n0q7uu" path="res://Assets/Characters/Magma/Cannon/Move/Back/Back1.png" id="4_u5b4x"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/cannon_chess_component.gd" id="4_w6i5p"]
-[ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="5_b5pty"]
+[ext_resource type="Texture2D" uid="uid://ddfp5abtmohxc" path="res://Assets/Characters/Magma/Cannon/Move/Back/Back2.png" id="5_evedm"]
 [ext_resource type="Material" uid="uid://e3w5tox88i13" path="res://Projects/Shaders/outline.tres" id="5_sv2oy"]
+[ext_resource type="Texture2D" uid="uid://bfahu8itropvg" path="res://Assets/Characters/Magma/Cannon/Move/Back/Back3.png" id="6_28iqc"]
 [ext_resource type="PackedScene" uid="uid://cy1y1kpvwk5sq" path="res://Projects/Figure/Components/ShaderComponent/shader_component.tscn" id="7_8tkf7"]
+[ext_resource type="Texture2D" uid="uid://rj4gfs4drk73" path="res://Assets/Characters/Magma/Cannon/Move/Back/Back4.png" id="7_stpyn"]
+[ext_resource type="Texture2D" uid="uid://c0r1jo4et7brv" path="res://Assets/Characters/Magma/Cannon/Move/Back/Back5.png" id="8_5ic2i"]
+[ext_resource type="Texture2D" uid="uid://dof0kvh844iog" path="res://Assets/Characters/Magma/Cannon/Move/Back/Back6.png" id="9_gbmd7"]
 [ext_resource type="Material" uid="uid://b5ews8a5nl326" path="res://Projects/Shaders/spawn.tres" id="9_x54yj"]
+[ext_resource type="Texture2D" uid="uid://cer8emf7ogi7q" path="res://Assets/Characters/Magma/Cannon/Move/Back/Back7.png" id="10_0uw3u"]
 [ext_resource type="PackedScene" uid="uid://d05lmiobxnn3t" path="res://Projects/Figure/shadow_pivot.tscn" id="10_r11ff"]
 [ext_resource type="Material" uid="uid://blvd6fmf8jtbp" path="res://Projects/Shaders/blur_shadow.tres" id="11_1nnni"]
+[ext_resource type="Texture2D" uid="uid://22xnalk7vbge" path="res://Assets/Characters/Magma/Cannon/Move/Front/Front1.png" id="11_olgcw"]
+[ext_resource type="Texture2D" uid="uid://car61vrjli6mg" path="res://Assets/Characters/Magma/Cannon/Move/Front/Front2.png" id="12_vlek4"]
+[ext_resource type="Texture2D" uid="uid://bwijv2xrujyl6" path="res://Assets/Characters/Magma/Cannon/Move/Front/Front3.png" id="13_rr1la"]
+[ext_resource type="Texture2D" uid="uid://ciw5k1v2p4eim" path="res://Assets/Characters/Magma/Cannon/Move/Front/Front4.png" id="14_kuup6"]
+[ext_resource type="Texture2D" uid="uid://ogr1oel151pe" path="res://Assets/Characters/Magma/Cannon/Move/Front/Front5.png" id="15_fpsb5"]
+[ext_resource type="Texture2D" uid="uid://d0ke334gwkb5w" path="res://Assets/Characters/Magma/Cannon/Move/Front/Front6.png" id="16_y1lka"]
+[ext_resource type="Texture2D" uid="uid://bs26302v5io1b" path="res://Assets/Characters/Magma/Cannon/Move/Left/Left1.png" id="17_w8uev"]
+[ext_resource type="Texture2D" uid="uid://bhc6kgu6phn80" path="res://Assets/Characters/Magma/Cannon/Move/Left/Left2.png" id="18_c6n8o"]
+[ext_resource type="Texture2D" uid="uid://bdcpm778r0ba1" path="res://Assets/Characters/Magma/Cannon/Move/Left/Left3.png" id="19_mmvtn"]
+[ext_resource type="Texture2D" uid="uid://c0w5x3a8apwd2" path="res://Assets/Characters/Magma/Cannon/Move/Left/Left4.png" id="20_bvn2j"]
+[ext_resource type="Texture2D" uid="uid://b8m3lcjcuqevs" path="res://Assets/Characters/Magma/Cannon/Move/Left/Left5.png" id="21_avc8x"]
+[ext_resource type="Texture2D" uid="uid://cg6bljitd0oxg" path="res://Assets/Characters/Magma/Cannon/Move/Left/Left6.png" id="22_6nk7n"]
+[ext_resource type="Texture2D" uid="uid://bwhpbvf3e03l1" path="res://Assets/Characters/Magma/Cannon/Move/Right/Right1.png" id="23_nlxff"]
+[ext_resource type="Texture2D" uid="uid://b66g53eh8s0bp" path="res://Assets/Characters/Magma/Cannon/Move/Right/Right2.png" id="24_1wc5o"]
+[ext_resource type="Texture2D" uid="uid://beteuwe4vayju" path="res://Assets/Characters/Magma/Cannon/Move/Right/Right3.png" id="25_h36p0"]
+[ext_resource type="Texture2D" uid="uid://cfyppw3rhrpbk" path="res://Assets/Characters/Magma/Cannon/Move/Right/Right4.png" id="26_biqpk"]
+[ext_resource type="Texture2D" uid="uid://bmd8o1tujsi60" path="res://Assets/Characters/Magma/Cannon/Move/Right/Right5.png" id="27_shv3p"]
+[ext_resource type="Texture2D" uid="uid://ce63gj703h5mg" path="res://Assets/Characters/Magma/Cannon/Move/Right/Right6.png" id="28_4p8bj"]
+[ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/Magma/cannon_move_component.gd" id="31_ofvid"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eul7x"]
 animations = [{
@@ -24,6 +49,104 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_u5b4x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_evedm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_28iqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_stpyn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5ic2i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_gbmd7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0uw3u")
+}],
+"loop": false,
+"name": &"move_back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_w8uev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_olgcw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_vlek4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_rr1la")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_kuup6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_fpsb5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_y1lka")
+}],
+"loop": false,
+"name": &"move_front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_w8uev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_c6n8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_mmvtn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_bvn2j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_avc8x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_6nk7n")
+}],
+"loop": false,
+"name": &"move_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_nlxff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_1wc5o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_h36p0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_biqpk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_shv3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_4p8bj")
+}],
+"loop": false,
+"name": &"move_right",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 4.0,
@@ -52,7 +175,7 @@ type = 6
 position = Vector2(3, -89)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_eul7x")
-animation = &"idle"
+animation = &"move_front"
 autoplay = "idle"
 
 [node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component", "shader_component") instance=ExtResource("3_v23kq")]
@@ -71,8 +194,7 @@ figure_component = NodePath("..")
 move_component = NodePath("../MoveComponent")
 
 [node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "shadow")]
-script = ExtResource("5_b5pty")
-speed = 500.0
+script = ExtResource("31_ofvid")
 figure_component = NodePath("..")
 shadow = NodePath("../ShadowPivot/Shadow")
 
@@ -93,3 +215,5 @@ sprite_frames = SubResource("SpriteFrames_eul7x")
 animation = &"idle"
 autoplay = "idle"
 flip_h = true
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="MoveComponent" method="_on_figure_animation_finished"]
