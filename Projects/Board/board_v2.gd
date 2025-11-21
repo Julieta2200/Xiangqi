@@ -314,6 +314,7 @@ func activate_cards(result: bool) -> void:
 	ui.card_slots.activate(result)
 
 func figure_move_done() -> void:
+	await get_tree().process_frame
 	emit_signal("move_done")
 	if tutorial:
 		return
