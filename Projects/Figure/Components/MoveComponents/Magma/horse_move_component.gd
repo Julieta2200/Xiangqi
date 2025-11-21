@@ -38,7 +38,7 @@ func _on_figure_animation_finished() -> void:
 		if animated_sprite.speed_scale == -1:
 			animated_sprite.speed_scale = 1
 			animated_sprite.play("idle")
-			call_deferred("emit_signal", "move_done")
+			emit_signal("move_done")
 		else:
 			start_lava_tween()
 	else:

@@ -34,7 +34,7 @@ func _on_figure_animation_finished() -> void:
 			animated_sprite.speed_scale = 1
 			animated_sprite.play("idle")
 			shadow_pivot.modulate = Color(1,1,1,1)
-			call_deferred("emit_signal", "move_done")
+			emit_signal("move_done")
 		else:
 			finish_move_animation()
 	else:
