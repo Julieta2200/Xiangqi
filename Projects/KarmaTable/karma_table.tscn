@@ -316,7 +316,7 @@ offset_left = 1248.0
 offset_top = 438.0
 offset_right = 1248.0
 offset_bottom = 438.0
-hint = "Low level special abilities cards․LL special ability is open when you set free bonus level. "
+hint = "Low level (LL) special ability cards․ A new LL special ability is unlocked when you choose to set free a bonus level."
 number = "1/2"
 
 [node name="HintBubble2" parent="CanvasLayer/Hints" instance=ExtResource("3_ddsu4")]
@@ -326,7 +326,7 @@ offset_left = 2039.0
 offset_top = 450.0
 offset_right = 2039.0
 offset_bottom = 450.0
-hint = "High level special abilities cards․New HL special ability is open when you conquer 3 bonus levels."
+hint = "High level (HL) special ability cards․ New HL special abilities are unlocked when you choose to conquer 3 bonus levels."
 number = "2/2"
 
 [node name="LLHint" parent="CanvasLayer/Hints" instance=ExtResource("3_ddsu4")]
@@ -336,7 +336,7 @@ offset_left = 933.0
 offset_top = 731.0
 offset_right = 933.0
 offset_bottom = 731.0
-hint = "Click on special ability to equip."
+hint = "Click on a special ability to equip it. "
 number = "1/1"
 
 [node name="Music" parent="." instance=ExtResource("12_qky3m")]

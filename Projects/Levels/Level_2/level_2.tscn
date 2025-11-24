@@ -82,7 +82,7 @@ offset_left = 1029.0
 offset_top = 1789.0
 offset_right = 1029.0
 offset_bottom = 1789.0
-hint = "Elephants move exactly two points diagonally and cannot jump over intervening pieces and they cannot cross the river."
+hint = "Elephants are defensive pieces that cannot cross the river. They move exactly two points diagonally and cannot jump over intervening pieces. "
 number = "2/2"
 
 [node name="Music" parent="." instance=ExtResource("9_pvlwv")]

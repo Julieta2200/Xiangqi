@@ -21,10 +21,10 @@ func _ready() -> void:
 	]
 	board.initialize_position(state)
 	DialogSystem.start_dialog([
-		DialogSystem.DialogText.new("You're under attack, Ashes!", DialogSystem.CHARACTERS.Mara),
-		DialogSystem.DialogText.new("One more move and you'll be dead.", DialogSystem.CHARACTERS.Mara),
-		DialogSystem.DialogText.new("Do you think you can take me out with those knights?", DialogSystem.CHARACTERS.Ashes),
-		DialogSystem.DialogText.new("I warned you Ashes, Attack!", DialogSystem.CHARACTERS.Mara),
+		DialogSystem.DialogText.new("Give up, Ashes!", DialogSystem.CHARACTERS.Mara),
+		DialogSystem.DialogText.new("One more move and I’ll kill you if I must..", DialogSystem.CHARACTERS.Mara),
+		DialogSystem.DialogText.new("Do you think I’m afraid of those knights?", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("I warned you Ashes!", DialogSystem.CHARACTERS.Mara),
 	], true)
 	_disable_play()
 	DialogSystem.connect("dialog_finished", _enable_play)
