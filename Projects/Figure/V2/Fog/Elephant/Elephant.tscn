@@ -24,7 +24,7 @@ animations = [{
 "texture": ExtResource("3_dv8ri")
 }],
 "loop": true,
-"name": &"idle_dawn",
+"name": &"idle_dօwn",
 "speed": 2.0
 }]
 
@@ -48,9 +48,8 @@ type = 5
 position = Vector2(-1, -105)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_4prq8")
-animation = &"idle_dawn"
-autoplay = "idle_dawn"
-frame_progress = 0.213038
+animation = &"idle_dօwn"
+autoplay = "idle_dօwn"
 
 [node name="ChessComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "move_component")]
 script = ExtResource("3_5e7ov")
@@ -86,8 +85,8 @@ material = ExtResource("10_nrbeb")
 position = Vector2(-1, -105)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_4prq8")
-animation = &"idle_dawn"
-autoplay = "idle_dawn"
+animation = &"idle_dօwn"
+autoplay = "idle_dօwn"
 flip_h = true
 
 [node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component") instance=ExtResource("11_81cji")]
