@@ -71,7 +71,7 @@ offset_left = 492.0
 offset_top = 1470.0
 offset_right = 492.0
 offset_bottom = 1470.0
-hint = "This is a bonus level, so you can't use your special abilities."
+hint = "You can't use your special abilities in Bonus Levels."
 number = "1/2"
 
 [node name="FlyingGeneral" parent="GameplayUI/Hints" instance=ExtResource("9_ex373")]
@@ -81,7 +81,7 @@ offset_left = 818.0
 offset_top = 1544.0
 offset_right = 818.0
 offset_bottom = 1544.0
-hint = "General can attack the enemy general if they are in direct sight."
+hint = "Generals can attack opposing generals if they have direct line-of-sight."
 number = "2/2"
 
 [node name="Music" parent="." instance=ExtResource("9_h0ufh")]

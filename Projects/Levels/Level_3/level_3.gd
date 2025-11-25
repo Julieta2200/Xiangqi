@@ -24,9 +24,9 @@ func _ready() -> void:
 	]
 	board.initialize_position(state)
 	DialogSystem.start_dialog([
-		DialogSystem.DialogText.new("Nowhere to escape now?", DialogSystem.CHARACTERS.Advisor),
-		DialogSystem.DialogText.new("Ashes, please! You have to stop!", DialogSystem.CHARACTERS.Mara),
-		DialogSystem.DialogText.new("Everyone will pay for what you've done!", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("Nowhere to escape now", DialogSystem.CHARACTERS.Advisor),
+		DialogSystem.DialogText.new("Ashes, please! You must stop!", DialogSystem.CHARACTERS.Mara),
+		DialogSystem.DialogText.new("Everyone will pay for what they’ve done!", DialogSystem.CHARACTERS.Ashes),
 	], true)
 	_disable_play()
 	DialogSystem.connect("dialog_finished", _enable_play)
@@ -56,13 +56,13 @@ func _on_board_move_done() -> void:
 		ai.script_use_special = true
 		blocking_panel.show()
 		DialogSystem.start_dialog([
-			DialogSystem.DialogText.new("What's going on here?", DialogSystem.CHARACTERS.Advisor),
+			DialogSystem.DialogText.new("What is going on?", DialogSystem.CHARACTERS.Advisor),
 			DialogSystem.DialogText.new("It's an ambush!", DialogSystem.CHARACTERS.Advisor),
 			DialogSystem.DialogText.new("...", DialogSystem.CHARACTERS.Ashes),
 			DialogSystem.DialogText.new("I can't sense my soldiers!", DialogSystem.CHARACTERS.Ashes),
-			DialogSystem.DialogText.new("By the name of Fog Army, I order you to give up!", DialogSystem.CHARACTERS.Mara),
-			DialogSystem.DialogText.new("Ashes, we can't walk into the Disconnection Mist!", DialogSystem.CHARACTERS.Advisor),
-			DialogSystem.DialogText.new("She can't hold the mist for long!", DialogSystem.CHARACTERS.Ashes),
+			DialogSystem.DialogText.new("In the name of the Fog Army, I order you to surrender!", DialogSystem.CHARACTERS.Mara),
+			DialogSystem.DialogText.new("Ashes, our soldiers cannot enter the Disconnection Mist!", DialogSystem.CHARACTERS.Advisor),
+			DialogSystem.DialogText.new("She can't hold the mist for long. We must only wait her out.", DialogSystem.CHARACTERS.Ashes),
 		], true)
 		DialogSystem.connect("dialog_finished", _part_2_start)
 		match red_figures[0].chess_component.position:

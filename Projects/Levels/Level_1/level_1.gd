@@ -31,8 +31,8 @@ func _ready() -> void:
 	DialogSystem.start_dialog([
 		DialogSystem.DialogText.new("Stop right there.", DialogSystem.CHARACTERS.Mara),
 		DialogSystem.DialogText.new("Mara...", DialogSystem.CHARACTERS.Ashes),
-		DialogSystem.DialogText.new("Ashes, I’m sorry, but you have to go back to the Limbo.", DialogSystem.CHARACTERS.Mara),
-		DialogSystem.DialogText.new("Make me…", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("Ashes, I’m sorry, but you have to go back to Limbo.", DialogSystem.CHARACTERS.Mara),
+		DialogSystem.DialogText.new("Make me", DialogSystem.CHARACTERS.Ashes),
 		DialogSystem.DialogText.new("Capture him!", DialogSystem.CHARACTERS.Mara),
 	], true)
 	_disable_play()
@@ -46,12 +46,12 @@ func _on_game_over(win: BoardV2.GameOverResults, move_number: int):
 		DialogSystem.start_dialog([
 			DialogSystem.DialogText.new("She’s getting away!", DialogSystem.CHARACTERS.Advisor),
 			DialogSystem.DialogText.new("Should we go after her?", DialogSystem.CHARACTERS.Advisor),
-			DialogSystem.DialogText.new("It doesn’t matter, she’ll come back anyways.", DialogSystem.CHARACTERS.Ashes),
+			DialogSystem.DialogText.new("It doesn’t matter; she’ll come back anyways.", DialogSystem.CHARACTERS.Ashes),
 		], true)
 	else:
 		gameplay_ui.objectives.complete_objectives(false)
 		DialogSystem.start_dialog([
-			DialogSystem.DialogText.new("I’m sorry Ashes, you left me no other choice.", DialogSystem.CHARACTERS.Mara)
+			DialogSystem.DialogText.new("I’m sorry, Ashes, you left me no other choice.", DialogSystem.CHARACTERS.Mara)
 		],true)
 	
 	DialogSystem.connect("dialog_finished", _final_dialog_ended.bind(win))

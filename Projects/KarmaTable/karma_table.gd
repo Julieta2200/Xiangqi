@@ -18,8 +18,8 @@ var _hint_index: int = 0
 @onready var level_1_dialog: Array[DialogSystem.DialogText] = [
 	DialogSystem.DialogText.new("Ashes, you will meet your friend here.", DialogSystem.CHARACTERS.Jakat),
 	DialogSystem.DialogText.new("I don’t have any.", DialogSystem.CHARACTERS.Ashes),
-	DialogSystem.DialogText.new("Driven by revenge, you’ll get what you give, Karma will catch you.", DialogSystem.CHARACTERS.Jakat),
-	DialogSystem.DialogText.new("Don’t forget who you’re speaking to, just stop talking and lend me your powers.", DialogSystem.CHARACTERS.Ashes),
+	DialogSystem.DialogText.new("Driven by revenge, you’ll get what you give; Karma will catch you.", DialogSystem.CHARACTERS.Jakat),
+	DialogSystem.DialogText.new("Don’t forget who you’re speaking to. JStop talking and lend me your power.", DialogSystem.CHARACTERS.Ashes),
 	DialogSystem.DialogText.new("Time is ticking…", DialogSystem.CHARACTERS.Jakat),
 ]
 
@@ -33,25 +33,25 @@ var _hint_index: int = 0
 @onready var level_2_dialog: Array[DialogSystem.DialogText] = [
 	DialogSystem.DialogText.new("Jakat, I need more power.", DialogSystem.CHARACTERS.Ashes),
 	DialogSystem.DialogText.new("So be it. But don't forget our deal.", DialogSystem.CHARACTERS.Jakat),
-	DialogSystem.DialogText.new("I'll do what I have to do.", DialogSystem.CHARACTERS.Ashes),
-	DialogSystem.DialogText.new("Karma moves in two directions...", DialogSystem.CHARACTERS.Jakat),
+	DialogSystem.DialogText.new("I'll do what I must.", DialogSystem.CHARACTERS.Ashes),
+	DialogSystem.DialogText.new("Karma moves in both directions...", DialogSystem.CHARACTERS.Jakat),
 ]
 
 @onready var level_2_bonus_dialog: Array[DialogSystem.DialogText] = [
 	DialogSystem.DialogText.new("What's the point? Why are you fighting for others?", DialogSystem.CHARACTERS.Jakat),
-	DialogSystem.DialogText.new("I'm fighting for me.", DialogSystem.CHARACTERS.Ashes),
+	DialogSystem.DialogText.new("I'm fighting for myself.", DialogSystem.CHARACTERS.Ashes),
 	DialogSystem.DialogText.new("Realize that everything connects to everything else.", DialogSystem.CHARACTERS.Jakat),
 ]
 
 @onready var level_3_dialog: Array[DialogSystem.DialogText] = [
-	DialogSystem.DialogText.new("Mara has nowhere to escape now.", DialogSystem.CHARACTERS.Jakat),
-	DialogSystem.DialogText.new("What you're going to do?", DialogSystem.CHARACTERS.Jakat),
+	DialogSystem.DialogText.new("Mara has nowhere left to hide.", DialogSystem.CHARACTERS.Jakat),
+	DialogSystem.DialogText.new("What will you do?", DialogSystem.CHARACTERS.Jakat),
 	DialogSystem.DialogText.new("I don't care what happens to her.", DialogSystem.CHARACTERS.Ashes),
 	DialogSystem.DialogText.new("Karma will catch you...", DialogSystem.CHARACTERS.Jakat),
 ]
 
 @onready var level_3_bonus_dialog: Array[DialogSystem.DialogText] = [
-	DialogSystem.DialogText.new("And again, you're fighting for others?", DialogSystem.CHARACTERS.Jakat),
+	DialogSystem.DialogText.new("Once more, you fight for others?", DialogSystem.CHARACTERS.Jakat),
 	DialogSystem.DialogText.new("You're talking too much!", DialogSystem.CHARACTERS.Ashes)
 ]
 

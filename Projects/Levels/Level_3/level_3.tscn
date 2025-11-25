@@ -80,7 +80,7 @@ offset_left = 1073.0
 offset_top = 1498.0
 offset_right = 1073.0
 offset_bottom = 1498.0
-hint = "Cannons move vertically or horizontally any number of unoccupied squares, To capture, the Cannon must jump over exactly one piece along its path to the target piece."
+hint = "Cannons move vertically or horizontally any number of unoccupied squares. To capture, the Cannon must jump over exactly one piece along its path to the target piece."
 number = "2/2"
 
 [node name="Music" parent="." instance=ExtResource("9_jqpvp")]
