@@ -141,8 +141,8 @@ radius = 32.0
 height = 248.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_phus6"]
-radius = 49.0
-height = 112.0
+radius = 44.0
+height = 212.0
 
 [node name="Soldier" type="CharacterBody2D" node_paths=PackedStringArray("chess_component", "ui_component", "move_component", "target_component")]
 script = ExtResource("1_0l350")
@@ -202,7 +202,7 @@ script = ExtResource("12_gmspj")
 chess_component = NodePath("../ChessComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FigureUIComponent"]
-position = Vector2(2, -38)
+position = Vector2(1, -93)
 shape = SubResource("CapsuleShape2D_phus6")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="MoveComponent" method="_on_figure_animation_finished"]

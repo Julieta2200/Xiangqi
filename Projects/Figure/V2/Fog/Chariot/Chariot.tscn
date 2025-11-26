@@ -42,7 +42,7 @@ height = 266.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y1viu"]
 radius = 84.0
-height = 196.0
+height = 246.0
 
 [node name="Chariot" type="CharacterBody2D" node_paths=PackedStringArray("chess_component", "ui_component", "move_component", "target_component")]
 script = ExtResource("1_e2klm")
@@ -104,5 +104,5 @@ script = ExtResource("12_m3fju")
 chess_component = NodePath("../ChessComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FigureUIComponent"]
-position = Vector2(0, -93)
+position = Vector2(1, -81)
 shape = SubResource("CapsuleShape2D_y1viu")

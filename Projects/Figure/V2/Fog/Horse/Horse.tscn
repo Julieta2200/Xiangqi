@@ -428,7 +428,7 @@ height = 126.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5u7fw"]
 radius = 49.0
-height = 112.0
+height = 118.0
 
 [node name="Horse" type="CharacterBody2D" node_paths=PackedStringArray("chess_component", "ui_component", "move_component", "target_component")]
 script = ExtResource("1_s7cam")
@@ -483,7 +483,7 @@ script = ExtResource("10_48tjg")
 chess_component = NodePath("../ChessComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FigureUIComponent"]
-position = Vector2(2, -38)
+position = Vector2(0, -21)
 shape = SubResource("CapsuleShape2D_5u7fw")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="MoveComponent" method="_on_figure_animation_finished"]
