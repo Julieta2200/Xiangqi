@@ -44,7 +44,7 @@ func calculate_moves(state: Dictionary, current_position: Vector2i) -> Array[Vec
 func flying(start_pos: Vector2i, state:Dictionary)-> Array[Vector2i]:
 	var result: Array[Vector2i] = []
 	var limit = flying_limits[team]
-	for i in range(start_pos.y + 1, limit.position , limit.direction):
+	for i in range(start_pos.y + limit.direction, limit.position , limit.direction):
 		var new_pos = Vector2i(start_pos.x,i)
 		if state.has(new_pos):
 			if state[new_pos].type == figure_component.Types.GENERAL:
