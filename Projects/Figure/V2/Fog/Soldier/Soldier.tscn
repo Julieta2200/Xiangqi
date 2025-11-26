@@ -155,7 +155,7 @@ target_component = NodePath("FigureTargetComponent")
 position = Vector2(1, -104)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_pi8o7")
-animation = &"move_front"
+animation = &"idle_up"
 autoplay = "idle_down"
 
 [node name="ChessComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "move_component")]
