@@ -159,6 +159,7 @@ func instantiate_figure(kingdom: Kingdoms, type: FigureComponent.Types, pos: Vec
 	figure.board = self
 	figure.chess_component.position = pos
 	figure.move_component.move_done.connect(figure_move_done)
+	figure.move_component.attack_done.connect(figure_apply_move)
 	add_child(figure)
 
 func show_move_markers(positions: Array[Vector2i], figure: FigureComponent) -> void:
@@ -204,14 +205,13 @@ func move_figure(marker: BoardMarker) -> void:
 	if _selected_figure.type == FigureComponent.Types.ELEPHANT:
 		camera.shake()
 	clear_markers()
-	state.erase(_selected_figure.chess_component.position)
-	if state.has(marker.board_position):
-		capture(marker.board_position,_selected_figure.chess_component.position)
-	state[marker.board_position] = _selected_figure
-	_selected_figure.chess_component.change_position(marker.board_position)
 	turn = Teams.Black
 	update_energy_by_figure_type(_selected_figure.type)
-	
+	if state.has(marker.board_position):
+		capture(marker.board_position,_selected_figure.chess_component.position)
+	else:
+		figure_apply_move(_selected_figure.chess_component.position,marker.board_position)
+
 func update_energy_by_figure_type(figure_type : FigureComponent.Types) -> void:
 	if _selected_figure.type == FigureComponent.Types.GENERAL or _selected_figure.type == FigureComponent.Types.ADVISOR:
 		ui.power_meter.discharge_energy()
@@ -220,12 +220,11 @@ func update_energy_by_figure_type(figure_type : FigureComponent.Types) -> void:
 
 func move_figure_AI(move: Dictionary) -> void:
 	var figure: FigureComponent = state[move["start"]]
-	state.erase(move["start"])
+	move_number += 1
 	if state.has(move["end"]):
 		capture(move["end"],move["start"])
-	state[move["end"]] = figure
-	figure.chess_component.change_position(move["end"])
-	move_number += 1
+	else:
+		figure_apply_move(move["start"],move["end"])
 	_AI_figure = figure
 
 func spawn_AI_figure():
@@ -242,8 +241,9 @@ func spawn_AI_figure():
 	else:
 		instantiate_figure(Kingdoms.FOG, FigureComponent.Types.HORSE, pos)
 		
-func capture(target_pos: Vector2i, attacker_pos = Vector2i(-1,-1)) -> void:
+func capture(target_pos: Vector2i, attacker_pos: Vector2i) -> void:
 	state[target_pos].move_component.disappear(attacker_pos)
+	state[attacker_pos].move_component.attack(attacker_pos,target_pos)
 
 func clear_markers(exceptions: Array[Vector2i] = []) -> void:
 	if _selected_figure != null:
@@ -331,6 +331,11 @@ func figure_move_done() -> void:
 		turn = Teams.Red
 	if _mist != null and _mist.target_team != turn:
 		_mist.deactivate(self)
+
+func figure_apply_move(attacker_pos: Vector2i,target_pos: Vector2i):
+	state[target_pos] = state[attacker_pos]
+	state[attacker_pos].chess_component.change_position(target_pos)
+	state.erase(attacker_pos)
 
 func get_generals() -> Array[FigureComponent]:
 	var generals: Array[FigureComponent] = []

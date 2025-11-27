@@ -6,7 +6,7 @@ extends MoveComponent
 @export var center_sign: AnimatedSprite2D
 @export var main_sprite: AnimatedSprite2D
 
-const disappear_up_left = "disappear_up_left"
+const move_up_left = "move_up_left"
 
 var marker: BoardMarker
 var initial_position: Vector2i
@@ -18,7 +18,7 @@ var sign: AnimatedSprite2D
 func move_to_position(marker: BoardMarker, initial_position: Vector2i = Vector2i.ZERO) -> void:
 	self.marker = marker
 	self.initial_position = initial_position
-	var animation: String = "disappear_"
+	var animation: String = "move_"
 	if marker.board_position.y > initial_position.y:
 		animation += "up_"
 	else:
@@ -35,6 +35,8 @@ func move_to_position(marker: BoardMarker, initial_position: Vector2i = Vector2i
 
 
 func _on_main_sprite_animation_finished() -> void:
+	if disappear_animation_finished():
+		return
 	if !appear:
 		setup_signs(initial_position, marker.board_position)
 	else:
@@ -133,3 +135,27 @@ func get_sign_with_direction(is_edge : bool):
 	else:
 		sign = center_sign
 	
+#Disappear animation
+func disappear_animation(target_pos: Vector2i, attacker_pos: Vector2i):
+	var direction = target_pos - attacker_pos
+	
+	if direction.y < 0:
+		animation = "disappear_back"
+	elif direction.y > 0:
+		animation = "disappear_front"
+	elif direction.x > 0:
+		animation = "disappear_left"
+	else:
+		animation = "disappear_right"
+	if shadow != null:
+		shadow.play(animation)
+	animated_sprite.play(animation)
+
+func disappear_animation_finished() -> bool:
+	var current_animation = animated_sprite.animation
+	if current_animation.find("disappear") != -1:
+		figure_component.delete()
+	return current_animation.find("disappear") != -1 
+
+func disappear(attacker_pos: Vector2i):
+	disappear_animation(figure_component.chess_component.position,attacker_pos)

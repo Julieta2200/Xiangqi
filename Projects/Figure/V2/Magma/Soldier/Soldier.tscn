@@ -799,7 +799,7 @@ move_component = NodePath("MoveComponent")
 position = Vector2(8, -168)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_pi8o7")
-animation = &"move_back"
+animation = &"move_left"
 autoplay = "idle"
 
 [node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component", "shader_component") instance=ExtResource("4_qchhg")]
