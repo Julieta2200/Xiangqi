@@ -7,6 +7,7 @@ class_name MoveComponent extends Node
 @export var shadow: AnimatedSprite2D
 @export var move_audio: AudioStreamPlayer
 
+signal attack_done()
 signal move_done()
 
 func move_to_position(marker: BoardMarker, initial_position: Vector2i = Vector2i.ZERO) -> void:
@@ -40,6 +41,9 @@ func disappear(attacker_pos: Vector2i):
 
 func disappear_animation(target_pos: Vector2i, attacker_pos: Vector2i):
 	pass
+
+func attack(attacker_pos: Vector2i,target_pos: Vector2i):
+	emit_signal("attack_done",attacker_pos,target_pos)
 
 func play_move_audio():
 	if move_audio != null:
