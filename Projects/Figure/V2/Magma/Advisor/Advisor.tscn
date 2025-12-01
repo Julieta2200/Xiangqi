@@ -1,4 +1,4 @@
-[gd_scene load_steps=176 format=3 uid="uid://xnkcry6frvgx"]
+[gd_scene load_steps=188 format=3 uid="uid://xnkcry6frvgx"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_ts1i4"]
 [ext_resource type="Texture2D" uid="uid://di3yukoh8siaj" path="res://Assets/Characters/Magma/Advisor/Run/Back_Left_Side/Back_Left_Side1.png" id="2_a3x3p"]
@@ -167,6 +167,17 @@
 [ext_resource type="Texture2D" uid="uid://c6hdqaqjkynkn" path="res://Assets/Characters/Magma/Advisor/Disappear/Right/Right26.png" id="116_4ydyn"]
 [ext_resource type="Texture2D" uid="uid://ddlfi111shs45" path="res://Assets/Characters/Magma/Advisor/Disappear/Right/Right27.png" id="117_68gst"]
 [ext_resource type="Texture2D" uid="uid://c84ahd0ht2a4o" path="res://Assets/Characters/Magma/Advisor/Disappear/Right/Right28.png" id="118_hvxgm"]
+[ext_resource type="Texture2D" uid="uid://cmv7a0g2bvd3u" path="res://Assets/Characters/Magma/Advisor/Attack/Attack1.png" id="168_5yft7"]
+[ext_resource type="Texture2D" uid="uid://dqr15y8u8tdcv" path="res://Assets/Characters/Magma/Advisor/Attack/Attack2.png" id="169_7wsn4"]
+[ext_resource type="Texture2D" uid="uid://df36v510piqi3" path="res://Assets/Characters/Magma/Advisor/Attack/Attack3.png" id="170_tuhjv"]
+[ext_resource type="Texture2D" uid="uid://bsvutjoptdhod" path="res://Assets/Characters/Magma/Advisor/Attack/Attack4.png" id="171_kqupf"]
+[ext_resource type="Texture2D" uid="uid://b0hyxtcuovjxe" path="res://Assets/Characters/Magma/Advisor/Attack/Attack5.png" id="172_vybuq"]
+[ext_resource type="Texture2D" uid="uid://b203gm5snq5v7" path="res://Assets/Characters/Magma/Advisor/Attack/Attack6.png" id="173_ekrwv"]
+[ext_resource type="Texture2D" uid="uid://dsw2vyw4f4kmw" path="res://Assets/Characters/Magma/Advisor/Attack/Attack7.png" id="174_v6rph"]
+[ext_resource type="Texture2D" uid="uid://diesyv6gc7gnu" path="res://Assets/Characters/Magma/Advisor/Attack/Attack8.png" id="175_eg73m"]
+[ext_resource type="Texture2D" uid="uid://cw83p0tm0bqo2" path="res://Assets/Characters/Magma/Advisor/Attack/Attack9.png" id="176_7k170"]
+[ext_resource type="Texture2D" uid="uid://dgw41cx48gba0" path="res://Assets/Characters/Magma/Advisor/Attack/Attack10.png" id="177_uc2mr"]
+[ext_resource type="Texture2D" uid="uid://hdda1b4aw3q5" path="res://Assets/Characters/Magma/Advisor/Attack/Attack11.png" id="178_xp4lu"]
 
 [sub_resource type="Animation" id="Animation_eddeg"]
 length = 0.001
@@ -489,6 +500,80 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pi8o7"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("63_px24j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_v63mr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_w8h5m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_2j38v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_v63mr")
+}],
+"loop": false,
+"name": &"attack_down_left",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("91_6yja6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_cab5u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_is4cc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_i6vj7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_cab5u")
+}],
+"loop": false,
+"name": &"attack_down_right",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_a3x3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_i8rkn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fldcs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_a3x3p")
+}],
+"loop": false,
+"name": &"attack_up_left",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_lpqh5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_7cyx4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_q3j1l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_lpqh5")
+}],
+"loop": false,
+"name": &"attack_up_right",
+"speed": 7.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("7_6apyw")
@@ -889,7 +974,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"move_down_left",
-"speed": 10.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -921,7 +1006,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"move_down_right",
-"speed": 10.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -953,7 +1038,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"move_up_left",
-"speed": 10.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -985,7 +1070,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"move_up_right",
-"speed": 10.0
+"speed": 12.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qnuwo"]
@@ -997,6 +1082,50 @@ streams_count = 3
 stream_0/stream = ExtResource("53_s3xot")
 stream_1/stream = ExtResource("54_xsfcc")
 stream_2/stream = ExtResource("55_8sj5t")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7xii7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("168_5yft7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("169_7wsn4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("170_tuhjv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("171_kqupf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("172_vybuq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("173_ekrwv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("174_v6rph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("175_eg73m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("176_7k170")
+}, {
+"duration": 1.0,
+"texture": ExtResource("177_uc2mr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("178_xp4lu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("178_xp4lu")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 10.0
+}]
 
 [node name="Advisor" type="CharacterBody2D" node_paths=PackedStringArray("chess_component", "ui_component", "move_component")]
 script = ExtResource("1_ts1i4")
@@ -1096,11 +1225,12 @@ frame = 1
 frame_progress = 1.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, -106)
+position = Vector2(415, -14)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_pi8o7")
-animation = &"disappear_front"
+animation = &"attack_up_right"
 autoplay = "idle_up"
+offset = Vector2(-207, -46)
 
 [node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component", "shader_component") instance=ExtResource("4_eq2gi")]
 chess_component = NodePath("../ChessComponent")
@@ -1117,13 +1247,14 @@ team = 1
 figure_component = NodePath("..")
 move_component = NodePath("../MoveComponent")
 
-[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("path_signs", "path_animation", "edge_sign", "center_sign", "main_sprite", "figure_component", "shadow", "move_audio")]
+[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("path_signs", "path_animation", "edge_sign", "center_sign", "main_sprite", "attack_sprite", "figure_component", "shadow", "move_audio")]
 script = ExtResource("9_74u5g")
 path_signs = NodePath("../BoardSigns/PathSigns")
 path_animation = NodePath("../BoardSigns/PathAnimation")
 edge_sign = NodePath("../BoardSigns/EdgeSign")
 center_sign = NodePath("../BoardSigns/CenterSign")
 main_sprite = NodePath("../AnimatedSprite2D")
+attack_sprite = NodePath("../Attack")
 speed = 300.0
 figure_component = NodePath("..")
 shadow = NodePath("../ShadowPivot/Shadow")
@@ -1151,7 +1282,16 @@ flip_h = true
 [node name="MoveAudio" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_eh503")
 
+[node name="Attack" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-5, 45)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_7xii7")
+animation = &"attack"
+offset = Vector2(-0.5, -42)
+
 [connection signal="animation_finished" from="BoardSigns/EdgeSign" to="MoveComponent" method="_on_sign_animation_finished"]
 [connection signal="animation_finished" from="BoardSigns/CenterSign" to="MoveComponent" method="_on_sign_animation_finished"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="MoveComponent" method="_on_main_sprite_animation_finished"]
 [connection signal="animation_finished" from="ShadowPivot/Shadow" to="MoveComponent" method="_on_main_sprite_animation_finished"]
+[connection signal="animation_finished" from="Attack" to="MoveComponent" method="_on_attack_animation_finished"]
