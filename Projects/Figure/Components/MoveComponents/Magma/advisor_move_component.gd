@@ -120,6 +120,7 @@ func appear_animation() -> void:
 	main_sprite.play_backwards(animation)
 
 func main_sprite_idle_animation():
+	frame = 0
 	if shadow != null:
 		shadow.play("idle_up")
 	main_sprite.play("idle_up")
