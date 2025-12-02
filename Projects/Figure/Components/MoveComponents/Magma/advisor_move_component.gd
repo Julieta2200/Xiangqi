@@ -177,15 +177,15 @@ func attack(attacker_pos: Vector2i,target_pos: Vector2i):
 	attack_sprite.play("attack")
 	
 	animation = "attack_"
-	if attacker_pos.y > target_pos.y:
-		animation += "down_"
-	else:
+	if target_pos.y > attacker_pos.y:
 		animation += "up_"
-
-	if attacker_pos.x < target_pos.x:
-		animation += "right"
 	else:
+		animation += "down_"
+
+	if target_pos.x < attacker_pos.y:
 		animation += "left"
+	else:
+		animation += "right"
 	
 	if shadow != null:
 		shadow.play(animation)
