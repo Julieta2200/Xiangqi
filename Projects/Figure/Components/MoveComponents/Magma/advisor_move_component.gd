@@ -5,6 +5,8 @@ extends MoveComponent
 @export var edge_sign: AnimatedSprite2D
 @export var center_sign: AnimatedSprite2D
 @export var main_sprite: AnimatedSprite2D
+@export var attack_sprite: AnimatedSprite2D
+
 
 const move_up_left = "move_up_left"
 
@@ -13,7 +15,9 @@ var initial_position: Vector2i
 var appear: bool
 var animation: String
 var sign: AnimatedSprite2D
-
+var attacker_pos: Vector2i
+var target_pos: Vector2i
+var frame: int = 0
 
 func move_to_position(marker: BoardMarker, initial_position: Vector2i = Vector2i.ZERO) -> void:
 	self.marker = marker
@@ -32,12 +36,16 @@ func move_to_position(marker: BoardMarker, initial_position: Vector2i = Vector2i
 	if shadow != null:
 		shadow.play(animation)
 	main_sprite.play(animation)
+	main_sprite.frame = frame
 
 
 func _on_main_sprite_animation_finished() -> void:
+	var current_animation = animated_sprite.animation
 	if disappear_animation_finished():
 		return
-	if !appear:
+	elif current_animation.find("attack") != -1:
+		frame = 4
+	elif !appear:
 		setup_signs(initial_position, marker.board_position)
 	else:
 		main_sprite_idle_animation()
@@ -112,6 +120,7 @@ func appear_animation() -> void:
 	main_sprite.play_backwards(animation)
 
 func main_sprite_idle_animation():
+	frame = 0
 	if shadow != null:
 		shadow.play("idle_up")
 	main_sprite.play("idle_up")
@@ -159,3 +168,30 @@ func disappear_animation_finished() -> bool:
 
 func disappear(attacker_pos: Vector2i):
 	disappear_animation(figure_component.chess_component.position,attacker_pos)
+
+func attack(attacker_pos: Vector2i,target_pos: Vector2i):
+	self.attacker_pos = attacker_pos
+	self.target_pos = target_pos
+	attack_sprite.modulate.a = 1
+	attack_sprite.global_position = figure_component.board.state[target_pos].global_position
+	attack_sprite.play("attack")
+	
+	animation = "attack_"
+	if target_pos.y > attacker_pos.y:
+		animation += "up_"
+	else:
+		animation += "down_"
+
+	if target_pos.x < attacker_pos.y:
+		animation += "left"
+	else:
+		animation += "right"
+	
+	if shadow != null:
+		shadow.play(animation)
+	main_sprite.play(animation)
+
+
+func _on_attack_animation_finished() -> void:
+	emit_signal("attack_done",attacker_pos,target_pos)
+	attack_sprite.modulate.a = 0
