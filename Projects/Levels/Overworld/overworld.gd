@@ -21,4 +21,4 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_tutorial_pressed() -> void:
-	get_tree().change_scene_to_file("res://Projects/Levels/Tutorial/tutorial.tscn")
+	SceneManager.change_scene(SceneManager.Scenes.Tutorial)

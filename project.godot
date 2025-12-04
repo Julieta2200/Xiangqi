@@ -21,6 +21,7 @@ DialogSystem="*res://Projects/Ui/dialog_system.tscn"
 GameState="*res://Projects/Levels/Overworld/game_state.gd"
 ShadowController="*res://Projects/Figure/shadow_controller.gd"
 AudioManager="*res://Projects/Music/AudioManager.gd"
+SceneManager="*res://Projects/Levels/SceneManager/scene_manager.gd"
 
 [display]
 

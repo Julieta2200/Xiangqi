@@ -83,7 +83,7 @@ func _on_play_pressed() -> void:
 		GameState.current_level_info["scene"] = level
 		GameState.current_level_info["name"] = number
 		GameState.current_level_info["objectives"] = additional_objectives
-		get_tree().change_scene_to_file("res://Projects/KarmaTable/karma_table.tscn")
+		SceneManager.change_scene(SceneManager.Scenes.Karma_table)
 
 
 func _on_close_mouse_entered() -> void:
