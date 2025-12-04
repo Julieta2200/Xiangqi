@@ -21,4 +21,4 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_tutorial_pressed() -> void:
-	SceneManager.change_scene("tutorial")
+	SceneManager.change_scene(SceneManager.Scenes.Tutorial)

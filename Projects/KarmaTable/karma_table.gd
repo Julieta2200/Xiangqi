@@ -143,7 +143,7 @@ func _dequip_hl(s: SpecialCard):
 
 func _on_back_pressed() -> void:
 	GameState.save_game()
-	SceneManager.change_scene("overworld")
+	SceneManager.change_scene(SceneManager.Scenes.Overworld)
 
 func _on_play_pressed() -> void:
 	if GameState.current_level_info["scene"]:
