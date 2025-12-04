@@ -47,8 +47,7 @@ func _next_dialog() -> void:
 	else:
 		timer.stop()
 	if text_queue.size() == 0:
-		panel.hide()
-		skip_text_obj.hide()
+		disappear()
 		emit_signal("dialog_finished")
 		return
 	var dt: DialogText = text_queue.pop_front()
@@ -76,3 +75,7 @@ class DialogText:
 
 func _on_timer_timeout() -> void:
 	_next_dialog()
+
+func disappear():
+	panel.hide()
+	skip_text_obj.hide()

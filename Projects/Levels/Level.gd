@@ -44,7 +44,7 @@ func _on_game_over(win: BoardV2.GameOverResults, move_number: int):
 		get_tree().reload_current_scene()
 
 func load_main_scene():
-	get_tree().change_scene_to_file("res://Projects/Levels/Overworld/overworld.tscn")
+	SceneManager.change_scene("overworld")
 
 func _on_gameplay_ui_set_free() -> void:
 	GameState.state["ll_cards"].append(card)
