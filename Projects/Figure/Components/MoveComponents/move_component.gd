@@ -10,6 +10,8 @@ class_name MoveComponent extends Node
 signal attack_done()
 signal move_done()
 
+var shake_tween: Tween = null
+
 func move_to_position(marker: BoardMarker, initial_position: Vector2i = Vector2i.ZERO) -> void:
 	var target_position: Vector2 = marker.global_position
 	
@@ -49,3 +51,15 @@ func attack(attacker_pos: Vector2i,target_pos: Vector2i):
 func play_move_audio():
 	if move_audio != null:
 		move_audio.play()
+
+func shake(duration: float = 0.1, intensity: float = 8.0) -> void:
+	if shake_tween != null:
+		return
+
+	var start_pos := figure_component.position
+	shake_tween = create_tween()
+	shake_tween.tween_property(figure_component, "position", start_pos + Vector2(-intensity, 0), duration)
+	shake_tween.tween_property(figure_component, "position", start_pos + Vector2(intensity, 0), duration)
+	shake_tween.tween_property(figure_component, "position", start_pos, duration)
+	
+	shake_tween.finished.connect(func(): shake_tween = null)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://btst40g2n6wda"]
+[gd_scene load_steps=40 format=3 uid="uid://btst40g2n6wda"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_mjqwp"]
 [ext_resource type="Texture2D" uid="uid://cq5aoxlt43cv8" path="res://Assets/Characters/Magma/Cannon/Idle/Catapult1.png" id="2_uf8g5"]
@@ -36,6 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://bmd8o1tujsi60" path="res://Assets/Characters/Magma/Cannon/Move/Right/Right5.png" id="27_shv3p"]
 [ext_resource type="Texture2D" uid="uid://ce63gj703h5mg" path="res://Assets/Characters/Magma/Cannon/Move/Right/Right6.png" id="28_4p8bj"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/Magma/cannon_move_component.gd" id="31_ofvid"]
+[ext_resource type="Material" uid="uid://cxl2ktlqa7y0f" path="res://Projects/Shaders/summoning_sickness.tres" id="35_dvtla"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eul7x"]
 animations = [{
@@ -178,9 +179,10 @@ sprite_frames = SubResource("SpriteFrames_eul7x")
 animation = &"idle"
 autoplay = "idle"
 
-[node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component", "shader_component") instance=ExtResource("3_v23kq")]
+[node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component", "shader_component", "move_component") instance=ExtResource("3_v23kq")]
 chess_component = NodePath("../ChessComponent")
 shader_component = NodePath("../ShaderComponent")
+move_component = NodePath("../MoveComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FigureUIComponent"]
 position = Vector2(0, -94)
@@ -202,6 +204,7 @@ shadow = NodePath("../ShadowPivot/Shadow")
 main_sprite = NodePath("../AnimatedSprite2D")
 highlight_material = ExtResource("5_sv2oy")
 spawn_material = ExtResource("9_x54yj")
+sickness_material = ExtResource("35_dvtla")
 
 [node name="ShadowPivot" parent="." node_paths=PackedStringArray("shadow") instance=ExtResource("10_r11ff")]
 shadow = NodePath("Shadow")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ckd2du3jaxixc"]
+[gd_scene load_steps=17 format=3 uid="uid://ckd2du3jaxixc"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_dej4m"]
 [ext_resource type="Texture2D" uid="uid://blrj3nija8eqn" path="res://Assets/Characters/Magma/Chariot/Idle/Chariot1.png" id="2_o4kas"]
@@ -11,8 +11,9 @@
 [ext_resource type="Material" uid="uid://e3w5tox88i13" path="res://Projects/Shaders/outline.tres" id="7_k3y6k"]
 [ext_resource type="PackedScene" uid="uid://cy1y1kpvwk5sq" path="res://Projects/Figure/Components/ShaderComponent/shader_component.tscn" id="9_wuq8e"]
 [ext_resource type="Material" uid="uid://b5ews8a5nl326" path="res://Projects/Shaders/spawn.tres" id="11_ertx5"]
-[ext_resource type="PackedScene" path="res://Projects/Figure/shadow_pivot.tscn" id="12_dxf3j"]
-[ext_resource type="Material" path="res://Projects/Shaders/blur_shadow.tres" id="13_n43f1"]
+[ext_resource type="PackedScene" uid="uid://d05lmiobxnn3t" path="res://Projects/Figure/shadow_pivot.tscn" id="12_dxf3j"]
+[ext_resource type="Material" uid="uid://cxl2ktlqa7y0f" path="res://Projects/Shaders/summoning_sickness.tres" id="12_rro53"]
+[ext_resource type="Material" uid="uid://blvd6fmf8jtbp" path="res://Projects/Shaders/blur_shadow.tres" id="13_n43f1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ny2w2"]
 animations = [{
@@ -52,9 +53,10 @@ sprite_frames = SubResource("SpriteFrames_ny2w2")
 animation = &"idle"
 autoplay = "idle"
 
-[node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component", "shader_component") instance=ExtResource("4_70rel")]
+[node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component", "shader_component", "move_component") instance=ExtResource("4_70rel")]
 chess_component = NodePath("../ChessComponent")
 shader_component = NodePath("../ShaderComponent")
+move_component = NodePath("../MoveComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FigureUIComponent"]
 position = Vector2(0, -85)
@@ -77,6 +79,7 @@ shadow = NodePath("../ShadowPivot/Shadow")
 main_sprite = NodePath("../AnimatedSprite2D")
 highlight_material = ExtResource("7_k3y6k")
 spawn_material = ExtResource("11_ertx5")
+sickness_material = ExtResource("12_rro53")
 
 [node name="ShadowPivot" parent="." node_paths=PackedStringArray("shadow") instance=ExtResource("12_dxf3j")]
 shadow = NodePath("Shadow")
