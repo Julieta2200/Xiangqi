@@ -6,6 +6,7 @@ class_name Level extends Node2D
 @export var garrison_limitations: Array[FigureComponent.Types] = []
 @onready var board: BoardV2 = %Board
 @onready var gameplay_ui: GameplayUI = $GameplayUI
+@onready var background: Sprite2D = $Background
 
 
 func _ready() -> void:
@@ -19,7 +20,7 @@ func _ready() -> void:
 	gameplay_ui.garrison.update_cards(gameplay_ui.power_meter.energy)
 
 func game_over_energy_depleted():
-	get_tree().reload_current_scene()
+	show_game_over_ui()
 
 func _on_game_over(win: BoardV2.GameOverResults, move_number: int):
 	await get_tree().process_frame
@@ -41,7 +42,11 @@ func _on_game_over(win: BoardV2.GameOverResults, move_number: int):
 			load_main_scene()
 	else:
 		gameplay_ui.objectives.complete_objectives(false)
-		get_tree().reload_current_scene()
+		show_game_over_ui()
+
+func show_game_over_ui():
+	gameplay_ui.show_game_over_ui()
+	background.modulate = Color(0,0,0,1) #black out the background
 
 func load_main_scene():
 	SceneManager.change_scene(SceneManager.Scenes.Overworld)

@@ -5,6 +5,7 @@ class_name GameplayUI extends CanvasLayer
 @onready var decision: Control = $Decision
 @onready var card_slots: CardSlots = $CardSlots
 @onready var objectives: Objectives = $Objectives
+@onready var game_over_screen: GameOverScreen = $GameOverScreen
 @export var with_specials: bool = true
 
 @export var board: BoardV2
@@ -29,3 +30,6 @@ func update_specials_visibility():
 	garrison.visible = with_specials
 	power_meter.visible = with_specials
 	card_slots.visible = with_specials
+
+func show_game_over_ui():
+	game_over_screen.show()

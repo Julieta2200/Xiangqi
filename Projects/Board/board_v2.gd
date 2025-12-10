@@ -318,7 +318,7 @@ func figure_move_done() -> void:
 	emit_signal("move_done")
 	if tutorial:
 		return
-	if check_game_over():
+	if check_game_over() or ui.power_meter.energy == 0:
 		return
 	if _selected_figure != null:
 		_selected_figure = null
