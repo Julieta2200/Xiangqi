@@ -72,7 +72,7 @@ offset_left = 1055.0
 offset_top = 1373.0
 offset_right = 1055.0
 offset_bottom = 1373.0
-hint = "Horses move in an L-shape: two steps in one direction and then one step perpendicular."
+hint = "Aspets move in an L-shape: two steps in one direction and then one step perpendicular."
 number = "1/2"
 
 [node name="Elephants" parent="GameplayUI/Hints" instance=ExtResource("9_ibaq1")]
@@ -82,7 +82,7 @@ offset_left = 1029.0
 offset_top = 1789.0
 offset_right = 1029.0
 offset_bottom = 1789.0
-hint = "Elephants are defensive pieces that cannot cross the river. They move exactly two points diagonally and cannot jump over intervening pieces. "
+hint = "Pighs are defensive pieces that cannot cross the river. They move exactly two points diagonally and cannot jump over intervening pieces. "
 number = "2/2"
 
 [node name="Music" parent="." instance=ExtResource("9_pvlwv")]

@@ -77,7 +77,7 @@ level_description = NodePath("../../CanvasLayer/LevelDescription")
 level = ExtResource("3_1gxvu")
 title = "Khosrov Forest - Part 1"
 story = "Ashes and his advisors must pass through the dark forest of Khosrov which is under the control of the Fog Army."
-additional_objectives = Array[String](["Capture all enemy Pawns", "Don't let enemy Pawns past your guard"])
+additional_objectives = Array[String](["Capture all enemy Xinvors", "Don't let enemy Xinvors past your guard"])
 number = "1"
 
 [node name="bonus_1" parent="Levels/1" node_paths=PackedStringArray("level_description") instance=ExtResource("2_m64e3")]
@@ -95,7 +95,7 @@ level_description = NodePath("../../CanvasLayer/LevelDescription")
 level = ExtResource("4_l7pks")
 title = "Khosrov Forest - Part 2"
 story = "Ashes and his Advisors meet Mara again. Mara is determined to stop them at any cost."
-additional_objectives = Array[String](["Capture the enemy horse.", "Don't let Ashes or your get captured."])
+additional_objectives = Array[String](["Capture the enemy Aspet.", "Don't let Ashes or your get captured."])
 number = "2"
 
 [node name="bonus_2" parent="Levels/2" node_paths=PackedStringArray("level_description") instance=ExtResource("2_m64e3")]

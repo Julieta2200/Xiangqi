@@ -184,7 +184,7 @@ offset_right = 624.0
 offset_bottom = -954.0
 grow_horizontal = 1
 grow_vertical = 0
-hint = "Pawns can only move forward one position at a time; once they cross the river, they can also move sideways."
+hint = "Xinvors can only move forward one position at a time; once they cross the river, they can also move sideways."
 number = "7/7"
 
 [node name="Music" parent="." instance=ExtResource("9_1ahl8")]

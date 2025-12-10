@@ -8,11 +8,11 @@ class_name FigureCard extends Control
 	FigureComponent.Types.CANNON: load("res://Assets/Characters/Magma/Cannon/Cannon_Front.png")
 }
 const figure_names = {
-	FigureComponent.Types.SOLDIER: "Pawn",
-	FigureComponent.Types.ELEPHANT: "Elephant",
-	FigureComponent.Types.CHARIOT: "Chariot",
-	FigureComponent.Types.HORSE: "Horse",
-	FigureComponent.Types.CANNON: "Cannon"
+	FigureComponent.Types.SOLDIER: "Xinvor",
+	FigureComponent.Types.ELEPHANT: "Pigh",
+	FigureComponent.Types.CHARIOT: "Navak",
+	FigureComponent.Types.HORSE: "Aspet",
+	FigureComponent.Types.CANNON: "Stver"
 }
 
 const figure_energies = {

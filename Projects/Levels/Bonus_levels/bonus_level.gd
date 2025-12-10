@@ -63,7 +63,7 @@ func run_hint_system() -> void:
 
 func ran_out_of_pawns_dialog() -> void:
 	DialogSystem.start_dialog([
-		DialogSystem.DialogText.new('We ran out of pawns!', DialogSystem.CHARACTERS.Advisor)], true)
+		DialogSystem.DialogText.new('We ran out of Xinvors!', DialogSystem.CHARACTERS.Advisor)], true)
 	DialogSystem.connect("dialog_finished", _ran_out_of_pawns_dialog_finished)
 
 func _ran_out_of_pawns_dialog_finished() -> void:

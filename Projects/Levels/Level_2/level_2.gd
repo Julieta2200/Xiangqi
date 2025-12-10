@@ -23,7 +23,7 @@ func _ready() -> void:
 	DialogSystem.start_dialog([
 		DialogSystem.DialogText.new("Give up, Ashes!", DialogSystem.CHARACTERS.Mara),
 		DialogSystem.DialogText.new("One more move and I’ll kill you if I must..", DialogSystem.CHARACTERS.Mara),
-		DialogSystem.DialogText.new("Do you think I’m afraid of those knights?", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("Do you think I’m afraid of those Aspets?", DialogSystem.CHARACTERS.Ashes),
 		DialogSystem.DialogText.new("I warned you Ashes!", DialogSystem.CHARACTERS.Mara),
 	], true)
 	_disable_play()
