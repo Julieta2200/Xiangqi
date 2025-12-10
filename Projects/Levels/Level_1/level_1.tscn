@@ -154,7 +154,7 @@ offset_right = 1063.0
 offset_bottom = -1632.0
 grow_horizontal = 1
 grow_vertical = 0
-hint = "The General moves one point either vertically or horizontally and must stay within the palace."
+hint = "The Arqa moves one point either vertically or horizontally and must stay within the palace."
 number = "5/7"
 
 [node name="Advisors" parent="GameplayUI/Hints" instance=ExtResource("9_c7knn")]
@@ -169,7 +169,7 @@ offset_right = 878.0
 offset_bottom = -1601.0
 grow_horizontal = 1
 grow_vertical = 0
-hint = "Advisors move one position diagonally and must stay within the palace."
+hint = "Mogs move one position diagonally and must stay within the palace."
 number = "6/7"
 
 [node name="Pawns" parent="GameplayUI/Hints" instance=ExtResource("9_c7knn")]

@@ -5,7 +5,7 @@ enum CHARACTERS {Ashes, Mara, Advisor, Jakat}
 const character_names = {
 	CHARACTERS.Ashes: "Ashes",
 	CHARACTERS.Mara: "Mara",
-	CHARACTERS.Advisor: "Advisor",
+	CHARACTERS.Advisor: "Mog",
 	CHARACTERS.Jakat: "Jakat"
 }
 

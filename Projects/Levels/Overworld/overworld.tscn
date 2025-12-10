@@ -76,7 +76,7 @@ position = Vector2(628, 899)
 level_description = NodePath("../../CanvasLayer/LevelDescription")
 level = ExtResource("3_1gxvu")
 title = "Khosrov Forest - Part 1"
-story = "Ashes and his advisors must pass through the dark forest of Khosrov which is under the control of the Fog Army."
+story = "Ashes and his Mogs must pass through the dark forest of Khosrov which is under the control of the Fog Army."
 additional_objectives = Array[String](["Capture all enemy Xinvors", "Don't let enemy Xinvors past your guard"])
 number = "1"
 
@@ -86,7 +86,7 @@ level_description = NodePath("../../../CanvasLayer/LevelDescription")
 level = ExtResource("4_k78vk")
 title = "Khosrov Forest - Wood World"
 story = "Ashes enters Wood World. Will he decide to give them back control, or take all for himself."
-additional_objectives = Array[String](["Capture the enemy general", "Don't make more than 7 moves"])
+additional_objectives = Array[String](["Capture the enemy Arqa", "Don't make more than 7 moves"])
 number = "1_bonus"
 
 [node name="2" parent="Levels" node_paths=PackedStringArray("level_description") instance=ExtResource("2_m64e3")]
@@ -94,7 +94,7 @@ position = Vector2(977, 777)
 level_description = NodePath("../../CanvasLayer/LevelDescription")
 level = ExtResource("4_l7pks")
 title = "Khosrov Forest - Part 2"
-story = "Ashes and his Advisors meet Mara again. Mara is determined to stop them at any cost."
+story = "Ashes and his Mogs meet Mara again. Mara is determined to stop them at any cost."
 additional_objectives = Array[String](["Capture the enemy Aspet.", "Don't let Ashes or your get captured."])
 number = "2"
 
@@ -104,7 +104,7 @@ level_description = NodePath("../../../CanvasLayer/LevelDescription")
 level = ExtResource("6_wvnqw")
 title = "Khosrov Forest - Animal Kingdom"
 story = "Weary of the Fog Army's dominion over their lands, the Animal Kingdom's creatures are ready to seize any opportunity— no matter how small — to fight back."
-additional_objectives = Array[String](["Capture the enemy general in fewerthan 7 moves", "Don't make more than 7 moves"])
+additional_objectives = Array[String](["Capture the enemy Arqa in fewer than 7 moves", "Don't make more than 7 moves"])
 number = "2_bonus"
 
 [node name="3" parent="Levels" node_paths=PackedStringArray("level_description") instance=ExtResource("2_m64e3")]
