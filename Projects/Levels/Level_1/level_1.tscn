@@ -109,7 +109,7 @@ offset_right = 1025.0
 offset_bottom = 140.0
 grow_horizontal = 1
 grow_vertical = 1
-hint = "Spawning units will decrease your energy."
+hint = "Spawning units will decrease your Kamk."
 number = "2/7"
 
 [node name="HintBubble4" parent="GameplayUI/Hints" instance=ExtResource("9_c7knn")]
@@ -124,7 +124,7 @@ offset_right = 1025.0
 offset_bottom = 140.0
 grow_horizontal = 1
 grow_vertical = 1
-hint = "You can regain energy by making moves."
+hint = "You can regain Kamk by making moves."
 number = "3/7"
 
 [node name="HintBubble3" parent="GameplayUI/Hints" instance=ExtResource("9_c7knn")]
@@ -139,7 +139,7 @@ offset_right = 868.0
 offset_bottom = -538.0
 grow_horizontal = 1
 grow_vertical = 0
-hint = "Making moves in the palace will decrease your energy."
+hint = "Making moves in the palace will decrease your Kamk."
 number = "4/7"
 
 [node name="Generals" parent="GameplayUI/Hints" instance=ExtResource("9_c7knn")]
