@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cxl2ktlqa7y0f"]
+
+[ext_resource type="Shader" path="res://Projects/Shaders/summoning_sickness.gdshader" id="1_kkm5r"]
+
+[resource]
+shader = ExtResource("1_kkm5r")
+shader_parameter/darker_percent = 0.2
+shader_parameter/transparency_percent = 0.6
