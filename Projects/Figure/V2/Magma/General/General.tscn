@@ -221,9 +221,10 @@ sprite_frames = SubResource("SpriteFrames_pi8o7")
 animation = &"move_back"
 autoplay = "idle"
 
-[node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component", "shader_component") instance=ExtResource("5_n8y44")]
+[node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component", "shader_component", "move_component") instance=ExtResource("5_n8y44")]
 chess_component = NodePath("../ChessComponent")
 shader_component = NodePath("../ShaderComponent")
+move_component = NodePath("../MoveComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FigureUIComponent"]
 position = Vector2(-1, -89)

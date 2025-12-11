@@ -5,6 +5,8 @@ var active: bool = true :
 		active = a
 		if shader_component == null:
 			return
+		if active:
+			shader_component.remove_sickness_material()
 		if active and mouse_in:
 			shader_component.mouse_entered()
 		else:
@@ -28,6 +30,7 @@ var selected: bool :
 
 @export var chess_component: ChessComponent
 @export var shader_component: ShaderComponenet
+@export var move_component: MoveComponent
 
 func _on_mouse_entered() -> void:
 	mouse_in = true
@@ -42,10 +45,11 @@ func _on_mouse_exited() -> void:
 		shader_component.mouse_exited()
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if !active:
-		return
 	if event is InputEventMouseButton:
 		var mouse_event := event as InputEventMouseButton
 		if mouse_event.button_index == MOUSE_BUTTON_LEFT and mouse_event.pressed:
-			selected = !selected
-			chess_component.show_moves()
+			if !active:
+				move_component.shake()
+			else:
+				selected = !selected
+				chess_component.show_moves()

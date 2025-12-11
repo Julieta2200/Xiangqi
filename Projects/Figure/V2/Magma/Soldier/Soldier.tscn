@@ -1,4 +1,4 @@
-[gd_scene load_steps=189 format=3 uid="uid://bxjowytodmlln"]
+[gd_scene load_steps=191 format=3 uid="uid://bxjowytodmlln"]
 
 [ext_resource type="Texture2D" uid="uid://f1jvrq55cicp" path="res://Assets/Characters/Magma/Pawn/Idle/Back idle/Back_idle1.png" id="1_4usx7"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_ebhfi"]
@@ -176,6 +176,7 @@
 [ext_resource type="PackedScene" uid="uid://cy1y1kpvwk5sq" path="res://Projects/Figure/Components/ShaderComponent/shader_component.tscn" id="173_2aeto"]
 [ext_resource type="Material" uid="uid://b5ews8a5nl326" path="res://Projects/Shaders/spawn.tres" id="175_p2gdl"]
 [ext_resource type="PackedScene" uid="uid://d05lmiobxnn3t" path="res://Projects/Figure/shadow_pivot.tscn" id="176_duf2y"]
+[ext_resource type="Material" uid="uid://cxl2ktlqa7y0f" path="res://Projects/Shaders/summoning_sickness.tres" id="176_lwbf2"]
 [ext_resource type="Material" uid="uid://blvd6fmf8jtbp" path="res://Projects/Shaders/blur_shadow.tres" id="177_2ekrr"]
 [ext_resource type="AudioStream" uid="uid://bcsn0h75xf3fk" path="res://Assets/SFX/CHARACTER MOVEMENT SFX/Pawn Movement/Pawn-Movement-1.wav" id="178_oda4n"]
 [ext_resource type="AudioStream" uid="uid://q2dgljvai7ip" path="res://Assets/SFX/CHARACTER MOVEMENT SFX/Pawn Movement/Pawn-Movement-2.wav" id="179_jk60f"]
@@ -185,6 +186,8 @@
 [ext_resource type="AudioStream" uid="uid://bc1oebkf4kfm3" path="res://Assets/SFX/CHARACTER MOVEMENT SFX/Pawn Movement/Pawn-Movement-6.wav" id="183_blfh7"]
 [ext_resource type="AudioStream" uid="uid://biu5kbnwjjrvt" path="res://Assets/SFX/CHARACTER MOVEMENT SFX/Pawn Movement/Pawn-Movement-7.wav" id="184_22y1k"]
 [ext_resource type="AudioStream" uid="uid://dgk7stseryj2b" path="res://Assets/SFX/CHARACTER MOVEMENT SFX/Pawn Movement/Pawn-Movement-8.wav" id="185_mgwqu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ku4c3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pi8o7"]
 animations = [{
@@ -796,15 +799,17 @@ ui_component = NodePath("FigureUIComponent")
 move_component = NodePath("MoveComponent")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_ku4c3")
 position = Vector2(8, -168)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_pi8o7")
 animation = &"move_left"
 autoplay = "idle"
 
-[node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component", "shader_component") instance=ExtResource("4_qchhg")]
+[node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component", "shader_component", "move_component") instance=ExtResource("4_qchhg")]
 chess_component = NodePath("../ChessComponent")
 shader_component = NodePath("../ShaderComponent")
+move_component = NodePath("../MoveComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FigureUIComponent"]
 position = Vector2(0, -92)
@@ -828,6 +833,7 @@ move_audio = NodePath("../MoveAudio")
 main_sprite = NodePath("../AnimatedSprite2D")
 highlight_material = ExtResource("171_lnamv")
 spawn_material = ExtResource("175_p2gdl")
+sickness_material = ExtResource("176_lwbf2")
 
 [node name="ShadowPivot" parent="." node_paths=PackedStringArray("shadow") instance=ExtResource("176_duf2y")]
 shadow = NodePath("Shadow")
