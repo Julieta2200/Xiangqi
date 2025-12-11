@@ -9,6 +9,14 @@ const character_names = {
 	CHARACTERS.Jakat: "Jakat"
 }
 
+const game_over_dialog_texts: Array[String] = [
+	"Your Will has shattered.",
+	"Zero Kamq. The vessel is empty.",
+	"You have nothing left to give but your soul.",
+	"The wind rises. The Ashes scatter.",
+	"The fire dies. Only Ashes remain."
+]
+
 @onready var character_sprites = {
 	CHARACTERS.Ashes: preload("res://Assets/UI/Dialog panel/Characters/Ashes.png"),
 	CHARACTERS.Mara: preload("res://Assets/UI/Dialog panel/Characters/Mara.png"),

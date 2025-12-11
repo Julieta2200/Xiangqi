@@ -13,12 +13,12 @@ const max_energy: int = 100
 @export var energy: float :
 	set(e):
 		e = clamp(e, 0, max_energy)
-		if e == 0:
-			emit_signal("energy_depleted")
 		energy = e
 		altered_energy = energy
 		current_energy =  energy
 		$altered_energy/Label.text = str(energy) + " / " + str(max_energy)
+		if e == 0:
+			emit_signal("energy_depleted")
 
 var altered_energy: float:
 	set(e):

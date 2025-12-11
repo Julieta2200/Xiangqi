@@ -6,7 +6,7 @@ class_name Level extends Node2D
 @export var garrison_limitations: Array[FigureComponent.Types] = []
 @onready var board: BoardV2 = %Board
 @onready var gameplay_ui: GameplayUI = $GameplayUI
-@onready var background: Sprite2D = $Background
+@onready var background_animation: AnimationPlayer = $Background/AnimationPlayer
 
 
 func _ready() -> void:
@@ -46,7 +46,12 @@ func _on_game_over(win: BoardV2.GameOverResults, move_number: int):
 
 func show_game_over_ui():
 	gameplay_ui.show_game_over_ui()
-	background.modulate = Color(0,0,0,1) #black out the background
+	if gameplay_ui.power_meter.energy == 0:
+		var message = DialogSystem.game_over_dialog_texts[randi() % DialogSystem.game_over_dialog_texts.size()]
+		DialogSystem.start_dialog([
+			DialogSystem.DialogText.new(message, DialogSystem.CHARACTERS.Jakat)
+		], true)
+
 
 func load_main_scene():
 	SceneManager.change_scene(SceneManager.Scenes.Overworld)
