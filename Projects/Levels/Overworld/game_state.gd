@@ -1,8 +1,53 @@
 extends Node
 
 const VERSION: int = 1
+const SAVE_FILE_NAME: String = "savegame.save"
 
 var state: Dictionary = {
+	"version": 1,
+	"energy": 100,
+	"ll_cards": [],
+	"hl_cards": [],
+	"lls": [],
+	"hl": -1,
+	"orbs": 0,
+	"levels": {
+		"1": {
+			"state": 1,
+			"move_count" : 0
+		},
+		"1_bonus": {
+			"state": 0,
+			"move_count" : 0
+		},
+		"2": {
+			"state": 0,
+			"move_count" : 0
+		},
+		"2_bonus": {
+			"state": 0,
+			"move_count" : 0
+		},
+		"3": {
+			"state": 0,
+			"move_count" : 0
+		},
+		"3_bonus": {
+			"state": 0,
+			"move_count" : 0
+		},
+	},
+	"passed_tutorials": [],
+	"first_run": true,
+	"first_karma_table_run": true,
+	"first_pawn_introduction": true,
+	"first_bonus_introduction": true,
+	"first_horse_introduction": true,
+	"first_ll_introduction": true,
+	"first_chariot_introduction": true,
+}
+
+const new_state: Dictionary = {
 	"version": 1,
 	"energy": 100,
 	"ll_cards": [],
@@ -56,6 +101,9 @@ var current_level_info: Dictionary = {
 func _ready() -> void:
 	load_game()
 
+func new_game() -> void:
+	state = new_state
+	save_game()
 
 func add_orb() -> void:
 	state["orbs"] += 1
@@ -64,15 +112,15 @@ func add_orb() -> void:
 			state["hl_cards"].append(s)
 
 func save_game() -> void:
-	var save_file = FileAccess.open("user://savegame.save", FileAccess.WRITE)
+	var save_file = FileAccess.open("user://" + SAVE_FILE_NAME, FileAccess.WRITE)
 	var json_string = JSON.stringify(state)
 	save_file.store_line(json_string)
 
 func load_game() -> void:
-	if not FileAccess.file_exists("user://savegame.save"):
+	if not FileAccess.file_exists("user://" + SAVE_FILE_NAME):
 		return
 		
-	var save_file = FileAccess.open("user://savegame.save", FileAccess.READ)
+	var save_file = FileAccess.open("user://" + SAVE_FILE_NAME, FileAccess.READ)
 	var json_string = save_file.get_line()
 	var json = JSON.new()
 	var parse_result = json.parse(json_string)
@@ -97,3 +145,6 @@ func load_game() -> void:
 	if !s.has("first_chariot_introduction"):
 		s["first_chariot_introduction"] = true
 	state = s
+
+func save_exists() -> bool:
+	return FileAccess.file_exists("user://" + SAVE_FILE_NAME)
