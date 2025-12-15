@@ -3,49 +3,7 @@ extends Node
 const VERSION: int = 1
 const SAVE_FILE_NAME: String = "savegame.save"
 
-var state: Dictionary = {
-	"version": 1,
-	"energy": 100,
-	"ll_cards": [],
-	"hl_cards": [],
-	"lls": [],
-	"hl": -1,
-	"orbs": 0,
-	"levels": {
-		"1": {
-			"state": 1,
-			"move_count" : 0
-		},
-		"1_bonus": {
-			"state": 0,
-			"move_count" : 0
-		},
-		"2": {
-			"state": 0,
-			"move_count" : 0
-		},
-		"2_bonus": {
-			"state": 0,
-			"move_count" : 0
-		},
-		"3": {
-			"state": 0,
-			"move_count" : 0
-		},
-		"3_bonus": {
-			"state": 0,
-			"move_count" : 0
-		},
-	},
-	"passed_tutorials": [],
-	"first_run": true,
-	"first_karma_table_run": true,
-	"first_pawn_introduction": true,
-	"first_bonus_introduction": true,
-	"first_horse_introduction": true,
-	"first_ll_introduction": true,
-	"first_chariot_introduction": true,
-}
+var state: Dictionary = {}
 
 const new_state: Dictionary = {
 	"version": 1,
@@ -99,7 +57,7 @@ var current_level_info: Dictionary = {
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	load_game()
+	new_game()
 
 func new_game() -> void:
 	state = new_state

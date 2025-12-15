@@ -16,11 +16,16 @@ var state: LevelState :
 	set(s):
 		state = s
 		marker.texture = images[state]
+		if state == LevelState.Open:
+			pulse_effect()
+		else:
+			marker_animation.play("RESET")
 
 var move_count: int
 
 @onready var hover: TextureProgressBar = $Hover
 @onready var marker: Sprite2D = $Marker
+@onready var marker_animation: AnimationPlayer = $Marker/AnimationPlayer
 
 @export var level_description: LevelDescription
 @export var level: PackedScene
@@ -70,3 +75,6 @@ func play_sound(player: AudioStreamPlayer, stream: AudioStream = null) -> void:
 	if stream:
 		player.stream = stream
 	player.play()
+
+func pulse_effect() -> void:
+	marker_animation.play("pulse")
