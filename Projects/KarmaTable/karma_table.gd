@@ -24,7 +24,7 @@ var _hint_index: int = 0
 ]
 
 @onready var level_1_bonus_dialog: Array[DialogSystem.DialogText] = [
-	DialogSystem.DialogText.new("You're going out of our path, aren't you?", DialogSystem.CHARACTERS.Jakat),
+	DialogSystem.DialogText.new("You're leaving the path we agreed upon, aren't you?", DialogSystem.CHARACTERS.Jakat),
 	DialogSystem.DialogText.new("I have my own path.", DialogSystem.CHARACTERS.Ashes),
 	DialogSystem.DialogText.new("You're on your own here, Ashes.", DialogSystem.CHARACTERS.Jakat),
 	DialogSystem.DialogText.new("Such a tragedy...", DialogSystem.CHARACTERS.Ashes)
@@ -39,20 +39,20 @@ var _hint_index: int = 0
 
 @onready var level_2_bonus_dialog: Array[DialogSystem.DialogText] = [
 	DialogSystem.DialogText.new("What's the point? Why are you fighting for others?", DialogSystem.CHARACTERS.Jakat),
-	DialogSystem.DialogText.new("I'm fighting for myself.", DialogSystem.CHARACTERS.Ashes),
-	DialogSystem.DialogText.new("Realize that everything connects to everything else.", DialogSystem.CHARACTERS.Jakat),
+	DialogSystem.DialogText.new("I fight for myself alone.", DialogSystem.CHARACTERS.Ashes),
+	DialogSystem.DialogText.new("Realize that all things are connected. Actions do not exist in isolation.", DialogSystem.CHARACTERS.Jakat),
 ]
 
 @onready var level_3_dialog: Array[DialogSystem.DialogText] = [
 	DialogSystem.DialogText.new("Mara has nowhere left to hide.", DialogSystem.CHARACTERS.Jakat),
 	DialogSystem.DialogText.new("What will you do?", DialogSystem.CHARACTERS.Jakat),
-	DialogSystem.DialogText.new("I don't care what happens to her.", DialogSystem.CHARACTERS.Ashes),
-	DialogSystem.DialogText.new("Karma will catch you...", DialogSystem.CHARACTERS.Jakat),
+	DialogSystem.DialogText.new("I care not what becomes of her.", DialogSystem.CHARACTERS.Ashes),
+	DialogSystem.DialogText.new("Karma will catch you.", DialogSystem.CHARACTERS.Jakat),
 ]
 
 @onready var level_3_bonus_dialog: Array[DialogSystem.DialogText] = [
 	DialogSystem.DialogText.new("Once more, you fight for others?", DialogSystem.CHARACTERS.Jakat),
-	DialogSystem.DialogText.new("You're talking too much!", DialogSystem.CHARACTERS.Ashes)
+	DialogSystem.DialogText.new("Be quiet. My reasons are my own.", DialogSystem.CHARACTERS.Ashes)
 ]
 
 var dialogs: Dictionary

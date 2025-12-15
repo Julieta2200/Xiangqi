@@ -86,12 +86,12 @@ func _on_game_over(win: BoardV2.GameOverResults, move_number: int):
 		DialogSystem.start_dialog([
 			DialogSystem.DialogText.new("Is that all you've got?", DialogSystem.CHARACTERS.Ashes),
 			DialogSystem.DialogText.new("Ashes, give up, before it's too late...", DialogSystem.CHARACTERS.Mara),
-			DialogSystem.DialogText.new("I'm just getting started!", DialogSystem.CHARACTERS.Ashes),
+			DialogSystem.DialogText.new("This is only the beginning.", DialogSystem.CHARACTERS.Ashes),
 		], true)
 	else:
 		gameplay_ui.objectives.complete_objectives(false)
 		DialogSystem.start_dialog([
-			DialogSystem.DialogText.new("I’m sorry Ashes, you left me no other choice.", DialogSystem.CHARACTERS.Mara)
+			DialogSystem.DialogText.new("This was your choice, Ashes.", DialogSystem.CHARACTERS.Mara)
 		],true)
 	
 	DialogSystem.connect("dialog_finished", _final_dialog_ended.bind(win))

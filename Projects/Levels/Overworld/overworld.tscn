@@ -104,7 +104,7 @@ level_description = NodePath("../../../CanvasLayer/LevelDescription")
 level = ExtResource("6_wvnqw")
 title = "Khosrov Forest - Animal Kingdom"
 story = "Weary of the Fog Army's dominion over their lands, the Animal Kingdom's creatures are ready to seize any opportunity— no matter how small — to fight back."
-additional_objectives = Array[String](["Capture the enemy Arqa in fewer than 7 moves", "Don't make more than 7 moves"])
+additional_objectives = Array[String](["Capture the enemy Arqa", "Don't make more than 7 moves"])
 number = "2_bonus"
 
 [node name="3" parent="Levels" node_paths=PackedStringArray("level_description") instance=ExtResource("2_m64e3")]

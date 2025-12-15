@@ -24,8 +24,8 @@ func _ready() -> void:
 	]
 	board.initialize_position(state)
 	DialogSystem.start_dialog([
-		DialogSystem.DialogText.new("Nowhere to escape now", DialogSystem.CHARACTERS.Advisor),
-		DialogSystem.DialogText.new("Ashes, please! You must stop!", DialogSystem.CHARACTERS.Mara),
+		DialogSystem.DialogText.new("You can run no longer.", DialogSystem.CHARACTERS.Advisor),
+		DialogSystem.DialogText.new("Ashes, please! You must stop! It's not too late.", DialogSystem.CHARACTERS.Mara),
 		DialogSystem.DialogText.new("Everyone will pay for what they’ve done!", DialogSystem.CHARACTERS.Ashes),
 	], true)
 	_disable_play()
