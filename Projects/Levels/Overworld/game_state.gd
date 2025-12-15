@@ -60,7 +60,7 @@ func _ready() -> void:
 	new_game()
 
 func new_game() -> void:
-	state = new_state
+	state = new_state.duplicate(true)
 	save_game()
 
 func add_orb() -> void:
