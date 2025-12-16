@@ -1,4 +1,4 @@
-[gd_scene load_steps=188 format=3 uid="uid://xnkcry6frvgx"]
+[gd_scene load_steps=189 format=3 uid="uid://xnkcry6frvgx"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_ts1i4"]
 [ext_resource type="Texture2D" uid="uid://di3yukoh8siaj" path="res://Assets/Characters/Magma/Advisor/Run/Back_Left_Side/Back_Left_Side1.png" id="2_a3x3p"]
@@ -167,6 +167,7 @@
 [ext_resource type="Texture2D" uid="uid://c6hdqaqjkynkn" path="res://Assets/Characters/Magma/Advisor/Disappear/Right/Right26.png" id="116_4ydyn"]
 [ext_resource type="Texture2D" uid="uid://ddlfi111shs45" path="res://Assets/Characters/Magma/Advisor/Disappear/Right/Right27.png" id="117_68gst"]
 [ext_resource type="Texture2D" uid="uid://c84ahd0ht2a4o" path="res://Assets/Characters/Magma/Advisor/Disappear/Right/Right28.png" id="118_hvxgm"]
+[ext_resource type="Material" uid="uid://c5vdybw7ih322" path="res://Projects/Shaders/brocken.tres" id="163_21u4h"]
 [ext_resource type="Texture2D" uid="uid://cmv7a0g2bvd3u" path="res://Assets/Characters/Magma/Advisor/Attack/Attack1.png" id="168_5yft7"]
 [ext_resource type="Texture2D" uid="uid://dqr15y8u8tdcv" path="res://Assets/Characters/Magma/Advisor/Attack/Attack2.png" id="169_7wsn4"]
 [ext_resource type="Texture2D" uid="uid://df36v510piqi3" path="res://Assets/Characters/Magma/Advisor/Attack/Attack3.png" id="170_tuhjv"]
@@ -1264,6 +1265,7 @@ move_audio = NodePath("../MoveAudio")
 main_sprite = NodePath("../AnimatedSprite2D")
 highlight_material = ExtResource("46_8oo55")
 spawn_material = ExtResource("50_2riwu")
+brocker_material = ExtResource("163_21u4h")
 
 [node name="ShadowPivot" parent="." node_paths=PackedStringArray("shadow") instance=ExtResource("51_j64ny")]
 shadow = NodePath("Shadow")

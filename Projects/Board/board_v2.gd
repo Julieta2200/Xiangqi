@@ -164,6 +164,8 @@ func instantiate_figure(kingdom: Kingdoms, type: FigureComponent.Types, pos: Vec
 
 func show_move_markers(positions: Array[Vector2i], figure: FigureComponent) -> void:
 	clear_markers()
+	if _selected_figure != null and _selected_figure == figure:
+		_selected_figure.ui_component.selected = true
 	ui.garrison.deselect_cards()
 	ui.card_slots.deselect_cards()
 	_selected_figure = figure
@@ -184,13 +186,21 @@ func show_move_markers(positions: Array[Vector2i], figure: FigureComponent) -> v
 			marker.highlight(BoardMarker.Highlights.CAPTURE)
 		else:
 			marker.highlight(BoardMarker.Highlights.MOVE)
-			
+
 func show_hover_markers(positions: Array[Vector2i], figure: FigureComponent) -> void:
 	for pos in positions:
 		var marker: BoardMarker = markers[pos]
 		if marker.state == BoardMarker.Highlights.NONE:
 			marker.highlight(BoardMarker.Highlights.HOVER)
 
+func hide_move_markers(positions: Array[Vector2i], figure: FigureComponent) -> void:
+	if _selected_figure != null and _selected_figure != figure:
+		return
+	for pos in positions:
+		var marker: BoardMarker = markers[pos]
+		marker.unhighlight()
+	_selected_figure = null
+	
 func hide_hover_markers(positions: Array[Vector2i], figure: FigureComponent) -> void:
 	for pos in positions:
 		var marker: BoardMarker = markers[pos]

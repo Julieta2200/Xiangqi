@@ -10,12 +10,18 @@ var active: bool = true :
 		if active and mouse_in:
 			shader_component.mouse_entered()
 		else:
-			shader_component.mouse_exited()
+			if !selected:
+				shader_component.mouse_exited()
 
 var mouse_in: bool = false:
 	set(m):
 		mouse_in = m
 		chess_component.show_moves()
+		if mouse_in:
+			show_horse_blocker()
+		else:
+			if !selected:
+				hide_horse_blocker()
 
 var selected: bool :
 	set(s):
@@ -24,8 +30,10 @@ var selected: bool :
 			return
 		if selected:
 			shader_component.mouse_entered()
+			show_horse_blocker()
 		else:
 			shader_component.mouse_exited()
+			hide_horse_blocker()
 			
 
 @export var chess_component: ChessComponent
@@ -53,3 +61,16 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 			else:
 				selected = !selected
 				chess_component.show_moves()
+
+
+func show_horse_blocker():
+	if chess_component.figure_component.type != FigureComponent.Types.HORSE:
+		return
+	for i in chess_component.blockers:
+		i.shader_component.highlight_broken()
+
+func hide_horse_blocker():
+	if chess_component.figure_component.type != FigureComponent.Types.HORSE:
+		return
+	for i in chess_component.blockers:
+		i.shader_component.unhighlight_broken()

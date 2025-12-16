@@ -4,6 +4,7 @@ class_name ShaderComponenet extends Node
 @export var highlight_material: Material
 @export var spawn_material: Material 
 @export var sickness_material: Material
+@export var brocker_material: Material
 @export var spawn_speed: float = 0.3
 
 @onready var hint_highlight_material: Material = preload("res://Projects/Shaders/hint_highlight.tres")
@@ -48,4 +49,14 @@ func apply_sickness_material():
 	main_sprite.material = sickness_material
 	
 func remove_sickness_material():
+	main_sprite.material = null
+	
+func highlight_broken():
+	if main_sprite == null or brocker_material == null:
+		return
+	main_sprite.material = brocker_material
+	
+func unhighlight_broken():
+	if main_sprite == null or main_sprite.material != brocker_material:
+		return
 	main_sprite.material = null
