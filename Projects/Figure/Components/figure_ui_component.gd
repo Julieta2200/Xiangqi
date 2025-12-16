@@ -67,10 +67,10 @@ func show_horse_blocker():
 	if chess_component.figure_component.type != FigureComponent.Types.HORSE:
 		return
 	for i in chess_component.blockers:
-		i.shader_component.highlight_broken()
+		i.shader_component.highlight_blocker()
 
 func hide_horse_blocker():
 	if chess_component.figure_component.type != FigureComponent.Types.HORSE:
 		return
 	for i in chess_component.blockers:
-		i.shader_component.unhighlight_broken()
+		i.shader_component.unhighlight_blocker()

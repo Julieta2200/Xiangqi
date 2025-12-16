@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://c5vdybw7ih322"]
 
-[ext_resource type="Shader" path="res://Projects/Shaders/brocken.gdshader" id="1_oexge"]
+[ext_resource type="Shader" path="res://Projects/Shaders/blocker.gdshader" id="1_oexge"]
 
 [resource]
 shader = ExtResource("1_oexge")
