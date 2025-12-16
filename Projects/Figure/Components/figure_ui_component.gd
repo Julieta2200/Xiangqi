@@ -7,10 +7,10 @@ var active: bool = true :
 			return
 		if active:
 			shader_component.remove_sickness_material()
-		if active and mouse_in:
-			shader_component.mouse_entered()
-		else:
-			if !selected:
+		if !selected:
+			if active and mouse_in:
+				shader_component.mouse_entered()
+			else:
 				shader_component.mouse_exited()
 
 var mouse_in: bool = false:
@@ -47,7 +47,8 @@ func _on_mouse_entered() -> void:
 	mouse_in = true
 	if !active:
 		return
-	shader_component.mouse_entered()
+	if !selected:
+		shader_component.mouse_entered()
 
 
 func _on_mouse_exited() -> void:
