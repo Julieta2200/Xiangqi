@@ -169,7 +169,6 @@ func show_move_markers(positions: Array[Vector2i], figure: FigureComponent) -> v
 	ui.garrison.deselect_cards()
 	ui.card_slots.deselect_cards()
 	_selected_figure = figure
-	markers[figure.chess_component.position].highlight(BoardMarker.Highlights.SELECTED)
 	for pos in positions:
 		# do not allow walk into the mist
 		if _mist != null and _selected_figure.chess_component.team == _mist.target_team:

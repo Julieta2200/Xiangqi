@@ -27,6 +27,7 @@ func _ready() -> void:
 	}
 				
 func calculate_moves(state: Dictionary, current_position: Vector2i) -> Array[Vector2i]:
+	blockers.clear()
 	var moves: Array[Vector2i] = []
 	for dir in directions:
 		var new_pos = current_position + dir.move
