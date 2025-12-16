@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=3 uid="uid://bh478vfokopqw"]
+[gd_scene load_steps=105 format=3 uid="uid://bh478vfokopqw"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_s7cam"]
 [ext_resource type="Texture2D" uid="uid://bfpmxwxecqcqd" path="res://Assets/Characters/Fog/Horse/Idle/Idle1.png" id="2_n62h7"]
@@ -100,6 +100,7 @@
 [ext_resource type="Texture2D" uid="uid://d03rjop8nv8yj" path="res://Assets/Characters/Fog/Horse/Move/Front_Semi_Right/Front_Semi_Right9.png" id="90_t7mjv"]
 [ext_resource type="Texture2D" uid="uid://ctattf2atxmas" path="res://Assets/Characters/Fog/Horse/Move/Front_Semi_Right/Front_Semi_Right10.png" id="91_e2r1r"]
 [ext_resource type="Texture2D" uid="uid://dpnutdscfpuxy" path="res://Assets/Characters/Fog/Horse/Move/Front_Semi_Right/Front_Semi_Right11.png" id="92_p3710"]
+[ext_resource type="Material" uid="uid://c5vdybw7ih322" path="res://Projects/Shaders/blocker.tres" id="98_eda2i"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_h2yje"]
 animations = [{
@@ -469,6 +470,7 @@ figure_component = NodePath("..")
 main_sprite = NodePath("../AnimatedSprite2D")
 highlight_material = ExtResource("6_nlcgd")
 spawn_material = ExtResource("7_2wldo")
+blocker_material = ExtResource("98_eda2i")
 
 [node name="FigureTargetComponent" parent="." node_paths=PackedStringArray("shader_component") instance=ExtResource("8_4625u")]
 shader_component = NodePath("../ShaderComponent")

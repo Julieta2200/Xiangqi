@@ -18,20 +18,20 @@ void fragment() {
     // Keep transparent pixels unchanged
     if (original_color.a == 0.0) {
         COLOR = original_color;
+    } else {
+        // Subtle pulsing effect
+        float pulse = (sin(TIME * pulse_speed) + 1.0) * 0.5;
+
+        float final_strength =
+            tint_strength * (1.0 - pulse_amount + pulse * pulse_amount);
+
+        // Blend original color with the reddish tint
+        vec3 tinted_rgb = mix(
+            original_color.rgb,
+            tint_color.rgb,
+            final_strength
+        );
+
+        COLOR = vec4(tinted_rgb, original_color.a);
     }
-
-    // Subtle pulsing effect
-    float pulse = (sin(TIME * pulse_speed) + 1.0) * 0.5;
-
-    float final_strength =
-        tint_strength * (1.0 - pulse_amount + pulse * pulse_amount);
-
-    // Blend original color with the reddish tint
-    vec3 tinted_rgb = mix(
-        original_color.rgb,
-        tint_color.rgb,
-        final_strength
-    );
-
-    COLOR = vec4(tinted_rgb, original_color.a);
 }

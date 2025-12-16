@@ -17,10 +17,12 @@ var mouse_in: bool = false:
 	set(m):
 		mouse_in = m
 		chess_component.show_moves()
-		if mouse_in:
-			show_horse_blocker()
-		else:
-			if !selected:
+		if shader_component == null:
+			return
+		if !selected:
+			if mouse_in:
+				show_horse_blocker()
+			else:
 				hide_horse_blocker()
 
 var selected: bool :
@@ -61,7 +63,6 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 			else:
 				selected = !selected
 				chess_component.show_moves()
-
 
 func show_horse_blocker():
 	if chess_component.figure_component.type != FigureComponent.Types.HORSE:
