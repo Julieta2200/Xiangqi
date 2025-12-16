@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://hppsu1linnjb"]
+
+[sub_resource type="Gradient" id="Gradient_qyfgd"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_0v5mm"]
+gradient = SubResource("Gradient_qyfgd")
+
+[sub_resource type="Gradient" id="Gradient_xgvxw"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.597674, 0.597674, 0.597674, 1, 1, 1, 1, 1)
+
+[sub_resource type="Curve" id="Curve_t3vak"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="RainParticles" type="CPUParticles2D" parent="."]
+amount = 200
+lifetime = 5.0
+preprocess = 5.0
+speed_scale = 6.59
+texture = SubResource("GradientTexture1D_0v5mm")
+emission_shape = 3
+emission_rect_extents = Vector2(3911, 1)
+spread = 0.0
+gravity = Vector2(400, 980)
+angle_min = -45.0
+angle_max = -45.0
+color = Color(0.0705329, 0.36201, 0.490265, 1)
+color_ramp = SubResource("Gradient_xgvxw")
+
+[node name="Splash" type="CPUParticles2D" parent="."]
+position = Vector2(0, 1825)
+amount = 70
+lifetime = 0.4
+explosiveness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(3911, 300)
+direction = Vector2(0, -1)
+spread = 75.0
+initial_velocity_min = 100.0
+initial_velocity_max = 200.0
+scale_amount_curve = SubResource("Curve_t3vak")
