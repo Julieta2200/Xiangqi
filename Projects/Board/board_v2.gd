@@ -81,10 +81,9 @@ var turn: Teams = Teams.Red :
 	set(t):
 		if tutorial :
 			turn = Teams.Red
-		else :
+		else:
 			turn = t
 		clear_markers()
-		clear_selected_figure()
 		activate_reds(turn == Teams.Red)
 		if ui.with_specials:
 			activate_garrison(turn == Teams.Red)
@@ -189,11 +188,10 @@ func show_move_markers(positions: Array[Vector2i], figure: FigureComponent) -> v
 			marker.highlight(BoardMarker.Highlights.MOVE)
 			
 func hide_move_markers(positions: Array[Vector2i], figure: FigureComponent) -> void:
-	if _selected_figure != null and _selected_figure != figure:
-		return
 	for pos in positions:
 		var marker: BoardMarker = markers[pos]
 		marker.unhighlight()
+	_selected_figure = null
 
 func show_hover_markers(positions: Array[Vector2i], figure: FigureComponent) -> void:
 	for pos in positions:
@@ -215,13 +213,13 @@ func move_figure(marker: BoardMarker) -> void:
 	if _selected_figure.type == FigureComponent.Types.ELEPHANT:
 		camera.shake()
 	clear_markers()
-	clear_selected_figure()
 	turn = Teams.Black
 	update_energy_by_figure_type(_selected_figure.type)
 	if state.has(marker.board_position):
 		capture(marker.board_position,_selected_figure.chess_component.position)
 	else:
 		figure_apply_move(_selected_figure.chess_component.position,marker.board_position)
+	#clear_selected_figure()
 
 func update_energy_by_figure_type(figure_type : FigureComponent.Types) -> void:
 	if _selected_figure.type == FigureComponent.Types.GENERAL or _selected_figure.type == FigureComponent.Types.ADVISOR:
