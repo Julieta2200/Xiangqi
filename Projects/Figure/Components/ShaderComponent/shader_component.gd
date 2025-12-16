@@ -56,7 +56,11 @@ func highlight_blocker():
 		return
 	main_sprite.material = blocker_material
 	
-func unhighlight_blocker():
+func unhighlight_blocker(is_active: bool):
 	if main_sprite == null or main_sprite.material != blocker_material:
 		return
-	main_sprite.material = null
+	if is_active:
+		main_sprite.material = null
+	else:
+		main_sprite.material = sickness_material
+		

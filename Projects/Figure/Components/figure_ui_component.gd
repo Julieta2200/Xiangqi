@@ -19,7 +19,7 @@ var mouse_in: bool = false:
 		chess_component.show_moves()
 		if shader_component == null:
 			return
-		if !selected:
+		if !selected or chess_component.team != BoardV2.Teams.Red:
 			if mouse_in:
 				show_horse_blocker()
 			else:
@@ -28,6 +28,7 @@ var mouse_in: bool = false:
 var selected: bool :
 	set(s):
 		selected = s
+		chess_component.show_moves()
 		if shader_component == null:
 			return
 		if selected:
@@ -62,7 +63,6 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 				move_component.shake()
 			else:
 				selected = !selected
-				chess_component.show_moves()
 
 func show_horse_blocker():
 	if chess_component.figure_component.type != FigureComponent.Types.HORSE:
@@ -74,4 +74,4 @@ func hide_horse_blocker():
 	if chess_component.figure_component.type != FigureComponent.Types.HORSE:
 		return
 	for i in chess_component.blockers:
-		i.shader_component.unhighlight_blocker()
+		i.shader_component.unhighlight_blocker(i.ui_component.active)
