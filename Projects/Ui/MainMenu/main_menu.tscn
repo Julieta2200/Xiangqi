@@ -1,4 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://hppsu1linnjb"]
+[gd_scene load_steps=13 format=3 uid="uid://hppsu1linnjb"]
+
+[ext_resource type="Texture2D" uid="uid://cthr7aiydkawg" path="res://Assets/MainMenu/MenuBackground.png" id="1_cp2q7"]
+[ext_resource type="Script" path="res://Projects/Ui/MainMenu/main_menu.gd" id="1_pdi1h"]
+[ext_resource type="Shader" path="res://Projects/Shaders/mist.gdshader" id="2_8p1iw"]
+[ext_resource type="Texture2D" uid="uid://d03ivhp4dj6cr" path="res://Assets/MainMenu/Gradient.png" id="2_gab0p"]
+[ext_resource type="Texture2D" uid="uid://yjlrwawcnpbl" path="res://Assets/MainMenu/Light (1).png" id="3_01qwn"]
+[ext_resource type="Texture2D" uid="uid://we1frji6qg47" path="res://Assets/Characters/Magma/General/Sides/Ashes_back.png" id="5_tpuy0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_an24d"]
+shader = ExtResource("2_8p1iw")
+shader_parameter/mist_color = Color(0.8, 0.85, 0.9, 0.6)
+shader_parameter/scroll_speed = 0.036
+shader_parameter/density = 0.497
+shader_parameter/softness = 1.0
+shader_parameter/scale = 1.0
+shader_parameter/border_softness = 0.25
 
 [sub_resource type="Gradient" id="Gradient_qyfgd"]
 
@@ -13,25 +29,73 @@ colors = PackedColorArray(1, 1, 1, 1, 0.597674, 0.597674, 0.597674, 1, 1, 1, 1, 
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_0j7t7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_tpuy0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="MainMenu" type="Node2D"]
+script = ExtResource("1_pdi1h")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(2505, 975)
+scale = Vector2(2, 2)
+texture = ExtResource("1_cp2q7")
+
+[node name="Gradient" type="Sprite2D" parent="Background"]
+position = Vector2(-672.5, 0)
+texture = ExtResource("2_gab0p")
+
+[node name="Light1" type="Sprite2D" parent="Background"]
+position = Vector2(-344, 105)
+texture = ExtResource("3_01qwn")
+
+[node name="Light2" type="Sprite2D" parent="Background"]
+position = Vector2(-2.5, -197.5)
+texture = ExtResource("3_01qwn")
+
+[node name="Light3" type="Sprite2D" parent="Background"]
+position = Vector2(-554, -72.5)
+texture = ExtResource("3_01qwn")
+
+[node name="Light4" type="Sprite2D" parent="Background"]
+position = Vector2(-1049.5, -326.5)
+texture = ExtResource("3_01qwn")
+
+[node name="Light5" type="Sprite2D" parent="Background"]
+position = Vector2(-1022.5, 343.5)
+texture = ExtResource("3_01qwn")
+
+[node name="Fog" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_an24d")
+position = Vector2(2505, 975)
+scale = Vector2(2, 2)
+texture = ExtResource("1_cp2q7")
 
 [node name="RainParticles" type="CPUParticles2D" parent="."]
-amount = 200
+amount = 500
 lifetime = 5.0
 preprocess = 5.0
 speed_scale = 6.59
 texture = SubResource("GradientTexture1D_0v5mm")
 emission_shape = 3
-emission_rect_extents = Vector2(3911, 1)
+emission_rect_extents = Vector2(5000, 1)
 spread = 0.0
 gravity = Vector2(400, 980)
 angle_min = -45.0
 angle_max = -45.0
-color = Color(0.0705329, 0.36201, 0.490265, 1)
+scale_amount_min = 0.5
+scale_amount_max = 0.5
 color_ramp = SubResource("Gradient_xgvxw")
 
 [node name="Splash" type="CPUParticles2D" parent="."]
-position = Vector2(0, 1825)
+position = Vector2(0, 1306)
 amount = 70
 lifetime = 0.4
 explosiveness = 1.0
@@ -42,3 +106,14 @@ spread = 75.0
 initial_velocity_min = 100.0
 initial_velocity_max = 200.0
 scale_amount_curve = SubResource("Curve_t3vak")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1643, 965)
+zoom = Vector2(1.3, 1.3)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+[node name="Ashes" type="AnimatedSprite2D" parent="."]
+position = Vector2(2486, 1461)
+scale = Vector2(2.2, 2.2)
+sprite_frames = SubResource("SpriteFrames_0j7t7")
