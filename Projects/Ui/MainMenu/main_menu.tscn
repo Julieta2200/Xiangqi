@@ -1,11 +1,31 @@
-[gd_scene load_steps=12 format=3 uid="uid://hppsu1linnjb"]
+[gd_scene load_steps=16 format=3 uid="uid://hppsu1linnjb"]
 
 [ext_resource type="Texture2D" uid="uid://cthr7aiydkawg" path="res://Assets/MainMenu/MenuBackground.png" id="1_cp2q7"]
 [ext_resource type="Script" path="res://Projects/Ui/MainMenu/main_menu.gd" id="1_pdi1h"]
 [ext_resource type="Shader" path="res://Projects/Shaders/mist.gdshader" id="2_8p1iw"]
 [ext_resource type="Texture2D" uid="uid://d03ivhp4dj6cr" path="res://Assets/MainMenu/Gradient.png" id="2_gab0p"]
 [ext_resource type="Texture2D" uid="uid://yjlrwawcnpbl" path="res://Assets/MainMenu/Light (1).png" id="3_01qwn"]
+[ext_resource type="Shader" path="res://Projects/Shaders/rain_outline.gdshader" id="5_i0ck3"]
 [ext_resource type="Texture2D" uid="uid://we1frji6qg47" path="res://Assets/Characters/Magma/General/Sides/Ashes_back.png" id="5_tpuy0"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_pcs1b"]
+noise_type = 3
+frequency = 0.05
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_icuf2"]
+width = 64
+height = 64
+seamless = true
+noise = SubResource("FastNoiseLite_pcs1b")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_obgaa"]
+shader = ExtResource("5_i0ck3")
+shader_parameter/rain_color = Color(0.7, 0.8, 1, 1)
+shader_parameter/outline_thickness = 0.711
+shader_parameter/speed = 0.395
+shader_parameter/density = 0.5
+shader_parameter/top_spread = 0.83
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_icuf2")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0j7t7"]
 animations = [{
@@ -69,6 +89,7 @@ position = Vector2(-1022.5, 343.5)
 texture = ExtResource("3_01qwn")
 
 [node name="Ashes" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_obgaa")
 position = Vector2(2484, 1432)
 scale = Vector2(2.4, 2.4)
 sprite_frames = SubResource("SpriteFrames_0j7t7")
@@ -86,7 +107,7 @@ preprocess = 5.0
 speed_scale = 6.59
 texture = SubResource("GradientTexture1D_0v5mm")
 emission_shape = 3
-emission_rect_extents = Vector2(5000, 1)
+emission_rect_extents = Vector2(5000, 200)
 spread = 0.0
 gravity = Vector2(400, 980)
 angle_min = -45.0
