@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://hppsu1linnjb"]
+[gd_scene load_steps=12 format=3 uid="uid://hppsu1linnjb"]
 
 [ext_resource type="Texture2D" uid="uid://cthr7aiydkawg" path="res://Assets/MainMenu/MenuBackground.png" id="1_cp2q7"]
 [ext_resource type="Script" path="res://Projects/Ui/MainMenu/main_menu.gd" id="1_pdi1h"]
@@ -35,10 +35,6 @@ gradient = SubResource("Gradient_qyfgd")
 [sub_resource type="Gradient" id="Gradient_xgvxw"]
 offsets = PackedFloat32Array(0, 0.5, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0.597674, 0.597674, 0.597674, 1, 1, 1, 1, 1)
-
-[sub_resource type="Curve" id="Curve_t3vak"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 2
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_pdi1h")
@@ -99,18 +95,17 @@ scale_amount_min = 0.5
 scale_amount_max = 0.5
 color_ramp = SubResource("Gradient_xgvxw")
 
-[node name="Splash" type="CPUParticles2D" parent="."]
-position = Vector2(0, 1306)
-amount = 70
-lifetime = 0.4
-explosiveness = 1.0
+[node name="GroundSplashes" type="CPUParticles2D" parent="."]
+position = Vector2(0, 1408)
+amount = 1000
+lifetime = 0.5
+explosiveness = 0.8
 emission_shape = 3
-emission_rect_extents = Vector2(3911, 300)
+emission_rect_extents = Vector2(5000, 300)
 direction = Vector2(0, -1)
-spread = 75.0
+spread = 60.0
 initial_velocity_min = 100.0
 initial_velocity_max = 200.0
-scale_amount_curve = SubResource("Curve_t3vak")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1643, 965)
