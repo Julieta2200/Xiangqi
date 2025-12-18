@@ -17,6 +17,12 @@ var flash_timer: Timer
 
 var light_original_positions: Array[Vector2] = []
 
+
+@onready var ui_animation: AnimationPlayer = %UIAnimation
+@onready var nav_blocker: Panel = %NavBlocker
+@onready var main_animation: AnimationPlayer = %MainAnimation
+@onready var ashes: AnimatedSprite2D = %Ashes
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	canvas_modulate.color = default_color
@@ -87,3 +93,14 @@ func _flash_lightning() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
+
+func _on_new_game_pressed() -> void:
+	ui_animation.play("disappear")
+	nav_blocker.visible = true
+	main_animation.play("start")
+
+func play_ashes_run() -> void:
+	ashes.play("run")
+
+func open_overworld() -> void:
+	SceneManager.change_scene(SceneManager.Scenes.Overworld)

@@ -13,6 +13,12 @@ uniform float top_spread : hint_range(0.0, 1.0) = 0.6;
 
 uniform sampler2D noise_texture : repeat_enable;
 
+varying vec4 vertex_modulate;
+
+void vertex() {
+    vertex_modulate = COLOR;
+}
+
 void fragment() {
     vec4 sprite_color = texture(TEXTURE, UV);
     float alpha = sprite_color.a;
@@ -56,4 +62,5 @@ void fragment() {
     final_rain.a = edge * droplet;
     
     COLOR = mix(sprite_color, final_rain, final_rain.a);
+    COLOR *= vertex_modulate;
 }

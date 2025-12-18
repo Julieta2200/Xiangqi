@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvgwekodiw7wr"]
+
+[ext_resource type="FontFile" uid="uid://c66ve5yi6m7nm" path="res://Assets/Fonts/Cinzel/Cinzel-Regular.ttf" id="1_v5v2s"]
+[ext_resource type="Texture2D" uid="uid://do8onxrhshupx" path="res://Assets/MainMenu/ui/Hover_effect.png" id="2_fhjnx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_klgxu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gmsml"]
+texture = ExtResource("2_fhjnx")
+
+[node name="NavButton" type="Button"]
+custom_minimum_size = Vector2(580, 154)
+offset_right = 580.0
+offset_bottom = 154.0
+size_flags_vertical = 3
+focus_mode = 0
+theme_override_colors/font_disabled_color = Color(0.319873, 0.319873, 0.319873, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.647059, 0.521569, 0.196078, 1)
+theme_override_colors/font_hover_color = Color(0.647059, 0.521569, 0.196078, 1)
+theme_override_colors/font_pressed_color = Color(0.647059, 0.521569, 0.196078, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_v5v2s")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_klgxu")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_gmsml")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gmsml")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gmsml")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_klgxu")
+text = "   NEW GAME"
+alignment = 0
