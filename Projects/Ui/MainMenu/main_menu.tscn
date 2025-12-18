@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://hppsu1linnjb"]
+[gd_scene load_steps=34 format=3 uid="uid://hppsu1linnjb"]
 
 [ext_resource type="Texture2D" uid="uid://cthr7aiydkawg" path="res://Assets/MainMenu/MenuBackground.png" id="1_cp2q7"]
 [ext_resource type="Script" path="res://Projects/Ui/MainMenu/main_menu.gd" id="1_pdi1h"]
@@ -16,6 +16,7 @@
 [ext_resource type="FontFile" uid="uid://c66ve5yi6m7nm" path="res://Assets/Fonts/Cinzel/Cinzel-Regular.ttf" id="11_0mo1f"]
 [ext_resource type="PackedScene" uid="uid://cvgwekodiw7wr" path="res://Projects/Ui/MainMenu/nav_button.tscn" id="12_e82pv"]
 [ext_resource type="Texture2D" uid="uid://ctkjjmo52j651" path="res://Assets/Characters/Magma/General/Run/Back/back6.png" id="12_mmg6w"]
+[ext_resource type="Texture2D" uid="uid://bsqa14cv4kxba" path="res://Assets/MainMenu/ui/logo.png" id="17_t4qll"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_pcs1b"]
 noise_type = 3
@@ -395,7 +396,7 @@ position = Vector2(2491, 1432)
 scale = Vector2(2.4, 2.4)
 sprite_frames = SubResource("SpriteFrames_0j7t7")
 autoplay = "default"
-frame_progress = 0.380067
+frame_progress = 0.130079
 
 [node name="Fog" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_an24d")
@@ -528,6 +529,15 @@ theme_override_font_sizes/font_size = 38
 text = "EXIT
 "
 metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Bottom"]
+texture_filter = 2
+offset_left = 180.0
+offset_top = -1938.0
+offset_right = 497.0
+offset_bottom = -1752.0
+scale = Vector2(2, 2)
+texture = ExtResource("17_t4qll")
 
 [node name="Navigation" type="VBoxContainer" parent="CanvasLayer"]
 anchors_preset = 4
