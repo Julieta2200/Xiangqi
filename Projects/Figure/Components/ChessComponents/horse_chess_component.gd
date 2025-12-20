@@ -27,7 +27,7 @@ func _ready() -> void:
 	}
 				
 func calculate_moves(state: Dictionary, current_position: Vector2i) -> Array[Vector2i]:
-	blockers.clear()
+	clear_blockers()
 	var moves: Array[Vector2i] = []
 	for dir in directions:
 		var new_pos = current_position + dir.move
@@ -41,3 +41,8 @@ func free_path(current_position: Vector2i, dir: Vector2i, state: Dictionary)-> b
 	if state.has(current_position + dir):
 		blockers.append(state[current_position + dir])
 	return !(state.has(current_position + dir))
+
+func clear_blockers():
+	for i in blockers:
+		i.shader_component.unhighlight_blocker(i.ui_component.active)
+	blockers.clear()

@@ -219,7 +219,6 @@ func move_figure(marker: BoardMarker) -> void:
 		capture(marker.board_position,_selected_figure.chess_component.position)
 	else:
 		figure_apply_move(_selected_figure.chess_component.position,marker.board_position)
-	#clear_selected_figure()
 
 func update_energy_by_figure_type(figure_type : FigureComponent.Types) -> void:
 	if _selected_figure.type == FigureComponent.Types.GENERAL or _selected_figure.type == FigureComponent.Types.ADVISOR:
@@ -264,6 +263,7 @@ func clear_markers(exceptions: Array[Vector2i] = []) -> void:
 func clear_selected_figure():
 	if _selected_figure != null:
 		_selected_figure.ui_component.selected = false
+		_selected_figure = null
 
 func neutralize_markers() -> void:
 	for pos in markers:
@@ -333,6 +333,7 @@ func figure_move_done() -> void:
 	if check_game_over() or ui.power_meter.energy == 0:
 		return
 	if _selected_figure != null:
+		_selected_figure.ui_component.selected = false
 		_selected_figure = null
 		if tutorial:
 			return

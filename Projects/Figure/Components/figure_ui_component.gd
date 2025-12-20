@@ -16,7 +16,8 @@ var active: bool = true :
 var mouse_in: bool = false:
 	set(m):
 		mouse_in = m
-		chess_component.show_moves()
+		if mouse_in or !selected:
+			chess_component.show_moves()
 		if shader_component == null:
 			return
 		if !selected or chess_component.team != BoardV2.Teams.Red:
@@ -25,7 +26,7 @@ var mouse_in: bool = false:
 			else:
 				hide_horse_blocker()
 
-var selected: bool :
+var selected: bool:
 	set(s):
 		selected = s
 		chess_component.show_moves()
@@ -44,11 +45,11 @@ var selected: bool :
 @export var move_component: MoveComponent
 
 func _on_mouse_entered() -> void:
-	mouse_in = true
+	if !selected:
+		mouse_in = true
 	if !active:
 		return
-	if !selected:
-		shader_component.mouse_entered()
+	shader_component.mouse_entered()
 
 
 func _on_mouse_exited() -> void:
