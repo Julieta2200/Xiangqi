@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://btst40g2n6wda"]
+[gd_scene load_steps=41 format=3 uid="uid://btst40g2n6wda"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_mjqwp"]
 [ext_resource type="Texture2D" uid="uid://cq5aoxlt43cv8" path="res://Assets/Characters/Magma/Cannon/Idle/Catapult1.png" id="2_uf8g5"]
@@ -37,6 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://ce63gj703h5mg" path="res://Assets/Characters/Magma/Cannon/Move/Right/Right6.png" id="28_4p8bj"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/Magma/cannon_move_component.gd" id="31_ofvid"]
 [ext_resource type="Material" uid="uid://cxl2ktlqa7y0f" path="res://Projects/Shaders/summoning_sickness.tres" id="35_dvtla"]
+[ext_resource type="Material" uid="uid://c5vdybw7ih322" path="res://Projects/Shaders/blocker.tres" id="36_quwwh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eul7x"]
 animations = [{
@@ -205,6 +206,7 @@ main_sprite = NodePath("../AnimatedSprite2D")
 highlight_material = ExtResource("5_sv2oy")
 spawn_material = ExtResource("9_x54yj")
 sickness_material = ExtResource("35_dvtla")
+blocker_material = ExtResource("36_quwwh")
 
 [node name="ShadowPivot" parent="." node_paths=PackedStringArray("shadow") instance=ExtResource("10_r11ff")]
 shadow = NodePath("Shadow")

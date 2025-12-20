@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ckd2du3jaxixc"]
+[gd_scene load_steps=18 format=3 uid="uid://ckd2du3jaxixc"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_dej4m"]
 [ext_resource type="Texture2D" uid="uid://blrj3nija8eqn" path="res://Assets/Characters/Magma/Chariot/Idle/Chariot1.png" id="2_o4kas"]
@@ -13,6 +13,7 @@
 [ext_resource type="Material" uid="uid://b5ews8a5nl326" path="res://Projects/Shaders/spawn.tres" id="11_ertx5"]
 [ext_resource type="PackedScene" uid="uid://d05lmiobxnn3t" path="res://Projects/Figure/shadow_pivot.tscn" id="12_dxf3j"]
 [ext_resource type="Material" uid="uid://cxl2ktlqa7y0f" path="res://Projects/Shaders/summoning_sickness.tres" id="12_rro53"]
+[ext_resource type="Material" uid="uid://c5vdybw7ih322" path="res://Projects/Shaders/blocker.tres" id="13_8k82w"]
 [ext_resource type="Material" uid="uid://blvd6fmf8jtbp" path="res://Projects/Shaders/blur_shadow.tres" id="13_n43f1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ny2w2"]
@@ -80,6 +81,7 @@ main_sprite = NodePath("../AnimatedSprite2D")
 highlight_material = ExtResource("7_k3y6k")
 spawn_material = ExtResource("11_ertx5")
 sickness_material = ExtResource("12_rro53")
+blocker_material = ExtResource("13_8k82w")
 
 [node name="ShadowPivot" parent="." node_paths=PackedStringArray("shadow") instance=ExtResource("12_dxf3j")]
 shadow = NodePath("Shadow")

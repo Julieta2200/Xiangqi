@@ -23,6 +23,8 @@ func show_moves():
 	var available_moves: Array[Vector2i] = calculate_moves(figure_component.board.state, position)
 	if figure_component.ui_component.selected:
 		figure_component.board.show_move_markers(available_moves, figure_component)
+	elif figure_component.board._selected_figure == figure_component:
+		figure_component.board.hide_move_markers(available_moves, figure_component)
 	elif figure_component.ui_component.mouse_in:
 		figure_component.board.show_hover_markers(available_moves, figure_component)
 	else:

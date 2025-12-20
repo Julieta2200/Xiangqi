@@ -11,6 +11,8 @@ const directions: Array[Dictionary] = [
 		{ "move": Vector2i(1, 2), "blocker": Vector2i(0, 1) }
 	]
 
+var blockers: Array[FigureComponent] = []
+
 func _ready() -> void:
 	super._ready()
 	boundaries = {
@@ -25,8 +27,8 @@ func _ready() -> void:
 	}
 				
 func calculate_moves(state: Dictionary, current_position: Vector2i) -> Array[Vector2i]:
+	clear_blockers()
 	var moves: Array[Vector2i] = []
-	
 	for dir in directions:
 		var new_pos = current_position + dir.move
 		var blocker_pos = dir.blocker
@@ -35,5 +37,12 @@ func calculate_moves(state: Dictionary, current_position: Vector2i) -> Array[Vec
 	
 	return moves
 	
-func free_path(current_position: Vector2i, dir: Vector2i, state: Dictionary) -> bool:
-	return !state.has(current_position + dir)
+func free_path(current_position: Vector2i, dir: Vector2i, state: Dictionary)-> bool:
+	if state.has(current_position + dir):
+		blockers.append(state[current_position + dir])
+	return !(state.has(current_position + dir))
+
+func clear_blockers():
+	for i in blockers:
+		i.shader_component.unhighlight_blocker(i.ui_component.active)
+	blockers.clear()

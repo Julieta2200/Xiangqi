@@ -11,21 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://cavxgtpxtng4j" path="res://Projects/Music/Music.tscn" id="9_jqpvp"]
 [ext_resource type="PackedScene" uid="uid://ba32qvdi6rk4u" path="res://Projects/Ui/hint_bubble.tscn" id="9_lrj2y"]
 
-[sub_resource type="Animation" id="Animation_8j7qw"]
-resource_name = "game_over"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_2dnhe"]
 length = 0.001
 tracks/0/type = "value"
@@ -39,6 +24,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8j7qw"]
+resource_name = "game_over"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lusc1"]

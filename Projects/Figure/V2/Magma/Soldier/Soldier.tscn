@@ -1,4 +1,4 @@
-[gd_scene load_steps=191 format=3 uid="uid://bxjowytodmlln"]
+[gd_scene load_steps=192 format=3 uid="uid://bxjowytodmlln"]
 
 [ext_resource type="Texture2D" uid="uid://f1jvrq55cicp" path="res://Assets/Characters/Magma/Pawn/Idle/Back idle/Back_idle1.png" id="1_4usx7"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_ebhfi"]
@@ -178,6 +178,7 @@
 [ext_resource type="PackedScene" uid="uid://d05lmiobxnn3t" path="res://Projects/Figure/shadow_pivot.tscn" id="176_duf2y"]
 [ext_resource type="Material" uid="uid://cxl2ktlqa7y0f" path="res://Projects/Shaders/summoning_sickness.tres" id="176_lwbf2"]
 [ext_resource type="Material" uid="uid://blvd6fmf8jtbp" path="res://Projects/Shaders/blur_shadow.tres" id="177_2ekrr"]
+[ext_resource type="Material" uid="uid://c5vdybw7ih322" path="res://Projects/Shaders/blocker.tres" id="177_jg6y1"]
 [ext_resource type="AudioStream" uid="uid://bcsn0h75xf3fk" path="res://Assets/SFX/CHARACTER MOVEMENT SFX/Pawn Movement/Pawn-Movement-1.wav" id="178_oda4n"]
 [ext_resource type="AudioStream" uid="uid://q2dgljvai7ip" path="res://Assets/SFX/CHARACTER MOVEMENT SFX/Pawn Movement/Pawn-Movement-2.wav" id="179_jk60f"]
 [ext_resource type="AudioStream" uid="uid://c85hb0nimhcyd" path="res://Assets/SFX/CHARACTER MOVEMENT SFX/Pawn Movement/Pawn-Movement-3.wav" id="180_jc8ak"]
@@ -834,6 +835,7 @@ main_sprite = NodePath("../AnimatedSprite2D")
 highlight_material = ExtResource("171_lnamv")
 spawn_material = ExtResource("175_p2gdl")
 sickness_material = ExtResource("176_lwbf2")
+blocker_material = ExtResource("177_jg6y1")
 
 [node name="ShadowPivot" parent="." node_paths=PackedStringArray("shadow") instance=ExtResource("176_duf2y")]
 shadow = NodePath("Shadow")

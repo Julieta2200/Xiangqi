@@ -81,7 +81,7 @@ var turn: Teams = Teams.Red :
 	set(t):
 		if tutorial :
 			turn = Teams.Red
-		else :
+		else:
 			turn = t
 		clear_markers()
 		activate_reds(turn == Teams.Red)
@@ -143,6 +143,7 @@ func clear_board() -> void:
 		state[pos].delete()
 	state.clear()
 	clear_markers()
+	clear_selected_figure()
 	_selected_figure = null
 	_walls.clear()
 	_freezes.clear()
@@ -164,10 +165,11 @@ func instantiate_figure(kingdom: Kingdoms, type: FigureComponent.Types, pos: Vec
 
 func show_move_markers(positions: Array[Vector2i], figure: FigureComponent) -> void:
 	clear_markers()
+	if _selected_figure != null and _selected_figure != figure:
+		clear_selected_figure()
 	ui.garrison.deselect_cards()
 	ui.card_slots.deselect_cards()
 	_selected_figure = figure
-	markers[figure.chess_component.position].highlight(BoardMarker.Highlights.SELECTED)
 	for pos in positions:
 		# do not allow walk into the mist
 		if _mist != null and _selected_figure.chess_component.team == _mist.target_team:
@@ -185,6 +187,12 @@ func show_move_markers(positions: Array[Vector2i], figure: FigureComponent) -> v
 		else:
 			marker.highlight(BoardMarker.Highlights.MOVE)
 			
+func hide_move_markers(positions: Array[Vector2i], figure: FigureComponent) -> void:
+	for pos in positions:
+		var marker: BoardMarker = markers[pos]
+		marker.unhighlight()
+	_selected_figure = null
+
 func show_hover_markers(positions: Array[Vector2i], figure: FigureComponent) -> void:
 	for pos in positions:
 		var marker: BoardMarker = markers[pos]
@@ -246,13 +254,16 @@ func capture(target_pos: Vector2i, attacker_pos: Vector2i) -> void:
 	state[attacker_pos].move_component.attack(attacker_pos,target_pos)
 
 func clear_markers(exceptions: Array[Vector2i] = []) -> void:
-	if _selected_figure != null:
-		_selected_figure.ui_component.selected = false
 	for pos in markers:
 		if pos in exceptions:
 			continue
 		var m: BoardMarker = markers[pos]
 		m.unhighlight()
+		
+func clear_selected_figure():
+	if _selected_figure != null:
+		_selected_figure.ui_component.selected = false
+		_selected_figure = null
 
 func neutralize_markers() -> void:
 	for pos in markers:
@@ -284,6 +295,7 @@ func get_figures_by_type(type: FigureComponent.Types) -> Array[FigureComponent]:
 func spawn_highlight(spawn_figure_type : FigureComponent.Types) -> void:
 	ui.card_slots.deselect_cards()
 	clear_markers()
+	clear_selected_figure()
 	const soldier_spawn_points = [Vector2i(0,3), Vector2i(2,3), Vector2i(4,3), Vector2i(6,3),Vector2i(8,3)]
 	if spawn_figure_type == FigureComponent.Types.SOLDIER:
 		for i in soldier_spawn_points:
@@ -321,6 +333,7 @@ func figure_move_done() -> void:
 	if check_game_over() or ui.power_meter.energy == 0:
 		return
 	if _selected_figure != null:
+		_selected_figure.ui_component.selected = false
 		_selected_figure = null
 		if tutorial:
 			return
@@ -357,6 +370,7 @@ func spawn_done(marker: BoardMarker) -> void:
 
 func special_markers_highlight(special: CardSlots.SPECIALS, is_free: bool = false, for_enemy: bool = false) -> void:
 	clear_markers()
+	clear_selected_figure()
 	ui.garrison.deselect_cards()
 	_selected_special = special
 	for pos in markers:
