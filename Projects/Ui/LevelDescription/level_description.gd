@@ -3,12 +3,12 @@ class_name LevelDescription extends Control
 var title: String : 
 	set(value):
 		title = value
-		title_label.text = title
+		title_label.text = tr(title)
 
 var story: String : 
 	set(value):
 		story = value
-		story_label.text = story
+		story_label.text = tr(story)
 
 var additional_objectives: Array[String] = [] :
 	set(value):
@@ -22,7 +22,7 @@ var additional_objectives: Array[String] = [] :
 			var label = Label.new()
 			icon.texture = icon_image
 			icon.stretch_mode = TextureRect.STRETCH_KEEP_CENTERED
-			label.text = objective
+			label.text = tr(objective)
 			label.add_theme_font_size_override("font_size", 40)
 			task.add_theme_constant_override("separation", 30)
 			task.size_flags_vertical = Control.SIZE_EXPAND_FILL

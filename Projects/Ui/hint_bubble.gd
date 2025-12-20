@@ -14,7 +14,7 @@ var hover_music_on = preload("res://Assets/Music/karma_table/UI SFX-Karma Table-
 var hover_music_off = preload("res://Assets/Music/karma_table/UI SFX-Karma Table-BUTTON HOVER OFF.wav")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	hint_label.text = hint
+	hint_label.text = tr(hint)
 	number_label.text = number
 
 

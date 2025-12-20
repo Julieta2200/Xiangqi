@@ -1,0 +1,168 @@
+# LANGUAGE translation for en
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Xiangqi\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: 2024-01-01 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "CONTINUE"
+msgstr "  CONTINUE"
+
+msgid "NEW_GAME"
+msgstr "  NEW GAME"
+
+msgid "OPTIONS"
+msgstr "  OPTIONS"
+
+msgid "CREDITS"
+msgstr "  CREDITS"
+
+msgid "KARMA_TABLE_LEVEL_1_DIALOG_1"
+msgstr "Ashes, you will meet your friend here."
+
+msgid "KARMA_TABLE_LEVEL_1_DIALOG_2"
+msgstr "I don't have any."
+
+msgid "KARMA_TABLE_LEVEL_1_DIALOG_3"
+msgstr "Driven by revenge, you'll get what you give; Karma will catch you."
+
+msgid "KARMA_TABLE_LEVEL_1_DIALOG_4"
+msgstr "Don't forget who you're speaking to. JStop talking and lend me your power."
+
+msgid "KARMA_TABLE_LEVEL_1_DIALOG_5"
+msgstr "Time is ticking…"
+
+msgid "KARMA_TABLE_LEVEL_1_BONUS_DIALOG_1"
+msgstr "You're leaving the path we agreed upon, aren't you?"
+
+msgid "KARMA_TABLE_LEVEL_1_BONUS_DIALOG_2"
+msgstr "I have my own path."
+
+msgid "KARMA_TABLE_LEVEL_1_BONUS_DIALOG_3"
+msgstr "You're on your own here, Ashes."
+
+msgid "KARMA_TABLE_LEVEL_1_BONUS_DIALOG_4"
+msgstr "Such a tragedy..."
+
+msgid "KARMA_TABLE_LEVEL_2_DIALOG_1"
+msgstr "Jakat, I need more power."
+
+msgid "KARMA_TABLE_LEVEL_2_DIALOG_2"
+msgstr "So be it. But don't forget our deal."
+
+msgid "KARMA_TABLE_LEVEL_2_DIALOG_3"
+msgstr "I'll do what I must."
+
+msgid "KARMA_TABLE_LEVEL_2_DIALOG_4"
+msgstr "Karma moves in both directions..."
+
+msgid "KARMA_TABLE_LEVEL_2_BONUS_DIALOG_1"
+msgstr "What's the point? Why are you fighting for others?"
+
+msgid "KARMA_TABLE_LEVEL_2_BONUS_DIALOG_2"
+msgstr "I fight for myself alone."
+
+msgid "KARMA_TABLE_LEVEL_2_BONUS_DIALOG_3"
+msgstr "Realize that all things are connected. Actions do not exist in isolation."
+
+msgid "KARMA_TABLE_LEVEL_3_DIALOG_1"
+msgstr "Mara has nowhere left to hide."
+
+msgid "KARMA_TABLE_LEVEL_3_DIALOG_2"
+msgstr "What will you do?"
+
+msgid "KARMA_TABLE_LEVEL_3_DIALOG_3"
+msgstr "I care not what becomes of her."
+
+msgid "KARMA_TABLE_LEVEL_3_DIALOG_4"
+msgstr "Karma will catch you."
+
+msgid "KARMA_TABLE_LEVEL_3_BONUS_DIALOG_1"
+msgstr "Once more, you fight for others?"
+
+msgid "KARMA_TABLE_LEVEL_3_BONUS_DIALOG_2"
+msgstr "Be quiet. My reasons are my own."
+
+msgid "LEVEL_1_TITLE"
+msgstr "Khosrov Forest - Part 1"
+
+msgid "LEVEL_1_STORY"
+msgstr "Ashes and his Mogs must pass through the dark forest of Khosrov which is under the control of the Fog Army."
+
+msgid "LEVEL_1_OBJECTIVE_1"
+msgstr "Capture all enemy Xinvors"
+
+msgid "LEVEL_1_OBJECTIVE_2"
+msgstr "Don't let enemy Xinvors past your guard"
+
+msgid "LEVEL_1_BONUS_TITLE"
+msgstr "Khosrov Forest - Wood World"
+
+msgid "LEVEL_1_BONUS_STORY"
+msgstr "Ashes enters Wood World. Will he decide to give them back control, or take all for himself."
+
+msgid "LEVEL_1_BONUS_OBJECTIVE_1"
+msgstr "Capture the enemy Arqa"
+
+msgid "LEVEL_1_BONUS_OBJECTIVE_2"
+msgstr "Don't make more than 7 moves"
+
+msgid "LEVEL_2_TITLE"
+msgstr "Khosrov Forest - Part 2"
+
+msgid "LEVEL_2_STORY"
+msgstr "Ashes and his Mogs meet Mara again. Mara is determined to stop them at any cost."
+
+msgid "LEVEL_2_OBJECTIVE_1"
+msgstr "Capture the enemy Aspet."
+
+msgid "LEVEL_2_OBJECTIVE_2"
+msgstr "Don't let Ashes or your get captured."
+
+msgid "LEVEL_2_BONUS_TITLE"
+msgstr "Khosrov Forest - Animal Kingdom"
+
+msgid "LEVEL_2_BONUS_STORY"
+msgstr "Weary of the Fog Army's dominion over their lands, the Animal Kingdom's creatures are ready to seize any opportunity— no matter how small — to fight back."
+
+msgid "LEVEL_2_BONUS_OBJECTIVE_1"
+msgstr "Capture the enemy Arqa"
+
+msgid "LEVEL_2_BONUS_OBJECTIVE_2"
+msgstr "Don't make more than 7 moves"
+
+msgid "LEVEL_3_TITLE"
+msgstr "Khosrov Forest - Part 3"
+
+msgid "LEVEL_3_STORY"
+msgstr "Mara has no escape. She makes a final stand with her what's left of her army.."
+
+msgid "LEVEL_3_OBJECTIVE_1"
+msgstr "Defeat Mara."
+
+msgid "LEVEL_3_BONUS_TITLE"
+msgstr "Khosrov Forest - Lake World"
+
+msgid "LEVEL_3_BONUS_STORY"
+msgstr "The creatures of the Lake World were naturally peaceful; however, the Fog Army took advantage of this tranquility to enslave them."
+
+msgid "KARMA_TABLE_HINT_1"
+msgstr "Low level (LL) special ability cards․ A new LL special ability is unlocked when you choose to set free a bonus level."
+
+msgid "KARMA_TABLE_HINT_2"
+msgstr "High level (HL) special ability cards․ New HL special abilities are unlocked when you choose to conquer 3 bonus levels."
+
+msgid "KARMA_TABLE_HINT_3"
+msgstr "Click on a special ability to equip it. "
+
