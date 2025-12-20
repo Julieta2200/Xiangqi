@@ -16,7 +16,7 @@ var active: bool = true :
 var mouse_in: bool = false:
 	set(m):
 		mouse_in = m
-		if mouse_in or !selected:
+		if !selected:
 			chess_component.show_moves()
 		if shader_component == null:
 			return
@@ -45,8 +45,8 @@ var selected: bool:
 @export var move_component: MoveComponent
 
 func _on_mouse_entered() -> void:
-	if !selected:
-		mouse_in = true
+	#if !selected:
+	mouse_in = true
 	if !active:
 		return
 	shader_component.mouse_entered()
