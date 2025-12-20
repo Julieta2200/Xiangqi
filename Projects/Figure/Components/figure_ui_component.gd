@@ -45,7 +45,6 @@ var selected: bool:
 @export var move_component: MoveComponent
 
 func _on_mouse_entered() -> void:
-	#if !selected:
 	mouse_in = true
 	if !active:
 		return
