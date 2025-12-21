@@ -24,9 +24,9 @@ func _ready() -> void:
 	]
 	board.initialize_position(state)
 	DialogSystem.start_dialog([
-		DialogSystem.DialogText.new("You can run no longer.", DialogSystem.CHARACTERS.Advisor),
-		DialogSystem.DialogText.new("Ashes, please! You must stop! It's not too late.", DialogSystem.CHARACTERS.Mara),
-		DialogSystem.DialogText.new("Everyone will pay for what they’ve done!", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("LEVEL_3_DIALOG_1", DialogSystem.CHARACTERS.Advisor),
+		DialogSystem.DialogText.new("LEVEL_3_DIALOG_2", DialogSystem.CHARACTERS.Mara),
+		DialogSystem.DialogText.new("LEVEL_3_DIALOG_3", DialogSystem.CHARACTERS.Ashes),
 	], true)
 	_disable_play()
 	DialogSystem.connect("dialog_finished", _enable_play)
@@ -56,13 +56,13 @@ func _on_board_move_done() -> void:
 		ai.script_use_special = true
 		blocking_panel.show()
 		DialogSystem.start_dialog([
-			DialogSystem.DialogText.new("What is going on?", DialogSystem.CHARACTERS.Advisor),
-			DialogSystem.DialogText.new("It's an ambush!", DialogSystem.CHARACTERS.Advisor),
-			DialogSystem.DialogText.new("...", DialogSystem.CHARACTERS.Ashes),
-			DialogSystem.DialogText.new("I can't sense my soldiers!", DialogSystem.CHARACTERS.Ashes),
-			DialogSystem.DialogText.new("In the name of the Fog Army, I order you to surrender!", DialogSystem.CHARACTERS.Mara),
-			DialogSystem.DialogText.new("Ashes, our soldiers cannot enter the Disconnection Mist!", DialogSystem.CHARACTERS.Advisor),
-			DialogSystem.DialogText.new("She can't hold the mist for long. We must only wait her out.", DialogSystem.CHARACTERS.Ashes),
+			DialogSystem.DialogText.new("LEVEL_3_AMBUSH_DIALOG_1", DialogSystem.CHARACTERS.Advisor),
+			DialogSystem.DialogText.new("LEVEL_3_AMBUSH_DIALOG_2", DialogSystem.CHARACTERS.Advisor),
+			DialogSystem.DialogText.new("LEVEL_3_AMBUSH_DIALOG_3", DialogSystem.CHARACTERS.Ashes),
+			DialogSystem.DialogText.new("LEVEL_3_AMBUSH_DIALOG_4", DialogSystem.CHARACTERS.Ashes),
+			DialogSystem.DialogText.new("LEVEL_3_AMBUSH_DIALOG_5", DialogSystem.CHARACTERS.Mara),
+			DialogSystem.DialogText.new("LEVEL_3_AMBUSH_DIALOG_6", DialogSystem.CHARACTERS.Advisor),
+			DialogSystem.DialogText.new("LEVEL_3_AMBUSH_DIALOG_7", DialogSystem.CHARACTERS.Ashes),
 		], true)
 		DialogSystem.connect("dialog_finished", _part_2_start)
 		match red_figures[0].chess_component.position:
@@ -93,13 +93,13 @@ func _on_game_over(win: BoardV2.GameOverResults, move_number: int):
 	if win == BoardV2.GameOverResults.Win:
 		gameplay_ui.objectives.complete_objectives(true)
 		DialogSystem.start_dialog([
-			DialogSystem.DialogText.new("I'm sorry, Ashes...", DialogSystem.CHARACTERS.Mara),
-			DialogSystem.DialogText.new("Be gone...", DialogSystem.CHARACTERS.Ashes),
+			DialogSystem.DialogText.new("LEVEL_3_VICTORY_DIALOG_1", DialogSystem.CHARACTERS.Mara),
+			DialogSystem.DialogText.new("LEVEL_3_VICTORY_DIALOG_2", DialogSystem.CHARACTERS.Ashes),
 		], true)
 	else:
 		gameplay_ui.objectives.complete_objectives(false)
 		DialogSystem.start_dialog([
-			DialogSystem.DialogText.new("I’m sorry Ashes, you left me no other choice.", DialogSystem.CHARACTERS.Mara)
+			DialogSystem.DialogText.new("LEVEL_3_DEFEAT_DIALOG", DialogSystem.CHARACTERS.Mara)
 		],true)
 	
 	DialogSystem.connect("dialog_finished", _final_dialog_ended.bind(win))

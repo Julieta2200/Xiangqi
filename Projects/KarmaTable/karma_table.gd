@@ -2,6 +2,8 @@ extends Node2D
 
 @onready var lls: Control = $CanvasLayer/LLs
 @onready var hls: Control = $CanvasLayer/HLs
+@onready var low_level_label: Label = $CanvasLayer/LLs/Label
+@onready var high_level_label: Label = $CanvasLayer/HLs/Label
 
 @onready var hint_bubbles: Array[HintBubble] = [
 	$CanvasLayer/Hints/HintBubble,
@@ -22,6 +24,11 @@ func _ready() -> void:
 	dialogs = DialoguesManager.get_all_dialogs()
 	fill_lls()
 	fill_hls()
+	# Set translated text for buttons
+	play_button.text = tr("PLAY")
+	back_button.text = tr("BACK")
+	low_level_label.text = tr("LOW_LEVEL")
+	high_level_label.text = tr("HIGH_LEVEL")
 	if GameState.state["first_karma_table_run"]:
 		run_hint_system()
 		return
@@ -118,16 +125,16 @@ func run_hint_system() -> void:
 
 
 func _on_back_mouse_entered() -> void:
-	$CanvasLayer/Back/arrow.text = "> >"
+	$CanvasLayer/Back/arrow.text = tr("BUTTON_ARROW_HOVER")
 
 func _on_back_mouse_exited() -> void:
-	$CanvasLayer/Back/arrow.text = ">>"
+	$CanvasLayer/Back/arrow.text = tr("BUTTON_ARROW_NORMAL")
 
 func _on_play_mouse_entered() -> void:
-	$CanvasLayer/Play/arrow.text = "> >"
+	$CanvasLayer/Play/arrow.text = tr("BUTTON_ARROW_HOVER")
 
 func _on_play_mouse_exited() -> void:
-	$CanvasLayer/Play/arrow.text = ">>"
+	$CanvasLayer/Play/arrow.text = tr("BUTTON_ARROW_NORMAL")
 
 func _on_play_button_down() -> void:
 	$CanvasLayer/Play/arrow.add_theme_color_override("font_color", Color(0.49, 0.349, 0, 1))

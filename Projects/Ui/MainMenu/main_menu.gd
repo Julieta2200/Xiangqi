@@ -26,6 +26,8 @@ var light_original_positions: Array[Vector2] = []
 @onready var new_game_button: Button = $CanvasLayer/Navigation/NewGame
 @onready var options_button: Button = $CanvasLayer/Navigation/Options
 @onready var credits_button: Button = $CanvasLayer/Navigation/Credits
+@onready var esc_label: Label = $CanvasLayer/Bottom/Line/EscButton/Esc
+@onready var exit_label: Label = $CanvasLayer/Bottom/Line/EscButton/Exit
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -41,6 +43,8 @@ func _ready() -> void:
 	new_game_button.text = tr("NEW_GAME")
 	options_button.text = tr("OPTIONS")
 	credits_button.text = tr("CREDITS")
+	esc_label.text = tr("ESC")
+	exit_label.text = tr("EXIT")
 
 func _start_light_floating() -> void:
 	# Store original positions

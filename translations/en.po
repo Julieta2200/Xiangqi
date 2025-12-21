@@ -166,3 +166,330 @@ msgstr "High level (HL) special ability cards․ New HL special abilities are un
 msgid "KARMA_TABLE_HINT_3"
 msgstr "Click on a special ability to equip it. "
 
+msgid "CHARACTER_ASHES"
+msgstr "Ashes"
+
+msgid "CHARACTER_MARA"
+msgstr "Mara"
+
+msgid "CHARACTER_MOG"
+msgstr "Mog"
+
+msgid "CHARACTER_JAKAT"
+msgstr "Jakat"
+
+msgid "GAME_OVER_TEXT_1"
+msgstr "Your Will has shattered."
+
+msgid "GAME_OVER_TEXT_2"
+msgstr "Zero Kamq. The vessel is empty."
+
+msgid "GAME_OVER_TEXT_3"
+msgstr "You have nothing left to give but your soul."
+
+msgid "GAME_OVER_TEXT_4"
+msgstr "The wind rises. The Ashes scatter."
+
+msgid "GAME_OVER_TEXT_5"
+msgstr "The fire dies. Only Ashes remain."
+
+msgid "BUTTON_ARROW_HOVER"
+msgstr "> >"
+
+msgid "BUTTON_ARROW_NORMAL"
+msgstr ">>"
+
+msgid "MTB_PREFIX"
+msgstr "MTB: "
+
+msgid "FIGURE_XINVOR"
+msgstr "Xinvor"
+
+msgid "FIGURE_PIGH"
+msgstr "Pigh"
+
+msgid "FIGURE_NAVAK"
+msgstr "Navak"
+
+msgid "FIGURE_ASPET"
+msgstr "Aspet"
+
+msgid "FIGURE_STVER"
+msgstr "Stver"
+
+msgid "TUTORIAL_WELCOME"
+msgstr "Welcome to the Playground! You can play around here, or choose a topic which you want to learn!"
+
+msgid "TUTORIAL_PAWN_CAPTURE_1"
+msgstr "Great! You have captured the enemy Pawn."
+
+msgid "TUTORIAL_PAWN_CAPTURE_2"
+msgstr "Well done! You have captured the enemy Pawn."
+
+msgid "TUTORIAL_PAWN_CAPTURE_3"
+msgstr "Excellent! You have captured the enemy Pawn."
+
+msgid "TUTORIAL_PAWN_CAPTURE_4"
+msgstr "Fantastic! You have captured the enemy Pawn."
+
+msgid "TUTORIAL_PAWN_CAPTURE_5"
+msgstr "Awesome! You have captured the enemy Pawn."
+
+msgid "TUTORIAL_PAWN_CAPTURE_6"
+msgstr "Congratulations! You have captured the enemy Pawn."
+
+msgid "TUTORIAL_PAWN_CAPTURE_7"
+msgstr "You did it! You have captured the enemy Pawn."
+
+msgid "TUTORIAL_GENERAL_CAPTURE"
+msgstr "Amazing! You have captured the enemy General and won the game!"
+
+msgid "TUTORIAL_SPAWN_SUCCESS"
+msgstr "Great! You have spawned a piece!"
+
+msgid "TUTORIAL_PAWN_DESCRIPTION_1"
+msgstr "This is a Pawn. Pawns can only move forward one step at a time, but once they cross the river, they can also move sideways."
+
+msgid "TUTORIAL_PAWN_DESCRIPTION_2"
+msgstr "Try moving the Pawn to the other side of the river and capture enemy Pawn!"
+
+msgid "TUTORIAL_HORSE_DESCRIPTION_1"
+msgstr "This is a Horse. Horses move in an L-shape: two steps in one direction and then one step perpendicular."
+
+msgid "TUTORIAL_HORSE_DESCRIPTION_2"
+msgstr "However, if there is a piece directly next to the Horse in the direction it is moving, it cannot jump over it."
+
+msgid "TUTORIAL_HORSE_DESCRIPTION_3"
+msgstr "Try moving the Horse around, and capture the enemy Pawn!"
+
+msgid "TUTORIAL_ELEPHANT_DESCRIPTION_1"
+msgstr "This is an Elephant. Elephants move exactly two points diagonally and cannot jump over intervening pieces."
+
+msgid "TUTORIAL_ELEPHANT_DESCRIPTION_2"
+msgstr "Elephants cannot cross the river to the opponent's side of the board."
+
+msgid "TUTORIAL_ELEPHANT_DESCRIPTION_3"
+msgstr "Try moving the Elephant around, and capture the enemy Pawn!"
+
+msgid "TUTORIAL_CANNON_DESCRIPTION_1"
+msgstr "This is a Cannon. Cannons move vertically or horizontally any number of unoccupied squares."
+
+msgid "TUTORIAL_CANNON_DESCRIPTION_2"
+msgstr "To capture, the Cannon must jump over exactly one piece along its path to the target piece."
+
+msgid "TUTORIAL_CANNON_DESCRIPTION_3"
+msgstr "Try moving the Cannon around, and capture the enemy Pawn!"
+
+msgid "TUTORIAL_CHARIOT_DESCRIPTION_1"
+msgstr "This is a Chariot. Chariots move any number of vacant squares vertically or horizontally."
+
+msgid "TUTORIAL_CHARIOT_DESCRIPTION_2"
+msgstr "Try moving the Chariot around, and capture the enemy Pawn!"
+
+msgid "TUTORIAL_ADVISOR_DESCRIPTION_1"
+msgstr "This is an Advisor. Advisors move one point diagonally and must stay within the palace."
+
+msgid "TUTORIAL_ADVISOR_DESCRIPTION_2"
+msgstr "Try moving the Advisor around, and capture the enemy Pawn!"
+
+msgid "TUTORIAL_GENERAL_DESCRIPTION_1"
+msgstr "This is the General. The General moves one point either vertically or horizontally and must stay within the palace."
+
+msgid "TUTORIAL_GENERAL_DESCRIPTION_2"
+msgstr "You should always protect your General. If your General is captured, you lose the game!"
+
+msgid "TUTORIAL_GENERAL_DESCRIPTION_3"
+msgstr "Try moving the General around, and capture the enemy Pawn!"
+
+msgid "TUTORIAL_FLYING_GENERAL_DESCRIPTION_1"
+msgstr "This is the Flying General rule."
+
+msgid "TUTORIAL_FLYING_GENERAL_DESCRIPTION_2"
+msgstr "If the two Generals face each other on the same file with no pieces in between, the General whose turn it is can move directly to capture the opposing General."
+
+msgid "TUTORIAL_FLYING_GENERAL_DESCRIPTION_3"
+msgstr "Try capturing the enemy General!"
+
+msgid "TUTORIAL_SPAWNING_DESCRIPTION_1"
+msgstr "You can spawn pieces in first 3 rows."
+
+msgid "TUTORIAL_SPAWNING_DESCRIPTION_2"
+msgstr "When spawning you lose energy."
+
+msgid "TUTORIAL_SPAWNING_DESCRIPTION_3"
+msgstr "You can't move with newly summoned piece."
+
+msgid "TUTORIAL_SPAWNING_DESCRIPTION_4"
+msgstr "Spawn a piece and make a move with it!"
+
+msgid "LEVEL_1_DIALOG_1"
+msgstr "Stop right there."
+
+msgid "LEVEL_1_DIALOG_2"
+msgstr "Mara..."
+
+msgid "LEVEL_1_DIALOG_3"
+msgstr "Ashes, I'm sorry, but you have to go back to Limbo."
+
+msgid "LEVEL_1_DIALOG_4"
+msgstr "Make me"
+
+msgid "LEVEL_1_DIALOG_5"
+msgstr "Capture him!"
+
+msgid "LEVEL_1_VICTORY_DIALOG_1"
+msgstr "She's getting away!"
+
+msgid "LEVEL_1_VICTORY_DIALOG_2"
+msgstr "Should we go after her?"
+
+msgid "LEVEL_1_VICTORY_DIALOG_3"
+msgstr "It doesn't matter; she'll come back anyways."
+
+msgid "LEVEL_1_DEFEAT_DIALOG"
+msgstr "I'm sorry, Ashes, you left me no other choice."
+
+msgid "LEVEL_2_DIALOG_1"
+msgstr "Give up, Ashes!"
+
+msgid "LEVEL_2_DIALOG_2"
+msgstr "One more move and I'll kill you if I must.."
+
+msgid "LEVEL_2_DIALOG_3"
+msgstr "Do you think I'm afraid of those Aspets?"
+
+msgid "LEVEL_2_DIALOG_4"
+msgstr "I warned you Ashes!"
+
+msgid "LEVEL_2_VICTORY_DIALOG_1"
+msgstr "Is that all you've got?"
+
+msgid "LEVEL_2_VICTORY_DIALOG_2"
+msgstr "Ashes, give up, before it's too late..."
+
+msgid "LEVEL_2_VICTORY_DIALOG_3"
+msgstr "This is only the beginning."
+
+msgid "LEVEL_2_DEFEAT_DIALOG"
+msgstr "This was your choice, Ashes."
+
+msgid "LEVEL_3_DIALOG_1"
+msgstr "You can run no longer."
+
+msgid "LEVEL_3_DIALOG_2"
+msgstr "Ashes, please! You must stop! It's not too late."
+
+msgid "LEVEL_3_DIALOG_3"
+msgstr "Everyone will pay for what they've done!"
+
+msgid "LEVEL_3_AMBUSH_DIALOG_1"
+msgstr "What is going on?"
+
+msgid "LEVEL_3_AMBUSH_DIALOG_2"
+msgstr "It's an ambush!"
+
+msgid "LEVEL_3_AMBUSH_DIALOG_3"
+msgstr "..."
+
+msgid "LEVEL_3_AMBUSH_DIALOG_4"
+msgstr "I can't sense my soldiers!"
+
+msgid "LEVEL_3_AMBUSH_DIALOG_5"
+msgstr "In the name of the Fog Army, I order you to surrender!"
+
+msgid "LEVEL_3_AMBUSH_DIALOG_6"
+msgstr "Ashes, our soldiers cannot enter the Disconnection Mist!"
+
+msgid "LEVEL_3_AMBUSH_DIALOG_7"
+msgstr "She can't hold the mist for long. We must only wait her out."
+
+msgid "LEVEL_3_VICTORY_DIALOG_1"
+msgstr "I'm sorry, Ashes..."
+
+msgid "LEVEL_3_VICTORY_DIALOG_2"
+msgstr "Be gone..."
+
+msgid "LEVEL_3_DEFEAT_DIALOG"
+msgstr "I'm sorry Ashes, you left me no other choice."
+
+msgid "BONUS_LEVEL_ATTACK"
+msgstr "Attack!"
+
+msgid "BONUS_LEVEL_RAN_OUT_OF_XINVORS"
+msgstr "We ran out of Xinvors!"
+
+msgid "BONUS_LEVEL_RAN_OUT_OF_TIME"
+msgstr "We ran out of time!"
+
+msgid "ESC"
+msgstr "ESC"
+
+msgid "EXIT"
+msgstr "EXIT"
+
+msgid "PLAY"
+msgstr "PLAY"
+
+msgid "BACK"
+msgstr "BACK"
+
+msgid "CLOSE"
+msgstr "CLOSE"
+
+msgid "NEXT"
+msgstr "NEXT"
+
+msgid "SPACE"
+msgstr "SPACE"
+
+msgid "LOW_LEVEL"
+msgstr "LOW LEVEL"
+
+msgid "HIGH_LEVEL"
+msgstr "HIGH LEVEL"
+
+msgid "LEVEL_1_HINT_1"
+msgstr "From the garrison you can choose which unit you want to spawn. Newly spawned units cannot make a move."
+
+msgid "LEVEL_1_HINT_2"
+msgstr "Spawning units will decrease your Kamq."
+
+msgid "LEVEL_1_HINT_3"
+msgstr "You can regain Kamq by making moves."
+
+msgid "LEVEL_1_HINT_4"
+msgstr "Making moves with Arqa or Mog will decrease your Kamq."
+
+msgid "LEVEL_1_HINT_5"
+msgstr "The Arqa moves one point either vertically or horizontally and must stay within the palace."
+
+msgid "LEVEL_1_HINT_6"
+msgstr "Mogs move one position diagonally and must stay within the palace."
+
+msgid "LEVEL_1_HINT_7"
+msgstr "Xinvors can only move forward one position at a time; once they cross the river, they can also move sideways."
+
+msgid "HINT_SOLDIER_MOVE_TEXT"
+msgstr "Soldiers move and capture by advancing one point forward. Once a pawn has crossed the river it may also move and capture one point horizontally. A pawn may never move backward, thus retreating."
+
+msgid "HINT_SOLDIER_MOVE_DIALOG"
+msgstr "Click on soldier and make him move."
+
+msgid "HINT_CHECK_TEXT"
+msgstr "General is under attack (check), it's mandatory to move out of check."
+
+msgid "HINT_GENERAL_MOVE_TEXT"
+msgstr "Generals may move one point either vertically or horizontally, but not diagonally and is confined to the nine points within his palace. "
+
+msgid "HINT_GENERAL_MOVE_DIALOG"
+msgstr "Move general out of check."
+
+msgid "HINT_GENERALS_FACING_TEXT"
+msgstr "A general may not also move into a file, which is occupied by the enemy general, unless there is at least one piece positioned between the generals in the file"
+
+msgid "HINT_ADVISOR_MOVE_TEXT"
+msgstr "These are the king's counselors and guard the king within the palace. The guard moves one point diagonally and is confined to the palace."
+
+msgid "HINT_ADVISOR_MOVE_DIALOG"
+msgstr "Use one of the advisors to save the general."
+

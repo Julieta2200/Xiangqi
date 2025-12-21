@@ -21,10 +21,10 @@ func _ready() -> void:
 	]
 	board.initialize_position(state)
 	DialogSystem.start_dialog([
-		DialogSystem.DialogText.new("Give up, Ashes!", DialogSystem.CHARACTERS.Mara),
-		DialogSystem.DialogText.new("One more move and I’ll kill you if I must..", DialogSystem.CHARACTERS.Mara),
-		DialogSystem.DialogText.new("Do you think I’m afraid of those Aspets?", DialogSystem.CHARACTERS.Ashes),
-		DialogSystem.DialogText.new("I warned you Ashes!", DialogSystem.CHARACTERS.Mara),
+		DialogSystem.DialogText.new("LEVEL_2_DIALOG_1", DialogSystem.CHARACTERS.Mara),
+		DialogSystem.DialogText.new("LEVEL_2_DIALOG_2", DialogSystem.CHARACTERS.Mara),
+		DialogSystem.DialogText.new("LEVEL_2_DIALOG_3", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("LEVEL_2_DIALOG_4", DialogSystem.CHARACTERS.Mara),
 	], true)
 	_disable_play()
 	DialogSystem.connect("dialog_finished", _enable_play)
@@ -84,14 +84,14 @@ func _on_game_over(win: BoardV2.GameOverResults, move_number: int):
 	if win == BoardV2.GameOverResults.Win:
 		gameplay_ui.objectives.complete_objectives(true)
 		DialogSystem.start_dialog([
-			DialogSystem.DialogText.new("Is that all you've got?", DialogSystem.CHARACTERS.Ashes),
-			DialogSystem.DialogText.new("Ashes, give up, before it's too late...", DialogSystem.CHARACTERS.Mara),
-			DialogSystem.DialogText.new("This is only the beginning.", DialogSystem.CHARACTERS.Ashes),
+			DialogSystem.DialogText.new("LEVEL_2_VICTORY_DIALOG_1", DialogSystem.CHARACTERS.Ashes),
+			DialogSystem.DialogText.new("LEVEL_2_VICTORY_DIALOG_2", DialogSystem.CHARACTERS.Mara),
+			DialogSystem.DialogText.new("LEVEL_2_VICTORY_DIALOG_3", DialogSystem.CHARACTERS.Ashes),
 		], true)
 	else:
 		gameplay_ui.objectives.complete_objectives(false)
 		DialogSystem.start_dialog([
-			DialogSystem.DialogText.new("This was your choice, Ashes.", DialogSystem.CHARACTERS.Mara)
+			DialogSystem.DialogText.new("LEVEL_2_DEFEAT_DIALOG", DialogSystem.CHARACTERS.Mara)
 		],true)
 	
 	DialogSystem.connect("dialog_finished", _final_dialog_ended.bind(win))

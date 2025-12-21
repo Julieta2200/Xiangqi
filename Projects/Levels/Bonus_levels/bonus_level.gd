@@ -48,7 +48,7 @@ func _enable_play():
 
 func attack_dialog() -> void:
 	DialogSystem.start_dialog([
-		DialogSystem.DialogText.new('Attack!', DialogSystem.CHARACTERS.Ashes)], true)
+		DialogSystem.DialogText.new("BONUS_LEVEL_ATTACK", DialogSystem.CHARACTERS.Ashes)], true)
 
 func run_hint_system() -> void:
 	if _hint_index >= hints.size():
@@ -63,7 +63,7 @@ func run_hint_system() -> void:
 
 func ran_out_of_pawns_dialog() -> void:
 	DialogSystem.start_dialog([
-		DialogSystem.DialogText.new('We ran out of Xinvors!', DialogSystem.CHARACTERS.Advisor)], true)
+		DialogSystem.DialogText.new("BONUS_LEVEL_RAN_OUT_OF_XINVORS", DialogSystem.CHARACTERS.Advisor)], true)
 	DialogSystem.connect("dialog_finished", _ran_out_of_pawns_dialog_finished)
 
 func _ran_out_of_pawns_dialog_finished() -> void:
@@ -74,7 +74,7 @@ func _ran_out_of_pawns_dialog_finished() -> void:
 
 func ran_out_of_moves_dialog() -> void:
 	DialogSystem.start_dialog([
-		DialogSystem.DialogText.new('We ran out of time!', DialogSystem.CHARACTERS.Advisor)], true)
+		DialogSystem.DialogText.new("BONUS_LEVEL_RAN_OUT_OF_TIME", DialogSystem.CHARACTERS.Advisor)], true)
 	DialogSystem.connect("dialog_finished", _ran_out_of_moves_dialog_finished)
 
 func _ran_out_of_moves_dialog_finished() -> void:
