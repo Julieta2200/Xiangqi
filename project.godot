@@ -102,7 +102,7 @@ X={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://translations/en.po", "res://translations/es.po", "res://translations/fr.po", "res://translations/zh.po")
+locale/translations=PackedStringArray("res://translations/en.po", "res://translations/zh.po")
 
 [rendering]
 
