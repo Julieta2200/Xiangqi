@@ -57,7 +57,7 @@ var current_level_info: Dictionary = {
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	new_game()
+	load_game()
 
 func new_game() -> void:
 	state = new_state.duplicate(true)
