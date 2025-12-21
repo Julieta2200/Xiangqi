@@ -17,14 +17,15 @@ var flash_timer: Timer
 
 var light_original_positions: Array[Vector2] = []
 
-
 @onready var ui_animation: AnimationPlayer = %UIAnimation
 @onready var nav_blocker: Panel = %NavBlocker
 @onready var main_animation: AnimationPlayer = %MainAnimation
 @onready var ashes: AnimatedSprite2D = %Ashes
+@onready var continue_button: Button = $CanvasLayer/Navigation/Continue
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	continue_button.disabled = !GameState.save_exists()
 	canvas_modulate.color = default_color
 	_start_flash_timer()
 	_start_light_floating()
@@ -98,9 +99,15 @@ func _on_new_game_pressed() -> void:
 	ui_animation.play("disappear")
 	nav_blocker.visible = true
 	main_animation.play("start")
+	GameState.new_game()
 
 func play_ashes_run() -> void:
 	ashes.play("run")
 
 func open_overworld() -> void:
 	SceneManager.change_scene(SceneManager.Scenes.Overworld)
+
+func _on_continue_pressed() -> void:
+	ui_animation.play("disappear")
+	nav_blocker.visible = true
+	main_animation.play("start")

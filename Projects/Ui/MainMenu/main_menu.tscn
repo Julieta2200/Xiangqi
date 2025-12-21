@@ -554,7 +554,6 @@ theme_override_constants/separation = 20
 
 [node name="Continue" parent="CanvasLayer/Navigation" instance=ExtResource("12_e82pv")]
 layout_mode = 2
-disabled = true
 text = "  CONTINUE"
 
 [node name="NewGame" parent="CanvasLayer/Navigation" instance=ExtResource("12_e82pv")]
@@ -588,4 +587,5 @@ libraries = {
 stream = ExtResource("18_c7tyu")
 autoplay = true
 
+[connection signal="pressed" from="CanvasLayer/Navigation/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="CanvasLayer/Navigation/NewGame" to="." method="_on_new_game_pressed"]
