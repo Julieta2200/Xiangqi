@@ -1,0 +1,154 @@
+[gd_scene load_steps=10 format=3 uid="uid://ti6boty6unhe"]
+
+[ext_resource type="Texture2D" uid="uid://ccvn2m5c20rn" path="res://Assets/MainMenu/ui/Gradient.png" id="1_3hgpq"]
+[ext_resource type="Script" path="res://Projects/Ui/PauseMenu/pause_menu.gd" id="1_tw5fo"]
+[ext_resource type="PackedScene" uid="uid://cvgwekodiw7wr" path="res://Projects/Ui/MainMenu/nav_button.tscn" id="2_jqbkb"]
+[ext_resource type="Shader" path="res://Projects/Shaders/blur_menu.gdshader" id="3_8t2lk"]
+[ext_resource type="Texture2D" uid="uid://bnr8lhker5a5h" path="res://Assets/MainMenu/ui/Line.png" id="5_du08j"]
+[ext_resource type="Texture2D" uid="uid://crt675lrdbly" path="res://Assets/MainMenu/ui/logo/Logo(glow_effect).png" id="5_yn4ci"]
+[ext_resource type="Texture2D" uid="uid://dwblpmraaq4v7" path="res://Assets/MainMenu/ui/Esc_button.png" id="6_bxirq"]
+[ext_resource type="FontFile" uid="uid://c66ve5yi6m7nm" path="res://Assets/Fonts/Cinzel/Cinzel-Regular.ttf" id="7_job34"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ohkaf"]
+shader = ExtResource("3_8t2lk")
+shader_parameter/blur_amount = 5.0
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tw5fo")
+
+[node name="BlurOverlay" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_ohkaf")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Gradient" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3hgpq")
+
+[node name="Navigation" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 201.0
+offset_top = -405.0
+offset_right = 859.0
+offset_bottom = 445.0
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Restart" parent="Navigation" instance=ExtResource("2_jqbkb")]
+layout_mode = 2
+text = "  RESTART"
+
+[node name="Options" parent="Navigation" instance=ExtResource("2_jqbkb")]
+layout_mode = 2
+text = "  OPTIONS"
+
+[node name="Back to Overworld" parent="Navigation" instance=ExtResource("2_jqbkb")]
+layout_mode = 2
+text = "  BACK TO OVERWOLD"
+
+[node name="Back to Menu" parent="Navigation" instance=ExtResource("2_jqbkb")]
+layout_mode = 2
+text = "  BACK TO MENU"
+
+[node name="Bottom" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -94.0
+offset_right = 40.0
+offset_bottom = -54.0
+grow_vertical = 0
+
+[node name="Line" type="TextureRect" parent="Bottom"]
+texture_filter = 2
+layout_mode = 0
+offset_right = 1979.0
+offset_bottom = 3.0
+scale = Vector2(2, 2)
+texture = ExtResource("5_du08j")
+
+[node name="EscButton" type="TextureRect" parent="Bottom/Line"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -287.5
+offset_top = -14.5
+offset_right = -202.5
+offset_bottom = 20.5
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("6_bxirq")
+
+[node name="Esc" type="Label" parent="Bottom/Line/EscButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.617647
+anchor_top = 0.642857
+anchor_right = 1.05295
+anchor_bottom = 1.35714
+offset_left = -27.0
+offset_top = -21.5
+offset_right = 27.0
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.647059, 0.521569, 0.196078, 1)
+theme_override_fonts/font = ExtResource("7_job34")
+theme_override_font_sizes/font_size = 38
+text = "ESC"
+metadata/_edit_use_anchors_ = true
+
+[node name="Resume" type="Label" parent="Bottom/Line/EscButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.38824
+anchor_top = 0.614286
+anchor_right = 2.43529
+anchor_bottom = 1.32857
+offset_left = -27.0
+offset_top = -21.5
+offset_right = 27.0
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.647059, 0.521569, 0.196078, 1)
+theme_override_fonts/font = ExtResource("7_job34")
+theme_override_font_sizes/font_size = 38
+text = "Resume
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Logo" type="TextureRect" parent="Bottom"]
+texture_filter = 2
+layout_mode = 0
+offset_left = 28.0
+offset_top = -2028.0
+offset_right = 491.0
+offset_bottom = -1696.0
+scale = Vector2(2, 2)
+texture = ExtResource("5_yn4ci")
