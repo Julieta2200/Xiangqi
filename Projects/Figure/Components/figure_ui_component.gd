@@ -7,25 +7,39 @@ var active: bool = true :
 			return
 		if active:
 			shader_component.remove_sickness_material()
-		if active and mouse_in:
-			shader_component.mouse_entered()
 		else:
-			shader_component.mouse_exited()
+			shader_component.start_sickness_transition()
+		if !selected:
+			if active and mouse_in:
+				shader_component.mouse_entered()
+			else:
+				shader_component.mouse_exited()
 
 var mouse_in: bool = false:
 	set(m):
 		mouse_in = m
-		chess_component.show_moves()
+		if !selected:
+			chess_component.show_moves()
+		if shader_component == null:
+			return
+		if !selected or chess_component.team != BoardV2.Teams.Red:
+			if mouse_in:
+				show_horse_blocker()
+			else:
+				hide_horse_blocker()
 
-var selected: bool :
+var selected: bool:
 	set(s):
 		selected = s
+		chess_component.show_moves()
 		if shader_component == null:
 			return
 		if selected:
 			shader_component.mouse_entered()
+			show_horse_blocker()
 		else:
 			shader_component.mouse_exited()
+			hide_horse_blocker()
 			
 
 @export var chess_component: ChessComponent
@@ -52,4 +66,15 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 				move_component.shake()
 			else:
 				selected = !selected
-				chess_component.show_moves()
+
+func show_horse_blocker():
+	if chess_component.figure_component.type != FigureComponent.Types.HORSE:
+		return
+	for i in chess_component.blockers:
+		i.shader_component.highlight_blocker()
+
+func hide_horse_blocker():
+	if chess_component.figure_component.type != FigureComponent.Types.HORSE:
+		return
+	for i in chess_component.blockers:
+		i.shader_component.unhighlight_blocker(i.ui_component.active)

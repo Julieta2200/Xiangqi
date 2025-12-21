@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ccptjppldlh1k"]
+[gd_scene load_steps=18 format=3 uid="uid://ccptjppldlh1k"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_ngfbc"]
 [ext_resource type="Texture2D" uid="uid://b2xwlm4cywyyo" path="res://Assets/Characters/Fog/Elephant/Idle/Idle1.png" id="2_0g072"]
@@ -9,6 +9,7 @@
 [ext_resource type="Material" uid="uid://extfukhqcdhc" path="res://Projects/Shaders/target_outline.tres" id="6_vjjb4"]
 [ext_resource type="Material" uid="uid://cn0gyjph0f1nv" path="res://Projects/Shaders/fog_spawn.tres" id="7_uuwsa"]
 [ext_resource type="PackedScene" uid="uid://dhpouhurhy80p" path="res://Projects/Figure/Components/figure_target_component.tscn" id="8_rw0nu"]
+[ext_resource type="Material" uid="uid://c5vdybw7ih322" path="res://Projects/Shaders/blocker.tres" id="9_5x5uv"]
 [ext_resource type="PackedScene" uid="uid://d05lmiobxnn3t" path="res://Projects/Figure/shadow_pivot.tscn" id="9_bocfj"]
 [ext_resource type="Material" uid="uid://blvd6fmf8jtbp" path="res://Projects/Shaders/blur_shadow.tres" id="10_nrbeb"]
 [ext_resource type="PackedScene" uid="uid://dylnbquiybg16" path="res://Projects/Figure/Components/figure_ui_component.tscn" id="11_81cji"]
@@ -68,6 +69,7 @@ shadow = NodePath("../ShadowPivot/Shadow")
 main_sprite = NodePath("../AnimatedSprite2D")
 highlight_material = ExtResource("6_vjjb4")
 spawn_material = ExtResource("7_uuwsa")
+blocker_material = ExtResource("9_5x5uv")
 
 [node name="FigureTargetComponent" parent="." node_paths=PackedStringArray("shader_component") instance=ExtResource("8_rw0nu")]
 shader_component = NodePath("../ShaderComponent")

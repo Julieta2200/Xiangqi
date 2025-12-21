@@ -4,6 +4,7 @@ class_name ShaderComponenet extends Node
 @export var highlight_material: Material
 @export var spawn_material: Material 
 @export var sickness_material: Material
+@export var blocker_material: Material
 @export var spawn_speed: float = 0.3
 
 @onready var hint_highlight_material: Material = preload("res://Projects/Shaders/hint_highlight.tres")
@@ -13,6 +14,8 @@ var scale_speed: float = 1.0
 
 func _ready() -> void:
 	main_sprite.material = spawn_material.duplicate()
+	
+func start_sickness_transition():
 	var tween := create_tween()
 	tween.tween_property(spawn_material, "shader_parameter/progress", 1.0, 1.2)
 	tween.finished.connect(apply_sickness_material)
@@ -49,3 +52,17 @@ func apply_sickness_material():
 	
 func remove_sickness_material():
 	main_sprite.material = null
+	
+func highlight_blocker():
+	if main_sprite == null or blocker_material == null:
+		return
+	main_sprite.material = blocker_material
+	
+func unhighlight_blocker(is_active: bool):
+	if main_sprite == null or main_sprite.material != blocker_material:
+		return
+	if is_active:
+		main_sprite.material = null
+	else:
+		main_sprite.material = sickness_material
+		

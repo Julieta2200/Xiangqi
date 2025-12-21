@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ba0tspyjjo8ax"]
+[gd_scene load_steps=20 format=3 uid="uid://ba0tspyjjo8ax"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_e2klm"]
 [ext_resource type="Texture2D" uid="uid://v8lmpl8risx" path="res://Assets/Characters/Fog/Chariot/Idle/Idle1.png" id="2_7qxn7"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://d05lmiobxnn3t" path="res://Projects/Figure/shadow_pivot.tscn" id="9_auk2b"]
 [ext_resource type="Material" uid="uid://blvd6fmf8jtbp" path="res://Projects/Shaders/blur_shadow.tres" id="10_urkd3"]
 [ext_resource type="PackedScene" uid="uid://dylnbquiybg16" path="res://Projects/Figure/Components/figure_ui_component.tscn" id="11_3ftce"]
+[ext_resource type="Material" uid="uid://c5vdybw7ih322" path="res://Projects/Shaders/blocker.tres" id="11_287hm"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/enemy_ui_component.gd" id="12_m3fju"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hqh0k"]
@@ -77,6 +78,7 @@ shadow = NodePath("../ShadowPivot/Shadow")
 main_sprite = NodePath("../AnimatedSprite2D")
 highlight_material = ExtResource("6_028nh")
 spawn_material = ExtResource("7_ruo6l")
+blocker_material = ExtResource("11_287hm")
 
 [node name="FigureTargetComponent" parent="." node_paths=PackedStringArray("shader_component") instance=ExtResource("8_jnj4o")]
 shader_component = NodePath("../ShaderComponent")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://bx11h40qosjm0"]
+[gd_scene load_steps=45 format=3 uid="uid://bx11h40qosjm0"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_joy3s"]
 [ext_resource type="Texture2D" uid="uid://csjbks1mympdt" path="res://Assets/Characters/Magma/Elephant/Idle/Elephant1.png" id="2_swpv1"]
@@ -29,6 +29,7 @@
 [ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/Magma/elephant_move_component.gd" id="24_xkce4"]
 [ext_resource type="PackedScene" uid="uid://d05lmiobxnn3t" path="res://Projects/Figure/shadow_pivot.tscn" id="28_20our"]
 [ext_resource type="Material" uid="uid://cxl2ktlqa7y0f" path="res://Projects/Shaders/summoning_sickness.tres" id="28_x8pa4"]
+[ext_resource type="Material" uid="uid://c5vdybw7ih322" path="res://Projects/Shaders/blocker.tres" id="29_g4ocv"]
 [ext_resource type="Material" uid="uid://blvd6fmf8jtbp" path="res://Projects/Shaders/blur_shadow.tres" id="29_tox1b"]
 [ext_resource type="AudioStream" uid="uid://bk1uc35vpkhwo" path="res://Assets/SFX/CHARACTER MOVEMENT SFX/Elephant Movement/Elephant-Movement-1.wav" id="30_l4kby"]
 [ext_resource type="AudioStream" uid="uid://wvwidf6lrk6k" path="res://Assets/SFX/CHARACTER MOVEMENT SFX/Elephant Movement/Elephant-Movement-2.wav" id="31_x6anr"]
@@ -184,6 +185,7 @@ main_sprite = NodePath("../AnimatedSprite2D")
 highlight_material = ExtResource("5_64wpi")
 spawn_material = ExtResource("9_ri67h")
 sickness_material = ExtResource("28_x8pa4")
+blocker_material = ExtResource("29_g4ocv")
 
 [node name="ShadowPivot" parent="." node_paths=PackedStringArray("shadow") instance=ExtResource("28_20our")]
 shadow = NodePath("Shadow")
