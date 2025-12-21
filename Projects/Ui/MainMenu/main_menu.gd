@@ -16,19 +16,16 @@ var flash_timer: Timer
 ]
 
 var light_original_positions: Array[Vector2] = []
-var can_continue: bool:
-	set(c):
-		can_continue = c
-		$CanvasLayer/Navigation/Continue.disabled = !can_continue
 
 @onready var ui_animation: AnimationPlayer = %UIAnimation
 @onready var nav_blocker: Panel = %NavBlocker
 @onready var main_animation: AnimationPlayer = %MainAnimation
 @onready var ashes: AnimatedSprite2D = %Ashes
+@onready var continue_button: Button = $CanvasLayer/Navigation/Continue
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	can_continue = GameState.save_exists()
+	continue_button.disabled = !GameState.save_exists()
 	canvas_modulate.color = default_color
 	_start_flash_timer()
 	_start_light_floating()
