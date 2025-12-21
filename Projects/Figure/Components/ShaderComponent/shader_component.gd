@@ -14,6 +14,8 @@ var scale_speed: float = 1.0
 
 func _ready() -> void:
 	main_sprite.material = spawn_material.duplicate()
+	
+func start_sickness_transition():
 	var tween := create_tween()
 	tween.tween_property(spawn_material, "shader_parameter/progress", 1.0, 1.2)
 	tween.finished.connect(apply_sickness_material)

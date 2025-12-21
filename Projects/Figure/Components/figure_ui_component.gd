@@ -7,6 +7,8 @@ var active: bool = true :
 			return
 		if active:
 			shader_component.remove_sickness_material()
+		else:
+			shader_component.start_sickness_transition()
 		if !selected:
 			if active and mouse_in:
 				shader_component.mouse_entered()
