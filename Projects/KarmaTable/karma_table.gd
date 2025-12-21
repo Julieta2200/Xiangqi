@@ -2,6 +2,8 @@ extends Node2D
 
 @onready var lls: Control = $CanvasLayer/LLs
 @onready var hls: Control = $CanvasLayer/HLs
+@onready var low_level_label: Label = $CanvasLayer/LLs/Label
+@onready var high_level_label: Label = $CanvasLayer/HLs/Label
 
 @onready var hint_bubbles: Array[HintBubble] = [
 	$CanvasLayer/Hints/HintBubble,
@@ -14,62 +16,19 @@ extends Node2D
 
 var _hint_index: int = 0
 
-
-@onready var level_1_dialog: Array[DialogSystem.DialogText] = [
-	DialogSystem.DialogText.new("Ashes, you will meet your friend here.", DialogSystem.CHARACTERS.Jakat),
-	DialogSystem.DialogText.new("I don’t have any.", DialogSystem.CHARACTERS.Ashes),
-	DialogSystem.DialogText.new("Driven by revenge, you’ll get what you give; Karma will catch you.", DialogSystem.CHARACTERS.Jakat),
-	DialogSystem.DialogText.new("Don’t forget who you’re speaking to. JStop talking and lend me your power.", DialogSystem.CHARACTERS.Ashes),
-	DialogSystem.DialogText.new("Time is ticking…", DialogSystem.CHARACTERS.Jakat),
-]
-
-@onready var level_1_bonus_dialog: Array[DialogSystem.DialogText] = [
-	DialogSystem.DialogText.new("You're leaving the path we agreed upon, aren't you?", DialogSystem.CHARACTERS.Jakat),
-	DialogSystem.DialogText.new("I have my own path.", DialogSystem.CHARACTERS.Ashes),
-	DialogSystem.DialogText.new("You're on your own here, Ashes.", DialogSystem.CHARACTERS.Jakat),
-	DialogSystem.DialogText.new("Such a tragedy...", DialogSystem.CHARACTERS.Ashes)
-]
-
-@onready var level_2_dialog: Array[DialogSystem.DialogText] = [
-	DialogSystem.DialogText.new("Jakat, I need more power.", DialogSystem.CHARACTERS.Ashes),
-	DialogSystem.DialogText.new("So be it. But don't forget our deal.", DialogSystem.CHARACTERS.Jakat),
-	DialogSystem.DialogText.new("I'll do what I must.", DialogSystem.CHARACTERS.Ashes),
-	DialogSystem.DialogText.new("Karma moves in both directions...", DialogSystem.CHARACTERS.Jakat),
-]
-
-@onready var level_2_bonus_dialog: Array[DialogSystem.DialogText] = [
-	DialogSystem.DialogText.new("What's the point? Why are you fighting for others?", DialogSystem.CHARACTERS.Jakat),
-	DialogSystem.DialogText.new("I fight for myself alone.", DialogSystem.CHARACTERS.Ashes),
-	DialogSystem.DialogText.new("Realize that all things are connected. Actions do not exist in isolation.", DialogSystem.CHARACTERS.Jakat),
-]
-
-@onready var level_3_dialog: Array[DialogSystem.DialogText] = [
-	DialogSystem.DialogText.new("Mara has nowhere left to hide.", DialogSystem.CHARACTERS.Jakat),
-	DialogSystem.DialogText.new("What will you do?", DialogSystem.CHARACTERS.Jakat),
-	DialogSystem.DialogText.new("I care not what becomes of her.", DialogSystem.CHARACTERS.Ashes),
-	DialogSystem.DialogText.new("Karma will catch you.", DialogSystem.CHARACTERS.Jakat),
-]
-
-@onready var level_3_bonus_dialog: Array[DialogSystem.DialogText] = [
-	DialogSystem.DialogText.new("Once more, you fight for others?", DialogSystem.CHARACTERS.Jakat),
-	DialogSystem.DialogText.new("Be quiet. My reasons are my own.", DialogSystem.CHARACTERS.Ashes)
-]
-
 var dialogs: Dictionary
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	dialogs = {
-		"1": level_1_dialog,
-		"1_bonus": level_1_bonus_dialog,
-		"2": level_2_dialog,
-		"2_bonus": level_2_bonus_dialog,
-		"3": level_3_dialog,
-		"3_bonus": level_3_bonus_dialog,
-	}
+	dialogs = DialoguesManager.get_all_dialogs()
 	fill_lls()
 	fill_hls()
+	# Set translated text for buttons
+	play_button.text = tr("PLAY")
+	back_button.text = tr("BACK")
+	low_level_label.text = tr("LOW_LEVEL")
+	high_level_label.text = tr("HIGH_LEVEL")
 	if GameState.state["first_karma_table_run"]:
 		run_hint_system()
 		return
@@ -166,16 +125,16 @@ func run_hint_system() -> void:
 
 
 func _on_back_mouse_entered() -> void:
-	$CanvasLayer/Back/arrow.text = "> >"
+	$CanvasLayer/Back/arrow.text = tr("BUTTON_ARROW_HOVER")
 
 func _on_back_mouse_exited() -> void:
-	$CanvasLayer/Back/arrow.text = ">>"
+	$CanvasLayer/Back/arrow.text = tr("BUTTON_ARROW_NORMAL")
 
 func _on_play_mouse_entered() -> void:
-	$CanvasLayer/Play/arrow.text = "> >"
+	$CanvasLayer/Play/arrow.text = tr("BUTTON_ARROW_HOVER")
 
 func _on_play_mouse_exited() -> void:
-	$CanvasLayer/Play/arrow.text = ">>"
+	$CanvasLayer/Play/arrow.text = tr("BUTTON_ARROW_NORMAL")
 
 func _on_play_button_down() -> void:
 	$CanvasLayer/Play/arrow.add_theme_color_override("font_color", Color(0.49, 0.349, 0, 1))

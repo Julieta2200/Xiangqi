@@ -75,53 +75,53 @@ texture = ExtResource("26_br2ah")
 position = Vector2(628, 899)
 level_description = NodePath("../../CanvasLayer/LevelDescription")
 level = ExtResource("3_1gxvu")
-title = "Khosrov Forest - Part 1"
-story = "Ashes and his Mogs must pass through the dark forest of Khosrov which is under the control of the Fog Army."
-additional_objectives = Array[String](["Capture all enemy Xinvors", "Don't let enemy Xinvors past your guard"])
+title = "LEVEL_1_TITLE"
+story = "LEVEL_1_STORY"
+additional_objectives = Array[String](["LEVEL_1_OBJECTIVE_1", "LEVEL_1_OBJECTIVE_2"])
 number = "1"
 
 [node name="bonus_1" parent="Levels/1" node_paths=PackedStringArray("level_description") instance=ExtResource("2_m64e3")]
 position = Vector2(-49, -378)
 level_description = NodePath("../../../CanvasLayer/LevelDescription")
 level = ExtResource("4_k78vk")
-title = "Khosrov Forest - Wood World"
-story = "Ashes enters Wood World. Will he decide to give them back control, or take all for himself."
-additional_objectives = Array[String](["Capture the enemy Arqa", "Don't make more than 7 moves"])
+title = "LEVEL_1_BONUS_TITLE"
+story = "LEVEL_1_BONUS_STORY"
+additional_objectives = Array[String](["LEVEL_1_BONUS_OBJECTIVE_1", "LEVEL_1_BONUS_OBJECTIVE_2"])
 number = "1_bonus"
 
 [node name="2" parent="Levels" node_paths=PackedStringArray("level_description") instance=ExtResource("2_m64e3")]
 position = Vector2(977, 777)
 level_description = NodePath("../../CanvasLayer/LevelDescription")
 level = ExtResource("4_l7pks")
-title = "Khosrov Forest - Part 2"
-story = "Ashes and his Mogs meet Mara again. Mara is determined to stop them at any cost."
-additional_objectives = Array[String](["Capture the enemy Aspet.", "Don't let Ashes or your get captured."])
+title = "LEVEL_2_TITLE"
+story = "LEVEL_2_STORY"
+additional_objectives = Array[String](["LEVEL_2_OBJECTIVE_1", "LEVEL_2_OBJECTIVE_2"])
 number = "2"
 
 [node name="bonus_2" parent="Levels/2" node_paths=PackedStringArray("level_description") instance=ExtResource("2_m64e3")]
 position = Vector2(32, -321)
 level_description = NodePath("../../../CanvasLayer/LevelDescription")
 level = ExtResource("6_wvnqw")
-title = "Khosrov Forest - Animal Kingdom"
-story = "Weary of the Fog Army's dominion over their lands, the Animal Kingdom's creatures are ready to seize any opportunity— no matter how small — to fight back."
-additional_objectives = Array[String](["Capture the enemy Arqa", "Don't make more than 7 moves"])
+title = "LEVEL_2_BONUS_TITLE"
+story = "LEVEL_2_BONUS_STORY"
+additional_objectives = Array[String](["LEVEL_2_BONUS_OBJECTIVE_1", "LEVEL_2_BONUS_OBJECTIVE_2"])
 number = "2_bonus"
 
 [node name="3" parent="Levels" node_paths=PackedStringArray("level_description") instance=ExtResource("2_m64e3")]
 position = Vector2(1326, 796)
 level_description = NodePath("../../CanvasLayer/LevelDescription")
 level = ExtResource("4_rn2x1")
-title = "Khosrov Forest - Part 3"
-story = "Mara has no escape. She makes a final stand with her what’s left of her army.."
-additional_objectives = Array[String](["Defeat Mara."])
+title = "LEVEL_3_TITLE"
+story = "LEVEL_3_STORY"
+additional_objectives = Array[String](["LEVEL_3_OBJECTIVE_1"])
 number = "3"
 
 [node name="bonus_3" parent="Levels/3" node_paths=PackedStringArray("level_description") instance=ExtResource("2_m64e3")]
 position = Vector2(111, -342)
 level_description = NodePath("../../../CanvasLayer/LevelDescription")
 level = ExtResource("8_f3p8a")
-title = "Khosrov Forest - Lake World"
-story = "The creatures of the Lake World were naturally peaceful; however, the Fog Army took advantage of this tranquility to enslave them."
+title = "LEVEL_3_BONUS_TITLE"
+story = "LEVEL_3_BONUS_STORY"
 number = "3_bonus"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

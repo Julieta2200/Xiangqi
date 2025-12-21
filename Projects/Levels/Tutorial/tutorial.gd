@@ -81,7 +81,7 @@ func _on_free_pressed() -> void:
 	board.initialize_position(state)
 
 	DialogSystem.start_dialog([
-		DialogSystem.DialogText.new("Welcome to the Playground! You can play around here, or choose a topic which you want to learn!", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("TUTORIAL_WELCOME", DialogSystem.CHARACTERS.Ashes),
 	], false, 3.0)
 	current_section = TutorialSections.FREE
 	gameplay_ui.hide()
@@ -96,55 +96,55 @@ func check_state() -> void:
 		TutorialSections.PAWN:
 			if (board.get_figures(BoardV2.Teams.Black).size() == 0):
 				DialogSystem.start_dialog([
-					DialogSystem.DialogText.new("Great! You have captured the enemy Pawn.", DialogSystem.CHARACTERS.Ashes),
+					DialogSystem.DialogText.new("TUTORIAL_PAWN_CAPTURE_1", DialogSystem.CHARACTERS.Ashes),
 				], false, 3.0)
 				passed_text_shown = true
 		TutorialSections.HORSE:
 			if (board.get_figures(BoardV2.Teams.Black).size() == 0):
 				DialogSystem.start_dialog([
-					DialogSystem.DialogText.new("Well done! You have captured the enemy Pawn.", DialogSystem.CHARACTERS.Ashes),
+					DialogSystem.DialogText.new("TUTORIAL_PAWN_CAPTURE_2", DialogSystem.CHARACTERS.Ashes),
 				], false, 5.0)
 				passed_text_shown = true
 		TutorialSections.ELEPHANT:
 			if (board.get_figures(BoardV2.Teams.Black).size() == 0):
 				DialogSystem.start_dialog([
-					DialogSystem.DialogText.new("Excellent! You have captured the enemy Pawn.", DialogSystem.CHARACTERS.Ashes),
+					DialogSystem.DialogText.new("TUTORIAL_PAWN_CAPTURE_3", DialogSystem.CHARACTERS.Ashes),
 				], false, 5.0)
 				passed_text_shown = true
 		TutorialSections.CANNON:
 			if (board.get_figures(BoardV2.Teams.Black).size() == 1):
 				DialogSystem.start_dialog([
-					DialogSystem.DialogText.new("Fantastic! You have captured the enemy Pawn.", DialogSystem.CHARACTERS.Ashes),
+					DialogSystem.DialogText.new("TUTORIAL_PAWN_CAPTURE_4", DialogSystem.CHARACTERS.Ashes),
 				], false, 5.0)
 				passed_text_shown = true
 		TutorialSections.CHARIOT:
 			if (board.get_figures(BoardV2.Teams.Black).size() == 0):
 				DialogSystem.start_dialog([
-					DialogSystem.DialogText.new("Awesome! You have captured the enemy Pawn.", DialogSystem.CHARACTERS.Ashes),
+					DialogSystem.DialogText.new("TUTORIAL_PAWN_CAPTURE_5", DialogSystem.CHARACTERS.Ashes),
 				], false, 5.0)
 				passed_text_shown = true
 		TutorialSections.ADVISOR:
 			if (board.get_figures(BoardV2.Teams.Black).size() == 0):
 				DialogSystem.start_dialog([
-					DialogSystem.DialogText.new("Congratulations! You have captured the enemy Pawn.", DialogSystem.CHARACTERS.Ashes),
+					DialogSystem.DialogText.new("TUTORIAL_PAWN_CAPTURE_6", DialogSystem.CHARACTERS.Ashes),
 				], false, 5.0)
 				passed_text_shown = true
 		TutorialSections.GENERAL:
 			if (board.get_figures(BoardV2.Teams.Black).size() == 0):
 				DialogSystem.start_dialog([
-					DialogSystem.DialogText.new("You did it! You have captured the enemy Pawn.", DialogSystem.CHARACTERS.Ashes),
+					DialogSystem.DialogText.new("TUTORIAL_PAWN_CAPTURE_7", DialogSystem.CHARACTERS.Ashes),
 				], false, 5.0)
 				passed_text_shown = true
 		TutorialSections.FLYINGGENERAL:
 			if (board.get_generals().size() == 1):
 				DialogSystem.start_dialog([
-					DialogSystem.DialogText.new("Amazing! You have captured the enemy General and won the game!", DialogSystem.CHARACTERS.Ashes),
+					DialogSystem.DialogText.new("TUTORIAL_GENERAL_CAPTURE", DialogSystem.CHARACTERS.Ashes),
 				], false, 5.0)
 				passed_text_shown = true
 		TutorialSections.SPAWNING:
 			if board.get_figures(BoardV2.Teams.Red).size() > 1:
 				DialogSystem.start_dialog([
-					DialogSystem.DialogText.new("Great! You have spawned a piece!", DialogSystem.CHARACTERS.Ashes),
+					DialogSystem.DialogText.new("TUTORIAL_SPAWN_SUCCESS", DialogSystem.CHARACTERS.Ashes),
 				], false, 5.0)
 				passed_text_shown = true
 
@@ -157,8 +157,8 @@ func _on_pawn_pressed() -> void:
 	board.clear_board()
 	board.initialize_position(state)
 	DialogSystem.start_dialog([
-		DialogSystem.DialogText.new("This is a Pawn. Pawns can only move forward one step at a time, but once they cross the river, they can also move sideways.", DialogSystem.CHARACTERS.Ashes),
-		DialogSystem.DialogText.new("Try moving the Pawn to the other side of the river and capture enemy Pawn!", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("TUTORIAL_PAWN_DESCRIPTION_1", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("TUTORIAL_PAWN_DESCRIPTION_2", DialogSystem.CHARACTERS.Ashes),
 	], true)
 	current_section = TutorialSections.PAWN
 	passed_text_shown = false
@@ -173,9 +173,9 @@ func _on_horse_pressed() -> void:
 	board.clear_board()
 	board.initialize_position(state)
 	DialogSystem.start_dialog([
-		DialogSystem.DialogText.new("This is a Horse. Horses move in an L-shape: two steps in one direction and then one step perpendicular.", DialogSystem.CHARACTERS.Ashes),
-		DialogSystem.DialogText.new("However, if there is a piece directly next to the Horse in the direction it is moving, it cannot jump over it.", DialogSystem.CHARACTERS.Ashes),
-		DialogSystem.DialogText.new("Try moving the Horse around, and capture the enemy Pawn!", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("TUTORIAL_HORSE_DESCRIPTION_1", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("TUTORIAL_HORSE_DESCRIPTION_2", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("TUTORIAL_HORSE_DESCRIPTION_3", DialogSystem.CHARACTERS.Ashes),
 	], true)
 	current_section = TutorialSections.HORSE
 	passed_text_shown = false
@@ -190,9 +190,9 @@ func _on_elephant_pressed() -> void:
 	board.clear_board()
 	board.initialize_position(state)
 	DialogSystem.start_dialog([
-		DialogSystem.DialogText.new("This is an Elephant. Elephants move exactly two points diagonally and cannot jump over intervening pieces.", DialogSystem.CHARACTERS.Ashes),
-		DialogSystem.DialogText.new("Elephants cannot cross the river to the opponent's side of the board.", DialogSystem.CHARACTERS.Ashes),
-		DialogSystem.DialogText.new("Try moving the Elephant around, and capture the enemy Pawn!", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("TUTORIAL_ELEPHANT_DESCRIPTION_1", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("TUTORIAL_ELEPHANT_DESCRIPTION_2", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("TUTORIAL_ELEPHANT_DESCRIPTION_3", DialogSystem.CHARACTERS.Ashes),
 	], true)
 	current_section = TutorialSections.ELEPHANT
 	passed_text_shown = false
@@ -208,9 +208,9 @@ func _on_cannon_pressed() -> void:
 	board.clear_board()
 	board.initialize_position(state)
 	DialogSystem.start_dialog([
-		DialogSystem.DialogText.new("This is a Cannon. Cannons move vertically or horizontally any number of unoccupied squares.", DialogSystem.CHARACTERS.Ashes),
-		DialogSystem.DialogText.new("To capture, the Cannon must jump over exactly one piece along its path to the target piece.", DialogSystem.CHARACTERS.Ashes),
-		DialogSystem.DialogText.new("Try moving the Cannon around, and capture the enemy Pawn!", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("TUTORIAL_CANNON_DESCRIPTION_1", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("TUTORIAL_CANNON_DESCRIPTION_2", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("TUTORIAL_CANNON_DESCRIPTION_3", DialogSystem.CHARACTERS.Ashes),
 	], true)
 	current_section = TutorialSections.CANNON
 	passed_text_shown = false
@@ -225,8 +225,8 @@ func _on_chariot_pressed() -> void:
 	board.clear_board()
 	board.initialize_position(state)
 	DialogSystem.start_dialog([
-		DialogSystem.DialogText.new("This is a Chariot. Chariots move any number of vacant squares vertically or horizontally.", DialogSystem.CHARACTERS.Ashes),
-		DialogSystem.DialogText.new("Try moving the Chariot around, and capture the enemy Pawn!", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("TUTORIAL_CHARIOT_DESCRIPTION_1", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("TUTORIAL_CHARIOT_DESCRIPTION_2", DialogSystem.CHARACTERS.Ashes),
 	], true)
 	current_section = TutorialSections.CHARIOT
 	passed_text_shown = false
@@ -241,8 +241,8 @@ func _on_advisor_pressed() -> void:
 	board.clear_board()
 	board.initialize_position(state)
 	DialogSystem.start_dialog([
-		DialogSystem.DialogText.new("This is an Advisor. Advisors move one point diagonally and must stay within the palace.", DialogSystem.CHARACTERS.Ashes),
-		DialogSystem.DialogText.new("Try moving the Advisor around, and capture the enemy Pawn!", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("TUTORIAL_ADVISOR_DESCRIPTION_1", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("TUTORIAL_ADVISOR_DESCRIPTION_2", DialogSystem.CHARACTERS.Ashes),
 	], true)
 	current_section = TutorialSections.ADVISOR
 	passed_text_shown = false
@@ -257,9 +257,9 @@ func _on_general_pressed() -> void:
 	board.clear_board()
 	board.initialize_position(state)
 	DialogSystem.start_dialog([
-		DialogSystem.DialogText.new("This is the General. The General moves one point either vertically or horizontally and must stay within the palace.", DialogSystem.CHARACTERS.Ashes),
-		DialogSystem.DialogText.new("You should always protect your General. If your General is captured, you lose the game!", DialogSystem.CHARACTERS.Ashes),
-		DialogSystem.DialogText.new("Try moving the General around, and capture the enemy Pawn!", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("TUTORIAL_GENERAL_DESCRIPTION_1", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("TUTORIAL_GENERAL_DESCRIPTION_2", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("TUTORIAL_GENERAL_DESCRIPTION_3", DialogSystem.CHARACTERS.Ashes),
 	], true)
 	current_section = TutorialSections.GENERAL
 	passed_text_shown = false
@@ -275,9 +275,9 @@ func _on_flying_general_pressed() -> void:
 	board.clear_board()
 	board.initialize_position(state)
 	DialogSystem.start_dialog([
-		DialogSystem.DialogText.new("This is the Flying General rule.", DialogSystem.CHARACTERS.Ashes),
-		DialogSystem.DialogText.new("If the two Generals face each other on the same file with no pieces in between, the General whose turn it is can move directly to capture the opposing General.", DialogSystem.CHARACTERS.Ashes),
-		DialogSystem.DialogText.new("Try capturing the enemy General!", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("TUTORIAL_FLYING_GENERAL_DESCRIPTION_1", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("TUTORIAL_FLYING_GENERAL_DESCRIPTION_2", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("TUTORIAL_FLYING_GENERAL_DESCRIPTION_3", DialogSystem.CHARACTERS.Ashes),
 	], true)
 	current_section = TutorialSections.FLYINGGENERAL
 	passed_text_shown = false
@@ -292,10 +292,10 @@ func _on_spawning_pressed() -> void:
 	board.clear_board()
 	board.initialize_position(state)
 	DialogSystem.start_dialog([
-		DialogSystem.DialogText.new("You can spawn pieces in first 3 rows.", DialogSystem.CHARACTERS.Ashes),
-		DialogSystem.DialogText.new("When spawning you lose energy.", DialogSystem.CHARACTERS.Ashes),
-		DialogSystem.DialogText.new("You can't move with newly summoned piece.", DialogSystem.CHARACTERS.Ashes),
-		DialogSystem.DialogText.new("Spawn a piece and make a move with it!", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("TUTORIAL_SPAWNING_DESCRIPTION_1", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("TUTORIAL_SPAWNING_DESCRIPTION_2", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("TUTORIAL_SPAWNING_DESCRIPTION_3", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("TUTORIAL_SPAWNING_DESCRIPTION_4", DialogSystem.CHARACTERS.Ashes),
 	], true)
 	current_section = TutorialSections.SPAWNING
 	passed_text_shown = false

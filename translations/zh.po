@@ -1,0 +1,495 @@
+# LANGUAGE translation for zh
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Xiangqi\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: 2024-01-01 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "CONTINUE"
+msgstr "  继续"
+
+msgid "NEW_GAME"
+msgstr "  新游戏"
+
+msgid "OPTIONS"
+msgstr "  选项"
+
+msgid "CREDITS"
+msgstr "  制作人员"
+
+msgid "KARMA_TABLE_LEVEL_1_DIALOG_1"
+msgstr "灰烬，你将在这里遇到你的朋友。"
+
+msgid "KARMA_TABLE_LEVEL_1_DIALOG_2"
+msgstr "我没有朋友。"
+
+msgid "KARMA_TABLE_LEVEL_1_DIALOG_3"
+msgstr "被复仇驱动，你会得到你所给予的；因果会追上你。"
+
+msgid "KARMA_TABLE_LEVEL_1_DIALOG_4"
+msgstr "别忘了你在跟谁说话。别说了，把你的力量借给我。"
+
+msgid "KARMA_TABLE_LEVEL_1_DIALOG_5"
+msgstr "时间在流逝……"
+
+msgid "KARMA_TABLE_LEVEL_1_BONUS_DIALOG_1"
+msgstr "你要离开我们约定的道路，是吗？"
+
+msgid "KARMA_TABLE_LEVEL_1_BONUS_DIALOG_2"
+msgstr "我有自己的路。"
+
+msgid "KARMA_TABLE_LEVEL_1_BONUS_DIALOG_3"
+msgstr "你在这里只能靠自己了，灰烬。"
+
+msgid "KARMA_TABLE_LEVEL_1_BONUS_DIALOG_4"
+msgstr "真是悲剧……"
+
+msgid "KARMA_TABLE_LEVEL_2_DIALOG_1"
+msgstr "雅卡特，我需要更多力量。"
+
+msgid "KARMA_TABLE_LEVEL_2_DIALOG_2"
+msgstr "那就这样吧。但别忘了我们的交易。"
+
+msgid "KARMA_TABLE_LEVEL_2_DIALOG_3"
+msgstr "我会做我必须做的事。"
+
+msgid "KARMA_TABLE_LEVEL_2_DIALOG_4"
+msgstr "因果在双向移动……"
+
+msgid "KARMA_TABLE_LEVEL_2_BONUS_DIALOG_1"
+msgstr "有什么意义？你为什么要为别人战斗？"
+
+msgid "KARMA_TABLE_LEVEL_2_BONUS_DIALOG_2"
+msgstr "我只为自己而战。"
+
+msgid "KARMA_TABLE_LEVEL_2_BONUS_DIALOG_3"
+msgstr "要明白万物都是相连的。行动不是孤立存在的。"
+
+msgid "KARMA_TABLE_LEVEL_3_DIALOG_1"
+msgstr "玛拉无处可藏了。"
+
+msgid "KARMA_TABLE_LEVEL_3_DIALOG_2"
+msgstr "你会怎么做？"
+
+msgid "KARMA_TABLE_LEVEL_3_DIALOG_3"
+msgstr "我不在乎她的下场。"
+
+msgid "KARMA_TABLE_LEVEL_3_DIALOG_4"
+msgstr "因果会追上你。"
+
+msgid "KARMA_TABLE_LEVEL_3_BONUS_DIALOG_1"
+msgstr "又一次，你为别人而战？"
+
+msgid "KARMA_TABLE_LEVEL_3_BONUS_DIALOG_2"
+msgstr "安静。我的理由是我自己的。"
+
+msgid "LEVEL_1_TITLE"
+msgstr "霍斯罗夫森林 - 第一部分"
+
+msgid "LEVEL_1_STORY"
+msgstr "灰烬和他的魔格必须穿过被雾军控制的霍斯罗夫黑暗森林。"
+
+msgid "LEVEL_1_OBJECTIVE_1"
+msgstr "捕获所有敌方辛沃尔"
+
+msgid "LEVEL_1_OBJECTIVE_2"
+msgstr "不要让敌方辛沃尔越过你的防线"
+
+msgid "LEVEL_1_BONUS_TITLE"
+msgstr "霍斯罗夫森林 - 木世界"
+
+msgid "LEVEL_1_BONUS_STORY"
+msgstr "灰烬进入木世界。他会决定归还控制权，还是全部据为己有。"
+
+msgid "LEVEL_1_BONUS_OBJECTIVE_1"
+msgstr "捕获敌方阿尔卡"
+
+msgid "LEVEL_1_BONUS_OBJECTIVE_2"
+msgstr "不要超过7步"
+
+msgid "LEVEL_2_TITLE"
+msgstr "霍斯罗夫森林 - 第二部分"
+
+msgid "LEVEL_2_STORY"
+msgstr "灰烬和他的魔格再次遇到玛拉。玛拉决心不惜一切代价阻止他们。"
+
+msgid "LEVEL_2_OBJECTIVE_1"
+msgstr "捕获敌方阿斯佩特。"
+
+msgid "LEVEL_2_OBJECTIVE_2"
+msgstr "不要让灰烬或你的人被捕获。"
+
+msgid "LEVEL_2_BONUS_TITLE"
+msgstr "霍斯罗夫森林 - 动物王国"
+
+msgid "LEVEL_2_BONUS_STORY"
+msgstr "厌倦了雾军对他们土地的统治，动物王国的生物准备抓住任何机会——无论多小——来反击。"
+
+msgid "LEVEL_2_BONUS_OBJECTIVE_1"
+msgstr "捕获敌方阿尔卡"
+
+msgid "LEVEL_2_BONUS_OBJECTIVE_2"
+msgstr "不要超过7步"
+
+msgid "LEVEL_3_TITLE"
+msgstr "霍斯罗夫森林 - 第三部分"
+
+msgid "LEVEL_3_STORY"
+msgstr "玛拉无处可逃。她与残存的军队做最后的抵抗。"
+
+msgid "LEVEL_3_OBJECTIVE_1"
+msgstr "击败玛拉。"
+
+msgid "LEVEL_3_BONUS_TITLE"
+msgstr "霍斯罗夫森林 - 湖世界"
+
+msgid "LEVEL_3_BONUS_STORY"
+msgstr "湖世界的生物天生和平；然而，雾军利用这种宁静奴役了他们。"
+
+msgid "KARMA_TABLE_HINT_1"
+msgstr "低等级（LL）特殊能力卡。当你选择释放奖励关卡时，会解锁新的LL特殊能力。"
+
+msgid "KARMA_TABLE_HINT_2"
+msgstr "高等级（HL）特殊能力卡。当你选择征服3个奖励关卡时，会解锁新的HL特殊能力。"
+
+msgid "KARMA_TABLE_HINT_3"
+msgstr "点击特殊能力来装备它。"
+
+msgid "CHARACTER_ASHES"
+msgstr "灰烬"
+
+msgid "CHARACTER_MARA"
+msgstr "玛拉"
+
+msgid "CHARACTER_MOG"
+msgstr "魔格"
+
+msgid "CHARACTER_JAKAT"
+msgstr "雅卡特"
+
+msgid "GAME_OVER_TEXT_1"
+msgstr "你的意志已破碎。"
+
+msgid "GAME_OVER_TEXT_2"
+msgstr "零卡姆。容器已空。"
+
+msgid "GAME_OVER_TEXT_3"
+msgstr "你除了灵魂之外一无所有了。"
+
+msgid "GAME_OVER_TEXT_4"
+msgstr "风起。灰烬散落。"
+
+msgid "GAME_OVER_TEXT_5"
+msgstr "火灭。只剩灰烬。"
+
+msgid "BUTTON_ARROW_HOVER"
+msgstr "> >"
+
+msgid "BUTTON_ARROW_NORMAL"
+msgstr ">>"
+
+msgid "MTB_PREFIX"
+msgstr "最少步数: "
+
+msgid "FIGURE_XINVOR"
+msgstr "辛沃尔"
+
+msgid "FIGURE_PIGH"
+msgstr "皮格"
+
+msgid "FIGURE_NAVAK"
+msgstr "纳瓦克"
+
+msgid "FIGURE_ASPET"
+msgstr "阿斯佩特"
+
+msgid "FIGURE_STVER"
+msgstr "斯特维尔"
+
+msgid "TUTORIAL_WELCOME"
+msgstr "欢迎来到练习场！你可以在这里自由练习，或选择你想学习的主题！"
+
+msgid "TUTORIAL_PAWN_CAPTURE_1"
+msgstr "太好了！你捕获了敌方兵。"
+
+msgid "TUTORIAL_PAWN_CAPTURE_2"
+msgstr "做得好！你捕获了敌方兵。"
+
+msgid "TUTORIAL_PAWN_CAPTURE_3"
+msgstr "优秀！你捕获了敌方兵。"
+
+msgid "TUTORIAL_PAWN_CAPTURE_4"
+msgstr "太棒了！你捕获了敌方兵。"
+
+msgid "TUTORIAL_PAWN_CAPTURE_5"
+msgstr "真棒！你捕获了敌方兵。"
+
+msgid "TUTORIAL_PAWN_CAPTURE_6"
+msgstr "恭喜！你捕获了敌方兵。"
+
+msgid "TUTORIAL_PAWN_CAPTURE_7"
+msgstr "你做到了！你捕获了敌方兵。"
+
+msgid "TUTORIAL_GENERAL_CAPTURE"
+msgstr "太惊人了！你捕获了敌方将并赢得了游戏！"
+
+msgid "TUTORIAL_SPAWN_SUCCESS"
+msgstr "太好了！你召唤了一个棋子！"
+
+msgid "TUTORIAL_PAWN_DESCRIPTION_1"
+msgstr "这是兵。兵每次只能向前移动一步，但一旦过了河，它们也可以横向移动。"
+
+msgid "TUTORIAL_PAWN_DESCRIPTION_2"
+msgstr "试着把兵移动到河的另一边并捕获敌方兵！"
+
+msgid "TUTORIAL_HORSE_DESCRIPTION_1"
+msgstr "这是马。马以L形移动：先在一个方向走两步，然后垂直走一步。"
+
+msgid "TUTORIAL_HORSE_DESCRIPTION_2"
+msgstr "但是，如果在马移动方向上紧邻有一个棋子，它不能跳过它。"
+
+msgid "TUTORIAL_HORSE_DESCRIPTION_3"
+msgstr "试着移动马，并捕获敌方兵！"
+
+msgid "TUTORIAL_ELEPHANT_DESCRIPTION_1"
+msgstr "这是象。象正好对角移动两个点，不能跳过中间的棋子。"
+
+msgid "TUTORIAL_ELEPHANT_DESCRIPTION_2"
+msgstr "象不能过河到对手的一边。"
+
+msgid "TUTORIAL_ELEPHANT_DESCRIPTION_3"
+msgstr "试着移动象，并捕获敌方兵！"
+
+msgid "TUTORIAL_CANNON_DESCRIPTION_1"
+msgstr "这是炮。炮可以垂直或水平移动任意数量的空格。"
+
+msgid "TUTORIAL_CANNON_DESCRIPTION_2"
+msgstr "要捕获，炮必须在其路径上跳过恰好一个棋子才能到达目标棋子。"
+
+msgid "TUTORIAL_CANNON_DESCRIPTION_3"
+msgstr "试着移动炮，并捕获敌方兵！"
+
+msgid "TUTORIAL_CHARIOT_DESCRIPTION_1"
+msgstr "这是车。车可以垂直或水平移动任意数量的空格。"
+
+msgid "TUTORIAL_CHARIOT_DESCRIPTION_2"
+msgstr "试着移动车，并捕获敌方兵！"
+
+msgid "TUTORIAL_ADVISOR_DESCRIPTION_1"
+msgstr "这是士。士对角移动一个点，必须留在九宫格内。"
+
+msgid "TUTORIAL_ADVISOR_DESCRIPTION_2"
+msgstr "试着移动士，并捕获敌方兵！"
+
+msgid "TUTORIAL_GENERAL_DESCRIPTION_1"
+msgstr "这是将。将垂直或水平移动一个点，必须留在九宫格内。"
+
+msgid "TUTORIAL_GENERAL_DESCRIPTION_2"
+msgstr "你应该始终保护你的将。如果你的将被捕获，你就输了游戏！"
+
+msgid "TUTORIAL_GENERAL_DESCRIPTION_3"
+msgstr "试着移动将，并捕获敌方兵！"
+
+msgid "TUTORIAL_FLYING_GENERAL_DESCRIPTION_1"
+msgstr "这是飞将规则。"
+
+msgid "TUTORIAL_FLYING_GENERAL_DESCRIPTION_2"
+msgstr "如果两个将在同一列面对面，中间没有棋子，轮到走棋的将可以直接移动以捕获对方的将。"
+
+msgid "TUTORIAL_FLYING_GENERAL_DESCRIPTION_3"
+msgstr "试着捕获敌方将！"
+
+msgid "TUTORIAL_SPAWNING_DESCRIPTION_1"
+msgstr "你可以在前3行召唤棋子。"
+
+msgid "TUTORIAL_SPAWNING_DESCRIPTION_2"
+msgstr "召唤时你会失去能量。"
+
+msgid "TUTORIAL_SPAWNING_DESCRIPTION_3"
+msgstr "你不能移动新召唤的棋子。"
+
+msgid "TUTORIAL_SPAWNING_DESCRIPTION_4"
+msgstr "召唤一个棋子并用它走一步！"
+
+msgid "LEVEL_1_DIALOG_1"
+msgstr "站住。"
+
+msgid "LEVEL_1_DIALOG_2"
+msgstr "玛拉……"
+
+msgid "LEVEL_1_DIALOG_3"
+msgstr "灰烬，对不起，但你必须回到地狱。"
+
+msgid "LEVEL_1_DIALOG_4"
+msgstr "那就试试看"
+
+msgid "LEVEL_1_DIALOG_5"
+msgstr "抓住他！"
+
+msgid "LEVEL_1_VICTORY_DIALOG_1"
+msgstr "她逃走了！"
+
+msgid "LEVEL_1_VICTORY_DIALOG_2"
+msgstr "我们要去追她吗？"
+
+msgid "LEVEL_1_VICTORY_DIALOG_3"
+msgstr "没关系；她无论如何都会回来的。"
+
+msgid "LEVEL_1_DEFEAT_DIALOG"
+msgstr "对不起，灰烬，你让我别无选择。"
+
+msgid "LEVEL_2_DIALOG_1"
+msgstr "放弃吧，灰烬！"
+
+msgid "LEVEL_2_DIALOG_2"
+msgstr "再一步，如果必须的话我会杀了你。"
+
+msgid "LEVEL_2_DIALOG_3"
+msgstr "你觉得我会害怕那些阿斯佩特吗？"
+
+msgid "LEVEL_2_DIALOG_4"
+msgstr "我警告过你，灰烬！"
+
+msgid "LEVEL_2_VICTORY_DIALOG_1"
+msgstr "你就这点本事？"
+
+msgid "LEVEL_2_VICTORY_DIALOG_2"
+msgstr "灰烬，放弃吧，在太晚之前……"
+
+msgid "LEVEL_2_VICTORY_DIALOG_3"
+msgstr "这仅仅是开始。"
+
+msgid "LEVEL_2_DEFEAT_DIALOG"
+msgstr "这是你的选择，灰烬。"
+
+msgid "LEVEL_3_DIALOG_1"
+msgstr "你无路可逃了。"
+
+msgid "LEVEL_3_DIALOG_2"
+msgstr "灰烬，求你了！你必须停下来！还不算太晚。"
+
+msgid "LEVEL_3_DIALOG_3"
+msgstr "所有人都会为他们所做的付出代价！"
+
+msgid "LEVEL_3_AMBUSH_DIALOG_1"
+msgstr "发生了什么？"
+
+msgid "LEVEL_3_AMBUSH_DIALOG_2"
+msgstr "是伏击！"
+
+msgid "LEVEL_3_AMBUSH_DIALOG_3"
+msgstr "……"
+
+msgid "LEVEL_3_AMBUSH_DIALOG_4"
+msgstr "我感受不到我的士兵了！"
+
+msgid "LEVEL_3_AMBUSH_DIALOG_5"
+msgstr "以雾军的名义，我命令你们投降！"
+
+msgid "LEVEL_3_AMBUSH_DIALOG_6"
+msgstr "灰烬，我们的士兵无法进入断连之雾！"
+
+msgid "LEVEL_3_AMBUSH_DIALOG_7"
+msgstr "她无法长时间维持迷雾。我们只需要等待她耗尽。"
+
+msgid "LEVEL_3_VICTORY_DIALOG_1"
+msgstr "对不起，灰烬……"
+
+msgid "LEVEL_3_VICTORY_DIALOG_2"
+msgstr "消失吧……"
+
+msgid "LEVEL_3_DEFEAT_DIALOG"
+msgstr "对不起灰烬，你让我别无选择。"
+
+msgid "BONUS_LEVEL_ATTACK"
+msgstr "进攻！"
+
+msgid "BONUS_LEVEL_RAN_OUT_OF_XINVORS"
+msgstr "我们的辛沃尔用完了！"
+
+msgid "BONUS_LEVEL_RAN_OUT_OF_TIME"
+msgstr "我们没时间了！"
+
+msgid "ESC"
+msgstr "ESC"
+
+msgid "EXIT"
+msgstr "退出"
+
+msgid "PLAY"
+msgstr "开始"
+
+msgid "BACK"
+msgstr "返回"
+
+msgid "CLOSE"
+msgstr "关闭"
+
+msgid "NEXT"
+msgstr "下一步"
+
+msgid "SPACE"
+msgstr "空格"
+
+msgid "LOW_LEVEL"
+msgstr "低等级"
+
+msgid "HIGH_LEVEL"
+msgstr "高等级"
+
+msgid "LEVEL_1_HINT_1"
+msgstr "从兵营中你可以选择想要召唤的单位。新召唤的单位无法移动。"
+
+msgid "LEVEL_1_HINT_2"
+msgstr "召唤单位会降低你的卡姆值。"
+
+msgid "LEVEL_1_HINT_3"
+msgstr "你可以通过移动来恢复卡姆值。"
+
+msgid "LEVEL_1_HINT_4"
+msgstr "使用阿尔卡或魔格移动会降低你的卡姆值。"
+
+msgid "LEVEL_1_HINT_5"
+msgstr "阿尔卡可以垂直或水平移动一个点，必须留在九宫格内。"
+
+msgid "LEVEL_1_HINT_6"
+msgstr "魔格可以对角移动一个位置，必须留在九宫格内。"
+
+msgid "LEVEL_1_HINT_7"
+msgstr "辛沃尔每次只能向前移动一个位置；一旦过了河，它们也可以横向移动。"
+
+msgid "HINT_SOLDIER_MOVE_TEXT"
+msgstr "兵通过向前推进一个点来移动和捕获。一旦兵过了河，它也可以水平移动和捕获一个点。兵永远不能向后移动，因此不能 retreat。"
+
+msgid "HINT_SOLDIER_MOVE_DIALOG"
+msgstr "点击兵并让他移动。"
+
+msgid "HINT_CHECK_TEXT"
+msgstr "将受到攻击（将军），必须移出将军状态。"
+
+msgid "HINT_GENERAL_MOVE_TEXT"
+msgstr "将可以垂直或水平移动一个点，但不能对角移动，并且被限制在九宫格内的九个点。"
+
+msgid "HINT_GENERAL_MOVE_DIALOG"
+msgstr "将将移出将军状态。"
+
+msgid "HINT_GENERALS_FACING_TEXT"
+msgstr "将不能移动到与敌方将在同一列的位置，除非两个将之间至少有一个棋子。"
+
+msgid "HINT_ADVISOR_MOVE_TEXT"
+msgstr "这些是王的顾问，在九宫格内保护王。士对角移动一个点，被限制在九宫格内。"
+
+msgid "HINT_ADVISOR_MOVE_DIALOG"
+msgstr "使用其中一个士来拯救将。"
+

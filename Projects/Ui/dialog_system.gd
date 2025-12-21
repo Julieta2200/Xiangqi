@@ -3,18 +3,18 @@ extends CanvasLayer
 enum CHARACTERS {Ashes, Mara, Advisor, Jakat}
 
 const character_names = {
-	CHARACTERS.Ashes: "Ashes",
-	CHARACTERS.Mara: "Mara",
-	CHARACTERS.Advisor: "Mog",
-	CHARACTERS.Jakat: "Jakat"
+	CHARACTERS.Ashes: "CHARACTER_ASHES",
+	CHARACTERS.Mara: "CHARACTER_MARA",
+	CHARACTERS.Advisor: "CHARACTER_MOG",
+	CHARACTERS.Jakat: "CHARACTER_JAKAT"
 }
 
 const game_over_dialog_texts: Array[String] = [
-	"Your Will has shattered.",
-	"Zero Kamq. The vessel is empty.",
-	"You have nothing left to give but your soul.",
-	"The wind rises. The Ashes scatter.",
-	"The fire dies. Only Ashes remain."
+	"GAME_OVER_TEXT_1",
+	"GAME_OVER_TEXT_2",
+	"GAME_OVER_TEXT_3",
+	"GAME_OVER_TEXT_4",
+	"GAME_OVER_TEXT_5"
 ]
 
 @onready var character_sprites = {
@@ -39,7 +39,7 @@ var duration: float
 signal dialog_finished()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	skip_text_obj.text = tr("SPACE")
 	
 func start_dialog(texts: Array[DialogText], skipable: bool = false, duration: float = 0.0) -> void:
 	text_queue = texts
@@ -59,8 +59,8 @@ func _next_dialog() -> void:
 		emit_signal("dialog_finished")
 		return
 	var dt: DialogText = text_queue.pop_front()
-	text_obj.text = dt.text
-	name_obj.text = character_names[dt.character]
+	text_obj.text = TranslationServer.translate(dt.text)
+	name_obj.text = TranslationServer.translate(character_names[dt.character])
 	if character_sprites[dt.character] != null:
 		avatar_obj.texture = character_sprites[dt.character]
 		avatar_obj.show()

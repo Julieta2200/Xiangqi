@@ -2,6 +2,7 @@ class_name HintBubble extends Control
 
 @onready var hint_label: RichTextLabel = $Panel/Hint
 @onready var number_label: Label = $Panel/Number
+@onready var next_button: Button = $Panel/Button
 @onready var hover_music: AudioStreamPlayer = $HoverMusic
 @onready var hover_music_effects: AudioStreamPlayer = $HoverMusicEffects
 
@@ -14,8 +15,9 @@ var hover_music_on = preload("res://Assets/Music/karma_table/UI SFX-Karma Table-
 var hover_music_off = preload("res://Assets/Music/karma_table/UI SFX-Karma Table-BUTTON HOVER OFF.wav")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	hint_label.text = hint
+	hint_label.text = tr(hint)
 	number_label.text = number
+	next_button.text = tr("NEXT")
 
 
 func _on_button_pressed() -> void:

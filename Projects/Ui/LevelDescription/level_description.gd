@@ -3,12 +3,12 @@ class_name LevelDescription extends Control
 var title: String : 
 	set(value):
 		title = value
-		title_label.text = title
+		title_label.text = tr(title)
 
 var story: String : 
 	set(value):
 		story = value
-		story_label.text = story
+		story_label.text = tr(story)
 
 var additional_objectives: Array[String] = [] :
 	set(value):
@@ -22,7 +22,7 @@ var additional_objectives: Array[String] = [] :
 			var label = Label.new()
 			icon.texture = icon_image
 			icon.stretch_mode = TextureRect.STRETCH_KEEP_CENTERED
-			label.text = objective
+			label.text = tr(objective)
 			label.add_theme_font_size_override("font_size", 40)
 			task.add_theme_constant_override("separation", 30)
 			task.size_flags_vertical = Control.SIZE_EXPAND_FILL
@@ -34,7 +34,7 @@ var move_count: int:
 	set(value):
 		move_count = value
 		move_count_label.visible = move_count != 0
-		move_count_label.text = "MTB: " + str(move_count)
+		move_count_label.text = tr("MTB_PREFIX") + str(move_count)
 
 var number: String = ""
 
@@ -45,6 +45,8 @@ var level: PackedScene
 @onready var move_count_label: Label = $Panel/TaskPanel/move_count
 @onready var objectives_container: VBoxContainer  = $Panel/TaskPanel/Objectives
 @onready var icon_image = load("res://Assets/UI/Level Description/icon.png")
+@onready var play_button: Button = $Panel/Play
+@onready var close_button: Button = $Panel/Close
 
 @onready var hover_music: AudioStreamPlayer = $HoverMusic
 @onready var hover_music_effects: AudioStreamPlayer = $HoverMusicEffects
@@ -62,6 +64,9 @@ var sounds := {
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	hide()
+	# Set translated text for buttons
+	play_button.text = tr("PLAY")
+	close_button.text = tr("CLOSE")
 
 
 func setup(title: String, story: String, additional_objectives: Array[String], level: PackedScene, number: String, move_count: int) -> void:

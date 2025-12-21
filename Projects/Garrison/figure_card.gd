@@ -8,11 +8,11 @@ class_name FigureCard extends Control
 	FigureComponent.Types.CANNON: load("res://Assets/Characters/Magma/Cannon/Cannon_Front.png")
 }
 const figure_names = {
-	FigureComponent.Types.SOLDIER: "Xinvor",
-	FigureComponent.Types.ELEPHANT: "Pigh",
-	FigureComponent.Types.CHARIOT: "Navak",
-	FigureComponent.Types.HORSE: "Aspet",
-	FigureComponent.Types.CANNON: "Stver"
+	FigureComponent.Types.SOLDIER: "FIGURE_XINVOR",
+	FigureComponent.Types.ELEPHANT: "FIGURE_PIGH",
+	FigureComponent.Types.CHARIOT: "FIGURE_NAVAK",
+	FigureComponent.Types.HORSE: "FIGURE_ASPET",
+	FigureComponent.Types.CANNON: "FIGURE_STVER"
 }
 
 const figure_energies = {
@@ -68,7 +68,7 @@ func _ready() -> void:
 		$card/image.position = Vector2(2,51)
 		
 	$card/image.texture_progress = sprites[type]
-	$card/info.text = figure_names[type] + " - " + str(figure_energies[type])
+	$card/info.text = tr(figure_names[type]) + " - " + str(figure_energies[type])
 	energy = figure_energies[type]
 
 func _on_card_gui_input(event: InputEvent):
