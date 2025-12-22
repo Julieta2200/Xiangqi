@@ -16,6 +16,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+msgid "RESTART"
+msgstr "  RESTART"
+
+msgid "BACK_TO_OVERWOLD"
+msgstr "  BACK TO OVERWOLD"
+
+msgid "BACK_TO_MENU"
+msgstr "  BACK TO MENU"
+
+msgid "RESUME"
+msgstr "  RESUME"
+
 msgid "CONTINUE"
 msgstr "  继续"
 
