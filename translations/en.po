@@ -16,6 +16,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+msgid "RETRY"
+msgstr "  RETRY"
+
+msgid "QUIT"
+msgstr "  QUIT"
+
 msgid "PRODUCER"
 msgstr "PRODUCER"
 
@@ -53,7 +59,7 @@ msgid "BACK_TO_MENU"
 msgstr "  BACK TO MENU"
 
 msgid "RESUME"
-msgstr "  RESUME"
+msgstr "RESUME"
 
 msgid "CONTINUE"
 msgstr "  CONTINUE"
