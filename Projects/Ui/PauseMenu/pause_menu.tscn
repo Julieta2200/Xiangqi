@@ -158,3 +158,6 @@ text = "PAUSE"
 stream = ExtResource("9_6pm0l")
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="Navigation/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Navigation/Back to Overworld" to="." method="_on_back_to_overworld_pressed"]
+[connection signal="pressed" from="Navigation/Back to Menu" to="." method="_on_back_to_menu_pressed"]

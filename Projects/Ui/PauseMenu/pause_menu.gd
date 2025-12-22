@@ -21,3 +21,14 @@ func play_music():
 
 	var tween:= create_tween()
 	tween.tween_property(audio_player, "volume_db", 1, 1)
+
+
+func _on_restart_pressed() -> void:
+	get_tree().reload_current_scene()
+
+func _on_back_to_overworld_pressed() -> void:
+	SceneManager.change_scene(SceneManager.Scenes.Overworld)
+
+
+func _on_back_to_menu_pressed() -> void:
+	SceneManager.change_scene(SceneManager.Scenes.MainMenu)
