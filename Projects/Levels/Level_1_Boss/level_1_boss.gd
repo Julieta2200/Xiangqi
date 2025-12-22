@@ -28,17 +28,26 @@ func _ready() -> void:
 		State.new(BoardV2.Kingdoms.MAGMA, FigureComponent.Types.ADVISOR, Vector2i(5,0)),
 	]
 	board.initialize_position(state)
-	start_wave_1()
+	_disable_play()
+	DialogSystem.start_dialog([
+		DialogSystem.DialogText.new("LEVEL_1_BOSS_DIALOG_1", DialogSystem.CHARACTERS.Advisor),
+		DialogSystem.DialogText.new("LEVEL_1_BOSS_DIALOG_2", DialogSystem.CHARACTERS.Mara),
+		DialogSystem.DialogText.new("LEVEL_1_BOSS_DIALOG_3", DialogSystem.CHARACTERS.Ashes),
+	], true)
+	DialogSystem.connect("dialog_finished", start_wave_1)
 
 func start_wave_1() -> void:
+	_enable_play()
 	var figures = generate_figures(wave_1_chances)
 	instantiate_figures(figures)
 
 func start_wave_2() -> void:
+	_enable_play()
 	var figures = generate_figures(wave_2_chances)
 	instantiate_figures(figures)
 
 func start_wave_3() -> void:
+	_enable_play()
 	var figures = generate_figures(wave_3_chances)
 	instantiate_figures(figures)
 
@@ -112,9 +121,21 @@ func check_game_over() -> bool:
 	if board.get_figures(BoardV2.Teams.Black).size() == 0:
 		match wave_number:
 			1:
-				start_wave_2()
+				board._selected_figure = null
+				wave_number += 1
+				_disable_play()
+				DialogSystem.start_dialog([
+					DialogSystem.DialogText.new("LEVEL_1_BOSS_DIALOG_4", DialogSystem.CHARACTERS.Advisor),
+				], true)
+				DialogSystem.connect("dialog_finished", start_wave_2)
 			2:
-				start_wave_3()
+				board._selected_figure = null
+				wave_number += 1
+				_disable_play()
+				DialogSystem.start_dialog([
+					DialogSystem.DialogText.new("LEVEL_1_BOSS_DIALOG_5", DialogSystem.CHARACTERS.Advisor),
+				], true)
+				DialogSystem.connect("dialog_finished", start_wave_3)
 			_:
 				_on_game_over(BoardV2.GameOverResults.Win, board.move_number)
 				return true

@@ -95,6 +95,15 @@ func select_best_move(position: Array[Array], depth: int) -> void:
 	var best_score = -infinite
 	var best_move = null
 	var moves: Array[Array] = get_all_legal_moves(team_numbers[BoardV2.Teams.Black], position)
+	
+	# If there are no legal moves, we can't make a move
+	if moves.is_empty():
+		return
+	
+	# Always initialize best_move to the first move as a fallback
+	# This ensures we make SOME move even if all evaluations are equally bad
+	best_move = moves[0]
+	
 	for move in moves:
 		simulate_move(position, move)
 		var score = minimax(position, depth - 1, false, -infinite, infinite)
@@ -102,6 +111,8 @@ func select_best_move(position: Array[Array], depth: int) -> void:
 		if score > best_score:
 			best_score = score
 			best_move = move
+	
+	# At this point, best_move should always be set (either first move or best found)
 	if best_move:
 		call_deferred("make_move_main_thread", best_move)
 
