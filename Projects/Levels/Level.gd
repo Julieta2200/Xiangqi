@@ -29,7 +29,7 @@ func _process(_delta: float) -> void:
 			music.audio_player.play()
 		else:
 			pause_menu.show()
-			music.audio_player.stop()
+			music.audio_player.stream_paused = true
 
 func game_over_energy_depleted():
 	show_game_over_ui()
