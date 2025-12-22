@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var music_player: AudioStreamPlayer = $AudioStreamPlayer
+@onready var audio_player: AudioStreamPlayer = $AudioStreamPlayer
 
 
 @export var music : AudioStreamWAV:

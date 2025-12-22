@@ -26,10 +26,10 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("exit"):
 		if pause_menu.visible:
 			pause_menu.hide()
-			music.music_player.play()
+			music.audio_player.play()
 		else:
 			pause_menu.show()
-			music.music_player.stop()
+			music.audio_player.stop()
 
 func game_over_energy_depleted():
 	show_game_over_ui()
