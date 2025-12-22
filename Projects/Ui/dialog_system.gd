@@ -33,7 +33,7 @@ var duration: float
 @onready var name_obj: Label = $Panel/Name
 @onready var avatar_obj: TextureRect = $Panel/Avatar
 @onready var skip_text_obj: RichTextLabel = $Panel/Skip
-@onready var panel: TextureRect = $Panel
+@onready var panel: Panel = $Panel
 @onready var timer: Timer = $Timer
 
 signal dialog_finished()
