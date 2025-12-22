@@ -8,6 +8,7 @@ class_name Level extends Node2D
 @onready var gameplay_ui: GameplayUI = $GameplayUI
 @onready var background_animation: AnimationPlayer = $Background/AnimationPlayer
 @onready var pause_menu: Control = $Menu/PauseMenu
+@onready var music: Node2D = $Music
 
 
 
@@ -25,8 +26,10 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("exit"):
 		if pause_menu.visible:
 			pause_menu.hide()
+			music.music_player.play()
 		else:
 			pause_menu.show()
+			music.music_player.stop()
 
 func game_over_energy_depleted():
 	show_game_over_ui()
