@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://letuyg8vxfsj"]
+[gd_scene load_steps=14 format=3 uid="uid://letuyg8vxfsj"]
 
 [ext_resource type="Script" path="res://Projects/Levels/Bonus_levels/Bonus_level_3/bonus_level_3.gd" id="1_wjyvd"]
 [ext_resource type="Texture2D" uid="uid://vwdx6ewivw4v" path="res://Assets/backgrounds/Fog/Background.png" id="2_u4akn"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://br5fqscax7ejf" path="res://Projects/Camera/camera.tscn" id="5_8qu1q"]
 [ext_resource type="PackedScene" uid="uid://bip87oin8clme" path="res://Projects/Ui/gameplay_ui.tscn" id="6_rwypo"]
 [ext_resource type="PackedScene" uid="uid://cavxgtpxtng4j" path="res://Projects/Music/Music.tscn" id="9_n110x"]
+[ext_resource type="PackedScene" uid="uid://ti6boty6unhe" path="res://Projects/Ui/PauseMenu/pause_menu.tscn" id="10_el5t2"]
 
 [sub_resource type="Animation" id="Animation_2dnhe"]
 length = 0.001
@@ -88,3 +89,9 @@ with_specials = false
 board = NodePath("../Board")
 
 [node name="Music" parent="." instance=ExtResource("9_n110x")]
+
+[node name="Menu" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="PauseMenu" parent="Menu" instance=ExtResource("10_el5t2")]
+visible = false

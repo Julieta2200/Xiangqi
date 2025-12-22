@@ -64,9 +64,6 @@ func camera_move(delta):
 	if Input.is_action_pressed("move_down"):
 		move_direction.y  += 1
 		position.y = min(move_down_max,position.y + move_direction.y * delta * move_speed)
-	
-	if Input.is_action_just_pressed("exit"):
-		SceneManager.change_scene(SceneManager.Scenes.Overworld)
 		
 	if Input.is_action_just_pressed("restart"):
 		get_tree().reload_current_scene()

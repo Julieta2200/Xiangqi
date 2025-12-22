@@ -7,6 +7,9 @@ class_name Level extends Node2D
 @onready var board: BoardV2 = %Board
 @onready var gameplay_ui: GameplayUI = $GameplayUI
 @onready var background_animation: AnimationPlayer = $Background/AnimationPlayer
+@onready var pause_menu: Control = $Menu/PauseMenu
+@onready var music: Node2D = $Music
+
 
 
 func _ready() -> void:
@@ -18,6 +21,15 @@ func _ready() -> void:
 	gameplay_ui.decision.set_card_name(CardSlots.card_names[card])
 	gameplay_ui.garrison.garrison_limitations = garrison_limitations
 	gameplay_ui.garrison.update_cards(gameplay_ui.power_meter.energy)
+
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("exit"):
+		if pause_menu.visible:
+			pause_menu.hide()
+			music.audio_player.play()
+		else:
+			pause_menu.show()
+			music.audio_player.stream_paused = true
 
 func game_over_energy_depleted():
 	show_game_over_ui()

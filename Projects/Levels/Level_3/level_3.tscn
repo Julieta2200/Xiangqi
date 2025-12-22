@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ba7bayl6q6g14"]
+[gd_scene load_steps=15 format=3 uid="uid://ba7bayl6q6g14"]
 
 [ext_resource type="Script" path="res://Projects/Levels/Level_3/level_3.gd" id="1_1nc6y"]
 [ext_resource type="Texture2D" uid="uid://vwdx6ewivw4v" path="res://Assets/backgrounds/Fog/Background.png" id="2_034v6"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bip87oin8clme" path="res://Projects/Ui/gameplay_ui.tscn" id="5_jx2sm"]
 [ext_resource type="PackedScene" uid="uid://cavxgtpxtng4j" path="res://Projects/Music/Music.tscn" id="9_jqpvp"]
 [ext_resource type="PackedScene" uid="uid://ba32qvdi6rk4u" path="res://Projects/Ui/hint_bubble.tscn" id="9_lrj2y"]
+[ext_resource type="PackedScene" uid="uid://ti6boty6unhe" path="res://Projects/Ui/PauseMenu/pause_menu.tscn" id="11_u6k7s"]
 
 [sub_resource type="Animation" id="Animation_2dnhe"]
 length = 0.001
@@ -125,6 +126,12 @@ hint = "Stvers can move through any number of unoccupied places horizontally or 
 number = "2/2"
 
 [node name="Music" parent="." instance=ExtResource("9_jqpvp")]
+
+[node name="Menu" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="PauseMenu" parent="Menu" instance=ExtResource("11_u6k7s")]
+visible = false
 
 [connection signal="move_done" from="Board" to="." method="_on_board_move_done"]
 [connection signal="hint_finished" from="GameplayUI/Hints/Chariots" to="." method="run_hint_system"]
