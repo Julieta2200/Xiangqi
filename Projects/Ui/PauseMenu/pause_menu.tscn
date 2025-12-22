@@ -5,10 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://cvgwekodiw7wr" path="res://Projects/Ui/MainMenu/nav_button.tscn" id="2_jqbkb"]
 [ext_resource type="Shader" path="res://Projects/Shaders/blur_menu.gdshader" id="3_8t2lk"]
 [ext_resource type="Texture2D" uid="uid://bnr8lhker5a5h" path="res://Assets/MainMenu/ui/Line.png" id="5_du08j"]
-[ext_resource type="Texture2D" uid="uid://crt675lrdbly" path="res://Assets/MainMenu/ui/logo/Logo(glow_effect).png" id="5_yn4ci"]
 [ext_resource type="Texture2D" uid="uid://dwblpmraaq4v7" path="res://Assets/MainMenu/ui/Esc_button.png" id="6_bxirq"]
 [ext_resource type="FontFile" uid="uid://c66ve5yi6m7nm" path="res://Assets/Fonts/Cinzel/Cinzel-Regular.ttf" id="7_job34"]
-[ext_resource type="AudioStream" uid="uid://duw0xpg3frf48" path="res://Assets/Music/Main Menu Music Loop-B1-MUSIC & SFX MIXED.wav" id="9_te7bf"]
+[ext_resource type="FontFile" uid="uid://dy702fuy23t3f" path="res://Assets/Fonts/Cinzel/Cinzel-Bold.ttf" id="8_urht4"]
+[ext_resource type="AudioStream" uid="uid://cim4djoag3s8t" path="res://Assets/Music/Main Menu Music Loop-B1-JUST MUSIC.wav" id="9_6pm0l"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ohkaf"]
 shader = ExtResource("3_8t2lk")
@@ -47,9 +47,9 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 201.0
-offset_top = -405.0
+offset_top = -481.0
 offset_right = 859.0
-offset_bottom = 445.0
+offset_bottom = 369.0
 grow_vertical = 2
 theme_override_constants/separation = 20
 
@@ -144,18 +144,17 @@ text = "Resume
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="Logo" type="TextureRect" parent="Bottom"]
-texture_filter = 2
+[node name="Pause" type="Label" parent="Bottom"]
 layout_mode = 0
-offset_left = 28.0
-offset_top = -2028.0
-offset_right = 491.0
-offset_bottom = -1696.0
-scale = Vector2(2, 2)
-texture = ExtResource("5_yn4ci")
+offset_left = 209.0
+offset_top = -1803.0
+offset_right = 801.0
+offset_bottom = -1532.0
+theme_override_fonts/font = ExtResource("8_urht4")
+theme_override_font_sizes/font_size = 150
+text = "PAUSE"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("9_te7bf")
-max_polyphony = 2
+stream = ExtResource("9_6pm0l")
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
