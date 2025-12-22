@@ -1,9 +1,12 @@
 extends Node2D
 
+enum States {None, New_Game, Continue, Credits, Options}
+
 @onready var canvas_modulate: CanvasModulate = $CanvasModulate
 const default_color: Color = Color(0.8, 0.8, 0.8, 1.0)
 const white_color: Color = Color(1.0, 1.0, 1.0, 1.0)  # Bright white color
 
+var state: States
 var can_flash: bool = true
 var flash_timer: Timer
 
@@ -27,6 +30,16 @@ var light_original_positions: Array[Vector2] = []
 @onready var credits_button: Button = $CanvasLayer/Navigation/Credits
 @onready var esc_label: Label = $CanvasLayer/Bottom/Line/EscButton/Esc
 @onready var exit_label: Label = $CanvasLayer/Bottom/Line/EscButton/Exit
+@onready var producer_lable: Label = $CanvasLayer/Credits/Producer/role
+@onready var game_designer_lable: Label = $CanvasLayer/Credits/GameDesigner/role
+@onready var lead_programmers_labe: Label = $CanvasLayer/Credits/LeadProgrammers/role
+@onready var artist_lable: Label = $CanvasLayer/Credits/Artist/role
+@onready var composer_lable: Label = $CanvasLayer/Credits/Composer/role
+@onready var programmers_lable: Label = $CanvasLayer/Credits/Programmers/role
+@onready var authors_lable: Label = $CanvasLayer/Credits/Authors/role
+@onready var scecial_thanks_lable: Label = $CanvasLayer/Credits/SpecialThanks/role
+@onready var copyright_lable: Label = $CanvasLayer/Credits/Copyright/role
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -43,7 +56,25 @@ func _ready() -> void:
 	credits_button.text = tr("CREDITS")
 	esc_label.text = tr("ESC")
 	exit_label.text = tr("EXIT")
+	producer_lable.text = tr("PRODUCER")
+	game_designer_lable.text = tr("GAME_DESIGNER")
+	lead_programmers_labe.text = tr("LEAD_PROGRAMMERS")
+	artist_lable.text = tr("ARTIST")
+	composer_lable.text = tr("COMPOSER_AND_SOUND_DESIGNER")
+	programmers_lable.text = tr("PROGRAMMERS")
+	authors_lable.text = tr("AUTHORS")
+	scecial_thanks_lable.text = tr("SPECIAL_THANKS")
+	copyright_lable.text = tr("Copyright")
 
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("exit"):
+		match state:
+			States.Credits:
+				state = States.None
+				ui_animation.play_backwards("credits")
+			States.None:
+				get_tree().quit()
+	
 func _start_light_floating() -> void:
 	# Store original positions
 	for light in lights:
@@ -105,11 +136,8 @@ func _flash_lightning() -> void:
 	await tween.finished
 	_start_flash_timer()  # Start a new random timer
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
-
 func _on_new_game_pressed() -> void:
+	state = States.New_Game
 	ui_animation.play("disappear")
 	nav_blocker.visible = true
 	main_animation.play("start")
@@ -122,6 +150,12 @@ func open_overworld() -> void:
 	SceneManager.change_scene(SceneManager.Scenes.Overworld)
 
 func _on_continue_pressed() -> void:
+	state = States.Continue
 	ui_animation.play("disappear")
 	nav_blocker.visible = true
 	main_animation.play("start")
+
+
+func _on_credits_pressed() -> void:
+	state = States.Credits
+	ui_animation.play("credits")
