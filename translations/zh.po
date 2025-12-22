@@ -16,6 +16,33 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+msgid "PRODUCER"
+msgstr "PRODUCER"
+
+msgid "GAME_DESIGNER"
+msgstr "GAME DESIGNER"
+
+msgid "LEAD_PROGRAMMERS"
+msgstr "LEAD PROGRAMMERS"
+
+msgid "ARTIST"
+msgstr "ARTIST"
+
+msgid "COMPOSER_AND_SOUND_DESIGNER"
+msgstr "COMPOSER AND SOUND DESIGNER"
+
+msgid "PROGRAMMERS"
+msgstr "PROGRAMMERS"
+
+msgid "AUTHORS"
+msgstr "AUTHORS"
+
+msgid "SPECIAL_THANKS"
+msgstr "SPECIAL THANKS"
+
+msgid "Copyright"
+msgstr "Copyright © 2025 Taillis. All Rights Reserved."
+
 msgid "RESTART"
 msgstr "  RESTART"
 
