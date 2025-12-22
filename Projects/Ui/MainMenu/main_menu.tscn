@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://hppsu1linnjb"]
+[gd_scene load_steps=38 format=3 uid="uid://hppsu1linnjb"]
 
 [ext_resource type="Texture2D" uid="uid://cthr7aiydkawg" path="res://Assets/MainMenu/MenuBackground.png" id="1_cp2q7"]
 [ext_resource type="Script" path="res://Projects/Ui/MainMenu/main_menu.gd" id="1_pdi1h"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://cvgwekodiw7wr" path="res://Projects/Ui/MainMenu/nav_button.tscn" id="12_e82pv"]
 [ext_resource type="Texture2D" uid="uid://ctkjjmo52j651" path="res://Assets/Characters/Magma/General/Run/Back/back6.png" id="12_mmg6w"]
 [ext_resource type="Texture2D" uid="uid://crt675lrdbly" path="res://Assets/MainMenu/ui/logo/Logo(glow_effect).png" id="16_dynym"]
+[ext_resource type="FontFile" uid="uid://dy702fuy23t3f" path="res://Assets/Fonts/Cinzel/Cinzel-Bold.ttf" id="18_67d17"]
 [ext_resource type="AudioStream" uid="uid://duw0xpg3frf48" path="res://Assets/Music/Main Menu Music Loop-B1-MUSIC & SFX MIXED.wav" id="18_c7tyu"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_pcs1b"]
@@ -132,6 +133,43 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Credits:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Credits:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Bottom/Line/EscButton/Exit:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["EXIT
+"]
+}
 
 [sub_resource type="Animation" id="Animation_y2a3i"]
 resource_name = "appear"
@@ -200,11 +238,69 @@ tracks/1/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_uwbv5"]
+resource_name = "credits"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Navigation:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Credits:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Credits:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Bottom/Line/EscButton/Exit:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["EXIT
+", "BACK"]
+}
+
+[sub_resource type="Animation" id="Animation_er6oh"]
+resource_name = "menu"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ixubb"]
 _data = {
 "RESET": SubResource("Animation_2wxno"),
 "appear": SubResource("Animation_y2a3i"),
-"disappear": SubResource("Animation_1rppp")
+"credits": SubResource("Animation_uwbv5"),
+"disappear": SubResource("Animation_1rppp"),
+"menu": SubResource("Animation_er6oh")
 }
 
 [sub_resource type="Animation" id="Animation_cjcs2"]
@@ -577,6 +673,153 @@ offset_top = 644.0
 offset_right = 1026.0
 offset_bottom = 1506.0
 
+[node name="Credits" type="VBoxContainer" parent="CanvasLayer"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = 240.0
+offset_top = 735.0
+offset_right = 1597.0
+offset_bottom = 1470.0
+theme_override_constants/separation = 30
+
+[node name="Producer" type="HBoxContainer" parent="CanvasLayer/Credits"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="role" type="Label" parent="CanvasLayer/Credits/Producer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("18_67d17")
+theme_override_font_sizes/font_size = 40
+text = "PRODUCER"
+
+[node name="names" type="Label" parent="CanvasLayer/Credits/Producer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_0mo1f")
+theme_override_font_sizes/font_size = 40
+text = "Christopher C.D.M. McMullen"
+
+[node name="GameDesigner" type="HBoxContainer" parent="CanvasLayer/Credits"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="role" type="Label" parent="CanvasLayer/Credits/GameDesigner"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("18_67d17")
+theme_override_font_sizes/font_size = 40
+text = "GAME DESIGNER"
+
+[node name="names" type="Label" parent="CanvasLayer/Credits/GameDesigner"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_0mo1f")
+theme_override_font_sizes/font_size = 40
+text = "Kyle V. Tunison"
+
+[node name="LeadingDevelopers" type="HBoxContainer" parent="CanvasLayer/Credits"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="role" type="Label" parent="CanvasLayer/Credits/LeadingDevelopers"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("18_67d17")
+theme_override_font_sizes/font_size = 40
+text = "LEAD PROGRAMMERS"
+
+[node name="names" type="Label" parent="CanvasLayer/Credits/LeadingDevelopers"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_0mo1f")
+theme_override_font_sizes/font_size = 40
+text = "Brandon McGuigan, Grisha Kirakosyan"
+
+[node name="Artist" type="HBoxContainer" parent="CanvasLayer/Credits"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="role" type="Label" parent="CanvasLayer/Credits/Artist"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("18_67d17")
+theme_override_font_sizes/font_size = 40
+text = "ARTIST"
+
+[node name="names" type="Label" parent="CanvasLayer/Credits/Artist"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_0mo1f")
+theme_override_font_sizes/font_size = 40
+text = "Argine Melkumyan"
+
+[node name="Composer" type="HBoxContainer" parent="CanvasLayer/Credits"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="role" type="Label" parent="CanvasLayer/Credits/Composer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("18_67d17")
+theme_override_font_sizes/font_size = 40
+text = "COMPOSER AND SOUND DESIGNER"
+
+[node name="names" type="Label" parent="CanvasLayer/Credits/Composer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_0mo1f")
+theme_override_font_sizes/font_size = 40
+text = "Aaron Spacefood"
+
+[node name="Developers" type="HBoxContainer" parent="CanvasLayer/Credits"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="role" type="Label" parent="CanvasLayer/Credits/Developers"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("18_67d17")
+theme_override_font_sizes/font_size = 40
+text = "PROGRAMMERS"
+
+[node name="names" type="Label" parent="CanvasLayer/Credits/Developers"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_0mo1f")
+theme_override_font_sizes/font_size = 40
+text = "Julieta Sargsyan, Gor Kirakosyan"
+
+[node name="Authors" type="HBoxContainer" parent="CanvasLayer/Credits"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="role" type="Label" parent="CanvasLayer/Credits/Authors"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("18_67d17")
+theme_override_font_sizes/font_size = 40
+text = "AUTHORS"
+
+[node name="names" type="Label" parent="CanvasLayer/Credits/Authors"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_0mo1f")
+theme_override_font_sizes/font_size = 40
+text = "Grisha Kirakosyan, Gor Kirakosyan"
+
+[node name="SpecialThanks" type="HBoxContainer" parent="CanvasLayer/Credits"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="role" type="Label" parent="CanvasLayer/Credits/SpecialThanks"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("18_67d17")
+theme_override_font_sizes/font_size = 40
+text = "SPECIAL THANKS"
+
+[node name="names" type="Label" parent="CanvasLayer/Credits/SpecialThanks"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_0mo1f")
+theme_override_font_sizes/font_size = 40
+text = "elephantchess.io"
+
+[node name="Copyright" type="HBoxContainer" parent="CanvasLayer/Credits"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="role" type="Label" parent="CanvasLayer/Credits/Copyright"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_0mo1f")
+theme_override_font_sizes/font_size = 40
+text = "Copyright © 2025 Taillis. All Rights Reserved."
+
 [node name="MainAnimation" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
 libraries = {
@@ -589,3 +832,4 @@ autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/Navigation/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="CanvasLayer/Navigation/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="CanvasLayer/Navigation/Credits" to="." method="_on_credits_pressed"]

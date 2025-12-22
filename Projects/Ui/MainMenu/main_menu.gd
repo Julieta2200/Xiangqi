@@ -1,9 +1,12 @@
 extends Node2D
 
+enum States {None, New_Game, Continue, Credits, Options}
+
 @onready var canvas_modulate: CanvasModulate = $CanvasModulate
 const default_color: Color = Color(0.8, 0.8, 0.8, 1.0)
 const white_color: Color = Color(1.0, 1.0, 1.0, 1.0)  # Bright white color
 
+var state: States
 var can_flash: bool = true
 var flash_timer: Timer
 
@@ -44,6 +47,15 @@ func _ready() -> void:
 	esc_label.text = tr("ESC")
 	exit_label.text = tr("EXIT")
 
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("exit"):
+		match state:
+			States.Credits:
+				state = States.None
+				ui_animation.play_backwards("credits")
+			States.None:
+				get_tree().quit()
+	
 func _start_light_floating() -> void:
 	# Store original positions
 	for light in lights:
@@ -105,11 +117,8 @@ func _flash_lightning() -> void:
 	await tween.finished
 	_start_flash_timer()  # Start a new random timer
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
-
 func _on_new_game_pressed() -> void:
+	state = States.New_Game
 	ui_animation.play("disappear")
 	nav_blocker.visible = true
 	main_animation.play("start")
@@ -122,6 +131,12 @@ func open_overworld() -> void:
 	SceneManager.change_scene(SceneManager.Scenes.Overworld)
 
 func _on_continue_pressed() -> void:
+	state = States.Continue
 	ui_animation.play("disappear")
 	nav_blocker.visible = true
 	main_animation.play("start")
+
+
+func _on_credits_pressed() -> void:
+	state = States.Credits
+	ui_animation.play("credits")
