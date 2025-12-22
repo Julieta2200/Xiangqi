@@ -26,7 +26,7 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("exit"):
 		if pause_menu.visible:
 			pause_menu.hide()
-			music.audio_player.play()
+			music.audio_player.stream_paused = false
 		else:
 			pause_menu.show()
 			music.audio_player.stream_paused = true
