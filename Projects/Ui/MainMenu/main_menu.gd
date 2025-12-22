@@ -30,6 +30,16 @@ var light_original_positions: Array[Vector2] = []
 @onready var credits_button: Button = $CanvasLayer/Navigation/Credits
 @onready var esc_label: Label = $CanvasLayer/Bottom/Line/EscButton/Esc
 @onready var exit_label: Label = $CanvasLayer/Bottom/Line/EscButton/Exit
+@onready var producer_lable: Label = $CanvasLayer/Credits/Producer/role
+@onready var game_designer_lable: Label = $CanvasLayer/Credits/GameDesigner/role
+@onready var lead_programmers_labe: Label = $CanvasLayer/Credits/LeadProgrammers/role
+@onready var artist_lable: Label = $CanvasLayer/Credits/Artist/role
+@onready var composer_lable: Label = $CanvasLayer/Credits/Composer/role
+@onready var programmers_lable: Label = $CanvasLayer/Credits/Programmers/role
+@onready var authors_lable: Label = $CanvasLayer/Credits/Authors/role
+@onready var scecial_thanks_lable: Label = $CanvasLayer/Credits/SpecialThanks/role
+@onready var copyright_lable: Label = $CanvasLayer/Credits/Copyright/role
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -46,6 +56,15 @@ func _ready() -> void:
 	credits_button.text = tr("CREDITS")
 	esc_label.text = tr("ESC")
 	exit_label.text = tr("EXIT")
+	producer_lable.text = tr("PRODUCER")
+	game_designer_lable.text = tr("GAME_DESIGNER")
+	lead_programmers_labe.text = tr("LEAD_PROGRAMMERS")
+	artist_lable.text = tr("ARTIST")
+	composer_lable.text = tr("COMPOSER_AND_SOUND_DESIGNER")
+	programmers_lable.text = tr("PROGRAMMERS")
+	authors_lable.text = tr("AUTHORS")
+	scecial_thanks_lable.text = tr("SPECIAL_THANKS")
+	copyright_lable.text = tr("Copyright")
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("exit"):

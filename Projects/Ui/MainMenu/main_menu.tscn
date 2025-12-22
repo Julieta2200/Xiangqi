@@ -714,17 +714,17 @@ theme_override_fonts/font = ExtResource("11_0mo1f")
 theme_override_font_sizes/font_size = 40
 text = "Kyle V. Tunison"
 
-[node name="LeadingDevelopers" type="HBoxContainer" parent="CanvasLayer/Credits"]
+[node name="LeadProgrammers" type="HBoxContainer" parent="CanvasLayer/Credits"]
 layout_mode = 2
 theme_override_constants/separation = 50
 
-[node name="role" type="Label" parent="CanvasLayer/Credits/LeadingDevelopers"]
+[node name="role" type="Label" parent="CanvasLayer/Credits/LeadProgrammers"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("18_67d17")
 theme_override_font_sizes/font_size = 40
 text = "LEAD PROGRAMMERS"
 
-[node name="names" type="Label" parent="CanvasLayer/Credits/LeadingDevelopers"]
+[node name="names" type="Label" parent="CanvasLayer/Credits/LeadProgrammers"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("11_0mo1f")
 theme_override_font_sizes/font_size = 40
@@ -762,17 +762,17 @@ theme_override_fonts/font = ExtResource("11_0mo1f")
 theme_override_font_sizes/font_size = 40
 text = "Aaron Spacefood"
 
-[node name="Developers" type="HBoxContainer" parent="CanvasLayer/Credits"]
+[node name="Programmers" type="HBoxContainer" parent="CanvasLayer/Credits"]
 layout_mode = 2
 theme_override_constants/separation = 50
 
-[node name="role" type="Label" parent="CanvasLayer/Credits/Developers"]
+[node name="role" type="Label" parent="CanvasLayer/Credits/Programmers"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("18_67d17")
 theme_override_font_sizes/font_size = 40
 text = "PROGRAMMERS"
 
-[node name="names" type="Label" parent="CanvasLayer/Credits/Developers"]
+[node name="names" type="Label" parent="CanvasLayer/Credits/Programmers"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("11_0mo1f")
 theme_override_font_sizes/font_size = 40
