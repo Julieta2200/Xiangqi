@@ -38,6 +38,10 @@ const new_state: Dictionary = {
 			"state": 0,
 			"move_count" : 0
 		},
+		"1_boss": {
+			"state": 0,
+			"move_count" : 0
+		},
 	},
 	"passed_tutorials": [],
 	"first_run": true,
@@ -102,6 +106,16 @@ func load_game() -> void:
 		s["first_ll_introduction"] = true
 	if !s.has("first_chariot_introduction"):
 		s["first_chariot_introduction"] = true
+	
+	# Ensure levels dictionary exists
+	if !s.has("levels"):
+		s["levels"] = {}
+	
+	# Add any new levels from new_state that don't exist in loaded state
+	for level_name in new_state["levels"]:
+		if !s["levels"].has(level_name):
+			s["levels"][level_name] = new_state["levels"][level_name].duplicate(true)
+	
 	state = s
 
 func save_exists() -> bool:
