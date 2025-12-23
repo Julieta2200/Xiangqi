@@ -11,8 +11,6 @@ extends Control
 
 
 func _ready() -> void:
-	$BlurOverlay.material.set_shader_parameter("blur_amount", 2)
-	
 	# Set translated text for all menu buttons
 	restart_button.text = tr("RESTART")
 	options_button.text = tr("OPTIONS")

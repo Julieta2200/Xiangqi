@@ -57,6 +57,7 @@ func _on_game_over(win: BoardV2.GameOverResults, move_number: int):
 		show_game_over_ui()
 
 func show_game_over_ui():
+	music.audio_player.stream_paused = true
 	gameplay_ui.show_game_over_ui()
 	if gameplay_ui.power_meter.energy == 0:
 		var message = DialogSystem.game_over_dialog_texts[randi() % DialogSystem.game_over_dialog_texts.size()]
