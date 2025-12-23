@@ -80,20 +80,30 @@ func generate_figures(chances: Dictionary) -> Array:
 	var available_columns: Array = range(9)
 	available_columns.shuffle()  # Randomize column order for fair distribution
 	
+	# Filter out columns that are already occupied at spawn row (y=4)
+	var valid_columns: Array = []
+	for column in available_columns:
+		var spawn_pos: Vector2i = Vector2i(column, 4)
+		if not board.state.has(spawn_pos):
+			valid_columns.append(column)
+	
+	if valid_columns.is_empty():
+		return []  # No available positions
+	
 	# Calculate minimum figures to spawn (reduced for easier difficulty)
-	var min_figures: int = min(2, available_columns.size())
-	var max_figures: int = min(4, available_columns.size())
+	var min_figures: int = min(2, valid_columns.size())
+	var max_figures: int = min(4, valid_columns.size())
 	var target_figures: int = randi_range(min_figures, max_figures)
 	
 	# Spawn figures with fair distribution
 	for i in range(target_figures):
-		if available_columns.is_empty():
+		if valid_columns.is_empty():
 			break
 		
 		# Select a random column from available ones
-		var column_idx = randi() % available_columns.size()
-		var column = available_columns[column_idx]
-		available_columns.remove_at(column_idx)  # Remove to avoid duplicates
+		var column_idx = randi() % valid_columns.size()
+		var column = valid_columns[column_idx]
+		valid_columns.remove_at(column_idx)  # Remove to avoid duplicates
 		
 		# Select figure type using weighted random
 		var r = randf()
@@ -109,7 +119,10 @@ func generate_figures(chances: Dictionary) -> Array:
 
 func instantiate_figures(figures: Array) -> void:
 	for figure in figures:
-		board.instantiate_figure(BoardV2.Kingdoms.FOG, figure["type"], Vector2i(figure["column"], 4))
+		var spawn_pos: Vector2i = Vector2i(figure["column"], 4)
+		# Double-check that position is not occupied before spawning
+		if not board.state.has(spawn_pos):
+			board.instantiate_figure(BoardV2.Kingdoms.FOG, figure["type"], spawn_pos)
 
 func check_game_over() -> bool:
 	if board.get_generals().size() < 1:
