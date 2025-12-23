@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cjk2b4ffgdf1n"]
+[gd_scene load_steps=38 format=3 uid="uid://cjk2b4ffgdf1n"]
 
 [ext_resource type="Script" path="res://Projects/Levels/Level_1_Boss/level_1_boss.gd" id="1_5uc6n"]
 [ext_resource type="Texture2D" uid="uid://vwdx6ewivw4v" path="res://Assets/backgrounds/Fog/Background.png" id="2_q1p26"]
@@ -12,6 +12,16 @@
 [ext_resource type="PackedScene" uid="uid://ba32qvdi6rk4u" path="res://Projects/Ui/hint_bubble.tscn" id="9_u37qg"]
 [ext_resource type="PackedScene" uid="uid://cavxgtpxtng4j" path="res://Projects/Music/Music.tscn" id="10_fv8wb"]
 [ext_resource type="PackedScene" uid="uid://ti6boty6unhe" path="res://Projects/Ui/PauseMenu/pause_menu.tscn" id="11_pbpxv"]
+[ext_resource type="Texture2D" uid="uid://b6l83t0hpr4j" path="res://Assets/Characters/Fog/General/Idle/Idle1.png" id="13_rngax"]
+[ext_resource type="Texture2D" uid="uid://q3en4u0hf6ao" path="res://Assets/Characters/Fog/General/Idle/Idle2.png" id="14_qieio"]
+[ext_resource type="Texture2D" uid="uid://diut583r5twxj" path="res://Assets/Characters/Fog/General/Move/Front/Front7.png" id="15_lrcop"]
+[ext_resource type="Shader" path="res://Projects/Shaders/fog_dissolve.gdshader" id="15_ylkqy"]
+[ext_resource type="Texture2D" uid="uid://b4vesdiffvr5p" path="res://Assets/Characters/Fog/General/Move/Front/Front8.png" id="16_88cp1"]
+[ext_resource type="Texture2D" uid="uid://dnpupga4bd7rd" path="res://Assets/Characters/Fog/General/Move/Front/Front9.png" id="17_rottj"]
+[ext_resource type="Texture2D" uid="uid://dyjsee4sd7kik" path="res://Assets/Characters/Fog/General/Move/Front/Front10.png" id="18_b5oqy"]
+[ext_resource type="Texture2D" uid="uid://vi713k8gvne1" path="res://Assets/Characters/Fog/General/Move/Front/Front11.png" id="19_gg5gh"]
+[ext_resource type="Shader" path="res://Projects/Shaders/mist.gdshader" id="20_kntck"]
+[ext_resource type="Texture2D" uid="uid://cwnio6t1ew4t2" path="res://Assets/boards/Fog/board.png" id="21_cqahn"]
 
 [sub_resource type="Animation" id="Animation_2dnhe"]
 length = 0.001
@@ -48,6 +58,242 @@ _data = {
 "RESET": SubResource("Animation_2dnhe"),
 "game_over": SubResource("Animation_8j7qw")
 }
+
+[sub_resource type="Gradient" id="Gradient_q4t0u"]
+colors = PackedColorArray(0, 0, 0, 0.8, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nmnwv"]
+gradient = SubResource("Gradient_q4t0u")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="Animation" id="Animation_x3n4i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fog:material:shader_parameter/density")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Character:material:shader_parameter/progress")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Shadow:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_p5i43"]
+resource_name = "dissolve"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shadow:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_yiyc4"]
+resource_name = "float"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -250)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fog:material:shader_parameter/density")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.7]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%Mara/..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"float_mara_end"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_75jpv"]
+resource_name = "unfloat"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.466667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -250), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fog:material:shader_parameter/density")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.7, 0.0]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%Mara/..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"unfloat_mara_end"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8e3kf"]
+_data = {
+"RESET": SubResource("Animation_x3n4i"),
+"dissolve": SubResource("Animation_p5i43"),
+"float": SubResource("Animation_yiyc4"),
+"unfloat": SubResource("Animation_75jpv")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3m28y"]
+shader = ExtResource("20_kntck")
+shader_parameter/mist_color = Color(0.8, 0.85, 0.9, 0.6)
+shader_parameter/scroll_speed = 0.027
+shader_parameter/density = 0.0
+shader_parameter/softness = 0.907
+shader_parameter/scale = 1.0
+shader_parameter/border_softness = 0.25
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_n6t53"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_owyl8"]
+noise = SubResource("FastNoiseLite_n6t53")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4sair"]
+shader = ExtResource("15_ylkqy")
+shader_parameter/progress = 0.0
+shader_parameter/smoke_color = Color(0.751881, 0.751881, 0.751881, 1)
+shader_parameter/smoke_density = 0.658
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_owyl8")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i32f2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_rngax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_qieio")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_lrcop")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_88cp1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_rottj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_b5oqy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_gg5gh")
+}],
+"loop": true,
+"name": &"floating",
+"speed": 4.0
+}]
 
 [node name="Level_1_Boss" type="Node2D"]
 script = ExtResource("1_5uc6n")
@@ -133,6 +379,33 @@ layer = 2
 
 [node name="PauseMenu" parent="Menu" instance=ExtResource("11_pbpxv")]
 visible = false
+
+[node name="Mara" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(1956, 1255)
+
+[node name="Shadow" type="Sprite2D" parent="Mara"]
+position = Vector2(0, 96)
+texture = SubResource("GradientTexture2D_nmnwv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Mara"]
+libraries = {
+"": SubResource("AnimationLibrary_8e3kf")
+}
+
+[node name="Fog" type="Sprite2D" parent="Mara"]
+material = SubResource("ShaderMaterial_3m28y")
+position = Vector2(-8.49998, 0)
+scale = Vector2(1.86893, 1)
+texture = ExtResource("21_cqahn")
+
+[node name="Character" type="AnimatedSprite2D" parent="Mara"]
+material = SubResource("ShaderMaterial_4sair")
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_i32f2")
+animation = &"floating"
+autoplay = "default"
+frame_progress = 0.456189
 
 [connection signal="move_done" from="Board" to="." method="_on_board_move_done"]
 [connection signal="hint_finished" from="GameplayUI/Hints/Chariots" to="." method="run_hint_system"]

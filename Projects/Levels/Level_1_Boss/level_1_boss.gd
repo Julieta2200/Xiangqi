@@ -19,6 +19,10 @@ const wave_3_chances: Dictionary = {
 }
 
 var wave_number: int = 1
+
+@onready var mara: Node2D = %Mara
+@onready var mara_animation: AnimationPlayer = %Mara/AnimationPlayer
+@onready var mara_character: AnimatedSprite2D = %Mara/Character
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	super._ready()
@@ -34,19 +38,48 @@ func _ready() -> void:
 		DialogSystem.DialogText.new("LEVEL_1_BOSS_DIALOG_2", DialogSystem.CHARACTERS.Mara),
 		DialogSystem.DialogText.new("LEVEL_1_BOSS_DIALOG_3", DialogSystem.CHARACTERS.Ashes),
 	], true)
+	DialogSystem.connect("dialog_finished", float_mara)
+
+func float_mara() -> void:
+	DialogSystem.disconnect("dialog_finished", float_mara)
+	mara_animation.play("float")
+	mara_character.play("floating")
+
+func float_mara_end() -> void:
+	DialogSystem.start_dialog([
+		DialogSystem.DialogText.new("LEVEL_1_BOSS_DIALOG_4", DialogSystem.CHARACTERS.Advisor),
+	], true)
 	DialogSystem.connect("dialog_finished", start_wave_1)
 
+func unfloat_mara() -> void:
+	DialogSystem.disconnect("dialog_finished", unfloat_mara)
+	mara_animation.play("unfloat")
+	mara_character.play("default")
+
+func unfloat_mara_end() -> void:
+	DialogSystem.start_dialog([
+		DialogSystem.DialogText.new("LEVEL_1_BOSS_DIALOG_6", DialogSystem.CHARACTERS.Advisor),
+	], true)
+	DialogSystem.connect("dialog_finished", dissolve_mara)
+
+func dissolve_mara() -> void:
+	DialogSystem.disconnect("dialog_finished", dissolve_mara)
+	mara_animation.play("dissolve")
+
 func start_wave_1() -> void:
+	DialogSystem.disconnect("dialog_finished", start_wave_1)
 	_enable_play()
 	var figures = generate_figures(wave_1_chances)
 	instantiate_figures(figures)
 
 func start_wave_2() -> void:
+	DialogSystem.disconnect("dialog_finished", start_wave_2)
 	_enable_play()
 	var figures = generate_figures(wave_2_chances)
 	instantiate_figures(figures)
 
 func start_wave_3() -> void:
+	DialogSystem.disconnect("dialog_finished", start_wave_3)
 	_enable_play()
 	var figures = generate_figures(wave_3_chances)
 	instantiate_figures(figures)
@@ -91,8 +124,8 @@ func generate_figures(chances: Dictionary) -> Array:
 		return []  # No available positions
 	
 	# Calculate minimum figures to spawn (reduced for easier difficulty)
-	var min_figures: int = min(2, valid_columns.size())
-	var max_figures: int = min(4, valid_columns.size())
+	var min_figures: int = min(3, valid_columns.size())
+	var max_figures: int = min(6, valid_columns.size())
 	var target_figures: int = randi_range(min_figures, max_figures)
 	
 	# Spawn figures with fair distribution
@@ -150,6 +183,9 @@ func check_game_over() -> bool:
 				], true)
 				DialogSystem.connect("dialog_finished", start_wave_3)
 			_:
-				_on_game_over(BoardV2.GameOverResults.Win, board.move_number)
-				return true
+				_disable_play()
+				DialogSystem.start_dialog([
+					DialogSystem.DialogText.new("LEVEL_1_BOSS_DIALOG_6", DialogSystem.CHARACTERS.Advisor),
+				], true)
+				DialogSystem.connect("dialog_finished", unfloat_mara)
 	return false

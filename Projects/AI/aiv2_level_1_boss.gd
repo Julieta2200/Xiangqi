@@ -31,16 +31,23 @@ func select_best_move(position: Array[Array], _depth: int) -> void:
 		
 		# Check if it's closing to palace (enemy palace for Black team is Red's palace at y=0,1,2)
 		# For Black team, moving towards Red's palace means moving UP (decreasing y in array)
-		# We want moves that either end in the palace OR move forward towards it (not sideways)
+		# We want moves that either end in the palace OR move forward towards it (not sideways or backwards)
 		var end_pos: Vector2i = Vector2i(end_x, end_y)
 		var is_forward_move: bool = end_y < start_y  # Moving up (decreasing y) towards enemy palace
+		var is_backward_move: bool = end_y > start_y  # Moving down (increasing y) away from palace
 		var ends_in_palace: bool = BoardV2.palace_positions.has(end_pos) and end_y <= 2
 		
-		# Only consider forward moves (not sideways) that advance towards the palace
-		# Moves that end in palace, or forward moves that are in the palace x-range (3-5) and past the river (y <= 4)
+		# Only consider forward moves (not sideways or backwards) that advance towards the palace
+		# Moves that end in palace AND are forward (or at least not backward), 
+		# OR forward moves that are in the palace x-range (3-5) and past the river (y <= 4)
 		var is_in_palace_x_range: bool = end_x >= 3 and end_x <= 5
 		
-		if ends_in_palace or (is_forward_move and is_in_palace_x_range and end_y <= 4):
+		# Don't allow backward moves
+		if is_backward_move:
+			other_moves.append(move)
+			continue
+		
+		if (ends_in_palace and not is_backward_move) or (is_forward_move and is_in_palace_x_range and end_y <= 4):
 			closing_to_palace_moves.append(move)
 			continue
 		
