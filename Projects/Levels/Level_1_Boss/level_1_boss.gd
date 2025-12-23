@@ -6,16 +6,16 @@ const wave_1_chances: Dictionary = {
 }
 
 const wave_2_chances: Dictionary = {
-	FigureComponent.Types.SOLDIER: 0.35,
-	FigureComponent.Types.HORSE: 0.4,
+	FigureComponent.Types.SOLDIER: 0.4,
+	FigureComponent.Types.HORSE: 0.35,
 	FigureComponent.Types.CANNON: 0.25,
 }
 
 const wave_3_chances: Dictionary = {
-	FigureComponent.Types.SOLDIER: 0.4,
+	FigureComponent.Types.SOLDIER: 0.35,
 	FigureComponent.Types.HORSE: 0.3,
 	FigureComponent.Types.CANNON: 0.2,
-	FigureComponent.Types.CHARIOT: 0.1,
+	FigureComponent.Types.CHARIOT: 0.15,
 }
 
 var wave_number: int = 1
