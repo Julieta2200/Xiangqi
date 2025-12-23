@@ -66,6 +66,9 @@ func make_move_main_thread(best_move):
 	board.move_figure_AI({"start": Vector2i(best_move[1], best_move[0]), 
 	"end": Vector2i(best_move[3],best_move[2])})
 
+func finish_thread() -> void:
+	thinking_thread.wait_to_finish()
+
 func state_to_position(state: Dictionary) -> Array[Array]:
 	var position: Array[Array] = [
 		[0,0,0,0,0,0,0,0,0],
