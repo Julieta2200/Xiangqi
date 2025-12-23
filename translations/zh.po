@@ -19,8 +19,8 @@ msgstr ""
 msgid "RETRY"
 msgstr "  RETRY"
 
-msgid "QUIT"
-msgstr "  QUIT"
+msgid "OVERWORLD"
+msgstr "OVERWORLD"
 
 msgid "PRODUCER"
 msgstr "PRODUCER"

@@ -1,10 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://c7l1qbst5ge64"]
+[gd_scene load_steps=11 format=3 uid="uid://c7l1qbst5ge64"]
 
 [ext_resource type="Script" path="res://Projects/Ui/game_over_screen.gd" id="1_bybcn"]
 [ext_resource type="Shader" path="res://Projects/Shaders/blur_menu.gdshader" id="2_g1lya"]
 [ext_resource type="Texture2D" uid="uid://ccvn2m5c20rn" path="res://Assets/MainMenu/ui/Gradient.png" id="3_1pswc"]
 [ext_resource type="PackedScene" uid="uid://cvgwekodiw7wr" path="res://Projects/Ui/MainMenu/nav_button.tscn" id="4_eduaw"]
+[ext_resource type="Texture2D" uid="uid://bnr8lhker5a5h" path="res://Assets/MainMenu/ui/Line.png" id="5_6hkxx"]
 [ext_resource type="AudioStream" uid="uid://cim4djoag3s8t" path="res://Assets/Music/Main Menu Music Loop-B1-JUST MUSIC.wav" id="6_2q5yj"]
+[ext_resource type="Texture2D" uid="uid://dwblpmraaq4v7" path="res://Assets/MainMenu/ui/Esc_button.png" id="6_i4blp"]
+[ext_resource type="FontFile" uid="uid://c66ve5yi6m7nm" path="res://Assets/Fonts/Cinzel/Cinzel-Regular.ttf" id="7_1nur6"]
 [ext_resource type="FontFile" uid="uid://dy702fuy23t3f" path="res://Assets/Fonts/Cinzel/Cinzel-Bold.ttf" id="8_ohv6w"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bky1r"]
@@ -54,9 +57,9 @@ theme_override_constants/separation = 20
 layout_mode = 2
 text = "  RETRY"
 
-[node name="Quit" parent="Buttons" instance=ExtResource("4_eduaw")]
+[node name="Options" parent="Buttons" instance=ExtResource("4_eduaw")]
 layout_mode = 2
-text = "  QUIT"
+text = "  OPTIONS"
 
 [node name="Pause" type="Label" parent="."]
 layout_mode = 0
@@ -68,9 +71,82 @@ theme_override_fonts/font = ExtResource("8_ohv6w")
 theme_override_font_sizes/font_size = 150
 text = "GAME OVER"
 
+[node name="Bottom" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -94.0
+offset_right = 40.0
+offset_bottom = -54.0
+grow_vertical = 0
+
+[node name="Line" type="TextureRect" parent="Bottom"]
+texture_filter = 2
+layout_mode = 0
+offset_right = 1979.0
+offset_bottom = 3.0
+scale = Vector2(2, 2)
+texture = ExtResource("5_6hkxx")
+
+[node name="EscButton" type="TextureRect" parent="Bottom/Line"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -287.5
+offset_top = -14.5
+offset_right = -202.5
+offset_bottom = 20.5
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("6_i4blp")
+
+[node name="Esc" type="Label" parent="Bottom/Line/EscButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.617647
+anchor_top = 0.642857
+anchor_right = 1.05295
+anchor_bottom = 1.35714
+offset_left = -27.0
+offset_top = -21.5
+offset_right = 27.0
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.647059, 0.521569, 0.196078, 1)
+theme_override_fonts/font = ExtResource("7_1nur6")
+theme_override_font_sizes/font_size = 38
+text = "ESC"
+metadata/_edit_use_anchors_ = true
+
+[node name="Overworld" type="Label" parent="Bottom/Line/EscButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.37647
+anchor_top = 0.628572
+anchor_right = 3.64706
+anchor_bottom = 1.34286
+offset_left = -27.0
+offset_top = -21.5
+offset_right = 27.0
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.647059, 0.521569, 0.196078, 1)
+theme_override_fonts/font = ExtResource("7_1nur6")
+theme_override_font_sizes/font_size = 38
+text = "OVERWORLD"
+metadata/_edit_use_anchors_ = true
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_2q5yj")
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="Buttons/Retry" to="." method="_on_retry_pressed"]
-[connection signal="pressed" from="Buttons/Quit" to="." method="_on_quit_pressed"]
