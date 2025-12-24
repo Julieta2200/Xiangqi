@@ -1,21 +1,21 @@
 extends Level
 
 const wave_1_chances: Dictionary = {
-	FigureComponent.Types.SOLDIER: 0.6,
-	FigureComponent.Types.HORSE: 0.4,
+	FigureComponent.Types.SOLDIER: 0.55,
+	FigureComponent.Types.HORSE: 0.45,
 }
 
 const wave_2_chances: Dictionary = {
-	FigureComponent.Types.SOLDIER: 0.6,
-	FigureComponent.Types.HORSE: 0.3,
-	FigureComponent.Types.CANNON: 0.1,
+	FigureComponent.Types.SOLDIER: 0.4,
+	FigureComponent.Types.HORSE: 0.35,
+	FigureComponent.Types.CANNON: 0.25,
 }
 
 const wave_3_chances: Dictionary = {
-	FigureComponent.Types.SOLDIER: 0.5,
+	FigureComponent.Types.SOLDIER: 0.35,
 	FigureComponent.Types.HORSE: 0.3,
-	FigureComponent.Types.CANNON: 0.15,
-	FigureComponent.Types.CHARIOT: 0.05,
+	FigureComponent.Types.CANNON: 0.2,
+	FigureComponent.Types.CHARIOT: 0.15,
 }
 
 var wave_number: int = 1
@@ -124,7 +124,7 @@ func generate_figures(chances: Dictionary) -> Array:
 		return []  # No available positions
 	
 	# Calculate minimum figures to spawn (reduced for easier difficulty)
-	var min_figures: int = min(3, valid_columns.size())
+	var min_figures: int = min(4, valid_columns.size())
 	var max_figures: int = min(6, valid_columns.size())
 	var target_figures: int = randi_range(min_figures, max_figures)
 	

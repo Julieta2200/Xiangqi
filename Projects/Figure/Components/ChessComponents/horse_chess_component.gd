@@ -44,5 +44,7 @@ func free_path(current_position: Vector2i, dir: Vector2i, state: Dictionary)-> b
 
 func clear_blockers():
 	for i in blockers:
+		if i == null:
+			continue
 		i.shader_component.unhighlight_blocker(i.ui_component.active)
 	blockers.clear()
