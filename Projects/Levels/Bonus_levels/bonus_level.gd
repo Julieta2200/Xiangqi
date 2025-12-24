@@ -48,7 +48,11 @@ func _enable_play():
 
 func attack_dialog() -> void:
 	DialogSystem.start_dialog([
-		DialogSystem.DialogText.new("BONUS_LEVEL_ATTACK", DialogSystem.CHARACTERS.Ashes)], true)
+		DialogSystem.DialogText.new("BONUS_LEVEL_ATTACK_DIALOG_1", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("BONUS_LEVEL_ATTACK_DIALOG_2", DialogSystem.CHARACTERS.Aros),
+		DialogSystem.DialogText.new("BONUS_LEVEL_ATTACK_DIALOG_3", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("BONUS_LEVEL_ATTACK_DIALOG_4", DialogSystem.CHARACTERS.Aros),
+		DialogSystem.DialogText.new("BONUS_LEVEL_ATTACK_DIALOG_5", DialogSystem.CHARACTERS.Ashes)], true)
 
 func run_hint_system() -> void:
 	if _hint_index >= hints.size():
@@ -74,7 +78,7 @@ func _ran_out_of_pawns_dialog_finished() -> void:
 
 func ran_out_of_moves_dialog() -> void:
 	DialogSystem.start_dialog([
-		DialogSystem.DialogText.new("BONUS_LEVEL_RAN_OUT_OF_TIME", DialogSystem.CHARACTERS.Advisor)], true)
+		DialogSystem.DialogText.new("BONUS_LEVEL_RAN_OUT_OF_TIME", DialogSystem.CHARACTERS.Jakat)], true)
 	DialogSystem.connect("dialog_finished", _ran_out_of_moves_dialog_finished)
 
 func _ran_out_of_moves_dialog_finished() -> void:
@@ -90,3 +94,29 @@ func _flying_general_hint_shown() -> void:
 	else:
 		for general in generals:
 			general.shader_component.hint_unhighlight()
+
+func _on_gameplay_ui_set_free() -> void:
+	GameState.state["ll_cards"].append(card)
+	GameState.state["levels"][level_name]["state"] = LevelMarker.LevelState.Free
+	GameState.save_game()
+	gameplay_ui.decision.hide()
+	DialogSystem.start_dialog([
+		DialogSystem.DialogText.new("BONUS_LEVEL_VICTORY_SET_FREE", DialogSystem.CHARACTERS.Aros)
+	], true)
+	DialogSystem.connect("dialog_finished", _victory_dialog_finished)
+
+func _on_gameplay_ui_claim() -> void:
+	GameState.add_orb()
+	GameState.state["levels"][level_name]["state"] = LevelMarker.LevelState.Captured
+	GameState.save_game()
+	gameplay_ui.decision.hide()
+	DialogSystem.start_dialog([
+		DialogSystem.DialogText.new("BONUS_LEVEL_VICTORY_CLAIM_1", DialogSystem.CHARACTERS.Aros),
+		DialogSystem.DialogText.new("BONUS_LEVEL_VICTORY_CLAIM_2", DialogSystem.CHARACTERS.Jakat)
+	], true)
+	DialogSystem.connect("dialog_finished", _victory_dialog_finished)
+
+func _victory_dialog_finished() -> void:
+	if DialogSystem.is_connected("dialog_finished", _victory_dialog_finished):
+		DialogSystem.disconnect("dialog_finished", _victory_dialog_finished)
+	load_main_scene()

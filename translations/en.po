@@ -29,70 +29,52 @@ msgid "CREDITS"
 msgstr "  CREDITS"
 
 msgid "KARMA_TABLE_LEVEL_1_DIALOG_1"
-msgstr "Ashes, you will meet your friend here."
+msgstr "First, you must show what you are capable of."
 
 msgid "KARMA_TABLE_LEVEL_1_DIALOG_2"
-msgstr "I don't have any."
+msgstr "More than you think."
 
 msgid "KARMA_TABLE_LEVEL_1_DIALOG_3"
-msgstr "Driven by revenge, you'll get what you give; Karma will catch you."
-
-msgid "KARMA_TABLE_LEVEL_1_DIALOG_4"
-msgstr "Don't forget who you're speaking to. JStop talking and lend me your power."
-
-msgid "KARMA_TABLE_LEVEL_1_DIALOG_5"
-msgstr "Time is ticking…"
+msgstr "Your confidence shows too clearly."
 
 msgid "KARMA_TABLE_LEVEL_1_BONUS_DIALOG_1"
-msgstr "You're leaving the path we agreed upon, aren't you?"
+msgstr "Time thins. Every step away from the path has a price."
 
 msgid "KARMA_TABLE_LEVEL_1_BONUS_DIALOG_2"
-msgstr "I have my own path."
-
-msgid "KARMA_TABLE_LEVEL_1_BONUS_DIALOG_3"
-msgstr "You're on your own here, Ashes."
-
-msgid "KARMA_TABLE_LEVEL_1_BONUS_DIALOG_4"
-msgstr "Such a tragedy..."
+msgstr "Your plans are yours․ mine are my own․"
 
 msgid "KARMA_TABLE_LEVEL_2_DIALOG_1"
-msgstr "Jakat, I need more power."
+msgstr "Your first victory could have been chance."
 
 msgid "KARMA_TABLE_LEVEL_2_DIALOG_2"
-msgstr "So be it. But don't forget our deal."
+msgstr "Does fate trust in chance?"
 
 msgid "KARMA_TABLE_LEVEL_2_DIALOG_3"
-msgstr "I'll do what I must."
-
-msgid "KARMA_TABLE_LEVEL_2_DIALOG_4"
-msgstr "Karma moves in both directions..."
+msgstr "Chance can twist even fate itself."
 
 msgid "KARMA_TABLE_LEVEL_2_BONUS_DIALOG_1"
-msgstr "What's the point? Why are you fighting for others?"
+msgstr "Thou strays from the path."
 
 msgid "KARMA_TABLE_LEVEL_2_BONUS_DIALOG_2"
-msgstr "I fight for myself alone."
+msgstr "It grants thee nothing."
 
 msgid "KARMA_TABLE_LEVEL_2_BONUS_DIALOG_3"
-msgstr "Realize that all things are connected. Actions do not exist in isolation."
+msgstr "I bestow upon thee strength far greater than these worlds may offer."
+
+msgid "KARMA_TABLE_LEVEL_2_BONUS_DIALOG_4"
+msgstr "Speak less. Or not at all."
 
 msgid "KARMA_TABLE_LEVEL_3_DIALOG_1"
-msgstr "Mara has nowhere left to hide."
+msgstr "Letting her escape was unwise."
 
 msgid "KARMA_TABLE_LEVEL_3_DIALOG_2"
-msgstr "What will you do?"
-
-msgid "KARMA_TABLE_LEVEL_3_DIALOG_3"
-msgstr "I care not what becomes of her."
-
-msgid "KARMA_TABLE_LEVEL_3_DIALOG_4"
-msgstr "Karma will catch you."
+msgstr "I'll give her a taste of defeat… again."
 
 msgid "KARMA_TABLE_LEVEL_3_BONUS_DIALOG_1"
-msgstr "Once more, you fight for others?"
+msgstr "Time works against us. Stray not from thy plan."
 
 msgid "KARMA_TABLE_LEVEL_3_BONUS_DIALOG_2"
-msgstr "Be quiet. My reasons are my own."
+msgstr "Just shut up."
 
 msgid "LEVEL_1_TITLE"
 msgstr "Khosrov Forest - Part 1"
@@ -107,10 +89,10 @@ msgid "LEVEL_1_OBJECTIVE_2"
 msgstr "Don't let enemy Xinvors past your guard"
 
 msgid "LEVEL_1_BONUS_TITLE"
-msgstr "Khosrov Forest - Wood World"
+msgstr "Khosrov Forest - Saghart World"
 
 msgid "LEVEL_1_BONUS_STORY"
-msgstr "Ashes enters Wood World. Will he decide to give them back control, or take all for himself."
+msgstr "Ashes enters Saghart World. Will he decide to give them back control, or take all for himself."
 
 msgid "LEVEL_1_BONUS_OBJECTIVE_1"
 msgstr "Capture the enemy Arqa"
@@ -177,6 +159,9 @@ msgstr "Mog"
 
 msgid "CHARACTER_JAKAT"
 msgstr "Jakat"
+
+msgid "CHARACTER_AROS"
+msgstr "Aros"
 
 msgid "GAME_OVER_TEXT_1"
 msgstr "Your Will has shattered."
@@ -323,64 +308,55 @@ msgid "TUTORIAL_SPAWNING_DESCRIPTION_4"
 msgstr "Spawn a piece and make a move with it!"
 
 msgid "LEVEL_1_DIALOG_1"
-msgstr "Stop right there."
+msgstr "Who are you, and why are you here?"
 
 msgid "LEVEL_1_DIALOG_2"
-msgstr "Mara..."
+msgstr "Mara…"
 
 msgid "LEVEL_1_DIALOG_3"
-msgstr "Ashes, I'm sorry, but you have to go back to Limbo."
+msgstr "Leave now, or your name ends here."
 
 msgid "LEVEL_1_DIALOG_4"
-msgstr "Make me"
+msgstr "If you didn't know who I was, you'd have tried to kill me already."
 
 msgid "LEVEL_1_DIALOG_5"
-msgstr "Capture him!"
+msgstr "Attack!!!"
 
 msgid "LEVEL_1_VICTORY_DIALOG_1"
-msgstr "She's getting away!"
+msgstr "Luck won't always go your way."
 
 msgid "LEVEL_1_VICTORY_DIALOG_2"
-msgstr "Should we go after her?"
-
-msgid "LEVEL_1_VICTORY_DIALOG_3"
-msgstr "It doesn't matter; she'll come back anyways."
+msgstr "There is no luck. Only karma, and it stands against you now."
 
 msgid "LEVEL_1_DEFEAT_DIALOG"
-msgstr "I'm sorry, Ashes, you left me no other choice."
+msgstr "That was easy. They praised you for nothing."
 
 msgid "LEVEL_2_DIALOG_1"
-msgstr "Give up, Ashes!"
+msgstr "We've found Mara."
 
 msgid "LEVEL_2_DIALOG_2"
-msgstr "One more move and I'll kill you if I must.."
+msgstr "She couldn't run forever."
 
 msgid "LEVEL_2_DIALOG_3"
-msgstr "Do you think I'm afraid of those Aspets?"
+msgstr "Their forces are larger."
 
 msgid "LEVEL_2_DIALOG_4"
-msgstr "I warned you Ashes!"
+msgstr "That only excites me more."
 
 msgid "LEVEL_2_VICTORY_DIALOG_1"
-msgstr "Is that all you've got?"
+msgstr "Should we go after her?"
 
 msgid "LEVEL_2_VICTORY_DIALOG_2"
-msgstr "Ashes, give up, before it's too late..."
-
-msgid "LEVEL_2_VICTORY_DIALOG_3"
-msgstr "This is only the beginning."
+msgstr "We have more important matters."
 
 msgid "LEVEL_2_DEFEAT_DIALOG"
-msgstr "This was your choice, Ashes."
+msgstr "I gave you a chance to walk away."
 
 msgid "LEVEL_3_DIALOG_1"
-msgstr "You can run no longer."
+msgstr "Mara seems troubled."
 
 msgid "LEVEL_3_DIALOG_2"
-msgstr "Ashes, please! You must stop! It's not too late."
-
-msgid "LEVEL_3_DIALOG_3"
-msgstr "Everyone will pay for what they've done!"
+msgstr "She doesn't know what to do. The end is near."
 
 msgid "LEVEL_3_AMBUSH_DIALOG_1"
 msgstr "What is going on?"
@@ -404,22 +380,43 @@ msgid "LEVEL_3_AMBUSH_DIALOG_7"
 msgstr "She can't hold the mist for long. We must only wait her out."
 
 msgid "LEVEL_3_VICTORY_DIALOG_1"
-msgstr "I'm sorry, Ashes..."
+msgstr "You will regret ever being born."
 
 msgid "LEVEL_3_VICTORY_DIALOG_2"
-msgstr "Be gone..."
+msgstr "The world regretted it long before."
 
 msgid "LEVEL_3_DEFEAT_DIALOG"
-msgstr "I'm sorry Ashes, you left me no other choice."
+msgstr "I should have done this sooner."
 
-msgid "BONUS_LEVEL_ATTACK"
-msgstr "Attack!"
+msgid "BONUS_LEVEL_ATTACK_DIALOG_1"
+msgstr "Aros."
+
+msgid "BONUS_LEVEL_ATTACK_DIALOG_2"
+msgstr "Ashes… forgive me, but I must ask you to leave."
+
+msgid "BONUS_LEVEL_ATTACK_DIALOG_3"
+msgstr "That won't happen."
+
+msgid "BONUS_LEVEL_ATTACK_DIALOG_4"
+msgstr "Then words are finished."
+
+msgid "BONUS_LEVEL_ATTACK_DIALOG_5"
+msgstr "So be it."
 
 msgid "BONUS_LEVEL_RAN_OUT_OF_XINVORS"
-msgstr "We ran out of Xinvors!"
+msgstr "Ashes… they're all gone. Every zinvor is dead."
 
 msgid "BONUS_LEVEL_RAN_OUT_OF_TIME"
-msgstr "We ran out of time!"
+msgstr "I did warn thee not to stray from the path."
+
+msgid "BONUS_LEVEL_VICTORY_SET_FREE"
+msgstr "Long live Lord Ashes."
+
+msgid "BONUS_LEVEL_VICTORY_CLAIM_1"
+msgstr "Power has already begun to rot you. Be cursed, Ashes."
+
+msgid "BONUS_LEVEL_VICTORY_CLAIM_2"
+msgstr "Ashes, thou dost amaze me."
 
 msgid "ESC"
 msgstr "ESC"

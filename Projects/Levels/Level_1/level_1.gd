@@ -33,7 +33,7 @@ func _ready() -> void:
 		DialogSystem.DialogText.new("LEVEL_1_DIALOG_2", DialogSystem.CHARACTERS.Ashes),
 		DialogSystem.DialogText.new("LEVEL_1_DIALOG_3", DialogSystem.CHARACTERS.Mara),
 		DialogSystem.DialogText.new("LEVEL_1_DIALOG_4", DialogSystem.CHARACTERS.Ashes),
-		DialogSystem.DialogText.new("LEVEL_1_DIALOG_5", DialogSystem.CHARACTERS.Mara),
+		DialogSystem.DialogText.new("LEVEL_1_DIALOG_5", DialogSystem.CHARACTERS.Ashes),
 	], true)
 	_disable_play()
 	DialogSystem.connect("dialog_finished", _enable_play)
@@ -44,9 +44,8 @@ func _on_game_over(win: BoardV2.GameOverResults, move_number: int):
 	if win == BoardV2.GameOverResults.Win:
 		gameplay_ui.objectives.complete_objectives(true)
 		DialogSystem.start_dialog([
-			DialogSystem.DialogText.new("LEVEL_1_VICTORY_DIALOG_1", DialogSystem.CHARACTERS.Advisor),
-			DialogSystem.DialogText.new("LEVEL_1_VICTORY_DIALOG_2", DialogSystem.CHARACTERS.Advisor),
-			DialogSystem.DialogText.new("LEVEL_1_VICTORY_DIALOG_3", DialogSystem.CHARACTERS.Ashes),
+			DialogSystem.DialogText.new("LEVEL_1_VICTORY_DIALOG_1", DialogSystem.CHARACTERS.Mara),
+			DialogSystem.DialogText.new("LEVEL_1_VICTORY_DIALOG_2", DialogSystem.CHARACTERS.Ashes),
 		], true)
 	else:
 		gameplay_ui.objectives.complete_objectives(false)
