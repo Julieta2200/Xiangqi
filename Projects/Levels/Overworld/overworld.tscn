@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://bqe6oo0n2f6fc"]
+[gd_scene load_steps=34 format=3 uid="uid://bqe6oo0n2f6fc"]
 
 [ext_resource type="Script" path="res://Projects/Levels/Overworld/overworld.gd" id="1_6480g"]
 [ext_resource type="Texture2D" uid="uid://dcslgins2nf6r" path="res://Assets/Map/Whole Map/Background.png" id="2_hes21"]
@@ -26,6 +26,7 @@
 [ext_resource type="AudioStream" uid="uid://bbxmsqcsaufp5" path="res://Assets/Music/Overworld V1-B2M1.wav" id="22_cjf4v"]
 [ext_resource type="Texture2D" uid="uid://dwblpmraaq4v7" path="res://Assets/MainMenu/ui/Esc_button.png" id="22_wslg4"]
 [ext_resource type="FontFile" uid="uid://c66ve5yi6m7nm" path="res://Assets/Fonts/Cinzel/Cinzel-Regular.ttf" id="23_0juxv"]
+[ext_resource type="PackedScene" uid="uid://ba32qvdi6rk4u" path="res://Projects/Ui/hint_bubble.tscn" id="24_w1wm1"]
 [ext_resource type="Texture2D" uid="uid://dkcu2jqstbxx5" path="res://Assets/Map/Third Island/Water.png" id="26_br2ah"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_gfa8y"]
@@ -245,6 +246,15 @@ theme_override_font_sizes/font_size = 38
 text = "EXIT
 "
 metadata/_edit_use_anchors_ = true
+
+[node name="WASD" parent="CanvasLayer" instance=ExtResource("24_w1wm1")]
+visible = false
+offset_left = 52.0
+offset_top = 247.0
+offset_right = 52.0
+offset_bottom = 247.0
+hint = "OVERWORLD_WASD_HINT"
+number = "1/1"
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(628, 776)

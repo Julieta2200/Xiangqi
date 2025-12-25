@@ -8,8 +8,16 @@ class_name Overworld extends Node2D
 	"3": $"Levels/3",
 	"3_bonus": $"Levels/3/bonus_3",
 }
+
+@onready var wasd: HintBubble = $CanvasLayer/WASD
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if GameState.state["first_overworld_wasd_hint"]:
+		GameState.state["first_overworld_wasd_hint"] = false
+		GameState.save_game()
+		wasd.show()
+
 	for level in GameState.state["levels"]:
 		if levels.has(level):
 			levels[level].state = GameState.state["levels"][level]["state"]

@@ -490,6 +490,9 @@ msgstr "ALLIANCE"
 msgid "KARMA"
 msgstr "KARMA"
 
+msgid "OVERWORLD_WASD_HINT"
+msgstr "Use WASD buttons to move around"
+
 msgid "LEVEL_1_HINT_1"
 msgstr "From the garrison you can choose which unit you want to spawn. Newly spawned units cannot make a move."
 

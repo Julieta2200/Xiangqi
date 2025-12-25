@@ -51,6 +51,7 @@ const new_state: Dictionary = {
 	"first_horse_introduction": true,
 	"first_ll_introduction": true,
 	"first_chariot_introduction": true,
+	"first_overworld_wasd_hint": true,
 }
 
 var current_level_info: Dictionary = {
@@ -106,7 +107,8 @@ func load_game() -> void:
 		s["first_ll_introduction"] = true
 	if !s.has("first_chariot_introduction"):
 		s["first_chariot_introduction"] = true
-	
+	if !s.has("first_overworld_wasd_hint"):
+		s["first_overworld_wasd_hint"] = true
 	# Ensure levels dictionary exists
 	if !s.has("levels"):
 		s["levels"] = {}
