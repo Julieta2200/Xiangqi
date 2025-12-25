@@ -202,6 +202,9 @@ msgstr "霍斯罗夫森林 - 湖世界"
 msgid "LEVEL_3_BONUS_STORY"
 msgstr "湖世界的生物天生和平；然而，雾军利用这种宁静奴役了他们。"
 
+msgid "OVERWORLD_WASD_HINT"
+msgstr "Use WASD buttons to move around"
+
 msgid "KARMA_TABLE_HINT_1"
 msgstr "低等级（LL）特殊能力卡。当你选择释放奖励关卡时，会解锁新的LL特殊能力。"
 
