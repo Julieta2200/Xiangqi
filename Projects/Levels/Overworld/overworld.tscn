@@ -1,9 +1,10 @@
-[gd_scene load_steps=24 format=3 uid="uid://bqe6oo0n2f6fc"]
+[gd_scene load_steps=28 format=3 uid="uid://bqe6oo0n2f6fc"]
 
 [ext_resource type="Script" path="res://Projects/Levels/Overworld/overworld.gd" id="1_6480g"]
 [ext_resource type="Texture2D" uid="uid://dcslgins2nf6r" path="res://Assets/Map/Whole Map/Background.png" id="2_hes21"]
 [ext_resource type="Texture2D" uid="uid://dy8dvqug1rldr" path="res://Assets/Map/Whole Map/Land.png" id="2_i1qo8"]
 [ext_resource type="PackedScene" uid="uid://dt7elk36ldfbg" path="res://Projects/Levels/Overworld/level_marker.tscn" id="2_m64e3"]
+[ext_resource type="Shader" path="res://Projects/Shaders/wave.gdshader" id="2_xvbw6"]
 [ext_resource type="PackedScene" uid="uid://d3giqvti0ieng" path="res://Projects/Levels/Level_1/level_1.tscn" id="3_1gxvu"]
 [ext_resource type="PackedScene" uid="uid://ccqx1h7ffxvau" path="res://Projects/Levels/Bonus_levels/bonus_level.tscn" id="4_k78vk"]
 [ext_resource type="PackedScene" uid="uid://etksxsfuk15y" path="res://Projects/Levels/Level_2/level_2.tscn" id="4_l7pks"]
@@ -23,19 +24,36 @@
 [ext_resource type="AudioStream" uid="uid://bbxmsqcsaufp5" path="res://Assets/Music/Overworld V1-B2M1.wav" id="22_cjf4v"]
 [ext_resource type="Texture2D" uid="uid://dkcu2jqstbxx5" path="res://Assets/Map/Third Island/Water.png" id="26_br2ah"]
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_gfa8y"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_13jkh"]
+width = 4000
+height = 2000
+seamless = true
+noise = SubResource("FastNoiseLite_gfa8y")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_egc8n"]
+shader = ExtResource("2_xvbw6")
+shader_parameter/color_deep = Color(0.092742, 0.265138, 0.375518, 1)
+shader_parameter/color_shallow = Color(0.12549, 0.333333, 0.466667, 1)
+shader_parameter/speed = 0.01
+shader_parameter/wave_strength = 0.01
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_13jkh")
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8xjyt"]
 shader = ExtResource("7_fkmex")
 shader_parameter/mist_color = Color(0.8, 0.85098, 0.901961, 0.764706)
 shader_parameter/scroll_speed = 0.12
-shader_parameter/density = 0.567
+shader_parameter/density = 0.574
 shader_parameter/softness = 1.0
-shader_parameter/scale = 1.9
-shader_parameter/border_softness = 0.25
+shader_parameter/scale = 1.0
+shader_parameter/border_softness = 0.355
 
 [node name="Overworld" type="Node2D"]
 script = ExtResource("1_6480g")
 
 [node name="Background" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_egc8n")
 position = Vector2(1163, 1426)
 scale = Vector2(2, 2)
 texture = ExtResource("2_hes21")
