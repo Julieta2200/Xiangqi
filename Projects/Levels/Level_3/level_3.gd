@@ -25,8 +25,7 @@ func _ready() -> void:
 	board.initialize_position(state)
 	DialogSystem.start_dialog([
 		DialogSystem.DialogText.new("LEVEL_3_DIALOG_1", DialogSystem.CHARACTERS.Advisor),
-		DialogSystem.DialogText.new("LEVEL_3_DIALOG_2", DialogSystem.CHARACTERS.Mara),
-		DialogSystem.DialogText.new("LEVEL_3_DIALOG_3", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("LEVEL_3_DIALOG_2", DialogSystem.CHARACTERS.Ashes),
 	], true)
 	_disable_play()
 	DialogSystem.connect("dialog_finished", _enable_play)

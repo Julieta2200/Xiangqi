@@ -1,12 +1,19 @@
 extends CanvasLayer
 
-enum CHARACTERS {Ashes, Mara, Advisor, Jakat}
+enum CHARACTERS {
+	Ashes,
+	Mara,
+	Advisor,
+	Jakat,
+	Aros
+}
 
 const character_names = {
 	CHARACTERS.Ashes: "CHARACTER_ASHES",
 	CHARACTERS.Mara: "CHARACTER_MARA",
 	CHARACTERS.Advisor: "CHARACTER_MOG",
-	CHARACTERS.Jakat: "CHARACTER_JAKAT"
+	CHARACTERS.Jakat: "CHARACTER_JAKAT",
+	CHARACTERS.Aros: "CHARACTER_AROS"
 }
 
 const game_over_dialog_texts: Array[String] = [
@@ -21,7 +28,8 @@ const game_over_dialog_texts: Array[String] = [
 	CHARACTERS.Ashes: preload("res://Assets/UI/Dialog panel/Characters/Ashes.png"),
 	CHARACTERS.Mara: preload("res://Assets/UI/Dialog panel/Characters/Mara.png"),
 	CHARACTERS.Advisor: preload("res://Assets/UI/Dialog panel/Characters/Advisor.png"),
-	CHARACTERS.Jakat: null
+	CHARACTERS.Jakat: null,
+	CHARACTERS.Aros: null
 }
 
 
