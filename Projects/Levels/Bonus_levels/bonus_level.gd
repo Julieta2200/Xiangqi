@@ -48,7 +48,8 @@ func _enable_play():
 
 func attack_dialog() -> void:
 	# this is the dialog when level is played for the first time
-	if GameState.get_level_state(level_name) == LevelMarker.LevelState.Open:
+	if GameState.get_level_state(level_name) == LevelMarker.LevelState.Open \
+	or GameState.get_level_state(level_name) == LevelMarker.LevelState.Closed:
 		DialogSystem.start_dialog([
 			DialogSystem.DialogText.new("BONUS_LEVEL_ATTACK_DIALOG_1", DialogSystem.CHARACTERS.Ashes),
 			DialogSystem.DialogText.new("BONUS_LEVEL_ATTACK_DIALOG_2", DialogSystem.CHARACTERS.Aros),
@@ -56,6 +57,7 @@ func attack_dialog() -> void:
 			DialogSystem.DialogText.new("BONUS_LEVEL_ATTACK_DIALOG_4", DialogSystem.CHARACTERS.Aros),
 			DialogSystem.DialogText.new("BONUS_LEVEL_ATTACK_DIALOG_5", DialogSystem.CHARACTERS.Ashes)], true)
 		return
+	
 	# this is the dialog when level is played again after being captured or freed
 	# DialogSystem.start_dialog([
 	# 	DialogSystem.DialogText.new("BONUS_LEVEL_ATTACK_DIALOG_6", DialogSystem.CHARACTERS.Ashes),
