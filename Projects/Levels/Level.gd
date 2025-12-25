@@ -39,18 +39,10 @@ func _on_game_over(win: BoardV2.GameOverResults, move_number: int):
 	if win == BoardV2.GameOverResults.Win:
 		gameplay_ui.objectives.complete_objectives(true)
 		update_best_move_number(move_number)
-		if GameState.state["levels"][level_name]["state"] != LevelMarker.LevelState.Open:
-			load_main_scene()
-			return
 		if has_decision:
 			load_decision_dialog()
 		else:
-			GameState.state["levels"][level_name]["state"] = LevelMarker.LevelState.Captured
-			if GameState.state["levels"].has(level_name+"_bonus"):
-				GameState.state["levels"][level_name+"_bonus"]["state"] = LevelMarker.LevelState.Open
-			if GameState.state["levels"].has(str(int(level_name) + 1)):
-				GameState.state["levels"][str(int(level_name)+1)]["state"] = LevelMarker.LevelState.Open
-			GameState.save_game()
+			GameState.set_level_state(level_name, LevelMarker.LevelState.Captured)
 			load_main_scene()
 	else:
 		gameplay_ui.objectives.complete_objectives(false)

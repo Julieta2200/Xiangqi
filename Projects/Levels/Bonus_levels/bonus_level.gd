@@ -95,32 +95,6 @@ func _flying_general_hint_shown() -> void:
 		for general in generals:
 			general.shader_component.hint_unhighlight()
 
-func _on_gameplay_ui_set_free() -> void:
-	GameState.state["ll_cards"].append(card)
-	GameState.state["levels"][level_name]["state"] = LevelMarker.LevelState.Free
-	GameState.save_game()
-	gameplay_ui.decision.hide()
-	DialogSystem.start_dialog([
-		DialogSystem.DialogText.new("BONUS_LEVEL_VICTORY_SET_FREE", DialogSystem.CHARACTERS.Aros)
-	], true)
-	DialogSystem.connect("dialog_finished", _victory_dialog_finished)
-
-func _on_gameplay_ui_claim() -> void:
-	GameState.add_orb()
-	GameState.state["levels"][level_name]["state"] = LevelMarker.LevelState.Captured
-	GameState.save_game()
-	gameplay_ui.decision.hide()
-	DialogSystem.start_dialog([
-		DialogSystem.DialogText.new("BONUS_LEVEL_VICTORY_CLAIM_1", DialogSystem.CHARACTERS.Aros),
-		DialogSystem.DialogText.new("BONUS_LEVEL_VICTORY_CLAIM_2", DialogSystem.CHARACTERS.Jakat)
-	], true)
-	DialogSystem.connect("dialog_finished", _victory_dialog_finished)
-
-func _victory_dialog_finished() -> void:
-	if DialogSystem.is_connected("dialog_finished", _victory_dialog_finished):
-		DialogSystem.disconnect("dialog_finished", _victory_dialog_finished)
-	load_main_scene()
-
 func load_decision_dialog() -> void:
 	DialogSystem.start_dialog([
 		DialogSystem.DialogText.new("BONUS_LEVEL_DECISION_DIALOG_1", DialogSystem.CHARACTERS.Jakat),

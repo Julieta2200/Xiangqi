@@ -122,3 +122,14 @@ func load_game() -> void:
 
 func save_exists() -> bool:
 	return FileAccess.file_exists("user://" + SAVE_FILE_NAME)
+
+func set_level_state(level_name: String, level_state: LevelMarker.LevelState) -> void:
+	if not state["levels"].has(level_name):
+		return
+	state["levels"][level_name]["state"] = level_state
+	if level_state == LevelMarker.LevelState.Captured:
+		if state["levels"].has(level_name+"_bonus"):
+			state["levels"][level_name+"_bonus"]["state"] = LevelMarker.LevelState.Open
+		if state["levels"].has(str(int(level_name) + 1)):
+			state["levels"][str(int(level_name)+1)]["state"] = LevelMarker.LevelState.Open
+	save_game()
