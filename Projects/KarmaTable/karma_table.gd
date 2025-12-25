@@ -27,8 +27,8 @@ func _ready() -> void:
 	# Set translated text for buttons
 	play_button.text = tr("PLAY")
 	back_button.text = tr("BACK")
-	low_level_label.text = tr("LOW_LEVEL")
-	high_level_label.text = tr("HIGH_LEVEL")
+	low_level_label.text = tr("ALLIANCE")
+	high_level_label.text = tr("KARMA")
 	if GameState.state["first_karma_table_run"]:
 		run_hint_system()
 		return

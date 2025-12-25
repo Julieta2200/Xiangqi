@@ -185,10 +185,10 @@ msgid "LEVEL_3_BONUS_STORY"
 msgstr "The creatures of the Lake World were naturally peaceful; however, the Fog Army took advantage of this tranquility to enslave them."
 
 msgid "KARMA_TABLE_HINT_1"
-msgstr "Low level (LL) special ability cards․ A new LL special ability is unlocked when you choose to set free a bonus level."
+msgstr "A new LL Alliance is unlocked when you choose to set free a bonus level."
 
 msgid "KARMA_TABLE_HINT_2"
-msgstr "High level (HL) special ability cards․ New HL special abilities are unlocked when you choose to conquer 3 bonus levels."
+msgstr "A New Karma is unlocked when you choose to conquer 3 bonus levels."
 
 msgid "KARMA_TABLE_HINT_3"
 msgstr "Click on a special ability to equip it. "
@@ -484,11 +484,11 @@ msgstr "NEXT"
 msgid "SPACE"
 msgstr "SPACE"
 
-msgid "LOW_LEVEL"
-msgstr "LOW LEVEL"
+msgid "ALLIANCE"
+msgstr "ALLIANCE"
 
-msgid "HIGH_LEVEL"
-msgstr "HIGH LEVEL"
+msgid "KARMA"
+msgstr "KARMA"
 
 msgid "LEVEL_1_HINT_1"
 msgstr "From the garrison you can choose which unit you want to spawn. Newly spawned units cannot make a move."
