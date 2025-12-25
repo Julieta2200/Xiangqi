@@ -30,6 +30,8 @@ func _process(_delta: float) -> void:
 		else:
 			pause_menu.show()
 			music.audio_player.stream_paused = true
+	if Input.is_action_just_pressed("instant_win"):
+		_on_game_over(BoardV2.GameOverResults.Win, 0)
 
 func game_over_energy_depleted():
 	show_game_over_ui()
