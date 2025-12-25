@@ -163,6 +163,7 @@ number = "3_bonus"
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Orbs" parent="CanvasLayer" instance=ExtResource("9_qj7bv")]
+visible = false
 
 [node name="LevelDescription" parent="CanvasLayer" instance=ExtResource("20_uvu7o")]
 visible = false
