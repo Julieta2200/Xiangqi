@@ -133,3 +133,8 @@ func set_level_state(level_name: String, level_state: LevelMarker.LevelState) ->
 		if state["levels"].has(str(int(level_name) + 1)):
 			state["levels"][str(int(level_name)+1)]["state"] = LevelMarker.LevelState.Open
 	save_game()
+
+func get_level_state(level_name: String) -> LevelMarker.LevelState:
+	if not state["levels"].has(level_name):
+		return LevelMarker.LevelState.Closed
+	return state["levels"][level_name]["state"]

@@ -47,12 +47,22 @@ func _enable_play():
 		attack_dialog()
 
 func attack_dialog() -> void:
-	DialogSystem.start_dialog([
-		DialogSystem.DialogText.new("BONUS_LEVEL_ATTACK_DIALOG_1", DialogSystem.CHARACTERS.Ashes),
-		DialogSystem.DialogText.new("BONUS_LEVEL_ATTACK_DIALOG_2", DialogSystem.CHARACTERS.Aros),
-		DialogSystem.DialogText.new("BONUS_LEVEL_ATTACK_DIALOG_3", DialogSystem.CHARACTERS.Ashes),
-		DialogSystem.DialogText.new("BONUS_LEVEL_ATTACK_DIALOG_4", DialogSystem.CHARACTERS.Aros),
-		DialogSystem.DialogText.new("BONUS_LEVEL_ATTACK_DIALOG_5", DialogSystem.CHARACTERS.Ashes)], true)
+	# this is the dialog when level is played for the first time
+	if GameState.get_level_state(level_name) == LevelMarker.LevelState.Open:
+		DialogSystem.start_dialog([
+			DialogSystem.DialogText.new("BONUS_LEVEL_ATTACK_DIALOG_1", DialogSystem.CHARACTERS.Ashes),
+			DialogSystem.DialogText.new("BONUS_LEVEL_ATTACK_DIALOG_2", DialogSystem.CHARACTERS.Aros),
+			DialogSystem.DialogText.new("BONUS_LEVEL_ATTACK_DIALOG_3", DialogSystem.CHARACTERS.Ashes),
+			DialogSystem.DialogText.new("BONUS_LEVEL_ATTACK_DIALOG_4", DialogSystem.CHARACTERS.Aros),
+			DialogSystem.DialogText.new("BONUS_LEVEL_ATTACK_DIALOG_5", DialogSystem.CHARACTERS.Ashes)], true)
+		return
+	# this is the dialog when level is played again after being captured or freed
+	# DialogSystem.start_dialog([
+	# 	DialogSystem.DialogText.new("BONUS_LEVEL_ATTACK_DIALOG_6", DialogSystem.CHARACTERS.Ashes),
+	# 	DialogSystem.DialogText.new("BONUS_LEVEL_ATTACK_DIALOG_7", DialogSystem.CHARACTERS.Aros),
+	# 	DialogSystem.DialogText.new("BONUS_LEVEL_ATTACK_DIALOG_8", DialogSystem.CHARACTERS.Ashes),
+	# 	DialogSystem.DialogText.new("BONUS_LEVEL_ATTACK_DIALOG_9", DialogSystem.CHARACTERS.Aros),
+	# 	DialogSystem.DialogText.new("BONUS_LEVEL_ATTACK_DIALOG_10", DialogSystem.CHARACTERS.Ashes)], true)
 
 func run_hint_system() -> void:
 	if _hint_index >= hints.size():
@@ -96,6 +106,10 @@ func _flying_general_hint_shown() -> void:
 			general.shader_component.hint_unhighlight()
 
 func load_decision_dialog() -> void:
+	if GameState.get_level_state(level_name) == LevelMarker.LevelState.Captured:
+		load_main_scene() # this is the case when level is already captured and we beat it again
+		return
+	# This is dialog for the first time when level is not captured yet (it can also be freed before)
 	DialogSystem.start_dialog([
 		DialogSystem.DialogText.new("BONUS_LEVEL_DECISION_DIALOG_1", DialogSystem.CHARACTERS.Jakat),
 		DialogSystem.DialogText.new("", DialogSystem.CHARACTERS.Ashes, [
@@ -107,9 +121,8 @@ func _decision_dialog_finished(option: Dictionary) -> void:
 	if DialogSystem.is_connected("decision_made", _decision_dialog_finished):
 		DialogSystem.disconnect("decision_made", _decision_dialog_finished)
 	if option["text"] == "BONUS_LEVEL_DECISION_DIALOG_2":
-		GameState.state["levels"][level_name]["state"] = LevelMarker.LevelState.Captured
-		GameState.save_game()
+		GameState.set_level_state(level_name, LevelMarker.LevelState.Captured)
 	else:
-		GameState.state["levels"][level_name]["state"] = LevelMarker.LevelState.Free
-		GameState.save_game()
+		GameState.set_level_state(level_name, LevelMarker.LevelState.Free)
+	# add above dialogs for capturing and freeing the level and then load main scene
 	load_main_scene()
