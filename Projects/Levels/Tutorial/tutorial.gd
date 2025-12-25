@@ -82,7 +82,7 @@ func _on_free_pressed() -> void:
 
 	DialogSystem.start_dialog([
 		DialogSystem.DialogText.new("TUTORIAL_WELCOME", DialogSystem.CHARACTERS.Ashes),
-	], false, 3.0)
+	], true)
 	current_section = TutorialSections.FREE
 	gameplay_ui.hide()
 
@@ -97,55 +97,55 @@ func check_state() -> void:
 			if (board.get_figures(BoardV2.Teams.Black).size() == 0):
 				DialogSystem.start_dialog([
 					DialogSystem.DialogText.new("TUTORIAL_PAWN_CAPTURE_1", DialogSystem.CHARACTERS.Ashes),
-				], false, 3.0)
+				], true)
 				passed_text_shown = true
 		TutorialSections.HORSE:
 			if (board.get_figures(BoardV2.Teams.Black).size() == 0):
 				DialogSystem.start_dialog([
 					DialogSystem.DialogText.new("TUTORIAL_PAWN_CAPTURE_2", DialogSystem.CHARACTERS.Ashes),
-				], false, 5.0)
+				], true)
 				passed_text_shown = true
 		TutorialSections.ELEPHANT:
 			if (board.get_figures(BoardV2.Teams.Black).size() == 0):
 				DialogSystem.start_dialog([
 					DialogSystem.DialogText.new("TUTORIAL_PAWN_CAPTURE_3", DialogSystem.CHARACTERS.Ashes),
-				], false, 5.0)
+				], true)
 				passed_text_shown = true
 		TutorialSections.CANNON:
 			if (board.get_figures(BoardV2.Teams.Black).size() == 1):
 				DialogSystem.start_dialog([
 					DialogSystem.DialogText.new("TUTORIAL_PAWN_CAPTURE_4", DialogSystem.CHARACTERS.Ashes),
-				], false, 5.0)
+				], true)
 				passed_text_shown = true
 		TutorialSections.CHARIOT:
 			if (board.get_figures(BoardV2.Teams.Black).size() == 0):
 				DialogSystem.start_dialog([
 					DialogSystem.DialogText.new("TUTORIAL_PAWN_CAPTURE_5", DialogSystem.CHARACTERS.Ashes),
-				], false, 5.0)
+				], true)
 				passed_text_shown = true
 		TutorialSections.ADVISOR:
 			if (board.get_figures(BoardV2.Teams.Black).size() == 0):
 				DialogSystem.start_dialog([
 					DialogSystem.DialogText.new("TUTORIAL_PAWN_CAPTURE_6", DialogSystem.CHARACTERS.Ashes),
-				], false, 5.0)
+				], true)
 				passed_text_shown = true
 		TutorialSections.GENERAL:
 			if (board.get_figures(BoardV2.Teams.Black).size() == 0):
 				DialogSystem.start_dialog([
 					DialogSystem.DialogText.new("TUTORIAL_PAWN_CAPTURE_7", DialogSystem.CHARACTERS.Ashes),
-				], false, 5.0)
+				], true)
 				passed_text_shown = true
 		TutorialSections.FLYINGGENERAL:
 			if (board.get_generals().size() == 1):
 				DialogSystem.start_dialog([
 					DialogSystem.DialogText.new("TUTORIAL_GENERAL_CAPTURE", DialogSystem.CHARACTERS.Ashes),
-				], false, 5.0)
+				], true)
 				passed_text_shown = true
 		TutorialSections.SPAWNING:
 			if board.get_figures(BoardV2.Teams.Red).size() > 1:
 				DialogSystem.start_dialog([
 					DialogSystem.DialogText.new("TUTORIAL_SPAWN_SUCCESS", DialogSystem.CHARACTERS.Ashes),
-				], false, 5.0)
+				], true)
 				passed_text_shown = true
 
 func _on_pawn_pressed() -> void:

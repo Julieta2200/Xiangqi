@@ -120,3 +120,22 @@ func _victory_dialog_finished() -> void:
 	if DialogSystem.is_connected("dialog_finished", _victory_dialog_finished):
 		DialogSystem.disconnect("dialog_finished", _victory_dialog_finished)
 	load_main_scene()
+
+func load_decision_dialog() -> void:
+	DialogSystem.start_dialog([
+		DialogSystem.DialogText.new("BONUS_LEVEL_DECISION_DIALOG_1", DialogSystem.CHARACTERS.Jakat),
+		DialogSystem.DialogText.new("", DialogSystem.CHARACTERS.Ashes, [
+			{"text": "BONUS_LEVEL_DECISION_DIALOG_2"}, {"text": "BONUS_LEVEL_DECISION_DIALOG_3"}])
+	], true)
+	DialogSystem.connect("decision_made", _decision_dialog_finished)
+
+func _decision_dialog_finished(option: Dictionary) -> void:
+	if DialogSystem.is_connected("decision_made", _decision_dialog_finished):
+		DialogSystem.disconnect("decision_made", _decision_dialog_finished)
+	if option["text"] == "BONUS_LEVEL_DECISION_DIALOG_2":
+		GameState.state["levels"][level_name]["state"] = LevelMarker.LevelState.Captured
+		GameState.save_game()
+	else:
+		GameState.state["levels"][level_name]["state"] = LevelMarker.LevelState.Free
+		GameState.save_game()
+	load_main_scene()

@@ -98,7 +98,10 @@ grow_vertical = 2
 scale = Vector2(8, 8)
 texture = ExtResource("3_e7hcw")
 
-[node name="Timer" type="Timer" parent="."]
-one_shot = true
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="Options" type="VBoxContainer" parent="Panel"]
+visible = false
+layout_mode = 0
+offset_left = 602.857
+offset_top = 145.714
+offset_right = 2269.86
+offset_bottom = 214.714

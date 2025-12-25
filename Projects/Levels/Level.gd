@@ -43,7 +43,7 @@ func _on_game_over(win: BoardV2.GameOverResults, move_number: int):
 			load_main_scene()
 			return
 		if has_decision:
-			gameplay_ui.decision_activate()
+			load_decision_dialog()
 		else:
 			GameState.state["levels"][level_name]["state"] = LevelMarker.LevelState.Captured
 			if GameState.state["levels"].has(level_name+"_bonus"):
@@ -55,6 +55,9 @@ func _on_game_over(win: BoardV2.GameOverResults, move_number: int):
 	else:
 		gameplay_ui.objectives.complete_objectives(false)
 		show_game_over_ui()
+
+func load_decision_dialog() -> void:
+	load_main_scene()
 
 func show_game_over_ui():
 	music.audio_player.stream_paused = true

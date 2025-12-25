@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://6f1nv4cvcnw1"]
+
+[ext_resource type="FontFile" uid="uid://b1rirrr2b225e" path="res://Assets/Fonts/NotoSans-Italic-VariableFont_wdth,wght.ttf" id="1_j6420"]
+[ext_resource type="Script" path="res://Projects/Ui/option.gd" id="2_ilkxh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mhskd"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Option" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_colors/font_hover_color = Color(0.684908, 0.57808, 0.282852, 1)
+theme_override_fonts/font = ExtResource("1_j6420")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxFlat_mhskd")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_mhskd")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_mhskd")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_mhskd")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_mhskd")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_mhskd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mhskd")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_mhskd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mhskd")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_mhskd")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mhskd")
+text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+script = ExtResource("2_ilkxh")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
