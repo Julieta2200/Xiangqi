@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bqe6oo0n2f6fc"]
+[gd_scene load_steps=33 format=3 uid="uid://bqe6oo0n2f6fc"]
 
 [ext_resource type="Script" path="res://Projects/Levels/Overworld/overworld.gd" id="1_6480g"]
 [ext_resource type="Texture2D" uid="uid://dcslgins2nf6r" path="res://Assets/Map/Whole Map/Background.png" id="2_hes21"]
@@ -20,9 +20,12 @@
 [ext_resource type="Texture2D" uid="uid://rml1ubf2s05y" path="res://Assets/Map/Second Part/Water.png" id="14_ixmfm"]
 [ext_resource type="Texture2D" uid="uid://c2pusevtme515" path="res://Assets/Map/Second Island/Water.png" id="18_s6hq3"]
 [ext_resource type="PackedScene" uid="uid://chmuokpujhvya" path="res://Projects/Ui/LevelDescription/level_description.tscn" id="20_uvu7o"]
+[ext_resource type="Texture2D" uid="uid://bnr8lhker5a5h" path="res://Assets/MainMenu/ui/Line.png" id="21_3r6qu"]
 [ext_resource type="Script" path="res://Projects/Levels/Overworld/camera.gd" id="21_6fygh"]
 [ext_resource type="Texture2D" uid="uid://bbi3vn0pr30bs" path="res://Assets/Map/Third Part/Water.png" id="22_8r75w"]
 [ext_resource type="AudioStream" uid="uid://bbxmsqcsaufp5" path="res://Assets/Music/Overworld V1-B2M1.wav" id="22_cjf4v"]
+[ext_resource type="Texture2D" uid="uid://dwblpmraaq4v7" path="res://Assets/MainMenu/ui/Esc_button.png" id="22_wslg4"]
+[ext_resource type="FontFile" uid="uid://c66ve5yi6m7nm" path="res://Assets/Fonts/Cinzel/Cinzel-Regular.ttf" id="23_0juxv"]
 [ext_resource type="Texture2D" uid="uid://dkcu2jqstbxx5" path="res://Assets/Map/Third Island/Water.png" id="26_br2ah"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_gfa8y"]
@@ -167,6 +170,81 @@ visible = false
 
 [node name="LevelDescription" parent="CanvasLayer" instance=ExtResource("20_uvu7o")]
 visible = false
+
+[node name="Bottom" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -94.0
+offset_right = 40.0
+offset_bottom = -54.0
+grow_vertical = 0
+
+[node name="Line" type="TextureRect" parent="CanvasLayer/Bottom"]
+texture_filter = 2
+layout_mode = 0
+offset_right = 1979.0
+offset_bottom = 3.0
+scale = Vector2(2, 2)
+texture = ExtResource("21_3r6qu")
+
+[node name="EscButton" type="TextureRect" parent="CanvasLayer/Bottom/Line"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -287.5
+offset_top = -14.5
+offset_right = -202.5
+offset_bottom = 20.5
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("22_wslg4")
+
+[node name="Esc" type="Label" parent="CanvasLayer/Bottom/Line/EscButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.629412
+anchor_top = 0.642857
+anchor_right = 1.06471
+anchor_bottom = 1.35714
+offset_left = -27.0
+offset_top = -21.5
+offset_right = 27.0
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.647059, 0.521569, 0.196078, 1)
+theme_override_fonts/font = ExtResource("23_0juxv")
+theme_override_font_sizes/font_size = 38
+text = "ESC"
+metadata/_edit_use_anchors_ = true
+
+[node name="Exit" type="Label" parent="CanvasLayer/Bottom/Line/EscButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.38235
+anchor_top = 0.642857
+anchor_right = 1.82941
+anchor_bottom = 1.35714
+offset_left = -27.0
+offset_top = -21.5
+offset_right = 27.0
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.647059, 0.521569, 0.196078, 1)
+theme_override_fonts/font = ExtResource("23_0juxv")
+theme_override_font_sizes/font_size = 38
+text = "EXIT
+"
+metadata/_edit_use_anchors_ = true
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(628, 776)

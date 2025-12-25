@@ -18,7 +18,5 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
-
-func _on_tutorial_pressed() -> void:
-	SceneManager.change_scene(SceneManager.Scenes.Tutorial)
+	if Input.is_action_just_pressed("exit"):
+		SceneManager.change_scene(SceneManager.Scenes.MainMenu)
