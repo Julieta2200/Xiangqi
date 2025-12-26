@@ -170,6 +170,18 @@ tracks/5/keys = {
 "values": ["EXIT
 "]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Logo:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_y2a3i"]
 resource_name = "appear"
@@ -205,6 +217,18 @@ tracks/2/path = NodePath("../Bottom:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
+"times": PackedFloat32Array(2, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Logo:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(2, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
@@ -262,6 +286,18 @@ tracks/3/keys = {
 "update": 1,
 "values": ["EXIT
 ", "BACK"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Logo:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_1rppp"]
@@ -552,6 +588,15 @@ libraries = {
 }
 autoplay = "appear"
 
+[node name="Logo" type="TextureRect" parent="CanvasLayer"]
+texture_filter = 2
+offset_left = 28.0
+offset_top = 78.0
+offset_right = 491.0
+offset_bottom = 410.0
+scale = Vector2(2, 2)
+texture = ExtResource("16_dynym")
+
 [node name="Bottom" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 2
@@ -626,16 +671,6 @@ theme_override_font_sizes/font_size = 38
 text = "EXIT
 "
 metadata/_edit_use_anchors_ = true
-
-[node name="Logo" type="TextureRect" parent="CanvasLayer/Bottom"]
-texture_filter = 2
-layout_mode = 0
-offset_left = 28.0
-offset_top = -2028.0
-offset_right = 491.0
-offset_bottom = -1696.0
-scale = Vector2(2, 2)
-texture = ExtResource("16_dynym")
 
 [node name="Navigation" type="VBoxContainer" parent="CanvasLayer"]
 anchors_preset = 4
