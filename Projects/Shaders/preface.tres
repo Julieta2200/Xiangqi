@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://0avhoflklsgs"]
+
+[ext_resource type="Shader" path="res://Projects/Shaders/preface.gdshader" id="1_pmcsq"]
+
+[resource]
+shader = ExtResource("1_pmcsq")
+shader_parameter/progress = 0.0
+shader_parameter/target_height = 1700.0
+shader_parameter/smoothness = 50.0

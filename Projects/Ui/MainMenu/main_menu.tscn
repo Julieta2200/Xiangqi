@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://hppsu1linnjb"]
+[gd_scene load_steps=41 format=3 uid="uid://hppsu1linnjb"]
 
 [ext_resource type="Texture2D" uid="uid://cthr7aiydkawg" path="res://Assets/MainMenu/MenuBackground.png" id="1_cp2q7"]
 [ext_resource type="Script" path="res://Projects/Ui/MainMenu/main_menu.gd" id="1_pdi1h"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://crt675lrdbly" path="res://Assets/MainMenu/ui/logo/Logo(glow_effect).png" id="16_dynym"]
 [ext_resource type="FontFile" uid="uid://dy702fuy23t3f" path="res://Assets/Fonts/Cinzel/Cinzel-Bold.ttf" id="18_67d17"]
 [ext_resource type="AudioStream" uid="uid://duw0xpg3frf48" path="res://Assets/Music/Main Menu Music Loop-B1-MUSIC & SFX MIXED.wav" id="18_c7tyu"]
+[ext_resource type="Material" uid="uid://0avhoflklsgs" path="res://Projects/Shaders/preface.tres" id="19_5pmil"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_pcs1b"]
 noise_type = 3
@@ -413,6 +414,43 @@ tracks/4/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CanvasLayer/Prelude/RichTextLabel:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CanvasLayer/Bottom/Line/EscButton/Exit:text")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["EXIT
+"]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CanvasLayer/Bottom/Line/EscButton:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_xdef1"]
 resource_name = "start"
@@ -495,9 +533,93 @@ tracks/5/keys = {
 "values": [0.0, 5.0]
 }
 
+[sub_resource type="Animation" id="Animation_5yx0s"]
+resource_name = "prelude"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Prelude/RichTextLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.5, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Logo:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Navigation:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/Bottom/Line/EscButton/Exit:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["EXIT
+", "START
+"]
+}
+
+[sub_resource type="Animation" id="Animation_waovs"]
+resource_name = "prelude_disappear"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Prelude/RichTextLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Bottom/Line/EscButton:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mg1kc"]
 _data = {
 "RESET": SubResource("Animation_cjcs2"),
+"prelude": SubResource("Animation_5yx0s"),
+"prelude_disappear": SubResource("Animation_waovs"),
 "start": SubResource("Animation_xdef1")
 }
 
@@ -866,6 +988,47 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("11_0mo1f")
 theme_override_font_sizes/font_size = 40
 text = "Copyright © 2025 Taillis. All Rights Reserved."
+
+[node name="Prelude" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Prelude"]
+modulate = Color(1, 1, 1, 0)
+material = ExtResource("19_5pmil")
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 155.0
+offset_top = -866.0
+offset_right = 2155.0
+offset_bottom = 834.0
+grow_vertical = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("11_0mo1f")
+theme_override_font_sizes/normal_font_size = 45
+bbcode_enabled = true
+text = "The young Lord of Magma, Areg, inherits his father's throne.
+ He sets out to conquer the five worlds, one by one.
+The final world to fight against him is the Kingdom of Ice, ruled by Lord Sarouyts.
+A bloody war begins. It's a war that will last for years.
+But then Areg sees Lord Saroyutse's daughter, Lousine.
+Love reshapes his path.
+Areg abandons his obsession with conquest and, following Lord Saroyutse's counsel, releases the lands he has claimed-while preserving his power and influence.
+Despite peace, tensions between the kingdoms simmer.
+Areg and Lousine have a son: Ashes.
+After the birth of Ashes, Boran, the prince of the Kingdom of Ice, still unwilling to accept peace with the Magma Kingdom, hatches a plan. 
+Areg's death shocks the five Kingdoms, murdered in secret by poison at the hands of Boran.
+With Areg dead, Boran demands the Magma Kingdom from his father, Lord Sarouyts. Lord Sarouyts, suspicious of his son, discovers the truth surrounding Areg's death. He curses Boran. Seeing no way out, Boran kills his own father.
+Boran orders that Ashes be found and brought to him, dead or alive. One of Lord Sarouyts Mogs manages to smuggle the newborn away and take him to Limbo-a place where Boran cannot reach him. Lousine remains a captive.
+Boran conquers the five kingdoms but does not unite them. If he did, the God of Karma-Jakat-would return. Therefore, in each kingdom, he installs his loyal lord.
+Ashes grows up in Limbo, filled with the idea of revenge. When the time comes, he leaves Limbo and heads to the dwelling of Jakat, the God of Karma"
 
 [node name="MainAnimation" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
