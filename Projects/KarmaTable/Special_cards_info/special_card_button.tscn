@@ -20,7 +20,7 @@ texture = ExtResource("2_jayqh")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i2ud5"]
 texture = ExtResource("3_3trq8")
 
-[node name="button" type="Button"]
+[node name="special_card_button" type="Button"]
 custom_minimum_size = Vector2(882, 173)
 theme_override_colors/font_disabled_color = Color(0.647059, 0.521569, 0.196078, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.647059, 0.521569, 0.196078, 1)

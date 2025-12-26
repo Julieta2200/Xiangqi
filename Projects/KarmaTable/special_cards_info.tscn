@@ -1,8 +1,9 @@
-[gd_scene load_steps=24 format=3 uid="uid://cmyj3au8xcmqv"]
+[gd_scene load_steps=26 format=3 uid="uid://cmyj3au8xcmqv"]
 
 [ext_resource type="Script" path="res://Projects/KarmaTable/special_cards_info.gd" id="1_asonw"]
 [ext_resource type="Texture2D" uid="uid://clwwr38hgsjqe" path="res://Assets/UI/Ability info/Sliding Panel.png" id="1_f6fql"]
 [ext_resource type="Texture2D" uid="uid://c16iuwnqfb6di" path="res://Assets/UI/Ability info/Abilities List.png" id="2_pxi6q"]
+[ext_resource type="Shader" path="res://Projects/Shaders/blur_menu.gdshader" id="2_ub2gw"]
 [ext_resource type="Texture2D" uid="uid://d0ff5hproyvfh" path="res://Assets/UI/Ability info/Ability Preview.png" id="3_0xe26"]
 [ext_resource type="FontFile" uid="uid://c66ve5yi6m7nm" path="res://Assets/Fonts/Cinzel/Cinzel-Regular.ttf" id="3_8c75t"]
 [ext_resource type="Texture2D" uid="uid://c0ce0h6i323ti" path="res://Assets/UI/Ability info/Low_High abilities button(Hover).png" id="4_dv5dm"]
@@ -17,6 +18,10 @@
 [ext_resource type="FontFile" uid="uid://dm0qc34c6cd20" path="res://Assets/Fonts/NotoSans-ExtraLight.ttf" id="12_7ef5c"]
 [ext_resource type="Texture2D" uid="uid://c15qd05lb6sph" path="res://Assets/UI/Ability info/Indicator.png" id="12_ry8x5"]
 [ext_resource type="FontFile" uid="uid://dy702fuy23t3f" path="res://Assets/Fonts/Cinzel/Cinzel-Bold.ttf" id="13_e6e3d"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iq238"]
+shader = ExtResource("2_ub2gw")
+shader_parameter/blur_amount = 2.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b7vo7"]
 texture = ExtResource("4_dv5dm")
@@ -43,6 +48,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_asonw")
+
+[node name="BlurOverlay" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_iq238")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Panel" type="TextureRect" parent="."]
 texture_filter = 2
@@ -122,7 +136,7 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("2_pxi6q")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="specials_list"]
+[node name="LLScrollContainer" type="ScrollContainer" parent="specials_list"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -135,18 +149,18 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_5y12r")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="specials_list/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="specials_list/LLScrollContainer"]
 layout_mode = 2
 theme_override_constants/separation = 30
 
-[node name="button" parent="specials_list/ScrollContainer/VBoxContainer" instance=ExtResource("7_urk37")]
+[node name="ll_card_slot" parent="specials_list/LLScrollContainer/VBoxContainer" instance=ExtResource("7_urk37")]
 layout_mode = 2
 toggle_mode = true
 type = 2
 image = ExtResource("8_x7nkq")
 number = 1
 
-[node name="button2" parent="specials_list/ScrollContainer/VBoxContainer" instance=ExtResource("7_urk37")]
+[node name="ll_card_slot2" parent="specials_list/LLScrollContainer/VBoxContainer" instance=ExtResource("7_urk37")]
 layout_mode = 2
 toggle_mode = true
 text = "SNAKE CHAIN"
@@ -154,7 +168,7 @@ type = 1
 image = ExtResource("9_soqyq")
 number = 2
 
-[node name="ScrollContainer2" type="ScrollContainer" parent="specials_list"]
+[node name="HLScrollContainer" type="ScrollContainer" parent="specials_list"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -168,11 +182,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_5y12r")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="specials_list/ScrollContainer2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="specials_list/HLScrollContainer"]
 layout_mode = 2
 theme_override_constants/separation = 30
 
-[node name="button6" parent="specials_list/ScrollContainer2/VBoxContainer" instance=ExtResource("7_urk37")]
+[node name="hl_card_slot" parent="specials_list/HLScrollContainer/VBoxContainer" instance=ExtResource("7_urk37")]
 layout_mode = 2
 toggle_mode = true
 button_pressed = true
@@ -180,20 +194,20 @@ type = 3
 image = ExtResource("10_fhs31")
 number = 1
 
-[node name="button7" parent="specials_list/ScrollContainer2/VBoxContainer" instance=ExtResource("7_urk37")]
+[node name="hl_card_slot2" parent="specials_list/HLScrollContainer/VBoxContainer" instance=ExtResource("7_urk37")]
 layout_mode = 2
 toggle_mode = true
 image = ExtResource("10_fhs31")
 number = 2
 
-[node name="button8" parent="specials_list/ScrollContainer2/VBoxContainer" instance=ExtResource("7_urk37")]
+[node name="hl_card_slot3" parent="specials_list/HLScrollContainer/VBoxContainer" instance=ExtResource("7_urk37")]
 layout_mode = 2
 toggle_mode = true
 type = 2
 image = ExtResource("10_fhs31")
 number = 3
 
-[node name="button9" parent="specials_list/ScrollContainer2/VBoxContainer" instance=ExtResource("7_urk37")]
+[node name="hl_card_slot4" parent="specials_list/HLScrollContainer/VBoxContainer" instance=ExtResource("7_urk37")]
 layout_mode = 2
 toggle_mode = true
 type = 1
@@ -286,7 +300,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Button" type="Button" parent="special_preview/indicators"]
+[node name="left_button" type="Button" parent="special_preview/indicators"]
 layout_mode = 0
 offset_left = 528.5
 offset_top = 1152.5
@@ -297,7 +311,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_qftr5")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_qftr5")
 theme_override_styles/normal = SubResource("StyleBoxTexture_qftr5")
 
-[node name="Button2" type="Button" parent="special_preview/indicators"]
+[node name="right_button" type="Button" parent="special_preview/indicators"]
 layout_mode = 0
 offset_left = 728.5
 offset_top = 1192.5
@@ -309,7 +323,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_qftr5")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_qftr5")
 theme_override_styles/normal = SubResource("StyleBoxTexture_qftr5")
 
-[node name="Label" type="RichTextLabel" parent="special_preview/indicators"]
+[node name="number_lable" type="RichTextLabel" parent="special_preview/indicators"]
 layout_mode = 0
 offset_left = 600.5
 offset_top = 1152.5
@@ -336,7 +350,7 @@ grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("4_qam08")
 
-[node name="Label" type="Label" parent="info_section"]
+[node name="title" type="Label" parent="info_section"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -351,7 +365,7 @@ text = "ABOUT"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="info_section"]
+[node name="text" type="RichTextLabel" parent="info_section"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -381,11 +395,11 @@ texture = ExtResource("5_jwgft")
 
 [connection signal="pressed" from="specials_list/ll_button" to="." method="_on_ll_button_pressed"]
 [connection signal="pressed" from="specials_list/hl_button" to="." method="_on_hl_button_pressed"]
-[connection signal="card_select" from="specials_list/ScrollContainer/VBoxContainer/button" to="." method="_on_button_special_card_select"]
-[connection signal="card_select" from="specials_list/ScrollContainer/VBoxContainer/button2" to="." method="_on_button_special_card_select"]
-[connection signal="card_select" from="specials_list/ScrollContainer2/VBoxContainer/button6" to="." method="_on_button_special_card_select"]
-[connection signal="card_select" from="specials_list/ScrollContainer2/VBoxContainer/button7" to="." method="_on_button_special_card_select"]
-[connection signal="card_select" from="specials_list/ScrollContainer2/VBoxContainer/button8" to="." method="_on_button_special_card_select"]
-[connection signal="card_select" from="specials_list/ScrollContainer2/VBoxContainer/button9" to="." method="_on_button_special_card_select"]
-[connection signal="pressed" from="special_preview/indicators/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="special_preview/indicators/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="card_select" from="specials_list/LLScrollContainer/VBoxContainer/ll_card_slot" to="." method="_on_button_special_card_select"]
+[connection signal="card_select" from="specials_list/LLScrollContainer/VBoxContainer/ll_card_slot2" to="." method="_on_button_special_card_select"]
+[connection signal="card_select" from="specials_list/HLScrollContainer/VBoxContainer/hl_card_slot" to="." method="_on_button_special_card_select"]
+[connection signal="card_select" from="specials_list/HLScrollContainer/VBoxContainer/hl_card_slot2" to="." method="_on_button_special_card_select"]
+[connection signal="card_select" from="specials_list/HLScrollContainer/VBoxContainer/hl_card_slot3" to="." method="_on_button_special_card_select"]
+[connection signal="card_select" from="specials_list/HLScrollContainer/VBoxContainer/hl_card_slot4" to="." method="_on_button_special_card_select"]
+[connection signal="pressed" from="special_preview/indicators/left_button" to="." method="_on_left_button_pressed"]
+[connection signal="pressed" from="special_preview/indicators/right_button" to="." method="_on_right_button_pressed"]

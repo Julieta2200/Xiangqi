@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b40x7q53qt4ua"]
+[gd_scene load_steps=24 format=3 uid="uid://b40x7q53qt4ua"]
 
 [ext_resource type="Script" path="res://Projects/KarmaTable/karma_table.gd" id="1_xkm3q"]
 [ext_resource type="Texture2D" uid="uid://dvtm10ok7ifu" path="res://Assets/backgrounds/Karma/Karma_Table.png" id="2_f4ew5"]
@@ -11,8 +11,59 @@
 [ext_resource type="PackedScene" uid="uid://5ewsc72pyogy" path="res://Projects/Support/world1/snake_chain.tscn" id="6_1dcfh"]
 [ext_resource type="PackedScene" uid="uid://cq8tb18e3ym20" path="res://Projects/Support/world1/tree_trunk.tscn" id="7_3s6r8"]
 [ext_resource type="PackedScene" uid="uid://g02214kyco20" path="res://Projects/Support/world1/water_portal.tscn" id="8_ujwfo"]
+[ext_resource type="PackedScene" uid="uid://cmyj3au8xcmqv" path="res://Projects/KarmaTable/special_cards_info.tscn" id="12_q47rj"]
 [ext_resource type="PackedScene" uid="uid://cavxgtpxtng4j" path="res://Projects/Music/Music.tscn" id="12_qky3m"]
+[ext_resource type="Texture2D" uid="uid://dvq4cijta0kw3" path="res://Assets/UI/Ability info/Toggle Button(active).png" id="13_enf7o"]
 [ext_resource type="AudioStream" uid="uid://24dwra2qr3qu" path="res://Assets/Music/Karma Table V3-B1.wav" id="13_oa16i"]
+[ext_resource type="Texture2D" uid="uid://b56jp0kcbxlai" path="res://Assets/UI/Ability info/Toggle Button.png" id="14_qnejh"]
+
+[sub_resource type="Animation" id="Animation_guti8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3728, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_t54ck"]
+resource_name = "special_card_info"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3728, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gvmuy"]
+_data = {
+"RESET": SubResource("Animation_guti8"),
+"special_card_info": SubResource("Animation_t54ck")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8431m"]
+texture = ExtResource("13_enf7o")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mtdhy"]
+texture = ExtResource("14_qnejh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gejvc"]
+texture = ExtResource("14_qnejh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mcpb3"]
+texture = ExtResource("13_enf7o")
 
 [node name="KarmaTable" type="Node2D"]
 script = ExtResource("1_xkm3q")
@@ -53,176 +104,176 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 30.0
-offset_top = 128.0
+offset_top = -150.0
 offset_right = -3881.0
-offset_bottom = -2072.0
+offset_bottom = -2350.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/LLs"]
 layout_mode = 1
-offset_left = 464.0
+offset_left = 517.0
 offset_top = 250.0
-offset_right = 1054.0
+offset_right = 1107.0
 offset_bottom = 446.0
 theme_override_colors/font_color = Color(0.984314, 0.760784, 0.211765, 1)
 theme_override_fonts/font = ExtResource("4_mo4m0")
 theme_override_font_sizes/font_size = 100
 text = "LOW LEVEL"
 
-[node name="LL_card4" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
-layout_mode = 0
-offset_left = 900.0
-offset_top = 522.0
-offset_right = 1092.0
-offset_bottom = 721.0
-
-[node name="LL_card5" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
-layout_mode = 0
-offset_left = 1140.0
-offset_top = 522.0
-offset_right = 1332.0
-offset_bottom = 721.0
-
-[node name="LL_card7" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
-layout_mode = 0
-offset_left = 180.0
-offset_top = 800.0
-offset_right = 372.0
-offset_bottom = 992.0
-
-[node name="LL_card8" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
-layout_mode = 0
-offset_left = 420.0
-offset_top = 800.0
-offset_right = 612.0
-offset_bottom = 992.0
-
-[node name="LL_card9" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
-layout_mode = 0
-offset_left = 660.0
-offset_top = 800.0
-offset_right = 852.0
-offset_bottom = 992.0
-
-[node name="LL_card10" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
-layout_mode = 0
-offset_left = 900.0
-offset_top = 800.0
-offset_right = 1092.0
-offset_bottom = 992.0
-
-[node name="LL_card11" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
-layout_mode = 0
-offset_left = 1140.0
-offset_top = 800.0
-offset_right = 1332.0
-offset_bottom = 992.0
-
-[node name="LL_card13" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
-layout_mode = 0
-offset_left = 312.0
-offset_top = 1078.0
-offset_right = 504.0
-offset_bottom = 1270.0
-
-[node name="LL_card14" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
-layout_mode = 0
-offset_left = 552.0
-offset_top = 1078.0
-offset_right = 744.0
-offset_bottom = 1270.0
-
-[node name="LL_card15" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
-layout_mode = 0
-offset_left = 792.0
-offset_top = 1078.0
-offset_right = 984.0
-offset_bottom = 1270.0
-
-[node name="LL_card16" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
-layout_mode = 0
-offset_left = 1032.0
-offset_top = 1078.0
-offset_right = 1224.0
-offset_bottom = 1270.0
-
 [node name="SnakeChain" parent="CanvasLayer/LLs" instance=ExtResource("6_1dcfh")]
 layout_mode = 0
-offset_left = 180.0
-offset_top = 522.0
-offset_right = 372.0
-offset_bottom = 721.0
+offset_left = 594.0
+offset_top = 542.0
+offset_right = 786.0
+offset_bottom = 734.0
 
 [node name="TreeTrunk" parent="CanvasLayer/LLs" instance=ExtResource("7_3s6r8")]
 layout_mode = 0
-offset_left = 420.0
-offset_top = 522.0
-offset_right = 612.0
-offset_bottom = 714.0
+offset_left = 842.0
+offset_top = 542.0
+offset_right = 1034.0
+offset_bottom = 734.0
 
 [node name="WaterPortal" parent="CanvasLayer/LLs" instance=ExtResource("8_ujwfo")]
 layout_mode = 0
-offset_left = 660.0
-offset_top = 522.0
-offset_right = 852.0
-offset_bottom = 714.0
+offset_left = 242.0
+offset_top = 798.0
+offset_right = 434.0
+offset_bottom = 990.0
+
+[node name="LL_card8" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
+layout_mode = 0
+offset_left = 482.0
+offset_top = 798.0
+offset_right = 674.0
+offset_bottom = 990.0
+
+[node name="LL_card9" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
+layout_mode = 0
+offset_left = 722.0
+offset_top = 798.0
+offset_right = 914.0
+offset_bottom = 990.0
+
+[node name="LL_card10" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
+layout_mode = 0
+offset_left = 962.0
+offset_top = 798.0
+offset_right = 1154.0
+offset_bottom = 990.0
+
+[node name="LL_card11" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
+layout_mode = 0
+offset_left = 1202.0
+offset_top = 798.0
+offset_right = 1394.0
+offset_bottom = 990.0
+
+[node name="LL_card16" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
+layout_mode = 0
+offset_left = 242.0
+offset_top = 1054.0
+offset_right = 434.0
+offset_bottom = 1246.0
+
+[node name="LL_card12" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
+layout_mode = 0
+offset_left = 482.0
+offset_top = 1054.0
+offset_right = 674.0
+offset_bottom = 1246.0
+
+[node name="LL_card13" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
+layout_mode = 0
+offset_left = 722.0
+offset_top = 1054.0
+offset_right = 914.0
+offset_bottom = 1246.0
+
+[node name="LL_card14" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
+layout_mode = 0
+offset_left = 962.0
+offset_top = 1054.0
+offset_right = 1154.0
+offset_bottom = 1246.0
+
+[node name="LL_card15" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
+layout_mode = 0
+offset_left = 1202.0
+offset_top = 1054.0
+offset_right = 1394.0
+offset_bottom = 1246.0
+
+[node name="LL_card17" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
+layout_mode = 0
+offset_left = 594.0
+offset_top = 1310.0
+offset_right = 786.0
+offset_bottom = 1502.0
+
+[node name="LL_card18" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
+layout_mode = 0
+offset_left = 842.0
+offset_top = 1310.0
+offset_right = 1034.0
+offset_bottom = 1502.0
 
 [node name="HLs" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = 30.0
-offset_top = 128.0
-offset_right = 30.0
-offset_bottom = 128.0
+offset_left = -15.0
+offset_top = -192.0
+offset_right = -15.0
+offset_bottom = -192.0
 grow_horizontal = 0
-
-[node name="HL_card" parent="CanvasLayer/HLs" instance=ExtResource("4_r0sd7")]
-layout_mode = 2
-offset_left = -1100.0
-offset_top = 522.0
-offset_right = -840.0
-offset_bottom = 797.0
-
-[node name="HL_card2" parent="CanvasLayer/HLs" instance=ExtResource("4_r0sd7")]
-layout_mode = 2
-offset_left = -800.0
-offset_top = 522.0
-offset_right = -540.0
-offset_bottom = 797.0
-
-[node name="HL_card3" parent="CanvasLayer/HLs" instance=ExtResource("4_r0sd7")]
-layout_mode = 2
-offset_left = -500.0
-offset_top = 522.0
-offset_right = -240.0
-offset_bottom = 797.0
-
-[node name="HL_card4" parent="CanvasLayer/HLs" instance=ExtResource("4_r0sd7")]
-layout_mode = 2
-offset_left = -640.0
-offset_top = 854.0
-offset_right = -380.0
-offset_bottom = 1129.0
 
 [node name="DisconnectionMist" parent="CanvasLayer/HLs" instance=ExtResource("5_s8rvq")]
 layout_mode = 0
-offset_left = -940.0
-offset_top = 856.0
-offset_right = -680.0
-offset_bottom = 1131.0
+offset_left = -1080.0
+offset_top = 572.0
+offset_right = -820.0
+offset_bottom = 832.0
+
+[node name="HL_card" parent="CanvasLayer/HLs" instance=ExtResource("4_r0sd7")]
+layout_mode = 2
+offset_left = -1080.0
+offset_top = 892.0
+offset_right = -820.0
+offset_bottom = 1152.0
+
+[node name="HL_card2" parent="CanvasLayer/HLs" instance=ExtResource("4_r0sd7")]
+layout_mode = 2
+offset_left = -1080.0
+offset_top = 1212.0
+offset_right = -820.0
+offset_bottom = 1472.0
+
+[node name="HL_card3" parent="CanvasLayer/HLs" instance=ExtResource("4_r0sd7")]
+layout_mode = 2
+offset_left = -1080.0
+offset_top = 1532.0
+offset_right = -820.0
+offset_bottom = 1792.0
+
+[node name="HL_card4" parent="CanvasLayer/HLs" instance=ExtResource("4_r0sd7")]
+layout_mode = 2
+offset_left = -1080.0
+offset_top = 1852.0
+offset_right = -820.0
+offset_bottom = 2112.0
 
 [node name="Label" type="Label" parent="CanvasLayer/HLs"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -983.0
-offset_top = 250.0
-offset_right = -346.0
-offset_bottom = 446.0
+offset_left = -1048.0
+offset_top = 292.0
+offset_right = -411.0
+offset_bottom = 488.0
 grow_horizontal = 0
 theme_override_colors/font_color = Color(0.984314, 0.760784, 0.211765, 1)
 theme_override_fonts/font = ExtResource("4_mo4m0")
@@ -339,6 +390,27 @@ offset_bottom = 731.0
 hint = "KARMA_TABLE_HINT_3"
 number = "1/1"
 
+[node name="Special_cards_info" parent="CanvasLayer" instance=ExtResource("12_q47rj")]
+offset_left = 3728.0
+offset_right = 3728.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Special_cards_info"]
+libraries = {
+"": SubResource("AnimationLibrary_gvmuy")
+}
+
+[node name="toggle_button" type="Button" parent="CanvasLayer/Special_cards_info"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 1034.0
+offset_right = 141.0
+offset_bottom = 1152.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_8431m")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_mtdhy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gejvc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_mcpb3")
+theme_override_styles/normal = SubResource("StyleBoxTexture_mtdhy")
+
 [node name="Music" parent="." instance=ExtResource("12_qky3m")]
 music = ExtResource("13_oa16i")
 
@@ -355,3 +427,4 @@ music = ExtResource("13_oa16i")
 [connection signal="hint_finished" from="CanvasLayer/Hints/HintBubble" to="." method="run_hint_system"]
 [connection signal="hint_finished" from="CanvasLayer/Hints/HintBubble2" to="." method="run_hint_system"]
 [connection signal="hint_finished" from="CanvasLayer/Hints/LLHint" to="." method="_ll_hint_shown"]
+[connection signal="pressed" from="CanvasLayer/Special_cards_info/toggle_button" to="." method="_on_toggle_button_pressed"]
