@@ -39,6 +39,7 @@ var light_original_positions: Array[Vector2] = []
 @onready var authors_lable: Label = $CanvasLayer/Credits/Authors/role
 @onready var scecial_thanks_lable: Label = $CanvasLayer/Credits/SpecialThanks/role
 @onready var copyright_lable: Label = $CanvasLayer/Credits/Copyright/role
+@onready var prelude_label: RichTextLabel = $CanvasLayer/Prelude/RichTextLabel
 
 
 
@@ -68,12 +69,18 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("exit"):
+		if !$CanvasLayer/Bottom/Line/EscButton.visible:
+			return
 		match state:
 			States.Credits:
 				state = States.None
 				ui_animation.play_backwards("credits")
 			States.None:
 				get_tree().quit()
+			States.New_Game:
+				main_animation.play("prelude_disappear")
+				await main_animation.animation_finished
+				start_game_sequence()
 	
 func _start_light_floating() -> void:
 	# Store original positions
@@ -137,12 +144,17 @@ func _flash_lightning() -> void:
 	_start_flash_timer()  # Start a new random timer
 
 func _on_new_game_pressed() -> void:
+	main_animation.play("prelude")
+	await main_animation.animation_finished
+	var tween = create_tween()
+	tween.tween_property(prelude_label.material, "shader_parameter/progress", 1.0, 18)
 	state = States.New_Game
-	ui_animation.play("disappear")
+
+func start_game_sequence():
 	nav_blocker.visible = true
 	main_animation.play("start")
 	GameState.new_game()
-
+	
 func play_ashes_run() -> void:
 	ashes.play("run")
 
