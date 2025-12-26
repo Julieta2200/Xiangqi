@@ -23,7 +23,6 @@ func _ready() -> void:
 		$icon.scale = Vector2(0.3,0.3)
 	else:
 		$icon.size = Vector2(44,56)
-		#text = ""
 		$icon.position = Vector2(62,58)
 		$icon.scale = Vector2.ONE
 	$icon.texture = image
