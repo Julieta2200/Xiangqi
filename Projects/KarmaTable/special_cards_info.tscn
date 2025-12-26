@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cmyj3au8xcmqv"]
+[gd_scene load_steps=29 format=3 uid="uid://cmyj3au8xcmqv"]
 
 [ext_resource type="Script" path="res://Projects/KarmaTable/special_cards_info.gd" id="1_asonw"]
 [ext_resource type="Texture2D" uid="uid://clwwr38hgsjqe" path="res://Assets/UI/Ability info/Sliding Panel.png" id="1_f6fql"]
@@ -12,12 +12,15 @@
 [ext_resource type="Texture2D" uid="uid://b4m1lpwnsb10e" path="res://Assets/UI/Ability info/Scroll.png" id="6_ntotl"]
 [ext_resource type="Texture2D" uid="uid://bbplilcvefwty" path="res://Assets/UI/Ability info/Ability Icon(Low).png" id="6_sv2dr"]
 [ext_resource type="PackedScene" uid="uid://cia4gs6le7d63" path="res://Projects/KarmaTable/Special_cards_info/special_card_button.tscn" id="7_urk37"]
-[ext_resource type="Texture2D" uid="uid://cp22c0hc44ykv" path="res://Assets/UI/Icons/Low level/Water_Portal.png" id="8_x7nkq"]
-[ext_resource type="Texture2D" uid="uid://jv28e22tm7js" path="res://Assets/UI/Icons/Low level/Snake_Chain.png" id="9_soqyq"]
-[ext_resource type="Texture2D" uid="uid://dactyq34ylu2y" path="res://Assets/UI/Icons/High level/Fog2.png" id="10_fhs31"]
+[ext_resource type="Texture2D" uid="uid://b5uhgg6biawxf" path="res://Assets/UI/Specials icon/Low Level/Water Portal.png" id="9_amdra"]
+[ext_resource type="Texture2D" uid="uid://cyn6yjw6hdmem" path="res://Assets/UI/Specials icon/Low Level/Snake Chain.png" id="10_fnfbq"]
+[ext_resource type="Texture2D" uid="uid://cf0sjdl4es8vu" path="res://Assets/UI/Specials icon/Low Level/Tree trunk.png" id="11_sio81"]
+[ext_resource type="Texture2D" uid="uid://cq028qmvgi385" path="res://Assets/UI/Specials icon/Lock.png" id="12_6cmiy"]
 [ext_resource type="FontFile" uid="uid://dm0qc34c6cd20" path="res://Assets/Fonts/NotoSans-ExtraLight.ttf" id="12_7ef5c"]
 [ext_resource type="Texture2D" uid="uid://c15qd05lb6sph" path="res://Assets/UI/Ability info/Indicator.png" id="12_ry8x5"]
+[ext_resource type="Texture2D" uid="uid://bvydb4e2if0qu" path="res://Assets/UI/Specials icon/High Level/Fog.png" id="13_6l75u"]
 [ext_resource type="FontFile" uid="uid://dy702fuy23t3f" path="res://Assets/Fonts/Cinzel/Cinzel-Bold.ttf" id="13_e6e3d"]
+[ext_resource type="Texture2D" uid="uid://6rdsugvnijdt" path="res://Assets/UI/Specials icon/Lock(Big).png" id="16_mnbij"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iq238"]
 shader = ExtResource("2_ub2gw")
@@ -148,6 +151,7 @@ offset_bottom = 1212.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_5y12r")
+follow_focus = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="specials_list/LLScrollContainer"]
 layout_mode = 2
@@ -155,18 +159,50 @@ theme_override_constants/separation = 30
 
 [node name="ll_card_slot" parent="specials_list/LLScrollContainer/VBoxContainer" instance=ExtResource("7_urk37")]
 layout_mode = 2
-toggle_mode = true
 type = 2
-image = ExtResource("8_x7nkq")
+image = ExtResource("9_amdra")
 number = 1
+active = true
 
 [node name="ll_card_slot2" parent="specials_list/LLScrollContainer/VBoxContainer" instance=ExtResource("7_urk37")]
 layout_mode = 2
-toggle_mode = true
 text = "SNAKE CHAIN"
 type = 1
-image = ExtResource("9_soqyq")
+image = ExtResource("10_fnfbq")
 number = 2
+active = true
+
+[node name="ll_card_slot3" parent="specials_list/LLScrollContainer/VBoxContainer" instance=ExtResource("7_urk37")]
+layout_mode = 2
+text = "TREE TRUNK"
+type = 0
+image = ExtResource("11_sio81")
+number = 3
+active = true
+
+[node name="ll_card_slot4" parent="specials_list/LLScrollContainer/VBoxContainer" instance=ExtResource("7_urk37")]
+layout_mode = 2
+text = "TREE TRUNK"
+image = ExtResource("12_6cmiy")
+number = 4
+
+[node name="ll_card_slot5" parent="specials_list/LLScrollContainer/VBoxContainer" instance=ExtResource("7_urk37")]
+layout_mode = 2
+text = "TREE TRUNK"
+image = ExtResource("12_6cmiy")
+number = 5
+
+[node name="ll_card_slot6" parent="specials_list/LLScrollContainer/VBoxContainer" instance=ExtResource("7_urk37")]
+layout_mode = 2
+text = "TREE TRUNK"
+image = ExtResource("12_6cmiy")
+number = 6
+
+[node name="ll_card_slot7" parent="specials_list/LLScrollContainer/VBoxContainer" instance=ExtResource("7_urk37")]
+layout_mode = 2
+text = "TREE TRUNK"
+image = ExtResource("12_6cmiy")
+number = 7
 
 [node name="HLScrollContainer" type="ScrollContainer" parent="specials_list"]
 visible = false
@@ -181,6 +217,7 @@ offset_bottom = 1212.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_5y12r")
+follow_focus = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="specials_list/HLScrollContainer"]
 layout_mode = 2
@@ -188,31 +225,31 @@ theme_override_constants/separation = 30
 
 [node name="hl_card_slot" parent="specials_list/HLScrollContainer/VBoxContainer" instance=ExtResource("7_urk37")]
 layout_mode = 2
-toggle_mode = true
 button_pressed = true
 type = 3
-image = ExtResource("10_fhs31")
+image = ExtResource("13_6l75u")
 number = 1
+active = true
 
 [node name="hl_card_slot2" parent="specials_list/HLScrollContainer/VBoxContainer" instance=ExtResource("7_urk37")]
 layout_mode = 2
-toggle_mode = true
-image = ExtResource("10_fhs31")
+image = ExtResource("12_6cmiy")
 number = 2
 
 [node name="hl_card_slot3" parent="specials_list/HLScrollContainer/VBoxContainer" instance=ExtResource("7_urk37")]
 layout_mode = 2
-toggle_mode = true
-type = 2
-image = ExtResource("10_fhs31")
+image = ExtResource("12_6cmiy")
 number = 3
 
 [node name="hl_card_slot4" parent="specials_list/HLScrollContainer/VBoxContainer" instance=ExtResource("7_urk37")]
 layout_mode = 2
-toggle_mode = true
-type = 1
-image = ExtResource("10_fhs31")
+image = ExtResource("12_6cmiy")
 number = 4
+
+[node name="hl_card_slot5" parent="specials_list/HLScrollContainer/VBoxContainer" instance=ExtResource("7_urk37")]
+layout_mode = 2
+image = ExtResource("12_6cmiy")
+number = 5
 
 [node name="Label" type="Label" parent="specials_list"]
 layout_mode = 1
@@ -252,15 +289,16 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -337.5
-offset_top = 200.0
-offset_right = 337.5
-offset_bottom = 322.0
+offset_left = -504.5
+offset_top = 192.5
+offset_right = 495.5
+offset_bottom = 314.5
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.647059, 0.521569, 0.196078, 1)
 theme_override_fonts/font = ExtResource("3_8c75t")
 theme_override_font_sizes/font_size = 90
 text = "WATER PORTAL"
+horizontal_alignment = 1
 
 [node name="icon" type="TextureRect" parent="special_preview"]
 texture_filter = 2
@@ -286,14 +324,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -124.5
-offset_top = -131.0
-offset_right = -62.5
-offset_bottom = -69.0
+offset_left = -87.0
+offset_top = -112.0
+offset_right = 87.0
+offset_bottom = 112.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(4, 4)
-texture = ExtResource("8_x7nkq")
+texture = ExtResource("16_mnbij")
 
 [node name="indicators" type="Control" parent="special_preview"]
 anchors_preset = 0
@@ -325,10 +362,10 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_qftr5")
 
 [node name="number_lable" type="RichTextLabel" parent="special_preview/indicators"]
 layout_mode = 0
-offset_left = 600.5
-offset_top = 1152.5
-offset_right = 670.5
-offset_bottom = 1194.5
+offset_left = 592.5
+offset_top = 1153.5
+offset_right = 692.5
+offset_bottom = 1213.5
 theme_override_fonts/normal_font = ExtResource("13_e6e3d")
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
@@ -397,9 +434,15 @@ texture = ExtResource("5_jwgft")
 [connection signal="pressed" from="specials_list/hl_button" to="." method="_on_hl_button_pressed"]
 [connection signal="card_select" from="specials_list/LLScrollContainer/VBoxContainer/ll_card_slot" to="." method="_on_button_special_card_select"]
 [connection signal="card_select" from="specials_list/LLScrollContainer/VBoxContainer/ll_card_slot2" to="." method="_on_button_special_card_select"]
+[connection signal="card_select" from="specials_list/LLScrollContainer/VBoxContainer/ll_card_slot3" to="." method="_on_button_special_card_select"]
+[connection signal="card_select" from="specials_list/LLScrollContainer/VBoxContainer/ll_card_slot4" to="." method="_on_button_special_card_select"]
+[connection signal="card_select" from="specials_list/LLScrollContainer/VBoxContainer/ll_card_slot5" to="." method="_on_button_special_card_select"]
+[connection signal="card_select" from="specials_list/LLScrollContainer/VBoxContainer/ll_card_slot6" to="." method="_on_button_special_card_select"]
+[connection signal="card_select" from="specials_list/LLScrollContainer/VBoxContainer/ll_card_slot7" to="." method="_on_button_special_card_select"]
 [connection signal="card_select" from="specials_list/HLScrollContainer/VBoxContainer/hl_card_slot" to="." method="_on_button_special_card_select"]
 [connection signal="card_select" from="specials_list/HLScrollContainer/VBoxContainer/hl_card_slot2" to="." method="_on_button_special_card_select"]
 [connection signal="card_select" from="specials_list/HLScrollContainer/VBoxContainer/hl_card_slot3" to="." method="_on_button_special_card_select"]
 [connection signal="card_select" from="specials_list/HLScrollContainer/VBoxContainer/hl_card_slot4" to="." method="_on_button_special_card_select"]
+[connection signal="card_select" from="specials_list/HLScrollContainer/VBoxContainer/hl_card_slot5" to="." method="_on_button_special_card_select"]
 [connection signal="pressed" from="special_preview/indicators/left_button" to="." method="_on_left_button_pressed"]
 [connection signal="pressed" from="special_preview/indicators/right_button" to="." method="_on_right_button_pressed"]
