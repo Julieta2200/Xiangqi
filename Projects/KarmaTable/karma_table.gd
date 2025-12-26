@@ -147,3 +147,10 @@ func _on_play_button_up() -> void:
 
 func _on_back_button_up() -> void:
 	$CanvasLayer/Back/arrow.add_theme_color_override("font_color", Color(0.98, 0.76, 0.21,1))
+
+
+func _on_toggle_button_pressed() -> void:
+	if $CanvasLayer/Special_cards_info.position != Vector2.ZERO:
+		$CanvasLayer/Special_cards_info/AnimationPlayer.play("special_card_info")
+	else:
+		$CanvasLayer/Special_cards_info/AnimationPlayer.play_backwards("special_card_info")

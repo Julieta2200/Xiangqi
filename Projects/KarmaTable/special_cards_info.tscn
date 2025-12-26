@@ -1,0 +1,405 @@
+[gd_scene load_steps=26 format=3 uid="uid://cmyj3au8xcmqv"]
+
+[ext_resource type="Script" path="res://Projects/KarmaTable/special_cards_info.gd" id="1_asonw"]
+[ext_resource type="Texture2D" uid="uid://clwwr38hgsjqe" path="res://Assets/UI/Ability info/Sliding Panel.png" id="1_f6fql"]
+[ext_resource type="Texture2D" uid="uid://c16iuwnqfb6di" path="res://Assets/UI/Ability info/Abilities List.png" id="2_pxi6q"]
+[ext_resource type="Shader" path="res://Projects/Shaders/blur_menu.gdshader" id="2_ub2gw"]
+[ext_resource type="Texture2D" uid="uid://d0ff5hproyvfh" path="res://Assets/UI/Ability info/Ability Preview.png" id="3_0xe26"]
+[ext_resource type="FontFile" uid="uid://c66ve5yi6m7nm" path="res://Assets/Fonts/Cinzel/Cinzel-Regular.ttf" id="3_8c75t"]
+[ext_resource type="Texture2D" uid="uid://c0ce0h6i323ti" path="res://Assets/UI/Ability info/Low_High abilities button(Hover).png" id="4_dv5dm"]
+[ext_resource type="Texture2D" uid="uid://doj5px18rbh3g" path="res://Assets/UI/Ability info/Info Section.png" id="4_qam08"]
+[ext_resource type="Texture2D" uid="uid://hnhhm0oglpf6" path="res://Assets/UI/Ability info/Decoration.png" id="5_jwgft"]
+[ext_resource type="Texture2D" uid="uid://b4m1lpwnsb10e" path="res://Assets/UI/Ability info/Scroll.png" id="6_ntotl"]
+[ext_resource type="Texture2D" uid="uid://bbplilcvefwty" path="res://Assets/UI/Ability info/Ability Icon(Low).png" id="6_sv2dr"]
+[ext_resource type="PackedScene" uid="uid://cia4gs6le7d63" path="res://Projects/KarmaTable/Special_cards_info/special_card_button.tscn" id="7_urk37"]
+[ext_resource type="Texture2D" uid="uid://cp22c0hc44ykv" path="res://Assets/UI/Icons/Low level/Water_Portal.png" id="8_x7nkq"]
+[ext_resource type="Texture2D" uid="uid://jv28e22tm7js" path="res://Assets/UI/Icons/Low level/Snake_Chain.png" id="9_soqyq"]
+[ext_resource type="Texture2D" uid="uid://dactyq34ylu2y" path="res://Assets/UI/Icons/High level/Fog2.png" id="10_fhs31"]
+[ext_resource type="FontFile" uid="uid://dm0qc34c6cd20" path="res://Assets/Fonts/NotoSans-ExtraLight.ttf" id="12_7ef5c"]
+[ext_resource type="Texture2D" uid="uid://c15qd05lb6sph" path="res://Assets/UI/Ability info/Indicator.png" id="12_ry8x5"]
+[ext_resource type="FontFile" uid="uid://dy702fuy23t3f" path="res://Assets/Fonts/Cinzel/Cinzel-Bold.ttf" id="13_e6e3d"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iq238"]
+shader = ExtResource("2_ub2gw")
+shader_parameter/blur_amount = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b7vo7"]
+texture = ExtResource("4_dv5dm")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dw3hg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oia8s"]
+bg_color = Color(0.0338533, 0.0338533, 0.0338532, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_irkep"]
+texture = ExtResource("6_ntotl")
+
+[sub_resource type="Theme" id="Theme_5y12r"]
+VScrollBar/styles/grabber = SubResource("StyleBoxTexture_irkep")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qftr5"]
+texture = ExtResource("12_ry8x5")
+
+[node name="Special_cards_info" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_asonw")
+
+[node name="BlurOverlay" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_iq238")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="TextureRect" parent="."]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1883.5
+offset_top = -1100.0
+offset_right = 1883.5
+offset_bottom = 1100.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_f6fql")
+
+[node name="specials_list" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 223.0
+offset_top = 379.5
+offset_right = 263.0
+offset_bottom = 419.5
+
+[node name="ll_button" type="Button" parent="specials_list"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 21.5
+offset_right = 520.0
+offset_bottom = 182.5
+theme_override_colors/font_disabled_color = Color(0.319873, 0.319873, 0.319873, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.647059, 0.521569, 0.196078, 1)
+theme_override_colors/font_hover_color = Color(0.647059, 0.521569, 0.196078, 1)
+theme_override_colors/font_pressed_color = Color(0.647059, 0.521569, 0.196078, 1)
+theme_override_colors/font_focus_color = Color(0.647059, 0.521569, 0.196078, 1)
+theme_override_fonts/font = ExtResource("3_8c75t")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxTexture_b7vo7")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_dw3hg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oia8s")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_b7vo7")
+theme_override_styles/normal = SubResource("StyleBoxFlat_oia8s")
+toggle_mode = true
+text = "LOW"
+
+[node name="hl_button" type="Button" parent="specials_list"]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 21.5
+offset_right = 1016.0
+offset_bottom = 182.5
+theme_override_colors/font_disabled_color = Color(0.319873, 0.319873, 0.319873, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.647059, 0.521569, 0.196078, 1)
+theme_override_colors/font_hover_color = Color(0.647059, 0.521569, 0.196078, 1)
+theme_override_colors/font_pressed_color = Color(0.647059, 0.521569, 0.196078, 1)
+theme_override_colors/font_focus_color = Color(0.647059, 0.521569, 0.196078, 1)
+theme_override_fonts/font = ExtResource("3_8c75t")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxTexture_b7vo7")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_dw3hg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oia8s")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_b7vo7")
+theme_override_styles/normal = SubResource("StyleBoxFlat_oia8s")
+toggle_mode = true
+text = "HIGH"
+
+[node name="panel" type="TextureRect" parent="specials_list"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 1038.0
+offset_bottom = 1421.0
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_pxi6q")
+
+[node name="LLScrollContainer" type="ScrollContainer" parent="specials_list"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 76.0
+offset_top = 352.5
+offset_right = 980.0
+offset_bottom = 1212.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_5y12r")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="specials_list/LLScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="ll_card_slot" parent="specials_list/LLScrollContainer/VBoxContainer" instance=ExtResource("7_urk37")]
+layout_mode = 2
+toggle_mode = true
+type = 2
+image = ExtResource("8_x7nkq")
+number = 1
+
+[node name="ll_card_slot2" parent="specials_list/LLScrollContainer/VBoxContainer" instance=ExtResource("7_urk37")]
+layout_mode = 2
+toggle_mode = true
+text = "SNAKE CHAIN"
+type = 1
+image = ExtResource("9_soqyq")
+number = 2
+
+[node name="HLScrollContainer" type="ScrollContainer" parent="specials_list"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 76.0
+offset_top = 352.5
+offset_right = 980.0
+offset_bottom = 1212.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_5y12r")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="specials_list/HLScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="hl_card_slot" parent="specials_list/HLScrollContainer/VBoxContainer" instance=ExtResource("7_urk37")]
+layout_mode = 2
+toggle_mode = true
+button_pressed = true
+type = 3
+image = ExtResource("10_fhs31")
+number = 1
+
+[node name="hl_card_slot2" parent="specials_list/HLScrollContainer/VBoxContainer" instance=ExtResource("7_urk37")]
+layout_mode = 2
+toggle_mode = true
+image = ExtResource("10_fhs31")
+number = 2
+
+[node name="hl_card_slot3" parent="specials_list/HLScrollContainer/VBoxContainer" instance=ExtResource("7_urk37")]
+layout_mode = 2
+toggle_mode = true
+type = 2
+image = ExtResource("10_fhs31")
+number = 3
+
+[node name="hl_card_slot4" parent="specials_list/HLScrollContainer/VBoxContainer" instance=ExtResource("7_urk37")]
+layout_mode = 2
+toggle_mode = true
+type = 1
+image = ExtResource("10_fhs31")
+number = 4
+
+[node name="Label" type="Label" parent="specials_list"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 19.0
+offset_top = 233.5
+offset_right = 979.0
+offset_bottom = 263.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_8c75t")
+theme_override_font_sizes/font_size = 50
+text = "ABILITIES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="special_preview" type="TextureRect" parent="."]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -628.0
+offset_top = -780.5
+offset_right = 628.0
+offset_bottom = 780.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_0xe26")
+
+[node name="name" type="Label" parent="special_preview"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -337.5
+offset_top = 200.0
+offset_right = 337.5
+offset_bottom = 322.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.647059, 0.521569, 0.196078, 1)
+theme_override_fonts/font = ExtResource("3_8c75t")
+theme_override_font_sizes/font_size = 90
+text = "WATER PORTAL"
+
+[node name="icon" type="TextureRect" parent="special_preview"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -331.0
+offset_top = -330.5
+offset_right = 331.0
+offset_bottom = 330.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_sv2dr")
+
+[node name="special_card" type="TextureRect" parent="special_preview/icon"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.5
+offset_top = -131.0
+offset_right = -62.5
+offset_bottom = -69.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4, 4)
+texture = ExtResource("8_x7nkq")
+
+[node name="indicators" type="Control" parent="special_preview"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="left_button" type="Button" parent="special_preview/indicators"]
+layout_mode = 0
+offset_left = 528.5
+offset_top = 1152.5
+offset_right = 568.5
+offset_bottom = 1192.5
+theme_override_styles/disabled = SubResource("StyleBoxTexture_qftr5")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qftr5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qftr5")
+theme_override_styles/normal = SubResource("StyleBoxTexture_qftr5")
+
+[node name="right_button" type="Button" parent="special_preview/indicators"]
+layout_mode = 0
+offset_left = 728.5
+offset_top = 1192.5
+offset_right = 768.5
+offset_bottom = 1232.5
+rotation = 3.14159
+theme_override_styles/disabled = SubResource("StyleBoxTexture_qftr5")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qftr5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qftr5")
+theme_override_styles/normal = SubResource("StyleBoxTexture_qftr5")
+
+[node name="number_lable" type="RichTextLabel" parent="special_preview/indicators"]
+layout_mode = 0
+offset_left = 600.5
+offset_top = 1152.5
+offset_right = 670.5
+offset_bottom = 1194.5
+theme_override_fonts/normal_font = ExtResource("13_e6e3d")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[color=#a58532]1[/color] / 12"
+
+[node name="info_section" type="TextureRect" parent="."]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -1261.0
+offset_top = -720.5
+offset_right = -223.0
+offset_bottom = 720.5
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("4_qam08")
+
+[node name="title" type="Label" parent="info_section"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 62.0
+offset_top = 48.0
+offset_right = -69.0
+offset_bottom = 162.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_8c75t")
+theme_override_font_sizes/font_size = 50
+text = "ABOUT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="text" type="RichTextLabel" parent="info_section"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 118.0
+offset_top = 239.0
+offset_right = -111.0
+offset_bottom = -125.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("12_7ef5c")
+theme_override_font_sizes/normal_font_size = 40
+text = "Low level (LL) special ability cards․ A new LL special ability is unlocked when you choose to set free a bonus level."
+
+[node name="decoration" type="TextureRect" parent="."]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -569.0
+offset_top = 100.0
+offset_right = 569.0
+offset_bottom = 260.0
+grow_horizontal = 2
+texture = ExtResource("5_jwgft")
+
+[connection signal="pressed" from="specials_list/ll_button" to="." method="_on_ll_button_pressed"]
+[connection signal="pressed" from="specials_list/hl_button" to="." method="_on_hl_button_pressed"]
+[connection signal="card_select" from="specials_list/LLScrollContainer/VBoxContainer/ll_card_slot" to="." method="_on_button_special_card_select"]
+[connection signal="card_select" from="specials_list/LLScrollContainer/VBoxContainer/ll_card_slot2" to="." method="_on_button_special_card_select"]
+[connection signal="card_select" from="specials_list/HLScrollContainer/VBoxContainer/hl_card_slot" to="." method="_on_button_special_card_select"]
+[connection signal="card_select" from="specials_list/HLScrollContainer/VBoxContainer/hl_card_slot2" to="." method="_on_button_special_card_select"]
+[connection signal="card_select" from="specials_list/HLScrollContainer/VBoxContainer/hl_card_slot3" to="." method="_on_button_special_card_select"]
+[connection signal="card_select" from="specials_list/HLScrollContainer/VBoxContainer/hl_card_slot4" to="." method="_on_button_special_card_select"]
+[connection signal="pressed" from="special_preview/indicators/left_button" to="." method="_on_left_button_pressed"]
+[connection signal="pressed" from="special_preview/indicators/right_button" to="." method="_on_right_button_pressed"]

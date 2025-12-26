@@ -1,0 +1,49 @@
+[gd_scene load_steps=11 format=3 uid="uid://cia4gs6le7d63"]
+
+[ext_resource type="FontFile" uid="uid://c66ve5yi6m7nm" path="res://Assets/Fonts/Cinzel/Cinzel-Regular.ttf" id="1_f6med"]
+[ext_resource type="Texture2D" uid="uid://buynxx367o5xo" path="res://Assets/UI/Ability info/Ability Slo(active).png" id="2_jayqh"]
+[ext_resource type="Texture2D" uid="uid://daim0trjt4x2k" path="res://Assets/UI/Ability info/Ability Slot.png" id="3_3trq8"]
+[ext_resource type="Script" path="res://Projects/KarmaTable/Special_cards_info/special_card_button.gd" id="4_l0d23"]
+[ext_resource type="Texture2D" uid="uid://cp22c0hc44ykv" path="res://Assets/UI/Icons/Low level/Water_Portal.png" id="4_ydk53"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3blxj"]
+texture = ExtResource("2_jayqh")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dw3hg"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0b2g2"]
+texture = ExtResource("3_3trq8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k7nea"]
+texture = ExtResource("2_jayqh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i2ud5"]
+texture = ExtResource("3_3trq8")
+
+[node name="special_card_button" type="Button"]
+custom_minimum_size = Vector2(882, 173)
+theme_override_colors/font_disabled_color = Color(0.647059, 0.521569, 0.196078, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.647059, 0.521569, 0.196078, 1)
+theme_override_colors/font_hover_color = Color(0.647059, 0.521569, 0.196078, 1)
+theme_override_colors/font_pressed_color = Color(0.647059, 0.521569, 0.196078, 1)
+theme_override_colors/font_focus_color = Color(0.647059, 0.521569, 0.196078, 1)
+theme_override_fonts/font = ExtResource("1_f6med")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxTexture_3blxj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_dw3hg")
+theme_override_styles/hover = SubResource("StyleBoxTexture_0b2g2")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_k7nea")
+theme_override_styles/normal = SubResource("StyleBoxTexture_i2ud5")
+text = "WATER PORTAL"
+script = ExtResource("4_l0d23")
+
+[node name="icon" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 18.0
+offset_right = 100.0
+offset_bottom = 85.0
+scale = Vector2(2, 2)
+texture = ExtResource("4_ydk53")
+
+[connection signal="pressed" from="." to="." method="_on_special_card_pressed"]
