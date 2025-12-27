@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ti6boty6unhe"]
+[gd_scene load_steps=14 format=3 uid="uid://ti6boty6unhe"]
 
 [ext_resource type="Texture2D" uid="uid://ccvn2m5c20rn" path="res://Assets/MainMenu/ui/Gradient.png" id="1_3hgpq"]
 [ext_resource type="Script" path="res://Projects/Ui/PauseMenu/pause_menu.gd" id="1_tw5fo"]
@@ -9,10 +9,19 @@
 [ext_resource type="FontFile" uid="uid://c66ve5yi6m7nm" path="res://Assets/Fonts/Cinzel/Cinzel-Regular.ttf" id="7_job34"]
 [ext_resource type="FontFile" uid="uid://dy702fuy23t3f" path="res://Assets/Fonts/Cinzel/Cinzel-Bold.ttf" id="8_urht4"]
 [ext_resource type="AudioStream" uid="uid://cim4djoag3s8t" path="res://Assets/Music/Main Menu Music Loop-B1-JUST MUSIC.wav" id="9_6pm0l"]
+[ext_resource type="PackedScene" uid="uid://dtqik42d1b4fu" path="res://Projects/Ui/OptionsMenu/options_menu.tscn" id="10_5gsmx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ohkaf"]
 shader = ExtResource("3_8t2lk")
 shader_parameter/blur_amount = 2.0
+
+[sub_resource type="Animation" id="Animation_v7vtt"]
+resource_name = "options"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mvvsq"]
+_data = {
+"options": SubResource("Animation_v7vtt")
+}
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
@@ -42,6 +51,7 @@ grow_vertical = 2
 texture = ExtResource("1_3hgpq")
 
 [node name="Navigation" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -156,8 +166,25 @@ text = "PAUSE"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_6pm0l")
+bus = &"Music"
+
+[node name="OptionsMenu" parent="." instance=ExtResource("10_5gsmx")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+offset_left = 232.0
+offset_top = 685.0
+offset_right = 232.0
+offset_bottom = 685.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_mvvsq")
+}
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="Navigation/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Navigation/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Navigation/Back to Overworld" to="." method="_on_back_to_overworld_pressed"]
 [connection signal="pressed" from="Navigation/Back to Menu" to="." method="_on_back_to_menu_pressed"]

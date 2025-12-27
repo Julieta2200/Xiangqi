@@ -7,8 +7,11 @@ extends Control
 @onready var options_button: Button = $Navigation/Options
 @onready var esc_label: Label = $Bottom/Line/EscButton/Esc
 @onready var resume_label: Label = $Bottom/Line/EscButton/Resume
+@onready var options_menu: Control = %OptionsMenu
+@onready var navigation: VBoxContainer = %Navigation
 
-
+enum States {None, Options}
+var state: States
 
 func _ready() -> void:
 	# Set translated text for all menu buttons
@@ -46,3 +49,16 @@ func _on_back_to_overworld_pressed() -> void:
 
 func _on_back_to_menu_pressed() -> void:
 	SceneManager.change_scene(SceneManager.Scenes.MainMenu)
+
+
+func _on_options_pressed() -> void:
+	navigation.hide()
+	options_menu.show()
+	state = States.Options
+	resume_label.text = tr("BACK")
+
+func options_back() -> void:
+	navigation.show()
+	options_menu.hide()
+	state = States.None
+	resume_label.text = tr("RESUME")
