@@ -2,6 +2,7 @@ extends Node
 
 const VERSION: int = 1
 const SAVE_FILE_NAME: String = "savegame.save"
+const CONFIG_FILE_NAME: String = "config.save"
 
 var state: Dictionary = {}
 
@@ -54,6 +55,13 @@ const new_state: Dictionary = {
 	"first_overworld_wasd_hint": true,
 }
 
+var config: Dictionary = {}
+
+const new_config: Dictionary = {
+	"music_volume": -0.030508,
+	"sfx_volume": -7.63072,
+}
+
 var current_level_info: Dictionary = {
 	"scene": null,
 	"name": "",
@@ -63,6 +71,7 @@ var current_level_info: Dictionary = {
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	load_game()
+	load_config()
 
 func new_game() -> void:
 	state = new_state.duplicate(true)
@@ -138,3 +147,36 @@ func get_level_state(level_name: String) -> LevelMarker.LevelState:
 	if not state["levels"].has(level_name):
 		return LevelMarker.LevelState.Closed
 	return state["levels"][level_name]["state"]
+
+func load_config() -> void:
+	if not FileAccess.file_exists("user://" + CONFIG_FILE_NAME):
+		config = new_config.duplicate(true)
+		return
+	var config_file = FileAccess.open("user://" + CONFIG_FILE_NAME, FileAccess.READ)
+	var json_string = config_file.get_line()
+	var json = JSON.new()
+	var parse_result = json.parse(json_string)
+	if not parse_result == OK:
+		print("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
+		return
+	var c = json.data
+	var music_bus_index = AudioServer.get_bus_index("Music")
+	var sfx_bus_index = AudioServer.get_bus_index("SFX")
+	if c.has("music_volume"):
+		if c["music_volume"] == -30.0:
+			AudioServer.set_bus_mute(music_bus_index, true)
+		else:
+			AudioServer.set_bus_mute(music_bus_index, false)
+		AudioServer.set_bus_volume_db(music_bus_index, c["music_volume"])
+	if c.has("sfx_volume"):
+		if c["sfx_volume"] == -30.0:
+			AudioServer.set_bus_mute(sfx_bus_index, true)
+		else:
+			AudioServer.set_bus_mute(sfx_bus_index, false)
+		AudioServer.set_bus_volume_db(sfx_bus_index, c["sfx_volume"])
+	config = c
+
+func save_config() -> void:
+	var config_file = FileAccess.open("user://" + CONFIG_FILE_NAME, FileAccess.WRITE)
+	var json_string = JSON.stringify(config)
+	config_file.store_line(json_string)
