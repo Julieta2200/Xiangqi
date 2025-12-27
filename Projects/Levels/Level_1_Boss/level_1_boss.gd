@@ -34,9 +34,9 @@ func _ready() -> void:
 	board.initialize_position(state)
 	_disable_play()
 	DialogSystem.start_dialog([
-		DialogSystem.DialogText.new("LEVEL_1_BOSS_DIALOG_1", DialogSystem.CHARACTERS.Advisor),
-		DialogSystem.DialogText.new("LEVEL_1_BOSS_DIALOG_2", DialogSystem.CHARACTERS.Mara),
-		DialogSystem.DialogText.new("LEVEL_1_BOSS_DIALOG_3", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("LEVEL_1_BOSS_ASHES_1", DialogSystem.CHARACTERS.Ashes),
+		DialogSystem.DialogText.new("LEVEL_1_BOSS_MARA_1", DialogSystem.CHARACTERS.Mara),
+		DialogSystem.DialogText.new("LEVEL_1_BOSS_ASHES_2", DialogSystem.CHARACTERS.Ashes),
 	], true)
 	DialogSystem.connect("dialog_finished", float_mara)
 
@@ -46,10 +46,11 @@ func float_mara() -> void:
 	mara_character.play("floating")
 
 func float_mara_end() -> void:
-	DialogSystem.start_dialog([
-		DialogSystem.DialogText.new("LEVEL_1_BOSS_DIALOG_4", DialogSystem.CHARACTERS.Advisor),
-	], true)
-	DialogSystem.connect("dialog_finished", start_wave_1)
+	start_wave_1()
+	# DialogSystem.start_dialog([
+	# 	DialogSystem.DialogText.new("LEVEL_1_BOSS_DIALOG_4", DialogSystem.CHARACTERS.Advisor),
+	# ], true)
+	# DialogSystem.connect("dialog_finished", start_wave_1)
 
 func unfloat_mara() -> void:
 	DialogSystem.disconnect("dialog_finished", unfloat_mara)
@@ -57,14 +58,43 @@ func unfloat_mara() -> void:
 	mara_character.play("default")
 
 func unfloat_mara_end() -> void:
-	DialogSystem.start_dialog([
-		DialogSystem.DialogText.new("LEVEL_1_BOSS_DIALOG_6", DialogSystem.CHARACTERS.Advisor),
-	], true)
-	DialogSystem.connect("dialog_finished", dissolve_mara)
+	dissolve_mara()
+	# DialogSystem.start_dialog([
+	# 	DialogSystem.DialogText.new("LEVEL_1_BOSS_DIALOG_6", DialogSystem.CHARACTERS.Advisor),
+	# ], true)
+	# DialogSystem.connect("dialog_finished", dissolve_mara)
 
 func dissolve_mara() -> void:
 	DialogSystem.disconnect("dialog_finished", dissolve_mara)
 	mara_animation.play("dissolve")
+
+func _on_game_over(win: BoardV2.GameOverResults, move_number: int):
+	await get_tree().process_frame
+	if win == BoardV2.GameOverResults.Win:
+		gameplay_ui.objectives.complete_objectives(true)
+		update_best_move_number(move_number)
+		GameState.set_level_state(level_name, LevelMarker.LevelState.Captured)
+		load_main_scene()
+	else:
+		gameplay_ui.objectives.complete_objectives(false)
+		var lose_dialog_key: String = ""
+		match wave_number:
+			1:
+				lose_dialog_key = "LEVEL_1_BOSS_WAVE_1_LOSE"
+			2:
+				lose_dialog_key = "LEVEL_1_BOSS_WAVE_2_LOSE"
+			_:
+				lose_dialog_key = "LEVEL_1_BOSS_WAVE_3_LOSE"
+		
+		DialogSystem.start_dialog([
+			DialogSystem.DialogText.new(lose_dialog_key, DialogSystem.CHARACTERS.Mara),
+		], true)
+		DialogSystem.connect("dialog_finished", _lose_dialog_finished)
+
+func _lose_dialog_finished() -> void:
+	if DialogSystem.is_connected("dialog_finished", _lose_dialog_finished):
+		DialogSystem.disconnect("dialog_finished", _lose_dialog_finished)
+	show_game_over_ui()
 
 func start_wave_1() -> void:
 	DialogSystem.disconnect("dialog_finished", start_wave_1)
@@ -171,7 +201,7 @@ func check_game_over() -> bool:
 				wave_number += 1
 				_disable_play()
 				DialogSystem.start_dialog([
-					DialogSystem.DialogText.new("LEVEL_1_BOSS_DIALOG_4", DialogSystem.CHARACTERS.Advisor),
+					DialogSystem.DialogText.new("LEVEL_1_BOSS_WAVE_1_WIN", DialogSystem.CHARACTERS.Mara),
 				], true)
 				DialogSystem.connect("dialog_finished", start_wave_2)
 			2:
@@ -179,13 +209,15 @@ func check_game_over() -> bool:
 				wave_number += 1
 				_disable_play()
 				DialogSystem.start_dialog([
-					DialogSystem.DialogText.new("LEVEL_1_BOSS_DIALOG_5", DialogSystem.CHARACTERS.Advisor),
+					DialogSystem.DialogText.new("LEVEL_1_BOSS_WAVE_2_WIN", DialogSystem.CHARACTERS.Mara),
 				], true)
 				DialogSystem.connect("dialog_finished", start_wave_3)
 			_:
 				_disable_play()
 				DialogSystem.start_dialog([
-					DialogSystem.DialogText.new("LEVEL_1_BOSS_DIALOG_6", DialogSystem.CHARACTERS.Advisor),
+					DialogSystem.DialogText.new("LEVEL_1_BOSS_WAVE_3_WIN_ASHES", DialogSystem.CHARACTERS.Ashes),
+					DialogSystem.DialogText.new("LEVEL_1_BOSS_WAVE_3_WIN_MARA", DialogSystem.CHARACTERS.Mara),
+					DialogSystem.DialogText.new("LEVEL_1_BOSS_WAVE_3_WIN_ASHES_2", DialogSystem.CHARACTERS.Ashes),
 				], true)
 				DialogSystem.connect("dialog_finished", unfloat_mara)
 	return false

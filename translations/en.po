@@ -122,7 +122,7 @@ msgid "KARMA_TABLE_LEVEL_3_BONUS_DIALOG_2"
 msgstr "Just shut up."
 
 msgid "LEVEL_1_TITLE"
-msgstr "Khosrov Forest - Part 1"
+msgstr "Khosrov Forest - Battle 1"
 
 msgid "LEVEL_1_STORY"
 msgstr "Ashes and his Mogs must pass through the dark forest of Khosrov which is under the control of the Fog Army."
@@ -146,7 +146,7 @@ msgid "LEVEL_1_BONUS_OBJECTIVE_2"
 msgstr "Don't make more than 7 moves"
 
 msgid "LEVEL_2_TITLE"
-msgstr "Khosrov Forest - Part 2"
+msgstr "Khosrov Forest - Battle 2"
 
 msgid "LEVEL_2_STORY"
 msgstr "Ashes and his Mogs meet Mara again. Mara is determined to stop them at any cost."
@@ -170,7 +170,7 @@ msgid "LEVEL_2_BONUS_OBJECTIVE_2"
 msgstr "Don't make more than 7 moves"
 
 msgid "LEVEL_3_TITLE"
-msgstr "Khosrov Forest - Part 3"
+msgstr "Khosrov Forest - Battle 3"
 
 msgid "LEVEL_3_STORY"
 msgstr "Mara has no escape. She makes a final stand with her what's left of her army.."
@@ -179,7 +179,7 @@ msgid "LEVEL_3_OBJECTIVE_1"
 msgstr "Defeat Mara."
 
 msgid "LEVEL_3_BONUS_TITLE"
-msgstr "Khosrov Forest - Lake World"
+msgstr "Khosrov Forest - Vayri World"
 
 msgid "LEVEL_3_BONUS_STORY"
 msgstr "The creatures of the Lake World were naturally peaceful; however, the Fog Army took advantage of this tranquility to enslave them."
@@ -207,6 +207,12 @@ msgstr "Jakat"
 
 msgid "CHARACTER_AROS"
 msgstr "Aros"
+
+msgid "CHARACTER_ISH_KHAN"
+msgstr "Ish Khan"
+
+msgid "CHARACTER_LOUSAN"
+msgstr "Lousan"
 
 msgid "GAME_OVER_TEXT_1"
 msgstr "Your Will has shattered."
@@ -376,6 +382,39 @@ msgstr "There is no luck. Only karma, and it stands against you now."
 msgid "LEVEL_1_DEFEAT_DIALOG"
 msgstr "That was easy. They praised you for nothing."
 
+msgid "LEVEL_1_BOSS_ASHES_1"
+msgstr "This is your last fight, Mara."
+
+msgid "LEVEL_1_BOSS_MARA_1"
+msgstr "You mistook my patience for weakness. Now you will see my true power."
+
+msgid "LEVEL_1_BOSS_ASHES_2"
+msgstr "Enough. Begin."
+
+msgid "LEVEL_1_BOSS_WAVE_1_WIN"
+msgstr "The fight has only begun. I was just warming up.."
+
+msgid "LEVEL_1_BOSS_WAVE_1_LOSE"
+msgstr "This should have been done sooner."
+
+msgid "LEVEL_1_BOSS_WAVE_2_WIN"
+msgstr "Kill Ashes-no matter the cost."
+
+msgid "LEVEL_1_BOSS_WAVE_2_LOSE"
+msgstr "At last."
+
+msgid "LEVEL_1_BOSS_WAVE_3_WIN_ASHES"
+msgstr "For my father's death, mercy is no longer possible."
+
+msgid "LEVEL_1_BOSS_WAVE_3_WIN_MARA"
+msgstr "Boran commanded it. I obeyed… and survived."
+
+msgid "LEVEL_1_BOSS_WAVE_3_WIN_ASHES_2"
+msgstr "Justice will find him, as well"
+
+msgid "LEVEL_1_BOSS_WAVE_3_LOSE"
+msgstr "For a moment, you thought yourself invincible, didn't you?"
+
 msgid "LEVEL_2_DIALOG_1"
 msgstr "We've found Mara."
 
@@ -449,19 +488,100 @@ msgid "BONUS_LEVEL_ATTACK_DIALOG_5"
 msgstr "So be it."
 
 msgid "BONUS_LEVEL_RAN_OUT_OF_XINVORS"
-msgstr "Ashes… they're all gone. Every zinvor is dead."
+msgstr "Ashes… they're all gone. Every Xinvor is dead."
 
 msgid "BONUS_LEVEL_RAN_OUT_OF_TIME"
 msgstr "I did warn thee not to stray from the path."
 
-msgid "BONUS_LEVEL_VICTORY_SET_FREE"
-msgstr "Long live Lord Ashes."
+msgid "BONUS_LEVEL_2_RAN_OUT_OF_TIME"
+msgstr "I did warn thee not to stray from the path."
 
-msgid "BONUS_LEVEL_VICTORY_CLAIM_1"
+msgid "BONUS_LEVEL_DECISION_DIALOG_1"
+msgstr "And what dost thou intend to do?"
+
+msgid "BONUS_LEVEL_DECISION_DIALOG_2"
+msgstr "The Kingdom of Saghart is free."
+
+msgid "BONUS_LEVEL_DECISION_DIALOG_3"
+msgstr "The Lord of Saghart is my vassal."
+
+msgid "BONUS_LEVEL_DECISION_SET_FREE_AROS"
+msgstr "Long live Lord Ashes. The forces of Saghart are at your command."
+
+msgid "BONUS_LEVEL_DECISION_SET_FREE_JAKAT"
+msgstr "Thou couldst have claimed more."
+
+msgid "BONUS_LEVEL_DECISION_CLAIM_AROS"
 msgstr "Power has already begun to rot you. Be cursed, Ashes."
 
-msgid "BONUS_LEVEL_VICTORY_CLAIM_2"
+msgid "BONUS_LEVEL_DECISION_CLAIM_JAKAT"
 msgstr "Ashes, thou dost amaze me."
+
+msgid "BONUS_LEVEL_2_BEFORE_MOG"
+msgstr "They refuse to negotiate."
+
+msgid "BONUS_LEVEL_2_BEFORE_ASHES"
+msgstr "Attack."
+
+msgid "BONUS_LEVEL_2_DECISION_JAKAT"
+msgstr "What course dost thou now choose?"
+
+msgid "BONUS_LEVEL_2_DECISION_SET_FREE"
+msgstr "The Kingdom of Lij shall stand free."
+
+msgid "BONUS_LEVEL_2_DECISION_CLAIM"
+msgstr "Ish Khan shall serve as my vassal."
+
+msgid "BONUS_LEVEL_2_WIN_SET_FREE"
+msgstr "They did not even offer thanks."
+
+msgid "BONUS_LEVEL_2_WIN_CLAIM"
+msgstr "There is more fire within thee than I have ever beheld."
+
+msgid "BONUS_LEVEL_2_LOSE"
+msgstr "I warned thee not to stray from the path."
+
+msgid "BONUS_LEVEL_3_JAKAT_1"
+msgstr "Time works against us. Stray not from thy plan."
+
+msgid "BONUS_LEVEL_3_ASHES_1"
+msgstr "Just shut up."
+
+msgid "BONUS_LEVEL_3_LOUSAN_1"
+msgstr "Ashes, you have no enemies here."
+
+msgid "BONUS_LEVEL_3_ASHES_2"
+msgstr "Then lay down your weapons."
+
+msgid "BONUS_LEVEL_3_LOUSAN_2"
+msgstr "Your quarrel is with Mara. Vayri has no part in it."
+
+msgid "BONUS_LEVEL_3_ASHES_3"
+msgstr "Where I stand, neutrality dies."
+
+msgid "BONUS_LEVEL_3_DECISION_JAKAT"
+msgstr "What course dost thou now choose?"
+
+msgid "BONUS_LEVEL_3_DECISION_SET_FREE"
+msgstr "Lousan stands with me as an ally. Vayri is free now."
+
+msgid "BONUS_LEVEL_3_DECISION_CLAIM"
+msgstr "Lousan shall answer for his betrayal."
+
+msgid "BONUS_LEVEL_3_WIN_SET_FREE_LOUSAN"
+msgstr "Long live Lord Ashes."
+
+msgid "BONUS_LEVEL_3_WIN_SET_FREE_ASHES"
+msgstr "Mara's tyranny must be brought to an end."
+
+msgid "BONUS_LEVEL_3_WIN_SET_FREE_LOUSAN_2"
+msgstr "Mara's hand carried the poison that killed your father."
+
+msgid "BONUS_LEVEL_3_WIN_CLAIM"
+msgstr "With each victory, I grow ever more certain that allying with thee was the right choice."
+
+msgid "BONUS_LEVEL_3_LOSE"
+msgstr "My powers must not be wielded so carelessly."
 
 msgid "ESC"
 msgstr "ESC"
