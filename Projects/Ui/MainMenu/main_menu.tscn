@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://hppsu1linnjb"]
+[gd_scene load_steps=43 format=3 uid="uid://hppsu1linnjb"]
 
 [ext_resource type="Texture2D" uid="uid://cthr7aiydkawg" path="res://Assets/MainMenu/MenuBackground.png" id="1_cp2q7"]
 [ext_resource type="Script" path="res://Projects/Ui/MainMenu/main_menu.gd" id="1_pdi1h"]
@@ -20,6 +20,7 @@
 [ext_resource type="FontFile" uid="uid://dy702fuy23t3f" path="res://Assets/Fonts/Cinzel/Cinzel-Bold.ttf" id="18_67d17"]
 [ext_resource type="AudioStream" uid="uid://duw0xpg3frf48" path="res://Assets/Music/Main Menu Music Loop-B1-MUSIC & SFX MIXED.wav" id="18_c7tyu"]
 [ext_resource type="Material" path="res://Projects/Shaders/preface.tres" id="19_5pmil"]
+[ext_resource type="PackedScene" uid="uid://dtqik42d1b4fu" path="res://Projects/Ui/OptionsMenu/options_menu.tscn" id="20_0pofw"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_pcs1b"]
 noise_type = 3
@@ -183,6 +184,30 @@ tracks/6/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../OptionsMenu:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../OptionsMenu:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_y2a3i"]
 resource_name = "appear"
@@ -288,18 +313,6 @@ tracks/3/keys = {
 "values": ["EXIT
 ", "BACK"]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../Logo:modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_1rppp"]
 resource_name = "disappear"
@@ -343,13 +356,67 @@ tracks/2/keys = {
 [sub_resource type="Animation" id="Animation_er6oh"]
 resource_name = "menu"
 
+[sub_resource type="Animation" id="Animation_w86o8"]
+resource_name = "options"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Navigation:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Bottom/Line/EscButton/Exit:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["EXIT
+", "BACK"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../OptionsMenu:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../OptionsMenu:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.03333, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ixubb"]
 _data = {
 "RESET": SubResource("Animation_2wxno"),
 "appear": SubResource("Animation_y2a3i"),
 "credits": SubResource("Animation_uwbv5"),
 "disappear": SubResource("Animation_1rppp"),
-"menu": SubResource("Animation_er6oh")
+"menu": SubResource("Animation_er6oh"),
+"options": SubResource("Animation_w86o8")
 }
 
 [sub_resource type="Animation" id="Animation_cjcs2"]
@@ -1030,6 +1097,14 @@ Boran orders that Ashes be found and brought to him, dead or alive. One of Lord 
 Boran conquers the five kingdoms but does not unite them. If he did, the God of Karma-Jakat-would return. Therefore, in each kingdom, he installs his loyal lord.
 Ashes grows up in Limbo, filled with the idea of revenge. When the time comes, he leaves Limbo and heads to the dwelling of Jakat, the God of Karma"
 
+[node name="OptionsMenu" parent="CanvasLayer" instance=ExtResource("20_0pofw")]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = 270.0
+offset_top = 730.0
+offset_right = 270.0
+offset_bottom = 730.0
+
 [node name="MainAnimation" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
 libraries = {
@@ -1039,7 +1114,9 @@ libraries = {
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_c7tyu")
 autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="CanvasLayer/Navigation/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="CanvasLayer/Navigation/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="CanvasLayer/Navigation/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="CanvasLayer/Navigation/Credits" to="." method="_on_credits_pressed"]
