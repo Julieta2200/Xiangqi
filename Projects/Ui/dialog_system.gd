@@ -5,7 +5,9 @@ enum CHARACTERS {
 	Mara,
 	Advisor,
 	Jakat,
-	Aros
+	Aros,
+	IshKhan,
+	Lousan
 }
 
 const character_names = {
@@ -13,7 +15,9 @@ const character_names = {
 	CHARACTERS.Mara: "CHARACTER_MARA",
 	CHARACTERS.Advisor: "CHARACTER_MOG",
 	CHARACTERS.Jakat: "CHARACTER_JAKAT",
-	CHARACTERS.Aros: "CHARACTER_AROS"
+	CHARACTERS.Aros: "CHARACTER_AROS",
+	CHARACTERS.IshKhan: "CHARACTER_ISH_KHAN",
+	CHARACTERS.Lousan: "CHARACTER_LOUSAN"
 }
 
 const game_over_dialog_texts: Array[String] = [
@@ -29,7 +33,9 @@ const game_over_dialog_texts: Array[String] = [
 	CHARACTERS.Mara: preload("res://Assets/UI/Dialog panel/Characters/Mara.png"),
 	CHARACTERS.Advisor: preload("res://Assets/UI/Dialog panel/Characters/Advisor.png"),
 	CHARACTERS.Jakat: null,
-	CHARACTERS.Aros: null
+	CHARACTERS.Aros: null,
+	CHARACTERS.IshKhan: null,
+	CHARACTERS.Lousan: null
 }
 
 @onready var option_scene: PackedScene = preload("res://Projects/Ui/option.tscn")

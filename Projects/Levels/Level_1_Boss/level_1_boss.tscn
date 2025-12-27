@@ -297,7 +297,10 @@ animations = [{
 
 [node name="Level_1_Boss" type="Node2D"]
 script = ExtResource("1_5uc6n")
+has_decision = null
+card = null
 level_name = "1_boss"
+garrison_limitations = null
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -2

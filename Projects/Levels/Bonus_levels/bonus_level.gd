@@ -57,14 +57,14 @@ func attack_dialog() -> void:
 			DialogSystem.DialogText.new("BONUS_LEVEL_ATTACK_DIALOG_4", DialogSystem.CHARACTERS.Aros),
 			DialogSystem.DialogText.new("BONUS_LEVEL_ATTACK_DIALOG_5", DialogSystem.CHARACTERS.Ashes)], true)
 		return
-	
-	# this is the dialog when level is played again after being captured or freed
-	# DialogSystem.start_dialog([
-	# 	DialogSystem.DialogText.new("BONUS_LEVEL_ATTACK_DIALOG_6", DialogSystem.CHARACTERS.Ashes),
-	# 	DialogSystem.DialogText.new("BONUS_LEVEL_ATTACK_DIALOG_7", DialogSystem.CHARACTERS.Aros),
-	# 	DialogSystem.DialogText.new("BONUS_LEVEL_ATTACK_DIALOG_8", DialogSystem.CHARACTERS.Ashes),
-	# 	DialogSystem.DialogText.new("BONUS_LEVEL_ATTACK_DIALOG_9", DialogSystem.CHARACTERS.Aros),
-	# 	DialogSystem.DialogText.new("BONUS_LEVEL_ATTACK_DIALOG_10", DialogSystem.CHARACTERS.Ashes)], true)
+
+	if GameState.get_level_state(level_name) == LevelMarker.LevelState.Free:
+		DialogSystem.start_dialog([
+			DialogSystem.DialogText.new("BONUS_LEVEL_DAVADIT_1", DialogSystem.CHARACTERS.Ashes)], true)
+	else:
+		DialogSystem.start_dialog([
+			DialogSystem.DialogText.new("BONUS_LEVEL_DAVADIT_2", DialogSystem.CHARACTERS.Aros)], true)
+
 
 func run_hint_system() -> void:
 	if _hint_index >= hints.size():
@@ -107,6 +107,8 @@ func _flying_general_hint_shown() -> void:
 		for general in generals:
 			general.shader_component.hint_unhighlight()
 
+var _decision_option: Dictionary = {}
+
 func load_decision_dialog() -> void:
 	if GameState.get_level_state(level_name) == LevelMarker.LevelState.Captured:
 		load_main_scene() # this is the case when level is already captured and we beat it again
@@ -117,14 +119,43 @@ func load_decision_dialog() -> void:
 		DialogSystem.DialogText.new("", DialogSystem.CHARACTERS.Ashes, [
 			{"text": "BONUS_LEVEL_DECISION_DIALOG_2"}, {"text": "BONUS_LEVEL_DECISION_DIALOG_3"}])
 	], true)
-	DialogSystem.connect("decision_made", _decision_dialog_finished)
+	DialogSystem.connect("decision_made", _on_decision_made)
+	DialogSystem.connect("dialog_finished", _on_decision_dialog_finished)
 
-func _decision_dialog_finished(option: Dictionary) -> void:
-	if DialogSystem.is_connected("decision_made", _decision_dialog_finished):
-		DialogSystem.disconnect("decision_made", _decision_dialog_finished)
-	if option["text"] == "BONUS_LEVEL_DECISION_DIALOG_2":
-		GameState.set_level_state(level_name, LevelMarker.LevelState.Captured)
-	else:
+func _on_decision_made(option: Dictionary) -> void:
+	_decision_option = option
+
+func _on_decision_dialog_finished() -> void:
+	if DialogSystem.is_connected("decision_made", _on_decision_made):
+		DialogSystem.disconnect("decision_made", _on_decision_made)
+	if DialogSystem.is_connected("dialog_finished", _on_decision_dialog_finished):
+		DialogSystem.disconnect("dialog_finished", _on_decision_dialog_finished)
+	
+	if _decision_option.is_empty():
+		return
+	
+	var follow_up_dialogs: Array[DialogSystem.DialogText] = []
+	
+	if _decision_option["text"] == "BONUS_LEVEL_DECISION_DIALOG_2":
+		# Set free option
 		GameState.set_level_state(level_name, LevelMarker.LevelState.Free)
-	# add above dialogs for capturing and freeing the level and then load main scene
+		follow_up_dialogs = [
+			DialogSystem.DialogText.new("BONUS_LEVEL_DECISION_SET_FREE_AROS", DialogSystem.CHARACTERS.Aros),
+			DialogSystem.DialogText.new("BONUS_LEVEL_DECISION_SET_FREE_JAKAT", DialogSystem.CHARACTERS.Jakat)
+		]
+	else:
+		# Claim option
+		GameState.set_level_state(level_name, LevelMarker.LevelState.Captured)
+		follow_up_dialogs = [
+			DialogSystem.DialogText.new("BONUS_LEVEL_DECISION_CLAIM_AROS", DialogSystem.CHARACTERS.Aros),
+			DialogSystem.DialogText.new("BONUS_LEVEL_DECISION_CLAIM_JAKAT", DialogSystem.CHARACTERS.Jakat)
+		]
+	
+	_decision_option = {}
+	DialogSystem.start_dialog(follow_up_dialogs, true)
+	DialogSystem.connect("dialog_finished", _follow_up_dialog_finished)
+
+func _follow_up_dialog_finished() -> void:
+	if DialogSystem.is_connected("dialog_finished", _follow_up_dialog_finished):
+		DialogSystem.disconnect("dialog_finished", _follow_up_dialog_finished)
 	load_main_scene()
