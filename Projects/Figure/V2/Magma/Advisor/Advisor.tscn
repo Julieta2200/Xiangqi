@@ -167,7 +167,7 @@
 [ext_resource type="Texture2D" uid="uid://c6hdqaqjkynkn" path="res://Assets/Characters/Magma/Advisor/Disappear/Right/Right26.png" id="116_4ydyn"]
 [ext_resource type="Texture2D" uid="uid://ddlfi111shs45" path="res://Assets/Characters/Magma/Advisor/Disappear/Right/Right27.png" id="117_68gst"]
 [ext_resource type="Texture2D" uid="uid://c84ahd0ht2a4o" path="res://Assets/Characters/Magma/Advisor/Disappear/Right/Right28.png" id="118_hvxgm"]
-[ext_resource type="Material" uid="uid://c5vdybw7ih322" path="res://Projects/Shaders/blocker.tres" id="163_7347y"]
+[ext_resource type="Material" path="res://Projects/Shaders/blocker.tres" id="163_7347y"]
 [ext_resource type="Texture2D" uid="uid://cmv7a0g2bvd3u" path="res://Assets/Characters/Magma/Advisor/Attack/Attack1.png" id="168_5yft7"]
 [ext_resource type="Texture2D" uid="uid://dqr15y8u8tdcv" path="res://Assets/Characters/Magma/Advisor/Attack/Attack2.png" id="169_7wsn4"]
 [ext_resource type="Texture2D" uid="uid://df36v510piqi3" path="res://Assets/Characters/Magma/Advisor/Attack/Attack3.png" id="170_tuhjv"]
@@ -1283,6 +1283,7 @@ flip_h = true
 
 [node name="MoveAudio" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_eh503")
+bus = &"SFX"
 
 [node name="Attack" type="AnimatedSprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)

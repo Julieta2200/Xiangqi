@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://ciifsokvcvanb" path="res://Assets/UI/Markers/Step/Red/Hover(red).png" id="18_8dlv2"]
 [ext_resource type="Texture2D" uid="uid://cn8ktjrpep7wu" path="res://Assets/UI/Markers/Step/Blue/Step(blue).png" id="18_fm4tj"]
 [ext_resource type="Texture2D" uid="uid://c8muq0ypwo4p2" path="res://Assets/UI/Markers/Step/Green/Step(green).png" id="18_jxe1n"]
-[ext_resource type="Material" uid="uid://3mruadlod26m" path="res://Projects/Shaders/reveal.tres" id="19_7h5fy"]
+[ext_resource type="Material" path="res://Projects/Shaders/reveal.tres" id="19_7h5fy"]
 [ext_resource type="Texture2D" uid="uid://bea7ndghl31cw" path="res://Assets/UI/Markers/Step/Blue/Hover(blue).png" id="21_8cexq"]
 [ext_resource type="AudioStream" uid="uid://dpp82cn8plei0" path="res://Assets/Music/Spawn_sound/UI SFX-SPAWNING-CLICK ON BOARD.wav" id="22_4drkn"]
 [ext_resource type="AudioStream" uid="uid://btcd0gd2a511t" path="res://Assets/Music/Spawn_sound/CHARACTER SPAWN-1.wav" id="22_linaf"]
@@ -272,10 +272,11 @@ shape = SubResource("CapsuleShape2D_vg2kh")
 
 [node name="spawn_audio" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_787hn")
-bus = &"Spawn audio"
+bus = &"SFX"
 
 [node name="click_audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_4drkn")
+bus = &"SFX"
 
 [node name="SpawnAnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -197,6 +197,7 @@ text = "PLAY"
 
 [node name="HoverMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_d0rng")
+bus = &"SFX"
 
 [node name="HoverMusicEffects" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_0g4sm")

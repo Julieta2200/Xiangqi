@@ -270,3 +270,4 @@ texture = ExtResource("11_omsi1")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_cjf4v")
 autoplay = true
+bus = &"Music"

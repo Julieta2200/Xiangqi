@@ -29,7 +29,7 @@
 [ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/Magma/elephant_move_component.gd" id="24_xkce4"]
 [ext_resource type="PackedScene" uid="uid://d05lmiobxnn3t" path="res://Projects/Figure/shadow_pivot.tscn" id="28_20our"]
 [ext_resource type="Material" uid="uid://cxl2ktlqa7y0f" path="res://Projects/Shaders/summoning_sickness.tres" id="28_x8pa4"]
-[ext_resource type="Material" uid="uid://c5vdybw7ih322" path="res://Projects/Shaders/blocker.tres" id="29_g4ocv"]
+[ext_resource type="Material" path="res://Projects/Shaders/blocker.tres" id="29_g4ocv"]
 [ext_resource type="Material" uid="uid://blvd6fmf8jtbp" path="res://Projects/Shaders/blur_shadow.tres" id="29_tox1b"]
 [ext_resource type="AudioStream" uid="uid://bk1uc35vpkhwo" path="res://Assets/SFX/CHARACTER MOVEMENT SFX/Elephant Movement/Elephant-Movement-1.wav" id="30_l4kby"]
 [ext_resource type="AudioStream" uid="uid://wvwidf6lrk6k" path="res://Assets/SFX/CHARACTER MOVEMENT SFX/Elephant Movement/Elephant-Movement-2.wav" id="31_x6anr"]
@@ -202,6 +202,7 @@ frame_progress = 0.964953
 
 [node name="MoveAudio" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_x84wc")
+bus = &"SFX"
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="MoveComponent" method="_on_figure_animation_finished"]
 [connection signal="move_done" from="MoveComponent" to="MoveComponent" method="_on_move_done"]

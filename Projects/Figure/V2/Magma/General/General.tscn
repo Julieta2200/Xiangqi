@@ -44,7 +44,7 @@
 [ext_resource type="Texture2D" uid="uid://c67lqlfds5u4v" path="res://Assets/Characters/Magma/General/Run/Right/Right10.png" id="38_67wvn"]
 [ext_resource type="PackedScene" uid="uid://cy1y1kpvwk5sq" path="res://Projects/Figure/Components/ShaderComponent/shader_component.tscn" id="43_o44jy"]
 [ext_resource type="Material" uid="uid://b5ews8a5nl326" path="res://Projects/Shaders/spawn.tres" id="44_f730a"]
-[ext_resource type="Material" uid="uid://c5vdybw7ih322" path="res://Projects/Shaders/blocker.tres" id="45_1cs8x"]
+[ext_resource type="Material" path="res://Projects/Shaders/blocker.tres" id="45_1cs8x"]
 [ext_resource type="PackedScene" uid="uid://d05lmiobxnn3t" path="res://Projects/Figure/shadow_pivot.tscn" id="45_wnl0r"]
 [ext_resource type="Material" uid="uid://blvd6fmf8jtbp" path="res://Projects/Shaders/blur_shadow.tres" id="46_tpqjb"]
 [ext_resource type="AudioStream" uid="uid://d1vvu8e2e2fw2" path="res://Assets/SFX/CHARACTER MOVEMENT SFX/General Ashes Movement/General Ashes-Movement-1.wav" id="47_2vbdu"]
@@ -267,6 +267,7 @@ flip_h = true
 
 [node name="MoveAudio" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_qmju2")
+bus = &"SFX"
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="MoveComponent" method="_on_figure_animation_finished"]
 [connection signal="animation_finished" from="ShadowPivot/Shadow" to="MoveComponent" method="_on_figure_animation_finished"]

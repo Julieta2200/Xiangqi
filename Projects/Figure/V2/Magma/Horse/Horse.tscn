@@ -88,7 +88,7 @@
 [ext_resource type="Texture2D" uid="uid://d21atcu2pbwyx" path="res://Assets/Characters/Magma/Horse/Move/Front_Semi_Right/Front_Semi_Right10.png" id="80_66knc"]
 [ext_resource type="AudioStream" uid="uid://cecywnbiekvox" path="res://Assets/SFX/CHARACTER MOVEMENT SFX/Horse Movement/Horse-Movement-1.wav" id="87_myedn"]
 [ext_resource type="Material" uid="uid://cxl2ktlqa7y0f" path="res://Projects/Shaders/summoning_sickness.tres" id="87_w1iko"]
-[ext_resource type="Material" uid="uid://c5vdybw7ih322" path="res://Projects/Shaders/blocker.tres" id="88_fi2gj"]
+[ext_resource type="Material" path="res://Projects/Shaders/blocker.tres" id="88_fi2gj"]
 [ext_resource type="AudioStream" uid="uid://c3a7ig0i2shbc" path="res://Assets/SFX/CHARACTER MOVEMENT SFX/Horse Movement/Horse-Movement-2.wav" id="88_unb1l"]
 [ext_resource type="AudioStream" uid="uid://cukf376p68ptx" path="res://Assets/SFX/CHARACTER MOVEMENT SFX/Horse Movement/Horse-Movement-3.wav" id="89_eqjin"]
 [ext_resource type="AudioStream" uid="uid://d10t4a475qnv5" path="res://Assets/SFX/CHARACTER MOVEMENT SFX/Horse Movement/Horse-Movement-4.wav" id="90_wwdsv"]
@@ -442,5 +442,6 @@ blocker_material = ExtResource("88_fi2gj")
 
 [node name="MoveAudio" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_6mmy3")
+bus = &"SFX"
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="MoveComponent" method="_on_figure_animation_finished"]
