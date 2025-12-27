@@ -7,21 +7,24 @@ const cards_name = {
 	SpecialType.TREE_TRUNK: "TREE TRUNK",
 	SpecialType.SNAKE_CHAIN: "SNAKE CHAIN",
 	SpecialType.WATER_PORTAL: "WATER PORTAL",
-	SpecialType.DISCONNECTION_MIST: "DISCONNECTION MIST"
+	SpecialType.DISCONNECTION_MIST: "DISCONNECTION MIST",
+	SpecialType.NONE: "???????"
 }
 
 const cards_icon = {
-	SpecialType.TREE_TRUNK: preload("res://Assets/UI/Icons/Low level/Tree_Trunk.png"),
-	SpecialType.SNAKE_CHAIN: preload("res://Assets/UI/Icons/Low level/Snake_Chain.png"),
-	SpecialType.WATER_PORTAL: preload("res://Assets/UI/Icons/Low level/Water_Portal.png"),
-	SpecialType.DISCONNECTION_MIST: preload("res://Assets/UI/Icons/High level/Fog1.png")
+	SpecialType.TREE_TRUNK: preload("res://Assets/UI/Specials icon/Low Level/Tree trunk.png"),
+	SpecialType.SNAKE_CHAIN: preload("res://Assets/UI/Specials icon/Low Level/Snake Chain.png"),
+	SpecialType.WATER_PORTAL: preload("res://Assets/UI/Specials icon/Low Level/Water Portal.png"),
+	SpecialType.DISCONNECTION_MIST: preload("res://Assets/UI/Specials icon/High Level/Fog.png"),
+	SpecialType.NONE : preload("res://Assets/UI/Specials icon/Lock(Big).png")
 }
 
 const cards_description = {
 	SpecialType.TREE_TRUNK: "Tree trunk is a .....",
 	SpecialType.SNAKE_CHAIN: "Snake chain is a ...",
 	SpecialType.WATER_PORTAL: "Water portal is a ...",
-	SpecialType.DISCONNECTION_MIST: "Dis mist is a ..."
+	SpecialType.DISCONNECTION_MIST: "Dis mist is a ...",
+	SpecialType.NONE: "???????"
 }
 
 @onready var container_ll = $specials_list/LLScrollContainer/VBoxContainer
@@ -55,7 +58,7 @@ func display_card_info(type: SpecialType, current_num: int, total_count: int) ->
 	card_name.text = cards_name[type]
 	card_info.text = cards_description[type]
 	card_icon.texture = cards_icon[type]
-	card_indicator.bbcode_text = "[color=#a58532]%d[/color] / %d" % [current_num + 1, total_count]
+	card_indicator.bbcode_text = "[font_size=40][color=#a58532]%d[/color][/font_size] / %d" % [current_num + 1, total_count]
 
 #Selects the card by index in the current category
 func select_card_by_index(index: int) -> void:
@@ -67,8 +70,11 @@ func select_card_by_index(index: int) -> void:
 	selected_card_index = index
 	var card_node = container.get_child(selected_card_index)
 	card_node.button_pressed = true
-	
 	display_card_info(card_node.type, selected_card_index, container.get_child_count())
+	
+	#AUTO SCROLL
+	var scroll = scroll_ll if current_category == Category.LL else scroll_hl
+	scroll.ensure_control_visible(card_node)
 	
 #Switches between LL and HL categories
 func switch_category(category: Category) -> void:
