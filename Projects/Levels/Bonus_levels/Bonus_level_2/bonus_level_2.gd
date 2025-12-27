@@ -16,9 +16,25 @@ func _ready() -> void:
 	]
 	board.initialize_position(state)
 	_disable_play()
-	DialogSystem.start_dialog([
+	attack_dialog()
+
+func attack_dialog() -> void:
+	# this is the dialog when level is played for the first time
+	if GameState.get_level_state(level_name) == LevelMarker.LevelState.Open \
+	or GameState.get_level_state(level_name) == LevelMarker.LevelState.Closed:
+		DialogSystem.start_dialog([
 		DialogSystem.DialogText.new("BONUS_LEVEL_2_BEFORE_MOG", DialogSystem.CHARACTERS.Advisor),
 		DialogSystem.DialogText.new("BONUS_LEVEL_2_BEFORE_ASHES", DialogSystem.CHARACTERS.Ashes)], true)
+		DialogSystem.connect("dialog_finished", _enable_play)
+		return
+
+	if GameState.get_level_state(level_name) == LevelMarker.LevelState.Free:
+		DialogSystem.start_dialog([
+			DialogSystem.DialogText.new("BONUS_LEVEL_DAVADIT_1", DialogSystem.CHARACTERS.Ashes)], true)
+	else:
+		DialogSystem.start_dialog([
+			DialogSystem.DialogText.new("BONUS_LEVEL_DAVADIT_2", DialogSystem.CHARACTERS.Aros)], true)
+
 	DialogSystem.connect("dialog_finished", _enable_play)
 
 func _enable_play():

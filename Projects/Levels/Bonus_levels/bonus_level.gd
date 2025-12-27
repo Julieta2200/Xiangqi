@@ -57,14 +57,14 @@ func attack_dialog() -> void:
 			DialogSystem.DialogText.new("BONUS_LEVEL_ATTACK_DIALOG_4", DialogSystem.CHARACTERS.Aros),
 			DialogSystem.DialogText.new("BONUS_LEVEL_ATTACK_DIALOG_5", DialogSystem.CHARACTERS.Ashes)], true)
 		return
-	
-	# this is the dialog when level is played again after being captured or freed
-	# DialogSystem.start_dialog([
-	# 	DialogSystem.DialogText.new("BONUS_LEVEL_ATTACK_DIALOG_6", DialogSystem.CHARACTERS.Ashes),
-	# 	DialogSystem.DialogText.new("BONUS_LEVEL_ATTACK_DIALOG_7", DialogSystem.CHARACTERS.Aros),
-	# 	DialogSystem.DialogText.new("BONUS_LEVEL_ATTACK_DIALOG_8", DialogSystem.CHARACTERS.Ashes),
-	# 	DialogSystem.DialogText.new("BONUS_LEVEL_ATTACK_DIALOG_9", DialogSystem.CHARACTERS.Aros),
-	# 	DialogSystem.DialogText.new("BONUS_LEVEL_ATTACK_DIALOG_10", DialogSystem.CHARACTERS.Ashes)], true)
+
+	if GameState.get_level_state(level_name) == LevelMarker.LevelState.Free:
+		DialogSystem.start_dialog([
+			DialogSystem.DialogText.new("BONUS_LEVEL_DAVADIT_1", DialogSystem.CHARACTERS.Ashes)], true)
+	else:
+		DialogSystem.start_dialog([
+			DialogSystem.DialogText.new("BONUS_LEVEL_DAVADIT_2", DialogSystem.CHARACTERS.Aros)], true)
+
 
 func run_hint_system() -> void:
 	if _hint_index >= hints.size():

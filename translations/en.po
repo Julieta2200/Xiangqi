@@ -658,3 +658,9 @@ msgstr "These are the king's counselors and guard the king within the palace. Th
 msgid "HINT_ADVISOR_MOVE_DIALOG"
 msgstr "Use one of the advisors to save the general."
 
+msgid "BONUS_LEVEL_DAVADIT_1"
+msgstr "Eli ekam"
+
+msgid "BONUS_LEVEL_DAVADIT_2"
+msgstr "Ape uje gravel es, inch es uzum?"
+
