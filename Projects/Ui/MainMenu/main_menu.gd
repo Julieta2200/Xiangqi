@@ -75,6 +75,9 @@ func _process(delta: float) -> void:
 			States.Credits:
 				state = States.None
 				ui_animation.play_backwards("credits")
+			States.Options:
+				state = States.None
+				ui_animation.play_backwards("options")
 			States.None:
 				get_tree().quit()
 			States.New_Game:
@@ -171,3 +174,7 @@ func _on_continue_pressed() -> void:
 func _on_credits_pressed() -> void:
 	state = States.Credits
 	ui_animation.play("credits")
+
+func _on_options_pressed() -> void:
+	state = States.Options
+	ui_animation.play("options")
