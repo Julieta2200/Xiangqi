@@ -97,10 +97,19 @@ func _disable_play() -> void:
 func check_game_over() -> bool:
 	if board.tutorial:
 		return false
+	if mandatory_lose_conditions():
+		_on_game_over(BoardV2.GameOverResults.Lose, board.move_number)
+		return true
 	var generals = board.get_generals()
 	if generals.size() < 2:
 		var win: bool = board.is_victory(generals)
 		var result: BoardV2.GameOverResults = BoardV2.GameOverResults.Win if win else BoardV2.GameOverResults.Lose
 		_on_game_over(result, board.move_number)
+		return true
+	return false
+
+func mandatory_lose_conditions() -> bool:
+	if board.strikes == 0 and \
+	board.get_figures(BoardV2.Teams.Red).filter(func(f): return f.type != FigureComponent.Types.GENERAL and f.type != FigureComponent.Types.ADVISOR).size() == 0:
 		return true
 	return false

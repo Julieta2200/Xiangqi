@@ -188,6 +188,9 @@ func instantiate_figures(figures: Array) -> void:
 			board.instantiate_figure(BoardV2.Kingdoms.FOG, figure["type"], spawn_pos)
 
 func check_game_over() -> bool:
+	if mandatory_lose_conditions():
+		_on_game_over(BoardV2.GameOverResults.Lose, board.move_number)
+		return true
 	if board.get_generals().size() < 1:
 		_on_game_over(BoardV2.GameOverResults.Lose, board.move_number)
 		return true
