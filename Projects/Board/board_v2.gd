@@ -233,7 +233,7 @@ func move_figure(marker: BoardMarker) -> void:
 
 func update_energy_and_strikes(figure_type : FigureComponent.Types) -> void:
 	ui.power_meter.fill_energy()
-	if figure_type == FigureComponent.Types.GENERAL or figure_type == FigureComponent.Types.ADVISOR \
+	if (figure_type == FigureComponent.Types.GENERAL or figure_type == FigureComponent.Types.ADVISOR) \
 	and move_number != 0:
 		strikes -= 1
 
