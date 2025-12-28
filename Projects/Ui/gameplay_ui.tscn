@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bip87oin8clme"]
+[gd_scene load_steps=9 format=3 uid="uid://bip87oin8clme"]
 
 [ext_resource type="Script" path="res://Projects/Ui/gameplay_ui.gd" id="1_clwfc"]
 [ext_resource type="PackedScene" uid="uid://b2isxa0mvvipm" path="res://Projects/Ui/power_meter.tscn" id="1_mqmx6"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dehksgitrkv53" path="res://Projects/Support/card_slots.tscn" id="6_h3dqn"]
 [ext_resource type="PackedScene" uid="uid://b64tprtkglda1" path="res://Projects/Ui/objectives.tscn" id="6_tjnwn"]
 [ext_resource type="PackedScene" uid="uid://c7l1qbst5ge64" path="res://Projects/Ui/game_over_screen.tscn" id="7_rstud"]
+[ext_resource type="PackedScene" uid="uid://3n07iol04w3k" path="res://Projects/Ui/Strikes/strikes.tscn" id="8_wwqj3"]
 
 [node name="GameplayUI" type="CanvasLayer"]
 script = ExtResource("1_clwfc")
@@ -40,6 +41,12 @@ offset_bottom = 8.0
 
 [node name="GameOverScreen" parent="." instance=ExtResource("7_rstud")]
 visible = false
+
+[node name="Strikes" parent="." instance=ExtResource("8_wwqj3")]
+offset_left = 1130.0
+offset_top = 65.0
+offset_right = 1130.0
+offset_bottom = 65.0
 
 [connection signal="card_deselected" from="Garrison" to="." method="_on_garrison_card_deselected"]
 [connection signal="card_selected" from="Garrison" to="." method="_on_garrison_card_selected"]

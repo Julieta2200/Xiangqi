@@ -122,6 +122,7 @@ var move_number: int = 0:
 @export var strikes: int = 3 :
 	set(s):
 		strikes = s
+		ui.strikes.apply_strike()
 		if strikes == 0:
 			var main_pieces: Array[FigureComponent] = get_figures(Teams.Red).filter(func(f): return f.type == FigureComponent.Types.GENERAL or f.type == FigureComponent.Types.ADVISOR)
 			if main_pieces.size() > 0:

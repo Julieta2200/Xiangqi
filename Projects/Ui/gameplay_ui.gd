@@ -6,6 +6,7 @@ class_name GameplayUI extends CanvasLayer
 @onready var card_slots: CardSlots = $CardSlots
 @onready var objectives: Objectives = $Objectives
 @onready var game_over_screen: GameOverScreen = $GameOverScreen
+@onready var strikes: Strikes = $Strikes
 @export var with_specials: bool = true
 
 @export var board: BoardV2
