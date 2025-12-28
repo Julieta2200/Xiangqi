@@ -7,6 +7,7 @@ class_name Overworld extends Node2D
 	"2_bonus": $"Levels/2/bonus_2",
 	"3": $"Levels/3",
 	"3_bonus": $"Levels/3/bonus_3",
+	"1_boss": $"Levels/1_boss",
 }
 
 @onready var wasd: HintBubble = $CanvasLayer/WASD

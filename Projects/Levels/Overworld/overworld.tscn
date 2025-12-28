@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bqe6oo0n2f6fc"]
+[gd_scene load_steps=35 format=3 uid="uid://bqe6oo0n2f6fc"]
 
 [ext_resource type="Script" path="res://Projects/Levels/Overworld/overworld.gd" id="1_6480g"]
 [ext_resource type="Texture2D" uid="uid://dcslgins2nf6r" path="res://Assets/Map/Whole Map/Background.png" id="2_hes21"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://c17jfss8xqocc" path="res://Assets/Map/Third Part/All.png" id="11_omsi1"]
 [ext_resource type="Texture2D" uid="uid://rml1ubf2s05y" path="res://Assets/Map/Second Part/Water.png" id="14_ixmfm"]
 [ext_resource type="Texture2D" uid="uid://c2pusevtme515" path="res://Assets/Map/Second Island/Water.png" id="18_s6hq3"]
+[ext_resource type="PackedScene" uid="uid://cjk2b4ffgdf1n" path="res://Projects/Levels/Level_1_Boss/level_1_boss.tscn" id="19_ukd6p"]
 [ext_resource type="PackedScene" uid="uid://chmuokpujhvya" path="res://Projects/Ui/LevelDescription/level_description.tscn" id="20_uvu7o"]
 [ext_resource type="Texture2D" uid="uid://bnr8lhker5a5h" path="res://Assets/MainMenu/ui/Line.png" id="21_3r6qu"]
 [ext_resource type="Script" path="res://Projects/Levels/Overworld/camera.gd" id="21_6fygh"]
@@ -163,6 +164,14 @@ level = ExtResource("8_f3p8a")
 title = "LEVEL_3_BONUS_TITLE"
 story = "LEVEL_3_BONUS_STORY"
 number = "3_bonus"
+
+[node name="1_boss" parent="Levels" node_paths=PackedStringArray("level_description") instance=ExtResource("2_m64e3")]
+position = Vector2(1465, 820)
+level_description = NodePath("../../CanvasLayer/LevelDescription")
+level = ExtResource("19_ukd6p")
+title = "Boss Fight"
+story = "Story for boss fight"
+number = "1_boss"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

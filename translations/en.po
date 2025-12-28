@@ -185,10 +185,10 @@ msgid "LEVEL_3_BONUS_STORY"
 msgstr "The creatures of the Lake World were naturally peaceful; however, the Fog Army took advantage of this tranquility to enslave them."
 
 msgid "KARMA_TABLE_HINT_1"
-msgstr "A new LL Alliance is unlocked when you choose to set free a bonus level."
+msgstr "A new Alliance is unlocked when you choose to set free a bonus level."
 
 msgid "KARMA_TABLE_HINT_2"
-msgstr "A New Karma is unlocked when you choose to conquer 3 bonus levels."
+msgstr "A new Karma is unlocked when you choose to conquer 3 bonus levels."
 
 msgid "KARMA_TABLE_HINT_3"
 msgstr "Click on a special ability to equip it. "
