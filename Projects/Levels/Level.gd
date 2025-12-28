@@ -15,7 +15,6 @@ class_name Level extends Node2D
 func _ready() -> void:
 	board.level = self
 	board.game_over.connect(_on_game_over)
-	gameplay_ui.power_meter.energy_depleted.connect(game_over_energy_depleted)
 	gameplay_ui.decision.set_free.connect(_on_gameplay_ui_set_free)
 	gameplay_ui.decision.claim.connect(_on_gameplay_ui_claim)
 	gameplay_ui.decision.set_card_name(CardSlots.card_names[card])
@@ -35,9 +34,6 @@ func _process(_delta: float) -> void:
 			music.audio_player.stream_paused = true
 	if Input.is_action_just_pressed("instant_win"):
 		_on_game_over(BoardV2.GameOverResults.Win, 0)
-
-func game_over_energy_depleted():
-	show_game_over_ui()
 
 func _on_game_over(win: BoardV2.GameOverResults, move_number: int):
 	await get_tree().process_frame

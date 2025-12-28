@@ -1,7 +1,5 @@
 class_name PowerMeter extends Control
 
-signal energy_depleted
-
 @export var garrison: Garrison
 
 # amount of energy added after each step
@@ -17,8 +15,7 @@ const max_energy: int = 100
 		altered_energy = energy
 		current_energy =  energy
 		$altered_energy/Label.text = str(energy) + " / " + str(max_energy)
-		if e == 0:
-			emit_signal("energy_depleted")
+		
 
 var altered_energy: float:
 	set(e):
@@ -43,8 +40,4 @@ func fill_energy():
 
 func substruct_energy():
 	energy -= garrison.selected_figure.energy
-	garrison.update_cards(energy)
-
-func discharge_energy():
-	energy -= energy_fill
 	garrison.update_cards(energy)

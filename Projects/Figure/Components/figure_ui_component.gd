@@ -7,8 +7,6 @@ var active: bool = true :
 			return
 		if active:
 			shader_component.remove_sickness_material()
-		else:
-			shader_component.start_sickness_transition()
 		if !selected:
 			if active and mouse_in:
 				shader_component.mouse_entered()
@@ -45,6 +43,11 @@ var selected: bool:
 @export var chess_component: ChessComponent
 @export var shader_component: ShaderComponenet
 @export var move_component: MoveComponent
+
+func _ready() -> void:
+	if shader_component == null:
+		return
+	shader_component.figure_ui_component = self
 
 func _on_mouse_entered() -> void:
 	mouse_in = true

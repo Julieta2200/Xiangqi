@@ -118,7 +118,16 @@ var move_number: int = 0:
 		clear_wall()
 		unfreeze_piece()
 		ui.card_slots.countdown()
-		
+
+@export var strikes: int = 3 :
+	set(s):
+		strikes = s
+		if strikes == 0:
+			var main_pieces: Array[FigureComponent] = get_figures(Teams.Red).filter(func(f): return f.type == FigureComponent.Types.GENERAL or f.type == FigureComponent.Types.ADVISOR)
+			if main_pieces.size() > 0:
+				for piece in main_pieces:
+					piece.shader_component.apply_sickness_material()
+
 func _ready() -> void:
 	initialize_markers()
 
@@ -214,17 +223,18 @@ func move_figure(marker: BoardMarker) -> void:
 		camera.shake()
 	clear_markers()
 	turn = Teams.Black
-	update_energy_by_figure_type(_selected_figure.type)
+	update_energy_and_strikes(_selected_figure.type)
+	
 	if state.has(marker.board_position):
 		capture(marker.board_position,_selected_figure.chess_component.position)
 	else:
 		figure_apply_move(_selected_figure.chess_component.position,marker.board_position)
 
-func update_energy_by_figure_type(figure_type : FigureComponent.Types) -> void:
-	if _selected_figure.type == FigureComponent.Types.GENERAL or _selected_figure.type == FigureComponent.Types.ADVISOR:
-		ui.power_meter.discharge_energy()
-	else:
-		ui.power_meter.fill_energy()
+func update_energy_and_strikes(figure_type : FigureComponent.Types) -> void:
+	ui.power_meter.fill_energy()
+	if figure_type == FigureComponent.Types.GENERAL or figure_type == FigureComponent.Types.ADVISOR \
+	and move_number != 0:
+		strikes -= 1
 
 func move_figure_AI(move: Dictionary) -> void:
 	var figure: FigureComponent = state[move["start"]]
@@ -274,6 +284,9 @@ func activate_reds(result: bool) -> void:
 	for pos in state:
 		var figure: FigureComponent = state[pos]
 		if figure.chess_component.team == Teams.Red and !figure.frozen:
+			if (figure.type == FigureComponent.Types.GENERAL or figure.type == FigureComponent.Types.ADVISOR) \
+			and strikes == 0:
+				continue
 			figure.ui_component.active = result
 
 func get_figures(team: Teams) -> Array[FigureComponent]:

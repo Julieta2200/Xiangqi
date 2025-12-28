@@ -7,27 +7,21 @@ class_name ShaderComponenet extends Node
 @export var blocker_material: Material
 @export var spawn_speed: float = 0.3
 
+var figure_ui_component: FigureUIComponent # is set in figure_ui_component.gd
+
 @onready var hint_highlight_material: Material = preload("res://Projects/Shaders/hint_highlight.tres")
 
 var spawn_progress: float = 0.0
 var scale_speed: float = 1.0
 
 func _ready() -> void:
-	main_sprite.material = spawn_material.duplicate()
-	
-func start_sickness_transition():
-	var tween := create_tween()
-	tween.tween_property(spawn_material, "shader_parameter/progress", 1.0, 1.2)
-	tween.finished.connect(apply_sickness_material)
+	spawn()
 
-func _process(delta):
-	if main_sprite.material is ShaderMaterial  and \
-	main_sprite.material.shader and \
-	"spawn.gdshader" in main_sprite.material.shader.resource_path:
-		if spawn_progress < 1.0:
-			spawn_progress += spawn_speed*delta
-			spawn_progress = min(spawn_progress, 1.0)
-			main_sprite.material.set_shader_parameter("progress", spawn_progress)
+func spawn():
+	main_sprite.material = spawn_material.duplicate()
+	var tween := create_tween()
+	tween.tween_property(main_sprite.material, "shader_parameter/progress", 1.0, 1.2)
+	tween.finished.connect(apply_sickness_material)
 
 func mouse_entered():
 	if main_sprite == null:
@@ -46,7 +40,7 @@ func hint_unhighlight() -> void:
 	main_sprite.material = null
 
 func apply_sickness_material():
-	if main_sprite == null or sickness_material == null:
+	if figure_ui_component == null or figure_ui_component.active:
 		return
 	main_sprite.material = sickness_material
 	
