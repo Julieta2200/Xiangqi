@@ -99,6 +99,7 @@ func _on_decision_dialog_finished() -> void:
 	
 	if _decision_option["text"] == "BONUS_LEVEL_3_DECISION_SET_FREE":
 		GameState.set_level_state(level_name, LevelMarker.LevelState.Free)
+		GameState.set_ll_card(card)
 		follow_up_dialogs = [
 			DialogSystem.DialogText.new("BONUS_LEVEL_3_WIN_SET_FREE_LOUSAN", DialogSystem.CHARACTERS.Lousan),
 			DialogSystem.DialogText.new("BONUS_LEVEL_3_WIN_SET_FREE_ASHES", DialogSystem.CHARACTERS.Ashes),
@@ -106,6 +107,8 @@ func _on_decision_dialog_finished() -> void:
 		]
 	else:
 		GameState.set_level_state(level_name, LevelMarker.LevelState.Captured)
+		GameState.remove_ll_card(card)
+		GameState.add_orb()
 		follow_up_dialogs = [
 			DialogSystem.DialogText.new("BONUS_LEVEL_3_WIN_CLAIM", DialogSystem.CHARACTERS.Jakat)
 		]

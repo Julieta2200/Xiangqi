@@ -139,6 +139,7 @@ func _on_decision_dialog_finished() -> void:
 	if _decision_option["text"] == "BONUS_LEVEL_DECISION_DIALOG_2":
 		# Set free option
 		GameState.set_level_state(level_name, LevelMarker.LevelState.Free)
+		GameState.set_ll_card(card)
 		follow_up_dialogs = [
 			DialogSystem.DialogText.new("BONUS_LEVEL_DECISION_SET_FREE_AROS", DialogSystem.CHARACTERS.Aros),
 			DialogSystem.DialogText.new("BONUS_LEVEL_DECISION_SET_FREE_JAKAT", DialogSystem.CHARACTERS.Jakat)
@@ -146,6 +147,8 @@ func _on_decision_dialog_finished() -> void:
 	else:
 		# Claim option
 		GameState.set_level_state(level_name, LevelMarker.LevelState.Captured)
+		GameState.remove_ll_card(card)
+		GameState.add_orb()
 		follow_up_dialogs = [
 			DialogSystem.DialogText.new("BONUS_LEVEL_DECISION_CLAIM_AROS", DialogSystem.CHARACTERS.Aros),
 			DialogSystem.DialogText.new("BONUS_LEVEL_DECISION_CLAIM_JAKAT", DialogSystem.CHARACTERS.Jakat)

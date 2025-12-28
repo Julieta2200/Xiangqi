@@ -108,12 +108,15 @@ func _on_decision_dialog_finished() -> void:
 	var follow_up_dialogs: Array[DialogSystem.DialogText] = []
 	
 	if _decision_option["text"] == "BONUS_LEVEL_2_DECISION_SET_FREE":
+		GameState.set_ll_card(card)
 		GameState.set_level_state(level_name, LevelMarker.LevelState.Free)
 		follow_up_dialogs = [
 			DialogSystem.DialogText.new("BONUS_LEVEL_2_WIN_SET_FREE", DialogSystem.CHARACTERS.Jakat)
 		]
 	else:
 		GameState.set_level_state(level_name, LevelMarker.LevelState.Captured)
+		GameState.remove_ll_card(card)
+		GameState.add_orb()
 		follow_up_dialogs = [
 			DialogSystem.DialogText.new("BONUS_LEVEL_2_WIN_CLAIM", DialogSystem.CHARACTERS.Jakat)
 		]

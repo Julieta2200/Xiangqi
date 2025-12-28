@@ -79,6 +79,7 @@ func new_game() -> void:
 
 func add_orb() -> void:
 	state["orbs"] += 1
+	save_game()
 	for s in CardSlots.hl_points:
 		if state["orbs"] == CardSlots.hl_points[s]:
 			state["hl_cards"].append(s)
@@ -137,13 +138,23 @@ func set_level_state(level_name: String, level_state: LevelMarker.LevelState) ->
 		return
 	state["levels"][level_name]["state"] = level_state
 	if level_state == LevelMarker.LevelState.Captured:
-		if state["levels"].has(level_name+"_bonus"):
+		if state["levels"].has(level_name+"_bonus") and state["levels"][level_name+"_bonus"]["state"] == LevelMarker.LevelState.Closed:
 			state["levels"][level_name+"_bonus"]["state"] = LevelMarker.LevelState.Open
-		if state["levels"].has(str(int(level_name) + 1)):
+		if state["levels"].has(str(int(level_name) + 1)) and state["levels"][str(int(level_name)+1)]["state"] == LevelMarker.LevelState.Closed:
 			state["levels"][str(int(level_name)+1)]["state"] = LevelMarker.LevelState.Open
-		if level_name == "3":
+		if level_name == "3" and state["levels"]["1_boss"]["state"] == LevelMarker.LevelState.Closed:
 			state["levels"]["1_boss"]["state"] = LevelMarker.LevelState.Open
 	save_game()
+
+func set_ll_card(ll_card: CardSlots.SPECIALS) -> void:
+	state["ll_cards"].append(ll_card)
+	save_game()
+
+func remove_ll_card(ll_card: CardSlots.SPECIALS) -> void:
+	state["ll_cards"] = state["ll_cards"].filter(func(c): return c != ll_card)
+	state["lls"] = state["lls"].filter(func(c): return c != ll_card)
+	save_game()
+
 
 func get_level_state(level_name: String) -> LevelMarker.LevelState:
 	if not state["levels"].has(level_name):
