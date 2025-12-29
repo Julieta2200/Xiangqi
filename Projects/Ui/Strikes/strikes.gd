@@ -6,6 +6,8 @@ class_name Strikes extends Control
 	$HBoxContainer/Strike3,
 ]
 
+@onready var strike_used_sprite: CompressedTexture2D = preload("res://Assets/Ui/Strike/Strike(red).png")
+
 var strike: int = 3
 
 func apply_strike() -> void:
@@ -13,4 +15,4 @@ func apply_strike() -> void:
 	strike -= 1
 	if strike < 0:
 		return
-	strikes[strike].modulate = Color(1, 1, 1, 0.4)
+	strikes[strike].texture = strike_used_sprite
