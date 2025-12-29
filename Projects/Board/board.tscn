@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpyrcsgpodbx7"]
+[gd_scene load_steps=5 format=3 uid="uid://dpyrcsgpodbx7"]
 
 [ext_resource type="Script" path="res://Projects/Board/board_v2.gd" id="1_ehao4"]
 [ext_resource type="Texture2D" uid="uid://cwnio6t1ew4t2" path="res://Assets/boards/Fog/board.png" id="2_8xwwp"]
 [ext_resource type="PackedScene" uid="uid://dlkpgwakp3ub7" path="res://Projects/Board/Marker/marker.tscn" id="3_g0cu3"]
+[ext_resource type="Texture2D" uid="uid://80npmwtxi4oq" path="res://Assets/UI/Strike/Strike(Big).png" id="4_hcmna"]
 
 [node name="Board" type="Node2D"]
 process_thread_group = 2
@@ -309,6 +310,13 @@ position = Vector2(1766, 186)
 
 [node name="Marker9" parent="Markers/10" instance=ExtResource("3_g0cu3")]
 position = Vector2(1996, 186)
+
+[node name="Strike" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 2
+position = Vector2(1081, 1861)
+scale = Vector2(2, 2)
+texture = ExtResource("4_hcmna")
 
 [connection signal="figure_move" from="Markers/1/Marker1" to="." method="_on_marker_figure_move"]
 [connection signal="figure_move" from="Markers/1/Marker2" to="." method="_on_marker_figure_move"]

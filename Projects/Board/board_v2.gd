@@ -129,6 +129,8 @@ var move_number: int = 0:
 				for piece in main_pieces:
 					piece.shader_component.apply_sickness_material()
 
+@onready var strike_obj: Sprite2D = $Strike
+
 func _ready() -> void:
 	initialize_markers()
 
@@ -232,10 +234,12 @@ func move_figure(marker: BoardMarker) -> void:
 		figure_apply_move(_selected_figure.chess_component.position,marker.board_position)
 
 func update_energy_and_strikes(figure_type : FigureComponent.Types) -> void:
+	await get_tree().process_frame
 	ui.power_meter.fill_energy()
 	if (figure_type == FigureComponent.Types.GENERAL or figure_type == FigureComponent.Types.ADVISOR) \
 	and move_number != 0:
 		strikes -= 1
+		strike_obj.show()
 
 func move_figure_AI(move: Dictionary) -> void:
 	var figure: FigureComponent = state[move["start"]]
@@ -341,6 +345,8 @@ func activate_cards(result: bool) -> void:
 
 func figure_move_done() -> void:
 	await get_tree().process_frame
+	if strikes > 0:
+		strike_obj.hide()
 	emit_signal("move_done")
 	if tutorial:
 		return
