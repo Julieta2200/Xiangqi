@@ -97,7 +97,6 @@ func _lose_dialog_finished() -> void:
 	show_game_over_ui()
 
 func start_wave_1() -> void:
-	DialogSystem.disconnect("dialog_finished", start_wave_1)
 	_enable_play()
 	var figures = generate_figures(wave_1_chances)
 	instantiate_figures(figures)
