@@ -11,6 +11,7 @@ class_name Overworld extends Node2D
 }
 
 @onready var wasd: HintBubble = $CanvasLayer/WASD
+@onready var camera: Camera2D = $Camera
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -23,6 +24,9 @@ func _ready() -> void:
 		if levels.has(level):
 			levels[level].state = GameState.state["levels"][level]["state"]
 			levels[level].move_count = GameState.state["levels"][level]["move_count"]
+		# If the level string doesn't have "bonus"
+		if not "bonus" in level and levels[level].state == LevelMarker.LevelState.Open:
+			camera.position = levels[level].position
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
