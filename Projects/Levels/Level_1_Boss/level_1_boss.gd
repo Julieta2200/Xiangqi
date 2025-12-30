@@ -67,6 +67,8 @@ func unfloat_mara_end() -> void:
 func dissolve_mara() -> void:
 	DialogSystem.disconnect("dialog_finished", dissolve_mara)
 	mara_animation.play("dissolve")
+	GameState.set_level_state(level_name, LevelMarker.LevelState.Captured)
+	load_main_scene()
 
 func _on_game_over(win: BoardV2.GameOverResults, move_number: int):
 	await get_tree().process_frame
