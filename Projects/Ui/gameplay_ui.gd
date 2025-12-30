@@ -7,14 +7,21 @@ class_name GameplayUI extends CanvasLayer
 @onready var objectives: Objectives = $Objectives
 @onready var game_over_screen: GameOverScreen = $GameOverScreen
 @onready var strikes: Strikes = $Strikes
+@onready var boss_energy: BossEnergy = $BossEnergy
 @export var with_specials: bool = true
 
 @export var board: BoardV2
+
+@export var boss_level: bool = false
 
 func _ready() -> void:
 	update_specials_visibility()
 	card_slots.board = board
 	board.use_special.connect(card_slots.use_special)
+	if boss_level:
+		boss_energy.show()
+	else:
+		boss_energy.hide()
 
 func _on_garrison_card_selected(selected_card: FigureCard) -> void:
 	board.spawn_highlight(selected_card.type)

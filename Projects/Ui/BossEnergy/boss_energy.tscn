@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cflk5liapj017"]
+
+[ext_resource type="Texture2D" uid="uid://daskdu54bub3f" path="res://Assets/UI/Energy meter/Red/Energy Meter.png" id="1_4nb4p"]
+[ext_resource type="Script" path="res://Projects/Ui/BossEnergy/boss_energy.gd" id="1_4qrl8"]
+[ext_resource type="Texture2D" uid="uid://35b1vxy14qbn" path="res://Assets/UI/Energy meter/Red/Scale.png" id="2_8qcvv"]
+
+[node name="BossEnergy" type="Control"]
+texture_filter = 2
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(2, 2)
+mouse_filter = 2
+script = ExtResource("1_4qrl8")
+
+[node name="Bar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = -357.5
+offset_right = 302.5
+offset_bottom = 40.0
+value = 100.0
+texture_under = ExtResource("1_4nb4p")
+texture_progress = ExtResource("2_8qcvv")
+texture_progress_offset = Vector2(34, 6)

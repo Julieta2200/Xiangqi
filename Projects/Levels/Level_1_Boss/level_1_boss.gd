@@ -202,6 +202,7 @@ func check_game_over() -> bool:
 			1:
 				board._selected_figure = null
 				wave_number += 1
+				gameplay_ui.boss_energy.energy = int(gameplay_ui.boss_energy.energy * 2/3)
 				_disable_play()
 				DialogSystem.start_dialog([
 					DialogSystem.DialogText.new("LEVEL_1_BOSS_WAVE_1_WIN", DialogSystem.CHARACTERS.Mara),
@@ -210,12 +211,14 @@ func check_game_over() -> bool:
 			2:
 				board._selected_figure = null
 				wave_number += 1
+				gameplay_ui.boss_energy.energy = int(gameplay_ui.boss_energy.energy / 2)
 				_disable_play()
 				DialogSystem.start_dialog([
 					DialogSystem.DialogText.new("LEVEL_1_BOSS_WAVE_2_WIN", DialogSystem.CHARACTERS.Mara),
 				], true)
 				DialogSystem.connect("dialog_finished", start_wave_3)
 			_:
+				gameplay_ui.boss_energy.energy = 0
 				_disable_play()
 				DialogSystem.start_dialog([
 					DialogSystem.DialogText.new("LEVEL_1_BOSS_WAVE_3_WIN_ASHES", DialogSystem.CHARACTERS.Ashes),
