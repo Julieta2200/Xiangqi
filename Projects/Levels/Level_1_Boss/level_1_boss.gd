@@ -64,11 +64,16 @@ func unfloat_mara_end() -> void:
 	# ], true)
 	# DialogSystem.connect("dialog_finished", dissolve_mara)
 
+func mara_dissolve_end() -> void:
+	GameState.set_level_state(level_name, LevelMarker.LevelState.Captured)
+	end_scene()
+
+func end_scene() -> void:
+	load_main_scene()
+
 func dissolve_mara() -> void:
 	DialogSystem.disconnect("dialog_finished", dissolve_mara)
 	mara_animation.play("dissolve")
-	GameState.set_level_state(level_name, LevelMarker.LevelState.Captured)
-	load_main_scene()
 
 func _on_game_over(win: BoardV2.GameOverResults, move_number: int):
 	await get_tree().process_frame
@@ -155,8 +160,8 @@ func generate_figures(chances: Dictionary) -> Array:
 		return []  # No available positions
 	
 	# Calculate minimum figures to spawn (reduced for easier difficulty)
-	var min_figures: int = min(4, valid_columns.size())
-	var max_figures: int = min(6, valid_columns.size())
+	var min_figures: int = min(1, valid_columns.size())
+	var max_figures: int = min(1, valid_columns.size())
 	var target_figures: int = randi_range(min_figures, max_figures)
 	
 	# Spawn figures with fair distribution
