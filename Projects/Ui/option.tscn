@@ -1,30 +1,33 @@
-[gd_scene load_steps=4 format=3 uid="uid://6f1nv4cvcnw1"]
+[gd_scene load_steps=7 format=3 uid="uid://6f1nv4cvcnw1"]
 
 [ext_resource type="FontFile" uid="uid://b1rirrr2b225e" path="res://Assets/Fonts/NotoSans-Italic-VariableFont_wdth,wght.ttf" id="1_j6420"]
+[ext_resource type="Texture2D" uid="uid://dn6de17juxj4t" path="res://Assets/UI/Dialog panel/Dialog option.png" id="2_0mp3q"]
 [ext_resource type="Script" path="res://Projects/Ui/option.gd" id="2_ilkxh"]
+[ext_resource type="Texture2D" uid="uid://bs3eqxwdajfh4" path="res://Assets/UI/Dialog panel/Dialog option(hover).png" id="3_l4st6"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mhskd"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wmb5u"]
+texture = ExtResource("2_0mp3q")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_88q3h"]
+texture = ExtResource("3_l4st6")
 
 [node name="Option" type="Button"]
-offset_right = 8.0
-offset_bottom = 8.0
-theme_override_colors/font_hover_color = Color(0.684908, 0.57808, 0.282852, 1)
+texture_filter = 2
+custom_minimum_size = Vector2(1950, 240)
+offset_right = 1950.0
+offset_bottom = 240.0
 theme_override_fonts/font = ExtResource("1_j6420")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/focus = SubResource("StyleBoxFlat_mhskd")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_mhskd")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_mhskd")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_mhskd")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_mhskd")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_mhskd")
-theme_override_styles/hover = SubResource("StyleBoxFlat_mhskd")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_mhskd")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_mhskd")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_mhskd")
-theme_override_styles/normal = SubResource("StyleBoxFlat_mhskd")
+theme_override_styles/focus = SubResource("StyleBoxTexture_wmb5u")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_wmb5u")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_wmb5u")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_wmb5u")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_wmb5u")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_wmb5u")
+theme_override_styles/hover = SubResource("StyleBoxTexture_88q3h")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_wmb5u")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_wmb5u")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_wmb5u")
+theme_override_styles/normal = SubResource("StyleBoxTexture_wmb5u")
 text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
 script = ExtResource("2_ilkxh")
-
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

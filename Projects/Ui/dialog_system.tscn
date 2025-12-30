@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://fft0owblymrl"]
+[gd_scene load_steps=8 format=3 uid="uid://fft0owblymrl"]
 
 [ext_resource type="Script" path="res://Projects/Ui/dialog_system.gd" id="1_t5gml"]
+[ext_resource type="Texture2D" uid="uid://dnqp4jxc7k8ir" path="res://Assets/UI/Dialog panel/Frame.png" id="2_1dyqs"]
 [ext_resource type="FontFile" uid="uid://c0kp0wxgu75s1" path="res://Assets/Fonts/NotoSans-Bold.ttf" id="3_bb20n"]
 [ext_resource type="Texture2D" uid="uid://cwri8doswhdcd" path="res://Assets/UI/Dialog panel/Characters/Ashes.png" id="3_e7hcw"]
 [ext_resource type="FontFile" uid="uid://cog0aa6cr4xc2" path="res://Assets/Fonts/NotoSans-VariableFont_wdth,wght.ttf" id="3_s68gg"]
@@ -29,6 +30,33 @@ grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.7, 0.7)
 theme_override_styles/panel = SubResource("StyleBoxFlat_5rd4g")
+
+[node name="ChoicePanel" type="TextureRect" parent="Panel"]
+visible = false
+layout_mode = 1
+offset_left = -12.8571
+offset_top = -184.286
+offset_right = 412.143
+offset_bottom = 92.7143
+scale = Vector2(2, 2)
+texture = ExtResource("2_1dyqs")
+
+[node name="Name" type="Label" parent="Panel/ChoicePanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 46.0714
+offset_top = 22.1429
+offset_right = 237.072
+offset_bottom = 150.143
+grow_horizontal = 2
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("3_bb20n")
+theme_override_font_sizes/font_size = 65
+text = "Ashes"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Name" type="Label" parent="Panel"]
 layout_mode = 1
@@ -100,8 +128,10 @@ texture = ExtResource("3_e7hcw")
 
 [node name="Options" type="VBoxContainer" parent="Panel"]
 visible = false
+custom_minimum_size = Vector2(1950, 480)
 layout_mode = 0
-offset_left = 602.857
-offset_top = 145.714
-offset_right = 2269.86
-offset_bottom = 214.714
+offset_left = 922.857
+offset_top = -164.286
+offset_right = 2872.86
+offset_bottom = 365.714
+theme_override_constants/separation = 50

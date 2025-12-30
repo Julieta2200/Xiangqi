@@ -50,6 +50,7 @@ var is_decision: bool = false
 @onready var skip_text_obj: RichTextLabel = $Panel/Skip
 @onready var panel: Panel = $Panel
 @onready var options_container: VBoxContainer = $Panel/Options
+@onready var choice_panel: TextureRect = $Panel/ChoicePanel
 
 signal dialog_finished()
 signal decision_made(option: Dictionary)
@@ -71,14 +72,14 @@ func _next_dialog() -> void:
 	var dt: DialogText = text_queue.pop_front()
 	if dt.options.size() > 0:
 		is_decision = true
-		options_container.show()
-		text_obj.hide()
-		skip_text_obj.hide()
+		options_mode(true)
 		for option in dt.options:
 			var option_node = option_scene.instantiate()
 			option_node.text = TranslationServer.translate(option.text)
 			option_node.connect("pressed", _on_option_pressed.bind(option))
 			options_container.add_child(option_node)
+	else:
+		options_mode(false)
 	text_obj.text = TranslationServer.translate(dt.text)
 	name_obj.text = TranslationServer.translate(character_names[dt.character])
 	if character_sprites[dt.character] != null:
@@ -110,8 +111,22 @@ func _on_option_pressed(option: Dictionary) -> void:
 	for option_node in options_container.get_children():
 		option_node.queue_free()
 	is_decision = false
-	options_container.hide()
-	text_obj.show()
-	skip_text_obj.show()
+	options_mode(false)
 	emit_signal("decision_made", option)
 	_next_dialog()
+
+func options_mode(on: bool) -> void:
+	if on:
+		panel.self_modulate.a = 0
+		name_obj.hide()
+		text_obj.hide()
+		skip_text_obj.hide()
+		options_container.show()
+		choice_panel.show()
+	else:
+		panel.self_modulate.a = 1
+		name_obj.show()
+		text_obj.show()
+		skip_text_obj.show()
+		options_container.hide()
+		choice_panel.hide()
