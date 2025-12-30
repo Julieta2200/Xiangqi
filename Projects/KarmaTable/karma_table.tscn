@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b40x7q53qt4ua"]
+[gd_scene load_steps=25 format=3 uid="uid://b40x7q53qt4ua"]
 
 [ext_resource type="Script" path="res://Projects/KarmaTable/karma_table.gd" id="1_xkm3q"]
 [ext_resource type="Texture2D" uid="uid://dvtm10ok7ifu" path="res://Assets/backgrounds/Karma/Karma_Table.png" id="2_f4ew5"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://5ewsc72pyogy" path="res://Projects/Support/world1/snake_chain.tscn" id="6_1dcfh"]
 [ext_resource type="PackedScene" uid="uid://cq8tb18e3ym20" path="res://Projects/Support/world1/tree_trunk.tscn" id="7_3s6r8"]
 [ext_resource type="PackedScene" uid="uid://g02214kyco20" path="res://Projects/Support/world1/water_portal.tscn" id="8_ujwfo"]
+[ext_resource type="Texture2D" uid="uid://b1qkyu2kav2mb" path="res://Assets/UI/Orb/Orb(grey).png" id="10_f4cay"]
 [ext_resource type="PackedScene" uid="uid://cmyj3au8xcmqv" path="res://Projects/KarmaTable/special_cards_info.tscn" id="12_q47rj"]
 [ext_resource type="PackedScene" uid="uid://cavxgtpxtng4j" path="res://Projects/Music/Music.tscn" id="12_qky3m"]
 [ext_resource type="Texture2D" uid="uid://dvq4cijta0kw3" path="res://Assets/UI/Ability info/Toggle Button(active).png" id="13_enf7o"]
@@ -236,6 +237,28 @@ offset_left = -1080.0
 offset_top = 572.0
 offset_right = -820.0
 offset_bottom = 832.0
+
+[node name="Orbs" type="HBoxContainer" parent="CanvasLayer/HLs/DisconnectionMist"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 326.0
+offset_top = 89.0
+offset_right = 368.0
+offset_bottom = 129.0
+scale = Vector2(2, 2)
+theme_override_constants/separation = 15
+
+[node name="Orb1" type="TextureRect" parent="CanvasLayer/HLs/DisconnectionMist/Orbs"]
+layout_mode = 2
+texture = ExtResource("10_f4cay")
+
+[node name="Orb2" type="TextureRect" parent="CanvasLayer/HLs/DisconnectionMist/Orbs"]
+layout_mode = 2
+texture = ExtResource("10_f4cay")
+
+[node name="Orb3" type="TextureRect" parent="CanvasLayer/HLs/DisconnectionMist/Orbs"]
+layout_mode = 2
+texture = ExtResource("10_f4cay")
 
 [node name="HL_card" parent="CanvasLayer/HLs" instance=ExtResource("4_r0sd7")]
 layout_mode = 2

@@ -14,6 +14,10 @@ extends Node2D
 
 @onready var ll_hint_bubble: HintBubble = $CanvasLayer/Hints/LLHint
 
+# Orbs
+@onready var orbs: HBoxContainer = %Orbs
+@onready var active_orb_texture: CompressedTexture2D = preload("res://Assets/UI/Orb/Orb.png")
+
 var _hint_index: int = 0
 
 var dialogs: Dictionary
@@ -35,7 +39,14 @@ func _ready() -> void:
 	if GameState.state["first_ll_introduction"] and GameState.state["ll_cards"].size() > 0:
 		run_ll_hint_system()
 		return
+	fill_orbs()
 	run_dialog()
+
+func fill_orbs() -> void:
+	var orbs_count = GameState.get_orbs()
+	for i in range(orbs_count):
+		var orb = orbs.get_child(i)
+		orb.texture = active_orb_texture
 
 func run_ll_hint_system() -> void:
 	ll_hint_bubble.show()

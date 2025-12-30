@@ -193,3 +193,6 @@ func save_config() -> void:
 	var config_file = FileAccess.open("user://" + CONFIG_FILE_NAME, FileAccess.WRITE)
 	var json_string = JSON.stringify(config)
 	config_file.store_line(json_string)
+
+func get_orbs() -> int:
+	return state["orbs"]
