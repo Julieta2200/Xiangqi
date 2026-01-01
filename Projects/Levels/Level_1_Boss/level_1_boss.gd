@@ -72,7 +72,8 @@ func end_scene() -> void:
 	load_main_scene()
 
 func dissolve_mara() -> void:
-	DialogSystem.disconnect("dialog_finished", dissolve_mara)
+	if DialogSystem.is_connected("dialog_finished", dissolve_mara):
+		DialogSystem.disconnect("dialog_finished", dissolve_mara)
 	mara_animation.play("dissolve")
 
 func _on_game_over(win: BoardV2.GameOverResults, move_number: int):
