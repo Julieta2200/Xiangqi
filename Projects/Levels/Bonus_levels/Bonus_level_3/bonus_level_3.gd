@@ -39,10 +39,13 @@ func attack_dialog() -> void:
 
 	if GameState.get_level_state(level_name) == LevelMarker.LevelState.Free:
 		DialogSystem.start_dialog([
-			DialogSystem.DialogText.new("BONUS_LEVEL_DAVADIT_1", DialogSystem.CHARACTERS.Ashes)], true)
+			DialogSystem.DialogText.new("BONUS_LEVEL_3_FREE_1", DialogSystem.CHARACTERS.Lousan),
+			DialogSystem.DialogText.new("BONUS_LEVEL_3_FREE_2", DialogSystem.CHARACTERS.Ashes),
+			DialogSystem.DialogText.new("BONUS_LEVEL_3_FREE_3", DialogSystem.CHARACTERS.Lousan),
+			DialogSystem.DialogText.new("BONUS_LEVEL_3_FREE_4", DialogSystem.CHARACTERS.Ashes)], true)
 	else:
 		DialogSystem.start_dialog([
-			DialogSystem.DialogText.new("BONUS_LEVEL_DAVADIT_2", DialogSystem.CHARACTERS.Aros)], true)
+			DialogSystem.DialogText.new("BONUS_LEVEL_3_CLAIM_1", DialogSystem.CHARACTERS.Ashes)], true)
 
 	DialogSystem.connect("dialog_finished", _enable_play)
 

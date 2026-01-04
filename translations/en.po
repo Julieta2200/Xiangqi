@@ -583,6 +583,21 @@ msgstr "With each victory, I grow ever more certain that allying with thee was t
 msgid "BONUS_LEVEL_3_LOSE"
 msgstr "My powers must not be wielded so carelessly."
 
+msgid "BONUS_LEVEL_3_FREE_1"
+msgstr "Ashes… I thought you had freed us."
+
+msgid "BONUS_LEVEL_3_FREE_2"
+msgstr "That did not make you safe."
+
+msgid "BONUS_LEVEL_3_FREE_3"
+msgstr "Must it come to this again?"
+
+msgid "BONUS_LEVEL_3_FREE_4"
+msgstr "Attack."
+
+msgid "BONUS_LEVEL_3_CLAIM_1"
+msgstr "Shatter them."
+
 msgid "ESC"
 msgstr "ESC"
 
@@ -658,9 +673,57 @@ msgstr "These are the king's counselors and guard the king within the palace. Th
 msgid "HINT_ADVISOR_MOVE_DIALOG"
 msgstr "Use one of the advisors to save the general."
 
-msgid "BONUS_LEVEL_DAVADIT_1"
-msgstr "Eli ekam"
+msgid "BONUS_LEVEL_2_FREE_1"
+msgstr "No chance of negotiation."
 
-msgid "BONUS_LEVEL_DAVADIT_2"
-msgstr "Ape uje gravel es, inch es uzum?"
+msgid "BONUS_LEVEL_2_FREE_2"
+msgstr "Attack."
+
+msgid "BONUS_LEVEL_2_CLAIM_1"
+msgstr "Do it again."
+
+msgid "BONUS_LEVEL_FREE_ATTACK_1"
+msgstr "Ashes… what happens?"
+
+msgid "BONUS_LEVEL_FREE_ATTACK_2"
+msgstr "Your power no longer serves me."
+
+msgid "BONUS_LEVEL_FREE_ATTACK_3"
+msgstr "What do you mean?"
+
+msgid "BONUS_LEVEL_FREE_ATTACK_4"
+msgstr "Attack!!!"
+
+msgid "BONUS_LEVEL_CLAIM_ATTACK_1"
+msgstr "Break them again."
+
+msgid "SPECIAL_CARD_TREE_TRUNK"
+msgstr "Tree Trunk"
+
+msgid "SPECIAL_CARD_SNAKE_CHAIN"
+msgstr "Snake Chain"
+
+msgid "SPECIAL_CARD_WATER_PORTAL"
+msgstr "Water Portal"
+
+msgid "SPECIAL_CARD_DISCONNECTION_MIST"
+msgstr "Disconnection Mist"
+
+msgid "SPECIAL_CARD_NONE"
+msgstr "???????"
+
+msgid "SPECIAL_CARD_TREE_TRUNK_DESC"
+msgstr "Place a Tree Trunk on any tile outside the palace.\nNo unit can stand on or pass through this tile.\nThe Tree Trunk disappears after 2 turns."
+
+msgid "SPECIAL_CARD_SNAKE_CHAIN_DESC"
+msgstr "Place a Snake Chain on an enemy unit.\nThat unit is immobilized and cannot move.\nThe Snake Chain disappears after 2 turns."
+
+msgid "SPECIAL_CARD_WATER_PORTAL_DESC"
+msgstr "Place a Water Portal on any tile outside the palace.\nIf an enemy unit steps onto or attempts to pass through this tile, it is killed instantly.\nThe Water Portal disappears after 2 turns."
+
+msgid "SPECIAL_CARD_DISCONNECTION_MIST_DESC"
+msgstr "Creates a mist within your territory.\nEnemy units cannot enter the mist, and units already inside the mist cannot move.\nThe Disconnection Mist disappears after 2 turns."
+
+msgid "SPECIAL_CARD_NONE_DESC"
+msgstr "???????"
 

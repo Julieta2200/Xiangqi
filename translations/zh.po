@@ -541,3 +541,27 @@ msgstr "这些是王的顾问，在九宫格内保护王。士对角移动一个
 msgid "HINT_ADVISOR_MOVE_DIALOG"
 msgstr "使用其中一个士来拯救将。"
 
+msgid "BONUS_LEVEL_2_FREE_1"
+msgstr "No chance of negotiation."
+
+msgid "BONUS_LEVEL_2_FREE_2"
+msgstr "Attack."
+
+msgid "BONUS_LEVEL_2_CLAIM_1"
+msgstr "Do it again."
+
+msgid "BONUS_LEVEL_3_FREE_1"
+msgstr "Ashes… I thought you had freed us."
+
+msgid "BONUS_LEVEL_3_FREE_2"
+msgstr "That did not make you safe."
+
+msgid "BONUS_LEVEL_3_FREE_3"
+msgstr "Must it come to this again?"
+
+msgid "BONUS_LEVEL_3_FREE_4"
+msgstr "Attack."
+
+msgid "BONUS_LEVEL_3_CLAIM_1"
+msgstr "Shatter them."
+
