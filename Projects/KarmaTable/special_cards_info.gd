@@ -4,11 +4,11 @@ enum SpecialType { TREE_TRUNK, SNAKE_CHAIN, WATER_PORTAL, DISCONNECTION_MIST, NO
 enum Category { LL, HL }
 
 const cards_name = {
-	SpecialType.TREE_TRUNK: "TREE TRUNK",
-	SpecialType.SNAKE_CHAIN: "SNAKE CHAIN",
-	SpecialType.WATER_PORTAL: "WATER PORTAL",
-	SpecialType.DISCONNECTION_MIST: "DISCONNECTION MIST",
-	SpecialType.NONE: "???????"
+	SpecialType.TREE_TRUNK: "SPECIAL_CARD_TREE_TRUNK",
+	SpecialType.WATER_PORTAL: "SPECIAL_CARD_WATER_PORTAL",
+	SpecialType.SNAKE_CHAIN: "SPECIAL_CARD_SNAKE_CHAIN",
+	SpecialType.DISCONNECTION_MIST: "SPECIAL_CARD_DISCONNECTION_MIST",
+	SpecialType.NONE: "SPECIAL_CARD_NONE"
 }
 
 const cards_icon = {
@@ -20,11 +20,11 @@ const cards_icon = {
 }
 
 const cards_description = {
-	SpecialType.TREE_TRUNK: "Tree trunk is a .....",
-	SpecialType.SNAKE_CHAIN: "Snake chain is a ...",
-	SpecialType.WATER_PORTAL: "Water portal is a ...",
-	SpecialType.DISCONNECTION_MIST: "Dis mist is a ...",
-	SpecialType.NONE: "???????"
+	SpecialType.TREE_TRUNK: "SPECIAL_CARD_TREE_TRUNK_DESC",
+	SpecialType.SNAKE_CHAIN: "SPECIAL_CARD_SNAKE_CHAIN_DESC",
+	SpecialType.WATER_PORTAL: "SPECIAL_CARD_WATER_PORTAL_DESC",
+	SpecialType.DISCONNECTION_MIST: "SPECIAL_CARD_DISCONNECTION_MIST_DESC",
+	SpecialType.NONE: "SPECIAL_CARD_NONE_DESC"
 }
 
 @onready var container_ll = $specials_list/LLScrollContainer/VBoxContainer
@@ -55,8 +55,8 @@ func _ready() -> void:
 
 #Updates the UI with the given card data
 func display_card_info(type: SpecialType, current_num: int, total_count: int) -> void:
-	card_name.text = cards_name[type]
-	card_info.text = cards_description[type]
+	card_name.text = tr(cards_name[type])
+	card_info.text = tr(cards_description[type])
 	card_icon.texture = cards_icon[type]
 	card_indicator.bbcode_text = "[font_size=40][color=#a58532]%d[/color][/font_size] / %d" % [current_num + 1, total_count]
 

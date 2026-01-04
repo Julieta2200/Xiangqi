@@ -60,10 +60,13 @@ func attack_dialog() -> void:
 
 	if GameState.get_level_state(level_name) == LevelMarker.LevelState.Free:
 		DialogSystem.start_dialog([
-			DialogSystem.DialogText.new("BONUS_LEVEL_DAVADIT_1", DialogSystem.CHARACTERS.Ashes)], true)
+			DialogSystem.DialogText.new("BONUS_LEVEL_FREE_ATTACK_1", DialogSystem.CHARACTERS.Aros),
+			DialogSystem.DialogText.new("BONUS_LEVEL_FREE_ATTACK_2", DialogSystem.CHARACTERS.Ashes),
+			DialogSystem.DialogText.new("BONUS_LEVEL_FREE_ATTACK_3", DialogSystem.CHARACTERS.Aros),
+			DialogSystem.DialogText.new("BONUS_LEVEL_FREE_ATTACK_4", DialogSystem.CHARACTERS.Ashes)], true)
 	else:
 		DialogSystem.start_dialog([
-			DialogSystem.DialogText.new("BONUS_LEVEL_DAVADIT_2", DialogSystem.CHARACTERS.Aros)], true)
+			DialogSystem.DialogText.new("BONUS_LEVEL_CLAIM_ATTACK_1", DialogSystem.CHARACTERS.Ashes)], true)
 
 
 func run_hint_system() -> void:
