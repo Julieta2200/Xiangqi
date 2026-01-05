@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://cjk2b4ffgdf1n"]
+[gd_scene load_steps=39 format=3 uid="uid://cjk2b4ffgdf1n"]
 
 [ext_resource type="Script" path="res://Projects/Levels/Level_1_Boss/level_1_boss.gd" id="1_5uc6n"]
 [ext_resource type="Texture2D" uid="uid://vwdx6ewivw4v" path="res://Assets/backgrounds/Fog/Background.png" id="2_q1p26"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cavxgtpxtng4j" path="res://Projects/Music/Music.tscn" id="10_fv8wb"]
 [ext_resource type="PackedScene" uid="uid://ti6boty6unhe" path="res://Projects/Ui/PauseMenu/pause_menu.tscn" id="11_pbpxv"]
 [ext_resource type="Texture2D" uid="uid://b6l83t0hpr4j" path="res://Assets/Characters/Fog/General/Idle/Idle1.png" id="13_rngax"]
+[ext_resource type="PackedScene" uid="uid://bqkvny7nw4r4p" path="res://Projects/Ui/VictoryScreen/victory_screen.tscn" id="13_rvju1"]
 [ext_resource type="Texture2D" uid="uid://q3en4u0hf6ao" path="res://Assets/Characters/Fog/General/Idle/Idle2.png" id="14_qieio"]
 [ext_resource type="Texture2D" uid="uid://diut583r5twxj" path="res://Assets/Characters/Fog/General/Move/Front/Front7.png" id="15_lrcop"]
 [ext_resource type="Shader" path="res://Projects/Shaders/fog_dissolve.gdshader" id="15_ylkqy"]
@@ -393,6 +394,9 @@ number = "2/2"
 layer = 2
 
 [node name="PauseMenu" parent="Menu" instance=ExtResource("11_pbpxv")]
+visible = false
+
+[node name="VictoryScreen" parent="Menu" instance=ExtResource("13_rvju1")]
 visible = false
 
 [node name="Mara" type="Node2D" parent="."]
