@@ -1,0 +1,288 @@
+[gd_scene load_steps=10 format=3 uid="uid://bqkvny7nw4r4p"]
+
+[ext_resource type="Script" path="res://Projects/Ui/VictoryScreen/victory_screen.gd" id="1_aindd"]
+[ext_resource type="Shader" path="res://Projects/Shaders/blur_menu.gdshader" id="1_sdh04"]
+[ext_resource type="Texture2D" uid="uid://ccvn2m5c20rn" path="res://Assets/MainMenu/ui/Gradient.png" id="2_5knnb"]
+[ext_resource type="FontFile" uid="uid://dy702fuy23t3f" path="res://Assets/Fonts/Cinzel/Cinzel-Bold.ttf" id="3_6t0q4"]
+[ext_resource type="Texture2D" uid="uid://bnr8lhker5a5h" path="res://Assets/MainMenu/ui/Line.png" id="4_n7i86"]
+[ext_resource type="Texture2D" uid="uid://dwblpmraaq4v7" path="res://Assets/MainMenu/ui/Esc_button.png" id="5_1146i"]
+[ext_resource type="FontFile" uid="uid://c66ve5yi6m7nm" path="res://Assets/Fonts/Cinzel/Cinzel-Regular.ttf" id="6_oectv"]
+[ext_resource type="AudioStream" uid="uid://cim4djoag3s8t" path="res://Assets/Music/Main Menu Music Loop-B1-JUST MUSIC.wav" id="7_4duk7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ohkaf"]
+shader = ExtResource("1_sdh04")
+shader_parameter/blur_amount = 3.0
+
+[node name="VictoryScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aindd")
+
+[node name="BlurOverlay" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_ohkaf")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Gradient" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_5knnb")
+
+[node name="Win" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -934.5
+offset_top = 300.0
+offset_right = 934.5
+offset_bottom = 503.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_6t0q4")
+theme_override_font_sizes/font_size = 150
+text = "thank you for playing"
+
+[node name="Bottom" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -94.0
+offset_right = 40.0
+offset_bottom = -54.0
+grow_vertical = 0
+
+[node name="Line" type="TextureRect" parent="Bottom"]
+texture_filter = 2
+layout_mode = 0
+offset_right = 1979.0
+offset_bottom = 3.0
+scale = Vector2(2, 2)
+texture = ExtResource("4_n7i86")
+
+[node name="EscButton" type="TextureRect" parent="Bottom/Line"]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -287.5
+offset_top = -14.5
+offset_right = -202.5
+offset_bottom = 20.5
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("5_1146i")
+
+[node name="Esc" type="Label" parent="Bottom/Line/EscButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.617647
+anchor_top = 0.642857
+anchor_right = 1.05295
+anchor_bottom = 1.35714
+offset_left = -27.0
+offset_top = -21.5
+offset_right = 27.0
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.647059, 0.521569, 0.196078, 1)
+theme_override_fonts/font = ExtResource("6_oectv")
+theme_override_font_sizes/font_size = 38
+text = "ESC"
+metadata/_edit_use_anchors_ = true
+
+[node name="Exit" type="Label" parent="Bottom/Line/EscButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.34706
+anchor_top = 0.614286
+anchor_right = 3.47647
+anchor_bottom = 1.32857
+offset_left = -27.0
+offset_top = -21.5
+offset_right = 27.0
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.647059, 0.521569, 0.196078, 1)
+theme_override_fonts/font = ExtResource("6_oectv")
+theme_override_font_sizes/font_size = 38
+text = "Overworld
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_4duk7")
+
+[node name="Credits" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -678.5
+offset_top = -367.5
+offset_right = 678.5
+offset_bottom = 367.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="Producer" type="HBoxContainer" parent="Credits"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="role" type="Label" parent="Credits/Producer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6t0q4")
+theme_override_font_sizes/font_size = 40
+text = "PRODUCER"
+
+[node name="names" type="Label" parent="Credits/Producer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_oectv")
+theme_override_font_sizes/font_size = 40
+text = "Christopher C.D.M. McMullen"
+
+[node name="GameDesigner" type="HBoxContainer" parent="Credits"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="role" type="Label" parent="Credits/GameDesigner"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6t0q4")
+theme_override_font_sizes/font_size = 40
+text = "GAME DESIGNER"
+
+[node name="names" type="Label" parent="Credits/GameDesigner"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_oectv")
+theme_override_font_sizes/font_size = 40
+text = "Kyle V. Tunison"
+
+[node name="LeadProgrammers" type="HBoxContainer" parent="Credits"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="role" type="Label" parent="Credits/LeadProgrammers"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6t0q4")
+theme_override_font_sizes/font_size = 40
+text = "LEAD PROGRAMMERS"
+
+[node name="names" type="Label" parent="Credits/LeadProgrammers"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_oectv")
+theme_override_font_sizes/font_size = 40
+text = "Brandon McGuigan, Grisha Kirakosyan"
+
+[node name="Artist" type="HBoxContainer" parent="Credits"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="role" type="Label" parent="Credits/Artist"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6t0q4")
+theme_override_font_sizes/font_size = 40
+text = "ARTIST"
+
+[node name="names" type="Label" parent="Credits/Artist"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_oectv")
+theme_override_font_sizes/font_size = 40
+text = "Argine Melkumyan"
+
+[node name="Composer" type="HBoxContainer" parent="Credits"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="role" type="Label" parent="Credits/Composer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6t0q4")
+theme_override_font_sizes/font_size = 40
+text = "COMPOSER AND SOUND DESIGNER"
+
+[node name="names" type="Label" parent="Credits/Composer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_oectv")
+theme_override_font_sizes/font_size = 40
+text = "Aaron Spacefood"
+
+[node name="Programmers" type="HBoxContainer" parent="Credits"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="role" type="Label" parent="Credits/Programmers"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6t0q4")
+theme_override_font_sizes/font_size = 40
+text = "PROGRAMMERS"
+
+[node name="names" type="Label" parent="Credits/Programmers"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_oectv")
+theme_override_font_sizes/font_size = 40
+text = "Julieta Sargsyan, Gor Kirakosyan"
+
+[node name="Authors" type="HBoxContainer" parent="Credits"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="role" type="Label" parent="Credits/Authors"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6t0q4")
+theme_override_font_sizes/font_size = 40
+text = "AUTHORS"
+
+[node name="names" type="Label" parent="Credits/Authors"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_oectv")
+theme_override_font_sizes/font_size = 40
+text = "Grisha Kirakosyan, Gor Kirakosyan"
+
+[node name="SpecialThanks" type="HBoxContainer" parent="Credits"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="role" type="Label" parent="Credits/SpecialThanks"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_6t0q4")
+theme_override_font_sizes/font_size = 40
+text = "SPECIAL THANKS"
+
+[node name="names" type="Label" parent="Credits/SpecialThanks"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_oectv")
+theme_override_font_sizes/font_size = 40
+text = "elephantchess.io"
+
+[node name="Copyright" type="HBoxContainer" parent="Credits"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="role" type="Label" parent="Credits/Copyright"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_oectv")
+theme_override_font_sizes/font_size = 40
+text = "Copyright © 2025 Taillis. All Rights Reserved."
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

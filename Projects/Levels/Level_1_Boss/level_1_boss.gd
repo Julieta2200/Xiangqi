@@ -23,6 +23,8 @@ var wave_number: int = 1
 @onready var mara: Node2D = %Mara
 @onready var mara_animation: AnimationPlayer = %Mara/AnimationPlayer
 @onready var mara_character: AnimatedSprite2D = %Mara/Character
+@onready var victory_screen: Control = $Menu/VictoryScreen
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	super._ready()
@@ -39,6 +41,12 @@ func _ready() -> void:
 		DialogSystem.DialogText.new("LEVEL_1_BOSS_ASHES_2", DialogSystem.CHARACTERS.Ashes),
 	], true)
 	DialogSystem.connect("dialog_finished", float_mara)
+
+func _process(_delta: float) -> void:
+	super._process(_delta)
+	if Input.is_action_just_pressed("exit"):
+		if victory_screen.visible:
+			load_main_scene()
 
 func float_mara() -> void:
 	DialogSystem.disconnect("dialog_finished", float_mara)
@@ -69,8 +77,9 @@ func mara_dissolve_end() -> void:
 	end_scene()
 
 func end_scene() -> void:
-	load_main_scene()
-
+	music.audio_player.stream_paused = true
+	victory_screen.show()
+	
 func dissolve_mara() -> void:
 	if DialogSystem.is_connected("dialog_finished", dissolve_mara):
 		DialogSystem.disconnect("dialog_finished", dissolve_mara)
@@ -82,7 +91,7 @@ func _on_game_over(win: BoardV2.GameOverResults, move_number: int):
 		gameplay_ui.objectives.complete_objectives(true)
 		update_best_move_number(move_number)
 		GameState.set_level_state(level_name, LevelMarker.LevelState.Captured)
-		load_main_scene()
+		end_scene()
 	else:
 		gameplay_ui.objectives.complete_objectives(false)
 		var lose_dialog_key: String = ""
