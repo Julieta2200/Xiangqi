@@ -1,8 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://b40x7q53qt4ua"]
+[gd_scene load_steps=27 format=3 uid="uid://b40x7q53qt4ua"]
 
 [ext_resource type="Script" path="res://Projects/KarmaTable/karma_table.gd" id="1_xkm3q"]
 [ext_resource type="Texture2D" uid="uid://dvtm10ok7ifu" path="res://Assets/backgrounds/Karma/Karma_Table.png" id="2_f4ew5"]
 [ext_resource type="PackedScene" uid="uid://ba32qvdi6rk4u" path="res://Projects/Ui/hint_bubble.tscn" id="3_ddsu4"]
+[ext_resource type="FontFile" uid="uid://bwsd0ce7dkkv" path="res://Assets/Fonts/Cinzel/static/Cinzel-Bold.ttf" id="4_47vu3"]
 [ext_resource type="Texture2D" uid="uid://bq0aml3er67g5" path="res://Assets/UI/Karma Table/gradient.png" id="4_623ob"]
 [ext_resource type="FontFile" uid="uid://dng46o0j6hxr6" path="res://Assets/Fonts/Cinzel-Bold.ttf" id="4_mo4m0"]
 [ext_resource type="PackedScene" uid="uid://bhsr2d285j8uq" path="res://Projects/Support/HL_card/hl_card.tscn" id="4_r0sd7"]
@@ -12,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cq8tb18e3ym20" path="res://Projects/Support/world1/tree_trunk.tscn" id="7_3s6r8"]
 [ext_resource type="PackedScene" uid="uid://g02214kyco20" path="res://Projects/Support/world1/water_portal.tscn" id="8_ujwfo"]
 [ext_resource type="Texture2D" uid="uid://b1qkyu2kav2mb" path="res://Assets/UI/Orb/Orb(grey).png" id="10_f4cay"]
+[ext_resource type="FontFile" uid="uid://0vs1qy8g30m6" path="res://Assets/Fonts/Cinzel/static/Cinzel-Medium.ttf" id="12_o8be6"]
 [ext_resource type="PackedScene" uid="uid://cmyj3au8xcmqv" path="res://Projects/KarmaTable/special_cards_info.tscn" id="12_q47rj"]
 [ext_resource type="PackedScene" uid="uid://cavxgtpxtng4j" path="res://Projects/Music/Music.tscn" id="12_qky3m"]
 [ext_resource type="Texture2D" uid="uid://dvq4cijta0kw3" path="res://Assets/UI/Ability info/Toggle Button(active).png" id="13_enf7o"]
@@ -113,13 +115,13 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/LLs"]
 layout_mode = 1
-offset_left = 517.0
-offset_top = 250.0
-offset_right = 1107.0
-offset_bottom = 446.0
+offset_left = 570.0
+offset_top = 270.0
+offset_right = 1071.0
+offset_bottom = 385.0
 theme_override_colors/font_color = Color(0.984314, 0.760784, 0.211765, 1)
-theme_override_fonts/font = ExtResource("4_mo4m0")
-theme_override_font_sizes/font_size = 100
+theme_override_fonts/font = ExtResource("4_47vu3")
+theme_override_font_sizes/font_size = 85
 text = "LOW LEVEL"
 
 [node name="SnakeChain" parent="CanvasLayer/LLs" instance=ExtResource("6_1dcfh")]
@@ -293,32 +295,32 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -1048.0
-offset_top = 292.0
-offset_right = -411.0
-offset_bottom = 488.0
+offset_left = -1027.0
+offset_top = 312.0
+offset_right = -486.0
+offset_bottom = 427.0
 grow_horizontal = 0
 theme_override_colors/font_color = Color(0.984314, 0.760784, 0.211765, 1)
-theme_override_fonts/font = ExtResource("4_mo4m0")
-theme_override_font_sizes/font_size = 100
+theme_override_fonts/font = ExtResource("4_47vu3")
+theme_override_font_sizes/font_size = 85
 text = "HIGH LEVEL"
 
 [node name="Back" type="Button" parent="CanvasLayer"]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 350.0
-offset_top = -300.0
-offset_right = 607.0
-offset_bottom = -96.0
+offset_left = 328.0
+offset_top = -297.0
+offset_right = 585.0
+offset_bottom = -93.0
 grow_vertical = 0
 size_flags_horizontal = 4
 focus_mode = 0
 theme_override_colors/font_hover_color = Color(0.984314, 0.760784, 0.211765, 1)
 theme_override_colors/font_pressed_color = Color(0.490196, 0.34902, 0, 1)
 theme_override_colors/font_color = Color(0.984314, 0.760784, 0.211765, 1)
-theme_override_fonts/font = ExtResource("4_mo4m0")
-theme_override_font_sizes/font_size = 80
+theme_override_fonts/font = ExtResource("12_o8be6")
+theme_override_font_sizes/font_size = 75
 text = "BACK"
 flat = true
 
@@ -327,10 +329,10 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = -9.0
-offset_top = 58.0
-offset_right = 98.0
-offset_bottom = 194.0
+offset_left = 17.0
+offset_top = 57.0
+offset_right = 124.0
+offset_bottom = 193.0
 grow_vertical = 2
 rotation = 3.14159
 theme_override_colors/font_color = Color(0.984314, 0.760784, 0.211765, 1)
@@ -356,8 +358,8 @@ focus_mode = 0
 theme_override_colors/font_hover_color = Color(0.984314, 0.760784, 0.211765, 1)
 theme_override_colors/font_pressed_color = Color(0.490196, 0.34902, 0, 1)
 theme_override_colors/font_color = Color(0.984314, 0.760784, 0.211765, 1)
-theme_override_fonts/font = ExtResource("4_mo4m0")
-theme_override_font_sizes/font_size = 80
+theme_override_fonts/font = ExtResource("12_o8be6")
+theme_override_font_sizes/font_size = 75
 text = "PLAY"
 flat = true
 
@@ -366,10 +368,10 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 255.0
-offset_top = -65.0
-offset_right = 362.0
-offset_bottom = 71.0
+offset_left = 214.0
+offset_top = -66.0
+offset_right = 321.0
+offset_bottom = 70.0
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.984314, 0.760784, 0.211765, 1)
 theme_override_fonts/font = ExtResource("4_mo4m0")

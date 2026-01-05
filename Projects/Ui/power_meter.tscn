@@ -30,7 +30,7 @@ offset_right = 189.0
 offset_bottom = 9.0
 theme_override_fonts/font = ExtResource("4_kay2c")
 theme_override_font_sizes/font_size = 32
-text = "Energy"
+text = "energy"
 
 [node name="NumberLabel" type="Label" parent="."]
 layout_mode = 0

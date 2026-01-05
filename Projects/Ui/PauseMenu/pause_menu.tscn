@@ -161,7 +161,7 @@ offset_top = -1803.0
 offset_right = 801.0
 offset_bottom = -1532.0
 theme_override_fonts/font = ExtResource("8_urht4")
-theme_override_font_sizes/font_size = 150
+theme_override_font_sizes/font_size = 140
 text = "PAUSE"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

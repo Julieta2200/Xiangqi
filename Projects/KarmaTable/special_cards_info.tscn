@@ -16,11 +16,11 @@
 [ext_resource type="Texture2D" uid="uid://cyn6yjw6hdmem" path="res://Assets/UI/Specials icon/Low Level/Snake Chain.png" id="10_fnfbq"]
 [ext_resource type="Texture2D" uid="uid://cf0sjdl4es8vu" path="res://Assets/UI/Specials icon/Low Level/Tree trunk.png" id="11_sio81"]
 [ext_resource type="Texture2D" uid="uid://cq028qmvgi385" path="res://Assets/UI/Specials icon/Lock.png" id="12_6cmiy"]
-[ext_resource type="FontFile" uid="uid://dm0qc34c6cd20" path="res://Assets/Fonts/NotoSans-ExtraLight.ttf" id="12_7ef5c"]
 [ext_resource type="Texture2D" uid="uid://c15qd05lb6sph" path="res://Assets/UI/Ability info/Indicator.png" id="12_ry8x5"]
 [ext_resource type="Texture2D" uid="uid://bvydb4e2if0qu" path="res://Assets/UI/Specials icon/High Level/Fog.png" id="13_6l75u"]
 [ext_resource type="FontFile" uid="uid://dy702fuy23t3f" path="res://Assets/Fonts/Cinzel/Cinzel-Bold.ttf" id="13_e6e3d"]
 [ext_resource type="Texture2D" uid="uid://6rdsugvnijdt" path="res://Assets/UI/Specials icon/Lock(Big).png" id="16_mnbij"]
+[ext_resource type="FontFile" uid="uid://e16vpnkqcoa6" path="res://Assets/Fonts/Noto_Sans/static/NotoSans_Condensed-Regular.ttf" id="20_v7vgu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iq238"]
 shader = ExtResource("2_ub2gw")
@@ -296,9 +296,10 @@ offset_bottom = 314.5
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.647059, 0.521569, 0.196078, 1)
 theme_override_fonts/font = ExtResource("3_8c75t")
-theme_override_font_sizes/font_size = 90
+theme_override_font_sizes/font_size = 80
 text = "WATER PORTAL"
 horizontal_alignment = 1
+uppercase = true
 
 [node name="icon" type="TextureRect" parent="special_preview"]
 texture_filter = 2
@@ -413,7 +414,7 @@ offset_right = -111.0
 offset_bottom = -125.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/normal_font = ExtResource("12_7ef5c")
+theme_override_fonts/normal_font = ExtResource("20_v7vgu")
 theme_override_font_sizes/normal_font_size = 40
 text = "Low level (LL) special ability cards․ A new LL special ability is unlocked when you choose to set free a bonus level."
 
