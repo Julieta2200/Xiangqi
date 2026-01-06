@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://crt675lrdbly" path="res://Assets/MainMenu/ui/logo/Logo(glow_effect).png" id="16_dynym"]
 [ext_resource type="FontFile" uid="uid://dy702fuy23t3f" path="res://Assets/Fonts/Cinzel/Cinzel-Bold.ttf" id="18_67d17"]
 [ext_resource type="AudioStream" uid="uid://duw0xpg3frf48" path="res://Assets/Music/Main Menu Music Loop-B1-MUSIC & SFX MIXED.wav" id="18_c7tyu"]
-[ext_resource type="Material" path="res://Projects/Shaders/preface.tres" id="19_5pmil"]
+[ext_resource type="Material" uid="uid://0avhoflklsgs" path="res://Projects/Shaders/preface.tres" id="19_5pmil"]
 [ext_resource type="PackedScene" uid="uid://dtqik42d1b4fu" path="res://Projects/Ui/OptionsMenu/options_menu.tscn" id="20_0pofw"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_pcs1b"]
