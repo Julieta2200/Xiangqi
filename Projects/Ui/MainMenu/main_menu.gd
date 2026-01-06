@@ -150,7 +150,7 @@ func _on_new_game_pressed() -> void:
 	main_animation.play("prelude")
 	await main_animation.animation_finished
 	var tween = create_tween()
-	tween.tween_property(prelude_label.material, "shader_parameter/progress", 1.0, 18)
+	tween.tween_property(prelude_label.material, "shader_parameter/progress", 1.0, 17)
 	state = States.New_Game
 
 func start_game_sequence():
