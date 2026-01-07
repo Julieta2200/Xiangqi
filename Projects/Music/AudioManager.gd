@@ -13,6 +13,7 @@ func _ready() -> void:
 
 func play_sound(name: String) -> void:
 	if sounds.has(name):
+		music_player.bus = "SFX"
 		music_player.stream = sounds[name]
 		music_player.play()
 

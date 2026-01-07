@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://hppsu1linnjb"]
+[gd_scene load_steps=44 format=3 uid="uid://hppsu1linnjb"]
 
 [ext_resource type="Texture2D" uid="uid://cthr7aiydkawg" path="res://Assets/MainMenu/MenuBackground.png" id="1_cp2q7"]
 [ext_resource type="Script" path="res://Projects/Ui/MainMenu/main_menu.gd" id="1_pdi1h"]
@@ -21,6 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://duw0xpg3frf48" path="res://Assets/Music/Main Menu Music Loop-B1-MUSIC & SFX MIXED.wav" id="18_c7tyu"]
 [ext_resource type="Material" path="res://Projects/Shaders/preface.tres" id="19_5pmil"]
 [ext_resource type="PackedScene" uid="uid://dtqik42d1b4fu" path="res://Projects/Ui/OptionsMenu/options_menu.tscn" id="20_0pofw"]
+[ext_resource type="FontFile" uid="uid://cu8p86udd0pcg" path="res://Assets/Fonts/Noto_Sans/static/NotoSans_SemiCondensed-Regular.ttf" id="20_w72fn"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_pcs1b"]
 noise_type = 3
@@ -1078,11 +1079,11 @@ offset_right = 2155.0
 offset_bottom = 834.0
 grow_vertical = 2
 mouse_filter = 2
-theme_override_fonts/normal_font = ExtResource("11_0mo1f")
+theme_override_fonts/normal_font = ExtResource("20_w72fn")
 theme_override_font_sizes/normal_font_size = 45
 bbcode_enabled = true
 text = "The young Lord of Magma, Areg, inherits his father's throne.
- He sets out to conquer the five worlds, one by one.
+He sets out to conquer the five worlds, one by one.
 The final world to fight against him is the Kingdom of Ice, ruled by Lord Sarouyts.
 A bloody war begins. It's a war that will last for years.
 But then Areg sees Lord Saroyutse's daughter, Lousine.
