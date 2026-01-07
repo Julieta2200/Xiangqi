@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8ngqyfa4ijm2"]
+[gd_scene load_steps=6 format=3 uid="uid://c8ngqyfa4ijm2"]
 
-[ext_resource type="Texture2D" uid="uid://dey2cx60fg1a3" path="res://Assets/UI/Energy meter/Scale.png" id="1_bjcgw"]
 [ext_resource type="Script" path="res://Projects/LoadingScreen/loading_screen.gd" id="1_fwhbd"]
+[ext_resource type="Texture2D" uid="uid://bbjiobsngx3lh" path="res://Assets/UI/Loading/Background.png" id="2_5l6nm"]
+[ext_resource type="Texture2D" uid="uid://5qp8yydriard" path="res://Assets/UI/Loading/LoadingBar_Base.png" id="3_l4wfv"]
+[ext_resource type="Texture2D" uid="uid://14muc2niik1l" path="res://Assets/UI/Loading/LoadingBar_Fill.png" id="4_u287n"]
+[ext_resource type="FontFile" uid="uid://bwsd0ce7dkkv" path="res://Assets/Fonts/Cinzel/static/Cinzel-Bold.ttf" id="5_n6fe2"]
 
 [node name="LoadingScreen" type="Control"]
+texture_filter = 2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,14 +16,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fwhbd")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+texture = ExtResource("2_5l6nm")
 
 [node name="LoadBar" type="TextureProgressBar" parent="."]
 layout_mode = 1
@@ -28,11 +32,25 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -1917.5
-offset_top = -138.0
-offset_right = -1494.5
-offset_bottom = -91.0
+offset_left = -682.5
+offset_top = -413.0
+offset_right = 683.5
+offset_bottom = -366.0
 grow_horizontal = 2
 grow_vertical = 0
-scale = Vector2(9, 1)
-texture_progress = ExtResource("1_bjcgw")
+texture_under = ExtResource("3_l4wfv")
+texture_progress = ExtResource("4_u287n")
+
+[node name="PercentText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 2508.0
+offset_top = 1728.0
+offset_right = 2631.0
+offset_bottom = 1770.0
+theme_override_colors/font_color = Color(0.992157, 0.882353, 0.694118, 1)
+theme_override_fonts/font = ExtResource("5_n6fe2")
+theme_override_font_sizes/font_size = 30
+text = "0%"
+horizontal_alignment = 2
+
+[connection signal="value_changed" from="LoadBar" to="." method="_on_load_bar_value_changed"]
