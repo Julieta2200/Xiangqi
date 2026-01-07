@@ -75,6 +75,7 @@ flat = true
 
 [node name="HoverMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_g2cyu")
+bus = &"SFX"
 
 [node name="HoverMusicEffects" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_2obqo")
