@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8ngqyfa4ijm2"]
+
+[ext_resource type="Texture2D" uid="uid://dey2cx60fg1a3" path="res://Assets/UI/Energy meter/Scale.png" id="1_bjcgw"]
+[ext_resource type="Script" path="res://Projects/LoadingScreen/loading_screen.gd" id="1_fwhbd"]
+
+[node name="LoadingScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fwhbd")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="LoadBar" type="TextureProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1917.5
+offset_top = -138.0
+offset_right = -1494.5
+offset_bottom = -91.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(9, 1)
+texture_progress = ExtResource("1_bjcgw")

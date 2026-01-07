@@ -1,6 +1,6 @@
 extends Node
 
-enum Scenes {Level_1, Level_2, Level_3, Karma_table, Tutorial, Overworld, MainMenu}
+enum Scenes {Level_1, Level_2, Level_3, Karma_table, Tutorial, Overworld, MainMenu, Level_1_Boss, Level_1_Bonus, Level_2_Bonus, Level_3_Bonus}
 
 var scenes_path: Dictionary = {
 	Scenes.Level_1: "res://Projects/Levels/Level_1/level_1.tscn",
@@ -12,10 +12,15 @@ var scenes_path: Dictionary = {
 	Scenes.MainMenu : "res://Projects/Ui/MainMenu/main_menu.tscn"
 }
 
+var loading_screen_path: String = "res://Projects/LoadingScreen/loading_screen.tscn"
+
+var next_scene_path: String = ""
+
 func change_scene(scene_name: Scenes):
 	if !scenes_path.has(scene_name):
 		return
 
 	var scene_path = scenes_path[scene_name]
-	get_tree().change_scene_to_file(scene_path)
+	next_scene_path = scene_path
+	get_tree().change_scene_to_file(loading_screen_path)
 	DialogSystem.disappear()
