@@ -158,10 +158,10 @@ msgid "LEVEL_2_OBJECTIVE_2"
 msgstr "Don't let Ashes or your get captured."
 
 msgid "LEVEL_2_BONUS_TITLE"
-msgstr "Khosrov Forest - Animal Kingdom"
+msgstr "Khosrov Forest - Lij Kingdom"
 
 msgid "LEVEL_2_BONUS_STORY"
-msgstr "Weary of the Fog Army's dominion over their lands, the Animal Kingdom's creatures are ready to seize any opportunity— no matter how small — to fight back."
+msgstr "The creatures of the Lij World were naturally peaceful; however, the Fog Army took advantage of this tranquility to enslave them."
 
 msgid "LEVEL_2_BONUS_OBJECTIVE_1"
 msgstr "Capture the enemy Arqa"
@@ -173,25 +173,34 @@ msgid "LEVEL_3_TITLE"
 msgstr "Khosrov Forest - Battle 3"
 
 msgid "LEVEL_3_STORY"
-msgstr "Mara has no escape. She makes a final stand with her what's left of her army.."
+msgstr "Mara barely escapes the last fight, her army shattered, knowing her end is near."
 
 msgid "LEVEL_3_OBJECTIVE_1"
+msgstr "Defeat Mara."
+
+msgid "LEVEL_BOSS_1_TITLE"
+msgstr "Khosrov Forest - Final Battle"
+
+msgid "LEVEL_BOSS_1_STORY"
+msgstr "Mara has no escape. She makes a final stand with her what's left of her army."
+
+msgid "LEVEL_BOSS_1_OBJECTIVE_1"
 msgstr "Defeat Mara."
 
 msgid "LEVEL_3_BONUS_TITLE"
 msgstr "Khosrov Forest - Vayri World"
 
 msgid "LEVEL_3_BONUS_STORY"
-msgstr "The creatures of the Lake World were naturally peaceful; however, the Fog Army took advantage of this tranquility to enslave them."
+msgstr "Weary of the Fog Army's dominion over their lands, the Vayri Kingdom's creatures are ready to seize any opportunity - no matter how small - to fight back."
 
 msgid "KARMA_TABLE_HINT_1"
 msgstr "A new Alliance is unlocked when you choose to set free a bonus level."
 
 msgid "KARMA_TABLE_HINT_2"
-msgstr "A new Karma is unlocked when you choose to conquer 3 bonus levels."
+msgstr "A new Karma is unlocked when you conquer 3 bonus levels."
 
 msgid "KARMA_TABLE_HINT_3"
-msgstr "Click on a special ability to equip it. "
+msgstr "Click on a special ability to equip it."
 
 msgid "CHARACTER_ASHES"
 msgstr "Ashes"
@@ -626,10 +635,10 @@ msgid "KARMA"
 msgstr "KARMA"
 
 msgid "OVERWORLD_WASD_HINT"
-msgstr "Use WASD buttons to move around"
+msgstr "Use the WASD buttons to move around."
 
 msgid "LEVEL_1_HINT_1"
-msgstr "From the garrison you can choose which unit you want to spawn. Newly spawned units cannot make a move."
+msgstr "From the garrison you can choose which unit you want to spawn. Newly spawned units cannot move on the turn they are spawned."
 
 msgid "LEVEL_1_HINT_2"
 msgstr "Spawning units will decrease your Kamq."
@@ -638,7 +647,7 @@ msgid "LEVEL_1_HINT_3"
 msgstr "You can regain Kamq by making moves."
 
 msgid "LEVEL_1_HINT_4"
-msgstr "Making moves with Arqa or Mog will decrease your Kamq."
+msgstr "You can move Arqa or Mog pieces only four times per level. The available move count is shown in the top-left corner."
 
 msgid "LEVEL_1_HINT_5"
 msgstr "The Arqa moves one point either vertically or horizontally and must stay within the palace."
@@ -648,6 +657,18 @@ msgstr "Mogs move one position diagonally and must stay within the palace."
 
 msgid "LEVEL_1_HINT_7"
 msgstr "Xinvors can only move forward one position at a time; once they cross the river, they can also move sideways."
+
+msgid "LEVEL_2_HINT_1"
+msgstr "Aspets move in an L-shape: two steps in one direction and then one step perpendicular."
+
+msgid "LEVEL_2_HINT_2"
+msgstr "Pighs are defensive pieces that cannot cross the river.\n\tMoves exactly two squares diagonally.\n\tCannot jump over intervening pieces."
+
+msgid "LEVEL_1_BOSS_HINT_1"
+msgstr "Navaks move any number of vacant squares vertically or horizontally."
+
+msgid "LEVEL_1_BOSS_HINT_2"
+msgstr "Stvers can move through any number of unoccupied places horizontally or vertically.\n\tMay jump over one friendly or enemy piece.\n\tCan only do so to capture a piece positioned any distance behind it."
 
 msgid "HINT_SOLDIER_MOVE_TEXT"
 msgstr "Soldiers move and capture by advancing one point forward. Once a pawn has crossed the river it may also move and capture one point horizontally. A pawn may never move backward, thus retreating."
@@ -726,4 +747,10 @@ msgstr "Creates a mist within your territory.\nEnemy units cannot enter the mist
 
 msgid "SPECIAL_CARD_NONE_DESC"
 msgstr "???????"
+
+msgid "BONUS_LEVEL_HINT_NO_SPECIAL_ABILITIES"
+msgstr "Special abilities cannot be used in Bonus Levels."
+
+msgid "BONUS_LEVEL_HINT_ARQA_LINE_OF_SIGHT"
+msgstr "Arqas can attack opposing Arqas if they have direct line of sight."
 

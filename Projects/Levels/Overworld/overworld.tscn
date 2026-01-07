@@ -169,8 +169,9 @@ number = "3_bonus"
 position = Vector2(1465, 820)
 level_description = NodePath("../../CanvasLayer/LevelDescription")
 level = ExtResource("19_ukd6p")
-title = "Boss Fight"
-story = "Story for boss fight"
+title = "LEVEL_BOSS_1_TITLE"
+story = "LEVEL_BOSS_1_STORY"
+additional_objectives = Array[String](["LEVEL_BOSS_1_OBJECTIVE_1"])
 number = "1_boss"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
