@@ -1,73 +1,20 @@
-[gd_scene load_steps=15 format=3 uid="uid://ba7bayl6q6g14"]
+[gd_scene load_steps=10 format=3 uid="uid://ba7bayl6q6g14"]
 
 [ext_resource type="Script" path="res://Projects/Levels/Level_3/level_3.gd" id="1_1nc6y"]
-[ext_resource type="Texture2D" uid="uid://vwdx6ewivw4v" path="res://Assets/backgrounds/Fog/Background.png" id="2_034v6"]
 [ext_resource type="PackedScene" uid="uid://dpyrcsgpodbx7" path="res://Projects/Board/board.tscn" id="2_agd8d"]
+[ext_resource type="PackedScene" uid="uid://cwtq1staoxksb" path="res://Projects/Levels/background.tscn" id="2_o4h5f"]
 [ext_resource type="PackedScene" uid="uid://d0l5epq1wemnr" path="res://Projects/AI/ai.tscn" id="3_jg0gk"]
-[ext_resource type="Texture2D" uid="uid://1b7ifghtfjsy" path="res://Assets/backgrounds/Fog/Big_trees.png" id="3_tf18f"]
-[ext_resource type="PackedScene" uid="uid://dcwk0tqri5mkr" path="res://Projects/Board/background_fog/fog.tscn" id="4_ltx1i"]
 [ext_resource type="PackedScene" uid="uid://br5fqscax7ejf" path="res://Projects/Camera/camera.tscn" id="4_wgc5j"]
 [ext_resource type="PackedScene" uid="uid://bip87oin8clme" path="res://Projects/Ui/gameplay_ui.tscn" id="5_jx2sm"]
 [ext_resource type="PackedScene" uid="uid://cavxgtpxtng4j" path="res://Projects/Music/Music.tscn" id="9_jqpvp"]
 [ext_resource type="PackedScene" uid="uid://ba32qvdi6rk4u" path="res://Projects/Ui/hint_bubble.tscn" id="9_lrj2y"]
 [ext_resource type="PackedScene" uid="uid://ti6boty6unhe" path="res://Projects/Ui/PauseMenu/pause_menu.tscn" id="11_u6k7s"]
 
-[sub_resource type="Animation" id="Animation_2dnhe"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_8j7qw"]
-resource_name = "game_over"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_lusc1"]
-_data = {
-"RESET": SubResource("Animation_2dnhe"),
-"game_over": SubResource("Animation_8j7qw")
-}
-
 [node name="Level_3" type="Node2D"]
 script = ExtResource("1_1nc6y")
 level_name = "3"
 
-[node name="Background" type="Sprite2D" parent="."]
-z_index = -2
-position = Vector2(1960, 1496)
-scale = Vector2(2, 2)
-texture = ExtResource("2_034v6")
-
-[node name="Fog" parent="Background" instance=ExtResource("4_ltx1i")]
-position = Vector2(-1499.5, -929)
-
-[node name="trees" type="Sprite2D" parent="Background"]
-texture = ExtResource("3_tf18f")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Background"]
-libraries = {
-"": SubResource("AnimationLibrary_lusc1")
-}
+[node name="Background" parent="." instance=ExtResource("2_o4h5f")]
 
 [node name="Board" parent="." node_paths=PackedStringArray("ai", "ui", "camera") instance=ExtResource("2_agd8d")]
 unique_name_in_owner = true
