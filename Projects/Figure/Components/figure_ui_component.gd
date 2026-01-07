@@ -3,19 +3,15 @@ class_name FigureUIComponent extends Area2D
 var active: bool = true : 
 	set(a):
 		active = a
-		if shader_component == null:
+		if !active or shader_component == null:
 			return
-		if active:
-			shader_component.remove_sickness_material()
-		if !selected:
-			if active and mouse_in:
-				shader_component.mouse_entered()
-			else:
-				shader_component.mouse_exited()
+		shader_component.remove_sickness_material()
 
 var mouse_in: bool = false:
 	set(m):
 		mouse_in = m
+		if !active :
+			return
 		if !selected:
 			chess_component.show_moves()
 		if shader_component == null:
