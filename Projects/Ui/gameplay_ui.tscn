@@ -14,25 +14,30 @@
 script = ExtResource("1_clwfc")
 
 [node name="PowerMeter" parent="." node_paths=PackedStringArray("garrison") instance=ExtResource("1_mqmx6")]
-offset_left = 497.0
-offset_top = 208.0
-offset_right = 497.0
-offset_bottom = 208.0
+offset_left = 440.0
+offset_top = 242.0
+offset_right = 440.0
+offset_bottom = 242.0
+scale = Vector2(0.8, 0.8)
 garrison = NodePath("../Garrison")
 energy = 100.0
 
 [node name="Garrison" parent="." instance=ExtResource("2_usbfr")]
-offset_left = 402.0
-offset_top = -51.0
-offset_right = 402.0
-offset_bottom = -51.0
+offset_left = -104.0
+offset_top = -308.0
+offset_right = -104.0
+offset_bottom = -308.0
+scale = Vector2(0.9, 0.9)
 
 [node name="Decision" parent="." instance=ExtResource("5_ax0dm")]
 visible = false
 
 [node name="CardSlots" parent="." instance=ExtResource("6_h3dqn")]
-offset_left = -711.0
-offset_right = -711.0
+offset_left = 33.0
+offset_top = 456.0
+offset_right = 33.0
+offset_bottom = 456.0
+scale = Vector2(0.8, 0.8)
 
 [node name="Objectives" parent="." instance=ExtResource("6_tjnwn")]
 offset_left = -32.0
@@ -40,14 +45,15 @@ offset_top = 8.0
 offset_right = -32.0
 offset_bottom = 8.0
 
+[node name="Strikes" parent="." instance=ExtResource("8_wwqj3")]
+offset_left = 720.0
+offset_top = 168.0
+offset_right = 720.0
+offset_bottom = 168.0
+scale = Vector2(0.35, 0.35)
+
 [node name="GameOverScreen" parent="." instance=ExtResource("7_rstud")]
 visible = false
-
-[node name="Strikes" parent="." instance=ExtResource("8_wwqj3")]
-offset_left = 815.0
-offset_top = 16.0
-offset_right = 815.0
-offset_bottom = 16.0
 
 [node name="BossEnergy" parent="." instance=ExtResource("9_38mx2")]
 visible = false

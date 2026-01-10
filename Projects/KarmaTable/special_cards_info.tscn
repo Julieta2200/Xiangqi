@@ -340,10 +340,10 @@ offset_bottom = 40.0
 
 [node name="left_button" type="Button" parent="special_preview/indicators"]
 layout_mode = 0
-offset_left = 528.5
-offset_top = 1152.5
-offset_right = 568.5
-offset_bottom = 1192.5
+offset_left = 520.5
+offset_top = 1160.5
+offset_right = 560.5
+offset_bottom = 1200.5
 theme_override_styles/disabled = SubResource("StyleBoxTexture_qftr5")
 theme_override_styles/hover = SubResource("StyleBoxTexture_qftr5")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_qftr5")
@@ -351,10 +351,10 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_qftr5")
 
 [node name="right_button" type="Button" parent="special_preview/indicators"]
 layout_mode = 0
-offset_left = 728.5
-offset_top = 1192.5
-offset_right = 768.5
-offset_bottom = 1232.5
+offset_left = 752.5
+offset_top = 1200.5
+offset_right = 792.5
+offset_bottom = 1240.5
 rotation = 3.14159
 theme_override_styles/disabled = SubResource("StyleBoxTexture_qftr5")
 theme_override_styles/hover = SubResource("StyleBoxTexture_qftr5")
@@ -363,14 +363,14 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_qftr5")
 
 [node name="number_lable" type="RichTextLabel" parent="special_preview/indicators"]
 layout_mode = 0
-offset_left = 592.5
-offset_top = 1153.5
-offset_right = 692.5
-offset_bottom = 1213.5
+offset_left = 560.5
+offset_top = 1152.5
+offset_right = 713.5
+offset_bottom = 1212.5
 theme_override_fonts/normal_font = ExtResource("13_e6e3d")
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
-text = "[color=#a58532]1[/color] / 12"
+text = "[center][font_size=40][color=#a58532]1[/color][/font_size]  /  12[/center]"
 
 [node name="info_section" type="TextureRect" parent="."]
 texture_filter = 2

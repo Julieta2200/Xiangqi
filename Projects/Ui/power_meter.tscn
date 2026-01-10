@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2isxa0mvvipm"]
+[gd_scene load_steps=6 format=3 uid="uid://b2isxa0mvvipm"]
 
 [ext_resource type="Script" path="res://Projects/Ui/power_meter.gd" id="1_qudxp"]
-[ext_resource type="Texture2D" uid="uid://budk4pll3meds" path="res://Assets/UI/Energy meter/Blue/Energy Meter.png" id="2_nnvv5"]
-[ext_resource type="Texture2D" uid="uid://ciy8g8my1dun7" path="res://Assets/UI/Energy meter/Blue/Scale.png" id="3_ancxs"]
+[ext_resource type="Texture2D" uid="uid://hi75rsjnryeb" path="res://Assets/UI/Energy meter/Energy_Panel.png" id="2_clgs5"]
+[ext_resource type="Texture2D" uid="uid://j5mkmicrhn21" path="res://Assets/UI/Energy meter/Scale 2.png" id="3_4753d"]
+[ext_resource type="Texture2D" uid="uid://bhn4f6a1lq01s" path="res://Assets/UI/Energy meter/Scale 1.png" id="3_h6ip6"]
 [ext_resource type="FontFile" uid="uid://dy702fuy23t3f" path="res://Assets/Fonts/Cinzel/Cinzel-Bold.ttf" id="4_kay2c"]
 
 [node name="PowerMeter" type="Control"]
@@ -17,27 +18,18 @@ offset_right = 549.0
 offset_bottom = 102.0
 scale = Vector2(2, 2)
 value = 100.0
-texture_under = ExtResource("2_nnvv5")
-texture_progress = ExtResource("3_ancxs")
-texture_progress_offset = Vector2(33, 6)
+texture_under = ExtResource("2_clgs5")
+texture_over = ExtResource("3_4753d")
+texture_progress = ExtResource("3_h6ip6")
+texture_progress_offset = Vector2(26, 8)
 tint_over = Color(1, 1, 1, 0.321569)
-
-[node name="TextLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = 65.0
-offset_top = -35.0
-offset_right = 189.0
-offset_bottom = 9.0
-theme_override_fonts/font = ExtResource("4_kay2c")
-theme_override_font_sizes/font_size = 32
-text = "energy"
 
 [node name="NumberLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 512.0
-offset_top = -35.0
-offset_right = 636.0
-offset_bottom = 9.0
+offset_left = 56.0
+offset_top = -72.0
+offset_right = 180.0
+offset_bottom = -17.0
 theme_override_fonts/font = ExtResource("4_kay2c")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 40
 text = "100%"

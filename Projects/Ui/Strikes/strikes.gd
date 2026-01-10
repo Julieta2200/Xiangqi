@@ -6,7 +6,7 @@ class_name Strikes extends Control
 	$HBoxContainer/Strike3,
 ]
 
-@onready var strike_used_sprite: CompressedTexture2D = preload("res://Assets/Ui/Strike/Strike(red).png")
+@onready var strike_used_sprite: CompressedTexture2D = preload("res://Assets/UI/Strike/icon(red).png")
 
 var strike: int = 3
 

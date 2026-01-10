@@ -107,120 +107,137 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 30.0
-offset_top = -150.0
+offset_top = -100.0
 offset_right = -3881.0
-offset_bottom = -2350.0
+offset_bottom = -2300.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/LLs"]
 layout_mode = 1
-offset_left = 570.0
-offset_top = 270.0
-offset_right = 1071.0
-offset_bottom = 385.0
+offset_left = 555.0
+offset_top = 332.0
+offset_right = 1056.0
+offset_bottom = 447.0
 theme_override_colors/font_color = Color(0.984314, 0.760784, 0.211765, 1)
 theme_override_fonts/font = ExtResource("4_47vu3")
-theme_override_font_sizes/font_size = 85
+theme_override_font_sizes/font_size = 80
 text = "LOW LEVEL"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 161
 
 [node name="SnakeChain" parent="CanvasLayer/LLs" instance=ExtResource("6_1dcfh")]
 layout_mode = 0
-offset_left = 594.0
-offset_top = 542.0
-offset_right = 786.0
-offset_bottom = 734.0
+offset_left = 586.0
+offset_top = 550.0
+offset_right = 778.0
+offset_bottom = 742.0
+scale = Vector2(0.9, 0.9)
 
 [node name="TreeTrunk" parent="CanvasLayer/LLs" instance=ExtResource("7_3s6r8")]
 layout_mode = 0
-offset_left = 842.0
-offset_top = 542.0
-offset_right = 1034.0
-offset_bottom = 734.0
+offset_left = 826.0
+offset_top = 550.0
+offset_right = 1018.0
+offset_bottom = 742.0
+scale = Vector2(0.9, 0.9)
 
 [node name="WaterPortal" parent="CanvasLayer/LLs" instance=ExtResource("8_ujwfo")]
 layout_mode = 0
-offset_left = 242.0
-offset_top = 798.0
-offset_right = 434.0
-offset_bottom = 990.0
+offset_left = 226.0
+offset_top = 790.0
+offset_right = 418.0
+offset_bottom = 982.0
+scale = Vector2(0.9, 0.9)
 
 [node name="LL_card8" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
 layout_mode = 0
-offset_left = 482.0
-offset_top = 798.0
-offset_right = 674.0
-offset_bottom = 990.0
+offset_left = 466.0
+offset_top = 790.0
+offset_right = 658.0
+offset_bottom = 982.0
+scale = Vector2(0.9, 0.9)
 
 [node name="LL_card9" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
 layout_mode = 0
-offset_left = 722.0
-offset_top = 798.0
-offset_right = 914.0
-offset_bottom = 990.0
+offset_left = 706.0
+offset_top = 790.0
+offset_right = 898.0
+offset_bottom = 982.0
+scale = Vector2(0.9, 0.9)
 
 [node name="LL_card10" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
 layout_mode = 0
-offset_left = 962.0
-offset_top = 798.0
-offset_right = 1154.0
-offset_bottom = 990.0
+offset_left = 946.0
+offset_top = 790.0
+offset_right = 1138.0
+offset_bottom = 982.0
+scale = Vector2(0.9, 0.9)
 
 [node name="LL_card11" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
 layout_mode = 0
-offset_left = 1202.0
-offset_top = 798.0
-offset_right = 1394.0
-offset_bottom = 990.0
+offset_left = 1186.0
+offset_top = 790.0
+offset_right = 1378.0
+offset_bottom = 982.0
+scale = Vector2(0.9, 0.9)
 
 [node name="LL_card16" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
 layout_mode = 0
-offset_left = 242.0
-offset_top = 1054.0
-offset_right = 434.0
-offset_bottom = 1246.0
+offset_left = 226.0
+offset_top = 1030.0
+offset_right = 418.0
+offset_bottom = 1222.0
+scale = Vector2(0.9, 0.9)
 
 [node name="LL_card12" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
 layout_mode = 0
-offset_left = 482.0
-offset_top = 1054.0
-offset_right = 674.0
-offset_bottom = 1246.0
+offset_left = 466.0
+offset_top = 1030.0
+offset_right = 658.0
+offset_bottom = 1222.0
+scale = Vector2(0.9, 0.9)
 
 [node name="LL_card13" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
 layout_mode = 0
-offset_left = 722.0
-offset_top = 1054.0
-offset_right = 914.0
-offset_bottom = 1246.0
+offset_left = 706.0
+offset_top = 1030.0
+offset_right = 898.0
+offset_bottom = 1222.0
+scale = Vector2(0.9, 0.9)
 
 [node name="LL_card14" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
 layout_mode = 0
-offset_left = 962.0
-offset_top = 1054.0
-offset_right = 1154.0
-offset_bottom = 1246.0
+offset_left = 946.0
+offset_top = 1030.0
+offset_right = 1138.0
+offset_bottom = 1222.0
+scale = Vector2(0.9, 0.9)
 
 [node name="LL_card15" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
 layout_mode = 0
-offset_left = 1202.0
-offset_top = 1054.0
-offset_right = 1394.0
-offset_bottom = 1246.0
+offset_left = 1186.0
+offset_top = 1030.0
+offset_right = 1378.0
+offset_bottom = 1222.0
+scale = Vector2(0.9, 0.9)
 
 [node name="LL_card17" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
 layout_mode = 0
-offset_left = 594.0
-offset_top = 1310.0
-offset_right = 786.0
-offset_bottom = 1502.0
+offset_left = 586.0
+offset_top = 1270.0
+offset_right = 778.0
+offset_bottom = 1462.0
+scale = Vector2(0.9, 0.9)
 
 [node name="LL_card18" parent="CanvasLayer/LLs" instance=ExtResource("4_w83hs")]
 layout_mode = 0
-offset_left = 842.0
-offset_top = 1310.0
-offset_right = 1034.0
-offset_bottom = 1502.0
+offset_left = 826.0
+offset_top = 1270.0
+offset_right = 1018.0
+offset_bottom = 1462.0
+scale = Vector2(0.9, 0.9)
 
 [node name="HLs" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -228,24 +245,26 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -15.0
-offset_top = -192.0
+offset_top = -144.0
 offset_right = -15.0
-offset_bottom = -192.0
+offset_bottom = -144.0
 grow_horizontal = 0
 
 [node name="DisconnectionMist" parent="CanvasLayer/HLs" instance=ExtResource("5_s8rvq")]
+custom_minimum_size = Vector2(192, 192)
 layout_mode = 0
-offset_left = -1080.0
-offset_top = 572.0
-offset_right = -820.0
-offset_bottom = 832.0
+offset_left = -1067.0
+offset_top = 594.0
+offset_right = -807.0
+offset_bottom = 854.0
+scale = Vector2(0.8, 0.8)
 
 [node name="Orbs" type="HBoxContainer" parent="CanvasLayer/HLs/DisconnectionMist"]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 326.0
 offset_top = 89.0
-offset_right = 368.0
+offset_right = 482.0
 offset_bottom = 129.0
 scale = Vector2(2, 2)
 theme_override_constants/separation = 15
@@ -264,55 +283,61 @@ texture = ExtResource("10_f4cay")
 
 [node name="HL_card" parent="CanvasLayer/HLs" instance=ExtResource("4_r0sd7")]
 layout_mode = 2
-offset_left = -1080.0
-offset_top = 892.0
-offset_right = -820.0
-offset_bottom = 1152.0
+offset_left = -1067.0
+offset_top = 859.0
+offset_right = -807.0
+offset_bottom = 1119.0
+scale = Vector2(0.8, 0.8)
 
 [node name="HL_card2" parent="CanvasLayer/HLs" instance=ExtResource("4_r0sd7")]
 layout_mode = 2
-offset_left = -1080.0
-offset_top = 1212.0
-offset_right = -820.0
-offset_bottom = 1472.0
+offset_left = -1067.0
+offset_top = 1124.0
+offset_right = -807.0
+offset_bottom = 1384.0
+scale = Vector2(0.8, 0.8)
 
 [node name="HL_card3" parent="CanvasLayer/HLs" instance=ExtResource("4_r0sd7")]
 layout_mode = 2
-offset_left = -1080.0
-offset_top = 1532.0
-offset_right = -820.0
-offset_bottom = 1792.0
+offset_left = -1067.0
+offset_top = 1389.0
+offset_right = -807.0
+offset_bottom = 1649.0
+scale = Vector2(0.8, 0.8)
 
 [node name="HL_card4" parent="CanvasLayer/HLs" instance=ExtResource("4_r0sd7")]
 layout_mode = 2
-offset_left = -1080.0
-offset_top = 1852.0
-offset_right = -820.0
-offset_bottom = 2112.0
+offset_left = -1067.0
+offset_top = 1654.0
+offset_right = -807.0
+offset_bottom = 1914.0
+scale = Vector2(0.8, 0.8)
 
 [node name="Label" type="Label" parent="CanvasLayer/HLs"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -1027.0
-offset_top = 312.0
-offset_right = -486.0
-offset_bottom = 427.0
+offset_left = -1104.0
+offset_top = 376.0
+offset_right = -563.0
+offset_bottom = 491.0
 grow_horizontal = 0
 theme_override_colors/font_color = Color(0.984314, 0.760784, 0.211765, 1)
 theme_override_fonts/font = ExtResource("4_47vu3")
-theme_override_font_sizes/font_size = 85
+theme_override_font_sizes/font_size = 80
 text = "HIGH LEVEL"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Back" type="Button" parent="CanvasLayer"]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 328.0
-offset_top = -297.0
+offset_top = -280.0
 offset_right = 585.0
-offset_bottom = -93.0
+offset_bottom = -76.0
 grow_vertical = 0
 size_flags_horizontal = 4
 focus_mode = 0
@@ -347,10 +372,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -591.0
-offset_top = -300.0
-offset_right = -361.0
-offset_bottom = -96.0
+offset_left = -599.0
+offset_top = -280.0
+offset_right = -345.0
+offset_bottom = -76.0
 grow_horizontal = 0
 grow_vertical = 0
 size_flags_horizontal = 4
@@ -368,10 +393,10 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 214.0
-offset_top = -66.0
-offset_right = 321.0
-offset_bottom = 70.0
+offset_left = 232.0
+offset_top = -62.0
+offset_right = 339.0
+offset_bottom = 74.0
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.984314, 0.760784, 0.211765, 1)
 theme_override_fonts/font = ExtResource("4_mo4m0")
