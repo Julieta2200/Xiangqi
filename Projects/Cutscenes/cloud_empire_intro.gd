@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var board: Board = %Board
+@onready var board: BoardStory = %Board
 @onready var dialog: Dialog = %Dialog
 
 var initial_state = {
