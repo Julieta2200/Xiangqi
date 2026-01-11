@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://3n07iol04w3k"]
 
 [ext_resource type="Script" path="res://Projects/Ui/Strikes/strikes.gd" id="1_vvxx4"]
-[ext_resource type="Texture2D" uid="uid://df5nguok56l50" path="res://Assets/UI/Strike/Strike(white).png" id="2_535fo"]
+[ext_resource type="Texture2D" uid="uid://boasf13bogwj5" path="res://Assets/UI/Strike/icon.png" id="2_52myt"]
 
 [node name="Strikes" type="Control"]
 layout_mode = 3
@@ -15,22 +15,22 @@ script = ExtResource("1_vvxx4")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_right = 110.0
-offset_bottom = 40.0
-scale = Vector2(2, 2)
-theme_override_constants/separation = -30
+offset_right = 549.0
+offset_bottom = 161.0
+theme_override_constants/separation = 30
 
 [node name="Strike1" type="TextureRect" parent="HBoxContainer"]
 texture_filter = 2
+custom_minimum_size = Vector2(163, 161)
 layout_mode = 2
-texture = ExtResource("2_535fo")
+texture = ExtResource("2_52myt")
 
 [node name="Strike2" type="TextureRect" parent="HBoxContainer"]
 texture_filter = 2
 layout_mode = 2
-texture = ExtResource("2_535fo")
+texture = ExtResource("2_52myt")
 
 [node name="Strike3" type="TextureRect" parent="HBoxContainer"]
 texture_filter = 2
 layout_mode = 2
-texture = ExtResource("2_535fo")
+texture = ExtResource("2_52myt")

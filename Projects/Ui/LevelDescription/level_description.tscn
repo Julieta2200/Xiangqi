@@ -1,22 +1,25 @@
-[gd_scene load_steps=22 format=3 uid="uid://chmuokpujhvya"]
+[gd_scene load_steps=23 format=3 uid="uid://chmuokpujhvya"]
 
 [ext_resource type="Script" path="res://Projects/Ui/LevelDescription/level_description.gd" id="1_h34w6"]
-[ext_resource type="Texture2D" uid="uid://ckayx5tiplihp" path="res://Assets/UI/Level Description/World_Info_Screen.png" id="2_32huv"]
 [ext_resource type="Texture2D" uid="uid://dawqs5sutjipg" path="res://Assets/Map/Whole Map/All.png" id="2_k8ipy"]
-[ext_resource type="Texture2D" uid="uid://dcslgins2nf6r" path="res://Assets/Map/Whole Map/Background.png" id="2_p2gw2"]
-[ext_resource type="Texture2D" uid="uid://xlfx4x7qsoxk" path="res://Assets/UI/Level Description/Task_Panel.png" id="3_3w34j"]
+[ext_resource type="Shader" path="res://Projects/Shaders/blur_menu.gdshader" id="2_vs66t"]
+[ext_resource type="Texture2D" uid="uid://14vxn3lljt4p" path="res://Assets/UI/Level Description/Panel (1).png" id="4_dkjmj"]
 [ext_resource type="Texture2D" uid="uid://dtxqtqw7vh0b5" path="res://Assets/UI/Level Description/Buuton.png" id="5_8btgg"]
+[ext_resource type="FontFile" uid="uid://bqy84xarprl0w" path="res://Assets/Fonts/Cinzel/static/Cinzel-SemiBold.ttf" id="5_bdd4c"]
 [ext_resource type="FontFile" uid="uid://dvp3kgcd16fjp" path="res://Assets/Fonts/Cinzel-VariableFont_wght.ttf" id="5_hfxyk"]
-[ext_resource type="FontFile" uid="uid://dng46o0j6hxr6" path="res://Assets/Fonts/Cinzel-Bold.ttf" id="5_nysge"]
 [ext_resource type="FontFile" uid="uid://dcdno0j53ve3l" path="res://Assets/Fonts/NotoSans-Light.ttf" id="7_4guvc"]
+[ext_resource type="FontFile" uid="uid://jdwcjp3th8oy" path="res://Assets/Fonts/Noto_Sans/static/NotoSans-Regular.ttf" id="7_n8gfo"]
 [ext_resource type="AudioStream" uid="uid://l1liciqrwh63" path="res://Assets/Music/UI SFX-Overworld-Hover LOOP.wav" id="10_d0rng"]
 [ext_resource type="AudioStream" uid="uid://si2lcb3dnurs" path="res://Assets/Music/overworld/UI SFX-Overworld-PLAY BUTTON SELECT.wav" id="12_0g4sm"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_avhuy"]
-texture = ExtResource("2_32huv")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2dom2"]
+shader = ExtResource("2_vs66t")
+shader_parameter/blur_amount = 3.0
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d32ry"]
-texture = ExtResource("3_3w34j")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_avhuy"]
+texture = ExtResource("4_dkjmj")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lvh2d"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ibtv8"]
 texture = ExtResource("5_8btgg")
@@ -51,12 +54,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_h34w6")
 
-[node name="Background" type="Sprite2D" parent="."]
-position = Vector2(1163, 1426)
-scale = Vector2(2, 2)
-texture = ExtResource("2_p2gw2")
+[node name="BlurOverlay" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_2dom2")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="map" type="TextureRect" parent="."]
+visible = false
 self_modulate = Color(1, 1, 1, 0.5)
 layout_mode = 0
 offset_right = 4000.0
@@ -72,42 +80,47 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -961.0
 offset_top = -613.0
-offset_right = 961.0
-offset_bottom = 613.0
+offset_right = 984.0
+offset_bottom = 595.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_avhuy")
 
 [node name="Title" type="Label" parent="Panel"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -133.5
-offset_top = 100.0
-offset_right = 133.5
-offset_bottom = 210.0
+layout_mode = 2
+offset_left = 175.5
+offset_top = 139.0
+offset_right = 1775.5
+offset_bottom = 235.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0.984314, 0.760784, 0.211765, 1)
-theme_override_fonts/font = ExtResource("5_nysge")
-theme_override_font_sizes/font_size = 80
+theme_override_fonts/font = ExtResource("5_bdd4c")
+theme_override_font_sizes/font_size = 70
 text = "LEVEL 1"
 uppercase = true
 
+[node name="Story" type="RichTextLabel" parent="Panel"]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+offset_left = 175.5
+offset_top = 350.0
+offset_right = 1775.5
+offset_bottom = 600.0
+grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("7_n8gfo")
+theme_override_font_sizes/normal_font_size = 42
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure "
+
 [node name="TaskPanel" type="Panel" parent="Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -830.5
-offset_top = -49.0
-offset_right = 827.5
-offset_bottom = 251.0
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+offset_left = 175.5
+offset_top = 600.0
+offset_right = 1775.5
+offset_bottom = 900.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_d32ry")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_lvh2d")
 
 [node name="Objectives" type="VBoxContainer" parent="Panel/TaskPanel"]
 layout_mode = 1
@@ -116,50 +129,32 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -655.5
-offset_top = -98.5
-offset_right = 655.5
-offset_bottom = 98.5
+offset_left = -719.5
+offset_top = -122.0
+offset_right = 591.5
+offset_bottom = 75.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
 
 [node name="move_count" type="Label" parent="Panel/TaskPanel"]
 layout_mode = 0
-offset_left = 1359.0
-offset_top = 214.0
-offset_right = 1488.0
-offset_bottom = 263.0
-theme_override_colors/font_color = Color(0.984314, 0.760784, 0.211765, 1)
+offset_left = 1435.0
+offset_top = 150.0
+offset_right = 1564.0
+offset_bottom = 199.0
 theme_override_fonts/font = ExtResource("7_4guvc")
 theme_override_font_sizes/font_size = 35
 text = "MTB: 10"
-
-[node name="Story" type="RichTextLabel" parent="Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -850.0
-offset_top = -313.0
-offset_right = 850.0
-offset_bottom = -63.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/normal_font = ExtResource("7_4guvc")
-theme_override_font_sizes/normal_font_size = 42
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure "
 
 [node name="Close" type="Button" parent="Panel"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 310.0
+offset_left = 1100.0
 offset_top = -226.0
-offset_right = 588.0
+offset_right = 1378.0
 offset_bottom = -113.0
 grow_vertical = 0
 theme_override_colors/font_hover_color = Color(0.984314, 0.760784, 0.211765, 1)
@@ -179,9 +174,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -622.0
+offset_left = -459.5
 offset_top = -226.0
-offset_right = -344.0
+offset_right = -181.5
 offset_bottom = -113.0
 grow_horizontal = 0
 grow_vertical = 0

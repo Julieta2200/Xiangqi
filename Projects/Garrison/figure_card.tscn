@@ -50,13 +50,14 @@ offset_right = -22.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("4_7den3")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 38
 text = "Pawn"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="click_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_rj5qv")
+bus = &"SFX"
 
 [connection signal="gui_input" from="card" to="." method="_on_card_gui_input"]
 [connection signal="mouse_entered" from="card" to="." method="_on_card_mouse_entered"]

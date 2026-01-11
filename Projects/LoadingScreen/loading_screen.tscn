@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c8ngqyfa4ijm2"]
 
 [ext_resource type="Script" path="res://Projects/LoadingScreen/loading_screen.gd" id="1_fwhbd"]
-[ext_resource type="Texture2D" uid="uid://bbjiobsngx3lh" path="res://Assets/UI/Loading/Background.png" id="2_5l6nm"]
+[ext_resource type="Texture2D" uid="uid://b6firqg4j0qj3" path="res://Assets/UI/Loading/loading.png" id="2_p3fd8"]
 [ext_resource type="Texture2D" uid="uid://5qp8yydriard" path="res://Assets/UI/Loading/LoadingBar_Base.png" id="3_l4wfv"]
 [ext_resource type="Texture2D" uid="uid://14muc2niik1l" path="res://Assets/UI/Loading/LoadingBar_Fill.png" id="4_u287n"]
 [ext_resource type="FontFile" uid="uid://bwsd0ce7dkkv" path="res://Assets/Fonts/Cinzel/static/Cinzel-Bold.ttf" id="5_n6fe2"]
@@ -23,7 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_5l6nm")
+texture = ExtResource("2_p3fd8")
 
 [node name="LoadBar" type="TextureProgressBar" parent="."]
 layout_mode = 1

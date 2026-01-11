@@ -58,7 +58,7 @@ func display_card_info(type: SpecialType, current_num: int, total_count: int) ->
 	card_name.text = tr(cards_name[type])
 	card_info.text = tr(cards_description[type])
 	card_icon.texture = cards_icon[type]
-	card_indicator.bbcode_text = "[font_size=40][color=#a58532]%d[/color][/font_size] / %d" % [current_num + 1, total_count]
+	card_indicator.bbcode_text = "[center][font_size=40][color=#a58532]%d[/color][/font_size]  /  %d[/center]" % [current_num + 1, total_count]
 
 #Selects the card by index in the current category
 func select_card_by_index(index: int) -> void:

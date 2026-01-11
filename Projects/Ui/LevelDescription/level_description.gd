@@ -24,6 +24,8 @@ var additional_objectives: Array[String] = [] :
 			icon.stretch_mode = TextureRect.STRETCH_KEEP_CENTERED
 			label.text = tr(objective)
 			label.add_theme_font_size_override("font_size", 40)
+			label.add_theme_color_override("font_color", lable_color)
+			label.add_theme_font_override("font", font)
 			task.add_theme_constant_override("separation", 30)
 			task.size_flags_vertical = Control.SIZE_EXPAND_FILL
 			objectives_container.add_child(task)
@@ -39,12 +41,14 @@ var move_count: int:
 var number: String = ""
 
 var level: PackedScene
+var lable_color = Color(0.984,0.761,0.212,1)
+var font: FontFile = load("res://Assets/Fonts/NotoSans-Light.ttf")
 
 @onready var title_label: Label  = $Panel/Title
 @onready var story_label: RichTextLabel  = $Panel/Story
 @onready var move_count_label: Label = $Panel/TaskPanel/move_count
 @onready var objectives_container: VBoxContainer  = $Panel/TaskPanel/Objectives
-@onready var icon_image = load("res://Assets/UI/Level Description/icon.png")
+@onready var icon_image = load("res://Assets/UI/Level Description/Icon(new).png")
 @onready var play_button: Button = $Panel/Play
 @onready var close_button: Button = $Panel/Close
 
