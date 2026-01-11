@@ -1,6 +1,6 @@
 extends ComputerEngine
 
-@onready var board: Board = %Board
+@onready var board: BoardStory = %Board
 
 func make_move() -> void:
 	match board.move_number:

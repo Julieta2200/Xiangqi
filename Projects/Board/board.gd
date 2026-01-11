@@ -31,10 +31,6 @@ var markers : Dictionary
 # which is on that position.
 var state : Dictionary
 
-# save_states is used to keep the history of the game
-# in order to get back to that position if needed.
-var save_states: Dictionary
-
 # selected_figure is the figure that was clicked and ready to be moved.
 var selected_figure: Figure
 
@@ -44,17 +40,16 @@ var can_move : bool = true
 # figure_move_done emitted when move is complete
 signal figure_move_done
 
-# move_computer emitted when it's computers turn to move
-signal move_computer
-
-# turn, when setted is recalculating the moves, and emits move_computer
-var turn: team:
+# turn, when set is recalculating the moves
+var turn: team = team.Red:
 	set(t):
 		turn = t
 		calculate_moves()
-		if turn == Board.team.Black:
-			move_number += 1
-			emit_signal("move_computer")
+		_on_turn_changed()
+
+# Hook method called when turn changes, can be overridden by child classes
+func _on_turn_changed():
+	pass
 
 var move_number: int = 0
 
@@ -73,11 +68,8 @@ var figure_scenes: Dictionary = {
 	Figure.Types.Cannon: "res://Projects/Figure/{GROUP}/Cannon/cannon.tscn",
 }
 
-# _set_figure is emmited when new figure is added to the board via garrison
-signal _set_figure(marker: BoardMarker)
 
 func _ready():
-	turn = team.Red
 	initialize_markers()
 	
 
@@ -106,41 +98,9 @@ func create_state(new_state: Dictionary) -> void:
 	
 	calculate_moves()
 
-# Generates and saves the current state of all figures for the current move
-func generate_save_state() -> void:
-	var generated_state: Dictionary
-	for pos in state:
-		generated_state[pos] = {
-			"type": state[pos].type,
-			"team": state[pos].team,
-			"group": groups[state[pos].team]
-		}
-		
-		if !state[pos].active:
-			generated_state[pos].inactive = true
-	save_states[move_number] = generated_state
-
-# Loads the saved state of a specific move and sets the turn to Red team
-func load_move(move: int) -> void:
-	move_number = move
-	turn = team.Red
-	create_state(save_states[move])
-
 func unhighlight_markers():
 	for key in markers:
 		markers[key].unhighlight()
-
-# Executes a move for the computer(black figures), 
-# updating the figure's position and generating the new state
-func computer_move(pos: Vector2, new_pos: Vector2) -> bool:
-	unhighlight_markers()
-	if !state.has(pos) or state[pos].team != turn:
-		return false
-	if state.has(new_pos):
-		state[new_pos].delete()
-	state[pos].move(markers[new_pos])
-	generate_save_state()
-	return true
 
 # Calculates possible moves for the current team based on the current state of the board
 func calculate_moves():
@@ -149,11 +109,11 @@ func calculate_moves():
 		if state[pos].team == turn:
 			state[pos].calculate_moves()
 
-func get_generals(state: Dictionary) -> Dictionary:
+func get_generals(board_state: Dictionary) -> Dictionary:
 	var generals: Dictionary
-	for pos in state:
-		if state[pos].type == Figure.Types.General:
-			generals[state[pos].team] = pos
+	for pos in board_state:
+		if board_state[pos].type == Figure.Types.General:
+			generals[board_state[pos].team] = pos
 	return generals
 	
 func get_figures(t: team, type: Figure.Types) -> Array[Figure]:
@@ -184,31 +144,6 @@ func _on_marker_figure_move(marker: Variant) -> void:
 	can_move = false
 
 
-func _on_marker_figure_set(marker: Variant) -> void:
-	emit_signal("_set_figure", marker)
-
-# Makes visible markers based on the distance, and figures movement rules
-func highlight_placeholder_markers(selected_card: FigureCard, distance: int) -> void:
-	can_move = false
-	
-	# We store all the markers that have become visible,
-	# the key is the position(Vector2) and the value is the marker
-	var position_markers : Dictionary
-	for i in markers:
-		var highlight = markers[i].position_marker
-		highlight.visible = !palace_positions.has(i) and !state.has(i) and \
-		 i.y <=  distance and in_boundaries(i, selected_card) 
-		if highlight.visible:
-			position_markers[i] = markers[i]
-	
-	for i in position_markers:
-		position_markers[i].horizontal_line.visible = position_markers.has(Vector2(i.x+1,i.y))
-		position_markers[i].vertical_line.visible = position_markers.has(Vector2(i.x,i.y+1))
-
-func in_boundaries(pos : Vector2, card: FigureCard) -> bool:
-	if card.type == Figure.Types.Elephant:
-		return pos.y <= 4
-	return true
 
 
 # Spawns and initializes a figure at the board, according to the given parameters
@@ -232,21 +167,13 @@ func set_figure(type: Figure.Types, board_position: Vector2, group: String = "Ma
 		marker.position_marker_light(group)
 	figure.figure_selected.connect(_on_figure_selected)
 
+# Override this in child classes to implement different turn logic
 func _on_figure_move_done():
-	if turn == team.Black:
-		turn = team.Red
-		can_move = true
-	else:
-		turn = team.Black
-		emit_signal("figure_move_done")
+	emit_signal("figure_move_done")
 
-func _on_figure_selected(figure):
-	if figure.team == Board.team.Red and can_move:
-		if selected_figure != null:
-			selected_figure.delete_highlight()
-			markers[selected_figure.board_position].unhighlight()
-		selected_figure = figure
-		selected_figure.highlight_moves()
+# Override this in child classes to implement different selection logic
+func _on_figure_selected(_figure):
+	pass
 
 # Deletes all figures from the state
 func delete_figures():
