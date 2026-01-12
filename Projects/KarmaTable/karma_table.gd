@@ -112,12 +112,14 @@ func _dequip_hl(s: SpecialCard):
 	s.on_click_full.connect(_equip_hl)
 
 func _on_back_pressed() -> void:
+	AudioManager.play_sound("back")
 	GameState.save_game()
 	SceneManager.change_scene(SceneManager.Scenes.Overworld)
 
 func _on_play_pressed() -> void:
 	if GameState.current_level_info["scene"]:
 		GameState.save_game()
+		AudioManager.play_sound("play_button_select")
 		get_tree().change_scene_to_packed(GameState.current_level_info["scene"])
 
 func run_hint_system() -> void:
@@ -137,12 +139,14 @@ func run_hint_system() -> void:
 
 func _on_back_mouse_entered() -> void:
 	$CanvasLayer/Back/arrow.text = tr("BUTTON_ARROW_HOVER")
+	AudioManager.play_sound("hover_on")
 
 func _on_back_mouse_exited() -> void:
 	$CanvasLayer/Back/arrow.text = tr("BUTTON_ARROW_NORMAL")
 
 func _on_play_mouse_entered() -> void:
 	$CanvasLayer/Play/arrow.text = tr("BUTTON_ARROW_HOVER")
+	AudioManager.play_sound("hover_on")
 
 func _on_play_mouse_exited() -> void:
 	$CanvasLayer/Play/arrow.text = tr("BUTTON_ARROW_NORMAL")
@@ -163,5 +167,7 @@ func _on_back_button_up() -> void:
 func _on_toggle_button_pressed() -> void:
 	if $CanvasLayer/Special_cards_info.position != Vector2.ZERO:
 		$CanvasLayer/Special_cards_info/AnimationPlayer.play("special_card_info")
+		AudioManager.play_sound("opening_panel")
 	else:
 		$CanvasLayer/Special_cards_info/AnimationPlayer.play_backwards("special_card_info")
+		AudioManager.play_sound("closing_panel")

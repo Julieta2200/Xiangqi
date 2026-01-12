@@ -51,7 +51,7 @@ func _ready() -> void:
 	}
 	
 	switch_category(Category.LL)
-	select_card_by_index(0)
+	select_card_by_index(0, false)
 
 #Updates the UI with the given card data
 func display_card_info(type: SpecialType, current_num: int, total_count: int) -> void:
@@ -61,11 +61,12 @@ func display_card_info(type: SpecialType, current_num: int, total_count: int) ->
 	card_indicator.bbcode_text = "[center][font_size=40][color=#a58532]%d[/color][/font_size]  /  %d[/center]" % [current_num + 1, total_count]
 
 #Selects the card by index in the current category
-func select_card_by_index(index: int) -> void:
+func select_card_by_index(index: int, play_sound = true) -> void:
 	var container = category_containers[current_category]
 	if container.get_child_count() == 0: 
 		return
-		
+	if play_sound:
+		AudioManager.play_sound("button_select")
 	container.get_child(selected_card_index).button_pressed = false
 	selected_card_index = index
 	var card_node = container.get_child(selected_card_index)
@@ -91,7 +92,7 @@ func switch_category(category: Category) -> void:
 	scroll_hl.visible = !is_ll_card
 	ll_list_button.button_pressed = is_ll_card
 	hl_list_button.button_pressed = !is_ll_card
-	select_card_by_index(0)
+	select_card_by_index(0,false)
 
 func _on_ll_button_pressed() -> void:
 	switch_category(Category.LL)
@@ -100,6 +101,7 @@ func _on_hl_button_pressed() -> void:
 	switch_category(Category.HL)
 
 func _on_button_special_card_select(type: SpecialType, number: int) -> void:
+	AudioManager.play_sound("button_select")
 	var container = category_containers[current_category]
 	for child in container.get_children():
 		child.button_pressed = false
@@ -118,3 +120,7 @@ func _on_right_button_pressed() -> void:
 	var container = category_containers[current_category]
 	if selected_card_index < container.get_child_count() - 1:
 		select_card_by_index(selected_card_index + 1)
+
+
+func _on_card_slot_mouse_entered() -> void:
+	AudioManager.play_sound("hover_on")

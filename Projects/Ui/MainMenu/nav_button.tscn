@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvgwekodiw7wr"]
+[gd_scene load_steps=6 format=3 uid="uid://cvgwekodiw7wr"]
 
 [ext_resource type="FontFile" uid="uid://c66ve5yi6m7nm" path="res://Assets/Fonts/Cinzel/Cinzel-Regular.ttf" id="1_v5v2s"]
 [ext_resource type="Texture2D" uid="uid://do8onxrhshupx" path="res://Assets/MainMenu/ui/Hover_effect.png" id="2_fhjnx"]
+[ext_resource type="Script" path="res://Projects/Ui/MainMenu/nav_button.gd" id="3_mrbar"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_klgxu"]
 
@@ -28,3 +29,4 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_gmsml")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_klgxu")
 text = "   NEW GAME"
 alignment = 0
+script = ExtResource("3_mrbar")

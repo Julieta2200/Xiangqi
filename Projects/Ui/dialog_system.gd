@@ -43,6 +43,7 @@ const game_over_dialog_texts: Array[String] = [
 var text_queue: Array[DialogText]
 var skipable: bool
 var is_decision: bool = false
+var allow_dialog_sfx := false
 
 @onready var text_obj: Label = $Panel/Text
 @onready var name_obj: Label = $Panel/Name
@@ -63,11 +64,15 @@ func start_dialog(texts: Array[DialogText], skipable: bool = false) -> void:
 	self.skipable = skipable
 	skip_text_obj.visible = skipable
 	_next_dialog()
+	allow_dialog_sfx = true
 
 func _next_dialog() -> void:
+	if allow_dialog_sfx and text_queue.size() >= 0:
+		AudioManager.play_sound("dialog_box")
 	if text_queue.size() == 0:
 		disappear()
 		emit_signal("dialog_finished")
+		allow_dialog_sfx = false
 		return
 	var dt: DialogText = text_queue.pop_front()
 	if dt.options.size() > 0:
