@@ -18,6 +18,7 @@ func move_animation(old_pos: Vector2i, new_pos: Vector2i) -> void:
 	animated_sprite.play(animation)
 
 func disappear_animation(target_pos: Vector2i, attacker_pos: Vector2i):
+	super.disappear_animation(target_pos, attacker_pos)
 	var direction = target_pos - attacker_pos
 	
 	if direction.y < 0:
@@ -45,6 +46,7 @@ func disappear(attacker_pos: Vector2i):
 	disappear_animation(figure_component.chess_component.position,attacker_pos)
 
 func attack(attacker_pos: Vector2i,target_pos: Vector2i):
+	play_sound(attack_sound)
 	self.attacker_pos = attacker_pos
 	self.target_pos = target_pos
 	var direction = attacker_pos - target_pos
