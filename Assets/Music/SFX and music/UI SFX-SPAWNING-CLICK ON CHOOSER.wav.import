@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bf435c7wuo4ft"
+path="res://.godot/imported/UI SFX-SPAWNING-CLICK ON CHOOSER.wav-64c00b9148e3568e7315d9889a127654.sample"
+
+[deps]
+
+source_file="res://Assets/Music/SFX and music/UI SFX-SPAWNING-CLICK ON CHOOSER.wav"
+dest_files=["res://.godot/imported/UI SFX-SPAWNING-CLICK ON CHOOSER.wav-64c00b9148e3568e7315d9889a127654.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ci7y16myjpxtj"
+path="res://.godot/imported/UI SFX-Overworld-Hover LOOP.wav-baf3a8de03a60f6ab289d9162d28e88c.sample"
+
+[deps]
+
+source_file="res://Assets/Music/SFX and music/UI SFX-Overworld-Hover LOOP.wav"
+dest_files=["res://.godot/imported/UI SFX-Overworld-Hover LOOP.wav-baf3a8de03a60f6ab289d9162d28e88c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

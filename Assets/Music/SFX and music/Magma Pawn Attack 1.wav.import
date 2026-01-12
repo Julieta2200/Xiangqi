@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://jcjei3u5egm5"
+path="res://.godot/imported/Magma Pawn Attack 1.wav-56a7132abb7e10e5327d4fa1b181361f.sample"
+
+[deps]
+
+source_file="res://Assets/Music/SFX and music/Magma Pawn Attack 1.wav"
+dest_files=["res://.godot/imported/Magma Pawn Attack 1.wav-56a7132abb7e10e5327d4fa1b181361f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

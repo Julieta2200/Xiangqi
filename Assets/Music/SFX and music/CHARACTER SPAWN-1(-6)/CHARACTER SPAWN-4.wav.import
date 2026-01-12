@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://gqmonf2blq58"
+path="res://.godot/imported/CHARACTER SPAWN-4.wav-7509a09eb6e7f1c84a861989fe994eda.sample"
+
+[deps]
+
+source_file="res://Assets/Music/SFX and music/CHARACTER SPAWN-1(-6)/CHARACTER SPAWN-4.wav"
+dest_files=["res://.godot/imported/CHARACTER SPAWN-4.wav-7509a09eb6e7f1c84a861989fe994eda.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

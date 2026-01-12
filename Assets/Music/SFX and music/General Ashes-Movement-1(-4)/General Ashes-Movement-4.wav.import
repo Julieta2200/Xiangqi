@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d3iav044c43ix"
+path="res://.godot/imported/General Ashes-Movement-4.wav-ed44963f365b48e1cebbd8f3215a473d.sample"
+
+[deps]
+
+source_file="res://Assets/Music/SFX and music/General Ashes-Movement-1(-4)/General Ashes-Movement-4.wav"
+dest_files=["res://.godot/imported/General Ashes-Movement-4.wav-ed44963f365b48e1cebbd8f3215a473d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

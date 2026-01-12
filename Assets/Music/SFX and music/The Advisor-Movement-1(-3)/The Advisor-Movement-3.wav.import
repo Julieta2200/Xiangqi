@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dhc66prjo2cke"
+path="res://.godot/imported/The Advisor-Movement-3.wav-52924d2793272ef143fe3141ab5ec5b4.sample"
+
+[deps]
+
+source_file="res://Assets/Music/SFX and music/The Advisor-Movement-1(-3)/The Advisor-Movement-3.wav"
+dest_files=["res://.godot/imported/The Advisor-Movement-3.wav-52924d2793272ef143fe3141ab5ec5b4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

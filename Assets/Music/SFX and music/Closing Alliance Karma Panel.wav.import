@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dfdk0v82ed5gk"
+path="res://.godot/imported/Closing Alliance Karma Panel.wav-e9eca75688451936982aa821e9d4f35b.sample"
+
+[deps]
+
+source_file="res://Assets/Music/SFX and music/Closing Alliance Karma Panel.wav"
+dest_files=["res://.godot/imported/Closing Alliance Karma Panel.wav-e9eca75688451936982aa821e9d4f35b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

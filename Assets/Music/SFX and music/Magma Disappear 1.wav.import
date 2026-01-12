@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://tnecjfwu40b3"
+path="res://.godot/imported/Magma Disappear 1.wav-6c30ef49507ec09405600f9389216ea2.sample"
+
+[deps]
+
+source_file="res://Assets/Music/SFX and music/Magma Disappear 1.wav"
+dest_files=["res://.godot/imported/Magma Disappear 1.wav-6c30ef49507ec09405600f9389216ea2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

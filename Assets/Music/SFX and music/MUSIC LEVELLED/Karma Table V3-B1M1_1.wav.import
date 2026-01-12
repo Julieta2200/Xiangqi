@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bm2httkkvcgxf"
+path="res://.godot/imported/Karma Table V3-B1M1_1.wav-02dba85ee7e2b6847cbcdc3edd685836.sample"
+
+[deps]
+
+source_file="res://Assets/Music/SFX and music/MUSIC LEVELLED/Karma Table V3-B1M1_1.wav"
+dest_files=["res://.godot/imported/Karma Table V3-B1M1_1.wav-02dba85ee7e2b6847cbcdc3edd685836.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

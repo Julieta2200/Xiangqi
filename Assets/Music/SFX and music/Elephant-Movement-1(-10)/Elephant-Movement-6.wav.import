@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://erlys0x5f7ef"
+path="res://.godot/imported/Elephant-Movement-6.wav-49a86de9d4e8dae3c7913e111560085d.sample"
+
+[deps]
+
+source_file="res://Assets/Music/SFX and music/Elephant-Movement-1(-10)/Elephant-Movement-6.wav"
+dest_files=["res://.godot/imported/Elephant-Movement-6.wav-49a86de9d4e8dae3c7913e111560085d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

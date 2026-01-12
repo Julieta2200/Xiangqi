@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://6vvo74nyud3o"
+path="res://.godot/imported/Fog Kingdom Pawn - Movement 1.wav-47c287a65ebc1ab9c59e52e165386c50.sample"
+
+[deps]
+
+source_file="res://Assets/Music/SFX and music/Fog Kingdom Pawn - Movement 1.wav"
+dest_files=["res://.godot/imported/Fog Kingdom Pawn - Movement 1.wav-47c287a65ebc1ab9c59e52e165386c50.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

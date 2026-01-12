@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bq2gfobaiucqe"
+path="res://.godot/imported/Pawn-Movement-2.wav-3e50586879e5ade41804b34716e32014.sample"
+
+[deps]
+
+source_file="res://Assets/Music/SFX and music/Pawn-Movement-1(-8)/Pawn-Movement-2.wav"
+dest_files=["res://.godot/imported/Pawn-Movement-2.wav-3e50586879e5ade41804b34716e32014.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

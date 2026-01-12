@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d2ksev3jp82ad"
+path="res://.godot/imported/Main Menu Music Loop-B1-MUSIC & SFX MIXED.wav-7eaf15f14ef0ea2ca63931b9eb4d5966.sample"
+
+[deps]
+
+source_file="res://Assets/Music/SFX and music/MUSIC LEVELLED/Main Menu Music Loop-B1-MUSIC & SFX MIXED.wav"
+dest_files=["res://.godot/imported/Main Menu Music Loop-B1-MUSIC & SFX MIXED.wav-7eaf15f14ef0ea2ca63931b9eb4d5966.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

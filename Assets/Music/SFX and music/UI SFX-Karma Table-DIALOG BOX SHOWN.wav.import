@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bvb82s67gbkk6"
+path="res://.godot/imported/UI SFX-Karma Table-DIALOG BOX SHOWN.wav-5d3c4459fd18cc4e93edf30e414ac688.sample"
+
+[deps]
+
+source_file="res://Assets/Music/SFX and music/UI SFX-Karma Table-DIALOG BOX SHOWN.wav"
+dest_files=["res://.godot/imported/UI SFX-Karma Table-DIALOG BOX SHOWN.wav-5d3c4459fd18cc4e93edf30e414ac688.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
