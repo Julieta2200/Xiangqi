@@ -14,6 +14,7 @@ var sounds := {
 	"closing_panel": preload("res://Assets/Music/SFX and music/Closing Alliance Karma Panel.wav"),
 	"back": preload("res://Assets/Music/SFX and music/Pause Menu Open.wav"),
 	"strike": preload("res://Assets/Music/SFX and music/Strike Sound.wav"),
+
 }
 
 func _ready() -> void:

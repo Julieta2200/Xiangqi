@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://dt7elk36ldfbg"]
+[gd_scene load_steps=13 format=3 uid="uid://dt7elk36ldfbg"]
 
 [ext_resource type="Script" path="res://Projects/Levels/Overworld/level_marker.gd" id="1_vg6g7"]
 [ext_resource type="Texture2D" uid="uid://qgqvjijxph05" path="res://Assets/Map/Markers/Big/Marker White.png" id="2_mhiqo"]
 [ext_resource type="Texture2D" uid="uid://c0elk1d0cex1a" path="res://Assets/Map/Markers/Hover.png" id="3_bwkg7"]
+[ext_resource type="AudioStream" uid="uid://ci7y16myjpxtj" path="res://Assets/Music/SFX and music/UI SFX-Overworld-Hover LOOP.wav" id="4_fj71e"]
 [ext_resource type="AudioStream" uid="uid://l1liciqrwh63" path="res://Assets/Music/UI SFX-Overworld-Hover LOOP.wav" id="5_wwm5f"]
 
 [sub_resource type="Animation" id="Animation_mnl76"]
@@ -115,7 +116,7 @@ libraries = {
 }
 
 [node name="HoverMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_wwm5f")
+stream = ExtResource("4_fj71e")
 bus = &"SFX"
 
 [node name="HoverMusicEffects" type="AudioStreamPlayer" parent="."]

@@ -16,3 +16,4 @@ func apply_strike() -> void:
 	if strike < 0:
 		return
 	strikes[strike].texture = strike_used_sprite
+	AudioManager.play_sound("strike")

@@ -34,8 +34,8 @@ var move_count: int
 @export var additional_objectives: Array[String] = []
 @export var number: String
 
-var hover_music_off = preload("res://Assets/Music/UI SFX-Overworld-Hover OFF.wav")
-var hover_music_on = preload("res://Assets/Music/UI SFX-Overworld-Hover ON.wav")
+var hover_music_off = preload("res://Assets/Music/SFX and music/UI SFX-Overworld-Hover OFF.wav")
+var hover_music_on = preload("res://Assets/Music/SFX and music/UI SFX-Overworld-Hover ON.wav")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

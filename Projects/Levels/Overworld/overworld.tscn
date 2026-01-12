@@ -24,11 +24,11 @@
 [ext_resource type="Texture2D" uid="uid://bnr8lhker5a5h" path="res://Assets/MainMenu/ui/Line.png" id="21_3r6qu"]
 [ext_resource type="Script" path="res://Projects/Levels/Overworld/camera.gd" id="21_6fygh"]
 [ext_resource type="Texture2D" uid="uid://bbi3vn0pr30bs" path="res://Assets/Map/Third Part/Water.png" id="22_8r75w"]
-[ext_resource type="AudioStream" uid="uid://bbxmsqcsaufp5" path="res://Assets/Music/Overworld V1-B2M1.wav" id="22_cjf4v"]
 [ext_resource type="Texture2D" uid="uid://dwblpmraaq4v7" path="res://Assets/MainMenu/ui/Esc_button.png" id="22_wslg4"]
 [ext_resource type="FontFile" uid="uid://c66ve5yi6m7nm" path="res://Assets/Fonts/Cinzel/Cinzel-Regular.ttf" id="23_0juxv"]
 [ext_resource type="PackedScene" uid="uid://ba32qvdi6rk4u" path="res://Projects/Ui/hint_bubble.tscn" id="24_w1wm1"]
 [ext_resource type="Texture2D" uid="uid://dkcu2jqstbxx5" path="res://Assets/Map/Third Island/Water.png" id="26_br2ah"]
+[ext_resource type="AudioStream" uid="uid://duken26ajdum5" path="res://Assets/Music/SFX and music/MUSIC LEVELLED/Overworld V1-B2M1_1.wav" id="29_2jp7m"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_gfa8y"]
 
@@ -278,6 +278,6 @@ scale = Vector2(5.43992, 4.04184)
 texture = ExtResource("11_omsi1")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("22_cjf4v")
+stream = ExtResource("29_2jp7m")
 autoplay = true
 bus = &"Music"

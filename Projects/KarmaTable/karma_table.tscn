@@ -17,8 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://cmyj3au8xcmqv" path="res://Projects/KarmaTable/special_cards_info.tscn" id="12_q47rj"]
 [ext_resource type="PackedScene" uid="uid://cavxgtpxtng4j" path="res://Projects/Music/Music.tscn" id="12_qky3m"]
 [ext_resource type="Texture2D" uid="uid://dvq4cijta0kw3" path="res://Assets/UI/Ability info/Toggle Button(active).png" id="13_enf7o"]
-[ext_resource type="AudioStream" uid="uid://24dwra2qr3qu" path="res://Assets/Music/Karma Table V3-B1.wav" id="13_oa16i"]
 [ext_resource type="Texture2D" uid="uid://b56jp0kcbxlai" path="res://Assets/UI/Ability info/Toggle Button.png" id="14_qnejh"]
+[ext_resource type="AudioStream" uid="uid://bm2httkkvcgxf" path="res://Assets/Music/SFX and music/MUSIC LEVELLED/Karma Table V3-B1M1_1.wav" id="19_i7e5q"]
 
 [sub_resource type="Animation" id="Animation_guti8"]
 length = 0.001
@@ -462,7 +462,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_mcpb3")
 theme_override_styles/normal = SubResource("StyleBoxTexture_mtdhy")
 
 [node name="Music" parent="." instance=ExtResource("12_qky3m")]
-music = ExtResource("13_oa16i")
+music = ExtResource("19_i7e5q")
 
 [connection signal="button_down" from="CanvasLayer/Back" to="." method="_on_back_button_down"]
 [connection signal="button_up" from="CanvasLayer/Back" to="." method="_on_back_button_up"]
