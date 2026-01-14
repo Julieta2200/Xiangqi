@@ -24,10 +24,10 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("exit"):
 		if pause_menu.visible:
+			AudioManager.play_sound("hover_off")
 			if pause_menu.state == pause_menu.States.Options:
 				pause_menu.options_back()
 			else:
-				AudioManager.play_sound("hover_off")
 				pause_menu.hide()
 				music.audio_player.stream_paused = false
 		else:
