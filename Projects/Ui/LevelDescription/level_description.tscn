@@ -9,8 +9,8 @@
 [ext_resource type="FontFile" uid="uid://dvp3kgcd16fjp" path="res://Assets/Fonts/Cinzel-VariableFont_wght.ttf" id="5_hfxyk"]
 [ext_resource type="FontFile" uid="uid://dcdno0j53ve3l" path="res://Assets/Fonts/NotoSans-Light.ttf" id="7_4guvc"]
 [ext_resource type="FontFile" uid="uid://jdwcjp3th8oy" path="res://Assets/Fonts/Noto_Sans/static/NotoSans-Regular.ttf" id="7_n8gfo"]
-[ext_resource type="AudioStream" uid="uid://l1liciqrwh63" path="res://Assets/Music/UI SFX-Overworld-Hover LOOP.wav" id="10_d0rng"]
-[ext_resource type="AudioStream" uid="uid://si2lcb3dnurs" path="res://Assets/Music/overworld/UI SFX-Overworld-PLAY BUTTON SELECT.wav" id="12_0g4sm"]
+[ext_resource type="AudioStream" uid="uid://ci7y16myjpxtj" path="res://Assets/Music/SFX and music/UI SFX-Overworld-Hover LOOP.wav" id="10_h2m33"]
+[ext_resource type="AudioStream" uid="uid://cfl2y85hynlpx" path="res://Assets/Music/SFX and music/UI SFX-Overworld-PLAY BUTTON SELECT.wav" id="11_3rv7n"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2dom2"]
 shader = ExtResource("2_vs66t")
@@ -191,11 +191,11 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_1jwao")
 text = "PLAY"
 
 [node name="HoverMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_d0rng")
+stream = ExtResource("10_h2m33")
 bus = &"SFX"
 
 [node name="HoverMusicEffects" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("12_0g4sm")
+stream = ExtResource("11_3rv7n")
 bus = &"SFX"
 
 [connection signal="mouse_entered" from="Panel/Close" to="." method="_on_close_mouse_entered"]

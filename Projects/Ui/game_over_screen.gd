@@ -16,6 +16,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("exit") and visible:
+		AudioManager.play_sound("back")
 		SceneManager.change_scene(SceneManager.Scenes.Overworld)
 
 func _on_retry_pressed() -> void:
@@ -26,6 +27,7 @@ func _on_visibility_changed() -> void:
 		return
 		
 	if visible:
+		AudioManager.play_sound("loading_screen_starts")
 		play_music()
 
 func play_music():

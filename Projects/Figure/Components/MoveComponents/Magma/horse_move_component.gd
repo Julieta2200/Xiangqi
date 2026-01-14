@@ -10,6 +10,7 @@ func move_to_position(marker: BoardMarker, initial_position: Vector2i = Vector2i
 	target_position = marker.global_position
 	
 	move_animation(figure_component.chess_component.position, marker.board_position)
+	play_sound(move_sound)
 
 func move_animation(old_pos: Vector2i, new_pos: Vector2i) -> void:
 	self.old_pos = old_pos

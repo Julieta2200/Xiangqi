@@ -18,10 +18,10 @@
 [ext_resource type="Texture2D" uid="uid://ctkjjmo52j651" path="res://Assets/Characters/Magma/General/Run/Back/back6.png" id="12_mmg6w"]
 [ext_resource type="Texture2D" uid="uid://crt675lrdbly" path="res://Assets/MainMenu/ui/logo/Logo(glow_effect).png" id="16_dynym"]
 [ext_resource type="FontFile" uid="uid://dy702fuy23t3f" path="res://Assets/Fonts/Cinzel/Cinzel-Bold.ttf" id="18_67d17"]
-[ext_resource type="AudioStream" uid="uid://duw0xpg3frf48" path="res://Assets/Music/Main Menu Music Loop-B1-MUSIC & SFX MIXED.wav" id="18_c7tyu"]
 [ext_resource type="Material" uid="uid://0avhoflklsgs" path="res://Projects/Shaders/preface.tres" id="19_5pmil"]
 [ext_resource type="PackedScene" uid="uid://dtqik42d1b4fu" path="res://Projects/Ui/OptionsMenu/options_menu.tscn" id="20_0pofw"]
 [ext_resource type="FontFile" uid="uid://cu8p86udd0pcg" path="res://Assets/Fonts/Noto_Sans/static/NotoSans_SemiCondensed-Regular.ttf" id="20_w72fn"]
+[ext_resource type="AudioStream" uid="uid://d2ksev3jp82ad" path="res://Assets/Music/SFX and music/MUSIC LEVELLED/Main Menu Music Loop-B1-MUSIC & SFX MIXED.wav" id="22_ecgaj"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_pcs1b"]
 noise_type = 3
@@ -1112,11 +1112,19 @@ libraries = {
 }
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("18_c7tyu")
+stream = ExtResource("22_ecgaj")
 autoplay = true
 bus = &"Music"
 
+[connection signal="mouse_entered" from="CanvasLayer/Navigation/Continue" to="CanvasLayer/Navigation/Continue" method="_on_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/Navigation/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="CanvasLayer/Navigation/Continue" to="CanvasLayer/Navigation/Continue" method="_on_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Navigation/NewGame" to="CanvasLayer/Navigation/NewGame" method="_on_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/Navigation/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="CanvasLayer/Navigation/NewGame" to="CanvasLayer/Navigation/NewGame" method="_on_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Navigation/Options" to="CanvasLayer/Navigation/Options" method="_on_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/Navigation/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="CanvasLayer/Navigation/Options" to="CanvasLayer/Navigation/Options" method="_on_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Navigation/Credits" to="CanvasLayer/Navigation/Credits" method="_on_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/Navigation/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="CanvasLayer/Navigation/Credits" to="CanvasLayer/Navigation/Credits" method="_on_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://btst40g2n6wda"]
+[gd_scene load_steps=42 format=3 uid="uid://btst40g2n6wda"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_mjqwp"]
 [ext_resource type="Texture2D" uid="uid://cq5aoxlt43cv8" path="res://Assets/Characters/Magma/Cannon/Idle/Catapult1.png" id="2_uf8g5"]
@@ -36,6 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://bmd8o1tujsi60" path="res://Assets/Characters/Magma/Cannon/Move/Right/Right5.png" id="27_shv3p"]
 [ext_resource type="Texture2D" uid="uid://ce63gj703h5mg" path="res://Assets/Characters/Magma/Cannon/Move/Right/Right6.png" id="28_4p8bj"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/Magma/cannon_move_component.gd" id="31_ofvid"]
+[ext_resource type="AudioStream" uid="uid://byyp6sqsb46ar" path="res://Assets/Music/SFX and music/Magma Rook Stver Movement 1.wav" id="32_1ast7"]
 [ext_resource type="Material" uid="uid://cxl2ktlqa7y0f" path="res://Projects/Shaders/summoning_sickness.tres" id="35_dvtla"]
 [ext_resource type="Material" uid="uid://c5vdybw7ih322" path="res://Projects/Shaders/blocker.tres" id="36_quwwh"]
 
@@ -196,10 +197,12 @@ team = 1
 figure_component = NodePath("..")
 move_component = NodePath("../MoveComponent")
 
-[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "shadow")]
+[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "shadow", "audio_player")]
 script = ExtResource("31_ofvid")
 figure_component = NodePath("..")
 shadow = NodePath("../ShadowPivot/Shadow")
+audio_player = NodePath("../Audio_player")
+move_sound = Array[AudioStreamWAV]([ExtResource("32_1ast7")])
 
 [node name="ShaderComponent" parent="." node_paths=PackedStringArray("main_sprite") instance=ExtResource("7_8tkf7")]
 main_sprite = NodePath("../AnimatedSprite2D")
@@ -220,5 +223,8 @@ sprite_frames = SubResource("SpriteFrames_eul7x")
 animation = &"idle"
 autoplay = "idle"
 flip_h = true
+
+[node name="Audio_player" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="MoveComponent" method="_on_figure_animation_finished"]

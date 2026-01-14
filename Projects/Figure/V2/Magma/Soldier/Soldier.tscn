@@ -174,19 +174,20 @@
 [ext_resource type="Texture2D" uid="uid://bd1auyflbitpa" path="res://Assets/Characters/Magma/Pawn/Teleport/Teleport5.png" id="169_fpkgw"]
 [ext_resource type="Material" uid="uid://e3w5tox88i13" path="res://Projects/Shaders/outline.tres" id="171_lnamv"]
 [ext_resource type="PackedScene" uid="uid://cy1y1kpvwk5sq" path="res://Projects/Figure/Components/ShaderComponent/shader_component.tscn" id="173_2aeto"]
+[ext_resource type="AudioStream" uid="uid://yp3ugo5ccnqh" path="res://Assets/Music/SFX and music/Pawn-Movement-1(-8)/Pawn-Movement-1.wav" id="173_yxink"]
+[ext_resource type="AudioStream" uid="uid://bq2gfobaiucqe" path="res://Assets/Music/SFX and music/Pawn-Movement-1(-8)/Pawn-Movement-2.wav" id="174_y37re"]
 [ext_resource type="Material" uid="uid://b5ews8a5nl326" path="res://Projects/Shaders/spawn.tres" id="175_p2gdl"]
+[ext_resource type="AudioStream" uid="uid://bm5k3lmqhitvb" path="res://Assets/Music/SFX and music/Pawn-Movement-1(-8)/Pawn-Movement-3.wav" id="175_ydgvf"]
+[ext_resource type="AudioStream" uid="uid://byjw2kwuq762f" path="res://Assets/Music/SFX and music/Pawn-Movement-1(-8)/Pawn-Movement-4.wav" id="176_cb50u"]
 [ext_resource type="PackedScene" uid="uid://d05lmiobxnn3t" path="res://Projects/Figure/shadow_pivot.tscn" id="176_duf2y"]
 [ext_resource type="Material" uid="uid://cxl2ktlqa7y0f" path="res://Projects/Shaders/summoning_sickness.tres" id="176_lwbf2"]
 [ext_resource type="Material" uid="uid://blvd6fmf8jtbp" path="res://Projects/Shaders/blur_shadow.tres" id="177_2ekrr"]
-[ext_resource type="Material" path="res://Projects/Shaders/blocker.tres" id="177_jg6y1"]
-[ext_resource type="AudioStream" uid="uid://bcsn0h75xf3fk" path="res://Assets/SFX/CHARACTER MOVEMENT SFX/Pawn Movement/Pawn-Movement-1.wav" id="178_oda4n"]
-[ext_resource type="AudioStream" uid="uid://q2dgljvai7ip" path="res://Assets/SFX/CHARACTER MOVEMENT SFX/Pawn Movement/Pawn-Movement-2.wav" id="179_jk60f"]
-[ext_resource type="AudioStream" uid="uid://c85hb0nimhcyd" path="res://Assets/SFX/CHARACTER MOVEMENT SFX/Pawn Movement/Pawn-Movement-3.wav" id="180_jc8ak"]
-[ext_resource type="AudioStream" uid="uid://cbamrkk43vmt" path="res://Assets/SFX/CHARACTER MOVEMENT SFX/Pawn Movement/Pawn-Movement-4.wav" id="181_5sh28"]
-[ext_resource type="AudioStream" uid="uid://bm5nqpolaygoc" path="res://Assets/SFX/CHARACTER MOVEMENT SFX/Pawn Movement/Pawn-Movement-5.wav" id="182_t5qy6"]
-[ext_resource type="AudioStream" uid="uid://bc1oebkf4kfm3" path="res://Assets/SFX/CHARACTER MOVEMENT SFX/Pawn Movement/Pawn-Movement-6.wav" id="183_blfh7"]
-[ext_resource type="AudioStream" uid="uid://biu5kbnwjjrvt" path="res://Assets/SFX/CHARACTER MOVEMENT SFX/Pawn Movement/Pawn-Movement-7.wav" id="184_22y1k"]
-[ext_resource type="AudioStream" uid="uid://dgk7stseryj2b" path="res://Assets/SFX/CHARACTER MOVEMENT SFX/Pawn Movement/Pawn-Movement-8.wav" id="185_mgwqu"]
+[ext_resource type="AudioStream" uid="uid://vwh1li8kgrt0" path="res://Assets/Music/SFX and music/Pawn-Movement-1(-8)/Pawn-Movement-5.wav" id="177_7dtix"]
+[ext_resource type="Material" uid="uid://c5vdybw7ih322" path="res://Projects/Shaders/blocker.tres" id="177_jg6y1"]
+[ext_resource type="AudioStream" uid="uid://bydovry6rjor5" path="res://Assets/Music/SFX and music/Pawn-Movement-1(-8)/Pawn-Movement-6.wav" id="178_7kbht"]
+[ext_resource type="AudioStream" uid="uid://bkvi0ud14l0re" path="res://Assets/Music/SFX and music/Pawn-Movement-1(-8)/Pawn-Movement-7.wav" id="179_kf811"]
+[ext_resource type="AudioStream" uid="uid://ct8ulrvc3vlqr" path="res://Assets/Music/SFX and music/Pawn-Movement-1(-8)/Pawn-Movement-8.wav" id="180_61a2k"]
+[ext_resource type="AudioStream" uid="uid://jcjei3u5egm5" path="res://Assets/Music/SFX and music/Magma Pawn Attack 1.wav" id="181_fk714"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ku4c3"]
 
@@ -782,17 +783,6 @@ animations = [{
 radius = 47.0
 height = 182.0
 
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_y4n5g"]
-streams_count = 8
-stream_0/stream = ExtResource("178_oda4n")
-stream_1/stream = ExtResource("179_jk60f")
-stream_2/stream = ExtResource("180_jc8ak")
-stream_3/stream = ExtResource("181_5sh28")
-stream_4/stream = ExtResource("182_t5qy6")
-stream_5/stream = ExtResource("183_blfh7")
-stream_6/stream = ExtResource("184_22y1k")
-stream_7/stream = ExtResource("185_mgwqu")
-
 [node name="Soldier" type="CharacterBody2D" node_paths=PackedStringArray("chess_component", "ui_component", "move_component")]
 script = ExtResource("1_ebhfi")
 chess_component = NodePath("ChessComponent")
@@ -823,12 +813,14 @@ team = 1
 figure_component = NodePath("..")
 move_component = NodePath("../MoveComponent")
 
-[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "shadow", "move_audio")]
+[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "shadow", "audio_player")]
 script = ExtResource("26_e3we4")
 speed = 200.0
 figure_component = NodePath("..")
 shadow = NodePath("../ShadowPivot/Shadow")
-move_audio = NodePath("../MoveAudio")
+audio_player = NodePath("../Audio_player")
+move_sound = Array[AudioStreamWAV]([ExtResource("173_yxink"), ExtResource("174_y37re"), ExtResource("175_ydgvf"), ExtResource("176_cb50u"), ExtResource("177_7dtix"), ExtResource("178_7kbht"), ExtResource("179_kf811"), ExtResource("180_61a2k")])
+attack_sound = ExtResource("181_fk714")
 
 [node name="ShaderComponent" parent="." node_paths=PackedStringArray("main_sprite") instance=ExtResource("173_2aeto")]
 main_sprite = NodePath("../AnimatedSprite2D")
@@ -852,8 +844,7 @@ frame = 8
 frame_progress = 1.0
 flip_h = true
 
-[node name="MoveAudio" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStreamRandomizer_y4n5g")
+[node name="Audio_player" type="AudioStreamPlayer" parent="."]
 bus = &"SFX"
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="MoveComponent" method="_on_figure_animation_finished"]

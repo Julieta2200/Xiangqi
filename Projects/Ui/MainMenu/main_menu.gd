@@ -41,8 +41,6 @@ var light_original_positions: Array[Vector2] = []
 @onready var copyright_lable: Label = $CanvasLayer/Credits/Copyright/role
 @onready var prelude_label: RichTextLabel = $CanvasLayer/Prelude/RichTextLabel
 
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	continue_button.disabled = !GameState.save_exists()
@@ -71,6 +69,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("exit"):
 		if !$CanvasLayer/Bottom/Line/EscButton.visible:
 			return
+		AudioManager.play_sound("hover_off")
 		match state:
 			States.Credits:
 				state = States.None
@@ -160,8 +159,10 @@ func start_game_sequence():
 	
 func play_ashes_run() -> void:
 	ashes.play("run")
+	AudioManager.play_sound("ashes_entering_cave")
 
 func open_overworld() -> void:
+	AudioManager.play_sound("loading_screen_starts")
 	SceneManager.change_scene(SceneManager.Scenes.Overworld)
 
 func _on_continue_pressed() -> void:

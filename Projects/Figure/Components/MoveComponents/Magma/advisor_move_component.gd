@@ -20,6 +20,7 @@ var target_pos: Vector2i
 var frame: int = 0
 
 func move_to_position(marker: BoardMarker, initial_position: Vector2i = Vector2i.ZERO) -> void:
+	play_sound(move_sound)
 	self.marker = marker
 	self.initial_position = initial_position
 	var animation: String = "move_"
@@ -146,6 +147,7 @@ func get_sign_with_direction(is_edge : bool):
 	
 #Disappear animation
 func disappear_animation(target_pos: Vector2i, attacker_pos: Vector2i):
+	play_sound(disappear_sound)
 	var direction = target_pos - attacker_pos
 	
 	if direction.y < 0:
@@ -170,6 +172,7 @@ func disappear(attacker_pos: Vector2i):
 	disappear_animation(figure_component.chess_component.position,attacker_pos)
 
 func attack(attacker_pos: Vector2i,target_pos: Vector2i):
+	play_sound(attack_sound)
 	self.attacker_pos = attacker_pos
 	self.target_pos = target_pos
 	attack_sprite.modulate.a = 1

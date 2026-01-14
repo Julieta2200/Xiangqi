@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://b4u0rern1rgw"]
+[gd_scene load_steps=41 format=3 uid="uid://b4u0rern1rgw"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_0l350"]
 [ext_resource type="Texture2D" uid="uid://bngxuejgqoqbu" path="res://Assets/Characters/Fog/Soldier/Idle/Idle1.png" id="2_dx6pd"]
@@ -35,6 +35,7 @@
 [ext_resource type="Texture2D" uid="uid://dh3en1lg8rc2p" path="res://Assets/Characters/Fog/Soldier/Move/Right/Right5.png" id="18_x7hbb"]
 [ext_resource type="Texture2D" uid="uid://rq8yloqcq71c" path="res://Assets/Characters/Fog/Soldier/Move/Right/Right6.png" id="19_qu2q5"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/Fog/soldier_move_component.gd" id="22_gmf3p"]
+[ext_resource type="AudioStream" uid="uid://6vvo74nyud3o" path="res://Assets/Music/SFX and music/Fog Kingdom Pawn - Movement 1.wav" id="28_lpqq7"]
 [ext_resource type="Material" uid="uid://c5vdybw7ih322" path="res://Projects/Shaders/blocker.tres" id="31_1s6q8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pi8o7"]
@@ -166,11 +167,13 @@ team = 2
 figure_component = NodePath("..")
 move_component = NodePath("../MoveComponent")
 
-[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "shadow")]
+[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "shadow", "audio_player")]
 script = ExtResource("22_gmf3p")
 speed = 300.0
 figure_component = NodePath("..")
 shadow = NodePath("../ShadowPivot/Shadow")
+audio_player = NodePath("../Audio_player")
+move_sound = Array[AudioStreamWAV]([ExtResource("28_lpqq7")])
 
 [node name="ShaderComponent" parent="." node_paths=PackedStringArray("main_sprite") instance=ExtResource("5_nl4y3")]
 main_sprite = NodePath("../AnimatedSprite2D")
@@ -206,5 +209,8 @@ chess_component = NodePath("../ChessComponent")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FigureUIComponent"]
 position = Vector2(1, -93)
 shape = SubResource("CapsuleShape2D_phus6")
+
+[node name="Audio_player" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="MoveComponent" method="_on_figure_animation_finished"]

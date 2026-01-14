@@ -56,13 +56,13 @@ var font: FontFile = load("res://Assets/Fonts/NotoSans-Light.ttf")
 @onready var hover_music_effects: AudioStreamPlayer = $HoverMusicEffects
 
 var sounds := {
-	"hover_off": preload("res://Assets/Music/UI SFX-Overworld-Hover OFF.wav"),
+	"overworld_hover_off": preload("res://Assets/Music/SFX and music/UI SFX-Overworld-Hover OFF.wav"),
 
-	"play_hover_on": preload("res://Assets/Music/overworld/UI SFX-Overworld-PLAY BUTTON HOVER ON.wav"),
-	"play_hover_loop": preload("res://Assets/Music/overworld/UI SFX-Overworld-CLOSE BUTTON HOVER LOOP.wav"),
+	"play_hover_on": preload("res://Assets/Music/SFX and music/UI SFX-Overworld-PLAY BUTTON HOVER ON.wav"),
+	"play_hover_loop": preload("res://Assets/Music/SFX and music/UI SFX-Overworld-PLAY BUTTON HOVER LOOP.wav"),
 
-	"close_hover_on": preload("res://Assets/Music/overworld/UI SFX-Overworld-CLOSE BUTTON HOVER ON.wav"),
-	"close_hover_loop": preload("res://Assets/Music/overworld/UI SFX-Overworld-PLAY BUTTON HOVER LOOP.wav"),
+	"close_hover_on": preload("res://Assets/Music/SFX and music/UI SFX-Overworld-CLOSE BUTTON HOVER ON.wav"),
+	"close_hover_loop": preload("res://Assets/Music/SFX and music/UI SFX-Overworld-CLOSE BUTTON HOVER LOOP.wav"),
 }
 
 # Called when the node enters the scene tree for the first time.
@@ -107,7 +107,7 @@ func _on_button_mouse_exited() -> void:
 	if !hover_music.playing:
 		return
 	hover_music.stop()
-	play_sound(hover_music_effects, "hover_off")
+	play_sound(hover_music_effects, "overworld_hover_off")
 
 func play_sound(player: AudioStreamPlayer, sound_name: String) -> void:
 	player.stream = sounds[sound_name]

@@ -11,8 +11,8 @@ class_name HintBubble extends Control
 
 signal hint_finished()
 
-var hover_music_on = preload("res://Assets/Music/karma_table/UI SFX-Karma Table-BUTTON HOVER ON.wav")
-var hover_music_off = preload("res://Assets/Music/karma_table/UI SFX-Karma Table-BUTTON HOVER OFF.wav")
+var hover_music_on = preload("res://Assets/Music/SFX and music/UI SFX-Karma Table-BUTTON HOVER ON.wav")
+var hover_music_off = preload("res://Assets/Music/SFX and music/UI SFX-Karma Table-BUTTON HOVER OFF.wav")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	hint_label.text = tr(hint)

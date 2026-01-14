@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://cvuhiknm2cdl5"]
+[gd_scene load_steps=55 format=3 uid="uid://cvuhiknm2cdl5"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_xl4gj"]
 [ext_resource type="Material" uid="uid://e3w5tox88i13" path="res://Projects/Shaders/outline.tres" id="2_2hpvn"]
@@ -44,7 +44,7 @@
 [ext_resource type="Texture2D" uid="uid://c67lqlfds5u4v" path="res://Assets/Characters/Magma/General/Run/Right/Right10.png" id="38_67wvn"]
 [ext_resource type="PackedScene" uid="uid://cy1y1kpvwk5sq" path="res://Projects/Figure/Components/ShaderComponent/shader_component.tscn" id="43_o44jy"]
 [ext_resource type="Material" uid="uid://b5ews8a5nl326" path="res://Projects/Shaders/spawn.tres" id="44_f730a"]
-[ext_resource type="Material" path="res://Projects/Shaders/blocker.tres" id="45_1cs8x"]
+[ext_resource type="Material" uid="uid://c5vdybw7ih322" path="res://Projects/Shaders/blocker.tres" id="45_1cs8x"]
 [ext_resource type="Material" uid="uid://cxl2ktlqa7y0f" path="res://Projects/Shaders/summoning_sickness.tres" id="45_n1no0"]
 [ext_resource type="PackedScene" uid="uid://d05lmiobxnn3t" path="res://Projects/Figure/shadow_pivot.tscn" id="45_wnl0r"]
 [ext_resource type="Material" uid="uid://blvd6fmf8jtbp" path="res://Projects/Shaders/blur_shadow.tres" id="46_tpqjb"]
@@ -202,13 +202,6 @@ animations = [{
 radius = 47.0
 height = 180.0
 
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_qmju2"]
-streams_count = 4
-stream_0/stream = ExtResource("47_2vbdu")
-stream_1/stream = ExtResource("48_mj5rh")
-stream_2/stream = ExtResource("49_3lcu7")
-stream_3/stream = ExtResource("50_wxjmh")
-
 [node name="General" type="CharacterBody2D" node_paths=PackedStringArray("chess_component", "ui_component", "move_component")]
 script = ExtResource("1_xl4gj")
 chess_component = NodePath("ChessComponent")
@@ -239,12 +232,13 @@ team = 1
 figure_component = NodePath("..")
 move_component = NodePath("../MoveComponent")
 
-[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "shadow", "move_audio")]
+[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "shadow", "audio_player")]
 script = ExtResource("5_5ts7d")
 speed = 300.0
 figure_component = NodePath("..")
 shadow = NodePath("../ShadowPivot/Shadow")
-move_audio = NodePath("../MoveAudio")
+audio_player = NodePath("../Audio_player")
+move_sound = Array[AudioStreamWAV]([ExtResource("47_2vbdu"), ExtResource("48_mj5rh"), ExtResource("49_3lcu7"), ExtResource("50_wxjmh")])
 
 [node name="ShaderComponent" parent="." node_paths=PackedStringArray("main_sprite") instance=ExtResource("43_o44jy")]
 main_sprite = NodePath("../AnimatedSprite2D")
@@ -267,8 +261,7 @@ animation = &"move_left"
 autoplay = "idle"
 flip_h = true
 
-[node name="MoveAudio" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStreamRandomizer_qmju2")
+[node name="Audio_player" type="AudioStreamPlayer" parent="."]
 bus = &"SFX"
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="MoveComponent" method="_on_figure_animation_finished"]
