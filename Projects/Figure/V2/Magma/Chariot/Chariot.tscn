@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ckd2du3jaxixc"]
+[gd_scene load_steps=19 format=3 uid="uid://ckd2du3jaxixc"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_dej4m"]
 [ext_resource type="Texture2D" uid="uid://blrj3nija8eqn" path="res://Assets/Characters/Magma/Chariot/Idle/Chariot1.png" id="2_o4kas"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c2l8i21ncj6c6" path="res://Assets/Characters/Magma/Chariot/Idle/Chariot4.png" id="5_1dqel"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/move_component.gd" id="6_0nrd7"]
 [ext_resource type="Material" uid="uid://e3w5tox88i13" path="res://Projects/Shaders/outline.tres" id="7_k3y6k"]
+[ext_resource type="AudioStream" uid="uid://dbuibh2144ebp" path="res://Assets/Music/SFX and music/Magma Catapult Movement 1.wav" id="9_p61fx"]
 [ext_resource type="PackedScene" uid="uid://cy1y1kpvwk5sq" path="res://Projects/Figure/Components/ShaderComponent/shader_component.tscn" id="9_wuq8e"]
 [ext_resource type="Material" uid="uid://b5ews8a5nl326" path="res://Projects/Shaders/spawn.tres" id="11_ertx5"]
 [ext_resource type="PackedScene" uid="uid://d05lmiobxnn3t" path="res://Projects/Figure/shadow_pivot.tscn" id="12_dxf3j"]
@@ -70,11 +71,13 @@ team = 1
 figure_component = NodePath("..")
 move_component = NodePath("../MoveComponent")
 
-[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "shadow")]
+[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "shadow", "audio_player")]
 script = ExtResource("6_0nrd7")
 speed = 500.0
 figure_component = NodePath("..")
 shadow = NodePath("../ShadowPivot/Shadow")
+audio_player = NodePath("../Audio_player")
+move_sound = Array[AudioStreamWAV]([ExtResource("9_p61fx")])
 
 [node name="ShaderComponent" parent="." node_paths=PackedStringArray("main_sprite") instance=ExtResource("9_wuq8e")]
 main_sprite = NodePath("../AnimatedSprite2D")
@@ -95,3 +98,6 @@ sprite_frames = SubResource("SpriteFrames_ny2w2")
 animation = &"idle"
 autoplay = "idle"
 flip_h = true
+
+[node name="Audio_player" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"

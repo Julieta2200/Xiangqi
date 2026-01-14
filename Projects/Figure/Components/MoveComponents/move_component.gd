@@ -5,7 +5,8 @@ class_name MoveComponent extends Node
 
 @onready var animated_sprite: AnimatedSprite2D = $"../AnimatedSprite2D"
 @export var shadow: AnimatedSprite2D
-@export var move_audio: AudioStreamPlayer
+#@export var move_audio: AudioStreamPlayer
+@export var audio_player: AudioStreamPlayer
 
 signal attack_done()
 signal move_done()
@@ -54,15 +55,15 @@ func attack(attacker_pos: Vector2i,target_pos: Vector2i):
 	emit_signal("attack_done",attacker_pos,target_pos)
 
 func play_sound(sound):
-	if sound == null:
+	if sound == null or audio_player == null:
 		return
 	if sound is Array:
 		if sound.size() == 0:
 			return
-		move_audio.stream = sound.pick_random()
+		audio_player.stream = sound.pick_random()
 	else:
-		move_audio.stream = sound
-	move_audio.play()
+		audio_player.stream = sound
+	audio_player.play()
 
 func shake(duration: float = 0.1, intensity: float = 8.0) -> void:
 	if shake_tween != null:

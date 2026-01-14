@@ -813,13 +813,13 @@ team = 1
 figure_component = NodePath("..")
 move_component = NodePath("../MoveComponent")
 
-[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "shadow", "move_audio")]
+[node name="MoveComponent" type="Node" parent="." node_paths=PackedStringArray("figure_component", "shadow", "audio_player")]
 script = ExtResource("26_e3we4")
 speed = 200.0
 figure_component = NodePath("..")
 shadow = NodePath("../ShadowPivot/Shadow")
-move_audio = NodePath("../MoveAudio")
-move_sound = [ExtResource("173_yxink"), ExtResource("174_y37re"), ExtResource("175_ydgvf"), ExtResource("176_cb50u"), ExtResource("177_7dtix"), ExtResource("178_7kbht"), ExtResource("179_kf811"), ExtResource("180_61a2k")]
+audio_player = NodePath("../Audio_player")
+move_sound = Array[AudioStreamWAV]([ExtResource("173_yxink"), ExtResource("174_y37re"), ExtResource("175_ydgvf"), ExtResource("176_cb50u"), ExtResource("177_7dtix"), ExtResource("178_7kbht"), ExtResource("179_kf811"), ExtResource("180_61a2k")])
 attack_sound = ExtResource("181_fk714")
 
 [node name="ShaderComponent" parent="." node_paths=PackedStringArray("main_sprite") instance=ExtResource("173_2aeto")]
@@ -844,7 +844,7 @@ frame = 8
 frame_progress = 1.0
 flip_h = true
 
-[node name="MoveAudio" type="AudioStreamPlayer" parent="."]
+[node name="Audio_player" type="AudioStreamPlayer" parent="."]
 bus = &"SFX"
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="MoveComponent" method="_on_figure_animation_finished"]

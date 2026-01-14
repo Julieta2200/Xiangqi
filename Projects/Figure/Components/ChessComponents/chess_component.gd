@@ -50,5 +50,5 @@ func move_or_capture(pos: Vector2i, state: Dictionary) -> bool:
 func change_position(p: Vector2i) -> void:
 	var marker: BoardMarker = figure_component.board.markers[p]
 	move_component.move_to_position(marker, position)
-	move_component.play_move_audio()
+	#move_component.play_move_audio()
 	position = p
