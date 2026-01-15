@@ -129,6 +129,9 @@ func load_game() -> void:
 			s["levels"][level_name] = new_state["levels"][level_name].duplicate(true)
 	
 	state = s
+	for key in ["ll_cards", "lls", "hl_cards"]:
+		if state.has(key):
+			state[key] = state[key].map(func(c): return int(c))
 
 func save_exists() -> bool:
 	return FileAccess.file_exists("user://" + SAVE_FILE_NAME)
