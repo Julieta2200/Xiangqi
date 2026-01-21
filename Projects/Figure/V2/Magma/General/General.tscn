@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://cvuhiknm2cdl5"]
+[gd_scene load_steps=85 format=3 uid="uid://cvuhiknm2cdl5"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_xl4gj"]
 [ext_resource type="Material" uid="uid://e3w5tox88i13" path="res://Projects/Shaders/outline.tres" id="2_2hpvn"]
@@ -42,16 +42,45 @@
 [ext_resource type="Texture2D" uid="uid://tv0vwsjgfsrh" path="res://Assets/Characters/Magma/General/Run/Right/Right8.png" id="36_asbp8"]
 [ext_resource type="Texture2D" uid="uid://kwskwkinrgtd" path="res://Assets/Characters/Magma/General/Run/Right/Right9.png" id="37_oqu4r"]
 [ext_resource type="Texture2D" uid="uid://c67lqlfds5u4v" path="res://Assets/Characters/Magma/General/Run/Right/Right10.png" id="38_67wvn"]
+[ext_resource type="Texture2D" uid="uid://c5e4pm5ynhkvr" path="res://Assets/Characters/Magma/General/Attack/Final attack/Lava1.png" id="39_colew"]
+[ext_resource type="Texture2D" uid="uid://djnm1cpcenvd1" path="res://Assets/Characters/Magma/General/Attack/Final attack/Lava2.png" id="40_fidsg"]
+[ext_resource type="Texture2D" uid="uid://602h16h64r86" path="res://Assets/Characters/Magma/General/Attack/Final attack/Lava3.png" id="41_bo761"]
+[ext_resource type="Texture2D" uid="uid://doewp8oavfya3" path="res://Assets/Characters/Magma/General/Attack/Final attack/Lava4.png" id="42_lwcdh"]
+[ext_resource type="Texture2D" uid="uid://cnbeukqs1n8ev" path="res://Assets/Characters/Magma/General/Attack/Final attack/Lava5.png" id="43_jag0v"]
 [ext_resource type="PackedScene" uid="uid://cy1y1kpvwk5sq" path="res://Projects/Figure/Components/ShaderComponent/shader_component.tscn" id="43_o44jy"]
+[ext_resource type="Texture2D" uid="uid://b0lei7seigksr" path="res://Assets/Characters/Magma/General/Attack/Final attack/Lava6.png" id="44_difr1"]
 [ext_resource type="Material" uid="uid://b5ews8a5nl326" path="res://Projects/Shaders/spawn.tres" id="44_f730a"]
 [ext_resource type="Material" uid="uid://c5vdybw7ih322" path="res://Projects/Shaders/blocker.tres" id="45_1cs8x"]
+[ext_resource type="Texture2D" uid="uid://1pcvq1xabujo" path="res://Assets/Characters/Magma/General/Attack/Final attack/Lava7.png" id="45_7red7"]
 [ext_resource type="Material" uid="uid://cxl2ktlqa7y0f" path="res://Projects/Shaders/summoning_sickness.tres" id="45_n1no0"]
 [ext_resource type="PackedScene" uid="uid://d05lmiobxnn3t" path="res://Projects/Figure/shadow_pivot.tscn" id="45_wnl0r"]
 [ext_resource type="Material" uid="uid://blvd6fmf8jtbp" path="res://Projects/Shaders/blur_shadow.tres" id="46_tpqjb"]
+[ext_resource type="Texture2D" uid="uid://6bbkrqj8g4wv" path="res://Assets/Characters/Magma/General/Attack/Final attack/Lava8.png" id="46_vj37m"]
 [ext_resource type="AudioStream" uid="uid://d1vvu8e2e2fw2" path="res://Assets/SFX/CHARACTER MOVEMENT SFX/General Ashes Movement/General Ashes-Movement-1.wav" id="47_2vbdu"]
+[ext_resource type="Texture2D" uid="uid://0g5pglsili43" path="res://Assets/Characters/Magma/General/Attack/Final attack/Lava9.png" id="47_ua2e8"]
+[ext_resource type="Texture2D" uid="uid://qbffer25icm7" path="res://Assets/Characters/Magma/General/Attack/Final attack/Lava10.png" id="48_fqisi"]
 [ext_resource type="AudioStream" uid="uid://bkqe438ycwnn0" path="res://Assets/SFX/CHARACTER MOVEMENT SFX/General Ashes Movement/General Ashes-Movement-2.wav" id="48_mj5rh"]
 [ext_resource type="AudioStream" uid="uid://bevdcws05o3nb" path="res://Assets/SFX/CHARACTER MOVEMENT SFX/General Ashes Movement/General Ashes-Movement-3.wav" id="49_3lcu7"]
+[ext_resource type="Texture2D" uid="uid://buengvjv7u7i3" path="res://Assets/Characters/Magma/General/Attack/Final attack/Lava11.png" id="49_bjrlm"]
+[ext_resource type="Texture2D" uid="uid://br0ipnm7dl12" path="res://Assets/Characters/Magma/General/Attack/Final attack/Lava12.png" id="50_tea3n"]
 [ext_resource type="AudioStream" uid="uid://dk8lx6osxte7c" path="res://Assets/SFX/CHARACTER MOVEMENT SFX/General Ashes Movement/General Ashes-Movement-4.wav" id="50_wxjmh"]
+[ext_resource type="Texture2D" uid="uid://cy5uat37w1jpb" path="res://Assets/Characters/Magma/General/Attack/Final attack/Lava13.png" id="51_42trd"]
+[ext_resource type="Texture2D" uid="uid://b0vxt3gh0u5ch" path="res://Assets/Characters/Magma/General/Attack/Final attack/Lava14.png" id="52_1q5o4"]
+[ext_resource type="Texture2D" uid="uid://buaw8dxl6qsg5" path="res://Assets/Characters/Magma/General/Attack/Final attack/Lava15.png" id="53_chrho"]
+[ext_resource type="Texture2D" uid="uid://buqb28purkk36" path="res://Assets/Characters/Magma/General/Attack/Final attack/Lava16.png" id="54_rr35n"]
+[ext_resource type="Texture2D" uid="uid://gvbrihl3bhhj" path="res://Assets/Characters/Magma/General/Attack/Final attack/Lava17.png" id="55_g1pge"]
+[ext_resource type="Texture2D" uid="uid://3lpxb6ifwa3h" path="res://Assets/Characters/Magma/General/Attack/Final attack/Lava18.png" id="56_tl5io"]
+[ext_resource type="Texture2D" uid="uid://cvnn1j5v1w7qr" path="res://Assets/Characters/Magma/General/Attack/Final attack/Lava19.png" id="57_32gj2"]
+[ext_resource type="Texture2D" uid="uid://bnfjxptq6p3ju" path="res://Assets/Characters/Magma/General/Attack/Final attack/Lava20.png" id="58_7qj37"]
+[ext_resource type="Texture2D" uid="uid://e1dt8tsk4y2i" path="res://Assets/Characters/Magma/General/Attack/Final attack/Lava21.png" id="59_0wamd"]
+[ext_resource type="Texture2D" uid="uid://4mjdkutw76kd" path="res://Assets/Characters/Magma/General/Attack/Final attack/Lava22.png" id="60_novw3"]
+[ext_resource type="Texture2D" uid="uid://is62xxcckdlo" path="res://Assets/Characters/Magma/General/Attack/Final attack/Lava23.png" id="61_o1cg8"]
+[ext_resource type="Texture2D" uid="uid://vry8e3fvm744" path="res://Assets/Characters/Magma/General/Attack/Final attack/Lava24.png" id="62_7rx28"]
+[ext_resource type="Texture2D" uid="uid://d1ljuj0w2hc4b" path="res://Assets/Characters/Magma/General/Attack/Final attack/Lava25.png" id="63_4ywi7"]
+[ext_resource type="Texture2D" uid="uid://dwyhbvtpbqm8h" path="res://Assets/Characters/Magma/General/Attack/Final attack/Lava26.png" id="64_taoo2"]
+[ext_resource type="Texture2D" uid="uid://c4gopta2mhn3" path="res://Assets/Characters/Magma/General/Attack/Final attack/Lava27.png" id="65_mvlbu"]
+[ext_resource type="Texture2D" uid="uid://bdxndwb4ltdry" path="res://Assets/Characters/Magma/General/Attack/Final attack/Lava28.png" id="66_ue0kt"]
+[ext_resource type="Texture2D" uid="uid://bt4mhr2q4aniv" path="res://Assets/Characters/Magma/General/Attack/Final attack/Ball.png" id="67_fx08d"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pi8o7"]
 animations = [{
@@ -198,6 +227,101 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_3x587"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_colew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_fidsg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_bo761")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_lwcdh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_jag0v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_difr1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_7red7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_vj37m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_ua2e8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_fqisi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_bjrlm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_tea3n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_42trd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_1q5o4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_chrho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_rr35n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_g1pge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_tl5io")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_32gj2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_7qj37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_0wamd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_novw3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_o1cg8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_7rx28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_4ywi7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_taoo2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_mvlbu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_ue0kt")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"flying_attack",
+"speed": 5.0
+}]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qnuwo"]
 radius = 47.0
 height = 180.0
@@ -213,8 +337,23 @@ type = 1
 position = Vector2(-3, -64)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_pi8o7")
-animation = &"move_back"
+animation = &"idle"
 autoplay = "idle"
+frame_progress = 0.0750991
+
+[node name="flying_attack" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -227)
+scale = Vector2(2, 2)
+texture = ExtResource("67_fx08d")
+
+[node name="flying_attack_anim" type="AnimatedSprite2D" parent="flying_attack"]
+z_index = 1
+position = Vector2(0, -3.09944e-06)
+sprite_frames = SubResource("SpriteFrames_3x587")
+animation = &"flying_attack"
+frame = 11
+offset = Vector2(2.49167, -457.414)
 
 [node name="FigureUIComponent" parent="." node_paths=PackedStringArray("chess_component", "shader_component", "move_component") instance=ExtResource("5_n8y44")]
 chess_component = NodePath("../ChessComponent")
@@ -265,4 +404,5 @@ flip_h = true
 bus = &"SFX"
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="MoveComponent" method="_on_figure_animation_finished"]
+[connection signal="animation_finished" from="flying_attack/flying_attack_anim" to="MoveComponent" method="_on_flying_attack_animation_finished"]
 [connection signal="animation_finished" from="ShadowPivot/Shadow" to="MoveComponent" method="_on_figure_animation_finished"]

@@ -1116,15 +1116,7 @@ stream = ExtResource("22_ecgaj")
 autoplay = true
 bus = &"Music"
 
-[connection signal="mouse_entered" from="CanvasLayer/Navigation/Continue" to="CanvasLayer/Navigation/Continue" method="_on_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/Navigation/Continue" to="." method="_on_continue_pressed"]
-[connection signal="pressed" from="CanvasLayer/Navigation/Continue" to="CanvasLayer/Navigation/Continue" method="_on_pressed"]
-[connection signal="mouse_entered" from="CanvasLayer/Navigation/NewGame" to="CanvasLayer/Navigation/NewGame" method="_on_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/Navigation/NewGame" to="." method="_on_new_game_pressed"]
-[connection signal="pressed" from="CanvasLayer/Navigation/NewGame" to="CanvasLayer/Navigation/NewGame" method="_on_pressed"]
-[connection signal="mouse_entered" from="CanvasLayer/Navigation/Options" to="CanvasLayer/Navigation/Options" method="_on_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/Navigation/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="CanvasLayer/Navigation/Options" to="CanvasLayer/Navigation/Options" method="_on_pressed"]
-[connection signal="mouse_entered" from="CanvasLayer/Navigation/Credits" to="CanvasLayer/Navigation/Credits" method="_on_mouse_entered"]
 [connection signal="pressed" from="CanvasLayer/Navigation/Credits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="CanvasLayer/Navigation/Credits" to="CanvasLayer/Navigation/Credits" method="_on_pressed"]
