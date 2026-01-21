@@ -66,7 +66,7 @@ func unhighlight_blocker(is_active: bool):
 func dissolve():
 	main_sprite.material = dissolve_material.duplicate()
 	var tween := create_tween()
-	tween.tween_property(main_sprite.material, "shader_parameter/progress", 1, 3.5)
+	tween.tween_property(main_sprite.material, "shader_parameter/progress", 1, 3)
 	tween.finished.connect(_on_dissolve_finished)
 
 func _on_dissolve_finished():
