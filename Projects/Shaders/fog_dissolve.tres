@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://cquj6xy3pqdlx"]
+
+[ext_resource type="Shader" path="res://Projects/Shaders/fog_dissolve.gdshader" id="1_dfgai"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_n6t53"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_owyl8"]
+noise = SubResource("FastNoiseLite_n6t53")
+
+[resource]
+shader = ExtResource("1_dfgai")
+shader_parameter/progress = 0.0
+shader_parameter/smoke_color = Color(0.751881, 0.751881, 0.751881, 1)
+shader_parameter/smoke_density = 0.658
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_owyl8")

@@ -6,6 +6,7 @@ class_name ShaderComponenet extends Node
 @export var sickness_material: Material
 @export var blocker_material: Material
 @export var spawn_speed: float = 0.3
+@export var dissolve_material: Material
 
 var figure_ui_component: FigureUIComponent # is set in figure_ui_component.gd
 
@@ -13,6 +14,8 @@ var figure_ui_component: FigureUIComponent # is set in figure_ui_component.gd
 
 var spawn_progress: float = 0.0
 var scale_speed: float = 1.0
+
+signal dissolve_finished
 
 func _ready() -> void:
 	spawn()
@@ -60,3 +63,11 @@ func unhighlight_blocker(is_active: bool):
 	else:
 		main_sprite.material = sickness_material
 		
+func dissolve():
+	main_sprite.material = dissolve_material.duplicate()
+	var tween := create_tween()
+	tween.tween_property(main_sprite.material, "shader_parameter/progress", 1, 3.5)
+	tween.finished.connect(_on_dissolve_finished)
+
+func _on_dissolve_finished():
+	emit_signal("dissolve_finished")

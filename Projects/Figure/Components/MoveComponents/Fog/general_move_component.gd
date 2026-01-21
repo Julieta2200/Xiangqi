@@ -35,3 +35,9 @@ func finish_move_animation():
 	if shadow != null:
 		shadow.play(animation)
 	animated_sprite.play(animation)
+
+func disappear(attacker_pos: Vector2i):
+	figure_component.shader_component.dissolve()
+
+func _on_shader_component_dissolve_finished() -> void:
+	figure_component.delete()
