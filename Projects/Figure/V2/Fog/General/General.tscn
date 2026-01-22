@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://bw8dv5fpgw8eu"]
+[gd_scene load_steps=64 format=3 uid="uid://bw8dv5fpgw8eu"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_4h3cj"]
 [ext_resource type="Texture2D" uid="uid://b6l83t0hpr4j" path="res://Assets/Characters/Fog/General/Idle/Idle1.png" id="2_y6pmf"]
@@ -59,6 +59,7 @@
 [ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/Fog/general_move_component.gd" id="49_3644s"]
 [ext_resource type="AudioStream" uid="uid://b8kpyvhr2d36v" path="res://Assets/Music/SFX and music/Fog Kingdom General - Movement 1.wav" id="50_syjat"]
 [ext_resource type="Material" uid="uid://c5vdybw7ih322" path="res://Projects/Shaders/blocker.tres" id="53_d37hl"]
+[ext_resource type="Material" uid="uid://cquj6xy3pqdlx" path="res://Projects/Shaders/fog_dissolve.tres" id="55_ux34b"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pi8o7"]
 animations = [{
@@ -272,6 +273,7 @@ main_sprite = NodePath("../AnimatedSprite2D")
 highlight_material = ExtResource("6_k8a60")
 spawn_material = ExtResource("7_eggrh")
 blocker_material = ExtResource("53_d37hl")
+dissolve_material = ExtResource("55_ux34b")
 
 [node name="FigureTargetComponent" parent="." node_paths=PackedStringArray("shader_component") instance=ExtResource("8_7ui4q")]
 shader_component = NodePath("../ShaderComponent")
@@ -307,3 +309,4 @@ shape = SubResource("CapsuleShape2D_si835")
 bus = &"SFX"
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="MoveComponent" method="_on_figure_animation_finished"]
+[connection signal="dissolve_finished" from="ShaderComponent" to="MoveComponent" method="_on_shader_component_dissolve_finished"]

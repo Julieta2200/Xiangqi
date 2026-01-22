@@ -1,5 +1,6 @@
 extends ChessComponent
 
+var flying_pos: Array[Vector2i]
 var flying_limits = {
 		BoardV2.Teams.Red: {
 			"position": 10,
@@ -32,7 +33,7 @@ func _ready() -> void:
 	
 func calculate_moves(state: Dictionary, current_position: Vector2i) -> Array[Vector2i]:
 	var moves: Array[Vector2i] = []
-	
+	flying_pos = []
 	for dir in directions:
 		var new_pos = position + dir
 		if in_boundaries(new_pos) and move_or_capture(new_pos,state):
@@ -42,13 +43,13 @@ func calculate_moves(state: Dictionary, current_position: Vector2i) -> Array[Vec
 	return moves
 
 func flying(start_pos: Vector2i, state:Dictionary)-> Array[Vector2i]:
-	var result: Array[Vector2i] = []
 	var limit = flying_limits[team]
 	for i in range(start_pos.y + limit.direction, limit.position , limit.direction):
 		var new_pos = Vector2i(start_pos.x,i)
 		if state.has(new_pos):
-			if state[new_pos].type == figure_component.Types.GENERAL:
-				result.append(new_pos)
+			if state[new_pos].type == figure_component.Types.GENERAL and state[new_pos].chess_component.team != team:
+				flying_pos.append(new_pos)
 			else: 
 				break
-	return result
+	
+	return flying_pos

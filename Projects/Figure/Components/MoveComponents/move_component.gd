@@ -5,7 +5,6 @@ class_name MoveComponent extends Node
 
 @onready var animated_sprite: AnimatedSprite2D = $"../AnimatedSprite2D"
 @export var shadow: AnimatedSprite2D
-#@export var move_audio: AudioStreamPlayer
 @export var audio_player: AudioStreamPlayer
 
 signal attack_done()
@@ -44,7 +43,7 @@ func generate_move_tween(target_position):
 	tween.finished.connect(func(): emit_signal("move_done"))
 
 func disappear(attacker_pos: Vector2i):
-	await get_tree().create_timer(0.25).timeout
+	await get_tree().create_timer(3).timeout
 	figure_component.delete()
 
 func disappear_animation(target_pos: Vector2i, attacker_pos: Vector2i):
