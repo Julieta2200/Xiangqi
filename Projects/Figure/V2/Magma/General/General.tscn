@@ -1,17 +1,24 @@
-[gd_scene load_steps=85 format=3 uid="uid://cvuhiknm2cdl5"]
+[gd_scene load_steps=92 format=3 uid="uid://cvuhiknm2cdl5"]
 
 [ext_resource type="Script" path="res://Projects/Figure/Components/figure_component.gd" id="1_xl4gj"]
 [ext_resource type="Material" uid="uid://e3w5tox88i13" path="res://Projects/Shaders/outline.tres" id="2_2hpvn"]
+[ext_resource type="Texture2D" uid="uid://cor1tlgl6vue1" path="res://Assets/Characters/Magma/General/Attack/Ashes(Attack)/Attack(Ashes)1.png" id="2_8o5r6"]
 [ext_resource type="Texture2D" uid="uid://odivkptqover" path="res://Assets/Characters/Magma/General/Run/Back/back1.png" id="2_sujg0"]
 [ext_resource type="Texture2D" uid="uid://dwmgc3rxq16c7" path="res://Assets/Characters/Magma/General/Run/Back/back2.png" id="3_oeud4"]
+[ext_resource type="Texture2D" uid="uid://ba3tr3n6i3qmq" path="res://Assets/Characters/Magma/General/Attack/Ashes(Attack)/Attack(Ashes)2.png" id="3_vbcdt"]
 [ext_resource type="Texture2D" uid="uid://7w1msqnys6p4" path="res://Assets/Characters/Magma/General/Run/Back/back3.png" id="4_3ogka"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/ChessComponents/general_chess_component.gd" id="4_5iulq"]
+[ext_resource type="Texture2D" uid="uid://cr0gmq8m4i16g" path="res://Assets/Characters/Magma/General/Attack/Ashes(Attack)/Attack(Ashes)3.png" id="4_ihb2o"]
 [ext_resource type="Script" path="res://Projects/Figure/Components/MoveComponents/Magma/general_move_component.gd" id="5_5ts7d"]
 [ext_resource type="Texture2D" uid="uid://duigg0cmd1h5a" path="res://Assets/Characters/Magma/General/Run/Back/back4.png" id="5_33jvu"]
+[ext_resource type="Texture2D" uid="uid://bqb86mf7r8lcs" path="res://Assets/Characters/Magma/General/Attack/Ashes(Attack)/Attack(Ashes)4.png" id="5_kmpnr"]
 [ext_resource type="PackedScene" uid="uid://dylnbquiybg16" path="res://Projects/Figure/Components/figure_ui_component.tscn" id="5_n8y44"]
 [ext_resource type="Texture2D" uid="uid://b1s0fxoq8wcv7" path="res://Assets/Characters/Magma/General/Run/Back/back5.png" id="6_aoq1k"]
+[ext_resource type="Texture2D" uid="uid://b7eyytm44d1l0" path="res://Assets/Characters/Magma/General/Attack/Ashes(Attack)/Attack(Ashes)5.png" id="6_n5sbp"]
+[ext_resource type="Texture2D" uid="uid://d0q0n414v4cag" path="res://Assets/Characters/Magma/General/Attack/Ashes(Attack)/Attack(Ashes)6.png" id="7_53qa6"]
 [ext_resource type="Texture2D" uid="uid://ctkjjmo52j651" path="res://Assets/Characters/Magma/General/Run/Back/back6.png" id="7_dkr60"]
 [ext_resource type="Texture2D" uid="uid://cn455ior6gpod" path="res://Assets/Characters/Magma/General/Run/Back/back7.png" id="8_0rrik"]
+[ext_resource type="Texture2D" uid="uid://bpl6oy6adhjnk" path="res://Assets/Characters/Magma/General/Attack/Ashes(Attack)/Attack(Ashes)7.png" id="8_qljav"]
 [ext_resource type="Texture2D" uid="uid://wxy4m88tl1q5" path="res://Assets/Characters/Magma/General/Run/Front/front1.png" id="9_gvqrs"]
 [ext_resource type="Texture2D" uid="uid://d1jyfhrwe647i" path="res://Assets/Characters/Magma/General/Run/Front/front2.png" id="10_b656i"]
 [ext_resource type="Texture2D" uid="uid://63hrjvjn7d10" path="res://Assets/Characters/Magma/General/Run/Front/front3.png" id="11_2xhpj"]
@@ -84,6 +91,53 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pi8o7"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8o5r6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vbcdt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ihb2o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_kmpnr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_n5sbp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_53qa6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qljav")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qljav")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_53qa6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_n5sbp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_kmpnr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ihb2o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vbcdt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8o5r6")
+}],
+"loop": false,
+"name": &"flying_attack",
+"speed": 4.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_sujg0")
@@ -231,6 +285,9 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
 "texture": ExtResource("39_colew")
 }, {
 "duration": 1.0,
@@ -337,12 +394,11 @@ type = 1
 position = Vector2(-3, -64)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_pi8o7")
-animation = &"idle"
+animation = &"flying_attack"
 autoplay = "idle"
-frame_progress = 0.000387629
 
 [node name="flying_attack" type="Sprite2D" parent="."]
-visible = false
+modulate = Color(1, 1, 1, 0)
 position = Vector2(0, -227)
 scale = Vector2(2, 2)
 texture = ExtResource("67_fx08d")
