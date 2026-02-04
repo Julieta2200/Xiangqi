@@ -43,11 +43,19 @@ func flying_animation(marker)-> bool:
 				flying_attack_animation.scale.y = 0.87
 			else:
 				flying_attack_animation.scale.y = 1
-			attack_ball.show()
-			flying_attack_animation.play("flying_attack")
+			animated_sprite.play("flying_attack")
+			lava_animation_play()
 			return true
 			
 	return false
 	
 func _on_flying_attack_animation_finished() -> void:
+	attack_ball.modulate.a = 0
 	emit_signal("move_done")
+
+func lava_animation_play():
+	var tween := create_tween()
+	tween.tween_property(attack_ball, "modulate:a", 1.0, 1.0)
+	tween.finished.connect(func():
+		flying_attack_animation.play("flying_attack")
+	)
