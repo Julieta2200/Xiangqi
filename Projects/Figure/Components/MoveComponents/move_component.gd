@@ -43,7 +43,7 @@ func generate_move_tween(target_position):
 	tween.finished.connect(func(): emit_signal("move_done"))
 
 func disappear(attacker_pos: Vector2i):
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(1).timeout
 	figure_component.delete()
 
 func disappear_animation(target_pos: Vector2i, attacker_pos: Vector2i):

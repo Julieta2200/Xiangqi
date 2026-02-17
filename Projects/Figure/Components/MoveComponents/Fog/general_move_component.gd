@@ -37,7 +37,7 @@ func finish_move_animation():
 	animated_sprite.play(animation)
 
 func disappear(attacker_pos: Vector2i):
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(2).timeout
 	figure_component.shader_component.dissolve()
 
 func _on_shader_component_dissolve_finished() -> void:

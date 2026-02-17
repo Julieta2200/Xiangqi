@@ -455,6 +455,7 @@ offset_left = 22.0
 offset_top = 1034.0
 offset_right = 141.0
 offset_bottom = 1152.0
+focus_mode = 0
 theme_override_styles/focus = SubResource("StyleBoxTexture_8431m")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_mtdhy")
 theme_override_styles/hover = SubResource("StyleBoxTexture_gejvc")

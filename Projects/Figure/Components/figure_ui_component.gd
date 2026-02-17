@@ -62,9 +62,11 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		var mouse_event := event as InputEventMouseButton
 		if mouse_event.button_index == MOUSE_BUTTON_LEFT and mouse_event.pressed:
 			if !active:
-				move_component.shake()
-			else:
-				selected = !selected
+				if !selected:
+					move_component.shake()
+				return
+			
+			selected = !selected
 
 func show_horse_blocker():
 	if chess_component.figure_component.type != FigureComponent.Types.HORSE:
