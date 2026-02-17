@@ -86,10 +86,10 @@ msgid "KARMA_TABLE_LEVEL_1_BONUS_DIALOG_1"
 msgstr "Time thins. Every step away from the path has a price."
 
 msgid "KARMA_TABLE_LEVEL_1_BONUS_DIALOG_2"
-msgstr "Your plans are yours․ mine are my own․"
+msgstr "Your plans are yours․ Mine are my own․"
 
 msgid "KARMA_TABLE_LEVEL_2_DIALOG_1"
-msgstr "Your first victory could have been chance."
+msgstr "Your first victory could have been a chance."
 
 msgid "KARMA_TABLE_LEVEL_2_DIALOG_2"
 msgstr "Does fate trust in chance?"
@@ -113,7 +113,7 @@ msgid "KARMA_TABLE_LEVEL_3_DIALOG_1"
 msgstr "Letting her escape was unwise."
 
 msgid "KARMA_TABLE_LEVEL_3_DIALOG_2"
-msgstr "I'll give her a taste of defeat… again."
+msgstr "She deserves defeat many times over."
 
 msgid "KARMA_TABLE_LEVEL_3_BONUS_DIALOG_1"
 msgstr "Time works against us. Stray not from thy plan."
@@ -374,13 +374,13 @@ msgid "LEVEL_1_DIALOG_2"
 msgstr "Mara…"
 
 msgid "LEVEL_1_DIALOG_3"
-msgstr "Leave now, or your name ends here."
+msgstr "Leave now, or your name ends at my hand."
 
 msgid "LEVEL_1_DIALOG_4"
-msgstr "If you didn't know who I was, you'd have tried to kill me already."
+msgstr "You know who I am, else, you would have tried to kill me already."
 
 msgid "LEVEL_1_DIALOG_5"
-msgstr "Attack!!!"
+msgstr "Attack!"
 
 msgid "LEVEL_1_VICTORY_DIALOG_1"
 msgstr "Luck won't always go your way."
@@ -392,31 +392,31 @@ msgid "LEVEL_1_DEFEAT_DIALOG"
 msgstr "That was easy. They praised you for nothing."
 
 msgid "LEVEL_1_BOSS_ASHES_1"
-msgstr "This is your last fight, Mara."
+msgstr "You can run no longer Mara."
 
 msgid "LEVEL_1_BOSS_MARA_1"
-msgstr "You mistook my patience for weakness. Now you will see my true power."
+msgstr "You mistook my patience for weakness. Now, you will see my true power."
 
 msgid "LEVEL_1_BOSS_ASHES_2"
-msgstr "Enough. Begin."
+msgstr "Enough. This ends now."
 
 msgid "LEVEL_1_BOSS_WAVE_1_WIN"
-msgstr "The fight has only begun. I was just warming up.."
+msgstr "The fight has only begun."
 
 msgid "LEVEL_1_BOSS_WAVE_1_LOSE"
-msgstr "This should have been done sooner."
+msgstr "This should have been finished sooner."
 
 msgid "LEVEL_1_BOSS_WAVE_2_WIN"
-msgstr "Kill Ashes-no matter the cost."
+msgstr "Kill Ashes - no matter the cost."
 
 msgid "LEVEL_1_BOSS_WAVE_2_LOSE"
-msgstr "At last."
+msgstr "At last I can rest."
 
 msgid "LEVEL_1_BOSS_WAVE_3_WIN_ASHES"
-msgstr "For my father's death, mercy is no longer possible."
+msgstr "For my father’s death, you deserve no mercy."
 
 msgid "LEVEL_1_BOSS_WAVE_3_WIN_MARA"
-msgstr "Boran commanded it. I obeyed… and survived."
+msgstr "Boran commanded it. I simply obeyed. The cost of doing otherwise would have been my life."
 
 msgid "LEVEL_1_BOSS_WAVE_3_WIN_ASHES_2"
 msgstr "Justice will find him, as well"
@@ -425,7 +425,7 @@ msgid "LEVEL_1_BOSS_WAVE_3_LOSE"
 msgstr "For a moment, you thought yourself invincible, didn't you?"
 
 msgid "LEVEL_2_DIALOG_1"
-msgstr "We've found Mara."
+msgstr "Mara has been found."
 
 msgid "LEVEL_2_DIALOG_2"
 msgstr "She couldn't run forever."
@@ -437,10 +437,10 @@ msgid "LEVEL_2_DIALOG_4"
 msgstr "That only excites me more."
 
 msgid "LEVEL_2_VICTORY_DIALOG_1"
-msgstr "Should we go after her?"
+msgstr "Should we pursue her?"
 
 msgid "LEVEL_2_VICTORY_DIALOG_2"
-msgstr "We have more important matters."
+msgstr "We have more important matters to attend to."
 
 msgid "LEVEL_2_DEFEAT_DIALOG"
 msgstr "I gave you a chance to walk away."
@@ -449,7 +449,7 @@ msgid "LEVEL_3_DIALOG_1"
 msgstr "Mara seems troubled."
 
 msgid "LEVEL_3_DIALOG_2"
-msgstr "She doesn't know what to do. The end is near."
+msgstr "She knows not what to do. The end is near."
 
 msgid "LEVEL_3_AMBUSH_DIALOG_1"
 msgstr "What is going on?"
@@ -479,13 +479,13 @@ msgid "LEVEL_3_VICTORY_DIALOG_2"
 msgstr "The world regretted it long before."
 
 msgid "LEVEL_3_DEFEAT_DIALOG"
-msgstr "I should have done this sooner."
+msgstr "I should have ended you sooner."
 
 msgid "BONUS_LEVEL_ATTACK_DIALOG_1"
 msgstr "Aros."
 
 msgid "BONUS_LEVEL_ATTACK_DIALOG_2"
-msgstr "Ashes… forgive me, but I must ask you to leave."
+msgstr "Ashes, forgive me, but I must ask you to leave."
 
 msgid "BONUS_LEVEL_ATTACK_DIALOG_3"
 msgstr "That won't happen."
@@ -497,7 +497,7 @@ msgid "BONUS_LEVEL_ATTACK_DIALOG_5"
 msgstr "So be it."
 
 msgid "BONUS_LEVEL_RAN_OUT_OF_XINVORS"
-msgstr "Ashes… they're all gone. Every Xinvor is dead."
+msgstr "Ashes, they're all gone. Every Xinvor is dead."
 
 msgid "BONUS_LEVEL_RAN_OUT_OF_TIME"
 msgstr "I did warn thee not to stray from the path."
@@ -530,7 +530,7 @@ msgid "BONUS_LEVEL_2_BEFORE_MOG"
 msgstr "They refuse to negotiate."
 
 msgid "BONUS_LEVEL_2_BEFORE_ASHES"
-msgstr "Attack."
+msgstr "Grant them no mercy."
 
 msgid "BONUS_LEVEL_2_DECISION_JAKAT"
 msgstr "What course dost thou now choose?"
@@ -542,7 +542,7 @@ msgid "BONUS_LEVEL_2_DECISION_CLAIM"
 msgstr "Ish Khan shall serve as my vassal."
 
 msgid "BONUS_LEVEL_2_WIN_SET_FREE"
-msgstr "They did not even offer thanks."
+msgstr "They did not even offer thanks. Should they?"
 
 msgid "BONUS_LEVEL_2_WIN_CLAIM"
 msgstr "There is more fire within thee than I have ever beheld."
@@ -554,7 +554,7 @@ msgid "BONUS_LEVEL_3_JAKAT_1"
 msgstr "Time works against us. Stray not from thy plan."
 
 msgid "BONUS_LEVEL_3_ASHES_1"
-msgstr "Just shut up."
+msgstr "Cease your prattling."
 
 msgid "BONUS_LEVEL_3_LOUSAN_1"
 msgstr "Ashes, you have no enemies here."
@@ -575,7 +575,7 @@ msgid "BONUS_LEVEL_3_DECISION_SET_FREE"
 msgstr "Lousan stands with me as an ally. Vayri is free now."
 
 msgid "BONUS_LEVEL_3_DECISION_CLAIM"
-msgstr "Lousan shall answer for his betrayal."
+msgstr "Lousan has answered for his betrayal."
 
 msgid "BONUS_LEVEL_3_WIN_SET_FREE_LOUSAN"
 msgstr "Long live Lord Ashes."
@@ -584,7 +584,7 @@ msgid "BONUS_LEVEL_3_WIN_SET_FREE_ASHES"
 msgstr "Mara's tyranny must be brought to an end."
 
 msgid "BONUS_LEVEL_3_WIN_SET_FREE_LOUSAN_2"
-msgstr "Mara's hand carried the poison that killed your father."
+msgstr "You are right to seek this. Mara’s hand carried the poison that killed your father."
 
 msgid "BONUS_LEVEL_3_WIN_CLAIM"
 msgstr "With each victory, I grow ever more certain that allying with thee was the right choice."
@@ -593,7 +593,7 @@ msgid "BONUS_LEVEL_3_LOSE"
 msgstr "My powers must not be wielded so carelessly."
 
 msgid "BONUS_LEVEL_3_FREE_1"
-msgstr "Ashes… I thought you had freed us."
+msgstr "Ashes, I thought you had freed us."
 
 msgid "BONUS_LEVEL_3_FREE_2"
 msgstr "That did not make you safe."
@@ -695,16 +695,16 @@ msgid "HINT_ADVISOR_MOVE_DIALOG"
 msgstr "Use one of the advisors to save the general."
 
 msgid "BONUS_LEVEL_2_FREE_1"
-msgstr "No chance of negotiation."
+msgstr "There is no chance of negotiation."
 
 msgid "BONUS_LEVEL_2_FREE_2"
 msgstr "Attack."
 
 msgid "BONUS_LEVEL_2_CLAIM_1"
-msgstr "Do it again."
+msgstr "Once more, Mog."
 
 msgid "BONUS_LEVEL_FREE_ATTACK_1"
-msgstr "Ashes… what happens?"
+msgstr "Ashes, what is happening?"
 
 msgid "BONUS_LEVEL_FREE_ATTACK_2"
 msgstr "Your power no longer serves me."
@@ -713,7 +713,7 @@ msgid "BONUS_LEVEL_FREE_ATTACK_3"
 msgstr "What do you mean?"
 
 msgid "BONUS_LEVEL_FREE_ATTACK_4"
-msgstr "Attack!!!"
+msgstr "Attack!"
 
 msgid "BONUS_LEVEL_CLAIM_ATTACK_1"
 msgstr "Break them again."
@@ -753,4 +753,7 @@ msgstr "Special abilities cannot be used in Bonus Levels."
 
 msgid "BONUS_LEVEL_HINT_ARQA_LINE_OF_SIGHT"
 msgstr "Arqas can attack opposing Arqas if they have direct line of sight."
+
+msgid "MAIN_MENU_PRELUDE_STORY"
+msgstr "The young Lord of Magma, Areg, inherits his father's throne.\nHe sets out to conquer the five worlds, one by one.\nThe final world to conquer is the Kingdom of Ice, ruled by Lord Sarouyts.\nA bloody war begins.\nIt lasts for years.\nBut then Areg sees Lord Saroyutse's daughter, Lousine.\nLove reshapes his path.\nAreg abandons his obsession with conquest and, following Lord Saroyutse's counsel, releases the lands he has claimed-while preserving his power and influence.\nDespite peace, tensions between the kingdoms simmer.\nAreg and Lousine have a son: Ashes.\nAfter the birth of Ashes, Boran, the prince of the Kingdom of Ice, still unwilling to accept peace with the Magma Kingdom, hatches a plan.\nAreg's death shocks the five Kingdoms, murdered in secret by poison at the hands of Boran.\nWith Areg dead, Boran demands the Magma Kingdom from his father, Lord Sarouyts. Lord Sarouyts, suspicious of his son, discovers the truth surrounding Areg's death. He curses Boran. Seeing no way out, Boran kills his own father and assumes the throne.\nBoran orders that Ashes be found and brought to him, dead or alive. One of Lord Sarouyts Mogs (advisors), Vardazar, manages to smuggle the newborn away and take him to Limbo - a place where Boran cannot reach him. Lousine remains captive.\nBoran conquers the five kingdoms but does not unite them. If he did, the God of Karma-Jakat-would return. Therefore, in each kingdom, he installs lord loyal only to him.\nAshes grows up in Limbo, harbouring revenge. When the time comes, he leaves Limbo and heads to the dwelling of Jakat, the God of Karma."
 
