@@ -209,7 +209,7 @@ msgid "CHARACTER_MARA"
 msgstr "Mara"
 
 msgid "CHARACTER_MOG"
-msgstr "Mog"
+msgstr "Vardazar"
 
 msgid "CHARACTER_JAKAT"
 msgstr "Jakat"
