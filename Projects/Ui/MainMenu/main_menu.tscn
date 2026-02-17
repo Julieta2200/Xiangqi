@@ -1081,21 +1081,7 @@ mouse_filter = 2
 theme_override_fonts/normal_font = ExtResource("20_w72fn")
 theme_override_font_sizes/normal_font_size = 45
 bbcode_enabled = true
-text = "The young Lord of Magma, Areg, inherits his father's throne.
-He sets out to conquer the five worlds, one by one.
-The final world to fight against him is the Kingdom of Ice, ruled by Lord Sarouyts.
-A bloody war begins. It's a war that will last for years.
-But then Areg sees Lord Saroyutse's daughter, Lousine.
-Love reshapes his path.
-Areg abandons his obsession with conquest and, following Lord Saroyutse's counsel, releases the lands he has claimed-while preserving his power and influence.
-Despite peace, tensions between the kingdoms simmer.
-Areg and Lousine have a son: Ashes.
-After the birth of Ashes, Boran, the prince of the Kingdom of Ice, still unwilling to accept peace with the Magma Kingdom, hatches a plan. 
-Areg's death shocks the five Kingdoms, murdered in secret by poison at the hands of Boran.
-With Areg dead, Boran demands the Magma Kingdom from his father, Lord Sarouyts. Lord Sarouyts, suspicious of his son, discovers the truth surrounding Areg's death. He curses Boran. Seeing no way out, Boran kills his own father.
-Boran orders that Ashes be found and brought to him, dead or alive. One of Lord Sarouyts Mogs manages to smuggle the newborn away and take him to Limbo-a place where Boran cannot reach him. Lousine remains a captive.
-Boran conquers the five kingdoms but does not unite them. If he did, the God of Karma-Jakat-would return. Therefore, in each kingdom, he installs his loyal lord.
-Ashes grows up in Limbo, filled with the idea of revenge. When the time comes, he leaves Limbo and heads to the dwelling of Jakat, the God of Karma"
+text = "MAIN_MENU_PRELUDE_STORY"
 
 [node name="OptionsMenu" parent="CanvasLayer" instance=ExtResource("20_0pofw")]
 visible = false
