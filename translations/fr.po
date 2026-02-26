@@ -1,0 +1,758 @@
+# LANGUAGE translation for fr
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Xiangqi\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: 2024-01-01 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "RETRY"
+msgstr "  RÉESSAYER"
+
+msgid "OVERWORLD"
+msgstr "MONDE SUPÉRIEUR"
+
+msgid "PRODUCER"
+msgstr "PRODUCTEUR"
+
+msgid "GAME_DESIGNER"
+msgstr "CONCEPTEUR DE JEU"
+
+msgid "LEAD_PROGRAMMERS"
+msgstr "PROGRAMMEURS PRINCIPAUX"
+
+msgid "ARTIST"
+msgstr "ARTISTE"
+
+msgid "COMPOSER_AND_SOUND_DESIGNER"
+msgstr "COMPOSITEUR ET CONCEPTEUR SONORE"
+
+msgid "PROGRAMMERS"
+msgstr "PROGRAMMEURS"
+
+msgid "AUTHORS"
+msgstr "AUTEURS"
+
+msgid "SPECIAL_THANKS"
+msgstr "REMERCIEMENTS SPÉCIAUX"
+
+msgid "Copyright"
+msgstr "Copyright © 2025 Taillis. All Rights Reserved."
+
+msgid "RESTART"
+msgstr "  REDÉMARRER"
+
+msgid "BACK_TO_OVERWOLD"
+msgstr "  RETOUR AU MONDE SUPÉRIEUR"
+
+msgid "BACK_TO_MENU"
+msgstr "  RETOUR AU MENU"
+
+msgid "RESUME"
+msgstr "REPRENDRE"
+
+msgid "CONTINUE"
+msgstr "  CONTINUER"
+
+msgid "NEW_GAME"
+msgstr "  NOUVELLE PARTIE"
+
+msgid "OPTIONS"
+msgstr "  OPTIONS"
+
+msgid "CREDITS"
+msgstr "  CRÉDITS"
+
+msgid "KARMA_TABLE_LEVEL_1_DIALOG_1"
+msgstr "D'abord, tu dois montrer ce dont tu es capable."
+
+msgid "KARMA_TABLE_LEVEL_1_DIALOG_2"
+msgstr "Plus que tu ne le crois."
+
+msgid "KARMA_TABLE_LEVEL_1_DIALOG_3"
+msgstr "Ta confiance se manifeste trop clairement."
+
+msgid "KARMA_TABLE_LEVEL_1_BONUS_DIALOG_1"
+msgstr "Le temps s'amenuise. Chaque pas hors du chemin a un prix."
+
+msgid "KARMA_TABLE_LEVEL_1_BONUS_DIALOG_2"
+msgstr "Tes plans sont les tiens. Les miens sont les miens."
+
+msgid "KARMA_TABLE_LEVEL_2_DIALOG_1"
+msgstr "Ta première victoire aurait pu être une chance."
+
+msgid "KARMA_TABLE_LEVEL_2_DIALOG_2"
+msgstr "Le destin fait-il confiance au hasard ?"
+
+msgid "KARMA_TABLE_LEVEL_2_DIALOG_3"
+msgstr "Le hasard peut tordre même le destin lui-même."
+
+msgid "KARMA_TABLE_LEVEL_2_BONUS_DIALOG_1"
+msgstr "Tu t'écartes du chemin."
+
+msgid "KARMA_TABLE_LEVEL_2_BONUS_DIALOG_2"
+msgstr "Cela ne t'apporte rien."
+
+msgid "KARMA_TABLE_LEVEL_2_BONUS_DIALOG_3"
+msgstr "Je t'accorde une force bien plus grande que ces mondes ne peuvent offrir."
+
+msgid "KARMA_TABLE_LEVEL_2_BONUS_DIALOG_4"
+msgstr "Parle moins. Ou pas du tout."
+
+msgid "KARMA_TABLE_LEVEL_3_DIALOG_1"
+msgstr "La laisser s'échapper était imprudent."
+
+msgid "KARMA_TABLE_LEVEL_3_DIALOG_2"
+msgstr "Elle mérite la défaite bien des fois."
+
+msgid "KARMA_TABLE_LEVEL_3_BONUS_DIALOG_1"
+msgstr "Le temps joue contre nous. Ne t'écarte pas de ton plan."
+
+msgid "KARMA_TABLE_LEVEL_3_BONUS_DIALOG_2"
+msgstr "Tais-toi, tout simplement."
+
+msgid "LEVEL_1_TITLE"
+msgstr "Forêt de Khosrov - Bataille 1"
+
+msgid "LEVEL_1_STORY"
+msgstr "Ashes et ses Mogs doivent traverser la sombre forêt de Khosrov, qui est sous le contrôle de l'Armée du Brouillard."
+
+msgid "LEVEL_1_OBJECTIVE_1"
+msgstr "Capturer tous les Xinvors ennemis"
+
+msgid "LEVEL_1_OBJECTIVE_2"
+msgstr "Ne laisse pas les Xinvors ennemis dépasser ta garde"
+
+msgid "LEVEL_1_BONUS_TITLE"
+msgstr "Forêt de Khosrov - Monde Saghart"
+
+msgid "LEVEL_1_BONUS_STORY"
+msgstr "Ashes entre dans le Monde Saghart. Décidera-t-il de leur rendre le contrôle, ou de tout prendre pour lui-même ?"
+
+msgid "LEVEL_1_BONUS_OBJECTIVE_1"
+msgstr "Capturer l'Arqa ennemi"
+
+msgid "LEVEL_1_BONUS_OBJECTIVE_2"
+msgstr "Ne fais pas plus de 7 mouvements"
+
+msgid "LEVEL_2_TITLE"
+msgstr "Forêt de Khosrov - Bataille 2"
+
+msgid "LEVEL_2_STORY"
+msgstr "Ashes et ses Mogs rencontrent Mara à nouveau. Mara est déterminée à les arrêter coûte que coûte."
+
+msgid "LEVEL_2_OBJECTIVE_1"
+msgstr "Capturer l'Aspet ennemi."
+
+msgid "LEVEL_2_OBJECTIVE_2"
+msgstr "Ne laisse pas Ashes ou toi-même être capturé."
+
+msgid "LEVEL_2_BONUS_TITLE"
+msgstr "Forêt de Khosrov - Royaume Lij"
+
+msgid "LEVEL_2_BONUS_STORY"
+msgstr "Les créatures du Monde Lij étaient naturellement pacifiques ; cependant, l'Armée du Brouillard a profité de cette tranquillité pour les réduire en esclavage."
+
+msgid "LEVEL_2_BONUS_OBJECTIVE_1"
+msgstr "Capturer l'Arqa ennemi"
+
+msgid "LEVEL_2_BONUS_OBJECTIVE_2"
+msgstr "Ne fais pas plus de 7 mouvements"
+
+msgid "LEVEL_3_TITLE"
+msgstr "Forêt de Khosrov - Bataille 3"
+
+msgid "LEVEL_3_STORY"
+msgstr "Mara s'échappe de justesse du dernier combat, son armée brisée, sachant que sa fin est proche."
+
+msgid "LEVEL_3_OBJECTIVE_1"
+msgstr "Vaincre Mara."
+
+msgid "LEVEL_BOSS_1_TITLE"
+msgstr "Forêt de Khosrov - Bataille Finale"
+
+msgid "LEVEL_BOSS_1_STORY"
+msgstr "Mara n'a pas d'issue. Elle fait sa dernière résistance avec ce qui reste de son armée."
+
+msgid "LEVEL_BOSS_1_OBJECTIVE_1"
+msgstr "Vaincre Mara."
+
+msgid "LEVEL_3_BONUS_TITLE"
+msgstr "Forêt de Khosrov - Monde Vayri"
+
+msgid "LEVEL_3_BONUS_STORY"
+msgstr "Lasses de la domination de l'Armée du Brouillard sur leurs terres, les créatures du Royaume Vayri sont prêtes à saisir toute opportunité, aussi petite soit-elle, pour riposter."
+
+msgid "KARMA_TABLE_HINT_1"
+msgstr "Une nouvelle Alliance est débloquée lorsque tu choisis de libérer un niveau bonus."
+
+msgid "KARMA_TABLE_HINT_2"
+msgstr "Un nouveau Karma est débloqué lorsque tu conquiers 3 niveaux bonus."
+
+msgid "KARMA_TABLE_HINT_3"
+msgstr "Clique sur une capacité spéciale pour l'équiper."
+
+msgid "CHARACTER_ASHES"
+msgstr "Ashes"
+
+msgid "CHARACTER_MARA"
+msgstr "Mara"
+
+msgid "CHARACTER_MOG"
+msgstr "Vardazar"
+
+msgid "CHARACTER_JAKAT"
+msgstr "Jakat"
+
+msgid "CHARACTER_AROS"
+msgstr "Aros"
+
+msgid "CHARACTER_ISH_KHAN"
+msgstr "Ish Khan"
+
+msgid "CHARACTER_LOUSAN"
+msgstr "Lousan"
+
+msgid "GAME_OVER_TEXT_1"
+msgstr "Ta Volonté s'est brisée."
+
+msgid "GAME_OVER_TEXT_2"
+msgstr "Kamq à zéro. Le vase est vide."
+
+msgid "GAME_OVER_TEXT_3"
+msgstr "Tu n'as plus rien à donner que ton âme."
+
+msgid "GAME_OVER_TEXT_4"
+msgstr "Le vent se lève. Les Cendres se dispersent."
+
+msgid "GAME_OVER_TEXT_5"
+msgstr "Le feu s'éteint. Il ne reste que les Cendres."
+
+msgid "BUTTON_ARROW_HOVER"
+msgstr "> >"
+
+msgid "BUTTON_ARROW_NORMAL"
+msgstr ">>"
+
+msgid "MTB_PREFIX"
+msgstr "MTB : "
+
+msgid "FIGURE_XINVOR"
+msgstr "Xinvor"
+
+msgid "FIGURE_PIGH"
+msgstr "Pigh"
+
+msgid "FIGURE_NAVAK"
+msgstr "Navak"
+
+msgid "FIGURE_ASPET"
+msgstr "Aspet"
+
+msgid "FIGURE_STVER"
+msgstr "Stver"
+
+msgid "TUTORIAL_WELCOME"
+msgstr "Bienvenue dans l'Espace de Jeu ! Tu peux t'y exercer librement ou choisir un sujet que tu souhaites apprendre !"
+
+msgid "TUTORIAL_PAWN_CAPTURE_1"
+msgstr "Super ! Tu as capturé le Pion ennemi."
+
+msgid "TUTORIAL_PAWN_CAPTURE_2"
+msgstr "Bien joué ! Tu as capturé le Pion ennemi."
+
+msgid "TUTORIAL_PAWN_CAPTURE_3"
+msgstr "Excellent ! Tu as capturé le Pion ennemi."
+
+msgid "TUTORIAL_PAWN_CAPTURE_4"
+msgstr "Fantastique ! Tu as capturé le Pion ennemi."
+
+msgid "TUTORIAL_PAWN_CAPTURE_5"
+msgstr "Formidable ! Tu as capturé le Pion ennemi."
+
+msgid "TUTORIAL_PAWN_CAPTURE_6"
+msgstr "Félicitations ! Tu as capturé le Pion ennemi."
+
+msgid "TUTORIAL_PAWN_CAPTURE_7"
+msgstr "Tu l'as fait ! Tu as capturé le Pion ennemi."
+
+msgid "TUTORIAL_GENERAL_CAPTURE"
+msgstr "Incroyable ! Tu as capturé le Général ennemi et remporté la partie !"
+
+msgid "TUTORIAL_SPAWN_SUCCESS"
+msgstr "Super ! Tu as invoqué une pièce !"
+
+msgid "TUTORIAL_PAWN_DESCRIPTION_1"
+msgstr "Voici un Pion. Les Pions ne peuvent avancer que d'un pas à la fois, mais une fois qu'ils ont traversé la rivière, ils peuvent aussi se déplacer latéralement."
+
+msgid "TUTORIAL_PAWN_DESCRIPTION_2"
+msgstr "Essaie de déplacer le Pion de l'autre côté de la rivière et de capturer le Pion ennemi !"
+
+msgid "TUTORIAL_HORSE_DESCRIPTION_1"
+msgstr "Voici un Cheval. Les Chevaux se déplacent en forme de L : deux cases dans une direction puis une case perpendiculairement."
+
+msgid "TUTORIAL_HORSE_DESCRIPTION_2"
+msgstr "Cependant, si une pièce se trouve directement à côté du Cheval dans la direction de son déplacement, il ne peut pas sauter par-dessus."
+
+msgid "TUTORIAL_HORSE_DESCRIPTION_3"
+msgstr "Essaie de déplacer le Cheval et de capturer le Pion ennemi !"
+
+msgid "TUTORIAL_ELEPHANT_DESCRIPTION_1"
+msgstr "Voici un Éléphant. Les Éléphants se déplacent exactement de deux points en diagonale et ne peuvent pas sauter par-dessus les pièces intermédiaires."
+
+msgid "TUTORIAL_ELEPHANT_DESCRIPTION_2"
+msgstr "Les Éléphants ne peuvent pas traverser la rivière pour aller du côté adverse."
+
+msgid "TUTORIAL_ELEPHANT_DESCRIPTION_3"
+msgstr "Essaie de déplacer l'Éléphant et de capturer le Pion ennemi !"
+
+msgid "TUTORIAL_CANNON_DESCRIPTION_1"
+msgstr "Voici un Canon. Les Canons se déplacent verticalement ou horizontalement sur n'importe quel nombre de cases libres."
+
+msgid "TUTORIAL_CANNON_DESCRIPTION_2"
+msgstr "Pour capturer, le Canon doit sauter par-dessus exactement une pièce sur son chemin vers la pièce cible."
+
+msgid "TUTORIAL_CANNON_DESCRIPTION_3"
+msgstr "Essaie de déplacer le Canon et de capturer le Pion ennemi !"
+
+msgid "TUTORIAL_CHARIOT_DESCRIPTION_1"
+msgstr "Voici un Char. Les Chars se déplacent sur n'importe quel nombre de cases vides verticalement ou horizontalement."
+
+msgid "TUTORIAL_CHARIOT_DESCRIPTION_2"
+msgstr "Essaie de déplacer le Char et de capturer le Pion ennemi !"
+
+msgid "TUTORIAL_ADVISOR_DESCRIPTION_1"
+msgstr "Voici un Conseiller. Les Conseillers se déplacent d'un point en diagonale et doivent rester dans le palais."
+
+msgid "TUTORIAL_ADVISOR_DESCRIPTION_2"
+msgstr "Essaie de déplacer le Conseiller et de capturer le Pion ennemi !"
+
+msgid "TUTORIAL_GENERAL_DESCRIPTION_1"
+msgstr "Voici le Général. Le Général se déplace d'un point verticalement ou horizontalement et doit rester dans le palais."
+
+msgid "TUTORIAL_GENERAL_DESCRIPTION_2"
+msgstr "Tu dois toujours protéger ton Général. Si ton Général est capturé, tu perds la partie !"
+
+msgid "TUTORIAL_GENERAL_DESCRIPTION_3"
+msgstr "Essaie de déplacer le Général et de capturer le Pion ennemi !"
+
+msgid "TUTORIAL_FLYING_GENERAL_DESCRIPTION_1"
+msgstr "Voici la règle du Général Volant."
+
+msgid "TUTORIAL_FLYING_GENERAL_DESCRIPTION_2"
+msgstr "Si les deux Généraux se font face sur la même colonne sans pièces entre eux, le Général dont c'est le tour peut se déplacer directement pour capturer le Général adverse."
+
+msgid "TUTORIAL_FLYING_GENERAL_DESCRIPTION_3"
+msgstr "Essaie de capturer le Général ennemi !"
+
+msgid "TUTORIAL_SPAWNING_DESCRIPTION_1"
+msgstr "Tu peux invoquer des pièces dans les 3 premières rangées."
+
+msgid "TUTORIAL_SPAWNING_DESCRIPTION_2"
+msgstr "L'invocation te fait perdre de l'énergie."
+
+msgid "TUTORIAL_SPAWNING_DESCRIPTION_3"
+msgstr "Tu ne peux pas bouger avec une pièce nouvellement invoquée."
+
+msgid "TUTORIAL_SPAWNING_DESCRIPTION_4"
+msgstr "Invoque une pièce et fais un mouvement avec elle !"
+
+msgid "LEVEL_1_DIALOG_1"
+msgstr "Qui es-tu, et pourquoi es-tu ici ?"
+
+msgid "LEVEL_1_DIALOG_2"
+msgstr "Mara…"
+
+msgid "LEVEL_1_DIALOG_3"
+msgstr "Pars maintenant, ou ton nom prend fin de ma main."
+
+msgid "LEVEL_1_DIALOG_4"
+msgstr "Tu sais qui je suis, sinon tu aurais déjà essayé de me tuer."
+
+msgid "LEVEL_1_DIALOG_5"
+msgstr "Attaquez !"
+
+msgid "LEVEL_1_VICTORY_DIALOG_1"
+msgstr "La chance ne sera pas toujours de ton côté."
+
+msgid "LEVEL_1_VICTORY_DIALOG_2"
+msgstr "Il n'y a pas de chance. Seulement le karma, et il est maintenant contre toi."
+
+msgid "LEVEL_1_DEFEAT_DIALOG"
+msgstr "C'était facile. Ils t'ont loué pour rien."
+
+msgid "LEVEL_1_BOSS_ASHES_1"
+msgstr "Tu ne peux plus fuir, Mara."
+
+msgid "LEVEL_1_BOSS_MARA_1"
+msgstr "Tu as confondu ma patience avec de la faiblesse. Maintenant, tu vas voir mon vrai pouvoir."
+
+msgid "LEVEL_1_BOSS_ASHES_2"
+msgstr "Assez. Cela se termine maintenant."
+
+msgid "LEVEL_1_BOSS_WAVE_1_WIN"
+msgstr "Le combat ne fait que commencer."
+
+msgid "LEVEL_1_BOSS_WAVE_1_LOSE"
+msgstr "Cela aurait dû être terminé plus tôt."
+
+msgid "LEVEL_1_BOSS_WAVE_2_WIN"
+msgstr "Tuez Ashes, quel qu'en soit le prix."
+
+msgid "LEVEL_1_BOSS_WAVE_2_LOSE"
+msgstr "Enfin je peux me reposer."
+
+msgid "LEVEL_1_BOSS_WAVE_3_WIN_ASHES"
+msgstr "Pour la mort de mon père, tu ne mérites aucune pitié."
+
+msgid "LEVEL_1_BOSS_WAVE_3_WIN_MARA"
+msgstr "Boran l'a ordonné. J'ai simplement obéi. Le prix de faire autrement aurait été ma vie."
+
+msgid "LEVEL_1_BOSS_WAVE_3_WIN_ASHES_2"
+msgstr "La justice le trouvera également."
+
+msgid "LEVEL_1_BOSS_WAVE_3_LOSE"
+msgstr "Un instant, tu t'es cru invincible, n'est-ce pas ?"
+
+msgid "LEVEL_2_DIALOG_1"
+msgstr "Mara a été retrouvée."
+
+msgid "LEVEL_2_DIALOG_2"
+msgstr "Elle ne pouvait pas fuir éternellement."
+
+msgid "LEVEL_2_DIALOG_3"
+msgstr "Leurs forces sont plus importantes."
+
+msgid "LEVEL_2_DIALOG_4"
+msgstr "Cela m'excite encore davantage."
+
+msgid "LEVEL_2_VICTORY_DIALOG_1"
+msgstr "Devons-nous la poursuivre ?"
+
+msgid "LEVEL_2_VICTORY_DIALOG_2"
+msgstr "Nous avons des affaires plus importantes à régler."
+
+msgid "LEVEL_2_DEFEAT_DIALOG"
+msgstr "Je t'ai donné la chance de partir."
+
+msgid "LEVEL_3_DIALOG_1"
+msgstr "Mara semble troublée."
+
+msgid "LEVEL_3_DIALOG_2"
+msgstr "Elle ne sait plus quoi faire. La fin est proche."
+
+msgid "LEVEL_3_AMBUSH_DIALOG_1"
+msgstr "Que se passe-t-il ?"
+
+msgid "LEVEL_3_AMBUSH_DIALOG_2"
+msgstr "C'est une embuscade !"
+
+msgid "LEVEL_3_AMBUSH_DIALOG_3"
+msgstr "..."
+
+msgid "LEVEL_3_AMBUSH_DIALOG_4"
+msgstr "Je ne sens plus mes soldats !"
+
+msgid "LEVEL_3_AMBUSH_DIALOG_5"
+msgstr "Au nom de l'Armée du Brouillard, je vous ordonne de vous rendre !"
+
+msgid "LEVEL_3_AMBUSH_DIALOG_6"
+msgstr "Ashes, nos soldats ne peuvent pas entrer dans le Brouillard de Déconnexion !"
+
+msgid "LEVEL_3_AMBUSH_DIALOG_7"
+msgstr "Elle ne peut pas maintenir le brouillard longtemps. Nous devons juste l'attendre."
+
+msgid "LEVEL_3_VICTORY_DIALOG_1"
+msgstr "Tu regretteras d'être né."
+
+msgid "LEVEL_3_VICTORY_DIALOG_2"
+msgstr "Le monde l'a regretté bien avant."
+
+msgid "LEVEL_3_DEFEAT_DIALOG"
+msgstr "J'aurais dû t'éliminer plus tôt."
+
+msgid "BONUS_LEVEL_ATTACK_DIALOG_1"
+msgstr "Aros."
+
+msgid "BONUS_LEVEL_ATTACK_DIALOG_2"
+msgstr "Ashes, pardonne-moi, mais je dois te demander de partir."
+
+msgid "BONUS_LEVEL_ATTACK_DIALOG_3"
+msgstr "Cela n'arrivera pas."
+
+msgid "BONUS_LEVEL_ATTACK_DIALOG_4"
+msgstr "Alors les mots sont inutiles."
+
+msgid "BONUS_LEVEL_ATTACK_DIALOG_5"
+msgstr "Qu'il en soit ainsi."
+
+msgid "BONUS_LEVEL_RAN_OUT_OF_XINVORS"
+msgstr "Ashes, ils sont tous partis. Chaque Xinvor est mort."
+
+msgid "BONUS_LEVEL_RAN_OUT_OF_TIME"
+msgstr "Je t'avais prévenu de ne pas t'écarter du chemin."
+
+msgid "BONUS_LEVEL_2_RAN_OUT_OF_TIME"
+msgstr "Je t'avais prévenu de ne pas t'écarter du chemin."
+
+msgid "BONUS_LEVEL_DECISION_DIALOG_1"
+msgstr "Et qu'as-tu l'intention de faire ?"
+
+msgid "BONUS_LEVEL_DECISION_DIALOG_2"
+msgstr "Le Royaume de Saghart est libre."
+
+msgid "BONUS_LEVEL_DECISION_DIALOG_3"
+msgstr "Le Seigneur de Saghart est mon vassal."
+
+msgid "BONUS_LEVEL_DECISION_SET_FREE_AROS"
+msgstr "Vive le Seigneur Ashes. Les forces de Saghart sont à vos ordres."
+
+msgid "BONUS_LEVEL_DECISION_SET_FREE_JAKAT"
+msgstr "Tu aurais pu revendiquer davantage."
+
+msgid "BONUS_LEVEL_DECISION_CLAIM_AROS"
+msgstr "Le pouvoir a déjà commencé à te corrompre. Sois maudit, Ashes."
+
+msgid "BONUS_LEVEL_DECISION_CLAIM_JAKAT"
+msgstr "Ashes, tu m'étonnes."
+
+msgid "BONUS_LEVEL_2_BEFORE_MOG"
+msgstr "Ils refusent de négocier."
+
+msgid "BONUS_LEVEL_2_BEFORE_ASHES"
+msgstr "Ne leur accorde aucune pitié."
+
+msgid "BONUS_LEVEL_2_DECISION_JAKAT"
+msgstr "Quelle voie choisis-tu maintenant ?"
+
+msgid "BONUS_LEVEL_2_DECISION_SET_FREE"
+msgstr "Le Royaume de Lij sera libre."
+
+msgid "BONUS_LEVEL_2_DECISION_CLAIM"
+msgstr "Ish Khan servira comme mon vassal."
+
+msgid "BONUS_LEVEL_2_WIN_SET_FREE"
+msgstr "Ils n'ont même pas offert leurs remerciements. Le devraient-ils ?"
+
+msgid "BONUS_LEVEL_2_WIN_CLAIM"
+msgstr "Il y a plus de feu en toi que je n'en ai jamais vu."
+
+msgid "BONUS_LEVEL_2_LOSE"
+msgstr "Je t'avais prévenu de ne pas t'écarter du chemin."
+
+msgid "BONUS_LEVEL_3_JAKAT_1"
+msgstr "Le temps joue contre nous. Ne t'écarte pas de ton plan."
+
+msgid "BONUS_LEVEL_3_ASHES_1"
+msgstr "Cesse de bavarder."
+
+msgid "BONUS_LEVEL_3_LOUSAN_1"
+msgstr "Ashes, tu n'as pas d'ennemis ici."
+
+msgid "BONUS_LEVEL_3_ASHES_2"
+msgstr "Alors déposez vos armes."
+
+msgid "BONUS_LEVEL_3_LOUSAN_2"
+msgstr "Ta querelle est avec Mara. Vayri n'en fait pas partie."
+
+msgid "BONUS_LEVEL_3_ASHES_3"
+msgstr "Là où je me tiens, la neutralité meurt."
+
+msgid "BONUS_LEVEL_3_DECISION_JAKAT"
+msgstr "Quelle voie choisis-tu maintenant ?"
+
+msgid "BONUS_LEVEL_3_DECISION_SET_FREE"
+msgstr "Lousan se tient à mes côtés comme allié. Vayri est libre maintenant."
+
+msgid "BONUS_LEVEL_3_DECISION_CLAIM"
+msgstr "Lousan a répondu de sa trahison."
+
+msgid "BONUS_LEVEL_3_WIN_SET_FREE_LOUSAN"
+msgstr "Vive le Seigneur Ashes."
+
+msgid "BONUS_LEVEL_3_WIN_SET_FREE_ASHES"
+msgstr "La tyrannie de Mara doit prendre fin."
+
+msgid "BONUS_LEVEL_3_WIN_SET_FREE_LOUSAN_2"
+msgstr "Tu as raison de chercher cela. La main de Mara portait le poison qui a tué ton père."
+
+msgid "BONUS_LEVEL_3_WIN_CLAIM"
+msgstr "À chaque victoire, je suis de plus en plus certain que s'allier avec toi était le bon choix."
+
+msgid "BONUS_LEVEL_3_LOSE"
+msgstr "Mes pouvoirs ne doivent pas être maniés aussi négligemment."
+
+msgid "BONUS_LEVEL_3_FREE_1"
+msgstr "Ashes, je pensais que tu nous avais libérés."
+
+msgid "BONUS_LEVEL_3_FREE_2"
+msgstr "Cela ne t'a pas mis en sécurité."
+
+msgid "BONUS_LEVEL_3_FREE_3"
+msgstr "Faut-il en arriver là de nouveau ?"
+
+msgid "BONUS_LEVEL_3_FREE_4"
+msgstr "Attaquez."
+
+msgid "BONUS_LEVEL_3_CLAIM_1"
+msgstr "Brisez-les."
+
+msgid "ESC"
+msgstr "ESC"
+
+msgid "EXIT"
+msgstr "QUITTER"
+
+msgid "PLAY"
+msgstr "JOUER"
+
+msgid "BACK"
+msgstr "RETOUR"
+
+msgid "CLOSE"
+msgstr "FERMER"
+
+msgid "NEXT"
+msgstr "SUIVANT"
+
+msgid "SPACE"
+msgstr "ESPACE"
+
+msgid "ALLIANCE"
+msgstr "ALLIANCE"
+
+msgid "KARMA"
+msgstr "KARMA"
+
+msgid "OVERWORLD_WASD_HINT"
+msgstr "Utilise les touches WASD pour te déplacer."
+
+msgid "LEVEL_1_HINT_1"
+msgstr "Depuis la garnison, tu peux choisir quelle unité tu veux invoquer. Les unités nouvellement invoquées ne peuvent pas se déplacer lors du tour où elles sont invoquées."
+
+msgid "LEVEL_1_HINT_2"
+msgstr "Invoquer des unités diminuera ton Kamq."
+
+msgid "LEVEL_1_HINT_3"
+msgstr "Tu peux récupérer du Kamq en effectuant des mouvements."
+
+msgid "LEVEL_1_HINT_4"
+msgstr "Tu ne peux déplacer les pièces Arqa ou Mog que quatre fois par niveau. Le nombre de mouvements disponibles est affiché dans le coin supérieur gauche."
+
+msgid "LEVEL_1_HINT_5"
+msgstr "L'Arqa se déplace d'un point verticalement ou horizontalement et doit rester dans le palais."
+
+msgid "LEVEL_1_HINT_6"
+msgstr "Les Mogs se déplacent d'une position en diagonale et doivent rester dans le palais."
+
+msgid "LEVEL_1_HINT_7"
+msgstr "Les Xinvors ne peuvent avancer que d'une position à la fois ; une fois qu'ils ont traversé la rivière, ils peuvent aussi se déplacer latéralement."
+
+msgid "LEVEL_2_HINT_1"
+msgstr "Les Aspets se déplacent en forme de L : deux pas dans une direction puis un pas perpendiculairement."
+
+msgid "LEVEL_2_HINT_2"
+msgstr "Les Pighs sont des pièces défensives qui ne peuvent pas traverser la rivière.\n\tSe déplace exactement de deux cases en diagonale.\n\tNe peut pas sauter par-dessus les pièces intermédiaires."
+
+msgid "LEVEL_1_BOSS_HINT_1"
+msgstr "Les Navaks se déplacent sur n'importe quel nombre de cases vides verticalement ou horizontalement."
+
+msgid "LEVEL_1_BOSS_HINT_2"
+msgstr "Les Stvers peuvent se déplacer à travers n'importe quel nombre de cases inoccupées horizontalement ou verticalement.\n\tPeuvent sauter par-dessus une pièce amie ou ennemie.\n\tNe peuvent le faire que pour capturer une pièce située à n'importe quelle distance derrière elle."
+
+msgid "HINT_SOLDIER_MOVE_TEXT"
+msgstr "Les soldats se déplacent et capturent en avançant d'un point vers l'avant. Une fois qu'un pion a traversé la rivière, il peut aussi se déplacer et capturer d'un point horizontalement. Un pion ne peut jamais reculer."
+
+msgid "HINT_SOLDIER_MOVE_DIALOG"
+msgstr "Clique sur le soldat et fais-le bouger."
+
+msgid "HINT_CHECK_TEXT"
+msgstr "Le Général est en danger (échec), il est obligatoire de sortir de l'échec."
+
+msgid "HINT_GENERAL_MOVE_TEXT"
+msgstr "Les Généraux peuvent se déplacer d'un point verticalement ou horizontalement, mais pas en diagonale, et sont confinés aux neuf points de leur palais."
+
+msgid "HINT_GENERAL_MOVE_DIALOG"
+msgstr "Déplace le Général hors de l'échec."
+
+msgid "HINT_GENERALS_FACING_TEXT"
+msgstr "Un Général ne peut pas non plus se déplacer dans une colonne occupée par le Général ennemi, à moins qu'il y ait au moins une pièce entre les Généraux dans la colonne."
+
+msgid "HINT_ADVISOR_MOVE_TEXT"
+msgstr "Ce sont les conseillers du roi, qui le gardent dans le palais. Le conseiller se déplace d'un point en diagonale et est confiné au palais."
+
+msgid "HINT_ADVISOR_MOVE_DIALOG"
+msgstr "Utilise l'un des conseillers pour sauver le général."
+
+msgid "BONUS_LEVEL_2_FREE_1"
+msgstr "Il n'y a aucune chance de négociation."
+
+msgid "BONUS_LEVEL_2_FREE_2"
+msgstr "Attaquez."
+
+msgid "BONUS_LEVEL_2_CLAIM_1"
+msgstr "Encore une fois, Mog."
+
+msgid "BONUS_LEVEL_FREE_ATTACK_1"
+msgstr "Ashes, que se passe-t-il ?"
+
+msgid "BONUS_LEVEL_FREE_ATTACK_2"
+msgstr "Ton pouvoir ne me sert plus."
+
+msgid "BONUS_LEVEL_FREE_ATTACK_3"
+msgstr "Que veux-tu dire ?"
+
+msgid "BONUS_LEVEL_FREE_ATTACK_4"
+msgstr "Attaquez !"
+
+msgid "BONUS_LEVEL_CLAIM_ATTACK_1"
+msgstr "Brisez-les encore."
+
+msgid "SPECIAL_CARD_TREE_TRUNK"
+msgstr "Tronc d'Arbre"
+
+msgid "SPECIAL_CARD_SNAKE_CHAIN"
+msgstr "Chaîne de Serpent"
+
+msgid "SPECIAL_CARD_WATER_PORTAL"
+msgstr "Portail d'Eau"
+
+msgid "SPECIAL_CARD_DISCONNECTION_MIST"
+msgstr "Brouillard de Déconnexion"
+
+msgid "SPECIAL_CARD_NONE"
+msgstr "???????"
+
+msgid "SPECIAL_CARD_TREE_TRUNK_DESC"
+msgstr "Place un Tronc d'Arbre sur n'importe quelle case hors du palais.\nAucune unité ne peut se tenir sur cette case ou la traverser.\nLe Tronc d'Arbre disparaît après 2 tours."
+
+msgid "SPECIAL_CARD_SNAKE_CHAIN_DESC"
+msgstr "Place une Chaîne de Serpent sur une unité ennemie.\nCette unité est immobilisée et ne peut pas bouger.\nLa Chaîne de Serpent disparaît après 2 tours."
+
+msgid "SPECIAL_CARD_WATER_PORTAL_DESC"
+msgstr "Place un Portail d'Eau sur n'importe quelle case hors du palais.\nSi une unité ennemie entre sur cette case ou tente de la traverser, elle est tuée instantanément.\nLe Portail d'Eau disparaît après 2 tours."
+
+msgid "SPECIAL_CARD_DISCONNECTION_MIST_DESC"
+msgstr "Crée un brouillard dans ton territoire.\nLes unités ennemies ne peuvent pas entrer dans le brouillard, et les unités déjà dans le brouillard ne peuvent pas bouger.\nLe Brouillard de Déconnexion disparaît après 2 tours."
+
+msgid "SPECIAL_CARD_NONE_DESC"
+msgstr "???????"
+
+msgid "BONUS_LEVEL_HINT_NO_SPECIAL_ABILITIES"
+msgstr "Les capacités spéciales ne peuvent pas être utilisées dans les Niveaux Bonus."
+
+msgid "BONUS_LEVEL_HINT_ARQA_LINE_OF_SIGHT"
+msgstr "Les Arqas peuvent attaquer les Arqas adverses s'ils ont une ligne de vue directe."
+
+msgid "MAIN_MENU_PRELUDE_STORY"
+msgstr "Le jeune Seigneur de Magma, Areg, hérite du trône de son père.\nIl part conquérir les cinq mondes, l'un après l'autre.\nLe dernier monde à conquérir est le Royaume de Glace, gouverné par le Seigneur Sarouyts.\nUne guerre sanglante commence.\nElle dure des années.\nMais alors Areg voit la fille du Seigneur Saroyutse, Lousine.\nL'amour reshape son chemin.\nAreg abandonne son obsession pour la conquête et, suivant les conseils du Seigneur Saroyutse, libère les terres qu'il a revendiquées, tout en préservant son pouvoir et son influence.\nMalgré la paix, les tensions entre les royaumes couvent.\nAreg et Lousine ont un fils : Ashes.\nAprès la naissance d'Ashes, Boran, le prince du Royaume de Glace, encore incapable d'accepter la paix avec le Royaume de Magma, ourdit un plan.\nLa mort d'Areg choque les cinq Royaumes, assassiné en secret par le poison des mains de Boran.\nAvec Areg mort, Boran réclame le Royaume de Magma à son père, le Seigneur Sarouyts. Le Seigneur Sarouyts, méfiant envers son fils, découvre la vérité sur la mort d'Areg. Il maudit Boran. Ne voyant aucune issue, Boran tue son propre père et prend le trône.\nBoran ordonne qu'Ashes soit trouvé et amené devant lui, mort ou vif. L'un des Mogs (conseillers) du Seigneur Sarouyts, Vardazar, parvient à faire passer le nouveau-né en contrebande et à l'emmener à Limbo, un endroit hors de portée de Boran. Lousine reste captive.\nBoran conquiert les cinq royaumes mais ne les unit pas. S'il le faisait, le Dieu du Karma, Jakat, reviendrait. Par conséquent, dans chaque royaume, il installe un seigneur loyal uniquement envers lui.\nAshes grandit à Limbo, nourrissant sa vengeance. Quand le moment est venu, il quitte Limbo et se dirige vers la demeure de Jakat, le Dieu du Karma."

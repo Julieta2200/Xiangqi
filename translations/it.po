@@ -1,0 +1,758 @@
+# LANGUAGE translation for it
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Xiangqi\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: 2024-01-01 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "RETRY"
+msgstr "  RIPROVA"
+
+msgid "OVERWORLD"
+msgstr "MONDO SUPERIORE"
+
+msgid "PRODUCER"
+msgstr "PRODUTTORE"
+
+msgid "GAME_DESIGNER"
+msgstr "GAME DESIGNER"
+
+msgid "LEAD_PROGRAMMERS"
+msgstr "PROGRAMMATORI PRINCIPALI"
+
+msgid "ARTIST"
+msgstr "ARTISTA"
+
+msgid "COMPOSER_AND_SOUND_DESIGNER"
+msgstr "COMPOSITORE E SOUND DESIGNER"
+
+msgid "PROGRAMMERS"
+msgstr "PROGRAMMATORI"
+
+msgid "AUTHORS"
+msgstr "AUTORI"
+
+msgid "SPECIAL_THANKS"
+msgstr "RINGRAZIAMENTI SPECIALI"
+
+msgid "Copyright"
+msgstr "Copyright © 2025 Taillis. All Rights Reserved."
+
+msgid "RESTART"
+msgstr "  RICOMINCIA"
+
+msgid "BACK_TO_OVERWOLD"
+msgstr "  TORNA AL MONDO SUPERIORE"
+
+msgid "BACK_TO_MENU"
+msgstr "  TORNA AL MENU"
+
+msgid "RESUME"
+msgstr "RIPRENDI"
+
+msgid "CONTINUE"
+msgstr "  CONTINUA"
+
+msgid "NEW_GAME"
+msgstr "  NUOVA PARTITA"
+
+msgid "OPTIONS"
+msgstr "  OPZIONI"
+
+msgid "CREDITS"
+msgstr "  CREDITI"
+
+msgid "KARMA_TABLE_LEVEL_1_DIALOG_1"
+msgstr "Prima devi dimostrare di cosa sei capace."
+
+msgid "KARMA_TABLE_LEVEL_1_DIALOG_2"
+msgstr "Più di quanto pensi."
+
+msgid "KARMA_TABLE_LEVEL_1_DIALOG_3"
+msgstr "La tua sicurezza si vede troppo chiaramente."
+
+msgid "KARMA_TABLE_LEVEL_1_BONUS_DIALOG_1"
+msgstr "Il tempo si assottiglia. Ogni passo fuori dal cammino ha un prezzo."
+
+msgid "KARMA_TABLE_LEVEL_1_BONUS_DIALOG_2"
+msgstr "I tuoi piani sono tuoi. I miei sono miei."
+
+msgid "KARMA_TABLE_LEVEL_2_DIALOG_1"
+msgstr "La tua prima vittoria avrebbe potuto essere un'opportunità."
+
+msgid "KARMA_TABLE_LEVEL_2_DIALOG_2"
+msgstr "Il destino si fida del caso?"
+
+msgid "KARMA_TABLE_LEVEL_2_DIALOG_3"
+msgstr "Il caso può torcere persino il destino stesso."
+
+msgid "KARMA_TABLE_LEVEL_2_BONUS_DIALOG_1"
+msgstr "Ti allontani dal cammino."
+
+msgid "KARMA_TABLE_LEVEL_2_BONUS_DIALOG_2"
+msgstr "Non ti concede nulla."
+
+msgid "KARMA_TABLE_LEVEL_2_BONUS_DIALOG_3"
+msgstr "Ti concedo una forza ben più grande di quanto questi mondi possano offrire."
+
+msgid "KARMA_TABLE_LEVEL_2_BONUS_DIALOG_4"
+msgstr "Parla meno. O per niente."
+
+msgid "KARMA_TABLE_LEVEL_3_DIALOG_1"
+msgstr "Lasciarla scappare è stato imprudente."
+
+msgid "KARMA_TABLE_LEVEL_3_DIALOG_2"
+msgstr "Merita la sconfitta molte volte."
+
+msgid "KARMA_TABLE_LEVEL_3_BONUS_DIALOG_1"
+msgstr "Il tempo lavora contro di noi. Non deviare dal tuo piano."
+
+msgid "KARMA_TABLE_LEVEL_3_BONUS_DIALOG_2"
+msgstr "Stai semplicemente zitto."
+
+msgid "LEVEL_1_TITLE"
+msgstr "Foresta di Khosrov - Battaglia 1"
+
+msgid "LEVEL_1_STORY"
+msgstr "Ashes e i suoi Mog devono attraversare la buia foresta di Khosrov, che è sotto il controllo dell'Esercito della Nebbia."
+
+msgid "LEVEL_1_OBJECTIVE_1"
+msgstr "Cattura tutti gli Xinvor nemici"
+
+msgid "LEVEL_1_OBJECTIVE_2"
+msgstr "Non lasciare che gli Xinvor nemici superino la tua guardia"
+
+msgid "LEVEL_1_BONUS_TITLE"
+msgstr "Foresta di Khosrov - Mondo Saghart"
+
+msgid "LEVEL_1_BONUS_STORY"
+msgstr "Ashes entra nel Mondo Saghart. Deciderà di restituire loro il controllo, o di prendere tutto per sé?"
+
+msgid "LEVEL_1_BONUS_OBJECTIVE_1"
+msgstr "Cattura l'Arqa nemico"
+
+msgid "LEVEL_1_BONUS_OBJECTIVE_2"
+msgstr "Non fare più di 7 mosse"
+
+msgid "LEVEL_2_TITLE"
+msgstr "Foresta di Khosrov - Battaglia 2"
+
+msgid "LEVEL_2_STORY"
+msgstr "Ashes e i suoi Mog incontrano di nuovo Mara. Mara è determinata a fermarli a qualsiasi costo."
+
+msgid "LEVEL_2_OBJECTIVE_1"
+msgstr "Cattura l'Aspet nemico."
+
+msgid "LEVEL_2_OBJECTIVE_2"
+msgstr "Non lasciare che Ashes o tu stesso veniate catturati."
+
+msgid "LEVEL_2_BONUS_TITLE"
+msgstr "Foresta di Khosrov - Regno Lij"
+
+msgid "LEVEL_2_BONUS_STORY"
+msgstr "Le creature del Mondo Lij erano naturalmente pacifiche; tuttavia, l'Esercito della Nebbia ha approfittato di questa tranquillità per ridurle in schiavitù."
+
+msgid "LEVEL_2_BONUS_OBJECTIVE_1"
+msgstr "Cattura l'Arqa nemico"
+
+msgid "LEVEL_2_BONUS_OBJECTIVE_2"
+msgstr "Non fare più di 7 mosse"
+
+msgid "LEVEL_3_TITLE"
+msgstr "Foresta di Khosrov - Battaglia 3"
+
+msgid "LEVEL_3_STORY"
+msgstr "Mara scappa a malapena dall'ultimo scontro, il suo esercito distrutto, sapendo che la sua fine è vicina."
+
+msgid "LEVEL_3_OBJECTIVE_1"
+msgstr "Sconfiggi Mara."
+
+msgid "LEVEL_BOSS_1_TITLE"
+msgstr "Foresta di Khosrov - Battaglia Finale"
+
+msgid "LEVEL_BOSS_1_STORY"
+msgstr "Mara non ha via d'uscita. Fa la sua ultima resistenza con ciò che resta del suo esercito."
+
+msgid "LEVEL_BOSS_1_OBJECTIVE_1"
+msgstr "Sconfiggi Mara."
+
+msgid "LEVEL_3_BONUS_TITLE"
+msgstr "Foresta di Khosrov - Mondo Vayri"
+
+msgid "LEVEL_3_BONUS_STORY"
+msgstr "Stanche del dominio dell'Esercito della Nebbia sulle loro terre, le creature del Regno Vayri sono pronte a cogliere qualsiasi opportunità, per quanto piccola, per contrattaccare."
+
+msgid "KARMA_TABLE_HINT_1"
+msgstr "Una nuova Alleanza viene sbloccata quando scegli di liberare un livello bonus."
+
+msgid "KARMA_TABLE_HINT_2"
+msgstr "Un nuovo Karma viene sbloccato quando conquisti 3 livelli bonus."
+
+msgid "KARMA_TABLE_HINT_3"
+msgstr "Clicca su un'abilità speciale per equipaggiarla."
+
+msgid "CHARACTER_ASHES"
+msgstr "Ashes"
+
+msgid "CHARACTER_MARA"
+msgstr "Mara"
+
+msgid "CHARACTER_MOG"
+msgstr "Vardazar"
+
+msgid "CHARACTER_JAKAT"
+msgstr "Jakat"
+
+msgid "CHARACTER_AROS"
+msgstr "Aros"
+
+msgid "CHARACTER_ISH_KHAN"
+msgstr "Ish Khan"
+
+msgid "CHARACTER_LOUSAN"
+msgstr "Lousan"
+
+msgid "GAME_OVER_TEXT_1"
+msgstr "La tua Volontà si è frantumata."
+
+msgid "GAME_OVER_TEXT_2"
+msgstr "Kamq a zero. Il vaso è vuoto."
+
+msgid "GAME_OVER_TEXT_3"
+msgstr "Non hai più nulla da dare se non la tua anima."
+
+msgid "GAME_OVER_TEXT_4"
+msgstr "Il vento si alza. Le Ceneri si disperdono."
+
+msgid "GAME_OVER_TEXT_5"
+msgstr "Il fuoco si spegne. Rimangono solo le Ceneri."
+
+msgid "BUTTON_ARROW_HOVER"
+msgstr "> >"
+
+msgid "BUTTON_ARROW_NORMAL"
+msgstr ">>"
+
+msgid "MTB_PREFIX"
+msgstr "MTB: "
+
+msgid "FIGURE_XINVOR"
+msgstr "Xinvor"
+
+msgid "FIGURE_PIGH"
+msgstr "Pigh"
+
+msgid "FIGURE_NAVAK"
+msgstr "Navak"
+
+msgid "FIGURE_ASPET"
+msgstr "Aspet"
+
+msgid "FIGURE_STVER"
+msgstr "Stver"
+
+msgid "TUTORIAL_WELCOME"
+msgstr "Benvenuto nel Campo Prova! Puoi esercitarti qui liberamente o scegliere un argomento che vuoi imparare!"
+
+msgid "TUTORIAL_PAWN_CAPTURE_1"
+msgstr "Ottimo! Hai catturato il Pedone nemico."
+
+msgid "TUTORIAL_PAWN_CAPTURE_2"
+msgstr "Ben fatto! Hai catturato il Pedone nemico."
+
+msgid "TUTORIAL_PAWN_CAPTURE_3"
+msgstr "Eccellente! Hai catturato il Pedone nemico."
+
+msgid "TUTORIAL_PAWN_CAPTURE_4"
+msgstr "Fantastico! Hai catturato il Pedone nemico."
+
+msgid "TUTORIAL_PAWN_CAPTURE_5"
+msgstr "Magnifico! Hai catturato il Pedone nemico."
+
+msgid "TUTORIAL_PAWN_CAPTURE_6"
+msgstr "Congratulazioni! Hai catturato il Pedone nemico."
+
+msgid "TUTORIAL_PAWN_CAPTURE_7"
+msgstr "Ce l'hai fatta! Hai catturato il Pedone nemico."
+
+msgid "TUTORIAL_GENERAL_CAPTURE"
+msgstr "Straordinario! Hai catturato il Generale nemico e vinto la partita!"
+
+msgid "TUTORIAL_SPAWN_SUCCESS"
+msgstr "Ottimo! Hai evocato un pezzo!"
+
+msgid "TUTORIAL_PAWN_DESCRIPTION_1"
+msgstr "Questo è un Pedone. I Pedoni possono muoversi solo di un passo in avanti alla volta, ma una volta attraversato il fiume possono anche muoversi lateralmente."
+
+msgid "TUTORIAL_PAWN_DESCRIPTION_2"
+msgstr "Prova a muovere il Pedone dall'altro lato del fiume e cattura il Pedone nemico!"
+
+msgid "TUTORIAL_HORSE_DESCRIPTION_1"
+msgstr "Questo è un Cavallo. I Cavalli si muovono a forma di L: due passi in una direzione e poi un passo perpendicolare."
+
+msgid "TUTORIAL_HORSE_DESCRIPTION_2"
+msgstr "Tuttavia, se c'è un pezzo direttamente accanto al Cavallo nella direzione in cui si muove, non può saltarci sopra."
+
+msgid "TUTORIAL_HORSE_DESCRIPTION_3"
+msgstr "Prova a muovere il Cavallo e cattura il Pedone nemico!"
+
+msgid "TUTORIAL_ELEPHANT_DESCRIPTION_1"
+msgstr "Questo è un Elefante. Gli Elefanti si muovono esattamente di due punti in diagonale e non possono saltare i pezzi interposti."
+
+msgid "TUTORIAL_ELEPHANT_DESCRIPTION_2"
+msgstr "Gli Elefanti non possono attraversare il fiume per andare sul lato avversario."
+
+msgid "TUTORIAL_ELEPHANT_DESCRIPTION_3"
+msgstr "Prova a muovere l'Elefante e cattura il Pedone nemico!"
+
+msgid "TUTORIAL_CANNON_DESCRIPTION_1"
+msgstr "Questo è un Cannone. I Cannoni si muovono verticalmente o orizzontalmente su qualsiasi numero di caselle libere."
+
+msgid "TUTORIAL_CANNON_DESCRIPTION_2"
+msgstr "Per catturare, il Cannone deve saltare esattamente un pezzo lungo il suo percorso verso il pezzo bersaglio."
+
+msgid "TUTORIAL_CANNON_DESCRIPTION_3"
+msgstr "Prova a muovere il Cannone e cattura il Pedone nemico!"
+
+msgid "TUTORIAL_CHARIOT_DESCRIPTION_1"
+msgstr "Questo è un Carro. I Carri si muovono su qualsiasi numero di caselle vuote verticalmente o orizzontalmente."
+
+msgid "TUTORIAL_CHARIOT_DESCRIPTION_2"
+msgstr "Prova a muovere il Carro e cattura il Pedone nemico!"
+
+msgid "TUTORIAL_ADVISOR_DESCRIPTION_1"
+msgstr "Questo è un Consigliere. I Consiglieri si muovono di un punto in diagonale e devono rimanere all'interno del palazzo."
+
+msgid "TUTORIAL_ADVISOR_DESCRIPTION_2"
+msgstr "Prova a muovere il Consigliere e cattura il Pedone nemico!"
+
+msgid "TUTORIAL_GENERAL_DESCRIPTION_1"
+msgstr "Questo è il Generale. Il Generale si muove di un punto verticalmente o orizzontalmente e deve rimanere all'interno del palazzo."
+
+msgid "TUTORIAL_GENERAL_DESCRIPTION_2"
+msgstr "Devi sempre proteggere il tuo Generale. Se il tuo Generale viene catturato, perdi la partita!"
+
+msgid "TUTORIAL_GENERAL_DESCRIPTION_3"
+msgstr "Prova a muovere il Generale e cattura il Pedone nemico!"
+
+msgid "TUTORIAL_FLYING_GENERAL_DESCRIPTION_1"
+msgstr "Questa è la regola del Generale Volante."
+
+msgid "TUTORIAL_FLYING_GENERAL_DESCRIPTION_2"
+msgstr "Se i due Generali si fronteggiano sulla stessa colonna senza pezzi in mezzo, il Generale di turno può muoversi direttamente per catturare il Generale avversario."
+
+msgid "TUTORIAL_FLYING_GENERAL_DESCRIPTION_3"
+msgstr "Prova a catturare il Generale nemico!"
+
+msgid "TUTORIAL_SPAWNING_DESCRIPTION_1"
+msgstr "Puoi evocare pezzi nelle prime 3 righe."
+
+msgid "TUTORIAL_SPAWNING_DESCRIPTION_2"
+msgstr "Evocare fa perdere energia."
+
+msgid "TUTORIAL_SPAWNING_DESCRIPTION_3"
+msgstr "Non puoi muovere un pezzo appena evocato."
+
+msgid "TUTORIAL_SPAWNING_DESCRIPTION_4"
+msgstr "Evoca un pezzo e fai una mossa con esso!"
+
+msgid "LEVEL_1_DIALOG_1"
+msgstr "Chi sei, e perché sei qui?"
+
+msgid "LEVEL_1_DIALOG_2"
+msgstr "Mara…"
+
+msgid "LEVEL_1_DIALOG_3"
+msgstr "Vattene ora, o il tuo nome finisce per mano mia."
+
+msgid "LEVEL_1_DIALOG_4"
+msgstr "Sai chi sono, altrimenti avresti già cercato di uccidermi."
+
+msgid "LEVEL_1_DIALOG_5"
+msgstr "Attaccate!"
+
+msgid "LEVEL_1_VICTORY_DIALOG_1"
+msgstr "La fortuna non sarà sempre dalla tua parte."
+
+msgid "LEVEL_1_VICTORY_DIALOG_2"
+msgstr "Non esiste fortuna. Solo il karma, e ora è contro di te."
+
+msgid "LEVEL_1_DEFEAT_DIALOG"
+msgstr "È stato facile. Ti hanno elogiato per niente."
+
+msgid "LEVEL_1_BOSS_ASHES_1"
+msgstr "Non puoi più fuggire, Mara."
+
+msgid "LEVEL_1_BOSS_MARA_1"
+msgstr "Hai scambiato la mia pazienza per debolezza. Ora vedrai il mio vero potere."
+
+msgid "LEVEL_1_BOSS_ASHES_2"
+msgstr "Basta. Finisce qui."
+
+msgid "LEVEL_1_BOSS_WAVE_1_WIN"
+msgstr "La lotta è appena iniziata."
+
+msgid "LEVEL_1_BOSS_WAVE_1_LOSE"
+msgstr "Avrebbe dovuto finire prima."
+
+msgid "LEVEL_1_BOSS_WAVE_2_WIN"
+msgstr "Uccidete Ashes, a qualsiasi costo."
+
+msgid "LEVEL_1_BOSS_WAVE_2_LOSE"
+msgstr "Finalmente posso riposare."
+
+msgid "LEVEL_1_BOSS_WAVE_3_WIN_ASHES"
+msgstr "Per la morte di mio padre, non meriti pietà."
+
+msgid "LEVEL_1_BOSS_WAVE_3_WIN_MARA"
+msgstr "Boran lo ha ordinato. Ho semplicemente obbedito. Il costo di fare altrimenti sarebbe stata la mia vita."
+
+msgid "LEVEL_1_BOSS_WAVE_3_WIN_ASHES_2"
+msgstr "La giustizia lo troverà anch'esso."
+
+msgid "LEVEL_1_BOSS_WAVE_3_LOSE"
+msgstr "Per un momento, ti sei creduto invincibile, vero?"
+
+msgid "LEVEL_2_DIALOG_1"
+msgstr "Mara è stata trovata."
+
+msgid "LEVEL_2_DIALOG_2"
+msgstr "Non poteva fuggire per sempre."
+
+msgid "LEVEL_2_DIALOG_3"
+msgstr "Le loro forze sono maggiori."
+
+msgid "LEVEL_2_DIALOG_4"
+msgstr "Questo mi entusiasma ancora di più."
+
+msgid "LEVEL_2_VICTORY_DIALOG_1"
+msgstr "Dovremmo inseguirla?"
+
+msgid "LEVEL_2_VICTORY_DIALOG_2"
+msgstr "Abbiamo faccende più importanti a cui badare."
+
+msgid "LEVEL_2_DEFEAT_DIALOG"
+msgstr "Ti ho dato la possibilità di andartene."
+
+msgid "LEVEL_3_DIALOG_1"
+msgstr "Mara sembra turbata."
+
+msgid "LEVEL_3_DIALOG_2"
+msgstr "Non sa cosa fare. La fine è vicina."
+
+msgid "LEVEL_3_AMBUSH_DIALOG_1"
+msgstr "Cosa sta succedendo?"
+
+msgid "LEVEL_3_AMBUSH_DIALOG_2"
+msgstr "È un'imboscata!"
+
+msgid "LEVEL_3_AMBUSH_DIALOG_3"
+msgstr "..."
+
+msgid "LEVEL_3_AMBUSH_DIALOG_4"
+msgstr "Non sento i miei soldati!"
+
+msgid "LEVEL_3_AMBUSH_DIALOG_5"
+msgstr "In nome dell'Esercito della Nebbia, vi ordino di arrendervi!"
+
+msgid "LEVEL_3_AMBUSH_DIALOG_6"
+msgstr "Ashes, i nostri soldati non possono entrare nella Nebbia di Disconnessione!"
+
+msgid "LEVEL_3_AMBUSH_DIALOG_7"
+msgstr "Non può mantenere la nebbia a lungo. Dobbiamo solo aspettare."
+
+msgid "LEVEL_3_VICTORY_DIALOG_1"
+msgstr "Ti pentirai di essere mai nato."
+
+msgid "LEVEL_3_VICTORY_DIALOG_2"
+msgstr "Il mondo se ne è pentito molto prima."
+
+msgid "LEVEL_3_DEFEAT_DIALOG"
+msgstr "Avrei dovuto eliminarti prima."
+
+msgid "BONUS_LEVEL_ATTACK_DIALOG_1"
+msgstr "Aros."
+
+msgid "BONUS_LEVEL_ATTACK_DIALOG_2"
+msgstr "Ashes, perdonami, ma devo chiederti di andartene."
+
+msgid "BONUS_LEVEL_ATTACK_DIALOG_3"
+msgstr "Non accadrà."
+
+msgid "BONUS_LEVEL_ATTACK_DIALOG_4"
+msgstr "Allora le parole sono finite."
+
+msgid "BONUS_LEVEL_ATTACK_DIALOG_5"
+msgstr "Sia così."
+
+msgid "BONUS_LEVEL_RAN_OUT_OF_XINVORS"
+msgstr "Ashes, sono tutti morti. Ogni Xinvor è caduto."
+
+msgid "BONUS_LEVEL_RAN_OUT_OF_TIME"
+msgstr "Ti avevo avvertito di non allontanarti dal cammino."
+
+msgid "BONUS_LEVEL_2_RAN_OUT_OF_TIME"
+msgstr "Ti avevo avvertito di non allontanarti dal cammino."
+
+msgid "BONUS_LEVEL_DECISION_DIALOG_1"
+msgstr "E cosa intendi fare?"
+
+msgid "BONUS_LEVEL_DECISION_DIALOG_2"
+msgstr "Il Regno di Saghart è libero."
+
+msgid "BONUS_LEVEL_DECISION_DIALOG_3"
+msgstr "Il Signore di Saghart è il mio vassallo."
+
+msgid "BONUS_LEVEL_DECISION_SET_FREE_AROS"
+msgstr "Lunga vita al Signore Ashes. Le forze di Saghart sono ai tuoi ordini."
+
+msgid "BONUS_LEVEL_DECISION_SET_FREE_JAKAT"
+msgstr "Avresti potuto rivendicare di più."
+
+msgid "BONUS_LEVEL_DECISION_CLAIM_AROS"
+msgstr "Il potere ha già cominciato a corromperti. Sii maledetto, Ashes."
+
+msgid "BONUS_LEVEL_DECISION_CLAIM_JAKAT"
+msgstr "Ashes, mi stupisce."
+
+msgid "BONUS_LEVEL_2_BEFORE_MOG"
+msgstr "Si rifiutano di negoziare."
+
+msgid "BONUS_LEVEL_2_BEFORE_ASHES"
+msgstr "Non mostrare loro pietà."
+
+msgid "BONUS_LEVEL_2_DECISION_JAKAT"
+msgstr "Quale strada scegli ora?"
+
+msgid "BONUS_LEVEL_2_DECISION_SET_FREE"
+msgstr "Il Regno di Lij starà libero."
+
+msgid "BONUS_LEVEL_2_DECISION_CLAIM"
+msgstr "Ish Khan servirà come mio vassallo."
+
+msgid "BONUS_LEVEL_2_WIN_SET_FREE"
+msgstr "Non hanno nemmeno offerto ringraziamenti. Dovrebbero?"
+
+msgid "BONUS_LEVEL_2_WIN_CLAIM"
+msgstr "C'è più fuoco in te di quanto ne abbia mai visto."
+
+msgid "BONUS_LEVEL_2_LOSE"
+msgstr "Ti avevo avvertito di non allontanarti dal cammino."
+
+msgid "BONUS_LEVEL_3_JAKAT_1"
+msgstr "Il tempo lavora contro di noi. Non deviare dal tuo piano."
+
+msgid "BONUS_LEVEL_3_ASHES_1"
+msgstr "Smettila di chiacchierare."
+
+msgid "BONUS_LEVEL_3_LOUSAN_1"
+msgstr "Ashes, qui non hai nemici."
+
+msgid "BONUS_LEVEL_3_ASHES_2"
+msgstr "Allora deponete le armi."
+
+msgid "BONUS_LEVEL_3_LOUSAN_2"
+msgstr "La tua disputa è con Mara. Vayri non ne fa parte."
+
+msgid "BONUS_LEVEL_3_ASHES_3"
+msgstr "Dove mi trovo io, la neutralità muore."
+
+msgid "BONUS_LEVEL_3_DECISION_JAKAT"
+msgstr "Quale strada scegli ora?"
+
+msgid "BONUS_LEVEL_3_DECISION_SET_FREE"
+msgstr "Lousan mi sta accanto come alleato. Vayri è libera ora."
+
+msgid "BONUS_LEVEL_3_DECISION_CLAIM"
+msgstr "Lousan ha risposto del suo tradimento."
+
+msgid "BONUS_LEVEL_3_WIN_SET_FREE_LOUSAN"
+msgstr "Lunga vita al Signore Ashes."
+
+msgid "BONUS_LEVEL_3_WIN_SET_FREE_ASHES"
+msgstr "La tirannia di Mara deve avere fine."
+
+msgid "BONUS_LEVEL_3_WIN_SET_FREE_LOUSAN_2"
+msgstr "Hai ragione a cercare questo. La mano di Mara portava il veleno che ha ucciso tuo padre."
+
+msgid "BONUS_LEVEL_3_WIN_CLAIM"
+msgstr "Ad ogni vittoria, sono sempre più certo che allearmi con te sia stata la scelta giusta."
+
+msgid "BONUS_LEVEL_3_LOSE"
+msgstr "I miei poteri non devono essere usati con tanta imprudenza."
+
+msgid "BONUS_LEVEL_3_FREE_1"
+msgstr "Ashes, pensavo che ci avessi liberati."
+
+msgid "BONUS_LEVEL_3_FREE_2"
+msgstr "Questo non ti ha reso al sicuro."
+
+msgid "BONUS_LEVEL_3_FREE_3"
+msgstr "Deve arrivare di nuovo a questo?"
+
+msgid "BONUS_LEVEL_3_FREE_4"
+msgstr "Attaccate."
+
+msgid "BONUS_LEVEL_3_CLAIM_1"
+msgstr "Spezzettateli."
+
+msgid "ESC"
+msgstr "ESC"
+
+msgid "EXIT"
+msgstr "ESCI"
+
+msgid "PLAY"
+msgstr "GIOCA"
+
+msgid "BACK"
+msgstr "INDIETRO"
+
+msgid "CLOSE"
+msgstr "CHIUDI"
+
+msgid "NEXT"
+msgstr "AVANTI"
+
+msgid "SPACE"
+msgstr "SPAZIO"
+
+msgid "ALLIANCE"
+msgstr "ALLEANZA"
+
+msgid "KARMA"
+msgstr "KARMA"
+
+msgid "OVERWORLD_WASD_HINT"
+msgstr "Usa i tasti WASD per muoverti."
+
+msgid "LEVEL_1_HINT_1"
+msgstr "Dalla guarnigione puoi scegliere quale unità vuoi evocare. Le unità appena evocate non possono muoversi nel turno in cui vengono evocate."
+
+msgid "LEVEL_1_HINT_2"
+msgstr "Evocare unità diminuirà il tuo Kamq."
+
+msgid "LEVEL_1_HINT_3"
+msgstr "Puoi recuperare Kamq effettuando mosse."
+
+msgid "LEVEL_1_HINT_4"
+msgstr "Puoi muovere i pezzi Arqa o Mog solo quattro volte per livello. Il numero di mosse disponibili è mostrato nell'angolo in alto a sinistra."
+
+msgid "LEVEL_1_HINT_5"
+msgstr "L'Arqa si muove di un punto verticalmente o orizzontalmente e deve rimanere all'interno del palazzo."
+
+msgid "LEVEL_1_HINT_6"
+msgstr "I Mog si muovono di una posizione in diagonale e devono rimanere all'interno del palazzo."
+
+msgid "LEVEL_1_HINT_7"
+msgstr "Gli Xinvor possono muoversi solo di una posizione in avanti alla volta; una volta attraversato il fiume possono anche muoversi lateralmente."
+
+msgid "LEVEL_2_HINT_1"
+msgstr "Gli Aspet si muovono a forma di L: due passi in una direzione e poi un passo perpendicolare."
+
+msgid "LEVEL_2_HINT_2"
+msgstr "I Pigh sono pezzi difensivi che non possono attraversare il fiume.\n\tSi muove esattamente di due caselle in diagonale.\n\tNon può saltare i pezzi interposti."
+
+msgid "LEVEL_1_BOSS_HINT_1"
+msgstr "I Navak si muovono su qualsiasi numero di caselle vuote verticalmente o orizzontalmente."
+
+msgid "LEVEL_1_BOSS_HINT_2"
+msgstr "Gli Stver possono muoversi attraverso qualsiasi numero di caselle non occupate orizzontalmente o verticalmente.\n\tPossono saltare sopra un pezzo amico o nemico.\n\tPossono farlo solo per catturare un pezzo posizionato a qualsiasi distanza dietro di esso."
+
+msgid "HINT_SOLDIER_MOVE_TEXT"
+msgstr "I soldati si muovono e catturano avanzando di un punto in avanti. Una volta che un pedone ha attraversato il fiume può anche muoversi e catturare di un punto orizzontalmente. Un pedone non può mai muoversi all'indietro."
+
+msgid "HINT_SOLDIER_MOVE_DIALOG"
+msgstr "Clicca sul soldato e fallo muovere."
+
+msgid "HINT_CHECK_TEXT"
+msgstr "Il Generale è sotto attacco (scacco), è obbligatorio uscire dallo scacco."
+
+msgid "HINT_GENERAL_MOVE_TEXT"
+msgstr "I Generali possono muoversi di un punto verticalmente o orizzontalmente, ma non in diagonale, e sono confinati ai nove punti all'interno del loro palazzo."
+
+msgid "HINT_GENERAL_MOVE_DIALOG"
+msgstr "Muovi il Generale fuori dallo scacco."
+
+msgid "HINT_GENERALS_FACING_TEXT"
+msgstr "Un Generale non può nemmeno muoversi in una colonna occupata dal Generale nemico, a meno che non ci sia almeno un pezzo posizionato tra i Generali nella colonna."
+
+msgid "HINT_ADVISOR_MOVE_TEXT"
+msgstr "Questi sono i consiglieri del re, che lo proteggono all'interno del palazzo. Il consigliere si muove di un punto in diagonale ed è confinato al palazzo."
+
+msgid "HINT_ADVISOR_MOVE_DIALOG"
+msgstr "Usa uno dei consiglieri per salvare il generale."
+
+msgid "BONUS_LEVEL_2_FREE_1"
+msgstr "Non c'è possibilità di negoziazione."
+
+msgid "BONUS_LEVEL_2_FREE_2"
+msgstr "Attaccate."
+
+msgid "BONUS_LEVEL_2_CLAIM_1"
+msgstr "Ancora una volta, Mog."
+
+msgid "BONUS_LEVEL_FREE_ATTACK_1"
+msgstr "Ashes, cosa sta succedendo?"
+
+msgid "BONUS_LEVEL_FREE_ATTACK_2"
+msgstr "Il tuo potere non mi serve più."
+
+msgid "BONUS_LEVEL_FREE_ATTACK_3"
+msgstr "Cosa intendi?"
+
+msgid "BONUS_LEVEL_FREE_ATTACK_4"
+msgstr "Attaccate!"
+
+msgid "BONUS_LEVEL_CLAIM_ATTACK_1"
+msgstr "Spezzettateli di nuovo."
+
+msgid "SPECIAL_CARD_TREE_TRUNK"
+msgstr "Tronco d'Albero"
+
+msgid "SPECIAL_CARD_SNAKE_CHAIN"
+msgstr "Catena di Serpente"
+
+msgid "SPECIAL_CARD_WATER_PORTAL"
+msgstr "Portale d'Acqua"
+
+msgid "SPECIAL_CARD_DISCONNECTION_MIST"
+msgstr "Nebbia di Disconnessione"
+
+msgid "SPECIAL_CARD_NONE"
+msgstr "???????"
+
+msgid "SPECIAL_CARD_TREE_TRUNK_DESC"
+msgstr "Posiziona un Tronco d'Albero su qualsiasi casella fuori dal palazzo.\nNessuna unità può stare su o passare attraverso questa casella.\nIl Tronco d'Albero scompare dopo 2 turni."
+
+msgid "SPECIAL_CARD_SNAKE_CHAIN_DESC"
+msgstr "Posiziona una Catena di Serpente su un'unità nemica.\nQuell'unità è immobilizzata e non può muoversi.\nLa Catena di Serpente scompare dopo 2 turni."
+
+msgid "SPECIAL_CARD_WATER_PORTAL_DESC"
+msgstr "Posiziona un Portale d'Acqua su qualsiasi casella fuori dal palazzo.\nSe un'unità nemica calpesta o tenta di attraversare questa casella, viene uccisa istantaneamente.\nIl Portale d'Acqua scompare dopo 2 turni."
+
+msgid "SPECIAL_CARD_DISCONNECTION_MIST_DESC"
+msgstr "Crea una nebbia nel tuo territorio.\nLe unità nemiche non possono entrare nella nebbia, e le unità già dentro la nebbia non possono muoversi.\nLa Nebbia di Disconnessione scompare dopo 2 turni."
+
+msgid "SPECIAL_CARD_NONE_DESC"
+msgstr "???????"
+
+msgid "BONUS_LEVEL_HINT_NO_SPECIAL_ABILITIES"
+msgstr "Le abilità speciali non possono essere usate nei Livelli Bonus."
+
+msgid "BONUS_LEVEL_HINT_ARQA_LINE_OF_SIGHT"
+msgstr "Gli Arqa possono attaccare gli Arqa avversari se hanno una linea di visione diretta."
+
+msgid "MAIN_MENU_PRELUDE_STORY"
+msgstr "Il giovane Signore di Magma, Areg, eredita il trono di suo padre.\nParte alla conquista dei cinque mondi, uno per uno.\nL'ultimo mondo da conquistare è il Regno del Ghiaccio, governato dal Signore Sarouyts.\nHa inizio una sanguinosa guerra.\nDura anni.\nMa poi Areg vede la figlia del Signore Saroyutse, Lousine.\nL'amore ridisegna il suo cammino.\nAreg abbandona la sua ossessione per la conquista e, seguendo i consigli del Signore Saroyutse, libera le terre che ha reclamato, preservando il suo potere e la sua influenza.\nNonostante la pace, le tensioni tra i regni covano sotto la cenere.\nAreg e Lousine hanno un figlio: Ashes.\nDopo la nascita di Ashes, Boran, il principe del Regno del Ghiaccio, ancora incapace di accettare la pace con il Regno di Magma, trama un piano.\nLa morte di Areg sconvolge i cinque Regni, assassinato in segreto con il veleno dalle mani di Boran.\nCon Areg morto, Boran esige il Regno di Magma da suo padre, il Signore Sarouyts. Il Signore Sarouyts, diffidente verso suo figlio, scopre la verità sulla morte di Areg. Maledice Boran. Non vedendo via d'uscita, Boran uccide il proprio padre e assume il trono.\nBoran ordina che Ashes venga trovato e portato da lui, vivo o morto. Uno dei Mog (consiglieri) del Signore Sarouyts, Vardazar, riesce a far fuggire il neonato portandolo a Limbo, un luogo che Boran non può raggiungere. Lousine rimane prigioniera.\nBoran conquista i cinque regni ma non li unisce. Se lo facesse, il Dio del Karma, Jakat, tornerebbe. Quindi, in ogni regno, installa un signore fedele solo a lui.\nAshes cresce a Limbo, nutrendo vendetta. Quando giunge il momento, lascia Limbo e si dirige verso la dimora di Jakat, il Dio del Karma."
