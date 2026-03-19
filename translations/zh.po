@@ -17,49 +17,49 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "RETRY"
-msgstr "  RETRY"
+msgstr "  重试"
 
 msgid "OVERWORLD"
-msgstr "OVERWORLD"
+msgstr "大地图"
 
 msgid "PRODUCER"
-msgstr "PRODUCER"
+msgstr "制作人"
 
 msgid "GAME_DESIGNER"
-msgstr "GAME DESIGNER"
+msgstr "游戏设计师"
 
 msgid "LEAD_PROGRAMMERS"
-msgstr "LEAD PROGRAMMERS"
+msgstr "首席程序员"
 
 msgid "ARTIST"
-msgstr "ARTIST"
+msgstr "美术师"
 
 msgid "COMPOSER_AND_SOUND_DESIGNER"
-msgstr "COMPOSER AND SOUND DESIGNER"
+msgstr "作曲家与音效设计师"
 
 msgid "PROGRAMMERS"
-msgstr "PROGRAMMERS"
+msgstr "程序员"
 
 msgid "AUTHORS"
-msgstr "AUTHORS"
+msgstr "作者"
 
 msgid "SPECIAL_THANKS"
-msgstr "SPECIAL THANKS"
+msgstr "特别感谢"
 
 msgid "Copyright"
 msgstr "Copyright © 2025 Taillis. All Rights Reserved."
 
 msgid "RESTART"
-msgstr "  RESTART"
+msgstr "  重新开始"
 
 msgid "BACK_TO_OVERWOLD"
-msgstr "  BACK TO OVERWOLD"
+msgstr "  返回大地图"
 
 msgid "BACK_TO_MENU"
-msgstr "  BACK TO MENU"
+msgstr "  返回菜单"
 
 msgid "RESUME"
-msgstr "RESUME"
+msgstr "继续"
 
 msgid "CONTINUE"
 msgstr "  继续"
@@ -74,172 +74,169 @@ msgid "CREDITS"
 msgstr "  制作人员"
 
 msgid "KARMA_TABLE_LEVEL_1_DIALOG_1"
-msgstr "灰烬，你将在这里遇到你的朋友。"
+msgstr "首先，你必须展示你的能力。"
 
 msgid "KARMA_TABLE_LEVEL_1_DIALOG_2"
-msgstr "我没有朋友。"
+msgstr "比你想象的要多。"
 
 msgid "KARMA_TABLE_LEVEL_1_DIALOG_3"
-msgstr "被复仇驱动，你会得到你所给予的；因果会追上你。"
-
-msgid "KARMA_TABLE_LEVEL_1_DIALOG_4"
-msgstr "别忘了你在跟谁说话。别说了，把你的力量借给我。"
-
-msgid "KARMA_TABLE_LEVEL_1_DIALOG_5"
-msgstr "时间在流逝……"
+msgstr "你的自信显露得太明显了。"
 
 msgid "KARMA_TABLE_LEVEL_1_BONUS_DIALOG_1"
-msgstr "你要离开我们约定的道路，是吗？"
+msgstr "时间在流逝。每一步偏离正道都有代价。"
 
 msgid "KARMA_TABLE_LEVEL_1_BONUS_DIALOG_2"
-msgstr "我有自己的路。"
-
-msgid "KARMA_TABLE_LEVEL_1_BONUS_DIALOG_3"
-msgstr "你在这里只能靠自己了，灰烬。"
-
-msgid "KARMA_TABLE_LEVEL_1_BONUS_DIALOG_4"
-msgstr "真是悲剧……"
+msgstr "你的计划是你的。我的是我的。"
 
 msgid "KARMA_TABLE_LEVEL_2_DIALOG_1"
-msgstr "雅卡特，我需要更多力量。"
+msgstr "你的第一场胜利本可以是一次机会。"
 
 msgid "KARMA_TABLE_LEVEL_2_DIALOG_2"
-msgstr "那就这样吧。但别忘了我们的交易。"
+msgstr "命运相信机遇吗？"
 
 msgid "KARMA_TABLE_LEVEL_2_DIALOG_3"
-msgstr "我会做我必须做的事。"
-
-msgid "KARMA_TABLE_LEVEL_2_DIALOG_4"
-msgstr "因果在双向移动……"
+msgstr "机遇甚至可以扭转命运本身。"
 
 msgid "KARMA_TABLE_LEVEL_2_BONUS_DIALOG_1"
-msgstr "有什么意义？你为什么要为别人战斗？"
+msgstr "你偏离了正道。"
 
 msgid "KARMA_TABLE_LEVEL_2_BONUS_DIALOG_2"
-msgstr "我只为自己而战。"
+msgstr "这对你毫无益处。"
 
 msgid "KARMA_TABLE_LEVEL_2_BONUS_DIALOG_3"
-msgstr "要明白万物都是相连的。行动不是孤立存在的。"
+msgstr "我赐予你远超这些世界所能给予的力量。"
+
+msgid "KARMA_TABLE_LEVEL_2_BONUS_DIALOG_4"
+msgstr "少说话。或者一言不发。"
 
 msgid "KARMA_TABLE_LEVEL_3_DIALOG_1"
-msgstr "玛拉无处可藏了。"
+msgstr "让她逃脱是不明智的。"
 
 msgid "KARMA_TABLE_LEVEL_3_DIALOG_2"
-msgstr "你会怎么做？"
-
-msgid "KARMA_TABLE_LEVEL_3_DIALOG_3"
-msgstr "我不在乎她的下场。"
-
-msgid "KARMA_TABLE_LEVEL_3_DIALOG_4"
-msgstr "因果会追上你。"
+msgstr "她值得被击败无数次。"
 
 msgid "KARMA_TABLE_LEVEL_3_BONUS_DIALOG_1"
-msgstr "又一次，你为别人而战？"
+msgstr "时间对我们不利。不要偏离你的计划。"
 
 msgid "KARMA_TABLE_LEVEL_3_BONUS_DIALOG_2"
-msgstr "安静。我的理由是我自己的。"
+msgstr "闭嘴就好。"
 
 msgid "LEVEL_1_TITLE"
-msgstr "霍斯罗夫森林 - 第一部分"
+msgstr "霍斯罗夫森林 - 战斗 1"
 
 msgid "LEVEL_1_STORY"
-msgstr "灰烬和他的魔格必须穿过被雾军控制的霍斯罗夫黑暗森林。"
+msgstr "Ashes和他的Mog们必须穿越黑暗的霍斯罗夫森林，该地区处于雾军的控制之下。"
 
 msgid "LEVEL_1_OBJECTIVE_1"
-msgstr "捕获所有敌方辛沃尔"
+msgstr "俘获所有敌方Xinvor"
 
 msgid "LEVEL_1_OBJECTIVE_2"
-msgstr "不要让敌方辛沃尔越过你的防线"
+msgstr "不要让敌方Xinvor越过你的防线"
 
 msgid "LEVEL_1_BONUS_TITLE"
-msgstr "霍斯罗夫森林 - 木世界"
+msgstr "霍斯罗夫森林 - Saghart世界"
 
 msgid "LEVEL_1_BONUS_STORY"
-msgstr "灰烬进入木世界。他会决定归还控制权，还是全部据为己有。"
+msgstr "Ashes进入Saghart世界。他将决定归还控制权，还是独吞一切？"
 
 msgid "LEVEL_1_BONUS_OBJECTIVE_1"
-msgstr "捕获敌方阿尔卡"
+msgstr "俘获敌方Arqa"
 
 msgid "LEVEL_1_BONUS_OBJECTIVE_2"
-msgstr "不要超过7步"
+msgstr "不要走超过7步"
 
 msgid "LEVEL_2_TITLE"
-msgstr "霍斯罗夫森林 - 第二部分"
+msgstr "霍斯罗夫森林 - 战斗 2"
 
 msgid "LEVEL_2_STORY"
-msgstr "灰烬和他的魔格再次遇到玛拉。玛拉决心不惜一切代价阻止他们。"
+msgstr "Ashes和他的Mog们再次遭遇Mara。Mara决心不惜一切阻止他们。"
 
 msgid "LEVEL_2_OBJECTIVE_1"
-msgstr "捕获敌方阿斯佩特。"
+msgstr "俘获敌方Aspet。"
 
 msgid "LEVEL_2_OBJECTIVE_2"
-msgstr "不要让灰烬或你的人被捕获。"
+msgstr "不要让Ashes或你自己被俘获。"
 
 msgid "LEVEL_2_BONUS_TITLE"
-msgstr "霍斯罗夫森林 - 动物王国"
+msgstr "霍斯罗夫森林 - Lij王国"
 
 msgid "LEVEL_2_BONUS_STORY"
-msgstr "厌倦了雾军对他们土地的统治，动物王国的生物准备抓住任何机会——无论多小——来反击。"
+msgstr "Lij世界的生灵天性平和；然而，雾军利用这份宁静将他们奴役。"
 
 msgid "LEVEL_2_BONUS_OBJECTIVE_1"
-msgstr "捕获敌方阿尔卡"
+msgstr "俘获敌方Arqa"
 
 msgid "LEVEL_2_BONUS_OBJECTIVE_2"
-msgstr "不要超过7步"
+msgstr "不要走超过7步"
 
 msgid "LEVEL_3_TITLE"
-msgstr "霍斯罗夫森林 - 第三部分"
+msgstr "霍斯罗夫森林 - 战斗 3"
 
 msgid "LEVEL_3_STORY"
-msgstr "玛拉无处可逃。她与残存的军队做最后的抵抗。"
+msgstr "Mara勉强从上次战斗中逃脱，军队已被击溃，她深知末日将至。"
 
 msgid "LEVEL_3_OBJECTIVE_1"
-msgstr "击败玛拉。"
+msgstr "击败Mara。"
+
+msgid "LEVEL_BOSS_1_TITLE"
+msgstr "霍斯罗夫森林 - 终极决战"
+
+msgid "LEVEL_BOSS_1_STORY"
+msgstr "Mara已无路可逃。她率领残军作最后的抵抗。"
+
+msgid "LEVEL_BOSS_1_OBJECTIVE_1"
+msgstr "击败Mara。"
 
 msgid "LEVEL_3_BONUS_TITLE"
-msgstr "霍斯罗夫森林 - 湖世界"
+msgstr "霍斯罗夫森林 - Vayri世界"
 
 msgid "LEVEL_3_BONUS_STORY"
-msgstr "湖世界的生物天生和平；然而，雾军利用这种宁静奴役了他们。"
-
-msgid "OVERWORLD_WASD_HINT"
-msgstr "Use WASD buttons to move around"
+msgstr "厌倦了雾军对其土地的统治，Vayri王国的生灵准备抓住任何机会——无论多么渺小——奋起反击。"
 
 msgid "KARMA_TABLE_HINT_1"
-msgstr "低等级（LL）特殊能力卡。当你选择释放奖励关卡时，会解锁新的LL特殊能力。"
+msgstr "当你选择解放一个奖励关卡时，将解锁一个新的同盟。"
 
 msgid "KARMA_TABLE_HINT_2"
-msgstr "高等级（HL）特殊能力卡。当你选择征服3个奖励关卡时，会解锁新的HL特殊能力。"
+msgstr "当你征服3个奖励关卡时，将解锁新的业力。"
 
 msgid "KARMA_TABLE_HINT_3"
-msgstr "点击特殊能力来装备它。"
+msgstr "点击特殊能力以装备它。"
 
 msgid "CHARACTER_ASHES"
-msgstr "灰烬"
+msgstr "Ashes"
 
 msgid "CHARACTER_MARA"
-msgstr "玛拉"
+msgstr "Mara"
 
 msgid "CHARACTER_MOG"
-msgstr "魔格"
+msgstr "Vardazar"
 
 msgid "CHARACTER_JAKAT"
-msgstr "雅卡特"
+msgstr "Jakat"
+
+msgid "CHARACTER_AROS"
+msgstr "Aros"
+
+msgid "CHARACTER_ISH_KHAN"
+msgstr "Ish Khan"
+
+msgid "CHARACTER_LOUSAN"
+msgstr "Lousan"
 
 msgid "GAME_OVER_TEXT_1"
-msgstr "你的意志已破碎。"
+msgstr "你的意志已经崩溃。"
 
 msgid "GAME_OVER_TEXT_2"
-msgstr "零卡姆。容器已空。"
+msgstr "Kamq归零。器皿已空。"
 
 msgid "GAME_OVER_TEXT_3"
-msgstr "你除了灵魂之外一无所有了。"
+msgstr "你已无物可给，唯有灵魂。"
 
 msgid "GAME_OVER_TEXT_4"
-msgstr "风起。灰烬散落。"
+msgstr "风起。灰烬飘散。"
 
 msgid "GAME_OVER_TEXT_5"
-msgstr "火灭。只剩灰烬。"
+msgstr "火熄。唯余灰烬。"
 
 msgid "BUTTON_ARROW_HOVER"
 msgstr "> >"
@@ -248,190 +245,214 @@ msgid "BUTTON_ARROW_NORMAL"
 msgstr ">>"
 
 msgid "MTB_PREFIX"
-msgstr "最少步数: "
+msgstr "MTB: "
 
 msgid "FIGURE_XINVOR"
-msgstr "辛沃尔"
+msgstr "Xinvor"
 
 msgid "FIGURE_PIGH"
-msgstr "皮格"
+msgstr "Pigh"
 
 msgid "FIGURE_NAVAK"
-msgstr "纳瓦克"
+msgstr "Navak"
 
 msgid "FIGURE_ASPET"
-msgstr "阿斯佩特"
+msgstr "Aspet"
 
 msgid "FIGURE_STVER"
-msgstr "斯特维尔"
+msgstr "Stver"
 
 msgid "TUTORIAL_WELCOME"
-msgstr "欢迎来到练习场！你可以在这里自由练习，或选择你想学习的主题！"
+msgstr "欢迎来到训练场！你可以在这里自由练习，或者选择你想学习的主题！"
 
 msgid "TUTORIAL_PAWN_CAPTURE_1"
-msgstr "太好了！你捕获了敌方兵。"
+msgstr "好极了！你俘获了敌方兵卒。"
 
 msgid "TUTORIAL_PAWN_CAPTURE_2"
-msgstr "做得好！你捕获了敌方兵。"
+msgstr "干得好！你俘获了敌方兵卒。"
 
 msgid "TUTORIAL_PAWN_CAPTURE_3"
-msgstr "优秀！你捕获了敌方兵。"
+msgstr "出色！你俘获了敌方兵卒。"
 
 msgid "TUTORIAL_PAWN_CAPTURE_4"
-msgstr "太棒了！你捕获了敌方兵。"
+msgstr "太棒了！你俘获了敌方兵卒。"
 
 msgid "TUTORIAL_PAWN_CAPTURE_5"
-msgstr "真棒！你捕获了敌方兵。"
+msgstr "了不起！你俘获了敌方兵卒。"
 
 msgid "TUTORIAL_PAWN_CAPTURE_6"
-msgstr "恭喜！你捕获了敌方兵。"
+msgstr "恭喜！你俘获了敌方兵卒。"
 
 msgid "TUTORIAL_PAWN_CAPTURE_7"
-msgstr "你做到了！你捕获了敌方兵。"
+msgstr "做到了！你俘获了敌方兵卒。"
 
 msgid "TUTORIAL_GENERAL_CAPTURE"
-msgstr "太惊人了！你捕获了敌方将并赢得了游戏！"
+msgstr "惊人！你俘获了敌方将领，赢得了比赛！"
 
 msgid "TUTORIAL_SPAWN_SUCCESS"
-msgstr "太好了！你召唤了一个棋子！"
+msgstr "好极了！你召唤了一枚棋子！"
 
 msgid "TUTORIAL_PAWN_DESCRIPTION_1"
-msgstr "这是兵。兵每次只能向前移动一步，但一旦过了河，它们也可以横向移动。"
+msgstr "这是一枚兵卒。兵卒每次只能向前移动一步，但过河之后也可以横向移动。"
 
 msgid "TUTORIAL_PAWN_DESCRIPTION_2"
-msgstr "试着把兵移动到河的另一边并捕获敌方兵！"
+msgstr "试着将兵卒移到河对岸并俘获敌方兵卒！"
 
 msgid "TUTORIAL_HORSE_DESCRIPTION_1"
-msgstr "这是马。马以L形移动：先在一个方向走两步，然后垂直走一步。"
+msgstr "这是一匹马。马走日字形：先向一个方向走两步，再垂直走一步。"
 
 msgid "TUTORIAL_HORSE_DESCRIPTION_2"
-msgstr "但是，如果在马移动方向上紧邻有一个棋子，它不能跳过它。"
+msgstr "但是，如果马的移动方向旁边紧挨着一枚棋子，它就无法跳过去。"
 
 msgid "TUTORIAL_HORSE_DESCRIPTION_3"
-msgstr "试着移动马，并捕获敌方兵！"
+msgstr "试着移动马并俘获敌方兵卒！"
 
 msgid "TUTORIAL_ELEPHANT_DESCRIPTION_1"
-msgstr "这是象。象正好对角移动两个点，不能跳过中间的棋子。"
+msgstr "这是一头象。象走田字形：斜向移动两格，且不能跳过中间的棋子。"
 
 msgid "TUTORIAL_ELEPHANT_DESCRIPTION_2"
-msgstr "象不能过河到对手的一边。"
+msgstr "象不能过河到对方的阵地。"
 
 msgid "TUTORIAL_ELEPHANT_DESCRIPTION_3"
-msgstr "试着移动象，并捕获敌方兵！"
+msgstr "试着移动象并俘获敌方兵卒！"
 
 msgid "TUTORIAL_CANNON_DESCRIPTION_1"
-msgstr "这是炮。炮可以垂直或水平移动任意数量的空格。"
+msgstr "这是一门炮。炮可以沿直线（纵向或横向）移动任意数量的空格。"
 
 msgid "TUTORIAL_CANNON_DESCRIPTION_2"
-msgstr "要捕获，炮必须在其路径上跳过恰好一个棋子才能到达目标棋子。"
+msgstr "要吃子，炮必须跳过路径上恰好一枚棋子才能到达目标棋子。"
 
 msgid "TUTORIAL_CANNON_DESCRIPTION_3"
-msgstr "试着移动炮，并捕获敌方兵！"
+msgstr "试着移动炮并俘获敌方兵卒！"
 
 msgid "TUTORIAL_CHARIOT_DESCRIPTION_1"
-msgstr "这是车。车可以垂直或水平移动任意数量的空格。"
+msgstr "这是一辆车。车可以沿纵向或横向移动任意数量的空格。"
 
 msgid "TUTORIAL_CHARIOT_DESCRIPTION_2"
-msgstr "试着移动车，并捕获敌方兵！"
+msgstr "试着移动车并俘获敌方兵卒！"
 
 msgid "TUTORIAL_ADVISOR_DESCRIPTION_1"
-msgstr "这是士。士对角移动一个点，必须留在九宫格内。"
+msgstr "这是一名士。士斜向移动一格，且必须留在九宫格内。"
 
 msgid "TUTORIAL_ADVISOR_DESCRIPTION_2"
-msgstr "试着移动士，并捕获敌方兵！"
+msgstr "试着移动士并俘获敌方兵卒！"
 
 msgid "TUTORIAL_GENERAL_DESCRIPTION_1"
-msgstr "这是将。将垂直或水平移动一个点，必须留在九宫格内。"
+msgstr "这是将（帅）。将沿纵向或横向移动一格，且必须留在九宫格内。"
 
 msgid "TUTORIAL_GENERAL_DESCRIPTION_2"
-msgstr "你应该始终保护你的将。如果你的将被捕获，你就输了游戏！"
+msgstr "你应该始终保护你的将。如果你的将被俘获，你就输了！"
 
 msgid "TUTORIAL_GENERAL_DESCRIPTION_3"
-msgstr "试着移动将，并捕获敌方兵！"
+msgstr "试着移动将并俘获敌方兵卒！"
 
 msgid "TUTORIAL_FLYING_GENERAL_DESCRIPTION_1"
-msgstr "这是飞将规则。"
+msgstr "这是将帅对面的规则。"
 
 msgid "TUTORIAL_FLYING_GENERAL_DESCRIPTION_2"
-msgstr "如果两个将在同一列面对面，中间没有棋子，轮到走棋的将可以直接移动以捕获对方的将。"
+msgstr "如果两将在同一条线上正面相对且中间没有棋子，轮到移动的那一方可以直接移动将去俘获对方的将。"
 
 msgid "TUTORIAL_FLYING_GENERAL_DESCRIPTION_3"
-msgstr "试着捕获敌方将！"
+msgstr "试着俘获敌方将领！"
 
 msgid "TUTORIAL_SPAWNING_DESCRIPTION_1"
 msgstr "你可以在前3行召唤棋子。"
 
 msgid "TUTORIAL_SPAWNING_DESCRIPTION_2"
-msgstr "召唤时你会失去能量。"
+msgstr "召唤时会消耗能量。"
 
 msgid "TUTORIAL_SPAWNING_DESCRIPTION_3"
-msgstr "你不能移动新召唤的棋子。"
+msgstr "刚召唤的棋子不能立即移动。"
 
 msgid "TUTORIAL_SPAWNING_DESCRIPTION_4"
-msgstr "召唤一个棋子并用它走一步！"
+msgstr "召唤一枚棋子并用它移动！"
 
 msgid "LEVEL_1_DIALOG_1"
-msgstr "站住。"
+msgstr "你是谁？你来这里做什么？"
 
 msgid "LEVEL_1_DIALOG_2"
-msgstr "玛拉……"
+msgstr "Mara……"
 
 msgid "LEVEL_1_DIALOG_3"
-msgstr "灰烬，对不起，但你必须回到地狱。"
+msgstr "现在离开，否则你的名字将终结在我手中。"
 
 msgid "LEVEL_1_DIALOG_4"
-msgstr "那就试试看"
+msgstr "你知道我是谁，否则你早就动手了。"
 
 msgid "LEVEL_1_DIALOG_5"
-msgstr "抓住他！"
+msgstr "进攻！"
 
 msgid "LEVEL_1_VICTORY_DIALOG_1"
-msgstr "她逃走了！"
+msgstr "运气不会永远站在你这边。"
 
 msgid "LEVEL_1_VICTORY_DIALOG_2"
-msgstr "我们要去追她吗？"
-
-msgid "LEVEL_1_VICTORY_DIALOG_3"
-msgstr "没关系；她无论如何都会回来的。"
+msgstr "没有运气，只有业力，而它现在与你为敌。"
 
 msgid "LEVEL_1_DEFEAT_DIALOG"
-msgstr "对不起，灰烬，你让我别无选择。"
+msgstr "太容易了。他们对你的赞美毫无根据。"
+
+msgid "LEVEL_1_BOSS_ASHES_1"
+msgstr "Mara，你已无处可逃。"
+
+msgid "LEVEL_1_BOSS_MARA_1"
+msgstr "你把我的耐心误认为软弱。现在，你将见识我的真正力量。"
+
+msgid "LEVEL_1_BOSS_ASHES_2"
+msgstr "够了。就此终结。"
+
+msgid "LEVEL_1_BOSS_WAVE_1_WIN"
+msgstr "战斗才刚刚开始。"
+
+msgid "LEVEL_1_BOSS_WAVE_1_LOSE"
+msgstr "早该结束了。"
+
+msgid "LEVEL_1_BOSS_WAVE_2_WIN"
+msgstr "杀死Ashes——不惜一切代价。"
+
+msgid "LEVEL_1_BOSS_WAVE_2_LOSE"
+msgstr "我终于可以休息了。"
+
+msgid "LEVEL_1_BOSS_WAVE_3_WIN_ASHES"
+msgstr "为了我父亲的死，你不值得任何怜悯。"
+
+msgid "LEVEL_1_BOSS_WAVE_3_WIN_MARA"
+msgstr "Boran下的命令。我只是服从。若不从，代价就是我的命。"
+
+msgid "LEVEL_1_BOSS_WAVE_3_WIN_ASHES_2"
+msgstr "正义也将降临于他。"
+
+msgid "LEVEL_1_BOSS_WAVE_3_LOSE"
+msgstr "有那么一刻，你以为自己无敌了，对吧？"
 
 msgid "LEVEL_2_DIALOG_1"
-msgstr "放弃吧，灰烬！"
+msgstr "找到Mara了。"
 
 msgid "LEVEL_2_DIALOG_2"
-msgstr "再一步，如果必须的话我会杀了你。"
+msgstr "她没法永远逃跑。"
 
 msgid "LEVEL_2_DIALOG_3"
-msgstr "你觉得我会害怕那些阿斯佩特吗？"
+msgstr "他们的兵力更多。"
 
 msgid "LEVEL_2_DIALOG_4"
-msgstr "我警告过你，灰烬！"
+msgstr "这让我更兴奋了。"
 
 msgid "LEVEL_2_VICTORY_DIALOG_1"
-msgstr "你就这点本事？"
+msgstr "我们要追击她吗？"
 
 msgid "LEVEL_2_VICTORY_DIALOG_2"
-msgstr "灰烬，放弃吧，在太晚之前……"
-
-msgid "LEVEL_2_VICTORY_DIALOG_3"
-msgstr "这仅仅是开始。"
+msgstr "我们有更重要的事情要处理。"
 
 msgid "LEVEL_2_DEFEAT_DIALOG"
-msgstr "这是你的选择，灰烬。"
+msgstr "我给了你离开的机会。"
 
 msgid "LEVEL_3_DIALOG_1"
-msgstr "你无路可逃了。"
+msgstr "Mara看起来心神不宁。"
 
 msgid "LEVEL_3_DIALOG_2"
-msgstr "灰烬，求你了！你必须停下来！还不算太晚。"
-
-msgid "LEVEL_3_DIALOG_3"
-msgstr "所有人都会为他们所做的付出代价！"
+msgstr "她不知所措。终点将至。"
 
 msgid "LEVEL_3_AMBUSH_DIALOG_1"
-msgstr "发生了什么？"
+msgstr "发生什么事了？"
 
 msgid "LEVEL_3_AMBUSH_DIALOG_2"
 msgstr "是伏击！"
@@ -440,34 +461,151 @@ msgid "LEVEL_3_AMBUSH_DIALOG_3"
 msgstr "……"
 
 msgid "LEVEL_3_AMBUSH_DIALOG_4"
-msgstr "我感受不到我的士兵了！"
+msgstr "我感应不到我的士兵了！"
 
 msgid "LEVEL_3_AMBUSH_DIALOG_5"
 msgstr "以雾军的名义，我命令你们投降！"
 
 msgid "LEVEL_3_AMBUSH_DIALOG_6"
-msgstr "灰烬，我们的士兵无法进入断连之雾！"
+msgstr "Ashes，我们的士兵无法进入断连之雾！"
 
 msgid "LEVEL_3_AMBUSH_DIALOG_7"
-msgstr "她无法长时间维持迷雾。我们只需要等待她耗尽。"
+msgstr "她维持不了多久这迷雾。我们只需等待。"
 
 msgid "LEVEL_3_VICTORY_DIALOG_1"
-msgstr "对不起，灰烬……"
+msgstr "你会后悔自己出生的。"
 
 msgid "LEVEL_3_VICTORY_DIALOG_2"
-msgstr "消失吧……"
+msgstr "这世界早就后悔了。"
 
 msgid "LEVEL_3_DEFEAT_DIALOG"
-msgstr "对不起灰烬，你让我别无选择。"
+msgstr "我早该解决你的。"
 
-msgid "BONUS_LEVEL_ATTACK"
-msgstr "进攻！"
+msgid "BONUS_LEVEL_ATTACK_DIALOG_1"
+msgstr "Aros。"
+
+msgid "BONUS_LEVEL_ATTACK_DIALOG_2"
+msgstr "Ashes，请原谅我，但我必须请你离开。"
+
+msgid "BONUS_LEVEL_ATTACK_DIALOG_3"
+msgstr "那不会发生。"
+
+msgid "BONUS_LEVEL_ATTACK_DIALOG_4"
+msgstr "那么言语已尽。"
+
+msgid "BONUS_LEVEL_ATTACK_DIALOG_5"
+msgstr "就这样吧。"
 
 msgid "BONUS_LEVEL_RAN_OUT_OF_XINVORS"
-msgstr "我们的辛沃尔用完了！"
+msgstr "Ashes，他们都没了。每一个Xinvor都死了。"
 
 msgid "BONUS_LEVEL_RAN_OUT_OF_TIME"
-msgstr "我们没时间了！"
+msgstr "我曾警告你不要偏离正道。"
+
+msgid "BONUS_LEVEL_2_RAN_OUT_OF_TIME"
+msgstr "我曾警告你不要偏离正道。"
+
+msgid "BONUS_LEVEL_DECISION_DIALOG_1"
+msgstr "那你打算怎么做？"
+
+msgid "BONUS_LEVEL_DECISION_DIALOG_2"
+msgstr "Saghart王国自由了。"
+
+msgid "BONUS_LEVEL_DECISION_DIALOG_3"
+msgstr "Saghart之主是我的附庸。"
+
+msgid "BONUS_LEVEL_DECISION_SET_FREE_AROS"
+msgstr "Ashes大人万岁。Saghart的军队听候您的差遣。"
+
+msgid "BONUS_LEVEL_DECISION_SET_FREE_JAKAT"
+msgstr "你本可以索取更多。"
+
+msgid "BONUS_LEVEL_DECISION_CLAIM_AROS"
+msgstr "权力已经开始腐蚀你了。受诅吧，Ashes。"
+
+msgid "BONUS_LEVEL_DECISION_CLAIM_JAKAT"
+msgstr "Ashes，你令我惊叹。"
+
+msgid "BONUS_LEVEL_2_BEFORE_MOG"
+msgstr "他们拒绝谈判。"
+
+msgid "BONUS_LEVEL_2_BEFORE_ASHES"
+msgstr "不留情面。"
+
+msgid "BONUS_LEVEL_2_DECISION_JAKAT"
+msgstr "你现在选择哪条路？"
+
+msgid "BONUS_LEVEL_2_DECISION_SET_FREE"
+msgstr "Lij王国将获得自由。"
+
+msgid "BONUS_LEVEL_2_DECISION_CLAIM"
+msgstr "Ish Khan将作为我的附庸服务。"
+
+msgid "BONUS_LEVEL_2_WIN_SET_FREE"
+msgstr "他们甚至没有表示感谢。该吗？"
+
+msgid "BONUS_LEVEL_2_WIN_CLAIM"
+msgstr "你身上有着我从未见过的烈火。"
+
+msgid "BONUS_LEVEL_2_LOSE"
+msgstr "我警告过你不要偏离正道。"
+
+msgid "BONUS_LEVEL_3_JAKAT_1"
+msgstr "时间对我们不利。不要偏离你的计划。"
+
+msgid "BONUS_LEVEL_3_ASHES_1"
+msgstr "停止废话。"
+
+msgid "BONUS_LEVEL_3_LOUSAN_1"
+msgstr "Ashes，你在这里没有敌人。"
+
+msgid "BONUS_LEVEL_3_ASHES_2"
+msgstr "那就放下你的武器。"
+
+msgid "BONUS_LEVEL_3_LOUSAN_2"
+msgstr "你的争端是与Mara的。Vayri与此无关。"
+
+msgid "BONUS_LEVEL_3_ASHES_3"
+msgstr "我所在之处，中立已死。"
+
+msgid "BONUS_LEVEL_3_DECISION_JAKAT"
+msgstr "你现在选择哪条路？"
+
+msgid "BONUS_LEVEL_3_DECISION_SET_FREE"
+msgstr "Lousan作为盟友站在我身边。Vayri现在自由了。"
+
+msgid "BONUS_LEVEL_3_DECISION_CLAIM"
+msgstr "Lousan已为他的背叛付出了代价。"
+
+msgid "BONUS_LEVEL_3_WIN_SET_FREE_LOUSAN"
+msgstr "Ashes大人万岁。"
+
+msgid "BONUS_LEVEL_3_WIN_SET_FREE_ASHES"
+msgstr "Mara的暴政必须终结。"
+
+msgid "BONUS_LEVEL_3_WIN_SET_FREE_LOUSAN_2"
+msgstr "你寻求这个是正确的。Mara之手携带了杀死你父亲的毒药。"
+
+msgid "BONUS_LEVEL_3_WIN_CLAIM"
+msgstr "每一次胜利，我都愈发确信与你结盟是正确的选择。"
+
+msgid "BONUS_LEVEL_3_LOSE"
+msgstr "我的力量不能如此轻率地使用。"
+
+msgid "BONUS_LEVEL_3_FREE_1"
+msgstr "Ashes，我以为你解放了我们。"
+
+msgid "BONUS_LEVEL_3_FREE_2"
+msgstr "那并不让你安全。"
+
+msgid "BONUS_LEVEL_3_FREE_3"
+msgstr "还要再来一次吗？"
+
+msgid "BONUS_LEVEL_3_FREE_4"
+msgstr "进攻。"
+
+msgid "BONUS_LEVEL_3_CLAIM_1"
+msgstr "击碎他们。"
 
 msgid "ESC"
 msgstr "ESC"
@@ -490,78 +628,131 @@ msgstr "下一步"
 msgid "SPACE"
 msgstr "空格"
 
-msgid "LOW_LEVEL"
-msgstr "低等级"
+msgid "ALLIANCE"
+msgstr "同盟"
 
-msgid "HIGH_LEVEL"
-msgstr "高等级"
+msgid "KARMA"
+msgstr "业力"
+
+msgid "OVERWORLD_WASD_HINT"
+msgstr "使用WASD键移动。"
 
 msgid "LEVEL_1_HINT_1"
-msgstr "从兵营中你可以选择想要召唤的单位。新召唤的单位无法移动。"
+msgstr "从驻地你可以选择要召唤的单位。新召唤的单位在召唤回合内无法移动。"
 
 msgid "LEVEL_1_HINT_2"
-msgstr "召唤单位会降低你的卡姆值。"
+msgstr "召唤单位会减少你的Kamq。"
 
 msgid "LEVEL_1_HINT_3"
-msgstr "你可以通过移动来恢复卡姆值。"
+msgstr "你可以通过走棋来恢复Kamq。"
 
 msgid "LEVEL_1_HINT_4"
-msgstr "使用阿尔卡或魔格移动会降低你的卡姆值。"
+msgstr "每局你只能移动Arqa或Mog棋子四次。可用移动次数显示在左上角。"
 
 msgid "LEVEL_1_HINT_5"
-msgstr "阿尔卡可以垂直或水平移动一个点，必须留在九宫格内。"
+msgstr "Arqa沿纵向或横向移动一格，且必须留在九宫格内。"
 
 msgid "LEVEL_1_HINT_6"
-msgstr "魔格可以对角移动一个位置，必须留在九宫格内。"
+msgstr "Mog斜向移动一格，且必须留在九宫格内。"
 
 msgid "LEVEL_1_HINT_7"
-msgstr "辛沃尔每次只能向前移动一个位置；一旦过了河，它们也可以横向移动。"
+msgstr "Xinvor每次只能向前移动一格；过河后也可以横向移动。"
+
+msgid "LEVEL_2_HINT_1"
+msgstr "Aspet走日字形：先向一个方向走两步，再垂直走一步。"
+
+msgid "LEVEL_2_HINT_2"
+msgstr "Pigh是防御型棋子，不能过河。\n\t斜向移动恰好两格。\n\t不能跳过中间的棋子。"
+
+msgid "LEVEL_1_BOSS_HINT_1"
+msgstr "Navak可以沿纵向或横向移动任意数量的空格。"
+
+msgid "LEVEL_1_BOSS_HINT_2"
+msgstr "Stver可以沿横向或纵向穿越任意数量的空格。\n\t可以跳过一枚己方或敌方棋子。\n\t只能这样做来俘获位于其后方任意距离的棋子。"
 
 msgid "HINT_SOLDIER_MOVE_TEXT"
-msgstr "兵通过向前推进一个点来移动和捕获。一旦兵过了河，它也可以水平移动和捕获一个点。兵永远不能向后移动，因此不能 retreat。"
+msgstr "士兵通过向前移动一格来走棋和吃子。一旦兵卒过河，也可以横向移动和吃子。兵卒永远不能后退。"
 
 msgid "HINT_SOLDIER_MOVE_DIALOG"
-msgstr "点击兵并让他移动。"
+msgstr "点击士兵让它移动。"
 
 msgid "HINT_CHECK_TEXT"
-msgstr "将受到攻击（将军），必须移出将军状态。"
+msgstr "将（帅）正在被攻击（将军），必须走出将军状态。"
 
 msgid "HINT_GENERAL_MOVE_TEXT"
-msgstr "将可以垂直或水平移动一个点，但不能对角移动，并且被限制在九宫格内的九个点。"
+msgstr "将（帅）可以沿纵向或横向移动一格，但不能斜向移动，且被限制在九宫格内的九个点。"
 
 msgid "HINT_GENERAL_MOVE_DIALOG"
-msgstr "将将移出将军状态。"
+msgstr "将将（帅）移出将军状态。"
 
 msgid "HINT_GENERALS_FACING_TEXT"
-msgstr "将不能移动到与敌方将在同一列的位置，除非两个将之间至少有一个棋子。"
+msgstr "将（帅）也不能移动到被敌方将（帅）占据的线上，除非在该线上两将之间至少有一枚棋子。"
 
 msgid "HINT_ADVISOR_MOVE_TEXT"
-msgstr "这些是王的顾问，在九宫格内保护王。士对角移动一个点，被限制在九宫格内。"
+msgstr "这些是王的谋士，在九宫格内守护王。士斜向移动一格，被限制在九宫格内。"
 
 msgid "HINT_ADVISOR_MOVE_DIALOG"
-msgstr "使用其中一个士来拯救将。"
+msgstr "用一名士来保护将领。"
 
 msgid "BONUS_LEVEL_2_FREE_1"
-msgstr "No chance of negotiation."
+msgstr "没有谈判的可能。"
 
 msgid "BONUS_LEVEL_2_FREE_2"
-msgstr "Attack."
+msgstr "进攻。"
 
 msgid "BONUS_LEVEL_2_CLAIM_1"
-msgstr "Do it again."
+msgstr "再来一次，Mog。"
 
-msgid "BONUS_LEVEL_3_FREE_1"
-msgstr "Ashes… I thought you had freed us."
+msgid "BONUS_LEVEL_FREE_ATTACK_1"
+msgstr "Ashes，发生什么事了？"
 
-msgid "BONUS_LEVEL_3_FREE_2"
-msgstr "That did not make you safe."
+msgid "BONUS_LEVEL_FREE_ATTACK_2"
+msgstr "你的力量已不再为我服务。"
 
-msgid "BONUS_LEVEL_3_FREE_3"
-msgstr "Must it come to this again?"
+msgid "BONUS_LEVEL_FREE_ATTACK_3"
+msgstr "你是什么意思？"
 
-msgid "BONUS_LEVEL_3_FREE_4"
-msgstr "Attack."
+msgid "BONUS_LEVEL_FREE_ATTACK_4"
+msgstr "进攻！"
 
-msgid "BONUS_LEVEL_3_CLAIM_1"
-msgstr "Shatter them."
+msgid "BONUS_LEVEL_CLAIM_ATTACK_1"
+msgstr "再次击碎他们。"
 
+msgid "SPECIAL_CARD_TREE_TRUNK"
+msgstr "树干"
+
+msgid "SPECIAL_CARD_SNAKE_CHAIN"
+msgstr "蛇链"
+
+msgid "SPECIAL_CARD_WATER_PORTAL"
+msgstr "水之门户"
+
+msgid "SPECIAL_CARD_DISCONNECTION_MIST"
+msgstr "断连之雾"
+
+msgid "SPECIAL_CARD_NONE"
+msgstr "???????"
+
+msgid "SPECIAL_CARD_TREE_TRUNK_DESC"
+msgstr "在九宫格外的任意格子上放置树干。\n没有单位可以站在这个格子上或穿过它。\n树干在2回合后消失。"
+
+msgid "SPECIAL_CARD_SNAKE_CHAIN_DESC"
+msgstr "将蛇链放置在一个敌方单位上。\n该单位被固定，无法移动。\n蛇链在2回合后消失。"
+
+msgid "SPECIAL_CARD_WATER_PORTAL_DESC"
+msgstr "在九宫格外的任意格子上放置水之门户。\n如果敌方单位踏上或试图穿过这个格子，它会立即被消灭。\n水之门户在2回合后消失。"
+
+msgid "SPECIAL_CARD_DISCONNECTION_MIST_DESC"
+msgstr "在你的领地内制造迷雾。\n敌方单位无法进入迷雾，已在迷雾中的单位无法移动。\n断连之雾在2回合后消失。"
+
+msgid "SPECIAL_CARD_NONE_DESC"
+msgstr "???????"
+
+msgid "BONUS_LEVEL_HINT_NO_SPECIAL_ABILITIES"
+msgstr "特殊能力不能在奖励关卡中使用。"
+
+msgid "BONUS_LEVEL_HINT_ARQA_LINE_OF_SIGHT"
+msgstr "如果Arqa与对方Arqa之间有直接视线，则可以攻击对方Arqa。"
+
+msgid "MAIN_MENU_PRELUDE_STORY"
+msgstr "年轻的岩浆之主Areg继承了父亲的王位。\n他踏上了逐一征服五个世界的征途。\n最后一个要征服的世界是冰之王国，由Sarouyts大人统治。\n一场血腥的战争由此开始。\n战争持续了数年。\n然而，Areg见到了Saroyutse大人的女儿Lousine。\n爱情改变了他的道路。\nAreg放弃了对征服的执念，遵循Saroyutse大人的建议，释放了他所主张的土地——同时保留了自己的权力与影响力。\n尽管和平降临，各王国之间的紧张局势仍在暗中涌动。\nAreg和Lousine有了一个儿子：Ashes。\nAshes出生后，冰之王国的王子Boran仍然不愿接受与岩浆王国的和平，密谋策划。\nAreg的死震惊了五大王国——他被Boran秘密下毒暗杀。\nAreg死后，Boran向其父Sarouyts大人索要岩浆王国。Sarouyts大人对儿子心生疑虑，发现了Areg死亡的真相，随即诅咒了Boran。走投无路之下，Boran亲手杀死了自己的父亲，夺取了王位。\nBoran命令手下找到Ashes并带到他面前，无论生死。Sarouyts大人的一名Mog（谋士）Vardazar设法将这个新生儿秘密带走，送往Boran无法触及的地方——虚空之境。Lousine则被囚禁。\nBoran征服了五大王国，但没有将它们统一。若统一，业力之神Jakat将会归来。因此，他在每个王国安置了只效忠于他的领主。\nAshes在虚空之境中长大，心怀复仇。时机到来时，他离开虚空之境，前往业力之神Jakat的居所。"
