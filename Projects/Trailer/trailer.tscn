@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://gijj1me61ls2"]
+
+[ext_resource type="Texture2D" uid="uid://bnaw3y3iom4ym" path="res://Assets/Trailer/Page Background.png" id="1_elebj"]
+[ext_resource type="Shader" path="res://Projects/Trailer/background_fire.gdshader" id="1_tdcwy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kcsgt"]
+shader = ExtResource("1_tdcwy")
+
+[sub_resource type="Animation" id="Animation_rtcuw"]
+resource_name = "reveal"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(174, -221), Vector2(174, 212)]
+}
+
+[sub_resource type="Animation" id="Animation_cowoc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-393, 165)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c5dbu"]
+_data = {
+"RESET": SubResource("Animation_cowoc"),
+"reveal": SubResource("Animation_rtcuw")
+}
+
+[node name="Trailer" type="Node2D"]
+
+[node name="PageBackground" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_kcsgt")
+position = Vector2(720, 410)
+texture = ExtResource("1_elebj")
+
+[node name="Camera2D" type="Camera2D" parent="PageBackground"]
+position = Vector2(-393, 165)
+zoom = Vector2(6, 6)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PageBackground/Camera2D"]
+libraries = {
+"": SubResource("AnimationLibrary_c5dbu")
+}
+autoplay = "reveal"
