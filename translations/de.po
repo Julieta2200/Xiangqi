@@ -762,3 +762,15 @@ msgstr "Arqas können gegnerische Arqas angreifen, wenn sie direkten Sichtkontak
 
 msgid "MAIN_MENU_PRELUDE_STORY"
 msgstr "Der junge Herr von Magma, Areg, erbt den Thron seines Vaters.\nEr macht sich auf, die fünf Welten eine nach der anderen zu erobern.\nDie letzte Welt, die er zu erobern hat, ist das Königreich des Eises, regiert von Lord Sarouyts.\nEin blutiger Krieg beginnt.\nEr dauert jahrelang.\nDoch dann erblickt Areg Lord Saroyutses Tochter, Lousine.\nLiebe verändert seinen Weg.\nAreg gibt seine Besessenheit von Eroberungen auf und gibt, dem Rat von Lord Saroyutse folgend, die beanspruchten Länder frei – während er seine Macht und seinen Einfluss bewahrt.\nTrotz des Friedens schwelen die Spannungen zwischen den Königreichen.\nAreg und Lousine haben einen Sohn: Ashes.\nNach der Geburt von Ashes schmiedet Boran, der Prinz des Königreichs des Eises, der den Frieden mit dem Magma-Königreich noch immer nicht akzeptieren will, einen Plan.\nAregs Tod erschüttert die fünf Königreiche – ermordet im Verborgenen durch Gift aus den Händen Borans.\nMit Areg tot fordert Boran das Magma-Königreich von seinem Vater, Lord Sarouyts. Lord Sarouyts, misstrauisch gegenüber seinem Sohn, entdeckt die Wahrheit über Aregs Tod. Er verflucht Boran. Ohne Ausweg tötet Boran seinen eigenen Vater und nimmt den Thron ein.\nBoran befiehlt, dass Ashes gefunden und zu ihm gebracht werden soll, tot oder lebendig. Einer von Lord Sarouyts' Mogs (Beratern), Vardazar, schafft es, den Neugeborenen zu schmuggeln und ihn nach Limbo zu bringen – einem Ort, den Boran nicht erreichen kann. Lousine bleibt gefangen.\nBoran erobert die fünf Königreiche, vereint sie aber nicht. Täte er es, würde der Karma-Gott – Jakat – zurückkehren. Daher setzt er in jedem Königreich einen Herrn ein, der nur ihm treu ist.\nAshes wächst in Limbo auf und hegt Rache. Als die Zeit gekommen ist, verlässt er Limbo und begibt sich zur Behausung von Jakat, dem Gott des Karma."
+
+msgid "OPTIONS_SOUND_EFFECT"
+msgstr "SOUNDEFFEKT"
+
+msgid "OPTIONS_MUSIC"
+msgstr "MUSIK"
+
+msgid "OPTIONS_LANGUAGE"
+msgstr "SPRACHE"
+
+msgid "VICTORY_THANK_YOU"
+msgstr "Danke fürs Spielen"

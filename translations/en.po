@@ -763,3 +763,15 @@ msgstr "Arqas can attack opposing Arqas if they have direct line of sight."
 msgid "MAIN_MENU_PRELUDE_STORY"
 msgstr "The young Lord of Magma, Areg, inherits his father's throne.\nHe sets out to conquer the five worlds, one by one.\nThe final world to conquer is the Kingdom of Ice, ruled by Lord Sarouyts.\nA bloody war begins.\nIt lasts for years.\nBut then Areg sees Lord Saroyutse's daughter, Lousine.\nLove reshapes his path.\nAreg abandons his obsession with conquest and, following Lord Saroyutse's counsel, releases the lands he has claimed-while preserving his power and influence.\nDespite peace, tensions between the kingdoms simmer.\nAreg and Lousine have a son: Ashes.\nAfter the birth of Ashes, Boran, the prince of the Kingdom of Ice, still unwilling to accept peace with the Magma Kingdom, hatches a plan.\nAreg's death shocks the five Kingdoms, murdered in secret by poison at the hands of Boran.\nWith Areg dead, Boran demands the Magma Kingdom from his father, Lord Sarouyts. Lord Sarouyts, suspicious of his son, discovers the truth surrounding Areg's death. He curses Boran. Seeing no way out, Boran kills his own father and assumes the throne.\nBoran orders that Ashes be found and brought to him, dead or alive. One of Lord Sarouyts Mogs (advisors), Vardazar, manages to smuggle the newborn away and take him to Limbo - a place where Boran cannot reach him. Lousine remains captive.\nBoran conquers the five kingdoms but does not unite them. If he did, the God of Karma-Jakat-would return. Therefore, in each kingdom, he installs lord loyal only to him.\nAshes grows up in Limbo, harbouring revenge. When the time comes, he leaves Limbo and heads to the dwelling of Jakat, the God of Karma."
 
+
+msgid "OPTIONS_SOUND_EFFECT"
+msgstr "SOUND EFFECT"
+
+msgid "OPTIONS_MUSIC"
+msgstr "MUSIC"
+
+msgid "OPTIONS_LANGUAGE"
+msgstr "LANGUAGE"
+
+msgid "VICTORY_THANK_YOU"
+msgstr "Thank you for playing"

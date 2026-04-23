@@ -2,7 +2,6 @@ class_name HintBubble extends Control
 
 @onready var hint_label: RichTextLabel = $Panel/Hint
 @onready var number_label: Label = $Panel/Number
-@onready var next_button: Button = $Panel/Button
 @onready var hover_music: AudioStreamPlayer = $HoverMusic
 @onready var hover_music_effects: AudioStreamPlayer = $HoverMusicEffects
 
@@ -17,7 +16,6 @@ var hover_music_off = preload("res://Assets/Music/SFX and music/UI SFX-Karma Tab
 func _ready() -> void:
 	hint_label.text = tr(hint)
 	number_label.text = number
-	next_button.text = tr("NEXT")
 
 
 func _on_button_pressed() -> void:

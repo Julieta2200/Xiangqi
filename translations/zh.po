@@ -762,3 +762,15 @@ msgstr "如果Arqa与对方Arqa之间有直接视线，则可以攻击对方Arqa
 
 msgid "MAIN_MENU_PRELUDE_STORY"
 msgstr "年轻的岩浆之主Areg继承了父亲的王位。\n他踏上了逐一征服五个世界的征途。\n最后一个要征服的世界是冰之王国，由Sarouyts大人统治。\n一场血腥的战争由此开始。\n战争持续了数年。\n然而，Areg见到了Saroyutse大人的女儿Lousine。\n爱情改变了他的道路。\nAreg放弃了对征服的执念，遵循Saroyutse大人的建议，释放了他所主张的土地——同时保留了自己的权力与影响力。\n尽管和平降临，各王国之间的紧张局势仍在暗中涌动。\nAreg和Lousine有了一个儿子：Ashes。\nAshes出生后，冰之王国的王子Boran仍然不愿接受与岩浆王国的和平，密谋策划。\nAreg的死震惊了五大王国——他被Boran秘密下毒暗杀。\nAreg死后，Boran向其父Sarouyts大人索要岩浆王国。Sarouyts大人对儿子心生疑虑，发现了Areg死亡的真相，随即诅咒了Boran。走投无路之下，Boran亲手杀死了自己的父亲，夺取了王位。\nBoran命令手下找到Ashes并带到他面前，无论生死。Sarouyts大人的一名Mog（谋士）Vardazar设法将这个新生儿秘密带走，送往Boran无法触及的地方——虚空之境。Lousine则被囚禁。\nBoran征服了五大王国，但没有将它们统一。若统一，业力之神Jakat将会归来。因此，他在每个王国安置了只效忠于他的领主。\nAshes在虚空之境中长大，心怀复仇。时机到来时，他离开虚空之境，前往业力之神Jakat的居所。"
+
+msgid "OPTIONS_SOUND_EFFECT"
+msgstr "音效"
+
+msgid "OPTIONS_MUSIC"
+msgstr "音乐"
+
+msgid "OPTIONS_LANGUAGE"
+msgstr "语言"
+
+msgid "VICTORY_THANK_YOU"
+msgstr "感谢您的游戏"

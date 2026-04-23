@@ -13,6 +13,8 @@ config_version=5
 config/name="Xiangqi"
 run/main_scene="res://Projects/Ui/MainMenu/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
+boot_splash/bg_color=Color(0.12549, 0.12549, 0.121569, 1)
+boot_splash/image="res://Assets/TAILLIS ICON-Photoroom.png"
 config/icon="res://icon.svg"
 config/locale/fallback="zh"
 
@@ -102,7 +104,7 @@ X={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://translations/en.po", "res://translations/zh.po")
+locale/translations=PackedStringArray("res://translations/en.po", "res://translations/zh.po", "res://translations/de.po", "res://translations/es.po", "res://translations/fr.po", "res://translations/it.po")
 
 [rendering]
 

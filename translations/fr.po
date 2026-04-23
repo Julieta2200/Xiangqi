@@ -762,3 +762,15 @@ msgstr "Les Arqas peuvent attaquer les Arqas adverses s'ils ont une ligne de vue
 
 msgid "MAIN_MENU_PRELUDE_STORY"
 msgstr "Le jeune Seigneur de Magma, Areg, hérite du trône de son père.\nIl part conquérir les cinq mondes, l'un après l'autre.\nLe dernier monde à conquérir est le Royaume de Glace, gouverné par le Seigneur Sarouyts.\nUne guerre sanglante commence.\nElle dure des années.\nMais alors Areg voit la fille du Seigneur Saroyutse, Lousine.\nL'amour reshape son chemin.\nAreg abandonne son obsession pour la conquête et, suivant les conseils du Seigneur Saroyutse, libère les terres qu'il a revendiquées, tout en préservant son pouvoir et son influence.\nMalgré la paix, les tensions entre les royaumes couvent.\nAreg et Lousine ont un fils : Ashes.\nAprès la naissance d'Ashes, Boran, le prince du Royaume de Glace, encore incapable d'accepter la paix avec le Royaume de Magma, ourdit un plan.\nLa mort d'Areg choque les cinq Royaumes, assassiné en secret par le poison des mains de Boran.\nAvec Areg mort, Boran réclame le Royaume de Magma à son père, le Seigneur Sarouyts. Le Seigneur Sarouyts, méfiant envers son fils, découvre la vérité sur la mort d'Areg. Il maudit Boran. Ne voyant aucune issue, Boran tue son propre père et prend le trône.\nBoran ordonne qu'Ashes soit trouvé et amené devant lui, mort ou vif. L'un des Mogs (conseillers) du Seigneur Sarouyts, Vardazar, parvient à faire passer le nouveau-né en contrebande et à l'emmener à Limbo, un endroit hors de portée de Boran. Lousine reste captive.\nBoran conquiert les cinq royaumes mais ne les unit pas. S'il le faisait, le Dieu du Karma, Jakat, reviendrait. Par conséquent, dans chaque royaume, il installe un seigneur loyal uniquement envers lui.\nAshes grandit à Limbo, nourrissant sa vengeance. Quand le moment est venu, il quitte Limbo et se dirige vers la demeure de Jakat, le Dieu du Karma."
+
+msgid "OPTIONS_SOUND_EFFECT"
+msgstr "EFFETS SONORES"
+
+msgid "OPTIONS_MUSIC"
+msgstr "MUSIQUE"
+
+msgid "OPTIONS_LANGUAGE"
+msgstr "LANGUE"
+
+msgid "VICTORY_THANK_YOU"
+msgstr "Merci d'avoir joué"

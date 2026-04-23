@@ -2,8 +2,6 @@ extends Node2D
 
 @onready var lls: Control = $CanvasLayer/LLs
 @onready var hls: Control = $CanvasLayer/HLs
-@onready var low_level_label: Label = $CanvasLayer/LLs/Label
-@onready var high_level_label: Label = $CanvasLayer/HLs/Label
 
 @onready var hint_bubbles: Array[HintBubble] = [
 	$CanvasLayer/Hints/HintBubble,
@@ -28,11 +26,6 @@ func _ready() -> void:
 	dialogs = DialoguesManager.get_all_dialogs()
 	fill_lls()
 	fill_hls()
-	# Set translated text for buttons
-	play_button.text = tr("PLAY")
-	back_button.text = tr("BACK")
-	low_level_label.text = tr("ALLIANCE")
-	high_level_label.text = tr("KARMA")
 	if GameState.state["first_karma_table_run"]:
 		run_hint_system()
 		return

@@ -60,6 +60,7 @@ var config: Dictionary = {}
 const new_config: Dictionary = {
 	"music_volume": -0.030508,
 	"sfx_volume": -7.63072,
+	"language": "en",
 }
 
 var current_level_info: Dictionary = {
@@ -190,6 +191,8 @@ func load_config() -> void:
 		else:
 			AudioServer.set_bus_mute(sfx_bus_index, false)
 		AudioServer.set_bus_volume_db(sfx_bus_index, c["sfx_volume"])
+	if c.has("language"):
+		TranslationServer.set_locale(c["language"])
 	config = c
 
 func save_config() -> void:

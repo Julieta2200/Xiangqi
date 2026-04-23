@@ -762,3 +762,15 @@ msgstr "Los Arqas pueden atacar a los Arqas contrarios si tienen línea de visi�
 
 msgid "MAIN_MENU_PRELUDE_STORY"
 msgstr "El joven Señor de Magma, Areg, hereda el trono de su padre.\nParte a conquistar los cinco mundos, uno por uno.\nEl último mundo a conquistar es el Reino del Hielo, gobernado por el Señor Sarouyts.\nComienza una sangrienta guerra.\nDura años.\nPero entonces Areg ve a la hija del Señor Saroyutse, Lousine.\nEl amor remodela su camino.\nAreg abandona su obsesión por la conquista y, siguiendo el consejo del Señor Saroyutse, libera las tierras que ha reclamado, manteniendo su poder e influencia.\nA pesar de la paz, las tensiones entre los reinos persisten.\nAreg y Lousine tienen un hijo: Ashes.\nTras el nacimiento de Ashes, Boran, el príncipe del Reino del Hielo, aún incapaz de aceptar la paz con el Reino de Magma, trama un plan.\nLa muerte de Areg sacude a los cinco Reinos, asesinado en secreto con veneno por manos de Boran.\nCon Areg muerto, Boran exige el Reino de Magma a su padre, el Señor Sarouyts. El Señor Sarouyts, desconfiado de su hijo, descubre la verdad sobre la muerte de Areg. Maldice a Boran. Sin salida, Boran mata a su propio padre y asume el trono.\nBoran ordena que Ashes sea encontrado y llevado ante él, vivo o muerto. Uno de los Mogs (consejeros) del Señor Sarouyts, Vardazar, logra sacar al recién nacido a escondidas y llevarlo a Limbo, un lugar al que Boran no puede llegar. Lousine permanece cautiva.\nBoran conquista los cinco reinos pero no los une. Si lo hiciera, el Dios del Karma, Jakat, regresaría. Por ello, en cada reino instala a un señor leal solo a él.\nAshes crece en Limbo, albergando venganza. Cuando llega el momento, abandona Limbo y se dirige a la morada de Jakat, el Dios del Karma."
+
+msgid "OPTIONS_SOUND_EFFECT"
+msgstr "EFECTOS DE SONIDO"
+
+msgid "OPTIONS_MUSIC"
+msgstr "MÚSICA"
+
+msgid "OPTIONS_LANGUAGE"
+msgstr "IDIOMA"
+
+msgid "VICTORY_THANK_YOU"
+msgstr "Gracias por jugar"

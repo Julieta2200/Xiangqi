@@ -886,19 +886,19 @@ grow_vertical = 2
 
 [node name="Continue" parent="CanvasLayer/Navigation" instance=ExtResource("12_e82pv")]
 layout_mode = 2
-text = "  CONTINUE"
+text = "CONTINUE"
 
 [node name="NewGame" parent="CanvasLayer/Navigation" instance=ExtResource("12_e82pv")]
 layout_mode = 2
-text = "  NEW GAME"
+text = "NEW_GAME"
 
 [node name="Options" parent="CanvasLayer/Navigation" instance=ExtResource("12_e82pv")]
 layout_mode = 2
-text = "  OPTIONS"
+text = "OPTIONS"
 
 [node name="Credits" parent="CanvasLayer/Navigation" instance=ExtResource("12_e82pv")]
 layout_mode = 2
-text = "  CREDITS"
+text = "CREDITS"
 
 [node name="NavBlocker" type="Panel" parent="CanvasLayer"]
 unique_name_in_owner = true
@@ -942,7 +942,7 @@ theme_override_constants/separation = 50
 layout_mode = 2
 theme_override_fonts/font = ExtResource("18_67d17")
 theme_override_font_sizes/font_size = 40
-text = "GAME DESIGNER"
+text = "GAME_DESIGNER"
 
 [node name="names" type="Label" parent="CanvasLayer/Credits/GameDesigner"]
 layout_mode = 2
@@ -958,7 +958,7 @@ theme_override_constants/separation = 50
 layout_mode = 2
 theme_override_fonts/font = ExtResource("18_67d17")
 theme_override_font_sizes/font_size = 40
-text = "LEAD PROGRAMMERS"
+text = "LEAD_PROGRAMMERS"
 
 [node name="names" type="Label" parent="CanvasLayer/Credits/LeadProgrammers"]
 layout_mode = 2
@@ -990,7 +990,7 @@ theme_override_constants/separation = 50
 layout_mode = 2
 theme_override_fonts/font = ExtResource("18_67d17")
 theme_override_font_sizes/font_size = 40
-text = "COMPOSER AND SOUND DESIGNER"
+text = "COMPOSER_AND_SOUND_DESIGNER"
 
 [node name="names" type="Label" parent="CanvasLayer/Credits/Composer"]
 layout_mode = 2
@@ -1038,7 +1038,7 @@ theme_override_constants/separation = 50
 layout_mode = 2
 theme_override_fonts/font = ExtResource("18_67d17")
 theme_override_font_sizes/font_size = 40
-text = "SPECIAL THANKS"
+text = "SPECIAL_THANKS"
 
 [node name="names" type="Label" parent="CanvasLayer/Credits/SpecialThanks"]
 layout_mode = 2
@@ -1054,7 +1054,7 @@ theme_override_constants/separation = 50
 layout_mode = 2
 theme_override_fonts/font = ExtResource("11_0mo1f")
 theme_override_font_sizes/font_size = 40
-text = "Copyright © 2025 Taillis. All Rights Reserved."
+text = "Copyright"
 
 [node name="Prelude" type="Control" parent="CanvasLayer"]
 layout_mode = 3

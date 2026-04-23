@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dtqik42d1b4fu"]
+[gd_scene load_steps=9 format=3 uid="uid://dtqik42d1b4fu"]
 
 [ext_resource type="Texture2D" uid="uid://cgr3j5sge38pg" path="res://Assets/MainMenu/Options/Icon.png" id="1_c8p4r"]
 [ext_resource type="Script" path="res://Projects/Ui/OptionsMenu/options_menu.gd" id="1_tclbl"]
@@ -17,6 +17,8 @@ texture = ExtResource("3_ytts8")
 expand_margin_left = 9.0
 expand_margin_top = 11.0
 expand_margin_bottom = 11.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lang"]
 
 [node name="OptionsMenu" type="Control"]
 layout_mode = 3
@@ -37,7 +39,7 @@ theme_override_constants/separation = 150
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_v02j5")
 theme_override_font_sizes/font_size = 45
-text = "SOUND EFFECT"
+text = "OPTIONS_SOUND_EFFECT"
 
 [node name="SFXSlider" type="HSlider" parent="VBoxContainer/sound_effect"]
 unique_name_in_owner = true
@@ -59,7 +61,7 @@ value = -7.0
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_v02j5")
 theme_override_font_sizes/font_size = 45
-text = "MUSIC"
+text = "OPTIONS_MUSIC"
 
 [node name="MusicSlider" type="HSlider" parent="VBoxContainer/music"]
 unique_name_in_owner = true
@@ -76,5 +78,103 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_5wrh
 min_value = -80.0
 max_value = 0.0
 
+[node name="Language" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_v02j5")
+theme_override_font_sizes/font_size = 45
+text = "OPTIONS_LANGUAGE"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Language"]
+layout_mode = 0
+offset_top = 65.0
+offset_right = 685.0
+offset_bottom = 130.0
+theme_override_constants/separation = 50
+
+[node name="EnglishButton" type="Button" parent="VBoxContainer/Language/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.984314, 0.760784, 0.211765, 1)
+theme_override_colors/font_pressed_color = Color(0.984314, 0.760784, 0.211765, 1)
+theme_override_colors/font_focus_color = Color(0.984314, 0.760784, 0.211765, 1)
+theme_override_fonts/font = ExtResource("1_v02j5")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lang")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_lang")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_lang")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lang")
+text = "English"
+
+[node name="ChineseButton" type="Button" parent="VBoxContainer/Language/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.984314, 0.760784, 0.211765, 1)
+theme_override_colors/font_pressed_color = Color(0.984314, 0.760784, 0.211765, 1)
+theme_override_colors/font_focus_color = Color(0.984314, 0.760784, 0.211765, 1)
+theme_override_fonts/font = ExtResource("1_v02j5")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lang")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_lang")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_lang")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lang")
+text = "中文"
+
+[node name="GermanButton" type="Button" parent="VBoxContainer/Language/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.984314, 0.760784, 0.211765, 1)
+theme_override_colors/font_pressed_color = Color(0.984314, 0.760784, 0.211765, 1)
+theme_override_colors/font_focus_color = Color(0.984314, 0.760784, 0.211765, 1)
+theme_override_fonts/font = ExtResource("1_v02j5")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lang")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_lang")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_lang")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lang")
+text = "Deutsch"
+
+[node name="SpanishButton" type="Button" parent="VBoxContainer/Language/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.984314, 0.760784, 0.211765, 1)
+theme_override_colors/font_pressed_color = Color(0.984314, 0.760784, 0.211765, 1)
+theme_override_colors/font_focus_color = Color(0.984314, 0.760784, 0.211765, 1)
+theme_override_fonts/font = ExtResource("1_v02j5")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lang")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_lang")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_lang")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lang")
+text = "Español"
+
+[node name="FrenchButton" type="Button" parent="VBoxContainer/Language/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.984314, 0.760784, 0.211765, 1)
+theme_override_colors/font_pressed_color = Color(0.984314, 0.760784, 0.211765, 1)
+theme_override_colors/font_focus_color = Color(0.984314, 0.760784, 0.211765, 1)
+theme_override_fonts/font = ExtResource("1_v02j5")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lang")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_lang")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_lang")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lang")
+text = "Français"
+
+[node name="ItalianButton" type="Button" parent="VBoxContainer/Language/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.984314, 0.760784, 0.211765, 1)
+theme_override_colors/font_pressed_color = Color(0.984314, 0.760784, 0.211765, 1)
+theme_override_colors/font_focus_color = Color(0.984314, 0.760784, 0.211765, 1)
+theme_override_fonts/font = ExtResource("1_v02j5")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxEmpty_lang")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_lang")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_lang")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lang")
+text = "Italiano"
+
 [connection signal="value_changed" from="VBoxContainer/sound_effect/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/music/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="pressed" from="VBoxContainer/Language/HBoxContainer/EnglishButton" to="." method="set_language" binds= ["en"]]
+[connection signal="pressed" from="VBoxContainer/Language/HBoxContainer/ChineseButton" to="." method="set_language" binds= ["zh"]]
+[connection signal="pressed" from="VBoxContainer/Language/HBoxContainer/GermanButton" to="." method="set_language" binds= ["de"]]
+[connection signal="pressed" from="VBoxContainer/Language/HBoxContainer/SpanishButton" to="." method="set_language" binds= ["es"]]
+[connection signal="pressed" from="VBoxContainer/Language/HBoxContainer/FrenchButton" to="." method="set_language" binds= ["fr"]]
+[connection signal="pressed" from="VBoxContainer/Language/HBoxContainer/ItalianButton" to="." method="set_language" binds= ["it"]]

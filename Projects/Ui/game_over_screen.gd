@@ -2,19 +2,8 @@ class_name GameOverScreen extends Control
 
 
 @onready var audio_player: AudioStreamPlayer = $AudioStreamPlayer
-@onready var retry_button: Button = $Buttons/Retry
-@onready var options_button: Button = $Buttons/Options
-@onready var esc_label: Label = $Bottom/Line/EscButton/Esc
-@onready var overworld_label: Label = $Bottom/Line/EscButton/Overworld
 
-func _ready() -> void:
-	# Set translated text for all menu buttons
-	retry_button.text = tr("RETRY")
-	options_button.text = tr("OPTIONS")
-	esc_label.text = tr("ESC")
-	overworld_label.text = tr("OVERWORLD")
-
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("exit") and visible:
 		AudioManager.play_sound("back")
 		SceneManager.change_scene(SceneManager.Scenes.Overworld)

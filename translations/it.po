@@ -762,3 +762,15 @@ msgstr "Gli Arqa possono attaccare gli Arqa avversari se hanno una linea di visi
 
 msgid "MAIN_MENU_PRELUDE_STORY"
 msgstr "Il giovane Signore di Magma, Areg, eredita il trono di suo padre.\nParte alla conquista dei cinque mondi, uno per uno.\nL'ultimo mondo da conquistare è il Regno del Ghiaccio, governato dal Signore Sarouyts.\nHa inizio una sanguinosa guerra.\nDura anni.\nMa poi Areg vede la figlia del Signore Saroyutse, Lousine.\nL'amore ridisegna il suo cammino.\nAreg abbandona la sua ossessione per la conquista e, seguendo i consigli del Signore Saroyutse, libera le terre che ha reclamato, preservando il suo potere e la sua influenza.\nNonostante la pace, le tensioni tra i regni covano sotto la cenere.\nAreg e Lousine hanno un figlio: Ashes.\nDopo la nascita di Ashes, Boran, il principe del Regno del Ghiaccio, ancora incapace di accettare la pace con il Regno di Magma, trama un piano.\nLa morte di Areg sconvolge i cinque Regni, assassinato in segreto con il veleno dalle mani di Boran.\nCon Areg morto, Boran esige il Regno di Magma da suo padre, il Signore Sarouyts. Il Signore Sarouyts, diffidente verso suo figlio, scopre la verità sulla morte di Areg. Maledice Boran. Non vedendo via d'uscita, Boran uccide il proprio padre e assume il trono.\nBoran ordina che Ashes venga trovato e portato da lui, vivo o morto. Uno dei Mog (consiglieri) del Signore Sarouyts, Vardazar, riesce a far fuggire il neonato portandolo a Limbo, un luogo che Boran non può raggiungere. Lousine rimane prigioniera.\nBoran conquista i cinque regni ma non li unisce. Se lo facesse, il Dio del Karma, Jakat, tornerebbe. Quindi, in ogni regno, installa un signore fedele solo a lui.\nAshes cresce a Limbo, nutrendo vendetta. Quando giunge il momento, lascia Limbo e si dirige verso la dimora di Jakat, il Dio del Karma."
+
+msgid "OPTIONS_SOUND_EFFECT"
+msgstr "EFFETTI SONORI"
+
+msgid "OPTIONS_MUSIC"
+msgstr "MUSICA"
+
+msgid "OPTIONS_LANGUAGE"
+msgstr "LINGUA"
+
+msgid "VICTORY_THANK_YOU"
+msgstr "Grazie per aver giocato"

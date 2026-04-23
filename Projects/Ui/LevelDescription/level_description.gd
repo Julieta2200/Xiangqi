@@ -68,9 +68,6 @@ var sounds := {
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	hide()
-	# Set translated text for buttons
-	play_button.text = tr("PLAY")
-	close_button.text = tr("CLOSE")
 
 
 func setup(title: String, story: String, additional_objectives: Array[String], level: PackedScene, number: String, move_count: int) -> void:
