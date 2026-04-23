@@ -66,6 +66,10 @@ func make_move_main_thread(best_move):
 	board.move_figure_AI({"start": Vector2i(best_move[1], best_move[0]), 
 	"end": Vector2i(best_move[3],best_move[2])})
 
+func no_moves_main_thread():
+	thinking_thread.wait_to_finish()
+	board.no_move()
+
 func finish_thread() -> void:
 	thinking_thread.wait_to_finish()
 
@@ -118,6 +122,8 @@ func select_best_move(position: Array[Array], depth: int) -> void:
 	# At this point, best_move should always be set (either first move or best found)
 	if best_move:
 		call_deferred("make_move_main_thread", best_move)
+	else:
+		call_deferred("no_moves_main_thread")
 
 func get_all_legal_moves(team: int, position: Array[Array]) -> Array[Array]:
 	var legal_moves: Array[Array] = []

@@ -10,6 +10,7 @@ func select_best_move(position: Array[Array], _depth: int) -> void:
 	
 	# If there are no legal moves, we can't make a move
 	if moves.is_empty():
+		call_deferred("no_moves_main_thread")
 		return
 	
 	# Categorize moves

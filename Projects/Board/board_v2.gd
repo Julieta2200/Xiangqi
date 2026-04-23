@@ -250,6 +250,9 @@ func move_figure_AI(move: Dictionary) -> void:
 		figure_apply_move(move["start"],move["end"])
 	_AI_figure = figure
 
+func no_move() -> void:
+	turn = Teams.Red
+
 func spawn_AI_figure():
 	var pos : Vector2i
 	while true:
