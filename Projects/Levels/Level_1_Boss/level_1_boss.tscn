@@ -370,7 +370,6 @@ scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_i32f2")
 animation = &"floating"
 autoplay = "default"
-frame_progress = 0.456189
 
 [connection signal="move_done" from="Board" to="." method="_on_board_move_done"]
 [connection signal="hint_finished" from="GameplayUI/Hints/Chariots" to="." method="run_hint_system"]

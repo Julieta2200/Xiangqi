@@ -131,6 +131,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_4duk7")
+bus = &"Music"
 
 [node name="Credits" type="VBoxContainer" parent="."]
 layout_mode = 1

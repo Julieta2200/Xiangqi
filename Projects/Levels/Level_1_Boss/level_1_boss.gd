@@ -41,6 +41,7 @@ func _ready() -> void:
 		DialogSystem.DialogText.new("LEVEL_1_BOSS_ASHES_2", DialogSystem.CHARACTERS.Ashes),
 	], true)
 	DialogSystem.connect("dialog_finished", float_mara)
+	mara_animation.play("RESET")
 
 func _process(_delta: float) -> void:
 	super._process(_delta)
