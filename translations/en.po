@@ -193,6 +193,12 @@ msgstr "Khosrov Forest - Vayri World"
 msgid "LEVEL_3_BONUS_STORY"
 msgstr "Weary of the Fog Army's dominion over their lands, the Vayri Kingdom's creatures are ready to seize any opportunity - no matter how small - to fight back."
 
+msgid "LEVEL_3_BONUS_OBJECTIVE_1"
+msgstr "Capture the enemy Arqa"
+
+msgid "LEVEL_3_BONUS_OBJECTIVE_2"
+msgstr "Don't make more than 7 moves"
+
 msgid "KARMA_TABLE_HINT_1"
 msgstr "A new Alliance is unlocked when you choose to set free a bonus level."
 

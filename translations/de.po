@@ -193,6 +193,12 @@ msgstr "Khosrov-Wald - Vayri-Welt"
 msgid "LEVEL_3_BONUS_STORY"
 msgstr "Erschöpft von der Herrschaft der Nebelarmee über ihr Land, sind die Kreaturen des Vayri-Königreichs bereit, jede Gelegenheit zu ergreifen – egal wie klein – um zurückzuschlagen."
 
+msgid "LEVEL_3_BONUS_OBJECTIVE_1"
+msgstr "Den feindlichen Arqa gefangen nehmen"
+
+msgid "LEVEL_3_BONUS_OBJECTIVE_2"
+msgstr "Mache nicht mehr als 7 Züge"
+
 msgid "KARMA_TABLE_HINT_1"
 msgstr "Ein neues Bündnis wird freigeschaltet, wenn du dich entscheidest, einen Bonuslevel zu befreien."
 

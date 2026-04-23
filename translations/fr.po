@@ -193,6 +193,12 @@ msgstr "Forêt de Khosrov - Monde Vayri"
 msgid "LEVEL_3_BONUS_STORY"
 msgstr "Lasses de la domination de l'Armée du Brouillard sur leurs terres, les créatures du Royaume Vayri sont prêtes à saisir toute opportunité, aussi petite soit-elle, pour riposter."
 
+msgid "LEVEL_3_BONUS_OBJECTIVE_1"
+msgstr "Capturer l'Arqa ennemi"
+
+msgid "LEVEL_3_BONUS_OBJECTIVE_2"
+msgstr "Ne fais pas plus de 7 mouvements"
+
 msgid "KARMA_TABLE_HINT_1"
 msgstr "Une nouvelle Alliance est débloquée lorsque tu choisis de libérer un niveau bonus."
 

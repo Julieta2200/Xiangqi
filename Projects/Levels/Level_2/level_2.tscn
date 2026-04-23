@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://c767rq7nxg5tr" path="res://Projects/Levels/background.tscn" id="2_p8tbi"]
 [ext_resource type="PackedScene" uid="uid://dpyrcsgpodbx7" path="res://Projects/Board/board.tscn" id="3_elksw"]
 [ext_resource type="PackedScene" uid="uid://d0l5epq1wemnr" path="res://Projects/AI/ai.tscn" id="4_dv8xk"]
+[ext_resource type="Script" path="res://Projects/AI/aiv2_level_1_boss.gd" id="5_5by5r"]
 [ext_resource type="PackedScene" uid="uid://br5fqscax7ejf" path="res://Projects/Camera/camera.tscn" id="5_an2ys"]
 [ext_resource type="PackedScene" uid="uid://bip87oin8clme" path="res://Projects/Ui/gameplay_ui.tscn" id="6_3msqg"]
-[ext_resource type="Script" path="res://Projects/AI/level2_ai.gd" id="7_jh05l"]
 [ext_resource type="PackedScene" uid="uid://ba32qvdi6rk4u" path="res://Projects/Ui/hint_bubble.tscn" id="9_ibaq1"]
 [ext_resource type="PackedScene" uid="uid://cavxgtpxtng4j" path="res://Projects/Music/Music.tscn" id="9_pvlwv"]
 [ext_resource type="PackedScene" uid="uid://ti6boty6unhe" path="res://Projects/Ui/PauseMenu/pause_menu.tscn" id="12_3xper"]
@@ -27,7 +27,7 @@ ui = NodePath("../GameplayUI")
 camera = NodePath("../Camera")
 
 [node name="AI" parent="." node_paths=PackedStringArray("board") instance=ExtResource("4_dv8xk")]
-script = ExtResource("7_jh05l")
+script = ExtResource("5_5by5r")
 board = NodePath("../Board")
 
 [node name="Camera" parent="." instance=ExtResource("5_an2ys")]

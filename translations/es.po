@@ -193,6 +193,12 @@ msgstr "Bosque de Khosrov - Mundo Vayri"
 msgid "LEVEL_3_BONUS_STORY"
 msgstr "Cansadas del dominio del Ejército de la Niebla sobre sus tierras, las criaturas del Reino Vayri están listas para aprovechar cualquier oportunidad, por pequeña que sea, para contraatacar."
 
+msgid "LEVEL_3_BONUS_OBJECTIVE_1"
+msgstr "Captura al Arqa enemigo"
+
+msgid "LEVEL_3_BONUS_OBJECTIVE_2"
+msgstr "No hagas más de 7 movimientos"
+
 msgid "KARMA_TABLE_HINT_1"
 msgstr "Se desbloquea una nueva Alianza cuando decides liberar un nivel bonus."
 

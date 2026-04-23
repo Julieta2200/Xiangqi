@@ -193,6 +193,12 @@ msgstr "Foresta di Khosrov - Mondo Vayri"
 msgid "LEVEL_3_BONUS_STORY"
 msgstr "Stanche del dominio dell'Esercito della Nebbia sulle loro terre, le creature del Regno Vayri sono pronte a cogliere qualsiasi opportunità, per quanto piccola, per contrattaccare."
 
+msgid "LEVEL_3_BONUS_OBJECTIVE_1"
+msgstr "Cattura l'Arqa nemico"
+
+msgid "LEVEL_3_BONUS_OBJECTIVE_2"
+msgstr "Non fare più di 7 mosse"
+
 msgid "KARMA_TABLE_HINT_1"
 msgstr "Una nuova Alleanza viene sbloccata quando scegli di liberare un livello bonus."
 

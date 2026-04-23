@@ -193,6 +193,12 @@ msgstr "霍斯罗夫森林 - Vayri世界"
 msgid "LEVEL_3_BONUS_STORY"
 msgstr "厌倦了雾军对其土地的统治，Vayri王国的生灵准备抓住任何机会——无论多么渺小——奋起反击。"
 
+msgid "LEVEL_3_BONUS_OBJECTIVE_1"
+msgstr "俘获敌方Arqa"
+
+msgid "LEVEL_3_BONUS_OBJECTIVE_2"
+msgstr "不要走超过7步"
+
 msgid "KARMA_TABLE_HINT_1"
 msgstr "当你选择解放一个奖励关卡时，将解锁一个新的同盟。"
 

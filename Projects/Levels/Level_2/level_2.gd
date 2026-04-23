@@ -18,9 +18,6 @@ func _ready() -> void:
 		State.new(BoardV2.Kingdoms.FOG, FigureComponent.Types.ADVISOR, Vector2i(5,9)),
 		State.new(BoardV2.Kingdoms.FOG, FigureComponent.Types.ADVISOR, Vector2i(4,8)),
 		State.new(BoardV2.Kingdoms.FOG, FigureComponent.Types.HORSE, Vector2i(4,4)),
-		State.new(BoardV2.Kingdoms.FOG, FigureComponent.Types.SOLDIER, Vector2i(4,5)),
-		State.new(BoardV2.Kingdoms.FOG, FigureComponent.Types.SOLDIER, Vector2i(2,5)),
-		State.new(BoardV2.Kingdoms.FOG, FigureComponent.Types.SOLDIER, Vector2i(6,5)),
 	]
 	board.initialize_position(state)
 	DialogSystem.start_dialog([
