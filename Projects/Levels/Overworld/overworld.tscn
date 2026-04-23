@@ -70,7 +70,7 @@ script = ExtResource("1_6480g")
 
 [node name="Background" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_egc8n")
-position = Vector2(1163, 1426)
+position = Vector2(1378, 1924)
 scale = Vector2(2, 2)
 texture = ExtResource("2_hes21")
 
@@ -269,6 +269,10 @@ number = "1/1"
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(628, 776)
 zoom = Vector2(2.5, 2.5)
+limit_left = -800
+limit_top = 0
+limit_right = 3000
+limit_bottom = 3500
 script = ExtResource("21_6fygh")
 
 [node name="Fog" type="Sprite2D" parent="."]
