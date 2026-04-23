@@ -171,8 +171,8 @@ func generate_figures(chances: Dictionary) -> Array:
 		return []  # No available positions
 	
 	# Calculate minimum figures to spawn (reduced for easier difficulty)
-	var min_figures: int = min(1, valid_columns.size())
-	var max_figures: int = min(1, valid_columns.size())
+	var min_figures: int = min(2, valid_columns.size())
+	var max_figures: int = min(5, valid_columns.size())
 	var target_figures: int = randi_range(min_figures, max_figures)
 	
 	# Spawn figures with fair distribution
