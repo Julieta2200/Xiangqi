@@ -89,11 +89,14 @@ func dissolve_mara() -> void:
 func _on_game_over(win: BoardV2.GameOverResults, move_number: int):
 	await get_tree().process_frame
 	if win == BoardV2.GameOverResults.Win:
+		AnalyticsManager.level_complete("Level1Boss", move_number)
 		gameplay_ui.objectives.complete_objectives(true)
 		update_best_move_number(move_number)
 		GameState.set_level_state(level_name, LevelMarker.LevelState.Captured)
 		end_scene()
 	else:
+		AnalyticsManager.design_event("Level1Boss:WaveFail:Wave" + str(wave_number))
+		AnalyticsManager.level_fail("Level1Boss", move_number)
 		gameplay_ui.objectives.complete_objectives(false)
 		var lose_dialog_key: String = ""
 		match wave_number:
@@ -115,6 +118,7 @@ func _lose_dialog_finished() -> void:
 	show_game_over_ui()
 
 func start_wave_1() -> void:
+	AnalyticsManager.level_start("Level1Boss")
 	_enable_play()
 	var figures = generate_figures(wave_1_chances)
 	instantiate_figures(figures)
@@ -217,6 +221,7 @@ func check_game_over() -> bool:
 	if board.get_figures(BoardV2.Teams.Black).size() == 0:
 		match wave_number:
 			1:
+				AnalyticsManager.design_event("Level1Boss:WaveComplete:Wave1", board.move_number)
 				board._selected_figure = null
 				wave_number += 1
 				gameplay_ui.boss_energy.energy = int(gameplay_ui.boss_energy.energy * 2/3)
@@ -226,6 +231,7 @@ func check_game_over() -> bool:
 				], true)
 				DialogSystem.connect("dialog_finished", start_wave_2)
 			2:
+				AnalyticsManager.design_event("Level1Boss:WaveComplete:Wave2", board.move_number)
 				board._selected_figure = null
 				wave_number += 1
 				gameplay_ui.boss_energy.energy = int(gameplay_ui.boss_energy.energy / 2)

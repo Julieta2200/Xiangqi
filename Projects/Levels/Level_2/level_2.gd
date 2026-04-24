@@ -10,6 +10,7 @@ var _hint_index: int = 0
 
 func _ready() -> void:
 	super._ready()
+	AnalyticsManager.level_start(level_name)
 	var state: Array[State] = [
 		State.new(BoardV2.Kingdoms.MAGMA, FigureComponent.Types.GENERAL, Vector2i(4,0)),
 		State.new(BoardV2.Kingdoms.MAGMA, FigureComponent.Types.ADVISOR, Vector2i(4,1)),
@@ -82,12 +83,14 @@ func _horses_hint_shown() -> void:
 func _on_game_over(win: BoardV2.GameOverResults, move_number: int):
 	await get_tree().process_frame
 	if win == BoardV2.GameOverResults.Win:
+		AnalyticsManager.level_complete(level_name, move_number)
 		gameplay_ui.objectives.complete_objectives(true)
 		DialogSystem.start_dialog([
 			DialogSystem.DialogText.new("LEVEL_2_VICTORY_DIALOG_1", DialogSystem.CHARACTERS.Advisor),
 			DialogSystem.DialogText.new("LEVEL_2_VICTORY_DIALOG_2", DialogSystem.CHARACTERS.Ashes),
 		], true)
 	else:
+		AnalyticsManager.level_fail(level_name, move_number)
 		gameplay_ui.objectives.complete_objectives(false)
 		DialogSystem.start_dialog([
 			DialogSystem.DialogText.new("LEVEL_2_DEFEAT_DIALOG", DialogSystem.CHARACTERS.Mara)

@@ -10,6 +10,7 @@ var _hint_index: int = 0
 
 func _ready() -> void:
 	super._ready()
+	AnalyticsManager.level_start(level_name)
 	var state: Array[State] = [
 		State.new(BoardV2.Kingdoms.MAGMA, FigureComponent.Types.GENERAL, Vector2i(3,0)),
 		State.new(BoardV2.Kingdoms.MAGMA, FigureComponent.Types.ADVISOR, Vector2i(4,1)),
@@ -100,6 +101,13 @@ func _ran_out_of_moves_dialog_finished() -> void:
 	if DialogSystem.is_connected("dialog_finished", _ran_out_of_moves_dialog_finished):
 		DialogSystem.disconnect("dialog_finished", _ran_out_of_moves_dialog_finished)
 	_on_game_over(BoardV2.GameOverResults.Lose, board.move_number)
+
+func _on_game_over(win: BoardV2.GameOverResults, move_number: int) -> void:
+	if win == BoardV2.GameOverResults.Win:
+		AnalyticsManager.level_complete(level_name, move_number)
+	else:
+		AnalyticsManager.level_fail(level_name, move_number)
+	super._on_game_over(win, move_number)
 
 func _flying_general_hint_shown() -> void:
 	var generals: Array[FigureComponent] = board.get_figures_by_type(FigureComponent.Types.GENERAL)

@@ -25,7 +25,7 @@ func typing_animation(text):
 	tween = create_tween()
 	tween.tween_property($Panel/Text, "visible_ratio", 1, text.length() * typing_speed) 
 
-func appear(text_blocks: Array[TextBlock], to_call: Callable = func():):
+func appear(text_blocks: Array[TextBlock], to_call: Callable = func() : ) :
 	visible = true
 	_to_call = to_call
 	var text_block: TextBlock = text_blocks.pop_front()

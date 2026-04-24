@@ -3,6 +3,7 @@ extends Level
 
 func _ready() -> void:
 	super._ready()
+	AnalyticsManager.level_start(level_name)
 	var state: Array[State] = [
 		State.new(BoardV2.Kingdoms.MAGMA, FigureComponent.Types.GENERAL, Vector2i(5,0)),
 		State.new(BoardV2.Kingdoms.MAGMA, FigureComponent.Types.ADVISOR, Vector2i(3,0)),
@@ -65,10 +66,12 @@ func _ran_out_of_moves_dialog_finished() -> void:
 func _on_game_over(win: BoardV2.GameOverResults, move_number: int):
 	await get_tree().process_frame
 	if win == BoardV2.GameOverResults.Win:
+		AnalyticsManager.level_complete(level_name, move_number)
 		gameplay_ui.objectives.complete_objectives(true)
 		update_best_move_number(move_number)
 		load_decision_dialog()
 	else:
+		AnalyticsManager.level_fail(level_name, move_number)
 		gameplay_ui.objectives.complete_objectives(false)
 		if board.move_number <= 7:
 			DialogSystem.start_dialog([

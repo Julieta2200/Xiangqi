@@ -1,13 +1,13 @@
-[gd_scene load_steps=44 format=3 uid="uid://hppsu1linnjb"]
+[gd_scene format=3 uid="uid://hppsu1linnjb"]
 
 [ext_resource type="Texture2D" uid="uid://cthr7aiydkawg" path="res://Assets/MainMenu/MenuBackground.png" id="1_cp2q7"]
-[ext_resource type="Script" path="res://Projects/Ui/MainMenu/main_menu.gd" id="1_pdi1h"]
-[ext_resource type="Shader" path="res://Projects/Shaders/mist.gdshader" id="2_8p1iw"]
+[ext_resource type="Script" uid="uid://nmp3xnwsm5gn" path="res://Projects/Ui/MainMenu/main_menu.gd" id="1_pdi1h"]
+[ext_resource type="Shader" uid="uid://tc6n1bthqfh4" path="res://Projects/Shaders/mist.gdshader" id="2_8p1iw"]
 [ext_resource type="Texture2D" uid="uid://yjlrwawcnpbl" path="res://Assets/MainMenu/Light (1).png" id="3_01qwn"]
 [ext_resource type="Texture2D" uid="uid://ccvn2m5c20rn" path="res://Assets/MainMenu/ui/Gradient.png" id="3_jg4wu"]
-[ext_resource type="Shader" path="res://Projects/Shaders/rain_outline.gdshader" id="5_i0ck3"]
+[ext_resource type="Shader" uid="uid://cyd17w2w06u12" path="res://Projects/Shaders/rain_outline.gdshader" id="5_i0ck3"]
 [ext_resource type="Texture2D" uid="uid://we1frji6qg47" path="res://Assets/Characters/Magma/General/Sides/Ashes_back.png" id="5_tpuy0"]
-[ext_resource type="Shader" path="res://Projects/Shaders/blur_menu.gdshader" id="8_babuj"]
+[ext_resource type="Shader" uid="uid://cqgtu1x4r7b36" path="res://Projects/Shaders/blur_menu.gdshader" id="8_babuj"]
 [ext_resource type="Texture2D" uid="uid://7w1msqnys6p4" path="res://Assets/Characters/Magma/General/Run/Back/back3.png" id="9_13622"]
 [ext_resource type="Texture2D" uid="uid://bnr8lhker5a5h" path="res://Assets/MainMenu/ui/Line.png" id="9_s104y"]
 [ext_resource type="Texture2D" uid="uid://dwblpmraaq4v7" path="res://Assets/MainMenu/ui/Esc_button.png" id="10_qao8u"]
@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://ctkjjmo52j651" path="res://Assets/Characters/Magma/General/Run/Back/back6.png" id="12_mmg6w"]
 [ext_resource type="Texture2D" uid="uid://crt675lrdbly" path="res://Assets/MainMenu/ui/logo/Logo(glow_effect).png" id="16_dynym"]
 [ext_resource type="FontFile" uid="uid://dy702fuy23t3f" path="res://Assets/Fonts/Cinzel/Cinzel-Bold.ttf" id="18_67d17"]
-[ext_resource type="Material" path="res://Projects/Shaders/preface.tres" id="19_5pmil"]
+[ext_resource type="Material" uid="uid://0avhoflklsgs" path="res://Projects/Shaders/preface.tres" id="19_5pmil"]
 [ext_resource type="PackedScene" uid="uid://dtqik42d1b4fu" path="res://Projects/Ui/OptionsMenu/options_menu.tscn" id="20_0pofw"]
 [ext_resource type="FontFile" uid="uid://cu8p86udd0pcg" path="res://Assets/Fonts/Noto_Sans/static/NotoSans_SemiCondensed-Regular.ttf" id="20_w72fn"]
 [ext_resource type="AudioStream" uid="uid://d2ksev3jp82ad" path="res://Assets/Music/SFX and music/MUSIC LEVELLED/Main Menu Music Loop-B1-MUSIC & SFX MIXED.wav" id="22_ecgaj"]
@@ -30,8 +30,8 @@ frequency = 0.05
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_icuf2"]
 width = 64
 height = 64
-seamless = true
 noise = SubResource("FastNoiseLite_pcs1b")
+seamless = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_obgaa"]
 shader = ExtResource("5_i0ck3")
@@ -412,12 +412,12 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ixubb"]
 _data = {
-"RESET": SubResource("Animation_2wxno"),
-"appear": SubResource("Animation_y2a3i"),
-"credits": SubResource("Animation_uwbv5"),
-"disappear": SubResource("Animation_1rppp"),
-"menu": SubResource("Animation_er6oh"),
-"options": SubResource("Animation_w86o8")
+&"RESET": SubResource("Animation_2wxno"),
+&"appear": SubResource("Animation_y2a3i"),
+&"credits": SubResource("Animation_uwbv5"),
+&"disappear": SubResource("Animation_1rppp"),
+&"menu": SubResource("Animation_er6oh"),
+&"options": SubResource("Animation_w86o8")
 }
 
 [sub_resource type="Animation" id="Animation_cjcs2"]
@@ -685,46 +685,46 @@ tracks/5/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mg1kc"]
 _data = {
-"RESET": SubResource("Animation_cjcs2"),
-"prelude": SubResource("Animation_5yx0s"),
-"prelude_disappear": SubResource("Animation_waovs"),
-"start": SubResource("Animation_xdef1")
+&"RESET": SubResource("Animation_cjcs2"),
+&"prelude": SubResource("Animation_5yx0s"),
+&"prelude_disappear": SubResource("Animation_waovs"),
+&"start": SubResource("Animation_xdef1")
 }
 
-[node name="MainMenu" type="Node2D"]
+[node name="MainMenu" type="Node2D" unique_id=477985240]
 script = ExtResource("1_pdi1h")
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="." unique_id=538784004]
 position = Vector2(2505, 975)
 scale = Vector2(2, 2)
 texture = ExtResource("1_cp2q7")
 
-[node name="Gradient" type="Sprite2D" parent="Background"]
+[node name="Gradient" type="Sprite2D" parent="Background" unique_id=957216025]
 z_index = 1
 position = Vector2(-628, 0)
 texture = ExtResource("3_jg4wu")
 
-[node name="Light1" type="Sprite2D" parent="Background"]
+[node name="Light1" type="Sprite2D" parent="Background" unique_id=1490444503]
 position = Vector2(-344, 105)
 texture = ExtResource("3_01qwn")
 
-[node name="Light2" type="Sprite2D" parent="Background"]
+[node name="Light2" type="Sprite2D" parent="Background" unique_id=187338648]
 position = Vector2(-2.5, -197.5)
 texture = ExtResource("3_01qwn")
 
-[node name="Light3" type="Sprite2D" parent="Background"]
+[node name="Light3" type="Sprite2D" parent="Background" unique_id=2014604625]
 position = Vector2(-554, -72.5)
 texture = ExtResource("3_01qwn")
 
-[node name="Light4" type="Sprite2D" parent="Background"]
+[node name="Light4" type="Sprite2D" parent="Background" unique_id=1469315800]
 position = Vector2(-1049.5, -326.5)
 texture = ExtResource("3_01qwn")
 
-[node name="Light5" type="Sprite2D" parent="Background"]
+[node name="Light5" type="Sprite2D" parent="Background" unique_id=1734874946]
 position = Vector2(-1022.5, 343.5)
 texture = ExtResource("3_01qwn")
 
-[node name="Ashes" type="AnimatedSprite2D" parent="."]
+[node name="Ashes" type="AnimatedSprite2D" parent="." unique_id=45519159]
 unique_name_in_owner = true
 material = SubResource("ShaderMaterial_obgaa")
 position = Vector2(2491, 1432)
@@ -733,18 +733,18 @@ sprite_frames = SubResource("SpriteFrames_0j7t7")
 autoplay = "default"
 frame_progress = 0.130079
 
-[node name="Fog" type="Sprite2D" parent="."]
+[node name="Fog" type="Sprite2D" parent="." unique_id=2021064334]
 material = SubResource("ShaderMaterial_an24d")
 position = Vector2(2505, 975)
 scale = Vector2(2, 2)
 texture = ExtResource("1_cp2q7")
 
-[node name="RainParticles" type="CPUParticles2D" parent="."]
+[node name="RainParticles" type="CPUParticles2D" parent="." unique_id=2046417447]
 amount = 500
+texture = SubResource("GradientTexture1D_0v5mm")
 lifetime = 5.0
 preprocess = 5.0
 speed_scale = 6.59
-texture = SubResource("GradientTexture1D_0v5mm")
 emission_shape = 3
 emission_rect_extents = Vector2(5000, 200)
 spread = 0.0
@@ -755,7 +755,7 @@ scale_amount_min = 0.5
 scale_amount_max = 0.5
 color_ramp = SubResource("Gradient_xgvxw")
 
-[node name="GroundSplashes" type="CPUParticles2D" parent="."]
+[node name="GroundSplashes" type="CPUParticles2D" parent="." unique_id=134257521]
 position = Vector2(0, 1408)
 amount = 1000
 lifetime = 0.5
@@ -767,15 +767,15 @@ spread = 60.0
 initial_velocity_min = 100.0
 initial_velocity_max = 200.0
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1270796159]
 position = Vector2(1643, 965)
 zoom = Vector2(1.3, 1.3)
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=2053528454]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1386165141]
 
-[node name="BlurOverlay" type="ColorRect" parent="CanvasLayer"]
+[node name="BlurOverlay" type="ColorRect" parent="CanvasLayer" unique_id=736976558]
 material = SubResource("ShaderMaterial_hd0on")
 anchors_preset = 15
 anchor_right = 1.0
@@ -783,14 +783,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="UIAnimation" type="AnimationPlayer" parent="CanvasLayer/BlurOverlay"]
+[node name="UIAnimation" type="AnimationPlayer" parent="CanvasLayer/BlurOverlay" unique_id=106831813]
 unique_name_in_owner = true
-libraries = {
-"": SubResource("AnimationLibrary_ixubb")
-}
-autoplay = "appear"
+libraries/ = SubResource("AnimationLibrary_ixubb")
+autoplay = &"appear"
 
-[node name="Logo" type="TextureRect" parent="CanvasLayer"]
+[node name="Logo" type="TextureRect" parent="CanvasLayer" unique_id=670889342]
 texture_filter = 2
 offset_left = 28.0
 offset_top = 78.0
@@ -799,7 +797,7 @@ offset_bottom = 410.0
 scale = Vector2(2, 2)
 texture = ExtResource("16_dynym")
 
-[node name="Bottom" type="Control" parent="CanvasLayer"]
+[node name="Bottom" type="Control" parent="CanvasLayer" unique_id=1199465001]
 layout_mode = 3
 anchors_preset = 2
 anchor_top = 1.0
@@ -809,7 +807,7 @@ offset_right = 40.0
 offset_bottom = -54.0
 grow_vertical = 0
 
-[node name="Line" type="TextureRect" parent="CanvasLayer/Bottom"]
+[node name="Line" type="TextureRect" parent="CanvasLayer/Bottom" unique_id=1777523700]
 texture_filter = 2
 layout_mode = 0
 offset_right = 1979.0
@@ -817,7 +815,7 @@ offset_bottom = 3.0
 scale = Vector2(2, 2)
 texture = ExtResource("9_s104y")
 
-[node name="EscButton" type="TextureRect" parent="CanvasLayer/Bottom/Line"]
+[node name="EscButton" type="TextureRect" parent="CanvasLayer/Bottom/Line" unique_id=1497021424]
 texture_filter = 2
 layout_mode = 1
 anchors_preset = 6
@@ -833,7 +831,7 @@ grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("10_qao8u")
 
-[node name="Esc" type="Label" parent="CanvasLayer/Bottom/Line/EscButton"]
+[node name="Esc" type="Label" parent="CanvasLayer/Bottom/Line/EscButton" unique_id=1372893225]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.629412
@@ -853,7 +851,7 @@ theme_override_font_sizes/font_size = 38
 text = "ESC"
 metadata/_edit_use_anchors_ = true
 
-[node name="Exit" type="Label" parent="CanvasLayer/Bottom/Line/EscButton"]
+[node name="Exit" type="Label" parent="CanvasLayer/Bottom/Line/EscButton" unique_id=207069010]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.38235
@@ -874,7 +872,7 @@ text = "EXIT
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="Navigation" type="VBoxContainer" parent="CanvasLayer"]
+[node name="Navigation" type="VBoxContainer" parent="CanvasLayer" unique_id=380985515]
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
@@ -884,23 +882,23 @@ offset_right = 873.0
 offset_bottom = 326.0
 grow_vertical = 2
 
-[node name="Continue" parent="CanvasLayer/Navigation" instance=ExtResource("12_e82pv")]
+[node name="Continue" parent="CanvasLayer/Navigation" unique_id=887958153 instance=ExtResource("12_e82pv")]
 layout_mode = 2
 text = "CONTINUE"
 
-[node name="NewGame" parent="CanvasLayer/Navigation" instance=ExtResource("12_e82pv")]
+[node name="NewGame" parent="CanvasLayer/Navigation" unique_id=488448102 instance=ExtResource("12_e82pv")]
 layout_mode = 2
 text = "NEW_GAME"
 
-[node name="Options" parent="CanvasLayer/Navigation" instance=ExtResource("12_e82pv")]
+[node name="Options" parent="CanvasLayer/Navigation" unique_id=1778375401 instance=ExtResource("12_e82pv")]
 layout_mode = 2
 text = "OPTIONS"
 
-[node name="Credits" parent="CanvasLayer/Navigation" instance=ExtResource("12_e82pv")]
+[node name="Credits" parent="CanvasLayer/Navigation" unique_id=877201312 instance=ExtResource("12_e82pv")]
 layout_mode = 2
 text = "CREDITS"
 
-[node name="NavBlocker" type="Panel" parent="CanvasLayer"]
+[node name="NavBlocker" type="Panel" parent="CanvasLayer" unique_id=1271549325]
 unique_name_in_owner = true
 visible = false
 modulate = Color(1, 1, 1, 0)
@@ -909,7 +907,7 @@ offset_top = 644.0
 offset_right = 1026.0
 offset_bottom = 1506.0
 
-[node name="Credits" type="VBoxContainer" parent="CanvasLayer"]
+[node name="Credits" type="VBoxContainer" parent="CanvasLayer" unique_id=1359891948]
 visible = false
 modulate = Color(1, 1, 1, 0)
 offset_left = 240.0
@@ -918,145 +916,145 @@ offset_right = 1597.0
 offset_bottom = 1470.0
 theme_override_constants/separation = 30
 
-[node name="Producer" type="HBoxContainer" parent="CanvasLayer/Credits"]
+[node name="Producer" type="HBoxContainer" parent="CanvasLayer/Credits" unique_id=2081402080]
 layout_mode = 2
 theme_override_constants/separation = 50
 
-[node name="role" type="Label" parent="CanvasLayer/Credits/Producer"]
+[node name="role" type="Label" parent="CanvasLayer/Credits/Producer" unique_id=914463226]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("18_67d17")
 theme_override_font_sizes/font_size = 40
 text = "PRODUCER"
 
-[node name="names" type="Label" parent="CanvasLayer/Credits/Producer"]
+[node name="names" type="Label" parent="CanvasLayer/Credits/Producer" unique_id=835545115]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("11_0mo1f")
 theme_override_font_sizes/font_size = 40
 text = "Christopher C.D.M. McMullen"
 
-[node name="GameDesigner" type="HBoxContainer" parent="CanvasLayer/Credits"]
+[node name="GameDesigner" type="HBoxContainer" parent="CanvasLayer/Credits" unique_id=429827648]
 layout_mode = 2
 theme_override_constants/separation = 50
 
-[node name="role" type="Label" parent="CanvasLayer/Credits/GameDesigner"]
+[node name="role" type="Label" parent="CanvasLayer/Credits/GameDesigner" unique_id=1465236268]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("18_67d17")
 theme_override_font_sizes/font_size = 40
 text = "GAME_DESIGNER"
 
-[node name="names" type="Label" parent="CanvasLayer/Credits/GameDesigner"]
+[node name="names" type="Label" parent="CanvasLayer/Credits/GameDesigner" unique_id=890514185]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("11_0mo1f")
 theme_override_font_sizes/font_size = 40
 text = "Kyle V. Tunison"
 
-[node name="LeadProgrammers" type="HBoxContainer" parent="CanvasLayer/Credits"]
+[node name="LeadProgrammers" type="HBoxContainer" parent="CanvasLayer/Credits" unique_id=416549174]
 layout_mode = 2
 theme_override_constants/separation = 50
 
-[node name="role" type="Label" parent="CanvasLayer/Credits/LeadProgrammers"]
+[node name="role" type="Label" parent="CanvasLayer/Credits/LeadProgrammers" unique_id=1898598650]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("18_67d17")
 theme_override_font_sizes/font_size = 40
 text = "LEAD_PROGRAMMERS"
 
-[node name="names" type="Label" parent="CanvasLayer/Credits/LeadProgrammers"]
+[node name="names" type="Label" parent="CanvasLayer/Credits/LeadProgrammers" unique_id=1527958482]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("11_0mo1f")
 theme_override_font_sizes/font_size = 40
 text = "Brandon McGuigan, Grisha Kirakosyan"
 
-[node name="Artist" type="HBoxContainer" parent="CanvasLayer/Credits"]
+[node name="Artist" type="HBoxContainer" parent="CanvasLayer/Credits" unique_id=1406768124]
 layout_mode = 2
 theme_override_constants/separation = 50
 
-[node name="role" type="Label" parent="CanvasLayer/Credits/Artist"]
+[node name="role" type="Label" parent="CanvasLayer/Credits/Artist" unique_id=833950806]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("18_67d17")
 theme_override_font_sizes/font_size = 40
 text = "ARTIST"
 
-[node name="names" type="Label" parent="CanvasLayer/Credits/Artist"]
+[node name="names" type="Label" parent="CanvasLayer/Credits/Artist" unique_id=715207733]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("11_0mo1f")
 theme_override_font_sizes/font_size = 40
 text = "Argine Melkumyan"
 
-[node name="Composer" type="HBoxContainer" parent="CanvasLayer/Credits"]
+[node name="Composer" type="HBoxContainer" parent="CanvasLayer/Credits" unique_id=1511359738]
 layout_mode = 2
 theme_override_constants/separation = 50
 
-[node name="role" type="Label" parent="CanvasLayer/Credits/Composer"]
+[node name="role" type="Label" parent="CanvasLayer/Credits/Composer" unique_id=770906893]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("18_67d17")
 theme_override_font_sizes/font_size = 40
 text = "COMPOSER_AND_SOUND_DESIGNER"
 
-[node name="names" type="Label" parent="CanvasLayer/Credits/Composer"]
+[node name="names" type="Label" parent="CanvasLayer/Credits/Composer" unique_id=1438039305]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("11_0mo1f")
 theme_override_font_sizes/font_size = 40
 text = "Aaron Spacefood"
 
-[node name="Programmers" type="HBoxContainer" parent="CanvasLayer/Credits"]
+[node name="Programmers" type="HBoxContainer" parent="CanvasLayer/Credits" unique_id=2037838804]
 layout_mode = 2
 theme_override_constants/separation = 50
 
-[node name="role" type="Label" parent="CanvasLayer/Credits/Programmers"]
+[node name="role" type="Label" parent="CanvasLayer/Credits/Programmers" unique_id=2068005494]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("18_67d17")
 theme_override_font_sizes/font_size = 40
 text = "PROGRAMMERS"
 
-[node name="names" type="Label" parent="CanvasLayer/Credits/Programmers"]
+[node name="names" type="Label" parent="CanvasLayer/Credits/Programmers" unique_id=2029529951]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("11_0mo1f")
 theme_override_font_sizes/font_size = 40
 text = "Julieta Sargsyan, Gor Kirakosyan"
 
-[node name="Authors" type="HBoxContainer" parent="CanvasLayer/Credits"]
+[node name="Authors" type="HBoxContainer" parent="CanvasLayer/Credits" unique_id=536414131]
 layout_mode = 2
 theme_override_constants/separation = 50
 
-[node name="role" type="Label" parent="CanvasLayer/Credits/Authors"]
+[node name="role" type="Label" parent="CanvasLayer/Credits/Authors" unique_id=349245633]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("18_67d17")
 theme_override_font_sizes/font_size = 40
 text = "AUTHORS"
 
-[node name="names" type="Label" parent="CanvasLayer/Credits/Authors"]
+[node name="names" type="Label" parent="CanvasLayer/Credits/Authors" unique_id=1554105399]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("11_0mo1f")
 theme_override_font_sizes/font_size = 40
 text = "Grisha Kirakosyan, Gor Kirakosyan"
 
-[node name="SpecialThanks" type="HBoxContainer" parent="CanvasLayer/Credits"]
+[node name="SpecialThanks" type="HBoxContainer" parent="CanvasLayer/Credits" unique_id=99091980]
 layout_mode = 2
 theme_override_constants/separation = 50
 
-[node name="role" type="Label" parent="CanvasLayer/Credits/SpecialThanks"]
+[node name="role" type="Label" parent="CanvasLayer/Credits/SpecialThanks" unique_id=410307198]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("18_67d17")
 theme_override_font_sizes/font_size = 40
 text = "SPECIAL_THANKS"
 
-[node name="names" type="Label" parent="CanvasLayer/Credits/SpecialThanks"]
+[node name="names" type="Label" parent="CanvasLayer/Credits/SpecialThanks" unique_id=1287480994]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("11_0mo1f")
 theme_override_font_sizes/font_size = 40
 text = "elephantchess.io"
 
-[node name="Copyright" type="HBoxContainer" parent="CanvasLayer/Credits"]
+[node name="Copyright" type="HBoxContainer" parent="CanvasLayer/Credits" unique_id=1097978412]
 layout_mode = 2
 theme_override_constants/separation = 50
 
-[node name="role" type="Label" parent="CanvasLayer/Credits/Copyright"]
+[node name="role" type="Label" parent="CanvasLayer/Credits/Copyright" unique_id=692762368]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("11_0mo1f")
 theme_override_font_sizes/font_size = 40
 text = "Copyright"
 
-[node name="Prelude" type="Control" parent="CanvasLayer"]
+[node name="Prelude" type="Control" parent="CanvasLayer" unique_id=1731109765]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -1065,7 +1063,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Prelude"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Prelude" unique_id=1250111906]
 modulate = Color(1, 1, 1, 0)
 material = ExtResource("19_5pmil")
 layout_mode = 1
@@ -1083,7 +1081,7 @@ theme_override_font_sizes/normal_font_size = 45
 bbcode_enabled = true
 text = "MAIN_MENU_PRELUDE_STORY"
 
-[node name="OptionsMenu" parent="CanvasLayer" instance=ExtResource("20_0pofw")]
+[node name="OptionsMenu" parent="CanvasLayer" unique_id=428607478 instance=ExtResource("20_0pofw")]
 visible = false
 modulate = Color(1, 1, 1, 0)
 offset_left = 270.0
@@ -1091,13 +1089,11 @@ offset_top = 730.0
 offset_right = 270.0
 offset_bottom = 730.0
 
-[node name="MainAnimation" type="AnimationPlayer" parent="."]
+[node name="MainAnimation" type="AnimationPlayer" parent="." unique_id=1016752401]
 unique_name_in_owner = true
-libraries = {
-"": SubResource("AnimationLibrary_mg1kc")
-}
+libraries/ = SubResource("AnimationLibrary_mg1kc")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=374175518]
 stream = ExtResource("22_ecgaj")
 autoplay = true
 bus = &"Music"

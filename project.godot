@@ -8,11 +8,15 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="Xiangqi"
 run/main_scene="res://Projects/Ui/MainMenu/main_menu.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/bg_color=Color(0.12549, 0.12549, 0.121569, 1)
 boot_splash/image="res://Assets/TAILLIS ICON-Photoroom.png"
 config/icon="res://icon.svg"
@@ -25,18 +29,22 @@ GameState="*res://Projects/Levels/Overworld/game_state.gd"
 ShadowController="*res://Projects/Figure/shadow_controller.gd"
 AudioManager="*res://Projects/Music/AudioManager.gd"
 SceneManager="*res://Projects/Levels/SceneManager/scene_manager.gd"
+AnalyticsManager="*uid://h82rp7eelwbb"
 
 [display]
 
 window/size/viewport_width=3911
 window/size/viewport_height=2200
-window/size/mode=3
 window/stretch/mode="viewport"
 mouse_cursor/custom_image="res://Assets/UI/Mouse/Mouse small.png"
 
 [editor]
 
 movie_writer/movie_file="/Users/grishakirakosyan/Documents/xiangqimovies/movie.avi"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/GameAnalytics/plugin.cfg")
 
 [input]
 

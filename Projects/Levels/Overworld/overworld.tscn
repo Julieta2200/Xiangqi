@@ -1,18 +1,18 @@
-[gd_scene load_steps=35 format=3 uid="uid://bqe6oo0n2f6fc"]
+[gd_scene format=3 uid="uid://bqe6oo0n2f6fc"]
 
-[ext_resource type="Script" path="res://Projects/Levels/Overworld/overworld.gd" id="1_6480g"]
+[ext_resource type="Script" uid="uid://blf48epcuspxu" path="res://Projects/Levels/Overworld/overworld.gd" id="1_6480g"]
 [ext_resource type="Texture2D" uid="uid://dcslgins2nf6r" path="res://Assets/Map/Whole Map/Background.png" id="2_hes21"]
 [ext_resource type="Texture2D" uid="uid://dy8dvqug1rldr" path="res://Assets/Map/Whole Map/Land.png" id="2_i1qo8"]
 [ext_resource type="PackedScene" uid="uid://dt7elk36ldfbg" path="res://Projects/Levels/Overworld/level_marker.tscn" id="2_m64e3"]
-[ext_resource type="Shader" path="res://Projects/Shaders/wave.gdshader" id="2_xvbw6"]
+[ext_resource type="Shader" uid="uid://beefr863x7nm3" path="res://Projects/Shaders/wave.gdshader" id="2_xvbw6"]
 [ext_resource type="PackedScene" uid="uid://d3giqvti0ieng" path="res://Projects/Levels/Level_1/level_1.tscn" id="3_1gxvu"]
-[ext_resource type="Shader" path="res://Projects/Shaders/islands.gdshader" id="4_0ay4y"]
+[ext_resource type="Shader" uid="uid://c7d72np1cyqha" path="res://Projects/Shaders/islands.gdshader" id="4_0ay4y"]
 [ext_resource type="PackedScene" uid="uid://ccqx1h7ffxvau" path="res://Projects/Levels/Bonus_levels/bonus_level.tscn" id="4_k78vk"]
 [ext_resource type="PackedScene" uid="uid://etksxsfuk15y" path="res://Projects/Levels/Level_2/level_2.tscn" id="4_l7pks"]
 [ext_resource type="PackedScene" uid="uid://ba7bayl6q6g14" path="res://Projects/Levels/Level_3/level_3.tscn" id="4_rn2x1"]
 [ext_resource type="Texture2D" uid="uid://r3ovl366yx1d" path="res://Assets/Map/First Part/Water.png" id="6_j1shd"]
 [ext_resource type="PackedScene" uid="uid://badxk8aexm8hy" path="res://Projects/Levels/Bonus_levels/Bonus_level_2/bonus_level_2.tscn" id="6_wvnqw"]
-[ext_resource type="Shader" path="res://Projects/Shaders/mist.gdshader" id="7_fkmex"]
+[ext_resource type="Shader" uid="uid://tc6n1bthqfh4" path="res://Projects/Shaders/mist.gdshader" id="7_fkmex"]
 [ext_resource type="PackedScene" uid="uid://letuyg8vxfsj" path="res://Projects/Levels/Bonus_levels/Bonus_level_3/bonus_level_3.tscn" id="8_f3p8a"]
 [ext_resource type="PackedScene" uid="uid://xa1gmrhmbjba" path="res://Projects/Ui/orbs.tscn" id="9_qj7bv"]
 [ext_resource type="Texture2D" uid="uid://dthqg3lcpsl3r" path="res://Assets/Map/First Island/Water.png" id="10_v2sed"]
@@ -22,7 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://cjk2b4ffgdf1n" path="res://Projects/Levels/Level_1_Boss/level_1_boss.tscn" id="19_ukd6p"]
 [ext_resource type="PackedScene" uid="uid://chmuokpujhvya" path="res://Projects/Ui/LevelDescription/level_description.tscn" id="20_uvu7o"]
 [ext_resource type="Texture2D" uid="uid://bnr8lhker5a5h" path="res://Assets/MainMenu/ui/Line.png" id="21_3r6qu"]
-[ext_resource type="Script" path="res://Projects/Levels/Overworld/camera.gd" id="21_6fygh"]
+[ext_resource type="Script" uid="uid://2ptcxllag6m1" path="res://Projects/Levels/Overworld/camera.gd" id="21_6fygh"]
 [ext_resource type="Texture2D" uid="uid://bbi3vn0pr30bs" path="res://Assets/Map/Third Part/Water.png" id="22_8r75w"]
 [ext_resource type="Texture2D" uid="uid://dwblpmraaq4v7" path="res://Assets/MainMenu/ui/Esc_button.png" id="22_wslg4"]
 [ext_resource type="FontFile" uid="uid://c66ve5yi6m7nm" path="res://Assets/Fonts/Cinzel/Cinzel-Regular.ttf" id="23_0juxv"]
@@ -35,16 +35,16 @@
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_13jkh"]
 width = 4000
 height = 2000
-seamless = true
 noise = SubResource("FastNoiseLite_gfa8y")
+seamless = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_egc8n"]
 shader = ExtResource("2_xvbw6")
 shader_parameter/color_deep = Color(0.092742, 0.265138, 0.375518, 1)
 shader_parameter/color_shallow = Color(0.12549, 0.333333, 0.466667, 1)
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_13jkh")
 shader_parameter/speed = 0.01
 shader_parameter/wave_strength = 0.01
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_13jkh")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_chtem"]
 shader = ExtResource("4_0ay4y")
@@ -65,54 +65,54 @@ shader_parameter/softness = 1.0
 shader_parameter/scale = 1.0
 shader_parameter/border_softness = 0.355
 
-[node name="Overworld" type="Node2D"]
+[node name="Overworld" type="Node2D" unique_id=1040345105]
 script = ExtResource("1_6480g")
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="." unique_id=1986609400]
 material = SubResource("ShaderMaterial_egc8n")
 position = Vector2(1378, 1924)
 scale = Vector2(2, 2)
 texture = ExtResource("2_hes21")
 
-[node name="Dragon" type="Sprite2D" parent="."]
+[node name="Dragon" type="Sprite2D" parent="." unique_id=483000319]
 material = SubResource("ShaderMaterial_chtem")
 position = Vector2(1109, 1689)
 scale = Vector2(2, 2)
 texture = ExtResource("2_i1qo8")
 
-[node name="Border1" type="Sprite2D" parent="Dragon"]
+[node name="Border1" type="Sprite2D" parent="Dragon" unique_id=1093338856]
 visible = false
 position = Vector2(-320.5, -358)
 texture = ExtResource("6_j1shd")
 
-[node name="Border2" type="Sprite2D" parent="Dragon"]
+[node name="Border2" type="Sprite2D" parent="Dragon" unique_id=1773450168]
 visible = false
 position = Vector2(-148.5, -431.5)
 texture = ExtResource("14_ixmfm")
 
-[node name="Border3" type="Sprite2D" parent="Dragon"]
+[node name="Border3" type="Sprite2D" parent="Dragon" unique_id=70385528]
 visible = false
 position = Vector2(111, -445.5)
 texture = ExtResource("22_8r75w")
 
-[node name="IslandBorder1" type="Sprite2D" parent="Dragon"]
+[node name="IslandBorder1" type="Sprite2D" parent="Dragon" unique_id=834689425]
 visible = false
 position = Vector2(-281, -576.5)
 texture = ExtResource("10_v2sed")
 
-[node name="IslandBorder2" type="Sprite2D" parent="Dragon"]
+[node name="IslandBorder2" type="Sprite2D" parent="Dragon" unique_id=2098729981]
 visible = false
 position = Vector2(-52, -625)
 texture = ExtResource("18_s6hq3")
 
-[node name="IslandBorder3" type="Sprite2D" parent="Dragon"]
+[node name="IslandBorder3" type="Sprite2D" parent="Dragon" unique_id=1352737737]
 visible = false
 position = Vector2(160, -624.5)
 texture = ExtResource("26_br2ah")
 
-[node name="Levels" type="Node2D" parent="."]
+[node name="Levels" type="Node2D" parent="." unique_id=1555859714]
 
-[node name="1" parent="Levels" node_paths=PackedStringArray("level_description") instance=ExtResource("2_m64e3")]
+[node name="1" parent="Levels" unique_id=1121285647 node_paths=PackedStringArray("level_description") instance=ExtResource("2_m64e3")]
 position = Vector2(628, 899)
 level_description = NodePath("../../CanvasLayer/LevelDescription")
 level = ExtResource("3_1gxvu")
@@ -121,7 +121,7 @@ story = "LEVEL_1_STORY"
 additional_objectives = Array[String](["LEVEL_1_OBJECTIVE_1", "LEVEL_1_OBJECTIVE_2"])
 number = "1"
 
-[node name="bonus_1" parent="Levels/1" node_paths=PackedStringArray("level_description") instance=ExtResource("2_m64e3")]
+[node name="bonus_1" parent="Levels/1" unique_id=1162035658 node_paths=PackedStringArray("level_description") instance=ExtResource("2_m64e3")]
 position = Vector2(-49, -378)
 level_description = NodePath("../../../CanvasLayer/LevelDescription")
 level = ExtResource("4_k78vk")
@@ -130,7 +130,7 @@ story = "LEVEL_1_BONUS_STORY"
 additional_objectives = Array[String](["LEVEL_1_BONUS_OBJECTIVE_1", "LEVEL_1_BONUS_OBJECTIVE_2"])
 number = "1_bonus"
 
-[node name="2" parent="Levels" node_paths=PackedStringArray("level_description") instance=ExtResource("2_m64e3")]
+[node name="2" parent="Levels" unique_id=683114674 node_paths=PackedStringArray("level_description") instance=ExtResource("2_m64e3")]
 position = Vector2(977, 777)
 level_description = NodePath("../../CanvasLayer/LevelDescription")
 level = ExtResource("4_l7pks")
@@ -139,7 +139,7 @@ story = "LEVEL_2_STORY"
 additional_objectives = Array[String](["LEVEL_2_OBJECTIVE_1", "LEVEL_2_OBJECTIVE_2"])
 number = "2"
 
-[node name="bonus_2" parent="Levels/2" node_paths=PackedStringArray("level_description") instance=ExtResource("2_m64e3")]
+[node name="bonus_2" parent="Levels/2" unique_id=1363577412 node_paths=PackedStringArray("level_description") instance=ExtResource("2_m64e3")]
 position = Vector2(32, -321)
 level_description = NodePath("../../../CanvasLayer/LevelDescription")
 level = ExtResource("6_wvnqw")
@@ -148,7 +148,7 @@ story = "LEVEL_2_BONUS_STORY"
 additional_objectives = Array[String](["LEVEL_2_BONUS_OBJECTIVE_1", "LEVEL_2_BONUS_OBJECTIVE_2"])
 number = "2_bonus"
 
-[node name="3" parent="Levels" node_paths=PackedStringArray("level_description") instance=ExtResource("2_m64e3")]
+[node name="3" parent="Levels" unique_id=331044163 node_paths=PackedStringArray("level_description") instance=ExtResource("2_m64e3")]
 position = Vector2(1326, 796)
 level_description = NodePath("../../CanvasLayer/LevelDescription")
 level = ExtResource("4_rn2x1")
@@ -157,15 +157,16 @@ story = "LEVEL_3_STORY"
 additional_objectives = Array[String](["LEVEL_3_OBJECTIVE_1"])
 number = "3"
 
-[node name="bonus_3" parent="Levels/3" node_paths=PackedStringArray("level_description") instance=ExtResource("2_m64e3")]
+[node name="bonus_3" parent="Levels/3" unique_id=468198050 node_paths=PackedStringArray("level_description") instance=ExtResource("2_m64e3")]
 position = Vector2(111, -342)
 level_description = NodePath("../../../CanvasLayer/LevelDescription")
 level = ExtResource("8_f3p8a")
 title = "LEVEL_3_BONUS_TITLE"
 story = "LEVEL_3_BONUS_STORY"
+additional_objectives = Array[String](["LEVEL_3_BONUS_OBJECTIVE_1", "LEVEL_3_BONUS_OBJECTIVE_2"])
 number = "3_bonus"
 
-[node name="1_boss" parent="Levels" node_paths=PackedStringArray("level_description") instance=ExtResource("2_m64e3")]
+[node name="1_boss" parent="Levels" unique_id=1017622223 node_paths=PackedStringArray("level_description") instance=ExtResource("2_m64e3")]
 position = Vector2(1465, 820)
 level_description = NodePath("../../CanvasLayer/LevelDescription")
 level = ExtResource("19_ukd6p")
@@ -174,15 +175,15 @@ story = "LEVEL_BOSS_1_STORY"
 additional_objectives = Array[String](["LEVEL_BOSS_1_OBJECTIVE_1"])
 number = "1_boss"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2134887971]
 
-[node name="Orbs" parent="CanvasLayer" instance=ExtResource("9_qj7bv")]
+[node name="Orbs" parent="CanvasLayer" unique_id=1771279302 instance=ExtResource("9_qj7bv")]
 visible = false
 
-[node name="LevelDescription" parent="CanvasLayer" instance=ExtResource("20_uvu7o")]
+[node name="LevelDescription" parent="CanvasLayer" unique_id=680621402 instance=ExtResource("20_uvu7o")]
 visible = false
 
-[node name="Bottom" type="Control" parent="CanvasLayer"]
+[node name="Bottom" type="Control" parent="CanvasLayer" unique_id=1024503971]
 layout_mode = 3
 anchors_preset = 2
 anchor_top = 1.0
@@ -192,7 +193,7 @@ offset_right = 40.0
 offset_bottom = -54.0
 grow_vertical = 0
 
-[node name="Line" type="TextureRect" parent="CanvasLayer/Bottom"]
+[node name="Line" type="TextureRect" parent="CanvasLayer/Bottom" unique_id=1668066094]
 texture_filter = 2
 layout_mode = 0
 offset_right = 1979.0
@@ -200,7 +201,7 @@ offset_bottom = 3.0
 scale = Vector2(2, 2)
 texture = ExtResource("21_3r6qu")
 
-[node name="EscButton" type="TextureRect" parent="CanvasLayer/Bottom/Line"]
+[node name="EscButton" type="TextureRect" parent="CanvasLayer/Bottom/Line" unique_id=676528181]
 texture_filter = 2
 layout_mode = 1
 anchors_preset = 6
@@ -216,7 +217,7 @@ grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("22_wslg4")
 
-[node name="Esc" type="Label" parent="CanvasLayer/Bottom/Line/EscButton"]
+[node name="Esc" type="Label" parent="CanvasLayer/Bottom/Line/EscButton" unique_id=1680396387]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.629412
@@ -236,7 +237,7 @@ theme_override_font_sizes/font_size = 38
 text = "ESC"
 metadata/_edit_use_anchors_ = true
 
-[node name="Exit" type="Label" parent="CanvasLayer/Bottom/Line/EscButton"]
+[node name="Exit" type="Label" parent="CanvasLayer/Bottom/Line/EscButton" unique_id=1750434854]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.38235
@@ -257,7 +258,7 @@ text = "EXIT
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="WASD" parent="CanvasLayer" instance=ExtResource("24_w1wm1")]
+[node name="WASD" parent="CanvasLayer" unique_id=1828857620 instance=ExtResource("24_w1wm1")]
 visible = false
 offset_left = 52.0
 offset_top = 247.0
@@ -266,7 +267,7 @@ offset_bottom = 247.0
 hint = "OVERWORLD_WASD_HINT"
 number = "1/1"
 
-[node name="Camera" type="Camera2D" parent="."]
+[node name="Camera" type="Camera2D" parent="." unique_id=211492650]
 position = Vector2(628, 776)
 zoom = Vector2(2.5, 2.5)
 limit_left = -800
@@ -275,13 +276,13 @@ limit_right = 3000
 limit_bottom = 3500
 script = ExtResource("21_6fygh")
 
-[node name="Fog" type="Sprite2D" parent="."]
+[node name="Fog" type="Sprite2D" parent="." unique_id=211318887]
 material = SubResource("ShaderMaterial_8xjyt")
 position = Vector2(930, 691)
 scale = Vector2(5.43992, 4.04184)
 texture = ExtResource("11_omsi1")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1072518955]
 stream = ExtResource("29_2jp7m")
 autoplay = true
 bus = &"Music"
