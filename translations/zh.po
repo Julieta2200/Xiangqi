@@ -155,7 +155,7 @@ msgid "LEVEL_2_OBJECTIVE_1"
 msgstr "俘获敌方Aspet。"
 
 msgid "LEVEL_2_OBJECTIVE_2"
-msgstr "不要让Ashes或你自己被俘获。"
+msgstr "不要让Ashes或你的Mog们被俘获。"
 
 msgid "LEVEL_2_BONUS_TITLE"
 msgstr "霍斯罗夫森林 - Lij王国"

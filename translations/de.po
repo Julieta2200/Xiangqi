@@ -155,7 +155,7 @@ msgid "LEVEL_2_OBJECTIVE_1"
 msgstr "Den feindlichen Aspet gefangen nehmen."
 
 msgid "LEVEL_2_OBJECTIVE_2"
-msgstr "Lass nicht zu, dass Ashes oder du gefangen wirst."
+msgstr "Lass nicht zu, dass Ashes oder deine Mogs gefangen werden."
 
 msgid "LEVEL_2_BONUS_TITLE"
 msgstr "Khosrov-Wald - Lij-Königreich"

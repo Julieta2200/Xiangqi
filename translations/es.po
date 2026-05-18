@@ -155,7 +155,7 @@ msgid "LEVEL_2_OBJECTIVE_1"
 msgstr "Captura al Aspet enemigo."
 
 msgid "LEVEL_2_OBJECTIVE_2"
-msgstr "No dejes que Ashes o tú seáis capturados."
+msgstr "No dejes que Ashes o tus Mogs sean capturados."
 
 msgid "LEVEL_2_BONUS_TITLE"
 msgstr "Bosque de Khosrov - Reino Lij"
