@@ -59,12 +59,12 @@ func _enable_play():
 func _on_game_over(win: BoardV2.GameOverResults, move_number: int):
 	await get_tree().process_frame
 	if win == BoardV2.GameOverResults.Win:
-		AnalyticsManager.level_complete(level_name, move_number)
+		AnalyticsManager.level_complete(level_name)
 		gameplay_ui.objectives.complete_objectives(true)
 		update_best_move_number(move_number)
 		load_decision_dialog()
 	else:
-		AnalyticsManager.level_fail(level_name, move_number)
+		AnalyticsManager.level_fail(level_name)
 		gameplay_ui.objectives.complete_objectives(false)
 		DialogSystem.start_dialog([
 			DialogSystem.DialogText.new("BONUS_LEVEL_3_LOSE", DialogSystem.CHARACTERS.Jakat)], true)

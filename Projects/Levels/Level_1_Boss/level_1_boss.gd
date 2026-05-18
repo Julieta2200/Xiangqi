@@ -89,14 +89,14 @@ func dissolve_mara() -> void:
 func _on_game_over(win: BoardV2.GameOverResults, move_number: int):
 	await get_tree().process_frame
 	if win == BoardV2.GameOverResults.Win:
-		AnalyticsManager.level_complete("Level1Boss", move_number)
+		AnalyticsManager.level_complete("Level1Boss")
 		gameplay_ui.objectives.complete_objectives(true)
 		update_best_move_number(move_number)
 		GameState.set_level_state(level_name, LevelMarker.LevelState.Captured)
 		end_scene()
 	else:
 		AnalyticsManager.design_event("Level1Boss:WaveFail:Wave" + str(wave_number))
-		AnalyticsManager.level_fail("Level1Boss", move_number)
+		AnalyticsManager.level_fail("Level1Boss")
 		gameplay_ui.objectives.complete_objectives(false)
 		var lose_dialog_key: String = ""
 		match wave_number:

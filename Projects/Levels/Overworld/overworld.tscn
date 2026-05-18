@@ -270,10 +270,10 @@ number = "1/1"
 [node name="Camera" type="Camera2D" parent="." unique_id=211492650]
 position = Vector2(628, 776)
 zoom = Vector2(2.5, 2.5)
-limit_left = -800
-limit_top = 0
-limit_right = 3000
-limit_bottom = 3500
+limit_left = -1200
+limit_top = -500
+limit_right = 3500
+limit_bottom = 4000
 script = ExtResource("21_6fygh")
 
 [node name="Fog" type="Sprite2D" parent="." unique_id=211318887]

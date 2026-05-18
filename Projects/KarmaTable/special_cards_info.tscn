@@ -1,9 +1,9 @@
-[gd_scene load_steps=29 format=3 uid="uid://cmyj3au8xcmqv"]
+[gd_scene format=3 uid="uid://cmyj3au8xcmqv"]
 
-[ext_resource type="Script" path="res://Projects/KarmaTable/special_cards_info.gd" id="1_asonw"]
+[ext_resource type="Script" uid="uid://dbnqoyy3xhkqe" path="res://Projects/KarmaTable/special_cards_info.gd" id="1_asonw"]
 [ext_resource type="Texture2D" uid="uid://clwwr38hgsjqe" path="res://Assets/UI/Ability info/Sliding Panel.png" id="1_f6fql"]
 [ext_resource type="Texture2D" uid="uid://c16iuwnqfb6di" path="res://Assets/UI/Ability info/Abilities List.png" id="2_pxi6q"]
-[ext_resource type="Shader" path="res://Projects/Shaders/blur_menu.gdshader" id="2_ub2gw"]
+[ext_resource type="Shader" uid="uid://cqgtu1x4r7b36" path="res://Projects/Shaders/blur_menu.gdshader" id="2_ub2gw"]
 [ext_resource type="Texture2D" uid="uid://d0ff5hproyvfh" path="res://Assets/UI/Ability info/Ability Preview.png" id="3_0xe26"]
 [ext_resource type="FontFile" uid="uid://c66ve5yi6m7nm" path="res://Assets/Fonts/Cinzel/Cinzel-Regular.ttf" id="3_8c75t"]
 [ext_resource type="Texture2D" uid="uid://c0ce0h6i323ti" path="res://Assets/UI/Ability info/Low_High abilities button(Hover).png" id="4_dv5dm"]
@@ -26,13 +26,13 @@
 shader = ExtResource("2_ub2gw")
 shader_parameter/blur_amount = 2.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oia8s"]
+bg_color = Color(0.0338533, 0.0338533, 0.0338532, 1)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b7vo7"]
 texture = ExtResource("4_dv5dm")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dw3hg"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oia8s"]
-bg_color = Color(0.0338533, 0.0338533, 0.0338532, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_irkep"]
 texture = ExtResource("6_ntotl")
@@ -43,7 +43,7 @@ VScrollBar/styles/grabber = SubResource("StyleBoxTexture_irkep")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qftr5"]
 texture = ExtResource("12_ry8x5")
 
-[node name="Special_cards_info" type="Control"]
+[node name="Special_cards_info" type="Control" unique_id=103132664]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -52,7 +52,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_asonw")
 
-[node name="BlurOverlay" type="ColorRect" parent="."]
+[node name="BlurOverlay" type="ColorRect" parent="." unique_id=1692572175]
 material = SubResource("ShaderMaterial_iq238")
 layout_mode = 1
 anchors_preset = 15
@@ -61,7 +61,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="TextureRect" parent="."]
+[node name="Panel" type="TextureRect" parent="." unique_id=1398095310]
 texture_filter = 2
 layout_mode = 1
 anchors_preset = 8
@@ -77,56 +77,56 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_f6fql")
 
-[node name="specials_list" type="Control" parent="."]
+[node name="specials_list" type="Control" parent="." unique_id=1591502775]
 anchors_preset = 0
 offset_left = 223.0
 offset_top = 379.5
 offset_right = 263.0
 offset_bottom = 419.5
 
-[node name="ll_button" type="Button" parent="specials_list"]
+[node name="ll_button" type="Button" parent="specials_list" unique_id=494400789]
 layout_mode = 0
 offset_left = 24.0
 offset_top = 21.5
 offset_right = 520.0
 offset_bottom = 182.5
-theme_override_colors/font_disabled_color = Color(0.319873, 0.319873, 0.319873, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.647059, 0.521569, 0.196078, 1)
-theme_override_colors/font_hover_color = Color(0.647059, 0.521569, 0.196078, 1)
-theme_override_colors/font_pressed_color = Color(0.647059, 0.521569, 0.196078, 1)
 theme_override_colors/font_focus_color = Color(0.647059, 0.521569, 0.196078, 1)
+theme_override_colors/font_pressed_color = Color(0.647059, 0.521569, 0.196078, 1)
+theme_override_colors/font_hover_color = Color(0.647059, 0.521569, 0.196078, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.647059, 0.521569, 0.196078, 1)
+theme_override_colors/font_disabled_color = Color(0.319873, 0.319873, 0.319873, 1)
 theme_override_fonts/font = ExtResource("3_8c75t")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/focus = SubResource("StyleBoxTexture_b7vo7")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_dw3hg")
-theme_override_styles/hover = SubResource("StyleBoxFlat_oia8s")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_b7vo7")
 theme_override_styles/normal = SubResource("StyleBoxFlat_oia8s")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_b7vo7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oia8s")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_dw3hg")
+theme_override_styles/focus = SubResource("StyleBoxTexture_b7vo7")
 toggle_mode = true
 text = "ALLIANCE"
 
-[node name="hl_button" type="Button" parent="specials_list"]
+[node name="hl_button" type="Button" parent="specials_list" unique_id=220059131]
 layout_mode = 0
 offset_left = 520.0
 offset_top = 21.5
 offset_right = 1016.0
 offset_bottom = 182.5
-theme_override_colors/font_disabled_color = Color(0.319873, 0.319873, 0.319873, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.647059, 0.521569, 0.196078, 1)
-theme_override_colors/font_hover_color = Color(0.647059, 0.521569, 0.196078, 1)
-theme_override_colors/font_pressed_color = Color(0.647059, 0.521569, 0.196078, 1)
 theme_override_colors/font_focus_color = Color(0.647059, 0.521569, 0.196078, 1)
+theme_override_colors/font_pressed_color = Color(0.647059, 0.521569, 0.196078, 1)
+theme_override_colors/font_hover_color = Color(0.647059, 0.521569, 0.196078, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.647059, 0.521569, 0.196078, 1)
+theme_override_colors/font_disabled_color = Color(0.319873, 0.319873, 0.319873, 1)
 theme_override_fonts/font = ExtResource("3_8c75t")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/focus = SubResource("StyleBoxTexture_b7vo7")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_dw3hg")
-theme_override_styles/hover = SubResource("StyleBoxFlat_oia8s")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_b7vo7")
 theme_override_styles/normal = SubResource("StyleBoxFlat_oia8s")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_b7vo7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oia8s")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_dw3hg")
+theme_override_styles/focus = SubResource("StyleBoxTexture_b7vo7")
 toggle_mode = true
 text = "KARMA"
 
-[node name="panel" type="TextureRect" parent="specials_list"]
+[node name="panel" type="TextureRect" parent="specials_list" unique_id=726303987]
 texture_filter = 2
 layout_mode = 1
 anchors_preset = 4
@@ -139,7 +139,7 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("2_pxi6q")
 
-[node name="LLScrollContainer" type="ScrollContainer" parent="specials_list"]
+[node name="LLScrollContainer" type="ScrollContainer" parent="specials_list" unique_id=1762982758]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -153,18 +153,18 @@ grow_vertical = 2
 theme = SubResource("Theme_5y12r")
 follow_focus = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="specials_list/LLScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="specials_list/LLScrollContainer" unique_id=465619955]
 layout_mode = 2
 theme_override_constants/separation = 30
 
-[node name="ll_card_slot" parent="specials_list/LLScrollContainer/VBoxContainer" instance=ExtResource("7_urk37")]
+[node name="ll_card_slot" parent="specials_list/LLScrollContainer/VBoxContainer" unique_id=320916700 instance=ExtResource("7_urk37")]
 layout_mode = 2
 type = 2
 image = ExtResource("9_amdra")
 number = 1
 active = true
 
-[node name="ll_card_slot2" parent="specials_list/LLScrollContainer/VBoxContainer" instance=ExtResource("7_urk37")]
+[node name="ll_card_slot2" parent="specials_list/LLScrollContainer/VBoxContainer" unique_id=1260283574 instance=ExtResource("7_urk37")]
 layout_mode = 2
 text = "SNAKE CHAIN"
 type = 1
@@ -172,7 +172,7 @@ image = ExtResource("10_fnfbq")
 number = 2
 active = true
 
-[node name="ll_card_slot3" parent="specials_list/LLScrollContainer/VBoxContainer" instance=ExtResource("7_urk37")]
+[node name="ll_card_slot3" parent="specials_list/LLScrollContainer/VBoxContainer" unique_id=1364504282 instance=ExtResource("7_urk37")]
 layout_mode = 2
 text = "TREE TRUNK"
 type = 0
@@ -180,31 +180,31 @@ image = ExtResource("11_sio81")
 number = 3
 active = true
 
-[node name="ll_card_slot4" parent="specials_list/LLScrollContainer/VBoxContainer" instance=ExtResource("7_urk37")]
+[node name="ll_card_slot4" parent="specials_list/LLScrollContainer/VBoxContainer" unique_id=155207453 instance=ExtResource("7_urk37")]
 layout_mode = 2
 text = "TREE TRUNK"
 image = ExtResource("12_6cmiy")
 number = 4
 
-[node name="ll_card_slot5" parent="specials_list/LLScrollContainer/VBoxContainer" instance=ExtResource("7_urk37")]
+[node name="ll_card_slot5" parent="specials_list/LLScrollContainer/VBoxContainer" unique_id=1465467973 instance=ExtResource("7_urk37")]
 layout_mode = 2
 text = "TREE TRUNK"
 image = ExtResource("12_6cmiy")
 number = 5
 
-[node name="ll_card_slot6" parent="specials_list/LLScrollContainer/VBoxContainer" instance=ExtResource("7_urk37")]
+[node name="ll_card_slot6" parent="specials_list/LLScrollContainer/VBoxContainer" unique_id=393747611 instance=ExtResource("7_urk37")]
 layout_mode = 2
 text = "TREE TRUNK"
 image = ExtResource("12_6cmiy")
 number = 6
 
-[node name="ll_card_slot7" parent="specials_list/LLScrollContainer/VBoxContainer" instance=ExtResource("7_urk37")]
+[node name="ll_card_slot7" parent="specials_list/LLScrollContainer/VBoxContainer" unique_id=350320182 instance=ExtResource("7_urk37")]
 layout_mode = 2
 text = "TREE TRUNK"
 image = ExtResource("12_6cmiy")
 number = 7
 
-[node name="HLScrollContainer" type="ScrollContainer" parent="specials_list"]
+[node name="HLScrollContainer" type="ScrollContainer" parent="specials_list" unique_id=23530805]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -219,39 +219,40 @@ grow_vertical = 2
 theme = SubResource("Theme_5y12r")
 follow_focus = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="specials_list/HLScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="specials_list/HLScrollContainer" unique_id=898235364]
 layout_mode = 2
 theme_override_constants/separation = 30
 
-[node name="hl_card_slot" parent="specials_list/HLScrollContainer/VBoxContainer" instance=ExtResource("7_urk37")]
+[node name="hl_card_slot" parent="specials_list/HLScrollContainer/VBoxContainer" unique_id=252024861 instance=ExtResource("7_urk37")]
 layout_mode = 2
 button_pressed = true
+text = "DISCONNECTION MIST"
 type = 3
 image = ExtResource("13_6l75u")
 number = 1
 active = true
 
-[node name="hl_card_slot2" parent="specials_list/HLScrollContainer/VBoxContainer" instance=ExtResource("7_urk37")]
+[node name="hl_card_slot2" parent="specials_list/HLScrollContainer/VBoxContainer" unique_id=1369070092 instance=ExtResource("7_urk37")]
 layout_mode = 2
 image = ExtResource("12_6cmiy")
 number = 2
 
-[node name="hl_card_slot3" parent="specials_list/HLScrollContainer/VBoxContainer" instance=ExtResource("7_urk37")]
+[node name="hl_card_slot3" parent="specials_list/HLScrollContainer/VBoxContainer" unique_id=673665894 instance=ExtResource("7_urk37")]
 layout_mode = 2
 image = ExtResource("12_6cmiy")
 number = 3
 
-[node name="hl_card_slot4" parent="specials_list/HLScrollContainer/VBoxContainer" instance=ExtResource("7_urk37")]
+[node name="hl_card_slot4" parent="specials_list/HLScrollContainer/VBoxContainer" unique_id=1042619234 instance=ExtResource("7_urk37")]
 layout_mode = 2
 image = ExtResource("12_6cmiy")
 number = 4
 
-[node name="hl_card_slot5" parent="specials_list/HLScrollContainer/VBoxContainer" instance=ExtResource("7_urk37")]
+[node name="hl_card_slot5" parent="specials_list/HLScrollContainer/VBoxContainer" unique_id=1891092275 instance=ExtResource("7_urk37")]
 layout_mode = 2
 image = ExtResource("12_6cmiy")
 number = 5
 
-[node name="Label" type="Label" parent="specials_list"]
+[node name="Label" type="Label" parent="specials_list" unique_id=1710306340]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -268,7 +269,7 @@ text = "ABILITIES"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="special_preview" type="TextureRect" parent="."]
+[node name="special_preview" type="TextureRect" parent="." unique_id=2006479796]
 texture_filter = 2
 layout_mode = 1
 anchors_preset = 8
@@ -284,7 +285,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_0xe26")
 
-[node name="name" type="Label" parent="special_preview"]
+[node name="name" type="Label" parent="special_preview" unique_id=2028812542]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -301,7 +302,7 @@ text = "WATER PORTAL"
 horizontal_alignment = 1
 uppercase = true
 
-[node name="icon" type="TextureRect" parent="special_preview"]
+[node name="icon" type="TextureRect" parent="special_preview" unique_id=1499498556]
 texture_filter = 2
 layout_mode = 1
 anchors_preset = 8
@@ -317,7 +318,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_sv2dr")
 
-[node name="special_card" type="TextureRect" parent="special_preview/icon"]
+[node name="special_card" type="TextureRect" parent="special_preview/icon" unique_id=671674798]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
@@ -333,35 +334,35 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("16_mnbij")
 
-[node name="indicators" type="Control" parent="special_preview"]
+[node name="indicators" type="Control" parent="special_preview" unique_id=1945063172]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="left_button" type="Button" parent="special_preview/indicators"]
+[node name="left_button" type="Button" parent="special_preview/indicators" unique_id=1144300160]
 layout_mode = 0
 offset_left = 520.5
 offset_top = 1160.5
 offset_right = 560.5
 offset_bottom = 1200.5
-theme_override_styles/disabled = SubResource("StyleBoxTexture_qftr5")
-theme_override_styles/hover = SubResource("StyleBoxTexture_qftr5")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_qftr5")
 theme_override_styles/normal = SubResource("StyleBoxTexture_qftr5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qftr5")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qftr5")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_qftr5")
 
-[node name="right_button" type="Button" parent="special_preview/indicators"]
+[node name="right_button" type="Button" parent="special_preview/indicators" unique_id=208068867]
 layout_mode = 0
 offset_left = 752.5
 offset_top = 1200.5
 offset_right = 792.5
 offset_bottom = 1240.5
 rotation = 3.14159
-theme_override_styles/disabled = SubResource("StyleBoxTexture_qftr5")
-theme_override_styles/hover = SubResource("StyleBoxTexture_qftr5")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_qftr5")
 theme_override_styles/normal = SubResource("StyleBoxTexture_qftr5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qftr5")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qftr5")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_qftr5")
 
-[node name="number_lable" type="RichTextLabel" parent="special_preview/indicators"]
+[node name="number_lable" type="RichTextLabel" parent="special_preview/indicators" unique_id=1412179339]
 layout_mode = 0
 offset_left = 560.5
 offset_top = 1152.5
@@ -372,7 +373,7 @@ theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "[center][font_size=40][color=#a58532]1[/color][/font_size]  /  12[/center]"
 
-[node name="info_section" type="TextureRect" parent="."]
+[node name="info_section" type="TextureRect" parent="." unique_id=1909931493]
 texture_filter = 2
 layout_mode = 1
 anchors_preset = 6
@@ -388,7 +389,7 @@ grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("4_qam08")
 
-[node name="title" type="Label" parent="info_section"]
+[node name="title" type="Label" parent="info_section" unique_id=785782017]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -403,7 +404,7 @@ text = "ABOUT"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="text" type="RichTextLabel" parent="info_section"]
+[node name="text" type="RichTextLabel" parent="info_section" unique_id=94559625]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -418,7 +419,7 @@ theme_override_fonts/normal_font = ExtResource("20_v7vgu")
 theme_override_font_sizes/normal_font_size = 40
 text = "Low level (LL) special ability cards․ A new LL special ability is unlocked when you choose to set free a bonus level."
 
-[node name="decoration" type="TextureRect" parent="."]
+[node name="decoration" type="TextureRect" parent="." unique_id=297273773]
 texture_filter = 2
 layout_mode = 1
 anchors_preset = 5

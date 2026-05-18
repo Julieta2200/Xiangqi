@@ -43,14 +43,14 @@ func _ready() -> void:
 func _on_game_over(win: BoardV2.GameOverResults, move_number: int):
 	await get_tree().process_frame
 	if win == BoardV2.GameOverResults.Win:
-		AnalyticsManager.level_complete("Level1", move_number)
+		AnalyticsManager.level_complete("Level1")
 		gameplay_ui.objectives.complete_objectives(true)
 		DialogSystem.start_dialog([
 			DialogSystem.DialogText.new("LEVEL_1_VICTORY_DIALOG_1", DialogSystem.CHARACTERS.Mara),
 			DialogSystem.DialogText.new("LEVEL_1_VICTORY_DIALOG_2", DialogSystem.CHARACTERS.Ashes),
 		], true)
 	else:
-		AnalyticsManager.level_fail("Level1", move_number)
+		AnalyticsManager.level_fail("Level1")
 		gameplay_ui.objectives.complete_objectives(false)
 		DialogSystem.start_dialog([
 			DialogSystem.DialogText.new("LEVEL_1_DEFEAT_DIALOG", DialogSystem.CHARACTERS.Mara)

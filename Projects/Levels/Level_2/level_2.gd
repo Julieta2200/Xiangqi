@@ -83,14 +83,14 @@ func _horses_hint_shown() -> void:
 func _on_game_over(win: BoardV2.GameOverResults, move_number: int):
 	await get_tree().process_frame
 	if win == BoardV2.GameOverResults.Win:
-		AnalyticsManager.level_complete(level_name, move_number)
+		AnalyticsManager.level_complete(level_name)
 		gameplay_ui.objectives.complete_objectives(true)
 		DialogSystem.start_dialog([
 			DialogSystem.DialogText.new("LEVEL_2_VICTORY_DIALOG_1", DialogSystem.CHARACTERS.Advisor),
 			DialogSystem.DialogText.new("LEVEL_2_VICTORY_DIALOG_2", DialogSystem.CHARACTERS.Ashes),
 		], true)
 	else:
-		AnalyticsManager.level_fail(level_name, move_number)
+		AnalyticsManager.level_fail(level_name)
 		gameplay_ui.objectives.complete_objectives(false)
 		DialogSystem.start_dialog([
 			DialogSystem.DialogText.new("LEVEL_2_DEFEAT_DIALOG", DialogSystem.CHARACTERS.Mara)
